@@ -1,2 +1,3 @@
-# emchat-chatroom-widget
-环信聊天室小组件。
+> start :pnpm run dev
+
+> build: pnpm run build:widget

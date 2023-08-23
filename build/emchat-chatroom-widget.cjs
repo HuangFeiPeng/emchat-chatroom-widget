@@ -1,0 +1,1 @@
+"use strict";const e=require("vue"),t=e.defineComponent({name:"Chatroom",setup:()=>()=>e.createVNode("div",null,[e.createVNode("h1",null,[e.createTextVNode("Chatroom")])])}),n={install:o=>{console.log(o),o.component(t.name,t)}};module.exports=n;
