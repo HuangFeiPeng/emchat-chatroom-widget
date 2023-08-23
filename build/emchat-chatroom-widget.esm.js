@@ -1,12 +1,16 @@
-import { defineComponent as n, createVNode as e, createTextVNode as r } from "vue";
-const t = /* @__PURE__ */ n({
-  name: "Chatroom",
-  setup: () => () => e("div", null, [e("h1", null, [r("Chatroom")])])
-}), a = {
+import { defineComponent as t, createVNode as a, createTextVNode as n } from "vue";
+const e = /* @__PURE__ */ t({
+  name: "EasemobChatroom",
+  setup() {
+    return () => a("div", {
+      class: "easemob-chatroom"
+    }, [n("hhhhhhhhh")]);
+  }
+}), m = {
   install: (o) => {
-    console.log(o), o.component(t.name, t);
+    console.log(o), o.component(e.name, e);
   }
 };
 export {
-  a as default
+  m as default
 };
