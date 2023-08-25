@@ -3,6 +3,7 @@ import fs from "fs"
 import { defineConfig, build } from "vite"
 import vue from "@vitejs/plugin-vue"
 import vueJSX from "@vitejs/plugin-vue-jsx"
+import { visualizer } from "rollup-plugin-visualizer"
 import { fileURLToPath } from "url"
 
 const __filenameNew = fileURLToPath(import.meta.url)
@@ -16,7 +17,14 @@ const version = "../package.json".version
  */
 const BASE_VITE_CONFIG = defineConfig({
   publicDir: false, //暂不需要打包静态资源到public文件夹
-  plugins: [vue(), vueJSX()]
+  plugins: [
+    vue(),
+    vueJSX(),
+    visualizer({
+      emitFile: true,
+      filename: "stats.html"
+    })
+  ]
 })
 /**
  * rollupOptions配置
@@ -24,8 +32,10 @@ const BASE_VITE_CONFIG = defineConfig({
 const rollupOptions = defineConfig({
   // that shouldn't be bundled
   external: ["vue"],
-  globals: {
-    vue: "Vue"
+  output: {
+    globals: {
+      vue: "Vue"
+    }
   }
 })
 // 组件库全局入口

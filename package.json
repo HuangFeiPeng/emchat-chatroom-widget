@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.0.2",
+    "easemob-websdk": "^4.2.0",
     "vue": "^3.3.4"
   },
   "devDependencies": {
@@ -23,6 +24,7 @@
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-vue": "^9.17.0",
     "prettier": "^3.0.2",
+    "rollup-plugin-visualizer": "^5.9.2",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vue-tsc": "^1.8.5"

@@ -1,0 +1,5 @@
+.input_bar_container {
+  min-height: 15%;
+  max-height: 20%;
+  background: red;
+}

@@ -1,5 +1,10 @@
 <script setup lang="ts">
+import { ref, onMounted } from "vue"
 import HelloWorld from "./components/HelloWorld.vue"
+const emChatroomRef = ref<any>(null)
+onMounted(() => {
+  console.log("emChatroomRef", emChatroomRef.value.closeIM())
+})
 </script>
 
 <template>
@@ -12,7 +17,9 @@ import HelloWorld from "./components/HelloWorld.vue"
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
-  <EasemobChatroom />
+  <div class="chatroom_container">
+    <EasemobChatroom ref="emChatroomRef" :username="'hfp'" :password="'1'" />
+  </div>
 </template>
 
 <style scoped>
@@ -27,5 +34,13 @@ import HelloWorld from "./components/HelloWorld.vue"
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.chatroom_container {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 200px;
+  height: 500px;
+  background: pink;
 }
 </style>
