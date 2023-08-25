@@ -1,9 +1,11 @@
 import { defineComponent, onMounted } from "vue"
 import { EMClient } from "../EaseIM"
+import { useManageChatroom } from "../EaseIM/mangeChatroom"
+import { manageEasemobApis } from "../EaseIM/imApis"
 import "./style/index.css"
 /* components */
 import MessageContainer from "./message"
-import InputBarContainer from "./message"
+import InputBarContainer from "./inputbar"
 console.log("EMClient", EMClient)
 export default defineComponent({
   name: "EasemobChatroom",
@@ -20,22 +22,23 @@ export default defineComponent({
     accessToken: {
       type: String,
       default: ""
+    },
+    chatroomId: {
+      type: String,
+      default: "",
+      required: true
     }
   },
-  setup(props) {
-    const loginIM = async () => {
+  setup(props, { slots }) {
+    const { setCurrentChatroomId } = useManageChatroom()
+    const { loginIMWithPassword, loginIMWithAccessToken } = manageEasemobApis()
+    const loginIM = async (): Promise<void> => {
       if (!EMClient) return
       try {
         if (props.accessToken) {
-          await EMClient.open({
-            user: props.username,
-            accessToken: props.accessToken
-          })
+          await loginIMWithAccessToken(props.username, props.accessToken)
         } else {
-          await EMClient.open({
-            user: props.username,
-            pwd: props.password
-          })
+          await loginIMWithPassword(props.username, props.password)
         }
       } catch (error: any) {
         throw `${error.data.message}`
@@ -47,6 +50,9 @@ export default defineComponent({
     }
     onMounted(() => {
       loginIM()
+      if (props.chatroomId) {
+        setCurrentChatroomId(props.chatroomId)
+      }
     })
     return {
       loginIM,

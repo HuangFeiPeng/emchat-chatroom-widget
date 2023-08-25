@@ -3,6 +3,7 @@ import fs from "fs"
 import { defineConfig, build } from "vite"
 import vue from "@vitejs/plugin-vue"
 import vueJSX from "@vitejs/plugin-vue-jsx"
+import dts from "vite-plugin-dts"
 import { visualizer } from "rollup-plugin-visualizer"
 import { fileURLToPath } from "url"
 
@@ -23,6 +24,11 @@ const BASE_VITE_CONFIG = defineConfig({
     visualizer({
       emitFile: true,
       filename: "stats.html"
+    }),
+    dts({
+      outputDir: "./build/types",
+      insertTypesEntry: true, // 插入TS 入口
+      copyDtsFiles: true // 是否将源码里的 .d.ts 文件复制到 outputDir
     })
   ]
 })

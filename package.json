@@ -13,6 +13,7 @@
   "dependencies": {
     "@vitejs/plugin-vue-jsx": "^3.0.2",
     "easemob-websdk": "^4.2.0",
+    "vite-plugin-dts": "^3.5.2",
     "vue": "^3.3.4"
   },
   "devDependencies": {

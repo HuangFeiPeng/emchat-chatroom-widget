@@ -18,7 +18,13 @@ onMounted(() => {
   </div>
   <HelloWorld msg="Vite + Vue" />
   <div class="chatroom_container">
-    <EasemobChatroom ref="emChatroomRef" :username="'hfp'" :password="'1'" />
+    <EasemobChatroom
+      ref="emChatroomRef"
+      :username="'hfp'"
+      :password="'1'"
+      :chatroomId="'223814006931462'"
+    >
+    </EasemobChatroom>
   </div>
 </template>
 
@@ -39,7 +45,7 @@ onMounted(() => {
   position: absolute;
   right: 0;
   top: 0;
-  width: 200px;
+  width: 300px;
   height: 500px;
   background: pink;
 }
