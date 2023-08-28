@@ -5,15 +5,15 @@ function getDefaultExportFromCjs(p) {
 }
 var EasemobChat = { exports: {} };
 (function(module, exports) {
-  (function(p, S) {
-    module.exports = S();
+  (function(p, R) {
+    module.exports = R();
   })(commonjsGlobal, function() {
     return function() {
       var __webpack_modules__ = { 4537: function(p) {
-        p.exports = function(S, e) {
-          for (var r = new Array(arguments.length - 1), t = 0, i = 2, s = !0; i < arguments.length; )
-            r[t++] = arguments[i++];
-          return new Promise(function(a, o) {
+        p.exports = function(R, e) {
+          for (var r = new Array(arguments.length - 1), t = 0, a = 2, s = !0; a < arguments.length; )
+            r[t++] = arguments[a++];
+          return new Promise(function(i, o) {
             r[t] = function(n) {
               if (s)
                 if (s = !1, n)
@@ -21,31 +21,31 @@ var EasemobChat = { exports: {} };
                 else {
                   for (var l = new Array(arguments.length - 1), u = 0; u < l.length; )
                     l[u++] = arguments[u];
-                  a.apply(null, l);
+                  i.apply(null, l);
                 }
             };
             try {
-              S.apply(e || null, r);
+              R.apply(e || null, r);
             } catch (n) {
               s && (s = !1, o(n));
             }
           });
         };
-      }, 7419: function(p, S) {
-        var e = S;
-        e.length = function(a) {
-          var o = a.length;
+      }, 7419: function(p, R) {
+        var e = R;
+        e.length = function(i) {
+          var o = i.length;
           if (!o)
             return 0;
-          for (var n = 0; --o % 4 > 1 && a.charAt(o) === "="; )
+          for (var n = 0; --o % 4 > 1 && i.charAt(o) === "="; )
             ++n;
-          return Math.ceil(3 * a.length) / 4 - n;
+          return Math.ceil(3 * i.length) / 4 - n;
         };
-        for (var r = new Array(64), t = new Array(123), i = 0; i < 64; )
-          t[r[i] = i < 26 ? i + 65 : i < 52 ? i + 71 : i < 62 ? i - 4 : i - 59 | 43] = i++;
-        e.encode = function(a, o, n) {
+        for (var r = new Array(64), t = new Array(123), a = 0; a < 64; )
+          t[r[a] = a < 26 ? a + 65 : a < 52 ? a + 71 : a < 62 ? a - 4 : a - 59 | 43] = a++;
+        e.encode = function(i, o, n) {
           for (var l, u = null, m = [], g = 0, h = 0; o < n; ) {
-            var d = a[o++];
+            var d = i[o++];
             switch (h) {
               case 0:
                 m[g++] = r[d >> 2], l = (3 & d) << 4, h = 1;
@@ -61,9 +61,9 @@ var EasemobChat = { exports: {} };
           return h && (m[g++] = r[l], m[g++] = 61, h === 1 && (m[g++] = 61)), u ? (g && u.push(String.fromCharCode.apply(String, m.slice(0, g))), u.join("")) : String.fromCharCode.apply(String, m.slice(0, g));
         };
         var s = "invalid encoding";
-        e.decode = function(a, o, n) {
-          for (var l, u = n, m = 0, g = 0; g < a.length; ) {
-            var h = a.charCodeAt(g++);
+        e.decode = function(i, o, n) {
+          for (var l, u = n, m = 0, g = 0; g < i.length; ) {
+            var h = i.charCodeAt(g++);
             if (h === 61 && m > 1)
               break;
             if ((h = t[h]) === void 0)
@@ -85,26 +85,26 @@ var EasemobChat = { exports: {} };
           if (m === 1)
             throw Error(s);
           return n - u;
-        }, e.test = function(a) {
-          return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(a);
+        }, e.test = function(i) {
+          return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(i);
         };
       }, 5124: function(p) {
-        function S(e, r) {
+        function R(e, r) {
           typeof e == "string" && (r = e, e = void 0);
           var t = [];
-          function i(a) {
-            if (typeof a != "string") {
+          function a(i) {
+            if (typeof i != "string") {
               var o = s();
-              if (S.verbose && console.log("codegen: " + o), o = "return " + o, a) {
-                for (var n = Object.keys(a), l = new Array(n.length + 1), u = new Array(n.length), m = 0; m < n.length; )
-                  l[m] = n[m], u[m] = a[n[m++]];
+              if (R.verbose && console.log("codegen: " + o), o = "return " + o, i) {
+                for (var n = Object.keys(i), l = new Array(n.length + 1), u = new Array(n.length), m = 0; m < n.length; )
+                  l[m] = n[m], u[m] = i[n[m++]];
                 return l[m] = o, Function.apply(null, l).apply(null, u);
               }
               return Function(o)();
             }
             for (var g = new Array(arguments.length - 1), h = 0; h < g.length; )
               g[h] = arguments[++h];
-            if (h = 0, a = a.replace(/%([%dfijs])/g, function(d, f) {
+            if (h = 0, i = i.replace(/%([%dfijs])/g, function(d, f) {
               var b = g[h++];
               switch (f) {
                 case "d":
@@ -120,57 +120,57 @@ var EasemobChat = { exports: {} };
               return "%";
             }), h !== g.length)
               throw Error("parameter count mismatch");
-            return t.push(a), i;
+            return t.push(i), a;
           }
-          function s(a) {
-            return "function " + (a || r || "") + "(" + (e && e.join(",") || "") + `){
+          function s(i) {
+            return "function " + (i || r || "") + "(" + (e && e.join(",") || "") + `){
   ` + t.join(`
   `) + `
 }`;
           }
-          return i.toString = s, i;
+          return a.toString = s, a;
         }
-        p.exports = S, S.verbose = !1;
+        p.exports = R, R.verbose = !1;
       }, 9211: function(p) {
-        function S() {
+        function R() {
           this._listeners = {};
         }
-        p.exports = S, S.prototype.on = function(e, r, t) {
+        p.exports = R, R.prototype.on = function(e, r, t) {
           return (this._listeners[e] || (this._listeners[e] = [])).push({ fn: r, ctx: t || this }), this;
-        }, S.prototype.off = function(e, r) {
+        }, R.prototype.off = function(e, r) {
           if (e === void 0)
             this._listeners = {};
           else if (r === void 0)
             this._listeners[e] = [];
           else
-            for (var t = this._listeners[e], i = 0; i < t.length; )
-              t[i].fn === r ? t.splice(i, 1) : ++i;
+            for (var t = this._listeners[e], a = 0; a < t.length; )
+              t[a].fn === r ? t.splice(a, 1) : ++a;
           return this;
-        }, S.prototype.emit = function(e) {
+        }, R.prototype.emit = function(e) {
           var r = this._listeners[e];
           if (r) {
-            for (var t = [], i = 1; i < arguments.length; )
-              t.push(arguments[i++]);
-            for (i = 0; i < r.length; )
-              r[i].fn.apply(r[i++].ctx, t);
+            for (var t = [], a = 1; a < arguments.length; )
+              t.push(arguments[a++]);
+            for (a = 0; a < r.length; )
+              r[a].fn.apply(r[a++].ctx, t);
           }
           return this;
         };
-      }, 9054: function(p, S, e) {
-        p.exports = i;
+      }, 9054: function(p, R, e) {
+        p.exports = a;
         var r = e(4537), t = e(7199)("fs");
-        function i(s, a, o) {
-          return typeof a == "function" ? (o = a, a = {}) : a || (a = {}), o ? !a.xhr && t && t.readFile ? t.readFile(s, function(n, l) {
-            return n && typeof XMLHttpRequest < "u" ? i.xhr(s, a, o) : n ? o(n) : o(null, a.binary ? l : l.toString("utf8"));
-          }) : i.xhr(s, a, o) : r(i, this, s, a);
+        function a(s, i, o) {
+          return typeof i == "function" ? (o = i, i = {}) : i || (i = {}), o ? !i.xhr && t && t.readFile ? t.readFile(s, function(n, l) {
+            return n && typeof XMLHttpRequest < "u" ? a.xhr(s, i, o) : n ? o(n) : o(null, i.binary ? l : l.toString("utf8"));
+          }) : a.xhr(s, i, o) : r(a, this, s, i);
         }
-        i.xhr = function(s, a, o) {
+        a.xhr = function(s, i, o) {
           var n = new XMLHttpRequest();
           n.onreadystatechange = function() {
             if (n.readyState === 4) {
               if (n.status !== 0 && n.status !== 200)
                 return o(Error("status " + n.status));
-              if (a.binary) {
+              if (i.binary) {
                 var l = n.response;
                 if (!l) {
                   l = [];
@@ -181,27 +181,27 @@ var EasemobChat = { exports: {} };
               }
               return o(null, n.responseText);
             }
-          }, a.binary && ("overrideMimeType" in n && n.overrideMimeType("text/plain; charset=x-user-defined"), n.responseType = "arraybuffer"), n.open("GET", s), n.send();
+          }, i.binary && ("overrideMimeType" in n && n.overrideMimeType("text/plain; charset=x-user-defined"), n.responseType = "arraybuffer"), n.open("GET", s), n.send();
         };
       }, 945: function(p) {
-        function S(s) {
+        function R(s) {
           return typeof Float32Array < "u" ? function() {
-            var a = new Float32Array([-0]), o = new Uint8Array(a.buffer), n = o[3] === 128;
+            var i = new Float32Array([-0]), o = new Uint8Array(i.buffer), n = o[3] === 128;
             function l(h, d, f) {
-              a[0] = h, d[f] = o[0], d[f + 1] = o[1], d[f + 2] = o[2], d[f + 3] = o[3];
+              i[0] = h, d[f] = o[0], d[f + 1] = o[1], d[f + 2] = o[2], d[f + 3] = o[3];
             }
             function u(h, d, f) {
-              a[0] = h, d[f] = o[3], d[f + 1] = o[2], d[f + 2] = o[1], d[f + 3] = o[0];
+              i[0] = h, d[f] = o[3], d[f + 1] = o[2], d[f + 2] = o[1], d[f + 3] = o[0];
             }
             function m(h, d) {
-              return o[0] = h[d], o[1] = h[d + 1], o[2] = h[d + 2], o[3] = h[d + 3], a[0];
+              return o[0] = h[d], o[1] = h[d + 1], o[2] = h[d + 2], o[3] = h[d + 3], i[0];
             }
             function g(h, d) {
-              return o[3] = h[d], o[2] = h[d + 1], o[1] = h[d + 2], o[0] = h[d + 3], a[0];
+              return o[3] = h[d], o[2] = h[d + 1], o[1] = h[d + 2], o[0] = h[d + 3], i[0];
             }
             s.writeFloatLE = n ? l : u, s.writeFloatBE = n ? u : l, s.readFloatLE = n ? m : g, s.readFloatBE = n ? g : m;
           }() : function() {
-            function a(n, l, u, m) {
+            function i(n, l, u, m) {
               var g = l < 0 ? 1 : 0;
               if (g && (l = -l), l === 0)
                 n(1 / l > 0 ? 0 : 2147483648, u, m);
@@ -220,24 +220,24 @@ var EasemobChat = { exports: {} };
               var m = n(l, u), g = 2 * (m >> 31) + 1, h = m >>> 23 & 255, d = 8388607 & m;
               return h === 255 ? d ? NaN : g * (1 / 0) : h === 0 ? 1401298464324817e-60 * g * d : g * Math.pow(2, h - 150) * (d + 8388608);
             }
-            s.writeFloatLE = a.bind(null, e), s.writeFloatBE = a.bind(null, r), s.readFloatLE = o.bind(null, t), s.readFloatBE = o.bind(null, i);
+            s.writeFloatLE = i.bind(null, e), s.writeFloatBE = i.bind(null, r), s.readFloatLE = o.bind(null, t), s.readFloatBE = o.bind(null, a);
           }(), typeof Float64Array < "u" ? function() {
-            var a = new Float64Array([-0]), o = new Uint8Array(a.buffer), n = o[7] === 128;
+            var i = new Float64Array([-0]), o = new Uint8Array(i.buffer), n = o[7] === 128;
             function l(h, d, f) {
-              a[0] = h, d[f] = o[0], d[f + 1] = o[1], d[f + 2] = o[2], d[f + 3] = o[3], d[f + 4] = o[4], d[f + 5] = o[5], d[f + 6] = o[6], d[f + 7] = o[7];
+              i[0] = h, d[f] = o[0], d[f + 1] = o[1], d[f + 2] = o[2], d[f + 3] = o[3], d[f + 4] = o[4], d[f + 5] = o[5], d[f + 6] = o[6], d[f + 7] = o[7];
             }
             function u(h, d, f) {
-              a[0] = h, d[f] = o[7], d[f + 1] = o[6], d[f + 2] = o[5], d[f + 3] = o[4], d[f + 4] = o[3], d[f + 5] = o[2], d[f + 6] = o[1], d[f + 7] = o[0];
+              i[0] = h, d[f] = o[7], d[f + 1] = o[6], d[f + 2] = o[5], d[f + 3] = o[4], d[f + 4] = o[3], d[f + 5] = o[2], d[f + 6] = o[1], d[f + 7] = o[0];
             }
             function m(h, d) {
-              return o[0] = h[d], o[1] = h[d + 1], o[2] = h[d + 2], o[3] = h[d + 3], o[4] = h[d + 4], o[5] = h[d + 5], o[6] = h[d + 6], o[7] = h[d + 7], a[0];
+              return o[0] = h[d], o[1] = h[d + 1], o[2] = h[d + 2], o[3] = h[d + 3], o[4] = h[d + 4], o[5] = h[d + 5], o[6] = h[d + 6], o[7] = h[d + 7], i[0];
             }
             function g(h, d) {
-              return o[7] = h[d], o[6] = h[d + 1], o[5] = h[d + 2], o[4] = h[d + 3], o[3] = h[d + 4], o[2] = h[d + 5], o[1] = h[d + 6], o[0] = h[d + 7], a[0];
+              return o[7] = h[d], o[6] = h[d + 1], o[5] = h[d + 2], o[4] = h[d + 3], o[3] = h[d + 4], o[2] = h[d + 5], o[1] = h[d + 6], o[0] = h[d + 7], i[0];
             }
             s.writeDoubleLE = n ? l : u, s.writeDoubleBE = n ? u : l, s.readDoubleLE = n ? m : g, s.readDoubleBE = n ? g : m;
           }() : function() {
-            function a(n, l, u, m, g, h) {
+            function i(n, l, u, m, g, h) {
               var d = m < 0 ? 1 : 0;
               if (d && (m = -m), m === 0)
                 n(0, g, h + l), n(1 / m > 0 ? 0 : 2147483648, g, h + u);
@@ -259,22 +259,22 @@ var EasemobChat = { exports: {} };
               var h = n(m, g + l), d = n(m, g + u), f = 2 * (d >> 31) + 1, b = d >>> 20 & 2047, c = 4294967296 * (1048575 & d) + h;
               return b === 2047 ? c ? NaN : f * (1 / 0) : b === 0 ? 5e-324 * f * c : f * Math.pow(2, b - 1075) * (c + 4503599627370496);
             }
-            s.writeDoubleLE = a.bind(null, e, 0, 4), s.writeDoubleBE = a.bind(null, r, 4, 0), s.readDoubleLE = o.bind(null, t, 0, 4), s.readDoubleBE = o.bind(null, i, 4, 0);
+            s.writeDoubleLE = i.bind(null, e, 0, 4), s.writeDoubleBE = i.bind(null, r, 4, 0), s.readDoubleLE = o.bind(null, t, 0, 4), s.readDoubleBE = o.bind(null, a, 4, 0);
           }(), s;
         }
-        function e(s, a, o) {
-          a[o] = 255 & s, a[o + 1] = s >>> 8 & 255, a[o + 2] = s >>> 16 & 255, a[o + 3] = s >>> 24;
+        function e(s, i, o) {
+          i[o] = 255 & s, i[o + 1] = s >>> 8 & 255, i[o + 2] = s >>> 16 & 255, i[o + 3] = s >>> 24;
         }
-        function r(s, a, o) {
-          a[o] = s >>> 24, a[o + 1] = s >>> 16 & 255, a[o + 2] = s >>> 8 & 255, a[o + 3] = 255 & s;
+        function r(s, i, o) {
+          i[o] = s >>> 24, i[o + 1] = s >>> 16 & 255, i[o + 2] = s >>> 8 & 255, i[o + 3] = 255 & s;
         }
-        function t(s, a) {
-          return (s[a] | s[a + 1] << 8 | s[a + 2] << 16 | s[a + 3] << 24) >>> 0;
+        function t(s, i) {
+          return (s[i] | s[i + 1] << 8 | s[i + 2] << 16 | s[i + 3] << 24) >>> 0;
         }
-        function i(s, a) {
-          return (s[a] << 24 | s[a + 1] << 16 | s[a + 2] << 8 | s[a + 3]) >>> 0;
+        function a(s, i) {
+          return (s[i] << 24 | s[i + 1] << 16 | s[i + 2] << 8 | s[i + 3]) >>> 0;
         }
-        p.exports = S(S);
+        p.exports = R(R);
       }, 7199: function(module) {
         function inquire(moduleName) {
           try {
@@ -286,82 +286,82 @@ var EasemobChat = { exports: {} };
           return null;
         }
         module.exports = inquire;
-      }, 8626: function(p, S) {
-        var e = S, r = e.isAbsolute = function(i) {
-          return /^(?:\/|\w+:)/.test(i);
-        }, t = e.normalize = function(i) {
-          var s = (i = i.replace(/\\/g, "/").replace(/\/{2,}/g, "/")).split("/"), a = r(i), o = "";
-          a && (o = s.shift() + "/");
+      }, 8626: function(p, R) {
+        var e = R, r = e.isAbsolute = function(a) {
+          return /^(?:\/|\w+:)/.test(a);
+        }, t = e.normalize = function(a) {
+          var s = (a = a.replace(/\\/g, "/").replace(/\/{2,}/g, "/")).split("/"), i = r(a), o = "";
+          i && (o = s.shift() + "/");
           for (var n = 0; n < s.length; )
-            s[n] === ".." ? n > 0 && s[n - 1] !== ".." ? s.splice(--n, 2) : a ? s.splice(n, 1) : ++n : s[n] === "." ? s.splice(n, 1) : ++n;
+            s[n] === ".." ? n > 0 && s[n - 1] !== ".." ? s.splice(--n, 2) : i ? s.splice(n, 1) : ++n : s[n] === "." ? s.splice(n, 1) : ++n;
           return o + s.join("/");
         };
-        e.resolve = function(i, s, a) {
-          return a || (s = t(s)), r(s) ? s : (a || (i = t(i)), (i = i.replace(/(?:\/|^)[^/]+$/, "")).length ? t(i + "/" + s) : s);
+        e.resolve = function(a, s, i) {
+          return i || (s = t(s)), r(s) ? s : (i || (a = t(a)), (a = a.replace(/(?:\/|^)[^/]+$/, "")).length ? t(a + "/" + s) : s);
         };
       }, 6662: function(p) {
-        p.exports = function(S, e, r) {
-          var t = r || 8192, i = t >>> 1, s = null, a = t;
+        p.exports = function(R, e, r) {
+          var t = r || 8192, a = t >>> 1, s = null, i = t;
           return function(o) {
-            if (o < 1 || o > i)
-              return S(o);
-            a + o > t && (s = S(t), a = 0);
-            var n = e.call(s, a, a += o);
-            return 7 & a && (a = 1 + (7 | a)), n;
+            if (o < 1 || o > a)
+              return R(o);
+            i + o > t && (s = R(t), i = 0);
+            var n = e.call(s, i, i += o);
+            return 7 & i && (i = 1 + (7 | i)), n;
           };
         };
-      }, 4997: function(p, S) {
-        var e = S;
+      }, 4997: function(p, R) {
+        var e = R;
         e.length = function(r) {
-          for (var t = 0, i = 0, s = 0; s < r.length; ++s)
-            (i = r.charCodeAt(s)) < 128 ? t += 1 : i < 2048 ? t += 2 : (64512 & i) == 55296 && (64512 & r.charCodeAt(s + 1)) == 56320 ? (++s, t += 4) : t += 3;
+          for (var t = 0, a = 0, s = 0; s < r.length; ++s)
+            (a = r.charCodeAt(s)) < 128 ? t += 1 : a < 2048 ? t += 2 : (64512 & a) == 55296 && (64512 & r.charCodeAt(s + 1)) == 56320 ? (++s, t += 4) : t += 3;
           return t;
-        }, e.read = function(r, t, i) {
-          if (i - t < 1)
+        }, e.read = function(r, t, a) {
+          if (a - t < 1)
             return "";
-          for (var s, a = null, o = [], n = 0; t < i; )
-            (s = r[t++]) < 128 ? o[n++] = s : s > 191 && s < 224 ? o[n++] = (31 & s) << 6 | 63 & r[t++] : s > 239 && s < 365 ? (s = ((7 & s) << 18 | (63 & r[t++]) << 12 | (63 & r[t++]) << 6 | 63 & r[t++]) - 65536, o[n++] = 55296 + (s >> 10), o[n++] = 56320 + (1023 & s)) : o[n++] = (15 & s) << 12 | (63 & r[t++]) << 6 | 63 & r[t++], n > 8191 && ((a || (a = [])).push(String.fromCharCode.apply(String, o)), n = 0);
-          return a ? (n && a.push(String.fromCharCode.apply(String, o.slice(0, n))), a.join("")) : String.fromCharCode.apply(String, o.slice(0, n));
-        }, e.write = function(r, t, i) {
-          for (var s, a, o = i, n = 0; n < r.length; ++n)
-            (s = r.charCodeAt(n)) < 128 ? t[i++] = s : s < 2048 ? (t[i++] = s >> 6 | 192, t[i++] = 63 & s | 128) : (64512 & s) == 55296 && (64512 & (a = r.charCodeAt(n + 1))) == 56320 ? (s = 65536 + ((1023 & s) << 10) + (1023 & a), ++n, t[i++] = s >> 18 | 240, t[i++] = s >> 12 & 63 | 128, t[i++] = s >> 6 & 63 | 128, t[i++] = 63 & s | 128) : (t[i++] = s >> 12 | 224, t[i++] = s >> 6 & 63 | 128, t[i++] = 63 & s | 128);
-          return i - o;
+          for (var s, i = null, o = [], n = 0; t < a; )
+            (s = r[t++]) < 128 ? o[n++] = s : s > 191 && s < 224 ? o[n++] = (31 & s) << 6 | 63 & r[t++] : s > 239 && s < 365 ? (s = ((7 & s) << 18 | (63 & r[t++]) << 12 | (63 & r[t++]) << 6 | 63 & r[t++]) - 65536, o[n++] = 55296 + (s >> 10), o[n++] = 56320 + (1023 & s)) : o[n++] = (15 & s) << 12 | (63 & r[t++]) << 6 | 63 & r[t++], n > 8191 && ((i || (i = [])).push(String.fromCharCode.apply(String, o)), n = 0);
+          return i ? (n && i.push(String.fromCharCode.apply(String, o.slice(0, n))), i.join("")) : String.fromCharCode.apply(String, o.slice(0, n));
+        }, e.write = function(r, t, a) {
+          for (var s, i, o = a, n = 0; n < r.length; ++n)
+            (s = r.charCodeAt(n)) < 128 ? t[a++] = s : s < 2048 ? (t[a++] = s >> 6 | 192, t[a++] = 63 & s | 128) : (64512 & s) == 55296 && (64512 & (i = r.charCodeAt(n + 1))) == 56320 ? (s = 65536 + ((1023 & s) << 10) + (1023 & i), ++n, t[a++] = s >> 18 | 240, t[a++] = s >> 12 & 63 | 128, t[a++] = s >> 6 & 63 | 128, t[a++] = 63 & s | 128) : (t[a++] = s >> 12 | 224, t[a++] = s >> 6 & 63 | 128, t[a++] = 63 & s | 128);
+          return a - o;
         };
-      }, 4188: function(p, S, e) {
-        var r, t, i;
+      }, 4188: function(p, R, e) {
+        var r, t, a;
         (function(s) {
-          if (S != null && typeof S.nodeType != "number")
+          if (R != null && typeof R.nodeType != "number")
             p.exports = s();
           else if (e.amdO != null)
-            t = [], (i = typeof (r = s) == "function" ? r.apply(S, t) : r) === void 0 || (p.exports = i);
+            t = [], (a = typeof (r = s) == "function" ? r.apply(R, t) : r) === void 0 || (p.exports = a);
           else {
-            var a = s(), o = typeof self < "u" ? self : $.global;
-            typeof o.btoa != "function" && (o.btoa = a.btoa), typeof o.atob != "function" && (o.atob = a.atob);
+            var i = s(), o = typeof self < "u" ? self : $.global;
+            typeof o.btoa != "function" && (o.btoa = i.btoa), typeof o.atob != "function" && (o.atob = i.atob);
           }
         })(function() {
           var s = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-          function a(o) {
+          function i(o) {
             this.message = o;
           }
-          return a.prototype = new Error(), a.prototype.name = "InvalidCharacterError", { btoa: function(o) {
+          return i.prototype = new Error(), i.prototype.name = "InvalidCharacterError", { btoa: function(o) {
             for (var n, l, u = String(o), m = 0, g = s, h = ""; u.charAt(0 | m) || (g = "=", m % 1); h += g.charAt(63 & n >> 8 - m % 1 * 8)) {
               if ((l = u.charCodeAt(m += 0.75)) > 255)
-                throw new a("'btoa' failed: The string to be encoded contains characters outside of the Latin1 range.");
+                throw new i("'btoa' failed: The string to be encoded contains characters outside of the Latin1 range.");
               n = n << 8 | l;
             }
             return h;
           }, atob: function(o) {
             var n = String(o).replace(/[=]+$/, "");
             if (n.length % 4 == 1)
-              throw new a("'atob' failed: The string to be decoded is not correctly encoded.");
+              throw new i("'atob' failed: The string to be decoded is not correctly encoded.");
             for (var l, u, m = 0, g = 0, h = ""; u = n.charAt(g++); ~u && (l = m % 4 ? 64 * l + u : u, m++ % 4) ? h += String.fromCharCode(255 & l >> (-2 * m & 6)) : 0)
               u = s.indexOf(u);
             return h;
           } };
         });
-      }, 9667: function(p, S, e) {
-        e.r(S), e.d(S, { addUsersToChatRoom: function() {
-          return I;
+      }, 9667: function(p, R, e) {
+        e.r(R), e.d(R, { addUsersToChatRoom: function() {
+          return S;
         }, addUsersToChatRoomAllowlist: function() {
           return Ve;
         }, addUsersToChatRoomWhitelist: function() {
@@ -383,7 +383,7 @@ var EasemobChat = { exports: {} };
         }, disableSendChatRoomMsg: function() {
           return Ue;
         }, enableSendChatRoomMsg: function() {
-          return Ze;
+          return Ke;
         }, fetchChatRoomAnnouncement: function() {
           return ke;
         }, fetchChatRoomSharedFileList: function() {
@@ -405,7 +405,7 @@ var EasemobChat = { exports: {} };
         }, getChatRoomMuteList: function() {
           return V;
         }, getChatRoomMuted: function() {
-          return Z;
+          return K;
         }, getChatRoomMutelist: function() {
           return ne;
         }, getChatRoomSharedFilelist: function() {
@@ -431,7 +431,7 @@ var EasemobChat = { exports: {} };
         }, modifyChatRoom: function() {
           return h;
         }, muteChatRoomMember: function() {
-          return K;
+          return Z;
         }, quitChatRoom: function() {
           return N;
         }, removeChatRoomAdmin: function() {
@@ -443,7 +443,7 @@ var EasemobChat = { exports: {} };
         }, removeChatRoomAttributes: function() {
           return w;
         }, removeChatRoomBlockMulti: function() {
-          return Ie;
+          return Re;
         }, removeChatRoomBlockSingle: function() {
           return ge;
         }, removeChatRoomMember: function() {
@@ -451,7 +451,7 @@ var EasemobChat = { exports: {} };
         }, removeChatRoomMembers: function() {
           return c;
         }, removeChatRoomWhitelistMember: function() {
-          return Ke;
+          return Ze;
         }, removeMultiChatRoomMember: function() {
           return b;
         }, removeMuteChatRoomMember: function() {
@@ -469,7 +469,7 @@ var EasemobChat = { exports: {} };
         }, unblockChatRoomMember: function() {
           return Ce;
         }, unblockChatRoomMembers: function() {
-          return Re;
+          return Ie;
         }, unmuteChatRoomMember: function() {
           return Y;
         }, updateChatRoomAnnouncement: function() {
@@ -477,118 +477,118 @@ var EasemobChat = { exports: {} };
         }, uploadChatRoomSharedFile: function() {
           return j;
         } }), e(1539), e(8674), e(8309), e(2526), e(1817), e(2222), e(9753), e(9600), e(2165), e(6992), e(8783), e(3948);
-        var r = e(5531), t = e(7252), i = e(4370), s = e(3246), a = e(7360), o = e(1595);
+        var r = e(5531), t = e(7252), a = e(4370), s = e(3246), i = e(7360), o = e(1595);
         function n(y) {
-          return n = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(R) {
-            return typeof R;
-          } : function(R) {
-            return R && typeof Symbol == "function" && R.constructor === Symbol && R !== Symbol.prototype ? "symbol" : typeof R;
+          return n = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(I) {
+            return typeof I;
+          } : function(I) {
+            return I && typeof Symbol == "function" && I.constructor === Symbol && I !== Symbol.prototype ? "symbol" : typeof I;
           }, n(y);
         }
         function l(y) {
-          var R = this;
+          var I = this;
           if (typeof y.pagenum != "number" || typeof y.pagesize != "number")
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
             var H = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(H);
           }
-          var M = { pagenum: y.pagenum || 1, pagesize: y.pagesize || 20 }, D = this.context, z = D.orgName, X = D.appName, oe = D.accessToken, q = { url: this.apiUrl + "/" + z + "/" + X + "/chatrooms", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + oe }, data: M, success: function(J) {
-            typeof y.success == "function" && y.success(J);
-          }, error: function(J) {
-            J.error && J.error_description && R.onError && R.onError({ type: r.E.WEBIM_CONNCTION_LOAD_CHATROOM_ERROR, message: J.error_description, data: J }), typeof y.error == "function" && y.error(J);
+          var M = { pagenum: y.pagenum || 1, pagesize: y.pagesize || 20 }, D = this.context, J = D.orgName, X = D.appName, oe = D.accessToken, q = { url: this.apiUrl + "/" + J + "/" + X + "/chatrooms", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + oe }, data: M, success: function(z) {
+            typeof y.success == "function" && y.success(z);
+          }, error: function(z) {
+            z.error && z.error_description && I.onError && I.onError({ type: r.E.WEBIM_CONNCTION_LOAD_CHATROOM_ERROR, message: z.error_description, data: z }), typeof y.error == "function" && y.error(z);
           } };
-          return a.kg.debug("Call getChatRooms", y), i.hj.call(this, q, o.fI.GET_CHATROOM_LIST);
+          return i.kg.debug("Call getChatRooms", y), a.hj.call(this, q, o.fI.GET_CHATROOM_LIST);
         }
         function u(y) {
           if (typeof y.name != "string")
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = { name: y.name, description: y.description, maxusers: y.maxusers, owner: this.user, members: y.members }, M = this.context, D = M.orgName, z = M.appName, X = (M.accessToken, M.jid), oe = { url: "".concat(this.apiUrl, "/").concat(D, "/").concat(z, "/chatrooms?resource=").concat(X.clientResource), dataType: "json", type: "POST", data: JSON.stringify(H), headers: { Authorization: "Bearer " + y.token || 0, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call createChatRoom", y), i.hj.call(this, oe, o.fI.CREATE_CHATROOM);
+          var H = { name: y.name, description: y.description, maxusers: y.maxusers, owner: this.user, members: y.members }, M = this.context, D = M.orgName, J = M.appName, X = (M.accessToken, M.jid), oe = { url: "".concat(this.apiUrl, "/").concat(D, "/").concat(J, "/chatrooms?resource=").concat(X.clientResource), dataType: "json", type: "POST", data: JSON.stringify(H), headers: { Authorization: "Bearer " + y.token || 0, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call createChatRoom", y), a.hj.call(this, oe, o.fI.CREATE_CHATROOM);
         }
         function m(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = (H.accessToken, H.jid), X = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(y.chatRoomId, "?resource=").concat(z.clientResource), dataType: "json", type: "DELETE", headers: { Authorization: "Bearer " + y.token || 0 }, success: y.success, error: y.error };
-          return a.kg.debug("Call destroyChatRoom", y), i.hj.call(this, X, o.fI.DESTROY_CHATROOM);
+          var H = this.context, M = H.orgName, D = H.appName, J = (H.accessToken, H.jid), X = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(y.chatRoomId, "?resource=").concat(J.clientResource), dataType: "json", type: "DELETE", headers: { Authorization: "Bearer " + y.token || 0 }, success: y.success, error: y.error };
+          return i.kg.debug("Call destroyChatRoom", y), a.hj.call(this, X, o.fI.DESTROY_CHATROOM);
         }
         function g(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + y.chatRoomId, dataType: "json", type: "GET", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call getChatRoomDetails", y), i.hj.call(this, X, o.fI.GET_CHATROOM_DETAIL);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + y.chatRoomId, dataType: "json", type: "GET", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call getChatRoomDetails", y), a.hj.call(this, X, o.fI.GET_CHATROOM_DETAIL);
         }
         function h(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { groupname: y.chatRoomName, description: y.description, maxusers: y.maxusers }, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "?resource=").concat(X.clientResource), type: "PUT", data: JSON.stringify(q), dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call modifyChatRoom", y), i.hj.call(this, J, o.fI.MODIFY_CHATROOM);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { groupname: y.chatRoomName, description: y.description, maxusers: y.maxusers }, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "?resource=").concat(X.clientResource), type: "PUT", data: JSON.stringify(q), dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call modifyChatRoom", y), a.hj.call(this, z, o.fI.MODIFY_CHATROOM);
         }
         function d(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "" || typeof y.username != "string")
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/users/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call removeChatRoomMember", y), i.hj.call(this, J, o.fI.REMOVE_CHATROOM_MEMBER);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/users/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call removeChatRoomMember", y), a.hj.call(this, z, o.fI.REMOVE_CHATROOM_MEMBER);
         }
         var f = d;
         function b(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "" || !Array.isArray(y.users))
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = y.chatRoomId, M = y.users.join(","), D = this.context, z = D.orgName, X = D.appName, oe = D.accessToken, q = D.jid, J = { url: "".concat(this.apiUrl, "/").concat(z, "/").concat(X, "/chatrooms/").concat(H, "/users/").concat(M, "?resource=").concat(q.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + oe, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call removeChatRoomMembers", y), i.hj.call(this, J, o.fI.MULTI_REMOVE_CHATROOM_MEMBER);
+          var H = y.chatRoomId, M = y.users.join(","), D = this.context, J = D.orgName, X = D.appName, oe = D.accessToken, q = D.jid, z = { url: "".concat(this.apiUrl, "/").concat(J, "/").concat(X, "/chatrooms/").concat(H, "/users/").concat(M, "?resource=").concat(q.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + oe, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call removeChatRoomMembers", y), a.hj.call(this, z, o.fI.MULTI_REMOVE_CHATROOM_MEMBER);
         }
         var c = b;
-        function I(y) {
+        function S(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "" || !Array.isArray(y.users))
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = y.chatRoomId, M = { usernames: y.users }, D = this.context, z = D.orgName, X = D.appName, oe = D.accessToken, q = D.jid, J = { url: "".concat(this.apiUrl, "/").concat(z, "/").concat(X, "/chatrooms/").concat(H, "/users?resource=").concat(q.clientResource), type: "POST", data: JSON.stringify(M), dataType: "json", headers: { Authorization: "Bearer " + oe, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call addUsersToChatRoom", y), i.hj.call(this, J, o.fI.ADD_USERS_TO_CHATROOM);
+          var H = y.chatRoomId, M = { usernames: y.users }, D = this.context, J = D.orgName, X = D.appName, oe = D.accessToken, q = D.jid, z = { url: "".concat(this.apiUrl, "/").concat(J, "/").concat(X, "/chatrooms/").concat(H, "/users?resource=").concat(q.clientResource), type: "POST", data: JSON.stringify(M), dataType: "json", headers: { Authorization: "Bearer " + oe, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call addUsersToChatRoom", y), a.hj.call(this, z, o.fI.ADD_USERS_TO_CHATROOM);
         }
         function v(y) {
           if (typeof y.roomId != "string" || y.roomId === "")
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          return a.kg.debug("Call joinChatRoom", y), this.mSync.handleChatRoom(y, "join");
+          return i.kg.debug("Call joinChatRoom", y), this.mSync.handleChatRoom(y, "join");
         }
         function N(y) {
           if (typeof y.roomId != "string" || y.roomId === "")
             throw Error("Invalid parameter");
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          return a.kg.debug("Call leaveChatRoom", y), this.mSync.handleChatRoom(y, "leave");
+          return i.kg.debug("Call leaveChatRoom", y), this.mSync.handleChatRoom(y, "leave");
         }
         var x = N;
         function O(y) {
@@ -599,22 +599,22 @@ var EasemobChat = { exports: {} };
           if (isNaN(y.pageSize) || y.pageSize <= 0)
             throw Error('The parameter "pageSize" should be a positive number');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = { pagenum: y.pageNum, pagesize: y.pageSize }, M = this.context, D = M.orgName, z = M.appName, X = M.accessToken, oe = { url: this.apiUrl + "/" + D + "/" + z + "/chatrooms/" + y.chatRoomId + "/users", dataType: "json", type: "GET", data: H, headers: { Authorization: "Bearer " + X, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call listChatRoomMembers", y), i.hj.call(this, oe, o.fI.LIST_CHATROOM_MEMBERS);
+          var H = { pagenum: y.pageNum, pagesize: y.pageSize }, M = this.context, D = M.orgName, J = M.appName, X = M.accessToken, oe = { url: this.apiUrl + "/" + D + "/" + J + "/chatrooms/" + y.chatRoomId + "/users", dataType: "json", type: "GET", data: H, headers: { Authorization: "Bearer " + X, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call listChatRoomMembers", y), a.hj.call(this, oe, o.fI.LIST_CHATROOM_MEMBERS);
         }
         var C = O;
         function E(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/admin", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call getChatRoomAdmin", y), i.hj.call(this, oe, o.fI.GET_CHATROOM_ADMIN);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/admin", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call getChatRoomAdmin", y), a.hj.call(this, oe, o.fI.GET_CHATROOM_ADMIN);
         }
         function P(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
@@ -622,11 +622,11 @@ var EasemobChat = { exports: {} };
           if (typeof y.username != "string" || y.username === "")
             throw Error('Invalid parameter: "username"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { newadmin: y.username }, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/admin?resource=").concat(X.clientResource), type: "POST", dataType: "json", data: JSON.stringify(q), headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call setChatRoomAdmin", y), i.hj.call(this, J, o.fI.SET_CHATROOM_ADMIN);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { newadmin: y.username }, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/admin?resource=").concat(X.clientResource), type: "POST", dataType: "json", data: JSON.stringify(q), headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call setChatRoomAdmin", y), a.hj.call(this, z, o.fI.SET_CHATROOM_ADMIN);
         }
         function G(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
@@ -634,13 +634,13 @@ var EasemobChat = { exports: {} };
           if (typeof y.username != "string" || y.username === "")
             throw Error('Invalid parameter: "username"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/admin/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call removeChatRoomAdmin", y), i.hj.call(this, J, o.fI.REMOVE_CHATROOM_ADMIN);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/admin/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call removeChatRoomAdmin", y), a.hj.call(this, z, o.fI.REMOVE_CHATROOM_ADMIN);
         }
-        function K(y) {
+        function Z(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "groupId"');
           if (typeof y.username != "string" || y.username === "")
@@ -648,11 +648,11 @@ var EasemobChat = { exports: {} };
           if (typeof y.muteDuration != "number")
             throw Error('Invalid parameter: "muteDuration"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { usernames: [y.username], mute_duration: y.muteDuration }, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/mute?resource=").concat(X.clientResource), dataType: "json", type: "POST", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, data: JSON.stringify(q), success: y.success, error: y.error };
-          return a.kg.debug("Call muteChatRoomMember", y), i.hj.call(this, J, o.fI.MUTE_CHATROOM_MEMBER);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { usernames: [y.username], mute_duration: y.muteDuration }, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/mute?resource=").concat(X.clientResource), dataType: "json", type: "POST", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, data: JSON.stringify(q), success: y.success, error: y.error };
+          return i.kg.debug("Call muteChatRoomMember", y), a.hj.call(this, z, o.fI.MUTE_CHATROOM_MEMBER);
         }
         function F(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
@@ -660,35 +660,35 @@ var EasemobChat = { exports: {} };
           if (typeof y.username != "string" || y.username === "")
             throw Error('Invalid parameter: "username"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/mute/").concat(q, "?resource=").concat(X.clientResource), dataType: "json", type: "DELETE", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call unmuteChatRoomMember", y), i.hj.call(this, J, o.fI.REMOVE_MUTE_CHATROOM_MEMBER);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/mute/").concat(q, "?resource=").concat(X.clientResource), dataType: "json", type: "DELETE", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call unmuteChatRoomMember", y), a.hj.call(this, z, o.fI.REMOVE_MUTE_CHATROOM_MEMBER);
         }
         var Y = F;
-        function Z(y) {
+        function K(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/mute", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call getChatRoomMutelist", y), i.hj.call(this, oe, o.fI.GET_MUTE_CHATROOM_MEMBERS);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/mute", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call getChatRoomMutelist", y), a.hj.call(this, oe, o.fI.GET_MUTE_CHATROOM_MEMBERS);
         }
-        var V = Z, ne = Z;
+        var V = K, ne = K;
         function ae(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (typeof y.username != "string" || y.username === "")
             throw Error('Invalid parameter: "username"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/blocks/users/").concat(q, "?resource=").concat(X.clientResource), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call blockChatRoomMember", y), i.hj.call(this, J, o.fI.SET_CHATROOM_MEMBER_TO_BLACK);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/blocks/users/").concat(q, "?resource=").concat(X.clientResource), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call blockChatRoomMember", y), a.hj.call(this, z, o.fI.SET_CHATROOM_MEMBER_TO_BLACK);
         }
         var se = ae;
         function ue(y) {
@@ -697,11 +697,11 @@ var EasemobChat = { exports: {} };
           if (!Array.isArray(y.usernames))
             throw Error('Invalid parameter: "usernames"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { usernames: y.usernames }, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/blocks/users?resource=").concat(X.clientResource), data: JSON.stringify(q), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Chat blockChatRoomMembers:", J), i.hj.call(this, J, o.fI.MULTI_SET_CHATROOM_MEMBER_TO_BLACK);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { usernames: y.usernames }, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/blocks/users?resource=").concat(X.clientResource), data: JSON.stringify(q), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Chat blockChatRoomMembers:", z), a.hj.call(this, z, o.fI.MULTI_SET_CHATROOM_MEMBER_TO_BLACK);
         }
         var me = ue;
         function ge(y) {
@@ -710,56 +710,56 @@ var EasemobChat = { exports: {} };
           if (typeof y.username != "string" || y.username === "")
             throw Error('Invalid parameter: "username"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/blocks/users/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call unblockChatRoomMember", y), i.hj.call(this, J, o.fI.REMOVE_CHATROOM_MEMBER_BLACK);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.username, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/blocks/users/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call unblockChatRoomMember", y), a.hj.call(this, z, o.fI.REMOVE_CHATROOM_MEMBER_BLACK);
         }
         var Ce = ge;
-        function Ie(y) {
+        function Re(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (!Array.isArray(y.usernames))
             throw Error('Invalid parameter: "usernames"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.usernames.join(","), J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/blocks/users/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call unblockChatRoomMembers", y), i.hj.call(this, J, o.fI.MULTI_REMOVE_CHATROOM_MEMBER_BLACK);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = y.usernames.join(","), z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/blocks/users/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call unblockChatRoomMembers", y), a.hj.call(this, z, o.fI.MULTI_REMOVE_CHATROOM_MEMBER_BLACK);
         }
-        var Re = Ie;
+        var Ie = Re;
         function Oe(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/blocks/users", type: "GET", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call getChatRoomBlocklist", y), i.hj.call(this, oe, o.fI.GET_CHATROOM_BLOCK_MEMBERS);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/blocks/users", type: "GET", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call getChatRoomBlocklist", y), a.hj.call(this, oe, o.fI.GET_CHATROOM_BLOCK_MEMBERS);
         }
         var fe = Oe, ce = Oe;
         function Ue(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/ban?resource=").concat(X.clientResource), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call disableSendChatRoomMsg", y), i.hj.call(this, q, o.fI.DISABLED_CHATROOM_SEND_MSG);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/ban?resource=").concat(X.clientResource), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call disableSendChatRoomMsg", y), a.hj.call(this, q, o.fI.DISABLED_CHATROOM_SEND_MSG);
         }
-        function Ze(y) {
+        function Ke(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/ban?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call enableSendChatRoomMsg", y), i.hj.call(this, q, o.fI.ENABLE_CHATROOM_SEND_MSG);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/ban?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call enableSendChatRoomMsg", y), a.hj.call(this, q, o.fI.ENABLE_CHATROOM_SEND_MSG);
         }
         function $e(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
@@ -767,11 +767,11 @@ var EasemobChat = { exports: {} };
           if (!Array.isArray(y.users))
             throw Error('Invalid parameter: "users"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { usernames: y.users }, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/white/users?resource=").concat(X.clientResource), type: "POST", data: JSON.stringify(q), dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call addUsersToChatRoomWhitelist", y), i.hj.call(this, J, o.fI.ADD_USERS_TO_CHATROOM);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { usernames: y.users }, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/white/users?resource=").concat(X.clientResource), type: "POST", data: JSON.stringify(q), dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call addUsersToChatRoomWhitelist", y), a.hj.call(this, z, o.fI.ADD_USERS_TO_CHATROOM);
         }
         var Ve = $e;
         function Be(y) {
@@ -780,22 +780,22 @@ var EasemobChat = { exports: {} };
           if (typeof y.userName != "string" || y.userName === "")
             throw Error('Invalid parameter: "userName"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/white/users/").concat(y.userName, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call removeChatRoomAllowlistMember", y), i.hj.call(this, q, o.fI.REMOVE_CHATROOM_WHITE_USERS);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.chatRoomId, q = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/white/users/").concat(y.userName, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call removeChatRoomAllowlistMember", y), a.hj.call(this, q, o.fI.REMOVE_CHATROOM_WHITE_USERS);
         }
-        var Ke = Be, Qe = Be;
+        var Ze = Be, Qe = Be;
         function Pe(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/white/users", type: "GET", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call getChatRoomAllowlist", y), i.hj.call(this, oe, o.fI.GET_CHATROOM_WHITE_USERS);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/white/users", type: "GET", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call getChatRoomAllowlist", y), a.hj.call(this, oe, o.fI.GET_CHATROOM_WHITE_USERS);
         }
         var Le = Pe;
         function xe(y) {
@@ -804,22 +804,22 @@ var EasemobChat = { exports: {} };
           if (typeof y.userName != "string" || y.userName === "")
             throw Error('Invalid parameter: "userName"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/white/users/" + y.userName, type: "GET", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call isInChatRoomAllowlist", y), i.hj.call(this, oe, o.fI.CHECK_CHATROOM_WHITE_USER);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = y.chatRoomId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/chatrooms/" + X + "/white/users/" + y.userName, type: "GET", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call isInChatRoomAllowlist", y), a.hj.call(this, oe, o.fI.CHECK_CHATROOM_WHITE_USER);
         }
         var ve = xe;
         function we(y) {
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error('Invalid parameter: "chatRoomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.userId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/sdk/chatrooms/" + y.chatRoomId + "/mute/" + X, dataType: "json", type: "GET", headers: { Authorization: "Bearer " + z } };
-          return a.kg.debug("Call isInChatRoomMutelist", y), i.hj.call(this, oe).then(function(q) {
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.userId, oe = { url: this.apiUrl + "/" + M + "/" + D + "/sdk/chatrooms/" + y.chatRoomId + "/mute/" + X, dataType: "json", type: "GET", headers: { Authorization: "Bearer " + J } };
+          return i.kg.debug("Call isInChatRoomMutelist", y), a.hj.call(this, oe).then(function(q) {
             return q.data;
           });
         }
@@ -827,11 +827,11 @@ var EasemobChat = { exports: {} };
           if (typeof y.roomId != "string" || y.roomId === "")
             throw Error('Invalid parameter: "roomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = y.roomId, oe = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(X, "/announcement"), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call fetchChatRoomAnnouncement", y), i.hj.call(this, oe, o.fI.GET_CHATROOM_ANN);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = y.roomId, oe = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(X, "/announcement"), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call fetchChatRoomAnnouncement", y), a.hj.call(this, oe, o.fI.GET_CHATROOM_ANN);
         }
         function Ne(y) {
           if (typeof y.roomId != "string" || y.roomId === "")
@@ -839,11 +839,11 @@ var EasemobChat = { exports: {} };
           if (typeof y.announcement != "string")
             throw Error('Invalid parameter: "announcement"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.roomId, q = { announcement: y.announcement }, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/announcement?resource=").concat(X.clientResource), type: "POST", dataType: "json", data: JSON.stringify(q), headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call updateChatRoomAnnouncement:", y), i.hj.call(this, J, o.fI.UPDATE_CHATROOM_ANN);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.roomId, q = { announcement: y.announcement }, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/announcement?resource=").concat(X.clientResource), type: "POST", dataType: "json", data: JSON.stringify(q), headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call updateChatRoomAnnouncement:", y), a.hj.call(this, z, o.fI.UPDATE_CHATROOM_ANN);
         }
         function j(y) {
           if (typeof y.roomId != "string" || y.roomId === "")
@@ -851,8 +851,8 @@ var EasemobChat = { exports: {} };
           if (n(y.file) !== "object")
             throw Error('Invalid parameter: "file"');
           if (s.XZ.call(this)) {
-            var R = this.context, H = R.orgName, M = R.appName, D = R.accessToken, z = R.jid, X = y.roomId;
-            i.cT.call(this, { uploadUrl: "".concat(this.apiUrl, "/").concat(H, "/").concat(M, "/chatrooms/").concat(X, "/share_files?resource=").concat(z.clientResource), onFileUploadProgress: y.onFileUploadProgress, onFileUploadComplete: y.onFileUploadComplete, onFileUploadError: y.onFileUploadError, onFileUploadCanceled: y.onFileUploadCanceled, accessToken: D, apiUrl: this.apiUrl, file: y.file, appKey: this.context.appKey }, o.fI.UPLOAD_CHATROOM_FILE), a.kg.debug("Call uploadChatRoomSharedFile", y);
+            var I = this.context, H = I.orgName, M = I.appName, D = I.accessToken, J = I.jid, X = y.roomId;
+            a.cT.call(this, { uploadUrl: "".concat(this.apiUrl, "/").concat(H, "/").concat(M, "/chatrooms/").concat(X, "/share_files?resource=").concat(J.clientResource), onFileUploadProgress: y.onFileUploadProgress, onFileUploadComplete: y.onFileUploadComplete, onFileUploadError: y.onFileUploadError, onFileUploadCanceled: y.onFileUploadCanceled, accessToken: D, apiUrl: this.apiUrl, file: y.file, appKey: this.context.appKey }, o.fI.UPLOAD_CHATROOM_FILE), i.kg.debug("Call uploadChatRoomSharedFile", y);
           }
         }
         function B(y) {
@@ -861,21 +861,21 @@ var EasemobChat = { exports: {} };
           if (typeof y.fileId != "string" || y.fileId === "")
             throw Error('Invalid parameter: "fileId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.jid, oe = y.roomId, q = y.fileId, J = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/share_files/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call deleteChatRoomSharedFile", y), i.hj.call(this, J, o.fI.DELETE_CHATROOM_FILE);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.jid, oe = y.roomId, q = y.fileId, z = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(oe, "/share_files/").concat(q, "?resource=").concat(X.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call deleteChatRoomSharedFile", y), a.hj.call(this, z, o.fI.DELETE_CHATROOM_FILE);
         }
         function T(y) {
           if (typeof y.roomId != "string" || y.roomId === "")
             throw Error('Invalid parameter: "roomId"');
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = y.roomId, oe = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(X, "/share_files"), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + z, "Content-Type": "application/json", accept: "application/json" }, success: y.success, error: y.error };
-          return a.kg.debug("Call fetchChatRoomSharedFileList", y), i.hj.call(this, oe, o.fI.GET_CHATROOM_FILES);
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = y.roomId, oe = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/chatrooms/").concat(X, "/share_files"), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + J, "Content-Type": "application/json", accept: "application/json" }, success: y.success, error: y.error };
+          return i.kg.debug("Call fetchChatRoomSharedFileList", y), a.hj.call(this, oe, o.fI.GET_CHATROOM_FILES);
         }
         var W = T;
         function _(y) {
@@ -884,12 +884,12 @@ var EasemobChat = { exports: {} };
           if (y.attributeKeys && !Array.isArray(y.attributeKeys))
             throw Error('"Invalid parameter attributeKeys": ' + y.attributeKeys);
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = (H.jid, y.chatRoomId), oe = { keys: y.attributeKeys }, q = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/metadata/chatroom/").concat(X), type: "POST", dataType: "json", data: JSON.stringify(oe), headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" } };
-          return a.kg.debug("Call getChatRoomAttributes:", y), i.hj.call(this, q, o.fI.GET_CHATROOM_ATTR).then(function(J) {
-            return { data: J.data, type: J.type };
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = (H.jid, y.chatRoomId), oe = { keys: y.attributeKeys }, q = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/metadata/chatroom/").concat(X), type: "POST", dataType: "json", data: JSON.stringify(oe), headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" } };
+          return i.kg.debug("Call getChatRoomAttributes:", y), a.hj.call(this, q, o.fI.GET_CHATROOM_ATTR).then(function(z) {
+            return { data: z.data, type: z.type };
           });
         }
         function A(y) {
@@ -898,16 +898,16 @@ var EasemobChat = { exports: {} };
           if (n(y.attributes) !== "object")
             throw Error("Invalid parameter attributes: " + y.attributes);
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.userId, oe = y.chatRoomId, q = y.attributes, J = y.autoDelete, te = J === void 0 || J, re = y.isForced ? "/forced" : "", Ae = { metaData: q, autoDelete: te ? "DELETE" : "NO_DELETE" }, We = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/metadata/chatroom/").concat(oe, "/user/").concat(X) + re, type: "PUT", dataType: "json", data: JSON.stringify(Ae), headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" } };
-          return a.kg.debug("Call setChatRoomAttributes:", y), i.hj.call(this, We, o.fI.SET_CHATROOM_ATTR).then(function(Te) {
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.userId, oe = y.chatRoomId, q = y.attributes, z = y.autoDelete, te = z === void 0 || z, re = y.isForced ? "/forced" : "", Ae = { metaData: q, autoDelete: te ? "DELETE" : "NO_DELETE" }, We = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/metadata/chatroom/").concat(oe, "/user/").concat(X) + re, type: "PUT", dataType: "json", data: JSON.stringify(Ae), headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" } };
+          return i.kg.debug("Call setChatRoomAttributes:", y), a.hj.call(this, We, o.fI.SET_CHATROOM_ATTR).then(function(Te) {
             return (0, s._W)(Te);
           });
         }
         function L(y) {
-          var R;
+          var I;
           if (typeof y.chatRoomId != "string" || y.chatRoomId === "")
             throw Error("Invalid parameter chatRoomId: " + y.chatRoomId);
           if (typeof y.attributeKey != "string" || y.attributeKey === "")
@@ -918,11 +918,11 @@ var EasemobChat = { exports: {} };
             var H = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(H);
           }
-          var M = this.context, D = M.orgName, z = M.appName, X = M.accessToken, oe = M.userId, q = y.chatRoomId, J = y.attributeKey, te = y.attributeValue, re = y.autoDelete, Ae = re === void 0 || re, We = y.isForced ? "/forced" : "", Te = { metaData: (R = {}, R[J] = te, R), autoDelete: Ae ? "DELETE" : "NO_DELETE" }, je = { url: "".concat(this.apiUrl, "/").concat(D, "/").concat(z, "/metadata/chatroom/").concat(q, "/user/").concat(oe) + We, type: "PUT", dataType: "json", data: JSON.stringify(Te), headers: { Authorization: "Bearer " + X, "Content-Type": "application/json" } };
-          return a.kg.debug("Call setChatRoomAttribute:", y), i.hj.call(this, je, o.fI.SET_CHATROOM_ATTR).then(function(ie) {
-            var ze = (0, s.H7)(ie);
-            if (ze)
-              throw ze;
+          var M = this.context, D = M.orgName, J = M.appName, X = M.accessToken, oe = M.userId, q = y.chatRoomId, z = y.attributeKey, te = y.attributeValue, re = y.autoDelete, Ae = re === void 0 || re, We = y.isForced ? "/forced" : "", Te = { metaData: (I = {}, I[z] = te, I), autoDelete: Ae ? "DELETE" : "NO_DELETE" }, je = { url: "".concat(this.apiUrl, "/").concat(D, "/").concat(J, "/metadata/chatroom/").concat(q, "/user/").concat(oe) + We, type: "PUT", dataType: "json", data: JSON.stringify(Te), headers: { Authorization: "Bearer " + X, "Content-Type": "application/json" } };
+          return i.kg.debug("Call setChatRoomAttribute:", y), a.hj.call(this, je, o.fI.SET_CHATROOM_ATTR).then(function(ie) {
+            var Je = (0, s.H7)(ie);
+            if (Je)
+              throw Je;
           });
         }
         function w(y) {
@@ -931,11 +931,11 @@ var EasemobChat = { exports: {} };
           if (!Array.isArray(y.attributeKeys))
             throw Error('"Invalid parameter attributes": ' + y.attributeKeys);
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.userId, oe = y.chatRoomId, q = y.attributeKeys, J = y.isForced ? "/forced" : "", te = { keys: q }, re = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/metadata/chatroom/").concat(oe, "/user/").concat(X) + J, type: "DELETE", dataType: "json", data: JSON.stringify(te), headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" } };
-          return a.kg.debug("Call removeChatRoomAttributes:", y), i.hj.call(this, re, o.fI.DELETE_CHATROOM_ATTR).then(function(Ae) {
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.userId, oe = y.chatRoomId, q = y.attributeKeys, z = y.isForced ? "/forced" : "", te = { keys: q }, re = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/metadata/chatroom/").concat(oe, "/user/").concat(X) + z, type: "DELETE", dataType: "json", data: JSON.stringify(te), headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" } };
+          return i.kg.debug("Call removeChatRoomAttributes:", y), a.hj.call(this, re, o.fI.DELETE_CHATROOM_ATTR).then(function(Ae) {
             return (0, s._W)(Ae);
           });
         }
@@ -945,36 +945,36 @@ var EasemobChat = { exports: {} };
           if (typeof y.attributeKey != "string" || y.attributeKey === "")
             throw Error('"Invalid parameter attributeKey": ' + y.attributeKey);
           if (!s.XZ.call(this)) {
-            var R = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
-            return Promise.reject(R);
+            var I = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            return Promise.reject(I);
           }
-          var H = this.context, M = H.orgName, D = H.appName, z = H.accessToken, X = H.userId, oe = y.chatRoomId, q = y.attributeKey, J = y.isForced ? "/forced" : "", te = { keys: [q] }, re = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/metadata/chatroom/").concat(oe, "/user/").concat(X) + J, type: "DELETE", dataType: "json", data: JSON.stringify(te), headers: { Authorization: "Bearer " + z, "Content-Type": "application/json" } };
-          return a.kg.debug("Call removeChatRoomAttribute:", y), i.hj.call(this, re, o.fI.DELETE_CHATROOM_ATTR).then(function(Ae) {
+          var H = this.context, M = H.orgName, D = H.appName, J = H.accessToken, X = H.userId, oe = y.chatRoomId, q = y.attributeKey, z = y.isForced ? "/forced" : "", te = { keys: [q] }, re = { url: "".concat(this.apiUrl, "/").concat(M, "/").concat(D, "/metadata/chatroom/").concat(oe, "/user/").concat(X) + z, type: "DELETE", dataType: "json", data: JSON.stringify(te), headers: { Authorization: "Bearer " + J, "Content-Type": "application/json" } };
+          return i.kg.debug("Call removeChatRoomAttribute:", y), a.hj.call(this, re, o.fI.DELETE_CHATROOM_ATTR).then(function(Ae) {
             var We = (0, s.H7)(Ae);
             if (We)
               throw We;
           });
         }
-      }, 4363: function(p, S, e) {
-        e.d(S, { w: function() {
-          return i;
+      }, 4363: function(p, R, e) {
+        e.d(R, { w: function() {
+          return a;
         } }), e(9601), e(2772);
         var r = e(7360), t = function() {
           return t = Object.assign || function(s) {
-            for (var a, o = 1, n = arguments.length; o < n; o++)
-              for (var l in a = arguments[o])
-                Object.prototype.hasOwnProperty.call(a, l) && (s[l] = a[l]);
+            for (var i, o = 1, n = arguments.length; o < n; o++)
+              for (var l in i = arguments[o])
+                Object.prototype.hasOwnProperty.call(i, l) && (s[l] = i[l]);
             return s;
           }, t.apply(this, arguments);
         };
-        function i(s) {
-          var a, o, n, l = s.id, u = s.payload, m = s.timestamp, g = s.to, h = u.bodies && u.bodies.length > 0 ? u.bodies[0] : {}, d = {}, f = {}, b = u.type ? u.type : g.indexOf("@conference.easemob.com") > -1 ? "groupChat" : "singleChat";
+        function a(s) {
+          var i, o, n, l = s.id, u = s.payload, m = s.timestamp, g = s.to, h = u.bodies && u.bodies.length > 0 ? u.bodies[0] : {}, d = {}, f = {}, b = u.type ? u.type : g.indexOf("@conference.easemob.com") > -1 ? "groupChat" : "singleChat";
           switch (b = b === "chat" ? "singleChat" : b, h.type) {
             case "txt":
-              var c = (a = u == null ? void 0 : u.meta) === null || a === void 0 ? void 0 : a.edit_msg;
+              var c = (i = u == null ? void 0 : u.meta) === null || i === void 0 ? void 0 : i.edit_msg;
               if (d = { id: l, type: "txt", chatType: b, msg: h.msg || "", to: u.to || "", from: u.from, time: m, ext: u.ext }, c) {
-                var I = c.edit_time, v = c.operator, N = c.count;
-                d.modifiedInfo = { operationTime: I, operatorId: v, operationCount: N };
+                var S = c.edit_time, v = c.operator, N = c.count;
+                d.modifiedInfo = { operationTime: S, operatorId: v, operationCount: N };
               }
               break;
             case "img":
@@ -1010,17 +1010,17 @@ var EasemobChat = { exports: {} };
           }
           return t(t({}, d), f);
         }
-      }, 2856: function(p, S, e) {
-        e.r(S), e.d(S, { acceptGroupInvite: function() {
-          return Re;
+      }, 2856: function(p, R, e) {
+        e.r(R), e.d(R, { acceptGroupInvite: function() {
+          return Ie;
         }, acceptGroupJoinRequest: function() {
           return me;
         }, addUsersToGroupAllowlist: function() {
-          return R;
+          return I;
         }, addUsersToGroupWhitelist: function() {
           return y;
         }, agreeInviteIntoGroup: function() {
-          return Ie;
+          return Re;
         }, agreeJoinGroup: function() {
           return ue;
         }, blockGroup: function() {
@@ -1032,7 +1032,7 @@ var EasemobChat = { exports: {} };
         }, blockGroupMessages: function() {
           return g;
         }, changeGroupOwner: function() {
-          return I;
+          return S;
         }, changeOwner: function() {
           return c;
         }, createGroup: function() {
@@ -1080,9 +1080,9 @@ var EasemobChat = { exports: {} };
         }, getGroupMutelist: function() {
           return xe;
         }, getGroupSharedFilelist: function() {
-          return ze;
+          return Je;
         }, getGroupWhitelist: function() {
-          return z;
+          return J;
         }, getJoinedGroups: function() {
           return b;
         }, getMuted: function() {
@@ -1100,7 +1100,7 @@ var EasemobChat = { exports: {} };
         }, isGroupWhiteUser: function() {
           return oe;
         }, isInGroupAllowlist: function() {
-          return J;
+          return z;
         }, isInGroupMutelist: function() {
           return te;
         }, isInGroupWhiteList: function() {
@@ -1122,7 +1122,7 @@ var EasemobChat = { exports: {} };
         }, muteGroupMember: function() {
           return Be;
         }, quitGroup: function() {
-          return Z;
+          return K;
         }, rejectGroupInvite: function() {
           return fe;
         }, rejectGroupJoinRequest: function() {
@@ -1134,7 +1134,7 @@ var EasemobChat = { exports: {} };
         }, removeAdmin: function() {
           return G;
         }, removeGroupAdmin: function() {
-          return K;
+          return Z;
         }, removeGroupAllowlistMember: function() {
           return D;
         }, removeGroupBlockMulti: function() {
@@ -1148,9 +1148,9 @@ var EasemobChat = { exports: {} };
         }, removeGroupWhitelistMember: function() {
           return M;
         }, removeMultiGroupMember: function() {
-          return Ze;
-        }, removeMute: function() {
           return Ke;
+        }, removeMute: function() {
+          return Ze;
         }, removeSingleGroupMember: function() {
           return ce;
         }, rmUsersFromGroupWhitelist: function() {
@@ -1160,7 +1160,7 @@ var EasemobChat = { exports: {} };
         }, setGroupAdmin: function() {
           return P;
         }, setGroupMemberAttributes: function() {
-          return Je;
+          return ze;
         }, unblockGroupMember: function() {
           return B;
         }, unblockGroupMembers: function() {
@@ -1172,7 +1172,7 @@ var EasemobChat = { exports: {} };
         }, uploadGroupSharedFile: function() {
           return Te;
         } }), e(1539), e(8674), e(2526), e(1817), e(2165), e(6992), e(8783), e(3948), e(2222), e(6699), e(2023), e(9554), e(4747), e(8309), e(9753), e(9600);
-        var r = e(5531), t = e(7252), i = e(4370), s = e(3246), a = e(7360), o = e(1595);
+        var r = e(5531), t = e(7252), a = e(4370), s = e(3246), i = e(7360), o = e(1595);
         function n(U) {
           return n = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(Ee) {
             return typeof Ee;
@@ -1190,7 +1190,7 @@ var EasemobChat = { exports: {} };
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups?resource=").concat(Se.clientResource), dataType: "json", type: "POST", data: JSON.stringify({ owner: this.user, groupname: U.data.groupname, desc: U.data.desc, members: U.data.members, public: U.data.public, approval: U.data.approval, allowinvites: U.data.allowinvites, invite_need_confirm: U.data.inviteNeedConfirm, maxusers: U.data.maxusers, custom: U.data.ext }), headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: function(le) {
             U.success && U.success(le);
           }, error: U.error };
-          return a.kg.debug("Call createGroup:", U), i.hj.call(this, ee, o.fI.CREATE_GROUP);
+          return i.kg.debug("Call createGroup:", U), a.hj.call(this, ee, o.fI.CREATE_GROUP);
         }
         var u = l;
         function m(U) {
@@ -1202,7 +1202,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Q);
           }
           var ye = this.context, _e = ye.orgName, be = ye.appName, Se = ye.accessToken, ee = ye.jid, le = { entities: [(Ee = {}, Ee["notification_ignore_" + U.groupId] = !0, Ee)] }, de = { type: "PUT", url: "".concat(this.apiUrl, "/").concat(_e, "/").concat(be, "/users/").concat(this.user, "?resource=").concat(ee.clientResource), data: JSON.stringify(le), dataType: "json", headers: { Authorization: "Bearer " + Se, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call blockGroupMessages", U), i.hj.call(this, de, o.fI.BLOCK_GROUP);
+          return i.kg.debug("Call blockGroupMessages", U), a.hj.call(this, de, o.fI.BLOCK_GROUP);
         }
         var g = m;
         function h(U) {
@@ -1215,7 +1215,7 @@ var EasemobChat = { exports: {} };
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = { limit: U.limit, cursor: U.cursor };
           U.cursor || delete Se.cursor;
           var ee = { url: this.apiUrl + "/" + ye + "/" + _e + "/publicchatgroups", type: "GET", dataType: "json", data: Se, headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call listGroups", U), i.hj.call(this, ee, o.fI.LIST_GROUP);
+          return i.kg.debug("Call listGroups", U), a.hj.call(this, ee, o.fI.LIST_GROUP);
         }
         var d = h;
         function f(U) {
@@ -1224,7 +1224,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = { url: this.apiUrl + "/" + ye + "/" + _e + "/users/" + this.user + "/joined_chatgroups", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U && (U == null ? void 0 : U.success), error: U && (U == null ? void 0 : U.error) };
-          return a.kg.debug("Call getJoinedGroups", U), i.hj.call(this, Se, o.fI.GET_USER_GROUP);
+          return i.kg.debug("Call getJoinedGroups", U), a.hj.call(this, Se, o.fI.GET_USER_GROUP);
         }
         function b(U) {
           if (typeof U.pageNum != "number" || typeof U.pageSize != "number")
@@ -1236,7 +1236,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = U.needAffiliations || U.needRole ? "/chatgroups/user/".concat(this.user, "?pagenum=").concat(U.pageNum, "&pagesize=").concat(U.pageSize, "&needAffiliations=").concat(U.needAffiliations, "&needRole=").concat(U.needRole) : "/users/".concat(this.user, "/joined_chatgroups?pagenum=").concat(U.pageNum, "&pagesize=").concat(U.pageSize), ee = { url: this.apiUrl + "/" + ye + "/" + _e + Se, dataType: "json", type: "GET", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U && (U == null ? void 0 : U.success), error: U && (U == null ? void 0 : U.error) };
-          return a.kg.debug("Call getGroup", U), i.hj.call(this, ee, o.fI.GET_USER_GROUP).then(function(le) {
+          return i.kg.debug("Call getGroup", U), a.hj.call(this, ee, o.fI.GET_USER_GROUP).then(function(le) {
             var de = le.uri, He = le.entities, pe = [];
             return de.includes("joined_chatgroups") || (He.forEach(function(Xe) {
               var Ye = { affiliationsCount: Xe.affiliations_count, groupName: Xe.name, groupId: Xe.groupId, role: Xe.permission, disabled: Xe.disabled, approval: Xe.membersonly, allowInvites: Xe.allowinvites, description: Xe.description, maxUsers: Xe.maxusers, public: Xe.public };
@@ -1252,9 +1252,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = { newowner: U.newOwner }, ye = this.context, _e = ye.orgName, be = ye.appName, Se = ye.accessToken, ee = ye.jid, le = { url: "".concat(this.apiUrl, "/").concat(_e, "/").concat(be, "/chatgroups/").concat(U.groupId, "?resource=").concat(ee.clientResource), type: "PUT", dataType: "json", headers: { Authorization: "Bearer " + Se, "Content-Type": "application/json" }, data: JSON.stringify(Q), success: U.success, error: U.error };
-          return a.kg.debug("Call changeOwner", U), i.hj.call(this, le, o.fI.CHANGE_OWNER);
+          return i.kg.debug("Call changeOwner", U), a.hj.call(this, le, o.fI.CHANGE_OWNER);
         }
-        var I = c;
+        var S = c;
         function v(U) {
           if (typeof U.groupId != "string" && !Array.isArray(U.groupId))
             throw Error('Invalid parameter: "groupId"');
@@ -1263,7 +1263,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = { url: this.apiUrl + "/" + ye + "/" + _e + "/chatgroups/" + U.groupId + "?joined_time=true", type: "GET", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call getGroupInfo", U), i.hj.call(this, Se, o.fI.GET_GROUP_INFO);
+          return i.kg.debug("Call getGroupInfo", U), a.hj.call(this, Se, o.fI.GET_GROUP_INFO);
         }
         function N(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1273,7 +1273,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { groupname: U.groupName, description: U.description, custom: U.ext }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "?resource=").concat(Se.clientResource), type: "PUT", data: JSON.stringify(le), dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call modifyGroup", U), i.hj.call(this, de, o.fI.MODIFY_GROUP);
+          return i.kg.debug("Call modifyGroup", U), a.hj.call(this, de, o.fI.MODIFY_GROUP);
         }
         function x(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1287,7 +1287,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = { pagenum: U.pageNum, pagesize: U.pageSize }, ye = this.context, _e = ye.orgName, be = ye.appName, Se = ye.accessToken, ee = { url: this.apiUrl + "/" + _e + "/" + be + "/chatgroups/" + U.groupId + "/users", dataType: "json", type: "GET", data: Q, headers: { Authorization: "Bearer " + Se, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call listGroupMember", U), i.hj.call(this, ee, o.fI.LIST_GROUP_MEMBER);
+          return i.kg.debug("Call listGroupMember", U), a.hj.call(this, ee, o.fI.LIST_GROUP_MEMBER);
         }
         var O = x;
         function C(U) {
@@ -1298,7 +1298,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = U.groupId, ee = { url: this.apiUrl + "/" + ye + "/" + _e + "/chatgroups/" + Se + "/admin", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call getGroupAdmin", U), i.hj.call(this, ee, o.fI.GET_GROUP_ADMIN);
+          return i.kg.debug("Call getGroupAdmin", U), a.hj.call(this, ee, o.fI.GET_GROUP_ADMIN);
         }
         function E(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1310,7 +1310,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { newadmin: U.username }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/admin?resource=").concat(Se.clientResource), type: "POST", dataType: "json", data: JSON.stringify(le), headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call setGroupAdmin", U), i.hj.call(this, de, o.fI.SET_GROUP_ADMIN);
+          return i.kg.debug("Call setGroupAdmin", U), a.hj.call(this, de, o.fI.SET_GROUP_ADMIN);
         }
         var P = E;
         function G(U) {
@@ -1323,9 +1323,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = U.username, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/admin/").concat(le, "?resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call removeAdmin", U), i.hj.call(this, de, o.fI.REMOVE_GROUP_ADMIN);
+          return i.kg.debug("Call removeAdmin", U), a.hj.call(this, de, o.fI.REMOVE_GROUP_ADMIN);
         }
-        var K = G;
+        var Z = G;
         function F(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
@@ -1334,10 +1334,10 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "?version=v3&resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call destroyGroup", U), i.hj.call(this, le, o.fI.DISSOLVE_GROUP);
+          return i.kg.debug("Call destroyGroup", U), a.hj.call(this, le, o.fI.DISSOLVE_GROUP);
         }
         var Y = F;
-        function Z(U) {
+        function K(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
           if (!s.XZ.call(this)) {
@@ -1345,9 +1345,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/quit?resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call quitGroup", U), i.hj.call(this, le, o.fI.QUIT_GROUP);
+          return i.kg.debug("Call quitGroup", U), a.hj.call(this, le, o.fI.QUIT_GROUP);
         }
-        var V = Z;
+        var V = K;
         function ne(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
@@ -1358,7 +1358,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = U.groupId, ye = { usernames: U.users }, _e = this.context, be = _e.orgName, Se = _e.appName, ee = _e.accessToken, le = _e.jid, de = { url: "".concat(this.apiUrl, "/").concat(be, "/").concat(Se, "/chatgroups/").concat(Q, "/invite?resource=").concat(le.clientResource), type: "POST", data: JSON.stringify(ye), dataType: "json", headers: { Authorization: "Bearer " + ee, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call inviteUsersToGroup", U), i.hj.call(this, de, o.fI.INVITE_TO_GROUP);
+          return i.kg.debug("Call inviteUsersToGroup", U), a.hj.call(this, de, o.fI.INVITE_TO_GROUP);
         }
         var ae = ne;
         function se(U) {
@@ -1369,7 +1369,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(U.groupId, "/apply?resource=").concat(Se.clientResource), type: "POST", dataType: "json", data: JSON.stringify({ message: U.message || "" }), headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call joinGroup", U), i.hj.call(this, ee, o.fI.JOIN_GROUP);
+          return i.kg.debug("Call joinGroup", U), a.hj.call(this, ee, o.fI.JOIN_GROUP);
         }
         function ue(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1381,7 +1381,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { applicant: U.applicant, verifyResult: !0, reason: "no clue" }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/apply_verify?resource=").concat(Se.clientResource), type: "POST", dataType: "json", data: JSON.stringify(le), headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call agreeJoinGroup", U), i.hj.call(this, de, o.fI.AGREE_JOIN_GROUP);
+          return i.kg.debug("Call agreeJoinGroup", U), a.hj.call(this, de, o.fI.AGREE_JOIN_GROUP);
         }
         var me = ue;
         function ge(U) {
@@ -1394,10 +1394,10 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { applicant: U.applicant, verifyResult: !1, reason: U.reason || "" }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/apply_verify?resource=").concat(Se.clientResource), type: "POST", dataType: "json", data: JSON.stringify(le), headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call rejectGroupJoinRequest", U), i.hj.call(this, de, o.fI.REJECT_JOIN_GROUP);
+          return i.kg.debug("Call rejectGroupJoinRequest", U), a.hj.call(this, de, o.fI.REJECT_JOIN_GROUP);
         }
         var Ce = ge;
-        function Ie(U) {
+        function Re(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
           if (typeof U.invitee != "string" || U.invitee === "")
@@ -1407,9 +1407,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { invitee: U.invitee, verifyResult: !0 }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/invite_verify?resource=").concat(Se.clientResource), type: "POST", dataType: "json", data: JSON.stringify(le), headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call acceptGroupInvite", U), i.hj.call(this, de, o.fI.AGREE_INVITE_GROUP);
+          return i.kg.debug("Call acceptGroupInvite", U), a.hj.call(this, de, o.fI.AGREE_INVITE_GROUP);
         }
-        var Re = Ie;
+        var Ie = Re;
         function Oe(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
@@ -1420,7 +1420,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { invitee: U.invitee, verifyResult: !1 }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/invite_verify?resource=").concat(Se.clientResource), type: "POST", dataType: "json", data: JSON.stringify(le), headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call rejectGroupInvite", U), i.hj.call(this, de, o.fI.REJECT_INVITE_GROUP);
+          return i.kg.debug("Call rejectGroupInvite", U), a.hj.call(this, de, o.fI.REJECT_INVITE_GROUP);
         }
         var fe = Oe;
         function ce(U) {
@@ -1433,10 +1433,10 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = U.groupId, ye = U.username, _e = this.context, be = _e.orgName, Se = _e.appName, ee = _e.accessToken, le = _e.jid, de = { url: "".concat(this.apiUrl, "/").concat(be, "/").concat(Se, "/chatgroups/").concat(Q, "/users/").concat(ye, "?resource=").concat(le.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + ee, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call removeGroupMember", U), i.hj.call(this, de, o.fI.REMOVE_GROUP_MEMBER);
+          return i.kg.debug("Call removeGroupMember", U), a.hj.call(this, de, o.fI.REMOVE_GROUP_MEMBER);
         }
         var Ue = ce;
-        function Ze(U) {
+        function Ke(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
           if (!Array.isArray(U.users))
@@ -1446,9 +1446,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = U.users.join(","), de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/users/").concat(le, "?resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call removeGroupMembers", U), i.hj.call(this, de, o.fI.MULTI_REMOVE_GROUP_MEMBER);
+          return i.kg.debug("Call removeGroupMembers", U), a.hj.call(this, de, o.fI.MULTI_REMOVE_GROUP_MEMBER);
         }
-        var $e = Ze;
+        var $e = Ke;
         function Ve(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
@@ -1461,10 +1461,10 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { usernames: typeof U.username == "string" ? [U.username] : U.username, mute_duration: U.muteDuration }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/mute?resource=").concat(Se.clientResource), dataType: "json", type: "POST", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, data: JSON.stringify(le), success: U.success, error: U.error };
-          return a.kg.debug("Call muteGroupMember", U), i.hj.call(this, de, o.fI.MUTE_GROUP_MEMBER);
+          return i.kg.debug("Call muteGroupMember", U), a.hj.call(this, de, o.fI.MUTE_GROUP_MEMBER);
         }
         var Be = Ve;
-        function Ke(U) {
+        function Ze(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
           if (!(Array.isArray(U.username) || typeof U.username == "string" && U.username !== ""))
@@ -1474,9 +1474,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = U.username, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/mute/").concat(le, "?resource=").concat(Se.clientResource), dataType: "json", type: "DELETE", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call unmuteGroupMember", U), i.hj.call(this, de, o.fI.UNMUTE_GROUP_MEMBER);
+          return i.kg.debug("Call unmuteGroupMember", U), a.hj.call(this, de, o.fI.UNMUTE_GROUP_MEMBER);
         }
-        var Qe = Ke;
+        var Qe = Ze;
         function Pe(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
@@ -1485,7 +1485,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = U.groupId, ee = { url: this.apiUrl + "/" + ye + "/" + _e + "/chatgroups/" + Se + "/mute", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call getGroupMuteList", U), i.hj.call(this, ee, o.fI.GET_GROUP_MUTE_LIST);
+          return i.kg.debug("Call getGroupMuteList", U), a.hj.call(this, ee, o.fI.GET_GROUP_MUTE_LIST);
         }
         var Le = Pe, xe = Pe;
         function ve(U) {
@@ -1498,7 +1498,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = U.username, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/blocks/users/").concat(le, "?resource=").concat(Se.clientResource), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call blockGroupMember", U), i.hj.call(this, de, o.fI.BLOCK_GROUP_MEMBER);
+          return i.kg.debug("Call blockGroupMember", U), a.hj.call(this, de, o.fI.BLOCK_GROUP_MEMBER);
         }
         var we = ve;
         function ke(U) {
@@ -1511,7 +1511,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { usernames: U.usernames }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/blocks/users?resource=").concat(Se.clientResource), data: JSON.stringify(le), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call blockGroupMembers", U), i.hj.call(this, de, o.fI.BLOCK_GROUP_MEMBERS);
+          return i.kg.debug("Call blockGroupMembers", U), a.hj.call(this, de, o.fI.BLOCK_GROUP_MEMBERS);
         }
         var Ne = ke;
         function j(U) {
@@ -1524,7 +1524,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = U.username, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/blocks/users/").concat(le, "?resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call unblockGroupMember", U), i.hj.call(this, de, o.fI.UNBLOCK_GROUP_MEMBER);
+          return i.kg.debug("Call unblockGroupMember", U), a.hj.call(this, de, o.fI.UNBLOCK_GROUP_MEMBER);
         }
         var B = j;
         function T(U) {
@@ -1537,7 +1537,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = U.usernames.join(","), de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/blocks/users/").concat(le, "?resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call unblockGroupMembers", U), i.hj.call(this, de, o.fI.UNBLOCK_GROUP_MEMBERS);
+          return i.kg.debug("Call unblockGroupMembers", U), a.hj.call(this, de, o.fI.UNBLOCK_GROUP_MEMBERS);
         }
         var W = T;
         function _(U) {
@@ -1548,7 +1548,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = U.groupId, ee = { url: this.apiUrl + "/" + ye + "/" + _e + "/chatgroups/" + Se + "/blocks/users", type: "GET", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call getGroupBlacklist", U), i.hj.call(this, ee, o.fI.GET_GROUP_BLACK_LIST);
+          return i.kg.debug("Call getGroupBlacklist", U), a.hj.call(this, ee, o.fI.GET_GROUP_BLACK_LIST);
         }
         var A = _, L = _;
         function w(U) {
@@ -1559,7 +1559,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/ban?resource=").concat(Se.clientResource), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call disableSendGroupMsg", U), i.hj.call(this, le, o.fI.DISABLED_SEND_GROUP_MSG);
+          return i.kg.debug("Call disableSendGroupMsg", U), a.hj.call(this, le, o.fI.DISABLED_SEND_GROUP_MSG);
         }
         function k(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1569,7 +1569,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/ban?resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call enableSendGroupMsg", U), i.hj.call(this, le, o.fI.ENABLE_SEND_GROUP_MSG);
+          return i.kg.debug("Call enableSendGroupMsg", U), a.hj.call(this, le, o.fI.ENABLE_SEND_GROUP_MSG);
         }
         function y(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1581,9 +1581,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { usernames: U.users }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/white/users?resource=").concat(Se.clientResource), type: "POST", data: JSON.stringify(le), dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call addUsersToGroupWhitelist", U), i.hj.call(this, de, o.fI.ADD_USERS_TO_GROUP_WHITE);
+          return i.kg.debug("Call addUsersToGroupWhitelist", U), a.hj.call(this, de, o.fI.ADD_USERS_TO_GROUP_WHITE);
         }
-        var R = y;
+        var I = y;
         function H(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
@@ -1594,10 +1594,10 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/white/users/").concat(U.userName, "?resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call removeGroupAllowlistMember", U), i.hj.call(this, le, o.fI.REMOVE_GROUP_WHITE_MEMBER);
+          return i.kg.debug("Call removeGroupAllowlistMember", U), a.hj.call(this, le, o.fI.REMOVE_GROUP_WHITE_MEMBER);
         }
         var M = H, D = H;
-        function z(U) {
+        function J(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
           if (!s.XZ.call(this)) {
@@ -1605,9 +1605,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = U.groupId, ee = { url: this.apiUrl + "/" + ye + "/" + _e + "/chatgroups/" + Se + "/white/users", type: "GET", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call getGroupAllowlist", U), i.hj.call(this, ee, o.fI.GET_GROUP_WHITE_LIST);
+          return i.kg.debug("Call getGroupAllowlist", U), a.hj.call(this, ee, o.fI.GET_GROUP_WHITE_LIST);
         }
-        var X = z;
+        var X = J;
         function oe(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "groupId"');
@@ -1618,9 +1618,9 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = U.groupId, ee = { url: this.apiUrl + "/" + ye + "/" + _e + "/chatgroups/" + Se + "/white/users/" + U.userName, type: "GET", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call isInGroupAllowlist", U), i.hj.call(this, ee, o.fI.IS_IN_GROUP_WHITE_LIST);
+          return i.kg.debug("Call isInGroupAllowlist", U), a.hj.call(this, ee, o.fI.IS_IN_GROUP_WHITE_LIST);
         }
-        var q = oe, J = oe;
+        var q = oe, z = oe;
         function te(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
             throw Error('Invalid parameter: "chatRoomId"');
@@ -1629,7 +1629,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.userId, ee = { url: this.apiUrl + "/" + ye + "/" + _e + "/sdk/group/" + U.groupId + "/mute/" + Se, dataType: "json", type: "GET", headers: { Authorization: "Bearer " + be } };
-          return a.kg.debug("Call isInGroupMutelist", U), i.hj.call(this, ee).then(function(le) {
+          return i.kg.debug("Call isInGroupMutelist", U), a.hj.call(this, ee).then(function(le) {
             return le.data;
           });
         }
@@ -1643,7 +1643,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = { url: this.apiUrl + "/" + ye + "/" + _e + "/chatgroups/" + U.groupId + "/acks/" + U.msgId, dataType: "json", type: "GET", data: { limit: 500, key: void 0 }, headers: { Authorization: "Bearer " + be }, success: U.success, error: U.error };
-          return a.kg.debug("Call getGroupMsgReadUser", U), i.hj.call(this, Se, o.fI.GET_GROUP_MSG_READ_USER);
+          return i.kg.debug("Call getGroupMsgReadUser", U), a.hj.call(this, Se, o.fI.GET_GROUP_MSG_READ_USER);
         }
         function Ae(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1653,7 +1653,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = U.groupId, ee = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(Se, "/announcement"), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call fetchGroupAnnouncement", U), i.hj.call(this, ee, o.fI.GET_GROUP_ANN);
+          return i.kg.debug("Call fetchGroupAnnouncement", U), a.hj.call(this, ee, o.fI.GET_GROUP_ANN);
         }
         function We(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1665,7 +1665,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = { announcement: U.announcement }, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/announcement?resource=").concat(Se.clientResource), type: "POST", dataType: "json", data: JSON.stringify(le), headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call updateGroupAnnouncement", U), i.hj.call(this, de, o.fI.UPDATE_GROUP_ANN);
+          return i.kg.debug("Call updateGroupAnnouncement", U), a.hj.call(this, de, o.fI.UPDATE_GROUP_ANN);
         }
         function Te(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1674,7 +1674,7 @@ var EasemobChat = { exports: {} };
             throw Error('Invalid parameter: "file"');
           if (s.XZ.call(this)) {
             var Ee = this.context, Q = Ee.orgName, ye = Ee.appName, _e = Ee.accessToken, be = Ee.jid, Se = U.groupId;
-            i.cT.call(this, { uploadUrl: "".concat(this.apiUrl, "/").concat(Q, "/").concat(ye, "/chatgroups/").concat(Se, "/share_files?resource=").concat(be.clientResource), onFileUploadProgress: U.onFileUploadProgress, onFileUploadComplete: U.onFileUploadComplete, onFileUploadError: U.onFileUploadError, onFileUploadCanceled: U.onFileUploadCanceled, accessToken: _e, apiUrl: this.apiUrl, file: U.file, appKey: this.context.appKey }, o.fI.UPLOAD_GROUP_FILE), a.kg.debug("Call uploadGroupSharedFile", U);
+            a.cT.call(this, { uploadUrl: "".concat(this.apiUrl, "/").concat(Q, "/").concat(ye, "/chatgroups/").concat(Se, "/share_files?resource=").concat(be.clientResource), onFileUploadProgress: U.onFileUploadProgress, onFileUploadComplete: U.onFileUploadComplete, onFileUploadError: U.onFileUploadError, onFileUploadCanceled: U.onFileUploadCanceled, accessToken: _e, apiUrl: this.apiUrl, file: U.file, appKey: this.context.appKey }, o.fI.UPLOAD_GROUP_FILE), i.kg.debug("Call uploadGroupSharedFile", U);
           }
         }
         function je(U) {
@@ -1687,7 +1687,7 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = Q.jid, ee = U.groupId, le = U.fileId, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(ee, "/share_files/").concat(le, "?resource=").concat(Se.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call deleteGroupSharedFile", U), i.hj.call(this, de, o.fI.DELETE_GROUP_FILE);
+          return i.kg.debug("Call deleteGroupSharedFile", U), a.hj.call(this, de, o.fI.DELETE_GROUP_FILE);
         }
         function ie(U) {
           if (typeof U.groupId != "string" || U.groupId === "")
@@ -1697,14 +1697,14 @@ var EasemobChat = { exports: {} };
             return Promise.reject(Ee);
           }
           var Q = this.context, ye = Q.orgName, _e = Q.appName, be = Q.accessToken, Se = U.pageNum || 1, ee = U.pageSize || 10, le = U.groupId, de = { url: "".concat(this.apiUrl, "/").concat(ye, "/").concat(_e, "/chatgroups/").concat(le, "/share_files?pagenum=").concat(Se, "&pagesize=").concat(ee), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + be, "Content-Type": "application/json" }, success: U.success, error: U.error };
-          return a.kg.debug("Call getGroupSharedFilelist", U), i.hj.call(this, de, o.fI.GET_GROUP_FILE_LIST);
+          return i.kg.debug("Call getGroupSharedFilelist", U), a.hj.call(this, de, o.fI.GET_GROUP_FILE_LIST);
         }
-        var ze = ie;
+        var Je = ie;
         function De(U) {
           var Ee = this.context, Q = Ee.orgName, ye = Ee.appName, _e = Ee.accessToken, be = this.apiUrl, Se = U.groupId, ee = U.fileId;
-          i.LR.call(this, { url: "".concat(be, "/").concat(Q, "/").concat(ye, "/chatgroups/").concat(Se, "/share_files/").concat(ee), onFileDownloadComplete: U.onFileDownloadComplete, onFileDownloadError: U.onFileDownloadError, accessToken: _e, id: ee, secret: U.secret }, o.fI.DOWN_GROUP_FILE), a.kg.debug("Call downloadGroupSharedFile", U);
+          a.LR.call(this, { url: "".concat(be, "/").concat(Q, "/").concat(ye, "/chatgroups/").concat(Se, "/share_files/").concat(ee), onFileDownloadComplete: U.onFileDownloadComplete, onFileDownloadError: U.onFileDownloadError, accessToken: _e, id: ee, secret: U.secret }, o.fI.DOWN_GROUP_FILE), i.kg.debug("Call downloadGroupSharedFile", U);
         }
-        function Je(U) {
+        function ze(U) {
           return Ee = this, Q = void 0, _e = function() {
             var be, Se, ee, le, de, He, pe, Xe, Ye, et, he;
             return function(Me, rt) {
@@ -1779,7 +1779,7 @@ var EasemobChat = { exports: {} };
                     throw Error('Invalid parameter: "userId"');
                   if (n(ee) !== "object")
                     throw Error('Invalid parameter: "memberAttributes"');
-                  return s.XZ.call(this) ? (de = this.context, He = de.orgName, pe = de.appName, Xe = de.accessToken, Ye = de.jid, et = { metaData: ee }, he = { url: "".concat(this.apiUrl, "/").concat(He, "/").concat(pe, "/sdk/metadata/chatgroup/").concat(be, "/user/").concat(Se, "?resource=").concat(Ye.clientResource), type: "PUT", dataType: "json", data: JSON.stringify(et), headers: { Authorization: "Bearer " + Xe, "Content-Type": "application/json" } }, a.kg.debug("Call setGroupMemberAttributes", U), [4, i.hj.call(this, he, o.fI.SET_GROUP_MEMBER_ATTRS)]) : (le = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(le)]);
+                  return s.XZ.call(this) ? (de = this.context, He = de.orgName, pe = de.appName, Xe = de.accessToken, Ye = de.jid, et = { metaData: ee }, he = { url: "".concat(this.apiUrl, "/").concat(He, "/").concat(pe, "/sdk/metadata/chatgroup/").concat(be, "/user/").concat(Se, "?resource=").concat(Ye.clientResource), type: "PUT", dataType: "json", data: JSON.stringify(et), headers: { Authorization: "Bearer " + Xe, "Content-Type": "application/json" } }, i.kg.debug("Call setGroupMemberAttributes", U), [4, a.hj.call(this, he, o.fI.SET_GROUP_MEMBER_ATTRS)]) : (le = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(le)]);
                 case 1:
                   return Me.sent(), [2];
               }
@@ -1829,19 +1829,19 @@ var EasemobChat = { exports: {} };
             return Promise.reject(be);
           }
           var Se = this.context, ee = Se.orgName, le = Se.appName, de = Se.accessToken, He = { targets: Q, properties: _e }, pe = { url: "".concat(this.apiUrl, "/").concat(ee, "/").concat(le, "/sdk/metadata/chatgroup/").concat(Ee, "/get"), type: "POST", dataType: "json", data: JSON.stringify(He), headers: { Authorization: "Bearer " + de, "Content-Type": "application/json" } };
-          return a.kg.debug("Call getGroupMembersAttributes", U), i.hj.call(this, pe, o.fI.GET_GROUP_MEMBER_ATTR).then(function(Xe) {
+          return i.kg.debug("Call getGroupMembersAttributes", U), a.hj.call(this, pe, o.fI.GET_GROUP_MEMBER_ATTR).then(function(Xe) {
             return { type: Xe.type, data: (Xe == null ? void 0 : Xe.data) || {} };
           });
         }
-      }, 7479: function(p, S, e) {
-        e.r(S), e.d(S, { acceptContactInvite: function() {
+      }, 7479: function(p, R, e) {
+        e.r(R), e.d(R, { acceptContactInvite: function() {
           return Ce;
         }, acceptInvitation: function() {
           return ge;
         }, addContact: function() {
           return se;
         }, addReaction: function() {
-          return Ke;
+          return Ze;
         }, addToBlackList: function() {
           return Oe;
         }, addUsersToBlacklist: function() {
@@ -1849,9 +1849,9 @@ var EasemobChat = { exports: {} };
         }, addUsersToBlocklist: function() {
           return ce;
         }, declineContactInvite: function() {
-          return Re;
-        }, declineInvitation: function() {
           return Ie;
+        }, declineInvitation: function() {
+          return Re;
         }, deleteContact: function() {
           return me;
         }, deleteConversation: function() {
@@ -1869,7 +1869,7 @@ var EasemobChat = { exports: {} };
         }, getBlocklist: function() {
           return c;
         }, getChatToken: function() {
-          return Z;
+          return K;
         }, getContacts: function() {
           return v;
         }, getConversationlist: function() {
@@ -1883,7 +1883,7 @@ var EasemobChat = { exports: {} };
         }, getReactionlist: function() {
           return Le;
         }, getRoster: function() {
-          return I;
+          return S;
         }, getServerConversations: function() {
           return ke;
         }, getServerPinnedConversations: function() {
@@ -1903,7 +1903,7 @@ var EasemobChat = { exports: {} };
         }, removeRoster: function() {
           return ue;
         }, removeUserFromBlackList: function() {
-          return Ze;
+          return Ke;
         }, removeUserFromBlocklist: function() {
           return $e;
         }, reportMessage: function() {
@@ -1913,13 +1913,13 @@ var EasemobChat = { exports: {} };
         }, updateOwnUserInfo: function() {
           return G;
         }, updateUserInfo: function() {
-          return K;
+          return Z;
         }, uploadPushToken: function() {
           return x;
         }, uploadToken: function() {
           return N;
         } }), e(9601), e(1539), e(8674), e(2526), e(1817), e(2165), e(6992), e(8783), e(3948), e(9554), e(4747), e(2222), e(6699), e(9600), e(5069), e(561), e(9753), e(8309), e(3710), e(9714);
-        var r = e(3246), t = e(5531), i = e(7252), s = e(4370), a = e(8161), o = e(4968), n = e(4188), l = e.n(n), u = e(7360), m = e(1595), g = e(4363), h = function() {
+        var r = e(3246), t = e(5531), a = e(7252), s = e(4370), i = e(8161), o = e(4968), n = e(4188), l = e.n(n), u = e(7360), m = e(1595), g = e(4363), h = function() {
           return h = Object.assign || function(T) {
             for (var W, _ = 1, A = arguments.length; _ < A; _++)
               for (var L in W = arguments[_])
@@ -1930,25 +1930,25 @@ var EasemobChat = { exports: {} };
           return new (_ || (_ = Promise))(function(L, w) {
             function k(H) {
               try {
-                R(A.next(H));
+                I(A.next(H));
               } catch (M) {
                 w(M);
               }
             }
             function y(H) {
               try {
-                R(A.throw(H));
+                I(A.throw(H));
               } catch (M) {
                 w(M);
               }
             }
-            function R(H) {
+            function I(H) {
               var M;
               H.done ? L(H.value) : (M = H.value, M instanceof _ ? M : new _(function(D) {
                 D(M);
               })).then(k, y);
             }
-            R((A = A.apply(T, W || [])).next());
+            I((A = A.apply(T, W || [])).next());
           });
         }, f = function(T, W) {
           var _, A, L, w, k = { label: 0, sent: function() {
@@ -1959,7 +1959,7 @@ var EasemobChat = { exports: {} };
           return w = { next: y(0), throw: y(1), return: y(2) }, typeof Symbol == "function" && (w[Symbol.iterator] = function() {
             return this;
           }), w;
-          function y(R) {
+          function y(I) {
             return function(H) {
               return function(M) {
                 if (_)
@@ -2010,37 +2010,37 @@ var EasemobChat = { exports: {} };
                 if (5 & M[0])
                   throw M[1];
                 return { value: M[0] ? M[1] : void 0, done: !0 };
-              }([R, H]);
+              }([I, H]);
             };
           }
         };
         function b(T) {
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
           var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = { url: this.apiUrl + "/" + A + "/" + L + "/users/" + this.user + "/blocks/users", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + w }, success: function(y) {
-            y.data.forEach(function(R) {
+            y.data.forEach(function(I) {
             }), typeof (T == null ? void 0 : T.success) == "function" && T.success(y);
           }, error: function(y) {
             typeof (T == null ? void 0 : T.error) == "function" && T.error(y);
           } };
           return u.kg.debug("Call getBlocklist"), s.hj.call(this, k, m.fI.GET_BLACK_LIST);
         }
-        var c = b, I = v;
+        var c = b, S = v;
         function v(T) {
           var W = this;
           if (!r.XZ.call(this)) {
-            var _ = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var _ = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(_);
           }
-          var A = this.context, L = A.orgName, w = A.appName, k = A.accessToken, y = { url: this.apiUrl + "/" + L + "/" + w + "/users/" + this.user + "/contacts/users", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + k }, success: function(R) {
+          var A = this.context, L = A.orgName, w = A.appName, k = A.accessToken, y = { url: this.apiUrl + "/" + L + "/" + w + "/users/" + this.user + "/contacts/users", dataType: "json", type: "GET", headers: { Authorization: "Bearer " + k }, success: function(I) {
             var H = [];
-            R.data.forEach(function(M) {
+            I.data.forEach(function(M) {
               H.push({ name: M, subscription: "both", jid: W.context.jid });
             }), typeof (T == null ? void 0 : T.success) == "function" && T.success(H);
-          }, error: function(R) {
-            typeof (T == null ? void 0 : T.error) == "function" && T.error(R);
+          }, error: function(I) {
+            typeof (T == null ? void 0 : T.error) == "function" && T.error(I);
           } };
           return u.kg.debug("Call getContacts"), s.hj.call(this, y, m.fI.GET_CONTACTS);
         }
@@ -2052,7 +2052,7 @@ var EasemobChat = { exports: {} };
           if (typeof T.notifierName != "string" || T.notifierName === "")
             throw Error('Invalid parameter: "notifierName"');
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
           var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/users/").concat(this.user), type: "PUT", data: JSON.stringify({ device_id: T.deviceId, device_token: T.deviceToken, notifier_name: T.notifierName }), dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" }, success: T.success, error: T.error };
@@ -2061,7 +2061,7 @@ var EasemobChat = { exports: {} };
         var x = N;
         function O(T) {
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
           var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/users/").concat(this.user, "/user_channels"), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" }, success: T && (T == null ? void 0 : T.success), error: T && (T == null ? void 0 : T.error) };
@@ -2069,17 +2069,17 @@ var EasemobChat = { exports: {} };
         }
         function C(T) {
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
           var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = !!(T && typeof T.pageNum == "number" && typeof T.pageSize == "number" && T.pageNum > 0 && T.pageSize > 0), y = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/users/").concat(this.user, "/user_channels").concat(k ? "/page" : ""), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" }, success: T && (T == null ? void 0 : T.success), error: T && (T == null ? void 0 : T.error) };
-          return k && (y.data = { pageNum: T.pageNum, pageSize: T.pageSize }), u.kg.debug("Call getConversationlist"), s.hj.call(this, y, m.fI.GET_SESSION_LIST).then(function(R) {
+          return k && (y.data = { pageNum: T.pageNum, pageSize: T.pageSize }), u.kg.debug("Call getConversationlist"), s.hj.call(this, y, m.fI.GET_SESSION_LIST).then(function(I) {
             return function(H) {
               var M = H.data.channel_infos;
               return M == null || M.forEach(function(D) {
                 D.meta && JSON.stringify(D.meta) !== "{}" ? (D.meta.payload = JSON.parse(D.meta.payload), D.lastMessage = (0, g.w)(D.meta)) : D.lastMessage = D.meta, delete D.meta;
               }), H;
-            }(R);
+            }(I);
           });
         }
         function E(T) {
@@ -2090,78 +2090,78 @@ var EasemobChat = { exports: {} };
           if (T && typeof T.deleteRoam != "boolean")
             throw Error("Invalid parameter deleteRoam: ".concat(T.deleteRoam));
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
           var _, A = this.context, L = A.orgName, w = A.appName, k = A.accessToken, y = A.jid;
           _ = T.chatType === "singleChat" ? "chat" : "groupChat";
-          var R = { url: "".concat(this.apiUrl, "/").concat(L, "/").concat(w, "/user/").concat(this.user, "/user_channel?resource=").concat(y.clientResource), dataType: "json", type: "DELETE", data: JSON.stringify({ channel: T.channel, type: _, delete_roam: T.deleteRoam }), headers: { Authorization: "Bearer " + k, "Content-Type": "application/json" }, success: T.success, error: T.error };
-          return u.kg.debug("Call deleteSession", T), s.hj.call(this, R, m.fI.DELETE_SESSION);
+          var I = { url: "".concat(this.apiUrl, "/").concat(L, "/").concat(w, "/user/").concat(this.user, "/user_channel?resource=").concat(y.clientResource), dataType: "json", type: "DELETE", data: JSON.stringify({ channel: T.channel, type: _, delete_roam: T.deleteRoam }), headers: { Authorization: "Bearer " + k, "Content-Type": "application/json" }, success: T.success, error: T.error };
+          return u.kg.debug("Call deleteSession", T), s.hj.call(this, I, m.fI.DELETE_SESSION);
         }
         var P = E;
         function G(T, W) {
           if (!r.XZ.call(this)) {
-            var _ = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var _ = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(_);
           }
-          var A = this.context, L = A.orgName, w = A.appName, k = A.accessToken, y = ["nickname", "avatarurl", "mail", "phone", "gender", "sign", "birth", "ext"], R = {};
+          var A = this.context, L = A.orgName, w = A.appName, k = A.accessToken, y = ["nickname", "avatarurl", "mail", "phone", "gender", "sign", "birth", "ext"], I = {};
           if (typeof wx < "u" || typeof qq < "u")
             if (typeof T == "string" && W !== void 0) {
               if (!y.includes(T))
                 throw new Error("illegal key, only these keys: nickname, avatarurl, mail, phone, gender, sign, birth, ext are allowed");
-              R[T] = W;
+              I[T] = W;
             } else {
               if (Object.prototype.toString.call(T) !== "[object Object]")
                 throw new Error("illegal params");
               y.forEach(function(D) {
-                y.includes(D) && T[D] !== void 0 && (R[D] = T[D]);
+                y.includes(D) && T[D] !== void 0 && (I[D] = T[D]);
               });
             }
           else if (typeof T == "string") {
             if (!y.includes(T))
               throw new Error("illegal key, only these keys: nickname, avatarurl, mail, phone, gender, sign, birth, ext are allowed");
-            R = T + "=" + W;
+            I = T + "=" + W;
           } else {
             if (Object.prototype.toString.call(T) !== "[object Object]")
               throw new Error("illegal params");
             var H = [];
             y.forEach(function(D) {
               if (y.includes(D) && T[D] !== void 0) {
-                var z = encodeURIComponent(D), X = encodeURIComponent(T[D]);
-                H.push(z + "=" + X);
+                var J = encodeURIComponent(D), X = encodeURIComponent(T[D]);
+                H.push(J + "=" + X);
               }
-            }), R = H.join("&");
+            }), I = H.join("&");
           }
-          var M = { url: "".concat(this.apiUrl, "/").concat(L, "/").concat(w, "/metadata/user/").concat(this.user), type: "PUT", data: R, dataType: "json", headers: { Authorization: "Bearer " + k, "Content-Type": "application/x-www-form-urlencoded" } };
+          var M = { url: "".concat(this.apiUrl, "/").concat(L, "/").concat(w, "/metadata/user/").concat(this.user), type: "PUT", data: I, dataType: "json", headers: { Authorization: "Bearer " + k, "Content-Type": "application/x-www-form-urlencoded" } };
           return u.kg.debug("Call updateOwnUserInfo", T), s.hj.call(this, M, m.fI.UPDATE_USER_INFO);
         }
-        var K = G;
+        var Z = G;
         function F(T, W) {
           if (!r.XZ.call(this)) {
-            var _ = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var _ = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(_);
           }
-          var A, L = this.context, w = L.orgName, k = L.appName, y = L.accessToken, R = [];
+          var A, L = this.context, w = L.orgName, k = L.appName, y = L.accessToken, I = [];
           if (typeof T == "string")
-            R = [T];
+            I = [T];
           else {
             if (Object.prototype.toString.call(T) !== "[object Array]")
               throw new Error("illegal params");
-            R = T;
+            I = T;
           }
           A = typeof W == "string" ? [W] : W && Object.prototype.toString.call(W) === "[object Array]" ? W : ["nickname", "avatarurl", "mail", "phone", "gender", "sign", "birth", "ext"];
-          var H = { url: "".concat(this.apiUrl, "/").concat(w, "/").concat(k, "/metadata/user/get"), type: "POST", data: JSON.stringify({ targets: R, properties: A }), dataType: "json", headers: { Authorization: "Bearer " + y, "Content-Type": "application/json" } };
+          var H = { url: "".concat(this.apiUrl, "/").concat(w, "/").concat(k, "/metadata/user/get"), type: "POST", data: JSON.stringify({ targets: I, properties: A }), dataType: "json", headers: { Authorization: "Bearer " + y, "Content-Type": "application/json" } };
           return u.kg.debug("Call fetchUserInfoById", T), s.hj.call(this, H, m.fI.GET_USER_INFO);
         }
         function Y(T) {
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
           var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/users/").concat(this.user), type: "PUT", dataType: "json", data: JSON.stringify({ nickname: T }), headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } };
           return u.kg.debug("Call updateCurrentUserNick", T), s.hj.call(this, k);
         }
-        function Z(T) {
+        function K(T) {
           if (typeof T != "string" || T === "")
             throw Error('Invalid parameter: "agoraToken"');
           var W = this.context, _ = W.orgName, A = W.appName, L = { url: this.apiUrl + "/" + _ + "/" + A + "/token", dataType: "json", type: "POST", data: JSON.stringify({ grant_type: "agora" }), headers: { Authorization: "Bearer " + T, "Content-Type": "application/json" } };
@@ -2173,14 +2173,14 @@ var EasemobChat = { exports: {} };
             if (!T.queue)
               throw Error('Invalid parameter: "specified"');
             if (!r.XZ.call(W)) {
-              var L = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+              var L = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
               return Promise.reject(L);
             }
             (function w(k) {
-              var y = this, R = k.count || 20;
-              ne.call(this, { count: R, isGroup: !!k.isGroup, queue: k.queue, start: k.start, format: k.format, success: function(H) {
-                if (H.msgs.length >= R || H.is_last) {
-                  var M = H.msgs.splice(0, R).reverse();
+              var y = this, I = k.count || 20;
+              ne.call(this, { count: I, isGroup: !!k.isGroup, queue: k.queue, start: k.start, format: k.format, success: function(H) {
+                if (H.msgs.length >= I || H.is_last) {
+                  var M = H.msgs.splice(0, I).reverse();
                   k.success && k.success(M), _(M);
                 } else
                   w.call(y, h(h({}, k), { start: null }));
@@ -2196,59 +2196,59 @@ var EasemobChat = { exports: {} };
             typeof T.success == "function" && T.success(A);
           else {
             A && A.next_key && (w = A.next_key), T.start && (w = T.start);
-            var y = { queue: _ + (T.isGroup ? "@conference.easemob.com" : "@easemob.com"), start: w, end: -1 }, R = this.context, H = R.orgName, M = R.appName, D = { url: "".concat(this.apiUrl, "/").concat(H, "/").concat(M, "/users/").concat(L, "/messageroaming"), dataType: "json", type: "POST", headers: { Authorization: "Bearer " + this.token, "Content-Type": "application/json" }, data: JSON.stringify(y), success: function(z) {
-              var X = z == null ? void 0 : z.data;
-              if (!z.data.msgs)
+            var y = { queue: _ + (T.isGroup ? "@conference.easemob.com" : "@easemob.com"), start: w, end: -1 }, I = this.context, H = I.orgName, M = I.appName, D = { url: "".concat(this.apiUrl, "/").concat(H, "/").concat(M, "/users/").concat(L, "/messageroaming"), dataType: "json", type: "POST", headers: { Authorization: "Bearer " + this.token, "Content-Type": "application/json" }, data: JSON.stringify(y), success: function(J) {
+              var X = J == null ? void 0 : J.data;
+              if (!J.data.msgs)
                 return typeof T.success == "function" && T.success(A), A.is_last = !0, void (A.next_key = "");
               var oe = X.msgs, q = oe.length;
               A.is_last = X.is_last, A.next_key = X.next_key;
-              for (var J = function(Ae) {
+              for (var z = function(Ae) {
                 for (var We = [], Te = 0, je = (Ae = l().atob(Ae)).length; Te < je; ++Te)
                   We.push(Ae.charCodeAt(Te));
                 var ie = W.context.root.lookup("easemob.pb.Meta");
                 if ((ie = ie.decode(We)).ns === 1)
-                  return a.Z.call(W, ie, { errorCode: 0, reason: "" }, !0, T.format);
+                  return i.Z.call(W, ie, { errorCode: 0, reason: "" }, !0, T.format);
               }, te = 0; te < q; te++) {
-                var re = J(oe[te].msg);
+                var re = z(oe[te].msg);
                 re && A.msgs.push(re);
               }
               typeof T.success == "function" && T.success(A);
-            }, error: function(z) {
-              if (z.error && z.error_description) {
-                var X = i.Z.create({ type: t.E.WEBIM_CONNCTION_AJAX_ERROR, message: "fetch history messages error", data: z });
+            }, error: function(J) {
+              if (J.error && J.error_description) {
+                var X = a.Z.create({ type: t.E.WEBIM_CONNCTION_AJAX_ERROR, message: "fetch history messages error", data: J });
                 W.onError && W.onError(X);
               }
             } };
-            s.hj.call(this, D, m.fI.GET_HISTORY_MSG).catch(function(z) {
-              typeof T.fail == "function" && T.fail(z);
+            s.hj.call(this, D, m.fI.GET_HISTORY_MSG).catch(function(J) {
+              typeof T.fail == "function" && T.fail(J);
             });
           }
         }
         function ae(T) {
           var W = this;
           return new Promise(function(_, A) {
-            var L = T.targetId, w = T.cursor, k = w === void 0 ? -1 : w, y = T.pageSize, R = y === void 0 ? 20 : y, H = T.chatType, M = T.searchDirection, D = T.searchOptions, z = D === void 0 ? {} : D, X = z.msgTypes, oe = X === void 0 ? [] : X, q = z.startTime, J = q === void 0 ? null : q, te = z.endTime, re = te === void 0 ? null : te, Ae = z.from, We = Ae === void 0 ? null : Ae;
+            var L = T.targetId, w = T.cursor, k = w === void 0 ? -1 : w, y = T.pageSize, I = y === void 0 ? 20 : y, H = T.chatType, M = T.searchDirection, D = T.searchOptions, J = D === void 0 ? {} : D, X = J.msgTypes, oe = X === void 0 ? [] : X, q = J.startTime, z = q === void 0 ? null : q, te = J.endTime, re = te === void 0 ? null : te, Ae = J.from, We = Ae === void 0 ? null : Ae;
             if (typeof L != "string" || L === "")
               throw Error('"Invalid parameter": "targetId"');
             if (We && typeof We != "string")
               throw Error('"Invalid parameter": "searchOptions.from"');
             if (oe && !Array.isArray(oe))
               throw Error('"Invalid parameter": "searchOptions.msgTypes"');
-            if (J && typeof J != "number")
+            if (z && typeof z != "number")
               throw Error('"Invalid parameter": "searchOptions.startTime"');
-            if (re && typeof J != "number")
+            if (re && typeof z != "number")
               throw Error('"Invalid parameter": "searchOptions.endTime"');
             if (!r.XZ.call(W)) {
-              var Te = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+              var Te = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
               return A(Te);
             }
-            var je = W.context, ie = je.orgName, ze = je.appName, De = je.userId, Je = T.chatType === "groupChat" ? "@conference.easemob.com" : "@easemob.com", at = { queue: "".concat(L).concat(Je), start: k, pull_number: R, is_positive: M === "down", msgType: oe.join(",") || "", end: -1, startTime: J, endTime: re, userId: H === "singleChat" ? null : We }, st = { url: "".concat(W.apiUrl, "/").concat(ie, "/").concat(ze, "/users/").concat(De, "/messageroaming"), dataType: "json", type: "POST", headers: { Authorization: "Bearer " + W.token, "Content-Type": "application/json" }, data: JSON.stringify(at), success: function(U) {
+            var je = W.context, ie = je.orgName, Je = je.appName, De = je.userId, ze = T.chatType === "groupChat" ? "@conference.easemob.com" : "@easemob.com", at = { queue: "".concat(L).concat(ze), start: k, pull_number: I, is_positive: M === "down", msgType: oe.join(",") || "", end: -1, startTime: z, endTime: re, userId: H === "singleChat" ? null : We }, st = { url: "".concat(W.apiUrl, "/").concat(ie, "/").concat(Je, "/users/").concat(De, "/messageroaming"), dataType: "json", type: "POST", headers: { Authorization: "Bearer " + W.token, "Content-Type": "application/json" }, data: JSON.stringify(at), success: function(U) {
               for (var Ee, Q = U == null ? void 0 : U.data, ye = Q.msgs || [], _e = function(de) {
                 for (var He = [], pe = 0, Xe = (de = l().atob(de)).length; pe < Xe; ++pe)
                   He.push(de.charCodeAt(pe));
                 var Ye = W.context.root.lookup("easemob.pb.Meta");
                 if ((Ye = Ye.decode(He)).ns === 1)
-                  return a.Z.call(W, Ye, { errorCode: 0, reason: "" }, !0, !0);
+                  return i.Z.call(W, Ye, { errorCode: 0, reason: "" }, !0, !0);
               }, be = [], Se = 0; Se < ye.length; Se++) {
                 var ee = _e(ye[Se].msg);
                 ee && be.push(ee);
@@ -2285,14 +2285,14 @@ var EasemobChat = { exports: {} };
           });
         }
         var Ce = ge;
-        function Ie(T) {
+        function Re(T) {
           var W = this;
           return new Promise(function(_, A) {
             var L = { id: W.getUniqueId(), to: T };
             o.Z.operatRoster.call(W, L, "decline", _, A), u.kg.debug("Call declineContactInvite", L);
           });
         }
-        var Re = Ie;
+        var Ie = Re;
         function Oe(T) {
           var W = this;
           return new Promise(function(_, A) {
@@ -2306,7 +2306,7 @@ var EasemobChat = { exports: {} };
             o.Z.operatRoster.call(W, { to: T.name }, "allow", _, A), u.kg.debug("Call removeUserFromBlocklist", T);
           });
         }
-        var Ze = Ue, $e = Ue;
+        var Ke = Ue, $e = Ue;
         function Ve(T) {
           var W = this.getUniqueId(), _ = { id: W, to: T.to };
           this._msgHash[W] = h({}, _);
@@ -2323,9 +2323,9 @@ var EasemobChat = { exports: {} };
             throw Error('Invalid parameter: "modifiedMessage.type"');
           return this.mSync.send(h({ editMessageId: _ }, A));
         }
-        function Ke(T) {
+        function Ze(T) {
           return d(this, void 0, void 0, function() {
-            var W, _, A, L, w, k, y, R, H;
+            var W, _, A, L, w, k, y, I, H;
             return f(this, function(M) {
               switch (M.label) {
                 case 0:
@@ -2333,7 +2333,7 @@ var EasemobChat = { exports: {} };
                     throw Error("Invalid parameter messageId: ".concat(T.messageId));
                   if (typeof T.reaction != "string" || !T.reaction)
                     throw Error("Invalid parameter reaction: ".concat(T.reaction));
-                  return r.XZ.call(this) ? (_ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.reaction, y = T.messageId, R = { msgId: y, message: k }, H = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/reaction/user/").concat(this.user), type: "POST", data: JSON.stringify(R), dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } }, [4, s.hj.call(this, H)]) : (W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(W)]);
+                  return r.XZ.call(this) ? (_ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.reaction, y = T.messageId, I = { msgId: y, message: k }, H = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/reaction/user/").concat(this.user), type: "POST", data: JSON.stringify(I), dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } }, [4, s.hj.call(this, H)]) : (W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(W)]);
                 case 1:
                   return M.sent(), [2];
               }
@@ -2342,13 +2342,13 @@ var EasemobChat = { exports: {} };
         }
         function Qe(T) {
           return d(this, void 0, void 0, function() {
-            var W, _, A, L, w, k, y, R;
+            var W, _, A, L, w, k, y, I;
             return f(this, function(H) {
               switch (H.label) {
                 case 0:
                   if (typeof T.reaction != "string" || !T.reaction)
                     throw Error("Invalid parameter reactionId: ".concat(T.reaction));
-                  return r.XZ.call(this) ? (_ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.messageId, y = T.reaction, R = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/reaction/user/").concat(this.user, "?msgId=").concat(k, "&message=").concat(y), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } }, [4, s.hj.call(this, R)]) : (W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(W)]);
+                  return r.XZ.call(this) ? (_ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.messageId, y = T.reaction, I = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/reaction/user/").concat(this.user, "?msgId=").concat(k, "&message=").concat(y), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } }, [4, s.hj.call(this, I)]) : (W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(W)]);
                 case 1:
                   return H.sent(), [2];
               }
@@ -2361,14 +2361,14 @@ var EasemobChat = { exports: {} };
           if (!T.messageId)
             throw Error("Invalid parameter messageId: ".concat(T.messageId));
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
-          var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.chatType, y = T.messageId, R = { msgIdList: typeof y == "string" ? [y] : y, msgType: k === "singleChat" ? "chat" : "groupchat", groupId: T.groupId || null }, H = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/reaction/user/").concat(this.user), type: "GET", data: R, dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } };
+          var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.chatType, y = T.messageId, I = { msgIdList: typeof y == "string" ? [y] : y, msgType: k === "singleChat" ? "chat" : "groupchat", groupId: T.groupId || null }, H = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/reaction/user/").concat(this.user), type: "GET", data: I, dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } };
           return s.hj.call(this, H).then(function(M) {
             var D = M.data;
-            return D == null || D.forEach(function(z) {
-              z == null || z.reactionList.forEach(function(X) {
+            return D == null || D.forEach(function(J) {
+              J == null || J.reactionList.forEach(function(X) {
                 X.isAddedBySelf = X.state, delete X.state, delete X.reactionId;
               });
             }), M;
@@ -2381,19 +2381,19 @@ var EasemobChat = { exports: {} };
           if (typeof T.messageId != "string" || !T.messageId)
             throw Error("Invalid parameter messageId: ".concat(T.messageId));
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
-          var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.cursor, y = T.pageSize, R = { msgId: T.messageId, message: T.reaction, currentPage: k || null, pageSize: y || 20 }, H = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/reaction/user/").concat(this.user, "/detail"), type: "GET", data: R, dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } };
+          var _ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.cursor, y = T.pageSize, I = { msgId: T.messageId, message: T.reaction, currentPage: k || null, pageSize: y || 20 }, H = { url: "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/reaction/user/").concat(this.user, "/detail"), type: "GET", data: I, dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } };
           return s.hj.call(this, H).then(function(M) {
             return M.data.isAddedBySelf = M.data.state, delete M.data.state, delete M.data.reactionId, M;
           });
         }
         function ve(T) {
           return d(this, void 0, void 0, function() {
-            var W, _, A, L, w, k, y, R, H, M, D;
-            return f(this, function(z) {
-              switch (z.label) {
+            var W, _, A, L, w, k, y, I, H, M, D;
+            return f(this, function(J) {
+              switch (J.label) {
                 case 0:
                   if (typeof T.reportType != "string" || !T.reportType)
                     throw Error("Invalid parameter reportType: ".concat(T.reportType));
@@ -2401,9 +2401,9 @@ var EasemobChat = { exports: {} };
                     throw Error("Invalid parameter messageId: ".concat(T.messageId));
                   if (typeof T.reportReason != "string" || !T.reportReason)
                     throw Error("Invalid parameter messageId: ".concat(T.reportReason));
-                  return r.XZ.call(this) ? (_ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.reportType, y = T.reportReason, R = T.messageId, H = { username: this.user, reportType: k, reportReason: y }, M = "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/user/").concat(this.user, "/moderation/report/message/").concat(R), D = { url: M, type: "POST", data: JSON.stringify(H), dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } }, [4, s.hj.call(this, D)]) : (W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(W)]);
+                  return r.XZ.call(this) ? (_ = this.context, A = _.orgName, L = _.appName, w = _.accessToken, k = T.reportType, y = T.reportReason, I = T.messageId, H = { username: this.user, reportType: k, reportReason: y }, M = "".concat(this.apiUrl, "/").concat(A, "/").concat(L, "/user/").concat(this.user, "/moderation/report/message/").concat(I), D = { url: M, type: "POST", data: JSON.stringify(H), dataType: "json", headers: { Authorization: "Bearer " + w, "Content-Type": "application/json" } }, [4, s.hj.call(this, D)]) : (W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(W)]);
                 case 1:
-                  return z.sent(), [2];
+                  return J.sent(), [2];
               }
             });
           });
@@ -2411,7 +2411,7 @@ var EasemobChat = { exports: {} };
         function we(T) {
           var W;
           return d(this, void 0, void 0, function() {
-            var _, A, L, w, k, y, R, H, M;
+            var _, A, L, w, k, y, I, H, M;
             return f(this, function(D) {
               switch (D.label) {
                 case 0:
@@ -2425,7 +2425,7 @@ var EasemobChat = { exports: {} };
                     throw Error('"Invalid parameter messageIds": ' + T.messageIds);
                   if (!T.messageIds && !T.beforeTimeStamp)
                     throw Error("messageIds or beforeTimeStamp field is required.");
-                  return r.XZ.call(this) ? (A = this.context, L = A.orgName, w = A.appName, k = A.userId, y = T.chatType === "singleChat" ? "userId" : "groupId", R = T.chatType === "singleChat" ? "chat" : "group", H = T.messageIds ? "".concat(this.apiUrl, "/").concat(L, "/").concat(w, "/sdk/message/roaming/").concat(R, "/user/").concat(k, "?").concat(y, "=").concat(T.targetId, "&msgIdList=").concat(T.messageIds, "&resource=").concat(this.clientResource) : "".concat(this.apiUrl, "/").concat(L, "/").concat(w, "/sdk/message/roaming/").concat(R, "/user/").concat(k, "/time?").concat(y, "=").concat(T.targetId, "&delTime=").concat(T.beforeTimeStamp, "&&resource=").concat(this.clientResource), M = { url: H, dataType: "json", type: "DELETE", headers: { Authorization: "Bearer " + this.token, "Content-Type": "application/json" } }, u.kg.debug("Call removeHistoryMessages", T), [4, s.hj.call(this, M)]) : (_ = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(_)]);
+                  return r.XZ.call(this) ? (A = this.context, L = A.orgName, w = A.appName, k = A.userId, y = T.chatType === "singleChat" ? "userId" : "groupId", I = T.chatType === "singleChat" ? "chat" : "group", H = T.messageIds ? "".concat(this.apiUrl, "/").concat(L, "/").concat(w, "/sdk/message/roaming/").concat(I, "/user/").concat(k, "?").concat(y, "=").concat(T.targetId, "&msgIdList=").concat(T.messageIds, "&resource=").concat(this.clientResource) : "".concat(this.apiUrl, "/").concat(L, "/").concat(w, "/sdk/message/roaming/").concat(I, "/user/").concat(k, "/time?").concat(y, "=").concat(T.targetId, "&delTime=").concat(T.beforeTimeStamp, "&&resource=").concat(this.clientResource), M = { url: H, dataType: "json", type: "DELETE", headers: { Authorization: "Bearer " + this.token, "Content-Type": "application/json" } }, u.kg.debug("Call removeHistoryMessages", T), [4, s.hj.call(this, M)]) : (_ = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(_)]);
                 case 1:
                   return D.sent(), [2];
               }
@@ -2434,7 +2434,7 @@ var EasemobChat = { exports: {} };
         }
         function ke(T) {
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
           if (T != null && T.pageSize && typeof T.pageSize != "number")
@@ -2451,15 +2451,15 @@ var EasemobChat = { exports: {} };
           A == null || A.forEach(function(k) {
             var y = null;
             k != null && k.meta && JSON.stringify(k.meta) !== "{}" && (k.meta.payload = JSON.parse(k.meta.payload), y = (0, g.w)(k.meta));
-            var R = { conversationId: k.session_to, conversationType: k.session_type === "chat" ? "singleChat" : "groupChat", isPinned: k.is_top, pinnedTime: k.is_top ? k.update_top_status_time : 0, unReadCount: k.unread_num, lastMessage: y };
-            L.push(R);
+            var I = { conversationId: k.session_to, conversationType: k.session_type === "chat" ? "singleChat" : "groupChat", isPinned: k.is_top, pinnedTime: k.is_top ? k.update_top_status_time : 0, unReadCount: k.unread_num, lastMessage: y };
+            L.push(I);
           });
           var w = { conversations: L, cursor: _ || "" };
           return { type: T.type, data: w };
         }
         function j(T) {
           if (!r.XZ.call(this)) {
-            var W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(W);
           }
           if (T != null && T.pageSize && typeof T.pageSize != "number")
@@ -2473,25 +2473,25 @@ var EasemobChat = { exports: {} };
         }
         function B(T) {
           return d(this, void 0, void 0, function() {
-            var W, _, A, L, w, k, y, R, H, M, D, z, X, oe;
+            var W, _, A, L, w, k, y, I, H, M, D, J, X, oe;
             return f(this, function(q) {
               if (!r.XZ.call(this))
-                return W = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(W)];
+                return W = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(W)];
               if (_ = T.conversationId, A = T.conversationType, L = T.isPinned, w = A === "singleChat" ? "chat" : "groupChat", typeof _ != "string" || _ === "")
                 throw Error("Invalid parameter conversationId: ".concat(_));
               if (!["singleChat", "groupChat"].includes(A))
                 throw Error("Invalid parameter conversationType: ".concat(A));
               if (typeof L != "boolean")
                 throw Error("Invalid parameter isPinned: ".concat(L));
-              return k = this.context, y = k.orgName, R = k.appName, H = k.accessToken, M = k.jid, D = { type: w, to: _ }, z = L ? "" : "type=".concat(w, "&to=").concat(_, "&"), X = "".concat(this.apiUrl, "/").concat(y, "/").concat(R, "/sdk/user/").concat(this.user, "/user_channel/top?").concat(z, "resource=").concat(M.clientResource), oe = { url: X, type: L ? "POST" : "DELETE", dataType: "json", headers: { Authorization: "Bearer " + H, "Content-Type": "application/json" } }, L && (oe.data = JSON.stringify(D)), u.kg.debug("Call pinConversation", T), [2, s.hj.call(this, oe, m.fI.PIN_CONVERSATION).then(function(J) {
-                var te = J.type, re = J.data;
+              return k = this.context, y = k.orgName, I = k.appName, H = k.accessToken, M = k.jid, D = { type: w, to: _ }, J = L ? "" : "type=".concat(w, "&to=").concat(_, "&"), X = "".concat(this.apiUrl, "/").concat(y, "/").concat(I, "/sdk/user/").concat(this.user, "/user_channel/top?").concat(J, "resource=").concat(M.clientResource), oe = { url: X, type: L ? "POST" : "DELETE", dataType: "json", headers: { Authorization: "Bearer " + H, "Content-Type": "application/json" } }, L && (oe.data = JSON.stringify(D)), u.kg.debug("Call pinConversation", T), [2, s.hj.call(this, oe, m.fI.PIN_CONVERSATION).then(function(z) {
+                var te = z.type, re = z.data;
                 return { type: te, data: { isPinned: re.is_top || !1, pinnedTime: re.is_top ? re.update_top_status_time : 0 } };
               })];
             });
           });
         }
-      }, 3770: function(p, S, e) {
-        e.r(S), e.d(S, { getPresenceStatus: function() {
+      }, 3770: function(p, R, e) {
+        e.r(R), e.d(R, { getPresenceStatus: function() {
           return d;
         }, getSubscribedPresenceList: function() {
           return g;
@@ -2504,18 +2504,18 @@ var EasemobChat = { exports: {} };
         }, unsubscribePresence: function() {
           return m;
         } }), e(1539), e(8674), e(2526), e(1817), e(2165), e(6992), e(8783), e(3948), e(2222), e(9753);
-        var r = e(4370), t = e(3246), i = e(7252), s = e(5531), a = e(7360), o = function(f, b, c, I) {
+        var r = e(4370), t = e(3246), a = e(7252), s = e(5531), i = e(7360), o = function(f, b, c, S) {
           return new (c || (c = Promise))(function(v, N) {
             function x(E) {
               try {
-                C(I.next(E));
+                C(S.next(E));
               } catch (P) {
                 N(P);
               }
             }
             function O(E) {
               try {
-                C(I.throw(E));
+                C(S.throw(E));
               } catch (P) {
                 N(P);
               }
@@ -2526,10 +2526,10 @@ var EasemobChat = { exports: {} };
                 G(P);
               })).then(x, O);
             }
-            C((I = I.apply(f, b || [])).next());
+            C((S = S.apply(f, b || [])).next());
           });
         }, n = function(f, b) {
-          var c, I, v, N, x = { label: 0, sent: function() {
+          var c, S, v, N, x = { label: 0, sent: function() {
             if (1 & v[0])
               throw v[1];
             return v[1];
@@ -2544,9 +2544,9 @@ var EasemobChat = { exports: {} };
                   throw new TypeError("Generator is already executing.");
                 for (; x; )
                   try {
-                    if (c = 1, I && (v = 2 & P[0] ? I.return : P[0] ? I.throw || ((v = I.return) && v.call(I), 0) : I.next) && !(v = v.call(I, P[1])).done)
+                    if (c = 1, S && (v = 2 & P[0] ? S.return : P[0] ? S.throw || ((v = S.return) && v.call(S), 0) : S.next) && !(v = v.call(S, P[1])).done)
                       return v;
-                    switch (I = 0, v && (P = [2 & P[0], v.value]), P[0]) {
+                    switch (S = 0, v && (P = [2 & P[0], v.value]), P[0]) {
                       case 0:
                       case 1:
                         v = P;
@@ -2554,7 +2554,7 @@ var EasemobChat = { exports: {} };
                       case 4:
                         return x.label++, { value: P[1], done: !1 };
                       case 5:
-                        x.label++, I = P[1], P = [0];
+                        x.label++, S = P[1], P = [0];
                         continue;
                       case 7:
                         P = x.ops.pop(), x.trys.pop();
@@ -2581,7 +2581,7 @@ var EasemobChat = { exports: {} };
                     }
                     P = b.call(f, x);
                   } catch (G) {
-                    P = [6, G], I = 0;
+                    P = [6, G], S = 0;
                   } finally {
                     c = v = 0;
                   }
@@ -2594,13 +2594,13 @@ var EasemobChat = { exports: {} };
         };
         function l(f) {
           return o(this, void 0, void 0, function() {
-            var b, c, I, v, N, x, O, C, E;
+            var b, c, S, v, N, x, O, C, E;
             return n(this, function(P) {
               switch (P.label) {
                 case 0:
                   if (typeof f.description != "string")
                     throw Error('Invalid parameter: "description"');
-                  return t.XZ.call(this) ? (c = this.context, I = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = this.context.jid.clientResource, C = { ext: f.description }, E = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/presence/").concat(O, "/1"), type: "POST", dataType: "json", data: JSON.stringify(C), headers: { Authorization: "Bearer " + I, "Content-Type": "application/json" }, success: f.success, error: f.error }, a.kg.debug("Call publishPresence:", f), [4, r.hj.call(this, E)]) : (b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(b)]);
+                  return t.XZ.call(this) ? (c = this.context, S = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = this.context.jid.clientResource, C = { ext: f.description }, E = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/presence/").concat(O, "/1"), type: "POST", dataType: "json", data: JSON.stringify(C), headers: { Authorization: "Bearer " + S, "Content-Type": "application/json" }, success: f.success, error: f.error }, i.kg.debug("Call publishPresence:", f), [4, r.hj.call(this, E)]) : (b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(b)]);
                 case 1:
                   return P.sent(), [2];
               }
@@ -2615,17 +2615,17 @@ var EasemobChat = { exports: {} };
           if (typeof f.expiry != "number")
             throw Error('Invalid parameter: "expiry"');
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = this.context, I = c.orgName, v = c.appName, N = c.userId, x = c.accessToken, O = { usernames: f.usernames }, C = { url: "".concat(this.apiUrl, "/").concat(I, "/").concat(v, "/users/").concat(N, "/presence/").concat(f.expiry), type: "POST", dataType: "json", data: JSON.stringify(O), headers: { Authorization: "Bearer " + x, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call subscribePresence:", f), r.hj.call(this, C).then(function(E) {
+          var c = this.context, S = c.orgName, v = c.appName, N = c.userId, x = c.accessToken, O = { usernames: f.usernames }, C = { url: "".concat(this.apiUrl, "/").concat(S, "/").concat(v, "/users/").concat(N, "/presence/").concat(f.expiry), type: "POST", dataType: "json", data: JSON.stringify(O), headers: { Authorization: "Bearer " + x, "Content-Type": "application/json" }, success: f.success, error: f.error };
+          return i.kg.debug("Call subscribePresence:", f), r.hj.call(this, C).then(function(E) {
             return E.data = { result: E == null ? void 0 : E.result }, E;
           });
         }
         function m(f) {
           return o(this, void 0, void 0, function() {
-            var b, c, I, v, N, x, O;
+            var b, c, S, v, N, x, O;
             return n(this, function(C) {
               switch (C.label) {
                 case 0:
@@ -2633,7 +2633,7 @@ var EasemobChat = { exports: {} };
                     throw Error('Invalid parameter: "usernames"');
                   if (!f.usernames.length)
                     throw Error('"usernames" can not be empty');
-                  return t.XZ.call(this) ? (c = this.context, I = c.orgName, v = c.appName, N = c.userId, x = c.accessToken, O = { url: "".concat(this.apiUrl, "/").concat(I, "/").concat(v, "/users/").concat(N, "/presence"), type: "DELETE", dataType: "json", data: JSON.stringify(f.usernames), headers: { Authorization: "Bearer " + x, "Content-Type": "application/json" }, success: f.success, error: f.error }, a.kg.debug("Call unsubscribePresence:", f), [4, r.hj.call(this, O)]) : (b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(b)]);
+                  return t.XZ.call(this) ? (c = this.context, S = c.orgName, v = c.appName, N = c.userId, x = c.accessToken, O = { url: "".concat(this.apiUrl, "/").concat(S, "/").concat(v, "/users/").concat(N, "/presence"), type: "DELETE", dataType: "json", data: JSON.stringify(f.usernames), headers: { Authorization: "Bearer " + x, "Content-Type": "application/json" }, success: f.success, error: f.error }, i.kg.debug("Call unsubscribePresence:", f), [4, r.hj.call(this, O)]) : (b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(b)]);
                 case 1:
                   return C.sent(), [2];
               }
@@ -2646,11 +2646,11 @@ var EasemobChat = { exports: {} };
           if (f.pageNum < 0 || f.pageSize < 0)
             throw Error('"pageNum" should >= 0 and "pageSize" should >= 0');
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = this.context, I = c.orgName, v = c.appName, N = c.userId, x = c.accessToken, O = { url: "".concat(this.apiUrl, "/").concat(I, "/").concat(v, "/users/").concat(N, "/presence/sublist?pageNum=").concat(f.pageNum, "&pageSize=").concat(f.pageSize), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + x, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call getSubscribedPresenceList:", f), r.hj.call(this, O).then(function(C) {
+          var c = this.context, S = c.orgName, v = c.appName, N = c.userId, x = c.accessToken, O = { url: "".concat(this.apiUrl, "/").concat(S, "/").concat(v, "/users/").concat(N, "/presence/sublist?pageNum=").concat(f.pageNum, "&pageSize=").concat(f.pageSize), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + x, "Content-Type": "application/json" }, success: f.success, error: f.error };
+          return i.kg.debug("Call getSubscribedPresenceList:", f), r.hj.call(this, O).then(function(C) {
             return C.data = { result: C == null ? void 0 : C.result }, C;
           });
         }
@@ -2661,16 +2661,16 @@ var EasemobChat = { exports: {} };
           if (!f.usernames.length)
             throw Error('"usernames" can not be empty');
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = { usernames: f.usernames }, I = this.context, v = I.orgName, N = I.appName, x = I.userId, O = I.accessToken, C = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/presence"), type: "POST", dataType: "json", data: JSON.stringify(c), headers: { Authorization: "Bearer " + O, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call getPresenceStatus:", f), r.hj.call(this, C).then(function(E) {
+          var c = { usernames: f.usernames }, S = this.context, v = S.orgName, N = S.appName, x = S.userId, O = S.accessToken, C = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/presence"), type: "POST", dataType: "json", data: JSON.stringify(c), headers: { Authorization: "Bearer " + O, "Content-Type": "application/json" }, success: f.success, error: f.error };
+          return i.kg.debug("Call getPresenceStatus:", f), r.hj.call(this, C).then(function(E) {
             return E.data = { result: E == null ? void 0 : E.result }, E;
           });
         }
-      }, 1735: function(p, S, e) {
-        e.r(S), e.d(S, { clearRemindTypeForConversation: function() {
+      }, 1735: function(p, R, e) {
+        e.r(R), e.d(R, { clearRemindTypeForConversation: function() {
           return u;
         }, getPushPerformLanguage: function() {
           return d;
@@ -2687,7 +2687,7 @@ var EasemobChat = { exports: {} };
         }, setSilentModeForConversation: function() {
           return l;
         } }), e(7941), e(1539), e(8674), e(2222), e(9753), e(9554), e(4747), e(9600);
-        var r = e(4370), t = e(3246), i = e(7252), s = e(5531), a = e(7360);
+        var r = e(4370), t = e(3246), a = e(7252), s = e(5531), i = e(7360);
         function o(f) {
           if (!(f.options instanceof Object))
             throw Error('Invalid parameter: "options"');
@@ -2701,10 +2701,10 @@ var EasemobChat = { exports: {} };
             if (typeof f.options.duration != "number")
               throw Error('Invalid parameter: "options of duration"');
           } else if (b === 2) {
-            var c = f.options, I = c.startTime, v = c.endTime;
-            if (!(I instanceof Object && Object.keys(I).length))
+            var c = f.options, S = c.startTime, v = c.endTime;
+            if (!(S instanceof Object && Object.keys(S).length))
               throw Error('Invalid parameter: "options of startTime"');
-            if (!I.hours || typeof I.hours != "number" || !I.minutes || typeof I.minutes != "number")
+            if (!S.hours || typeof S.hours != "number" || !S.minutes || typeof S.minutes != "number")
               throw Error('Invalid parameter: "options of startTime of hours or minutes"');
             if (!(v instanceof Object && Object.keys(v).length))
               throw Error('Invalid parameter: "options of endTime"');
@@ -2712,7 +2712,7 @@ var EasemobChat = { exports: {} };
               throw Error('Invalid parameter: "options of endTime of hours or minutes"');
           }
           if (!t.XZ.call(this)) {
-            var N = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var N = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(N);
           }
           var x = this.context, O = x.accessToken, C = x.orgName, E = x.appName, P = x.userId, G = {};
@@ -2724,19 +2724,19 @@ var EasemobChat = { exports: {} };
               G = { ignoreDuration: f.options.duration };
               break;
             case 2:
-              var K = f.options;
-              I = K.startTime, v = K.endTime, G = { ignoreInterval: "".concat(I.hours, ":").concat(I.minutes, "-").concat(v.hours, ":").concat(v.minutes) };
+              var Z = f.options;
+              S = Z.startTime, v = Z.endTime, G = { ignoreInterval: "".concat(S.hours, ":").concat(S.minutes, "-").concat(v.hours, ":").concat(v.minutes) };
           }
           var F = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/users/").concat(P, "/notification/user/").concat(P), type: "PUT", dataType: "json", data: JSON.stringify(G), headers: { Authorization: "Bearer " + O, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call setSilentModeForAll:", f), r.hj.call(this, F);
+          return i.kg.debug("Call setSilentModeForAll:", f), r.hj.call(this, F);
         }
         function n(f) {
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = this.context, I = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification/user/").concat(x), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + I, "Content-Type": "application/json" }, success: f == null ? void 0 : f.success, error: f == null ? void 0 : f.error };
-          return a.kg.debug("Call getSilentModeForAll:", f), r.hj.call(this, O);
+          var c = this.context, S = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification/user/").concat(x), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + S, "Content-Type": "application/json" }, success: f == null ? void 0 : f.success, error: f == null ? void 0 : f.error };
+          return i.kg.debug("Call getSilentModeForAll:", f), r.hj.call(this, O);
         }
         function l(f) {
           if (typeof f.conversationId != "string" || !f.conversationId)
@@ -2755,10 +2755,10 @@ var EasemobChat = { exports: {} };
             if (typeof f.options.duration != "number")
               throw Error('Invalid parameter: "options of duration"');
           } else if (b === 2) {
-            var c = f.options, I = c.startTime, v = c.endTime;
-            if (!(I instanceof Object && Object.keys(I).length))
+            var c = f.options, S = c.startTime, v = c.endTime;
+            if (!(S instanceof Object && Object.keys(S).length))
               throw Error('Invalid parameter: "options of startTime"');
-            if (!I.hours || typeof I.hours != "number" || !I.minutes || typeof I.minutes != "number")
+            if (!S.hours || typeof S.hours != "number" || !S.minutes || typeof S.minutes != "number")
               throw Error('Invalid parameter: "options of startTime of hours or minutes"');
             if (!(v instanceof Object && Object.keys(v).length))
               throw Error('Invalid parameter: "options of endTime"');
@@ -2766,24 +2766,24 @@ var EasemobChat = { exports: {} };
               throw Error('Invalid parameter: "options of endTime of hours or minutes"');
           }
           if (!t.XZ.call(this)) {
-            var N = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var N = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(N);
           }
-          var x = this.context, O = x.accessToken, C = x.orgName, E = x.appName, P = x.userId, G = "chatgroup", K = {};
+          var x = this.context, O = x.accessToken, C = x.orgName, E = x.appName, P = x.userId, G = "chatgroup", Z = {};
           switch (b) {
             case 0:
-              K = { type: f.options.remindType };
+              Z = { type: f.options.remindType };
               break;
             case 1:
-              K = { ignoreDuration: f.options.duration };
+              Z = { ignoreDuration: f.options.duration };
               break;
             case 2:
               var F = f.options;
-              I = F.startTime, v = F.endTime, K = { ignoreInterval: "".concat(I.hours, ":").concat(I.minutes, "-").concat(v.hours, ":").concat(v.minutes) };
+              S = F.startTime, v = F.endTime, Z = { ignoreInterval: "".concat(S.hours, ":").concat(S.minutes, "-").concat(v.hours, ":").concat(v.minutes) };
           }
           f.type === "singleChat" && (G = "user");
-          var Y = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/users/").concat(P, "/notification/").concat(G, "/").concat(f.conversationId), type: "PUT", dataType: "json", data: JSON.stringify(K), headers: { Authorization: "Bearer " + O, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call setSilentModeForConversation:", f), r.hj.call(this, Y);
+          var Y = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/users/").concat(P, "/notification/").concat(G, "/").concat(f.conversationId), type: "PUT", dataType: "json", data: JSON.stringify(Z), headers: { Authorization: "Bearer " + O, "Content-Type": "application/json" }, success: f.success, error: f.error };
+          return i.kg.debug("Call setSilentModeForConversation:", f), r.hj.call(this, Y);
         }
         function u(f) {
           if (typeof f.conversationId != "string" || !f.conversationId)
@@ -2791,13 +2791,13 @@ var EasemobChat = { exports: {} };
           if (typeof f.type != "string" || !f.type)
             throw Error('Invalid parameter: "type"');
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = this.context, I = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = "chatgroup";
+          var c = this.context, S = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = "chatgroup";
           f.type === "singleChat" && (O = "user");
-          var C = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification/").concat(O, "/").concat(f.conversationId), type: "PUT", dataType: "json", data: JSON.stringify({ type: "DEFAULT" }), headers: { Authorization: "Bearer " + I, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call clearRemindTypeForConversation:", f), r.hj.call(this, C);
+          var C = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification/").concat(O, "/").concat(f.conversationId), type: "PUT", dataType: "json", data: JSON.stringify({ type: "DEFAULT" }), headers: { Authorization: "Bearer " + S, "Content-Type": "application/json" }, success: f.success, error: f.error };
+          return i.kg.debug("Call clearRemindTypeForConversation:", f), r.hj.call(this, C);
         }
         function m(f) {
           if (typeof f.conversationId != "string" || !f.conversationId)
@@ -2805,48 +2805,48 @@ var EasemobChat = { exports: {} };
           if (typeof f.type != "string" || !f.type)
             throw Error('Invalid parameter: "type"');
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = this.context, I = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = "chatgroup";
+          var c = this.context, S = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = "chatgroup";
           f.type === "singleChat" && (O = "user");
-          var C = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification/").concat(O, "/").concat(f.conversationId), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + I, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call getSilentModeForConversation:", f), r.hj.call(this, C);
+          var C = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification/").concat(O, "/").concat(f.conversationId), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + S, "Content-Type": "application/json" }, success: f.success, error: f.error };
+          return i.kg.debug("Call getSilentModeForConversation:", f), r.hj.call(this, C);
         }
         function g(f) {
           if (!Array.isArray(f.conversationList))
             throw Error('Invalid parameter: "conversationList"');
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = this.context, I = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = [], C = [];
-          f.conversationList.forEach(function(K) {
-            K.type === "singleChat" ? O.push(K.id) : C.push(K.id);
+          var c = this.context, S = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = [], C = [];
+          f.conversationList.forEach(function(Z) {
+            Z.type === "singleChat" ? O.push(Z.id) : C.push(Z.id);
           });
-          var E = O.length ? O.join(",") : "", P = C.length ? C.join(",") : "", G = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification?user=").concat(E, "&group=").concat(P), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + I, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call getSilentModeForConversations:", f), r.hj.call(this, G);
+          var E = O.length ? O.join(",") : "", P = C.length ? C.join(",") : "", G = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification?user=").concat(E, "&group=").concat(P), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + S, "Content-Type": "application/json" }, success: f.success, error: f.error };
+          return i.kg.debug("Call getSilentModeForConversations:", f), r.hj.call(this, G);
         }
         function h(f) {
           if (typeof f.language != "string" || !f.language)
             throw Error('Invalid parameter: "language"');
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = { translationLanguage: f.language }, I = this.context, v = I.accessToken, N = I.orgName, x = I.appName, O = I.userId, C = { url: "".concat(this.apiUrl, "/").concat(N, "/").concat(x, "/users/").concat(O, "/notification/language"), type: "PUT", dataType: "json", data: JSON.stringify(c), headers: { Authorization: "Bearer " + v, "Content-Type": "application/json" }, success: f.success, error: f.error };
-          return a.kg.debug("Call setPushPerformLanguage:", f), r.hj.call(this, C);
+          var c = { translationLanguage: f.language }, S = this.context, v = S.accessToken, N = S.orgName, x = S.appName, O = S.userId, C = { url: "".concat(this.apiUrl, "/").concat(N, "/").concat(x, "/users/").concat(O, "/notification/language"), type: "PUT", dataType: "json", data: JSON.stringify(c), headers: { Authorization: "Bearer " + v, "Content-Type": "application/json" }, success: f.success, error: f.error };
+          return i.kg.debug("Call setPushPerformLanguage:", f), r.hj.call(this, C);
         }
         function d(f) {
           if (!t.XZ.call(this)) {
-            var b = i.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var b = a.Z.create({ type: s.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(b);
           }
-          var c = this.context, I = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification/language"), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + I, "Content-Type": "application/json" }, success: f == null ? void 0 : f.success, error: f == null ? void 0 : f.error };
-          return a.kg.debug("Call getPushPerformLanguage:", f), r.hj.call(this, O);
+          var c = this.context, S = c.accessToken, v = c.orgName, N = c.appName, x = c.userId, O = { url: "".concat(this.apiUrl, "/").concat(v, "/").concat(N, "/users/").concat(x, "/notification/language"), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + S, "Content-Type": "application/json" }, success: f == null ? void 0 : f.success, error: f == null ? void 0 : f.error };
+          return i.kg.debug("Call getPushPerformLanguage:", f), r.hj.call(this, O);
         }
-      }, 7384: function(p, S, e) {
-        e.r(S), e.d(S, { changeChatThreadName: function() {
+      }, 7384: function(p, R, e) {
+        e.r(R), e.d(R, { changeChatThreadName: function() {
           return h;
         }, createChatThread: function() {
           return l;
@@ -2855,7 +2855,7 @@ var EasemobChat = { exports: {} };
         }, getChatThreadDetail: function() {
           return v;
         }, getChatThreadLastMessage: function() {
-          return I;
+          return S;
         }, getChatThreadMembers: function() {
           return d;
         }, getChatThreads: function() {
@@ -2869,27 +2869,27 @@ var EasemobChat = { exports: {} };
         }, removeChatThreadMember: function() {
           return f;
         } }), e(1539), e(8674), e(2526), e(1817), e(2165), e(6992), e(8783), e(3948), e(8309), e(2222), e(9554), e(4747), e(9753);
-        var r = e(5531), t = e(7252), i = e(4370), s = e(3246), a = e(4363), o = function(N, x, O, C) {
+        var r = e(5531), t = e(7252), a = e(4370), s = e(3246), i = e(4363), o = function(N, x, O, C) {
           return new (O || (O = Promise))(function(E, P) {
             function G(Y) {
               try {
                 F(C.next(Y));
-              } catch (Z) {
-                P(Z);
+              } catch (K) {
+                P(K);
               }
             }
-            function K(Y) {
+            function Z(Y) {
               try {
                 F(C.throw(Y));
-              } catch (Z) {
-                P(Z);
+              } catch (K) {
+                P(K);
               }
             }
             function F(Y) {
-              var Z;
-              Y.done ? E(Y.value) : (Z = Y.value, Z instanceof O ? Z : new O(function(V) {
-                V(Z);
-              })).then(G, K);
+              var K;
+              Y.done ? E(Y.value) : (K = Y.value, K instanceof O ? K : new O(function(V) {
+                V(K);
+              })).then(G, Z);
             }
             F((C = C.apply(N, x || [])).next());
           });
@@ -2899,60 +2899,60 @@ var EasemobChat = { exports: {} };
               throw E[1];
             return E[1];
           }, trys: [], ops: [] };
-          return P = { next: K(0), throw: K(1), return: K(2) }, typeof Symbol == "function" && (P[Symbol.iterator] = function() {
+          return P = { next: Z(0), throw: Z(1), return: Z(2) }, typeof Symbol == "function" && (P[Symbol.iterator] = function() {
             return this;
           }), P;
-          function K(F) {
+          function Z(F) {
             return function(Y) {
-              return function(Z) {
+              return function(K) {
                 if (O)
                   throw new TypeError("Generator is already executing.");
                 for (; G; )
                   try {
-                    if (O = 1, C && (E = 2 & Z[0] ? C.return : Z[0] ? C.throw || ((E = C.return) && E.call(C), 0) : C.next) && !(E = E.call(C, Z[1])).done)
+                    if (O = 1, C && (E = 2 & K[0] ? C.return : K[0] ? C.throw || ((E = C.return) && E.call(C), 0) : C.next) && !(E = E.call(C, K[1])).done)
                       return E;
-                    switch (C = 0, E && (Z = [2 & Z[0], E.value]), Z[0]) {
+                    switch (C = 0, E && (K = [2 & K[0], E.value]), K[0]) {
                       case 0:
                       case 1:
-                        E = Z;
+                        E = K;
                         break;
                       case 4:
-                        return G.label++, { value: Z[1], done: !1 };
+                        return G.label++, { value: K[1], done: !1 };
                       case 5:
-                        G.label++, C = Z[1], Z = [0];
+                        G.label++, C = K[1], K = [0];
                         continue;
                       case 7:
-                        Z = G.ops.pop(), G.trys.pop();
+                        K = G.ops.pop(), G.trys.pop();
                         continue;
                       default:
-                        if (!((E = (E = G.trys).length > 0 && E[E.length - 1]) || Z[0] !== 6 && Z[0] !== 2)) {
+                        if (!((E = (E = G.trys).length > 0 && E[E.length - 1]) || K[0] !== 6 && K[0] !== 2)) {
                           G = 0;
                           continue;
                         }
-                        if (Z[0] === 3 && (!E || Z[1] > E[0] && Z[1] < E[3])) {
-                          G.label = Z[1];
+                        if (K[0] === 3 && (!E || K[1] > E[0] && K[1] < E[3])) {
+                          G.label = K[1];
                           break;
                         }
-                        if (Z[0] === 6 && G.label < E[1]) {
-                          G.label = E[1], E = Z;
+                        if (K[0] === 6 && G.label < E[1]) {
+                          G.label = E[1], E = K;
                           break;
                         }
                         if (E && G.label < E[2]) {
-                          G.label = E[2], G.ops.push(Z);
+                          G.label = E[2], G.ops.push(K);
                           break;
                         }
                         E[2] && G.ops.pop(), G.trys.pop();
                         continue;
                     }
-                    Z = x.call(N, G);
+                    K = x.call(N, G);
                   } catch (V) {
-                    Z = [6, V], C = 0;
+                    K = [6, V], C = 0;
                   } finally {
                     O = E = 0;
                   }
-                if (5 & Z[0])
-                  throw Z[1];
-                return { value: Z[0] ? Z[1] : void 0, done: !0 };
+                if (5 & K[0])
+                  throw K[1];
+                return { value: K[0] ? K[1] : void 0, done: !0 };
               }([F, Y]);
             };
           }
@@ -2968,10 +2968,10 @@ var EasemobChat = { exports: {} };
             var x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(x);
           }
-          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, K = { name: N.name, msg_id: N.messageId, group_id: N.parentId, owner: this.user }, F = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread?resource=").concat(G.clientResource), type: "POST", dataType: "json", data: JSON.stringify(K), headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, F).then(function(Y) {
-            var Z = Y.data.thread_id;
-            return Y.data = { chatThreadId: Z }, Y;
+          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, Z = { name: N.name, msg_id: N.messageId, group_id: N.parentId, owner: this.user }, F = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread?resource=").concat(G.clientResource), type: "POST", dataType: "json", data: JSON.stringify(Z), headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
+          return a.hj.call(this, F).then(function(Y) {
+            var K = Y.data.thread_id;
+            return Y.data = { chatThreadId: K }, Y;
           });
         }
         function u(N) {
@@ -2981,21 +2981,21 @@ var EasemobChat = { exports: {} };
             var x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(x);
           }
-          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, K = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "/user/").concat(this.user, "/join?resource=").concat(G.clientResource), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, K).then(function(F) {
+          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, Z = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "/user/").concat(this.user, "/join?resource=").concat(G.clientResource), type: "POST", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
+          return a.hj.call(this, Z).then(function(F) {
             var Y = F.data.detail;
             return Y.messageId = Y.msgId, Y.parentId = Y.groupId, delete Y.msgId, delete Y.groupId, F;
           });
         }
         function m(N) {
           return o(this, void 0, void 0, function() {
-            var x, O, C, E, P, G, K;
+            var x, O, C, E, P, G, Z;
             return n(this, function(F) {
               switch (F.label) {
                 case 0:
                   if (typeof N.chatThreadId != "string" || N.chatThreadId === "")
                     throw Error("Invalid parameter chatThreadId: ".concat(N.chatThreadId));
-                  return s.XZ.call(this) ? (O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, K = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "/user/").concat(this.user, "/quit?resource=").concat(G.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } }, [4, i.hj.call(this, K)]) : (x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(x)]);
+                  return s.XZ.call(this) ? (O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, Z = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "/user/").concat(this.user, "/quit?resource=").concat(G.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } }, [4, a.hj.call(this, Z)]) : (x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(x)]);
                 case 1:
                   return F.sent(), [2];
               }
@@ -3004,13 +3004,13 @@ var EasemobChat = { exports: {} };
         }
         function g(N) {
           return o(this, void 0, void 0, function() {
-            var x, O, C, E, P, G, K;
+            var x, O, C, E, P, G, Z;
             return n(this, function(F) {
               switch (F.label) {
                 case 0:
                   if (typeof N.chatThreadId != "string" || N.chatThreadId === "")
                     throw Error("Invalid parameter chatThreadId: ".concat(N.chatThreadId));
-                  return s.XZ.call(this) ? (O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, K = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "?resource=").concat(G.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } }, [4, i.hj.call(this, K)]) : (x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(x)]);
+                  return s.XZ.call(this) ? (O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, Z = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "?resource=").concat(G.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } }, [4, a.hj.call(this, Z)]) : (x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" }), [2, Promise.reject(x)]);
                 case 1:
                   return F.sent(), [2];
               }
@@ -3026,8 +3026,8 @@ var EasemobChat = { exports: {} };
             var x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(x);
           }
-          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, K = { name: N.name }, F = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "?resource=").concat(G.clientResource), type: "PUT", dataType: "json", data: JSON.stringify(K), headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, F);
+          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, Z = { name: N.name }, F = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "?resource=").concat(G.clientResource), type: "PUT", dataType: "json", data: JSON.stringify(Z), headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
+          return a.hj.call(this, F);
         }
         function d(N) {
           if (typeof N.chatThreadId != "string" || N.chatThreadId === "")
@@ -3036,8 +3036,8 @@ var EasemobChat = { exports: {} };
             var x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(x);
           }
-          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { limit: N.pageSize || 20, cursor: N.cursor || "" }, K = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "/users"), type: "GET", dataType: "json", data: G, headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, K);
+          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { limit: N.pageSize || 20, cursor: N.cursor || "" }, Z = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "/users"), type: "GET", dataType: "json", data: G, headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
+          return a.hj.call(this, Z);
         }
         function f(N) {
           if (typeof N.chatThreadId != "string" || N.chatThreadId === "")
@@ -3048,19 +3048,19 @@ var EasemobChat = { exports: {} };
             var x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(x);
           }
-          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, K = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "/users/").concat(N.username, "?resource=").concat(G.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, K);
+          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = O.jid, Z = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId, "/users/").concat(N.username, "?resource=").concat(G.clientResource), type: "DELETE", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
+          return a.hj.call(this, Z);
         }
         function b(N) {
           if (!s.XZ.call(this)) {
             var x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(x);
           }
-          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { limit: N.pageSize || 20, cursor: N.cursor || "" }, K = { url: N.parentId ? "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/threads/chatgroups/").concat(N.parentId, "/user/").concat(this.user) : "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/threads/user/").concat(this.user), type: "GET", dataType: "json", data: G, headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, K).then(function(F) {
+          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { limit: N.pageSize || 20, cursor: N.cursor || "" }, Z = { url: N.parentId ? "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/threads/chatgroups/").concat(N.parentId, "/user/").concat(this.user) : "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/threads/user/").concat(this.user), type: "GET", dataType: "json", data: G, headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
+          return a.hj.call(this, Z).then(function(F) {
             var Y = F.entities;
-            return Y == null || Y.forEach(function(Z) {
-              Z.parentId = Z.groupId, Z.messageId = Z.msgId, delete Z.groupId, delete Z.msgId;
+            return Y == null || Y.forEach(function(K) {
+              K.parentId = K.groupId, K.messageId = K.msgId, delete K.groupId, delete K.msgId;
             }), F;
           });
         }
@@ -3071,27 +3071,27 @@ var EasemobChat = { exports: {} };
             var x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(x);
           }
-          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { cursor: N.cursor || "", limit: N.pageSize || 20 }, K = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/threads/chatgroups/").concat(N.parentId), type: "GET", dataType: "json", data: G, headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, K).then(function(F) {
+          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { cursor: N.cursor || "", limit: N.pageSize || 20 }, Z = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/threads/chatgroups/").concat(N.parentId), type: "GET", dataType: "json", data: G, headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
+          return a.hj.call(this, Z).then(function(F) {
             var Y = F.entities;
-            return Y == null || Y.forEach(function(Z) {
-              Z.parentId = Z.groupId, Z.messageId = Z.msgId, delete Z.groupId, delete Z.msgId;
+            return Y == null || Y.forEach(function(K) {
+              K.parentId = K.groupId, K.messageId = K.msgId, delete K.groupId, delete K.msgId;
             }), F;
           });
         }
-        function I(N) {
+        function S(N) {
           if (!Array.isArray(N.chatThreadIds))
             throw Error("Invalid parameter chatThreadIds: ".concat(N.chatThreadIds));
           if (!s.XZ.call(this)) {
             var x = t.Z.create({ type: r.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(x);
           }
-          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { threadIds: N.chatThreadIds }, K = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/message"), type: "POST", dataType: "json", data: JSON.stringify(G), headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, K).then(function(F) {
+          var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { threadIds: N.chatThreadIds }, Z = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/message"), type: "POST", dataType: "json", data: JSON.stringify(G), headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
+          return a.hj.call(this, Z).then(function(F) {
             return function(Y) {
-              var Z = Y.entities;
-              return Z == null || Z.forEach(function(V) {
-                V.chatThreadId = V.thread_id, V.last_message && JSON.stringify(V.last_message) !== "{}" ? V.lastMessage = (0, a.w)(V.last_message) : V.lastMessage = V.last_message, delete V.thread_id, delete V.last_message;
+              var K = Y.entities;
+              return K == null || K.forEach(function(V) {
+                V.chatThreadId = V.thread_id, V.last_message && JSON.stringify(V.last_message) !== "{}" ? V.lastMessage = (0, i.w)(V.last_message) : V.lastMessage = V.last_message, delete V.thread_id, delete V.last_message;
               }), Y;
             }(F);
           });
@@ -3104,24 +3104,24 @@ var EasemobChat = { exports: {} };
             return Promise.reject(x);
           }
           var O = this.context, C = O.orgName, E = O.appName, P = O.accessToken, G = { url: "".concat(this.apiUrl, "/").concat(C, "/").concat(E, "/thread/").concat(N.chatThreadId), type: "GET", dataType: "json", headers: { Authorization: "Bearer " + P, "Content-Type": "application/json" } };
-          return i.hj.call(this, G).then(function(K) {
-            return K.data.affiliationsCount = K.data.affiliations_count, K.data.messageId = K.data.msgId, K.data.parentId = K.data.groupId, delete K.data.affiliations_count, delete K.data.msgId, delete K.data.groupId, K;
+          return a.hj.call(this, G).then(function(Z) {
+            return Z.data.affiliationsCount = Z.data.affiliations_count, Z.data.messageId = Z.data.msgId, Z.data.parentId = Z.data.groupId, delete Z.data.affiliations_count, delete Z.data.msgId, delete Z.data.groupId, Z;
           });
         }
-      }, 70: function(p, S, e) {
-        e.r(S), e.d(S, { getSupportedLanguages: function() {
+      }, 70: function(p, R, e) {
+        e.r(R), e.d(R, { getSupportedLanguages: function() {
           return o;
         }, translateMessage: function() {
           return n;
         } }), e(1539), e(8674), e(2222), e(9753);
-        var r = e(3246), t = e(5531), i = e(7252), s = e(7360), a = e(4370);
+        var r = e(3246), t = e(5531), a = e(7252), s = e(7360), i = e(4370);
         function o() {
           if (!r.XZ.call(this)) {
-            var l = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var l = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(l);
           }
           var u = this.context, m = u.orgName, g = u.appName, h = u.accessToken, d = { url: "".concat(this.apiUrl, "/").concat(m, "/").concat(g, "/users/").concat(this.user, "/translate/support/language"), dataType: "json", type: "GET", headers: { Authorization: "Bearer " + h } };
-          return s.kg.debug("Call getSupportedLanguages"), a.hj.call(this, d);
+          return s.kg.debug("Call getSupportedLanguages"), i.hj.call(this, d);
         }
         function n(l) {
           if (typeof l.text != "string" || l.text === "")
@@ -3129,22 +3129,22 @@ var EasemobChat = { exports: {} };
           if (!Array.isArray(l.languages))
             throw Error('Invalid parameter: "language"');
           if (!r.XZ.call(this)) {
-            var u = i.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
+            var u = a.Z.create({ type: t.E.REST_PARAMS_STATUS, message: "appkey or token error" });
             return Promise.reject(u);
           }
           var m = this.context, g = m.orgName, h = m.appName, d = m.accessToken, f = "".concat(this.apiUrl, "/").concat(g, "/").concat(h, "/users/").concat(this.user, "/translate"), b = { text: l.text, to: l.languages }, c = { url: f, dataType: "json", type: "POST", data: JSON.stringify(b), headers: { Authorization: "Bearer " + d } };
-          return s.kg.debug("Call translateMessage"), a.hj.call(this, c);
+          return s.kg.debug("Call translateMessage"), i.hj.call(this, c);
         }
-      }, 3246: function(p, S, e) {
-        e.d(S, { H7: function() {
+      }, 3246: function(p, R, e) {
+        e.d(R, { H7: function() {
           return n;
         }, XZ: function() {
-          return a;
+          return i;
         }, _W: function() {
           return o;
         } }), e(7941), e(9554), e(1539), e(4747), e(6699), e(2023);
         var r = e(5531), t = e(7252);
-        function i() {
+        function a() {
           var l = this.context.appName, u = this.context.orgName;
           return !(!l || !u) || (this.onError && this.onError({ type: r.E.WEBIM_CONNCTION_AUTH_ERROR, message: "appName or orgName is illegal" }), !1);
         }
@@ -3156,8 +3156,8 @@ var EasemobChat = { exports: {} };
           }
           return !0;
         }
-        function a() {
-          return s.call(this) && i.call(this);
+        function i() {
+          return s.call(this) && a.call(this);
         }
         function o(l) {
           var u = l.data, m = l.type;
@@ -3170,15 +3170,15 @@ var EasemobChat = { exports: {} };
             m = h.includes("is not part of you") ? t.Z.create({ type: r.E.NO_PERMISSION, message: h }) : h.includes("size of metadata for this single chatroom exceeds the user defined limit") || h.includes("total size of chatroom metadata for this app exceeds the user defined limit") || h.includes("is exceeding maximum limit") ? t.Z.create({ type: r.E.MAX_LIMIT, message: h }) : h.includes("is not Legal") ? t.Z.create({ type: r.E.REQUEST_PARAMETER_ERROR, message: h }) : h.includes("Failed to update userMetadata. Concurrent updates not allowed") ? t.Z.create({ type: r.E.OPERATION_NOT_ALLOWED, message: h }) : t.Z.create({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, message: h });
           }), m;
         }
-      }, 2071: function(p, S, e) {
-        e.d(S, { $x: function() {
-          return a;
+      }, 2071: function(p, R, e) {
+        e.d(R, { $x: function() {
+          return i;
         }, F3: function() {
           return o;
         }, Nl: function() {
           return t;
         }, TJ: function() {
-          return i;
+          return a;
         }, Tp: function() {
           return u;
         }, Wc: function() {
@@ -3190,17 +3190,17 @@ var EasemobChat = { exports: {} };
         }, yK: function() {
           return l;
         } }), e(6992), e(1532), e(1539), e(8783), e(3948);
-        var r = 7, t = /* @__PURE__ */ new Map(), i = /* @__PURE__ */ new Map(), s = "im", a = "32f24ab2ddb74f508aa9286c356cec84", o = 1e3, n = { INIT: 9674, API: 9675 }, l = "direct", u = -1;
-      }, 1595: function(p, S, e) {
-        var r, t, i, s, a, o;
-        e.d(S, { C8: function() {
+        var r = 7, t = /* @__PURE__ */ new Map(), a = /* @__PURE__ */ new Map(), s = "im", i = "32f24ab2ddb74f508aa9286c356cec84", o = 1e3, n = { INIT: 9674, API: 9675 }, l = "direct", u = -1;
+      }, 1595: function(p, R, e) {
+        var r, t, a, s, i, o;
+        e.d(R, { C8: function() {
           return r;
         }, aC: function() {
           return o;
         }, c: function() {
-          return i;
-        }, dd: function() {
           return a;
+        }, dd: function() {
+          return i;
         }, fI: function() {
           return t;
         }, td: function() {
@@ -3211,37 +3211,37 @@ var EasemobChat = { exports: {} };
           n.SDK_INTERNAL = "SDK_INTERNAL", n.LOGIN = "USER_LOGIN", n.REGISTER = "USER_CREATE", n.GET_CHATROOM_LIST = "CHATROOM_FETCH_CHATROOMSWITHPAGE", n.CREATE_CHATROOM = "CHATROOM_CREATECHATROOM", n.DESTROY_CHATROOM = "CHATROOM_DESTORYCHATROOM", n.GET_CHATROOM_DETAIL = "CHATROOM_FETCH_SPECIFICATION", n.MODIFY_CHATROOM = "CHATROOM_CHANGE_ATTRIBUTE", n.REMOVE_CHATROOM_MEMBER = "CHATROOM_REMOVE_MEMBER", n.MULTI_REMOVE_CHATROOM_MEMBER = "CHATROOM_REMOVE_MEMBERS", n.ADD_USERS_TO_CHATROOM = "CHATROOM_ADD_MEMBERS", n.JOIN_CHATROOM = "CHATROOM_JOINCAHTROOM", n.QUIT_CHATROOM = "CHATROOM_LEAVECAHTROOM", n.LIST_CHATROOM_MEMBERS = "CHATROOM_FETCH_MEMBERS", n.GET_CHATROOM_ADMIN = "CHATROOM_GET_ADMIN", n.SET_CHATROOM_ADMIN = "CHATROOM_SET_ADMIN", n.REMOVE_CHATROOM_ADMIN = "CHATROOM_REMOVE_ADMIN", n.MUTE_CHATROOM_MEMBER = "CHATROOM_MUTE_USER", n.REMOVE_MUTE_CHATROOM_MEMBER = "CHATROOM_UNMUTE_USER", n.GET_MUTE_CHATROOM_MEMBERS = "CHATROOM_FETCH_MUTES", n.SET_CHATROOM_MEMBER_TO_BLACK = "CHATROOM_BLOCK_USER", n.MULTI_SET_CHATROOM_MEMBER_TO_BLACK = "CHATROOM_BLOCK_USERS", n.REMOVE_CHATROOM_MEMBER_BLACK = "CHATROOM_UNBLOCK_USER", n.MULTI_REMOVE_CHATROOM_MEMBER_BLACK = "CHATROOM_UNBLOCK_USERS", n.GET_CHATROOM_BLOCK_MEMBERS = "CHATROOM_FETCH_BANS", n.DISABLED_CHATROOM_SEND_MSG = "CHATROOM_MUTE_ALLMEMEBERS", n.ENABLE_CHATROOM_SEND_MSG = "CHATROOM_UNMUTE_ALLMEMEBERS", n.ADD_CHATROOM_WHITE_USERS = "CHATROOM_ADD_WHITELIST", n.REMOVE_CHATROOM_WHITE_USERS = "CHATROOM_REMOVE_WHITELIST", n.GET_CHATROOM_WHITE_USERS = "CHATROOM_FETCH_WHITELIST", n.CHECK_CHATROOM_WHITE_USER = "CHATROOM_FETCH_MEMBERIN_WHITELIST", n.GET_CHATROOM_ANN = "CHATROOM_FETCH_ANNOUNCEMENT", n.UPDATE_CHATROOM_ANN = "CHATROOM_UPDATE_ANNOUNCEMENT", n.DELETE_CHATROOM_FILE = "CHATROOM_REMOVE_SHARE_FILE", n.GET_CHATROOM_FILES = "CHATROOM_GET_SHARE_FILE_LIST", n.UPLOAD_CHATROOM_FILE = "CHATROOM_UPLOAD_FILE", n.SET_CHATROOM_ATTR = "CHATROOM_SET_META_DATA", n.DELETE_CHATROOM_ATTR = "CHATROOM_DELETE_META_DATA", n.GET_CHATROOM_ATTR = "CHATROOM_FETCH_META_DATA", n.CREATE_GROUP = "GROUP_CREATEGROUP", n.BLOCK_GROUP = "GROUP_BLOCK_MESSAGE", n.LIST_GROUP = "GROUP_FETCH_PUBLICGROUPS_WITHCURSOR", n.GET_USER_GROUP = "GROUP_FETCH_USERS_GROUP", n.CHANGE_OWNER = "GROUP_CHANGE_OWNER", n.GET_GROUP_INFO = "GROUP_FETCH_SPECIFICATION", n.MODIFY_GROUP = "GROUP_CHANGE_GROUPATTRIBUTE", n.LIST_GROUP_MEMBER = "GROUP_FETCH_MEMEBERS", n.GET_GROUP_ADMIN = "GROUP_GET_ADMIN", n.SET_GROUP_ADMIN = "GROUP_SET_ADMIN", n.REMOVE_GROUP_ADMIN = "GROUP_REMOVE_ADMIN", n.DISSOLVE_GROUP = "GROUP_DESTOTYGROUP", n.QUIT_GROUP = "GROUP_LEAVEGROUP", n.INVITE_TO_GROUP = "GROUP_INVITE_TO_GROUP", n.JOIN_GROUP = "GROUP_JOIN_PUBLICGROUP", n.AGREE_JOIN_GROUP = "GROUP_ACCEPT_JOINPUBLICGROUPAPPL", n.REJECT_JOIN_GROUP = "GROUP_DECLINE_JOINPUBLICGROUPAPPL", n.AGREE_INVITE_GROUP = "GROUP_ACCEPT_INVITATION", n.REJECT_INVITE_GROUP = "GROUP_DECLINE_INVITATION", n.REMOVE_GROUP_MEMBER = "GROUP_REMOVE_MEMBER", n.MULTI_REMOVE_GROUP_MEMBER = "GROUP_REMOVE_MEMBERS", n.MUTE_GROUP_MEMBER = "GROUP_MUTE_MEMBERS", n.UNMUTE_GROUP_MEMBER = "GROUP_UNMUTE_MEMBERS", n.GET_GROUP_MUTE_LIST = "GROUP_FETCH_MUTES", n.BLOCK_GROUP_MEMBER = "GROUP_BLOCK_MEMBER", n.BLOCK_GROUP_MEMBERS = "GROUP_BLOCK_MEMBERS", n.UNBLOCK_GROUP_MEMBER = "GROUP_UNBLOCK_MEMBER", n.UNBLOCK_GROUP_MEMBERS = "GROUP_UNBLOCK_MEMBERS", n.GET_GROUP_BLACK_LIST = "GROUP_GET_BLOCK_LIST", n.DISABLED_SEND_GROUP_MSG = "GROUP_MUTE_ALLMEMBERS", n.ENABLE_SEND_GROUP_MSG = "GROUP_UNMUTE_ALLMEMBERS", n.ADD_USERS_TO_GROUP_WHITE = "GROUP_ADD_WHITELIST", n.REMOVE_GROUP_WHITE_MEMBER = "GROUP_REMOVE_WHITELIST", n.GET_GROUP_WHITE_LIST = "GROUP_FETCH_WHITELIST", n.IS_IN_GROUP_WHITE_LIST = "GROUP_IS_IN_WHITELIST", n.GET_GROUP_MSG_READ_USER = "GROUP_GET_READ_USERS", n.GET_GROUP_ANN = "GROUP_FETCH_ANNOUNCEMENT", n.UPDATE_GROUP_ANN = "GROUP_UPDATE_ANNOUNCEMENT", n.UPLOAD_GROUP_FILE = "GROUP_UPLOAD_SHAREDFILE", n.DELETE_GROUP_FILE = "GROUP_DELETE_SHAREDFILE", n.GET_GROUP_FILE_LIST = "GROUP_FETCH_SHAREDFILE", n.DOWN_GROUP_FILE = "GROUP_DOWNLOAD_SHAREDFILE", n.SET_GROUP_MEMBER_ATTRS = "GROUP_MEMBER_SET_META_DATA", n.GET_GROUP_MEMBER_ATTR = "GROUP_MEMBER_FETCH_META_DATA", n.GET_SESSION_LIST = "REST_GET_SESSION_LIST", n.DELETE_SESSION = "REST_DEL_SESSION", n.GET_HISTORY_MSG = "REST_GET_HISTORY_MESSAGE", n.PIN_CONVERSATION = "REST_PIN_CONVERSATION", n.UPDATE_USER_INFO = "USER_UPDATE_USERINFO", n.GET_USER_INFO = "USER_FETCH_USERINFO", n.UPDATE_USER_NICK = "USER_UPDATE_NICK", n.UPLOAD_PUSH_TOKEN = "USER_UPLOAD_PUSH_TOKEN", n.GET_BLACK_LIST = "ROSTER_BLACKLIST", n.GET_CONTACTS = "ROSTER_CONTACTS", n.add = "ROSTER_ADD", n.remove = "ROSTER_REMOVE", n.accept = "ROSTER_ACCEPT", n.decline = "ROSTER_DECLINE", n.ban = "ROSTER_BAN", n.allow = "ROSTER_ALLOW", n.SEND_MSG = "MSYNC_SENDMESSAGE", n.UPLOAD_MSG_ATTACH = "UPLOAD_MSG_ATTACH", n.SEND_RECALL_MSG = "MSYNC_RECALLMESSAGE", n.MODIFY_MESSAGE = "MSYNC_MODIFYMESSAGE";
         }(t || (t = {})), function(n) {
           n.GET_DNS = "REST_DNSLIST", n.LOGIN_BY_AGORA_TOKEN = "LOGIN_BY_AGORA_TOKEN", n.LOGIN_BY_PWD = "LOGIN_BY_PWD", n.RESISTER = "REGISTER";
-        }(i || (i = {})), function(n) {
+        }(a || (a = {})), function(n) {
           n[n["5G"] = 7] = "5G", n[n["4G"] = 7] = "4G", n[n["3G"] = 7] = "3G", n[n["2G"] = 7] = "2G", n[n["SLOW-2G"] = 7] = "SLOW-2G", n[n.WIFI = 2] = "WIFI", n[n.LAN = 1] = "LAN", n[n.DISCONNECTED = 0] = "DISCONNECTED", n[n.NONE = 0] = "NONE", n[n.UNKNOWN = -1] = "UNKNOWN", n[n["WEBIM UNABLE TO GET"] = -2] = "WEBIM UNABLE TO GET";
         }(s || (s = {})), function(n) {
           n[n.success = 200] = "success", n[n.failed = 500] = "failed";
-        }(a || (a = {})), function(n) {
+        }(i || (i = {})), function(n) {
           n[n.web = 0] = "web", n[n.native = 1] = "native";
         }(o || (o = {}));
-      }, 1070: function(p, S, e) {
-        e.d(S, { g: function() {
-          return K;
+      }, 1070: function(p, R, e) {
+        e.d(R, { g: function() {
+          return Z;
         }, Z: function() {
           return W;
         } }), e(9601), e(1539), e(8674), e(2526), e(1817), e(2165), e(6992), e(8783), e(3948), e(7042), e(2222), e(3710), e(9714), e(5212), e(8309), e(2772), e(9653), e(3843), e(1038), e(2564), e(9753), e(8264), e(9575), e(2472), e(2990), e(8927), e(3105), e(5035), e(4345), e(7174), e(2846), e(4731), e(7209), e(6319), e(8867), e(7789), e(3739), e(9368), e(4483), e(2056), e(3462), e(678), e(7462), e(3824), e(5021), e(2974), e(5016), e(561), e(6699), e(2023), e(3161), e(7941), e(9554), e(4747), e(285), e(1637), e(8145), e(1249), e(4812);
-        var r = e(4188), t = e.n(r), i = e(3720), s = e.n(i), a = e(5531), o = e(8161), n = e(7360), l = ["public", "members_only", "allow_user_invites", "invite_need_confirm"], u = { name: "name", title: "name", description: "description", public: "public", members_only: "approval", allow_user_invites: "allowInvites", max_users: "maxUsers", invite_need_confirm: "inviteNeedConfirm", custom: "ext", last_modified: "lastModified" };
+        var r = e(4188), t = e.n(r), a = e(3720), s = e.n(a), i = e(5531), o = e(8161), n = e(7360), l = ["public", "members_only", "allow_user_invites", "invite_need_confirm"], u = { name: "name", title: "name", description: "description", public: "public", members_only: "approval", allow_user_invites: "allowInvites", max_users: "maxUsers", invite_need_confirm: "inviteNeedConfirm", custom: "ext", last_modified: "lastModified" };
         function m(_, A) {
-          var L, w, k, y, R, H, M = this, D = this.context, z = D.userId, X = D.jid, oe = A.from.name === z && X.clientResource !== A.from.clientResource;
-          return A.isThread ? (k = { id: A.mucId.name, name: A.mucName, operation: "", parentId: A.mucParentId.name, operator: A.from.name, userName: A.to.length ? A.to[0].name : "" }, y = { chatThreadId: A.mucId.name, chatThreadName: A.mucName, operation: "", parentId: A.mucParentId.name }) : (w = { type: "", owner: A.from.name, gid: A.mucId.name, from: A.from.name, fromJid: A.from, to: A.to.length ? A.to[0].name : "", toJid: A.to, chatroom: A.isChatroom, status: A.status }, R = { operation: "", id: A.mucId.name, from: A.from.name }, A.isChatroom && (!((L = A == null ? void 0 : A.eventInfo) === null || L === void 0) && L.ext) && (H = JSON.parse(A.eventInfo.ext))), ({ 45: function() {
-            var q, J, te;
-            R.operation = "memberAttributesUpdate";
+          var L, w, k, y, I, H, M = this, D = this.context, J = D.userId, X = D.jid, oe = A.from.name === J && X.clientResource !== A.from.clientResource;
+          return A.isThread ? (k = { id: A.mucId.name, name: A.mucName, operation: "", parentId: A.mucParentId.name, operator: A.from.name, userName: A.to.length ? A.to[0].name : "" }, y = { chatThreadId: A.mucId.name, chatThreadName: A.mucName, operation: "", parentId: A.mucParentId.name }) : (w = { type: "", owner: A.from.name, gid: A.mucId.name, from: A.from.name, fromJid: A.from, to: A.to.length ? A.to[0].name : "", toJid: A.to, chatroom: A.isChatroom, status: A.status }, I = { operation: "", id: A.mucId.name, from: A.from.name }, A.isChatroom && (!((L = A == null ? void 0 : A.eventInfo) === null || L === void 0) && L.ext) && (H = JSON.parse(A.eventInfo.ext))), ({ 45: function() {
+            var q, z, te;
+            I.operation = "memberAttributesUpdate";
             var re = JSON.parse((q = A == null ? void 0 : A.eventInfo) === null || q === void 0 ? void 0 : q.ext) || {};
-            R.attributes = re.properties || {}, R.userId = re.username || "", oe ? (J = M.eventHandler) === null || J === void 0 || J.dispatch("onMultiDeviceEvent", R) : (te = M.eventHandler) === null || te === void 0 || te.dispatch("onGroupEvent", R);
+            I.attributes = re.properties || {}, I.userId = re.username || "", oe ? (z = M.eventHandler) === null || z === void 0 || z.dispatch("onMultiDeviceEvent", I) : (te = M.eventHandler) === null || te === void 0 || te.dispatch("onGroupEvent", I);
           }, 44: function() {
             var q;
-            R.operation = "removeChatRoomAttributes", R.attributes = H.result.successKeys, H.result.successKeys.length > 0 && ((q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomEvent", R));
+            I.operation = "removeChatRoomAttributes", I.attributes = H.result.successKeys, H.result.successKeys.length > 0 && ((q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomEvent", I));
           }, 43: function() {
             var q;
-            R.operation = "updateChatRoomAttributes";
-            var J = {};
+            I.operation = "updateChatRoomAttributes";
+            var z = {};
             H.result.successKeys.forEach(function(te) {
-              J[te] = H.properties[te];
-            }), R.attributes = J, H.result.successKeys.length > 0 && ((q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomEvent", R));
+              z[te] = H.properties[te];
+            }), I.attributes = z, H.result.successKeys.length > 0 && ((q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomEvent", I));
           }, 42: function() {
           }, 41: function() {
           }, 40: function() {
@@ -3265,116 +3265,116 @@ var EasemobChat = { exports: {} };
             var q;
             y.operation = "chatThreadCreate", (q = M.eventHandler) === null || q === void 0 || q.dispatch("onMultiDeviceEvent", y);
           }, 32: function() {
-            var q, J, te, re;
-            w.type = A.isChatroom ? "rmChatRoomMute" : "rmGroupMute", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "unmuteAllMembers", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = A.isChatroom ? "rmChatRoomMute" : "rmGroupMute", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "unmuteAllMembers", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 31: function() {
-            var q, J, te, re;
-            w.type = A.isChatroom ? "muteChatRoom" : "muteGroup", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "muteAllMembers", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = A.isChatroom ? "muteChatRoom" : "muteGroup", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "muteAllMembers", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 30: function() {
-            var q, J, te, re;
-            w.type = A.isChatroom ? "rmUserFromChatRoomWhiteList" : "rmUserFromGroupWhiteList", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "removeAllowlistMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = A.isChatroom ? "rmUserFromChatRoomWhiteList" : "rmUserFromGroupWhiteList", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "removeAllowlistMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 29: function() {
-            var q, J, te, re;
-            w.type = A.isChatroom ? "addUserToChatRoomWhiteList" : "addUserToGroupWhiteList", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "addUserToAllowlist", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = A.isChatroom ? "addUserToChatRoomWhiteList" : "addUserToGroupWhiteList", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "addUserToAllowlist", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 28: function() {
-            var q, J, te, re;
-            w.type = "deleteFile", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "deleteFile", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "deleteFile", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "deleteFile", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 27: function() {
-            var q, J, te, re;
-            w.type = "uploadFile", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "uploadFile", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "uploadFile", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "uploadFile", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 26: function() {
-            var q, J, te, re;
-            w.type = "deleteAnnouncement", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "deleteAnnouncement", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "deleteAnnouncement", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "deleteAnnouncement", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 25: function() {
-            var q, J, te, re;
-            w.type = "updateAnnouncement", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "updateAnnouncement", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "updateAnnouncement", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "updateAnnouncement", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 24: function() {
-            var q, J, te, re;
-            w.type = "removeMute", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "unmuteMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "removeMute", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "unmuteMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 23: function() {
-            var q, J, te, re;
-            w.type = "addMute", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "muteMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "addMute", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "muteMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 22: function() {
-            var q, J, te, re;
-            w.type = "removeAdmin", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "removeAdmin", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "removeAdmin", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "removeAdmin", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 21: function() {
-            var q, J, te, re;
-            w.type = "addAdmin", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "setAdmin", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "addAdmin", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "setAdmin", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 20: function() {
-            var q, J, te, re;
-            w.type = "changeOwner", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "changeOwner", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "changeOwner", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "changeOwner", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 19: function() {
-            var q, J, te, re;
-            w.type = "direct_joined", w.groupName = A.mucName, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "directJoined", R.name = A.mucName, A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "direct_joined", w.groupName = A.mucName, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "directJoined", I.name = A.mucName, A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 18: function() {
-            var q, J, te, re;
-            w.type = A.isChatroom ? "leaveChatRoom" : "leaveGroup", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "memberAbsence", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = A.isChatroom ? "leaveChatRoom" : "leaveGroup", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "memberAbsence", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 17: function() {
-            var q, J, te, re;
-            w.type = A.isChatroom ? "memberJoinChatRoomSuccess" : "memberJoinPublicGroupSuccess", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "memberPresence", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = A.isChatroom ? "memberJoinChatRoomSuccess" : "memberJoinPublicGroupSuccess", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "memberPresence", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 16: function() {
-            var q, J;
-            w.type = "unblock", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w);
+            var q, z;
+            w.type = "unblock", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w);
           }, 15: function() {
-            var q, J;
-            w.type = "block", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w);
+            var q, z;
+            w.type = "block", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w);
           }, 14: function() {
-            var q, J, te, re, Ae, We = A.isChatroom;
+            var q, z, te, re, Ae, We = A.isChatroom;
             if (!We) {
               var Te = JSON.parse(((q = A == null ? void 0 : A.eventInfo) === null || q === void 0 ? void 0 : q.ext) || "{}", function(je, ie) {
                 return je === "last_modified" ? Number(ie) : l.includes(je) ? ie === "true" || ie === !0 : ie;
               });
-              R.detail = w.detail = {}, Object.keys(Te).forEach(function(je) {
+              I.detail = w.detail = {}, Object.keys(Te).forEach(function(je) {
                 var ie = u[je];
                 if (ie) {
-                  var ze = Te[je];
-                  R.detail && (R.detail[ie] = ze), w.detail && (w.detail[ie] = ze);
+                  var Je = Te[je];
+                  I.detail && (I.detail[ie] = Je), w.detail && (w.detail[ie] = Je);
                 }
               });
             }
-            w.type = "update", M.onPresence && M.onPresence(w), We ? (J = M.eventHandler) === null || J === void 0 || J.dispatch("onChatroomChange", w) : (te = M.eventHandler) === null || te === void 0 || te.dispatch("onGroupChange", w), R.operation = "updateInfo", We ? (re = M.eventHandler) === null || re === void 0 || re.dispatch("onChatroomEvent", R) : (Ae = M.eventHandler) === null || Ae === void 0 || Ae.dispatch("onGroupEvent", R);
+            w.type = "update", M.onPresence && M.onPresence(w), We ? (z = M.eventHandler) === null || z === void 0 || z.dispatch("onChatroomChange", w) : (te = M.eventHandler) === null || te === void 0 || te.dispatch("onGroupChange", w), I.operation = "updateInfo", We ? (re = M.eventHandler) === null || re === void 0 || re.dispatch("onChatroomEvent", I) : (Ae = M.eventHandler) === null || Ae === void 0 || Ae.dispatch("onGroupEvent", I);
           }, 13: function() {
-            var q, J, te, re;
-            w.type = "allow", w.reason = A.reason, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "unblockMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "allow", w.reason = A.reason, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "unblockMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 12: function() {
-            var q, J;
-            w.type = "ban", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w);
+            var q, z;
+            w.type = "ban", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w);
           }, 11: function() {
-            var q, J;
-            w.type = "getBlackList", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w);
+            var q, z;
+            w.type = "getBlackList", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w);
           }, 10: function() {
-            var q, J, te, re;
-            w.type = "removedFromGroup", w.kicked = w.to, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "removeMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "removedFromGroup", w.kicked = w.to, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "removeMember", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 9: function() {
-            var q, J, te, re;
-            w.type = "invite_decline", w.kicked = w.to, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "rejectInvite", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "invite_decline", w.kicked = w.to, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "rejectInvite", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 8: function() {
-            var q, J, te, re;
-            w.type = "invite_accept", w.kicked = w.to, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "acceptInvite", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "invite_accept", w.kicked = w.to, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "acceptInvite", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 7: function() {
-            var q, J, te, re;
-            w.type = "invite", w.kicked = w.to, w.groupName = A.mucName, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "inviteToJoin", R.name = A.mucName, A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "invite", w.kicked = w.to, w.groupName = A.mucName, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "inviteToJoin", I.name = A.mucName, A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 6: function() {
-            var q, J, te, re;
-            w.type = "joinPublicGroupDeclined", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "joinPublicGroupDeclined", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "joinPublicGroupDeclined", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "joinPublicGroupDeclined", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 5: function() {
-            var q, J, te, re;
-            w.type = "joinPublicGroupSuccess", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "acceptRequest", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "joinPublicGroupSuccess", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "acceptRequest", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 4: function() {
-            var q, J, te, re;
-            w.type = "joinGroupNotifications", w.reason = A.reason, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "requestToJoin", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "joinGroupNotifications", w.reason = A.reason, M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "requestToJoin", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 3: function() {
-            var q, J;
-            w.type = "leave", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w);
+            var q, z;
+            w.type = "leave", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w);
           }, 2: function() {
-            var q, J;
-            w.type = "join", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w);
+            var q, z;
+            w.type = "join", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w);
           }, 1: function() {
-            var q, J, te, re;
-            w.type = "deleteGroupChat", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupChange", w), R.operation = "destroy", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", R) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", R);
+            var q, z, te, re;
+            w.type = "deleteGroupChat", M.onPresence && M.onPresence(w), A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomChange", w) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupChange", w), I.operation = "destroy", A.isChatroom ? (te = M.eventHandler) === null || te === void 0 || te.dispatch("onChatroomEvent", I) : (re = M.eventHandler) === null || re === void 0 || re.dispatch("onGroupEvent", I);
           }, 0: function() {
-            var q, J;
-            R.operation = "create", A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomEvent", R) : (J = M.eventHandler) === null || J === void 0 || J.dispatch("onGroupEvent", R);
+            var q, z;
+            I.operation = "create", A.isChatroom ? (q = M.eventHandler) === null || q === void 0 || q.dispatch("onChatroomEvent", I) : (z = M.eventHandler) === null || z === void 0 || z.dispatch("onGroupEvent", I);
           } }[_] || function() {
             console.error("No match operation ".concat(_));
           })();
@@ -3383,32 +3383,32 @@ var EasemobChat = { exports: {} };
           var A = this.root.lookup("easemob.pb.MUCBody").decode(_.payload), L = A.operation;
           n.kg.debug("onMucMessage", A), m.call(this, L, A);
         }, h = e(4968), d = e(7252), f = function(_) {
-          var A, L, w, k, y, R, H = this.root.lookup("easemob.pb.StatisticsBody").decode(_.payload);
+          var A, L, w, k, y, I, H = this.root.lookup("easemob.pb.StatisticsBody").decode(_.payload);
           switch (H.operation) {
             case 0:
               this.onStatisticMessage && this.onStatisticMessage(H), (A = this.eventHandler) === null || A === void 0 || A.dispatch("onStatisticMessage", H);
               break;
             case 1:
-              R = d.Z.create({ type: a.E.WEBIM_CONNCTION_USER_REMOVED, message: "user has been removed" }), this.logOut = !0, this.onError && this.onError(R), (L = this.eventHandler) === null || L === void 0 || L.dispatch("onError", R);
+              I = d.Z.create({ type: i.E.WEBIM_CONNCTION_USER_REMOVED, message: "user has been removed" }), this.logOut = !0, this.onError && this.onError(I), (L = this.eventHandler) === null || L === void 0 || L.dispatch("onError", I);
               break;
             case 2:
-              R = d.Z.create({ type: a.E.WEBIM_CONNCTION_USER_LOGIN_ANOTHER_DEVICE, message: "the user is already logged on another device" }), this.logOut = !0, this.onError && this.onError(R), (w = this.eventHandler) === null || w === void 0 || w.dispatch("onError", R);
+              I = d.Z.create({ type: i.E.WEBIM_CONNCTION_USER_LOGIN_ANOTHER_DEVICE, message: "the user is already logged on another device" }), this.logOut = !0, this.onError && this.onError(I), (w = this.eventHandler) === null || w === void 0 || w.dispatch("onError", I);
               break;
             case 3:
-              R = d.Z.create({ type: a.E.WEBIM_CONNCTION_USER_KICKED_BY_CHANGE_PASSWORD, message: "the user was kicked by changing password" }), this.logOut = !0, this.onError && this.onError(R), (k = this.eventHandler) === null || k === void 0 || k.dispatch("onError", R);
+              I = d.Z.create({ type: i.E.WEBIM_CONNCTION_USER_KICKED_BY_CHANGE_PASSWORD, message: "the user was kicked by changing password" }), this.logOut = !0, this.onError && this.onError(I), (k = this.eventHandler) === null || k === void 0 || k.dispatch("onError", I);
               break;
             case 4:
-              R = d.Z.create({ type: a.E.WEBIM_CONNCTION_USER_KICKED_BY_OTHER_DEVICE, message: "the user was kicked by other device" }), this.logOut = !0, this.onError && this.onError(R), (y = this.eventHandler) === null || y === void 0 || y.dispatch("onError", R);
+              I = d.Z.create({ type: i.E.WEBIM_CONNCTION_USER_KICKED_BY_OTHER_DEVICE, message: "the user was kicked by other device" }), this.logOut = !0, this.onError && this.onError(I), (y = this.eventHandler) === null || y === void 0 || y.dispatch("onError", I);
               break;
             default:
               n.kg.error("handleStatisticsMsg:", H);
           }
         }, b = (e(9720), e(4370)), c = e(4363);
-        function I(_) {
+        function S(_) {
           var A, L = [], w = [], k = _.data;
           k && k.values && k.values.forEach(function(y) {
-            Object.entries(y.status).forEach(function(R) {
-              w.push({ device: R[0], status: Number(R[1]) });
+            Object.entries(y.status).forEach(function(I) {
+              w.push({ device: I[0], status: Number(I[1]) });
             }), L.push({ userId: y.uid, lastTime: Number(y.last_time), expire: Number(y.expiry), ext: y.ext, statusDetails: w });
           }), this.onPresenceStatusChange && this.onPresenceStatusChange(L), (A = this.eventHandler) === null || A === void 0 || A.dispatch("onPresenceStatusChange", L);
         }
@@ -3422,19 +3422,19 @@ var EasemobChat = { exports: {} };
         function N(_) {
           var A, L, w, k;
           if (_.data) {
-            var y = _.data, R = { id: y.id || "", name: y.name || "", parentId: y.muc_parent_id || "", messageId: y.msg_parent_id || "", timestamp: y.timestamp || 0, operator: y.from || "", operation: "" };
+            var y = _.data, I = { id: y.id || "", name: y.name || "", parentId: y.muc_parent_id || "", messageId: y.msg_parent_id || "", timestamp: y.timestamp || 0, operator: y.from || "", operation: "" };
             switch (y.operation) {
               case "create":
-                R.operation = "create", R.createTimestamp = R.timestamp, R.messageCount = 0, (A = this.eventHandler) === null || A === void 0 || A.dispatch("onChatThreadChange", R);
+                I.operation = "create", I.createTimestamp = I.timestamp, I.messageCount = 0, (A = this.eventHandler) === null || A === void 0 || A.dispatch("onChatThreadChange", I);
                 break;
               case "update_msg":
-                R.operation = "update", R.messageCount = y.message_count, y.last_message && JSON.stringify(y.last_message) !== "{}" ? R.lastMessage = (0, c.w)(y.last_message) : JSON.stringify(y.last_message) === "{}" && (R.lastMessage = {}), (L = this.eventHandler) === null || L === void 0 || L.dispatch("onChatThreadChange", R);
+                I.operation = "update", I.messageCount = y.message_count, y.last_message && JSON.stringify(y.last_message) !== "{}" ? I.lastMessage = (0, c.w)(y.last_message) : JSON.stringify(y.last_message) === "{}" && (I.lastMessage = {}), (L = this.eventHandler) === null || L === void 0 || L.dispatch("onChatThreadChange", I);
                 break;
               case "update":
-                R.operation = "update", R.messageCount = y.message_count, (w = this.eventHandler) === null || w === void 0 || w.dispatch("onChatThreadChange", R);
+                I.operation = "update", I.messageCount = y.message_count, (w = this.eventHandler) === null || w === void 0 || w.dispatch("onChatThreadChange", I);
                 break;
               case "delete":
-                R.operation = "destroy", (k = this.eventHandler) === null || k === void 0 || k.dispatch("onChatThreadChange", R);
+                I.operation = "destroy", (k = this.eventHandler) === null || k === void 0 || k.dispatch("onChatThreadChange", I);
             }
           }
         }
@@ -3453,7 +3453,7 @@ var EasemobChat = { exports: {} };
           var A = b.P6.parseNotify(_.payload);
           switch (A.type) {
             case "presence":
-              I.call(this, A);
+              S.call(this, A);
               break;
             case "reaction":
               v.call(this, A);
@@ -3478,7 +3478,7 @@ var EasemobChat = { exports: {} };
             return A && typeof Symbol == "function" && A.constructor === Symbol && A !== Symbol.prototype ? "symbol" : typeof A;
           }, G(_);
         }
-        var K, F = function() {
+        var Z, F = function() {
           return F = Object.assign || function(_) {
             for (var A, L = 1, w = arguments.length; L < w; L++)
               for (var k in A = arguments[L])
@@ -3488,15 +3488,15 @@ var EasemobChat = { exports: {} };
         };
         (function(_) {
           _[_.NORMAL = 0] = "NORMAL", _[_.SINGLECHAT = 1] = "SINGLECHAT", _[_.GROUPCHAT = 2] = "GROUPCHAT", _[_.CHATROOM = 3] = "CHATROOM", _[_.READ_ACK = 4] = "READ_ACK", _[_.DELIVER_ACK = 5] = "DELIVER_ACK", _[_.RECALL = 6] = "RECALL", _[_.CHANNEL_ACK = 7] = "CHANNEL_ACK", _[_.EDIT = 8] = "EDIT";
-        })(K || (K = {}));
+        })(Z || (Z = {}));
         var Y = b.P6.getEnvInfo();
-        function Z() {
+        function K() {
           var _ = "webim", A = "", L = "", w = [], k = (/* @__PURE__ */ new Date()).valueOf();
           this.deviceId === "webim" ? (L = "random_" + k.toString(), _ = this.deviceId + "_" + L, A = this.deviceId) : _ = A = L = "webim_" + this.deviceId, this.context.jid && (this.context.jid.clientResource = _);
-          var y = this.root.lookup("easemob.pb.Provision"), R = y.decode(w);
-          R.compressType = this.compressType, R.encryptType = this.encryptType, R.osType = this.osType, R.version = this.version, R.deviceName = A, R.resource = _, R.deviceUuid = L, R.auth = "$t$" + this.token, R.actionVersion = "v2.0", R = y.encode(R).finish();
+          var y = this.root.lookup("easemob.pb.Provision"), I = y.decode(w);
+          I.compressType = this.compressType, I.encryptType = this.encryptType, I.osType = this.osType, I.version = this.version, I.deviceName = A, I.resource = _, I.deviceUuid = L, I.auth = "$t$" + this.token, I.actionVersion = "v2.0", I = y.encode(I).finish();
           var H = this.root.lookup("easemob.pb.MSync"), M = H.decode(w);
-          return M.version = this.version, M.guid = this.context.jid, M.auth = "$t$" + this.token, M.command = 3, M.deviceId = A, M.serviceId = this.dataReport.getServiceId(), M.encryptType = this.encryptType, M.payload = R, H.encode(M).finish();
+          return M.version = this.version, M.guid = this.context.jid, M.auth = "$t$" + this.token, M.command = 3, M.deviceId = A, M.serviceId = this.dataReport.getServiceId(), M.encryptType = this.encryptType, M.payload = I, H.encode(M).finish();
         }
         function V(_, A) {
           var L = this, w = b.P6.getEnvInfo();
@@ -3508,8 +3508,8 @@ var EasemobChat = { exports: {} };
               H.errMsg !== "sendSocketMessage:fail taskID not exist" && H.errMsg !== "SocketTast.send:fail SocketTask.readyState is not OPEN" || (n.kg.debug("send message fail and reconnect"), L.reconnecting || L.reconnect()), A && L._msgHash && L._msgHash[A] && L._msgHash[A].fail({ id: A });
             } };
           }
-          var R = _;
-          return { data: R.buffer.slice(R.byteOffset, R.byteOffset + R.byteLength), fail: function(H) {
+          var I = _;
+          return { data: I.buffer.slice(I.byteOffset, I.byteOffset + I.byteLength), fail: function(H) {
             H.errMsg !== "sendSocketMessage:fail taskID not exist" && H.errMsg !== "SocketTast.send:fail SocketTask.readyState is not OPEN" || L.reconnecting || L.reconnect(), A && L._msgHash && L._msgHash[A] && L._msgHash[A].fail({ id: A });
           } };
         }
@@ -3539,13 +3539,13 @@ var EasemobChat = { exports: {} };
         }
         function ae(_, A) {
           for (var L = function(y) {
-            var R = new (s())(_[y].id.low, _[y].id.high, _[y].id.unsigned).toString();
-            if (w._load_msg_cache.some(function(z) {
-              return z.msgId === R;
+            var I = new (s())(_[y].id.low, _[y].id.high, _[y].id.unsigned).toString();
+            if (w._load_msg_cache.some(function(J) {
+              return J.msgId === I;
             }))
               return "continue";
             var H = _[y].from.name, M = _[y].to ? _[y].to.name : "", D = !!_[y].to && _[y].to.domain.indexOf("conference") !== -1;
-            w._load_msg_cache.length <= w.max_cache_length || w._load_msg_cache.shift(), w._load_msg_cache.push({ msgId: R, from: H, to: M, isGroup: D }), ne.call(w, _[y], A);
+            w._load_msg_cache.length <= w.max_cache_length || w._load_msg_cache.shift(), w._load_msg_cache.push({ msgId: I, from: H, to: M, isGroup: D }), ne.call(w, _[y], A);
           }, w = this, k = 0; k < _.length; k++)
             L(k);
         }
@@ -3569,8 +3569,8 @@ var EasemobChat = { exports: {} };
           w.id = (/* @__PURE__ */ new Date()).valueOf(), w.ns = 0, w.payload = L;
           var k = this.root.lookup("easemob.pb.CommSyncUL"), y = k.decode(_);
           y.meta = w, y = k.encode(y).finish();
-          var R = this.root.lookup("easemob.pb.MSync"), H = R.decode(_);
-          return H.version = this.version, H.encryptType = [0], H.command = 0, H.payload = y, R.encode(H).finish();
+          var I = this.root.lookup("easemob.pb.MSync"), H = I.decode(_);
+          return H.version = this.version, H.encryptType = [0], H.command = 0, H.payload = y, I.encode(H).finish();
         }
         function me(_) {
           var A = [], L = this.root.lookup("easemob.pb.CommSyncUL"), w = L.decode(A);
@@ -3586,16 +3586,16 @@ var EasemobChat = { exports: {} };
         function Ce(_, A) {
           var L = [], w = this.root.lookup("easemob.pb.CommSyncUL"), k = w.decode(L);
           k.queue = A, k.key = new (s())(_.low, _.high, _.unsigned).toString(), k = w.encode(k).finish();
-          var y = this.root.lookup("easemob.pb.MSync"), R = y.decode(L);
-          return R.version = this.version, R.encryptType = this.encryptType, R.command = 0, R.payload = k, y.encode(R).finish();
+          var y = this.root.lookup("easemob.pb.MSync"), I = y.decode(L);
+          return I.version = this.version, I.encryptType = this.encryptType, I.command = 0, I.payload = k, y.encode(I).finish();
         }
-        function Ie(_, A) {
+        function Re(_, A) {
           n.kg.debug("sendLastSession");
           var L = Ce.call(this, _, A);
           T.call(this, L);
         }
-        function Re(_) {
-          var A, L, w, k, y, R, H = this.root.lookup("easemob.pb.Provision").decode(_.payload);
+        function Ie(_) {
+          var A, L, w, k, y, I, H = this.root.lookup("easemob.pb.Provision").decode(_.payload);
           if (this.context.jid && (this.context.jid.clientResource = H.resource), this.clientResource = H.resource, H.status.errorCode === 0) {
             if (this.reconnecting = !1, this.logOut = !1, Y.platform !== "zfb" && Y.platform !== "dd" || (this.sock.readyState = 1), this.times = 1, this.autoReconnectNumTotal = 0, this.onOpened && this.onOpened(), (A = this.eventHandler) === null || A === void 0 || A.dispatch("onConnected"), this.grantType === "agoraToken") {
               var M = Date.now();
@@ -3603,22 +3603,22 @@ var EasemobChat = { exports: {} };
             }
             Oe.call(this), Ue.call(this), ce.call(this), fe.call(this);
           } else {
-            var D = void 0, z = H.status.reason;
-            switch (z) {
+            var D = void 0, J = H.status.reason;
+            switch (J) {
               case "Sorry, the app day live count limit":
-                D = d.Z.create({ type: a.E.MAX_LIMIT, message: "Sorry, the daily active user limit for this app has been reached" }), (L = this.eventHandler) === null || L === void 0 || L.dispatch("onError", D);
+                D = d.Z.create({ type: i.E.MAX_LIMIT, message: "Sorry, the daily active user limit for this app has been reached" }), (L = this.eventHandler) === null || L === void 0 || L.dispatch("onError", D);
                 break;
               case "Sorry, the app online count limit":
-                D = d.Z.create({ type: a.E.MAX_LIMIT, message: "Sorry, the maximum number limit of online users for this app has been reached" }), (w = this.eventHandler) === null || w === void 0 || w.dispatch("onError", D);
+                D = d.Z.create({ type: i.E.MAX_LIMIT, message: "Sorry, the maximum number limit of online users for this app has been reached" }), (w = this.eventHandler) === null || w === void 0 || w.dispatch("onError", D);
                 break;
               case "Sorry, the app month live count limit":
-                D = d.Z.create({ type: a.E.MAX_LIMIT, message: "Sorry, the monthly active user limit for this app has been reached" }), (k = this.eventHandler) === null || k === void 0 || k.dispatch("onError", D);
+                D = d.Z.create({ type: i.E.MAX_LIMIT, message: "Sorry, the monthly active user limit for this app has been reached" }), (k = this.eventHandler) === null || k === void 0 || k.dispatch("onError", D);
                 break;
               case "Sorry, who are you?":
-                D = d.Z.create({ type: a.E.WEBIM_CONNCTION_AUTH_ERROR, message: "Auth failed" }), (y = this.eventHandler) === null || y === void 0 || y.dispatch("onError", D);
+                D = d.Z.create({ type: i.E.WEBIM_CONNCTION_AUTH_ERROR, message: "Auth failed" }), (y = this.eventHandler) === null || y === void 0 || y.dispatch("onError", D);
                 break;
               default:
-                D = d.Z.create({ type: a.E.SERVER_UNKNOWN_ERROR, message: z }), (R = this.eventHandler) === null || R === void 0 || R.dispatch("onError", D);
+                D = d.Z.create({ type: i.E.SERVER_UNKNOWN_ERROR, message: J }), (I = this.eventHandler) === null || I === void 0 || I.dispatch("onError", D);
             }
           }
         }
@@ -3642,11 +3642,11 @@ var EasemobChat = { exports: {} };
         }
         function Ue() {
           var _ = this;
-          Ze.call(this), this.heartBeatID = setInterval(function() {
+          Ke.call(this), this.heartBeatID = setInterval(function() {
             ce.call(_);
           }, this.heartBeatWait);
         }
-        function Ze() {
+        function Ke() {
           clearInterval(this.heartBeatID);
         }
         function $e() {
@@ -3665,7 +3665,7 @@ var EasemobChat = { exports: {} };
             Ve(A._queues, y) && (ge.call(A, y), n.kg.debug("⬇q:", y));
           }, 1e4), this._queues.push(w.queue), this._queues.length === 1 && ge.call(this, w.queue));
         }
-        function Ke(_) {
+        function Ze(_) {
           if (typeof _ == "string") {
             var A = JSON.parse(_);
             if (Array.isArray(A)) {
@@ -3676,8 +3676,8 @@ var EasemobChat = { exports: {} };
         }
         function Qe(_) {
           return A = this, L = void 0, k = function() {
-            var y, R, H, M, D, z, X, oe;
-            return function(q, J) {
+            var y, I, H, M, D, J, X, oe;
+            return function(q, z) {
               var te, re, Ae, We, Te = { label: 0, sent: function() {
                 if (1 & Ae[0])
                   throw Ae[1];
@@ -3687,7 +3687,7 @@ var EasemobChat = { exports: {} };
                 return this;
               }), We;
               function je(ie) {
-                return function(ze) {
+                return function(Je) {
                   return function(De) {
                     if (te)
                       throw new TypeError("Generator is already executing.");
@@ -3728,57 +3728,57 @@ var EasemobChat = { exports: {} };
                             Ae[2] && Te.ops.pop(), Te.trys.pop();
                             continue;
                         }
-                        De = J.call(q, Te);
-                      } catch (Je) {
-                        De = [6, Je], re = 0;
+                        De = z.call(q, Te);
+                      } catch (ze) {
+                        De = [6, ze], re = 0;
                       } finally {
                         te = Ae = 0;
                       }
                     if (5 & De[0])
                       throw De[1];
                     return { value: De[0] ? De[1] : void 0, done: !0 };
-                  }([ie, ze]);
+                  }([ie, Je]);
                 };
               }
             }(this, function(q) {
-              if (y = b.P6.getEnvInfo(), R = this.root.lookup("easemob.pb.MSync"), this.name === "miniCore") {
+              if (y = b.P6.getEnvInfo(), I = this.root.lookup("easemob.pb.MSync"), this.name === "miniCore") {
                 try {
-                  _.data instanceof ArrayBuffer || (n.kg.debug("received message: ".concat(_.data)), Ke.call(this, _.data)), M = new Uint8Array(_.data), H = R.decode(M);
+                  _.data instanceof ArrayBuffer || (n.kg.debug("received message: ".concat(_.data)), Ze.call(this, _.data)), M = new Uint8Array(_.data), H = I.decode(M);
                 } catch {
                   throw new Error("decode message fail.");
                 }
                 return [2, H];
               }
               if (y.platform === "web" || y.platform === "zfb" || y.platform === "dd") {
-                for (_.data === '[401,"normal closed"]' && (n.kg.debug("received message: ".concat(_.data)), Ke.call(this, _.data)), D = t().atob(_.data), z = [], X = 0, oe = D.length; X < oe; ++X)
-                  z.push(D.charCodeAt(X));
-                return [2, R.decode(z)];
+                for (_.data === '[401,"normal closed"]' && (n.kg.debug("received message: ".concat(_.data)), Ze.call(this, _.data)), D = t().atob(_.data), J = [], X = 0, oe = D.length; X < oe; ++X)
+                  J.push(D.charCodeAt(X));
+                return [2, I.decode(J)];
               }
               try {
-                _.data instanceof ArrayBuffer || (n.kg.debug("received message: ".concat(_.data)), Ke.call(this, _.data)), H = R.decode(_.data);
+                _.data instanceof ArrayBuffer || (n.kg.debug("received message: ".concat(_.data)), Ze.call(this, _.data)), H = I.decode(_.data);
               } catch {
                 throw new Error("decode message fail.");
               }
               return [2, H];
             });
-          }, new ((w = void 0) || (w = Promise))(function(y, R) {
-            function H(z) {
+          }, new ((w = void 0) || (w = Promise))(function(y, I) {
+            function H(J) {
               try {
-                D(k.next(z));
+                D(k.next(J));
               } catch (X) {
-                R(X);
+                I(X);
               }
             }
-            function M(z) {
+            function M(J) {
               try {
-                D(k.throw(z));
+                D(k.throw(J));
               } catch (X) {
-                R(X);
+                I(X);
               }
             }
-            function D(z) {
+            function D(J) {
               var X;
-              z.done ? y(z.value) : (X = z.value, X instanceof w ? X : new w(function(oe) {
+              J.done ? y(J.value) : (X = J.value, X instanceof w ? X : new w(function(oe) {
                 oe(X);
               })).then(H, M);
             }
@@ -3801,7 +3801,7 @@ var EasemobChat = { exports: {} };
                   Be.call(A, L);
                   break;
                 case 3:
-                  Re.call(A, L);
+                  Ie.call(A, L);
                   break;
                 default:
                   n.kg.error("unexpected msync command: ".concat(L.command));
@@ -3811,25 +3811,25 @@ var EasemobChat = { exports: {} };
           });
         }
         function Le(_) {
-          var A, L, w, k, y, R, H, M, D, z, X, oe, q, J, te, re, Ae, We, Te = this.root.lookup("easemob.pb.CommSyncDL");
+          var A, L, w, k, y, I, H, M, D, J, X, oe, q, z, te, re, Ae, We, Te = this.root.lookup("easemob.pb.CommSyncDL");
           Te = Te.decode(_.payload);
           var je = new (s())(Te.serverId.low, Te.serverId.high, Te.serverId.unsigned).toString(), ie = new (s())(Te.metaId.low, Te.metaId.high, Te.metaId.unsigned).toString();
           if (Te.status)
             if (Te.status.errorCode === 0) {
               if (Number(ie) > 0) {
                 (Fe = E.Nl.get(ie)) && ((0, Fe.rpt)({ isEndApi: !0, data: { isSuccess: 1, requestName: Fe.requestName, requestMethod: "WEBSOCKET", requestUrl: this.url, code: P.dd.success } }), E.Nl.delete(ie));
-                var ze = this._msgHash[ie];
-                if (ze != null && ze.isHandleChatroom) {
+                var Je = this._msgHash[ie];
+                if (Je != null && Je.isHandleChatroom) {
                   try {
                     var De = ((A = this._msgHash[ie]) === null || A === void 0 ? void 0 : A.operation) === "join";
                     ((L = this._msgHash[ie]) === null || L === void 0 ? void 0 : L.resolve) instanceof Function && De && this._msgHash[ie].resolve({ type: 0, data: { action: "apply", id: this._msgHash[ie].roomId, result: !0, user: this.context.userId } }), ((w = this._msgHash[ie]) === null || w === void 0 ? void 0 : w.success) instanceof Function && De && this._msgHash[ie].success({ type: 0, data: { action: "apply", id: this._msgHash[ie].roomId, result: !0, user: this.context.userId } }), ((k = this._msgHash[ie]) === null || k === void 0 ? void 0 : k.resolve) instanceof Function && !De && this._msgHash[ie].resolve({ type: 0, data: { result: !0 } }), ((y = this._msgHash[ie]) === null || y === void 0 ? void 0 : y.success) instanceof Function && !De && this._msgHash[ie].success({ type: 0, data: { result: !0 } });
                   } catch (ot) {
-                    var Je = d.Z.create({ type: a.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, message: "when executing success function error", data: ot });
-                    this.onError && this.onError(Je), (R = this.eventHandler) === null || R === void 0 || R.dispatch("onError", Je);
+                    var ze = d.Z.create({ type: i.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, message: "when executing success function error", data: ot });
+                    this.onError && this.onError(ze), (I = this.eventHandler) === null || I === void 0 || I.dispatch("onError", ze);
                   }
                   delete this._msgHash[ie];
                 }
-                if (ze && !ze.isHandleChatroom) {
+                if (Je && !Je.isHandleChatroom) {
                   var at = null, st = "", U = 0;
                   if (Te.metas.length !== 0)
                     try {
@@ -3839,7 +3839,7 @@ var EasemobChat = { exports: {} };
                         at = { operationTime: be, operatorId: _e, operationCount: ye }, st = Se, U = Number(ee);
                       }
                     } catch (ot) {
-                      Je = d.Z.create({ type: a.E.WEBIM_LOAD_MSG_ERROR, message: "decode message error", data: ot }), this.onError && this.onError(Je), (H = this.eventHandler) === null || H === void 0 || H.dispatch("onError", Je);
+                      ze = d.Z.create({ type: i.E.WEBIM_LOAD_MSG_ERROR, message: "decode message error", data: ot }), this.onError && this.onError(ze), (H = this.eventHandler) === null || H === void 0 || H.dispatch("onError", ze);
                     }
                   E.TJ.has(ie) && (E.TJ.get(ie).rpt({ isEndApi: !0, data: { isSuccess: 1, requestMethod: "WEBSOCKET", requestUrl: this.url, code: P.dd.success, msgId: je } }), E.TJ.delete(ie));
                   try {
@@ -3851,7 +3851,7 @@ var EasemobChat = { exports: {} };
                     }
                     ((M = this._msgHash[ie]) === null || M === void 0 ? void 0 : M.resolve) instanceof Function && this._msgHash[ie].resolve(le), ((D = this._msgHash[ie]) === null || D === void 0 ? void 0 : D.success) instanceof Function && this._msgHash[ie].success(ie, je);
                   } catch (ot) {
-                    Je = d.Z.create({ type: a.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, message: "when executing success function error", data: ot }), this.onError && this.onError(Je), (z = this.eventHandler) === null || z === void 0 || z.dispatch("onError", Je);
+                    ze = d.Z.create({ type: i.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, message: "when executing success function error", data: ot }), this.onError && this.onError(ze), (J = this.eventHandler) === null || J === void 0 || J.dispatch("onError", ze);
                   }
                   this.onReceivedMessage && this.onReceivedMessage({ id: ie, mid: je, to: this._msgHash[ie].to, time: 0 }), (X = this.eventHandler) === null || X === void 0 || X.dispatch("onReceivedMessage", { id: ie, mid: je, to: this._msgHash[ie].to }), delete this._msgHash[ie];
                 }
@@ -3859,7 +3859,7 @@ var EasemobChat = { exports: {} };
                 try {
                   ae.call(this, Te.metas, Te.status);
                 } catch (ot) {
-                  Je = d.Z.create({ type: a.E.WEBIM_LOAD_MSG_ERROR, message: "decode message error", data: ot }), this.onError && this.onError(Je), (oe = this.eventHandler) === null || oe === void 0 || oe.dispatch("onError", Je);
+                  ze = d.Z.create({ type: i.E.WEBIM_LOAD_MSG_ERROR, message: "decode message error", data: ot }), this.onError && this.onError(ze), (oe = this.eventHandler) === null || oe === void 0 || oe.dispatch("onError", ze);
                 } finally {
                   if (Te.isLast) {
                     var rt = -1;
@@ -3867,7 +3867,7 @@ var EasemobChat = { exports: {} };
                       return ot.name === Te.name && (rt = nt, !0);
                     }) && rt > 0 && this._queues.splice(rt, 1), this._queues.length > 0 && (ge.call(this, this._queues[0]), this.qTimer && clearTimeout(this.qTimer));
                   } else
-                    Ie.call(this, Te.nextKey, Te.queue);
+                    Re.call(this, Te.nextKey, Te.queue);
                 }
               else if (Te.isLast) {
                 var Ge = -1;
@@ -3876,59 +3876,59 @@ var EasemobChat = { exports: {} };
                 }) && this._queues.splice(Ge, 1), this._queues.length > 0 && (ge.call(this, this._queues[0]), this.qTimer && clearTimeout(this.qTimer));
               }
             } else if (Te.status.errorCode === 15)
-              ((q = this._msgHash[ie]) === null || q === void 0 ? void 0 : q.fail) instanceof Function && this._msgHash[ie].fail({ type: a.E.SERVICE_NOT_ALLOW_MESSAGING_MUTE, reason: "you were muted" }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject({ type: a.E.SERVICE_NOT_ALLOW_MESSAGING_MUTE, reason: "you were muted" });
+              ((q = this._msgHash[ie]) === null || q === void 0 ? void 0 : q.fail) instanceof Function && this._msgHash[ie].fail({ type: i.E.SERVICE_NOT_ALLOW_MESSAGING_MUTE, reason: "you were muted" }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject({ type: i.E.SERVICE_NOT_ALLOW_MESSAGING_MUTE, reason: "you were muted" });
             else if (Te.status.errorCode === 1) {
               switch (pe = void 0, Te.status.reason) {
                 case "blocked":
-                  pe = a.E.PERMISSION_DENIED;
+                  pe = i.E.PERMISSION_DENIED;
                   break;
                 case "group not found":
-                  pe = a.E.GROUP_NOT_EXIST;
+                  pe = i.E.GROUP_NOT_EXIST;
                   break;
                 case "not in group or chatroom":
-                  pe = a.E.GROUP_NOT_JOINED;
+                  pe = i.E.GROUP_NOT_JOINED;
                   break;
                 case "exceed recall time limit":
-                  pe = a.E.MESSAGE_RECALL_TIME_LIMIT;
+                  pe = i.E.MESSAGE_RECALL_TIME_LIMIT;
                   break;
                 case "message recall disabled":
-                  pe = a.E.SERVICE_NOT_ENABLED;
+                  pe = i.E.SERVICE_NOT_ENABLED;
                   break;
                 case "not in group or chatroom white list":
-                  pe = a.E.SERVICE_NOT_ALLOW_MESSAGING;
+                  pe = i.E.SERVICE_NOT_ALLOW_MESSAGING;
                   break;
                 case "nonroster":
-                  pe = a.E.USER_NOT_FRIEND, Te.status.reason = "not contact";
+                  pe = i.E.USER_NOT_FRIEND, Te.status.reason = "not contact";
                   break;
                 case "group is disabled":
-                  pe = a.E.GROUP_IS_DISABLED, Te.status.reason = "group is disabled";
+                  pe = i.E.GROUP_IS_DISABLED, Te.status.reason = "group is disabled";
                   break;
                 case "limit directed users":
-                  pe = a.E.MAX_LIMIT;
+                  pe = i.E.MAX_LIMIT;
                   break;
                 case "Sorry, edit limit reached":
-                  pe = a.E.MAX_LIMIT, Te.status.reason = "Modify message limit reached";
+                  pe = i.E.MAX_LIMIT, Te.status.reason = "Modify message limit reached";
                   break;
                 case "Sorry, message does not exist":
-                  pe = a.E.MODIFY_MESSAGE_NOT_EXIST, Te.status.reason = "The message does not exist.";
+                  pe = i.E.MODIFY_MESSAGE_NOT_EXIST, Te.status.reason = "The message does not exist.";
                   break;
                 case "Sorry, You do not have permission":
-                  pe = a.E.PERMISSION_DENIED, Te.status.reason = "You do not have the modified permission.";
+                  pe = i.E.PERMISSION_DENIED, Te.status.reason = "You do not have the modified permission.";
                   break;
                 case "Sorry, format is incorrect":
-                  pe = a.E.MODIFY_MESSAGE_FORMAT_ERROR, Te.status.reason = "The modify messaged format error.";
+                  pe = i.E.MODIFY_MESSAGE_FORMAT_ERROR, Te.status.reason = "The modify messaged format error.";
                   break;
                 case "Sorry, edit is not available":
-                  pe = a.E.SERVICE_NOT_ENABLED, Te.status.reason = "The message modify function is not activated.";
+                  pe = i.E.SERVICE_NOT_ENABLED, Te.status.reason = "The message modify function is not activated.";
                   break;
                 case "Sorry, edit fail":
-                  pe = a.E.MODIFY_MESSAGE_FAILED, Te.status.reason = "Modify message failed.";
+                  pe = i.E.MODIFY_MESSAGE_FAILED, Te.status.reason = "Modify message failed.";
                   break;
                 default:
-                  Te.status.reason.includes("grpID") && Te.status.reason.includes("does not exist!") ? (pe = a.E.CHATROOM_NOT_EXIST, Te.status.reason = "The chat room dose not exist.") : Te.status.reason.includes("username") && Te.status.reason.includes("doesn't exist!") ? pe = a.E.USER_NOT_FOUND : Te.status.reason === "group member list is full!" ? pe = a.E.CHATROOM_MEMBERS_FULL : Te.status.reason.includes("can not join this group") && Te.status.reason.includes("is in the blacklist") ? (pe = a.E.PERMISSION_DENIED, Te.status.reason = "permission denied") : pe = Te.status.reason === "can not operate this group, reason: group is disabled" ? a.E.GROUP_IS_DISABLED : Te.status.reason.includes("moderation") ? a.E.MESSAGE_MODERATION_BLOCKED : a.E.SERVER_UNKNOWN_ERROR;
+                  Te.status.reason.includes("grpID") && Te.status.reason.includes("does not exist!") ? (pe = i.E.CHATROOM_NOT_EXIST, Te.status.reason = "The chat room dose not exist.") : Te.status.reason.includes("username") && Te.status.reason.includes("doesn't exist!") ? pe = i.E.USER_NOT_FOUND : Te.status.reason === "group member list is full!" ? pe = i.E.CHATROOM_MEMBERS_FULL : Te.status.reason.includes("can not join this group") && Te.status.reason.includes("is in the blacklist") ? (pe = i.E.PERMISSION_DENIED, Te.status.reason = "permission denied") : pe = Te.status.reason === "can not operate this group, reason: group is disabled" ? i.E.GROUP_IS_DISABLED : Te.status.reason.includes("moderation") ? i.E.MESSAGE_MODERATION_BLOCKED : i.E.SERVER_UNKNOWN_ERROR;
               }
               if (this._msgHash[ie]) {
-                if (!((J = this._msgHash[ie]) === null || J === void 0) && J.isHandleChatroom) {
+                if (!((z = this._msgHash[ie]) === null || z === void 0) && z.isHandleChatroom) {
                   var qe = d.Z.create({ type: pe, message: Te.status.reason || "", data: "" });
                   this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].error instanceof Function && this._msgHash[ie].error(qe);
                 } else
@@ -3936,20 +3936,20 @@ var EasemobChat = { exports: {} };
                 delete this._msgHash[ie];
               }
             } else if (Te.status.errorCode === 7)
-              Te.status.reason === "sensitive words" && this._msgHash[ie] ? (qe = d.Z.create({ type: a.E.MESSAGE_INCLUDE_ILLEGAL_CONTENT, message: "sensitive words", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail({ type: a.E.MESSAGE_INCLUDE_ILLEGAL_CONTENT, data: { id: ie, mid: je, reason: "sensitive words" } })) : Te.status.reason === "blocked by mod_antispam" && this._msgHash[ie] ? (qe = d.Z.create({ type: a.E.MESSAGE_INCLUDE_ILLEGAL_CONTENT, message: "blocked by mod_antispam", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail({ type: a.E.MESSAGE_INCLUDE_ILLEGAL_CONTENT, data: { id: ie, mid: je, reason: "blocked by mod_antispam" } })) : Te.status.reason === "user is mute" && this._msgHash[ie] ? (qe = d.Z.create({ type: a.E.USER_MUTED_BY_ADMIN, message: "user is mute", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail(qe)) : Te.status.reason === "traffic limit" && this._msgHash[ie] ? (qe = d.Z.create({ type: a.E.MESSAGE_CURRENT_LIMITING, message: "traffic limit", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail(qe)) : Te.status.reason === "Sorry, data is too large" && this._msgHash[ie] && (qe = d.Z.create({ type: a.E.MESSAGE_SIZE_LIMIT, message: "Sorry, data is too large", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail(qe));
+              Te.status.reason === "sensitive words" && this._msgHash[ie] ? (qe = d.Z.create({ type: i.E.MESSAGE_INCLUDE_ILLEGAL_CONTENT, message: "sensitive words", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail({ type: i.E.MESSAGE_INCLUDE_ILLEGAL_CONTENT, data: { id: ie, mid: je, reason: "sensitive words" } })) : Te.status.reason === "blocked by mod_antispam" && this._msgHash[ie] ? (qe = d.Z.create({ type: i.E.MESSAGE_INCLUDE_ILLEGAL_CONTENT, message: "blocked by mod_antispam", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail({ type: i.E.MESSAGE_INCLUDE_ILLEGAL_CONTENT, data: { id: ie, mid: je, reason: "blocked by mod_antispam" } })) : Te.status.reason === "user is mute" && this._msgHash[ie] ? (qe = d.Z.create({ type: i.E.USER_MUTED_BY_ADMIN, message: "user is mute", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail(qe)) : Te.status.reason === "traffic limit" && this._msgHash[ie] ? (qe = d.Z.create({ type: i.E.MESSAGE_CURRENT_LIMITING, message: "traffic limit", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail(qe)) : Te.status.reason === "Sorry, data is too large" && this._msgHash[ie] && (qe = d.Z.create({ type: i.E.MESSAGE_SIZE_LIMIT, message: "Sorry, data is too large", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail(qe));
             else if (Te.status.errorCode === 19)
-              this._msgHash[ie] && (E.TJ.has(ie) && (E.TJ.get(ie).rpt({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "WEBSOCKET", requestUrl: this.url, code: a.E.MESSAGE_EXTERNAL_LOGIC_BLOCKED, codeDesc: Te.status.reason || "", msgId: je } }), E.TJ.delete(ie)), qe = d.Z.create({ type: a.E.MESSAGE_EXTERNAL_LOGIC_BLOCKED, message: Te.status.reason || "", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail({ type: a.E.MESSAGE_EXTERNAL_LOGIC_BLOCKED, data: { id: ie, mid: je, reason: Te.status.reason } }));
+              this._msgHash[ie] && (E.TJ.has(ie) && (E.TJ.get(ie).rpt({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "WEBSOCKET", requestUrl: this.url, code: i.E.MESSAGE_EXTERNAL_LOGIC_BLOCKED, codeDesc: Te.status.reason || "", msgId: je } }), E.TJ.delete(ie)), qe = d.Z.create({ type: i.E.MESSAGE_EXTERNAL_LOGIC_BLOCKED, message: Te.status.reason || "", data: { id: ie, mid: je } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail({ type: i.E.MESSAGE_EXTERNAL_LOGIC_BLOCKED, data: { id: ie, mid: je, reason: Te.status.reason } }));
             else if (this._msgHash[ie]) {
-              E.TJ.has(ie) && (E.TJ.get(ie).rpt({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "WEBSOCKET", requestUrl: this.url, code: a.E.WEBIM_LOAD_MSG_ERROR, codeDesc: ((te = Te.status) === null || te === void 0 ? void 0 : te.reason) || "", msgId: je } }), E.TJ.delete(ie));
+              E.TJ.has(ie) && (E.TJ.get(ie).rpt({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "WEBSOCKET", requestUrl: this.url, code: i.E.WEBIM_LOAD_MSG_ERROR, codeDesc: ((te = Te.status) === null || te === void 0 ? void 0 : te.reason) || "", msgId: je } }), E.TJ.delete(ie));
               try {
-                qe = d.Z.create({ type: a.E.WEBIM_LOAD_MSG_ERROR, message: ((re = Te.status) === null || re === void 0 ? void 0 : re.reason) || "", data: { id: ie, mid: je, reason: Te.status && Te.status.reason } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail({ type: a.E.WEBIM_LOAD_MSG_ERROR, data: { errorCode: Te.status && Te.status.errorCode, reason: Te.status && Te.status.reason } });
+                qe = d.Z.create({ type: i.E.WEBIM_LOAD_MSG_ERROR, message: ((re = Te.status) === null || re === void 0 ? void 0 : re.reason) || "", data: { id: ie, mid: je, reason: Te.status && Te.status.reason } }), this._msgHash[ie].reject instanceof Function && this._msgHash[ie].reject(qe), this._msgHash[ie].fail instanceof Function && this._msgHash[ie].fail({ type: i.E.WEBIM_LOAD_MSG_ERROR, data: { errorCode: Te.status && Te.status.errorCode, reason: Te.status && Te.status.reason } });
               } catch (ot) {
-                Je = d.Z.create({ type: a.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, message: "when executing fail function error", data: ot }), this.onError && this.onError(Je), (Ae = this.eventHandler) === null || Ae === void 0 || Ae.dispatch("onError", Je);
+                ze = d.Z.create({ type: i.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, message: "when executing fail function error", data: ot }), this.onError && this.onError(ze), (Ae = this.eventHandler) === null || Ae === void 0 || Ae.dispatch("onError", ze);
               }
               delete this._msgHash[ie];
             } else {
               var Fe;
-              E.TJ.has(ie) && (E.TJ.get(ie).rpt({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "WEBSOCKET", requestUrl: this.url, code: a.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, codeDesc: "on message error", msgId: je } }), E.TJ.delete(ie)), (Fe = E.Nl.get(ie)) && ((0, Fe.rpt)({ isEndApi: !0, data: { isSuccess: 0, requestName: Fe.requestName, requestMethod: "WEBSOCKET", requestUrl: this.url, code: P.dd.failed, codeDesc: "on message error" } }), E.Nl.delete(ie)), Je = d.Z.create({ type: a.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, message: "on message error" }), this.onError && this.onError(Je), (We = this.eventHandler) === null || We === void 0 || We.dispatch("onError", Je);
+              E.TJ.has(ie) && (E.TJ.get(ie).rpt({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "WEBSOCKET", requestUrl: this.url, code: i.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, codeDesc: "on message error", msgId: je } }), E.TJ.delete(ie)), (Fe = E.Nl.get(ie)) && ((0, Fe.rpt)({ isEndApi: !0, data: { isSuccess: 0, requestName: Fe.requestName, requestMethod: "WEBSOCKET", requestUrl: this.url, code: P.dd.failed, codeDesc: "on message error" } }), E.Nl.delete(ie)), ze = d.Z.create({ type: i.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, message: "on message error" }), this.onError && this.onError(ze), (We = this.eventHandler) === null || We === void 0 || We.dispatch("onError", ze);
             }
         }
         function xe(_) {
@@ -3963,39 +3963,39 @@ var EasemobChat = { exports: {} };
         function ve(_) {
           var A, L, w, k = [];
           if (this.root) {
-            var y, R = this.root.lookup("easemob.pb.MessageBody.Content").decode(k);
+            var y, I = this.root.lookup("easemob.pb.MessageBody.Content").decode(k);
             switch (y = !_.group && ((A = _ == null ? void 0 : _.chatType) === null || A === void 0 ? void 0 : A.toLowerCase()) !== "groupchat" || _.roomType ? _.group && _.roomType || ((L = _ == null ? void 0 : _.chatType) === null || L === void 0 ? void 0 : L.toLowerCase()) === "chatroom" ? "chatRoom" : "singleChat" : "groupChat", _.type) {
               case "txt":
-                R.type = 0, R.text = _.msg;
+                I.type = 0, I.text = _.msg;
                 break;
               case "img":
-                R.type = 1, _.body ? (R.displayName = _.body.filename, R.remotePath = _.body.url, R.secretKey = _.body.secret, R.fileLength = _.body.file_length, R.size = _.body.size, R.thumbnailDisplayName = _.body.filename) : _.file ? (R.displayName = _.file.filename, R.remotePath = _.file.url, R.secretKey = _.file.secret, R.fileLength = _.file.file_length, R.size = _.file.size, R.thumbnailDisplayName = _.file.filename) : (R.displayName = _.filename, R.remotePath = _.url, R.secretKey = _.secret, R.fileLength = _.file_length, R.size = _.size, R.thumbnailDisplayName = _.filename), _.isBuildCombinedMsg && (R.size = { height: _.height, width: _.width });
+                I.type = 1, _.body ? (I.displayName = _.body.filename, I.remotePath = _.body.url, I.secretKey = _.body.secret, I.fileLength = _.body.file_length, I.size = _.body.size, I.thumbnailDisplayName = _.body.filename) : _.file ? (I.displayName = _.file.filename, I.remotePath = _.file.url, I.secretKey = _.file.secret, I.fileLength = _.file.file_length, I.size = _.file.size, I.thumbnailDisplayName = _.file.filename) : (I.displayName = _.filename, I.remotePath = _.url, I.secretKey = _.secret, I.fileLength = _.file_length, I.size = _.size, I.thumbnailDisplayName = _.filename), _.isBuildCombinedMsg && (I.size = { height: _.height, width: _.width });
                 break;
               case "video":
-                R.type = 2, _.body ? (R.displayName = _.body.filename, R.remotePath = _.body.url, R.secretKey = _.body.secret, R.fileLength = _.body.file_length, R.duration = _.body.length, R.thumbnailDisplayName = _.body.filename) : _.isBuildCombinedMsg && (R.displayName = _.filename, R.remotePath = _.url, R.secretKey = _.secret, R.fileLength = _.file_length, R.duration = _.length, R.thumbnailDisplayName = _.filename);
+                I.type = 2, _.body ? (I.displayName = _.body.filename, I.remotePath = _.body.url, I.secretKey = _.body.secret, I.fileLength = _.body.file_length, I.duration = _.body.length, I.thumbnailDisplayName = _.body.filename) : _.isBuildCombinedMsg && (I.displayName = _.filename, I.remotePath = _.url, I.secretKey = _.secret, I.fileLength = _.file_length, I.duration = _.length, I.thumbnailDisplayName = _.filename);
                 break;
               case "loc":
-                R.type = 3, R.latitude = _.lat, R.longitude = _.lng, R.address = _.addr, R.buildingName = _.buildingName, R.latitude = _.lat;
+                I.type = 3, I.latitude = _.lat, I.longitude = _.lng, I.address = _.addr, I.buildingName = _.buildingName, I.latitude = _.lat;
                 break;
               case "audio":
-                R.type = 4, _.body ? (R.displayName = _.body.filename, R.remotePath = _.body.url, R.secretKey = _.body.secret, R.fileLength = _.body.file_length, R.duration = _.body.length, R.thumbnailDisplayName = _.body.filename) : _.isBuildCombinedMsg && (R.displayName = _.filename, R.remotePath = _.url, R.secretKey = _.secret, R.fileLength = _.file_length, R.duration = _.length, R.thumbnailDisplayName = _.filename);
+                I.type = 4, _.body ? (I.displayName = _.body.filename, I.remotePath = _.body.url, I.secretKey = _.body.secret, I.fileLength = _.body.file_length, I.duration = _.body.length, I.thumbnailDisplayName = _.body.filename) : _.isBuildCombinedMsg && (I.displayName = _.filename, I.remotePath = _.url, I.secretKey = _.secret, I.fileLength = _.file_length, I.duration = _.length, I.thumbnailDisplayName = _.filename);
                 break;
               case "file":
-                R.type = 5, _.body ? (R.displayName = _.body.filename, R.remotePath = _.body.url, R.secretKey = _.body.secret, R.fileLength = _.body.file_length, R.thumbnailDisplayName = _.body.filename) : _.isBuildCombinedMsg && (R.displayName = _.filename, R.remotePath = _.url, R.secretKey = _.secret, R.fileLength = _.file_length, R.thumbnailDisplayName = _.filename);
+                I.type = 5, _.body ? (I.displayName = _.body.filename, I.remotePath = _.body.url, I.secretKey = _.body.secret, I.fileLength = _.body.file_length, I.thumbnailDisplayName = _.body.filename) : _.isBuildCombinedMsg && (I.displayName = _.filename, I.remotePath = _.url, I.secretKey = _.secret, I.fileLength = _.file_length, I.thumbnailDisplayName = _.filename);
                 break;
               case "cmd":
-                R.type = 6, R.action = _.action;
+                I.type = 6, I.action = _.action;
                 break;
               case "custom":
-                R.type = 7, R.customEvent = _.customEvent, R.customExts = xe.call(this, _.customExts);
+                I.type = 7, I.customEvent = _.customEvent, I.customExts = xe.call(this, _.customExts);
                 break;
               case "combine":
-                R.type = 0, R.subType = 0, R.text = _.compatibleText, R.displayName = _.filename, R.remotePath = _.url, R.secretKey = _.secret, R.fileLength = _.file_length, R.title = _.title, R.summary = _.summary;
+                I.type = 0, I.subType = 0, I.text = _.compatibleText, I.displayName = _.filename, I.remotePath = _.url, I.secretKey = _.secret, I.fileLength = _.file_length, I.title = _.title, I.summary = _.summary;
             }
             var H = [];
             _.ext && (H = xe.call(this, _.ext));
-            var M = this.root.lookup("easemob.pb.MessageBody"), D = M.decode(k), z = _.from || this.context.jid.name;
-            D.from = { name: _.isBuildCombinedMsg ? z : this.context.jid.name }, D.to = { name: _.to }, _.type === "channel" ? D.type = K.CHANNEL_ACK : _.type === "recall" ? (D.type = K.RECALL, D.ackMessageId = _.ackId) : _.type === "delivery" ? (D.type = K.DELIVER_ACK, D.ackMessageId = _.ackId) : _.type === "read" ? (D.type = K.READ_ACK, D.ackMessageId = _.ackId, y === "groupChat" && (D.msgConfig = { allowGroupAck: !0 }, D.ackContent = _.ackContent)) : y === "chatRoom" ? D.type = K.CHATROOM : y === "groupChat" ? (D.type = K.GROUPCHAT, _.msgConfig && (D.msgConfig = { allowGroupAck: !0 })) : y === "singleChat" && (D.type = K.SINGLECHAT), _.editMessageId && (D.type = K.EDIT, D.editMessageId = _.editMessageId), D.contents = [R], D.ext = H;
+            var M = this.root.lookup("easemob.pb.MessageBody"), D = M.decode(k), J = _.from || this.context.jid.name;
+            D.from = { name: _.isBuildCombinedMsg ? J : this.context.jid.name }, D.to = { name: _.to }, _.type === "channel" ? D.type = Z.CHANNEL_ACK : _.type === "recall" ? (D.type = Z.RECALL, D.ackMessageId = _.ackId) : _.type === "delivery" ? (D.type = Z.DELIVER_ACK, D.ackMessageId = _.ackId) : _.type === "read" ? (D.type = Z.READ_ACK, D.ackMessageId = _.ackId, y === "groupChat" && (D.msgConfig = { allowGroupAck: !0 }, D.ackContent = _.ackContent)) : y === "chatRoom" ? D.type = Z.CHATROOM : y === "groupChat" ? (D.type = Z.GROUPCHAT, _.msgConfig && (D.msgConfig = { allowGroupAck: !0 })) : y === "singleChat" && (D.type = Z.SINGLECHAT), _.editMessageId && (D.type = Z.EDIT, D.editMessageId = _.editMessageId), D.contents = [I], D.ext = H;
             var X = function(Te) {
               var je = {};
               return "translations" in Te && (je.translations = Te.translations), "isChatThread" in Te && Te.isChatThread && (je.thread = {}), Object.keys(je).length > 0 ? JSON.stringify(je) : "";
@@ -4003,8 +4003,8 @@ var EasemobChat = { exports: {} };
             X && (D.meta = X), D = M.encode(D).finish();
             var oe = this.root.lookup("easemob.pb.Meta"), q = oe.decode(k);
             q.id = _.id;
-            var J = "easemob.com";
-            if (y !== "chatRoom" && y !== "groupChat" || (J = "conference.easemob.com"), q.to = { appKey: this.appKey, name: _.to, domain: J }, y === "chatRoom" && (q.ext = xe.call(this, function(Te) {
+            var z = "easemob.com";
+            if (y !== "chatRoom" && y !== "groupChat" || (z = "conference.easemob.com"), q.to = { appKey: this.appKey, name: _.to, domain: z }, y === "chatRoom" && (q.ext = xe.call(this, function(Te) {
               return { chatroom_msg_tag: Te.priority === "high" ? 0 : Te.priority === "low" ? 2 : 1 };
             }(_))[0]), q.ns = 1, q.payload = D, q.routetype = _.deliverOnlineOnly ? 1 : 0, y !== "singleChat" && Array.isArray(_.receiverList) && ((w = _.receiverList) === null || w === void 0 ? void 0 : w.length) > 0 && (q.directedUsers = _.receiverList, q.routetype = 2, n.kg.debug("receiverList:", _.receiverList, "thirdMessage", q)), _.isBuildCombinedMsg)
               return q.timestamp = s().fromValue(_.time), oe.encode(q).finish();
@@ -4013,72 +4013,72 @@ var EasemobChat = { exports: {} };
             var Ae = this.root.lookup("easemob.pb.MSync"), We = Ae.decode(k);
             return We.version = this.version, We.encryptType = this.encryptType, We.command = 0, We.payload = re, Ae.encode(We).finish();
           }
-          _.fail && _.fail({ type: a.E.WEBIM_CONNCTION_CLIENT_OFFLINE, message: "Not logged in" });
+          _.fail && _.fail({ type: i.E.WEBIM_CONNCTION_CLIENT_OFFLINE, message: "Not logged in" });
         }
         function we(_) {
           var A = this, L = F({}, _);
           if (_.file)
-            return L.accessToken = this.token, L.appKey = this.appKey, L.apiUrl = this.apiUrl, L.body && L.body.url ? ve.call(this, L) : new Promise(function(R, H) {
+            return L.accessToken = this.token, L.appKey = this.appKey, L.apiUrl = this.apiUrl, L.body && L.body.url ? ve.call(this, L) : new Promise(function(I, H) {
               var M = L.onFileUploadComplete;
               L.onFileUploadComplete = function(D) {
-                var z, X;
+                var J, X;
                 if (D.entities[0]["file-metadata"]) {
                   var oe = D.entities[0]["file-metadata"]["content-length"];
                   L.file_length = oe, L.filetype = D.entities[0]["file-metadata"]["content-type"], oe > 204800 && (L.thumbnail = !0);
                 }
-                L.body = { type: L.type || "file", secret: D.entities[0]["share-secret"], filename: L.file.filename || L.filename, url: (A.isHttpDNS ? A.apiUrl + D.uri.substr(D.uri.indexOf("/", 9)) : D.uri) + "/" + D.entities[0].uuid, length: L.length || 0, filetype: L.filetype || L.file.filetype, file_length: ((X = (z = L.file) === null || z === void 0 ? void 0 : z.data) === null || X === void 0 ? void 0 : X.size) || 0, size: { width: L.width || 0, height: L.height || 0 } }, L.file.url = D.uri, _.secret = D.entities[0]["share-secret"];
+                L.body = { type: L.type || "file", secret: D.entities[0]["share-secret"], filename: L.file.filename || L.filename, url: (A.isHttpDNS ? A.apiUrl + D.uri.substr(D.uri.indexOf("/", 9)) : D.uri) + "/" + D.entities[0].uuid, length: L.length || 0, filetype: L.filetype || L.file.filetype, file_length: ((X = (J = L.file) === null || J === void 0 ? void 0 : J.data) === null || X === void 0 ? void 0 : X.size) || 0, size: { width: L.width || 0, height: L.height || 0 } }, L.file.url = D.uri, _.secret = D.entities[0]["share-secret"];
                 var q = (A.isHttpDNS ? A.apiUrl + D.uri.substr(D.uri.indexOf("/", 9)) : D.uri) + "/" + D.entities[0].uuid;
                 _.url = q, D.url = q, L.type === "img" && (_.thumb = "".concat(q, "?thumbnail=true"), D.thumb = "".concat(q, "?thumbnail=true")), M instanceof Function && M(D, L.id);
-                var J = ve.call(A, L);
-                E.TJ.size <= E.F3 && E.TJ.set(L.id, { rpt: A.dataReport.geOperateFun({ operationName: P.fI.SEND_MSG }) }), T.call(A, J);
+                var z = ve.call(A, L);
+                E.TJ.size <= E.F3 && E.TJ.set(L.id, { rpt: A.dataReport.geOperateFun({ operationName: P.fI.SEND_MSG }) }), T.call(A, z);
               }, b.P6.uploadFile.call(A, L, P.fI.UPLOAD_MSG_ATTACH);
             });
           if (_.type === "combine") {
             L.accessToken = this.token, L.appKey = this.appKey, L.apiUrl = this.apiUrl;
             var w = L.onFileUploadComplete, k = L.onFileUploadError;
-            return new Promise(function(R, H) {
-              var M, D, z, X;
+            return new Promise(function(I, H) {
+              var M, D, J, X;
               if (((M = _.messageList) === null || M === void 0 ? void 0 : M.length) > 300 || ((D = _.messageList) === null || D === void 0 ? void 0 : D.length) === 0)
-                return A._msgHash[L.id].reject({ type: a.E.MAX_LIMIT, message: "The number of combined messages exceeded the limit." });
-              var oe = function(ie, ze, De) {
+                return A._msgHash[L.id].reject({ type: i.E.MAX_LIMIT, message: "The number of combined messages exceeded the limit." });
+              var oe = function(ie, Je, De) {
                 if (De || arguments.length === 2)
-                  for (var Je, at = 0, st = ze.length; at < st; at++)
-                    !Je && at in ze || (Je || (Je = Array.prototype.slice.call(ze, 0, at)), Je[at] = ze[at]);
-                return ie.concat(Je || Array.prototype.slice.call(ze));
+                  for (var ze, at = 0, st = Je.length; at < st; at++)
+                    !ze && at in Je || (ze || (ze = Array.prototype.slice.call(Je, 0, at)), ze[at] = Je[at]);
+                return ie.concat(ze || Array.prototype.slice.call(Je));
               }([], _.messageList, !0), q = 0;
               oe.forEach(function(ie) {
                 if (ie.type === "combine" && (ie == null ? void 0 : ie.combineLevel) >= 10)
-                  return A._msgHash[L.id].reject({ type: a.E.MAX_LIMIT, message: "The level of the merged message exceeded the limit." });
+                  return A._msgHash[L.id].reject({ type: i.E.MAX_LIMIT, message: "The level of the merged message exceeded the limit." });
                 (ie == null ? void 0 : ie.combineLevel) > q && (q = ie == null ? void 0 : ie.combineLevel);
               }), L.combineLevel = q + 1;
-              var J = ke.call(A, oe), te = function(ie, ze) {
-                var De, Je, at, st, U = (A.isHttpDNS ? A.apiUrl + ie.uri.substr(ie.uri.indexOf("/", 9)) : ie.uri) + "/" + ie.entities[0].uuid, Ee = (De = ie.entities[0]) === null || De === void 0 ? void 0 : De["share-secret"], Q = U + "?em-redirect=true";
-                Ee && (Q = "".concat(Q, "&share-secret=").concat(Ee)), w instanceof Function && w({ url: Q, secret: Ee }), _.url = Q, _.secret = Ee, L.url = U, L.secret = ie.entities[0]["share-secret"], L.filename = ((Je = L.file) === null || Je === void 0 ? void 0 : Je.filename) || (ze == null ? void 0 : ze.fileName), L.file_length = ((st = (at = L.file) === null || at === void 0 ? void 0 : at.data) === null || st === void 0 ? void 0 : st.size) || (ze == null ? void 0 : ze.fileLength) || 0;
+              var z = ke.call(A, oe), te = function(ie, Je) {
+                var De, ze, at, st, U = (A.isHttpDNS ? A.apiUrl + ie.uri.substr(ie.uri.indexOf("/", 9)) : ie.uri) + "/" + ie.entities[0].uuid, Ee = (De = ie.entities[0]) === null || De === void 0 ? void 0 : De["share-secret"], Q = U + "?em-redirect=true";
+                Ee && (Q = "".concat(Q, "&share-secret=").concat(Ee)), w instanceof Function && w({ url: Q, secret: Ee }), _.url = Q, _.secret = Ee, L.url = U, L.secret = ie.entities[0]["share-secret"], L.filename = ((ze = L.file) === null || ze === void 0 ? void 0 : ze.filename) || (Je == null ? void 0 : Je.fileName), L.file_length = ((st = (at = L.file) === null || at === void 0 ? void 0 : at.data) === null || st === void 0 ? void 0 : st.size) || (Je == null ? void 0 : Je.fileLength) || 0;
                 var ye = ve.call(A, L);
                 T.call(A, ye);
               }, re = b.P6.getEnvInfo();
-              if (re.platform !== "web" && re.platform !== "node" && re.platform !== "quick_app" && (!((X = (z = re.global) === null || z === void 0 ? void 0 : z.canIUse) === null || X === void 0) && X.call(z, "getFileSystemManager"))) {
+              if (re.platform !== "web" && re.platform !== "node" && re.platform !== "quick_app" && (!((X = (J = re.global) === null || J === void 0 ? void 0 : J.canIUse) === null || X === void 0) && X.call(J, "getFileSystemManager"))) {
                 var Ae = re.global.getFileSystemManager(), We = A.apiUrl + "/" + A.orgName + "/" + A.appName + "/chatfiles";
-                Ae.writeFile({ filePath: "".concat(re.global.env.USER_DATA_PATH, "/combine"), data: J.buffer, encoding: "binary", success: function(ie) {
-                  re.global.uploadFile({ url: We, filePath: "".concat(re.global.env.USER_DATA_PATH, "/combine"), name: "file", header: { "Content-Type": "multipart/form-data", Authorization: "Bearer " + L.accessToken }, success: function(ze) {
-                    if (ze.statusCode === 200) {
-                      n.kg.debug("upload success", ze);
-                      var De = JSON.parse(ze.data);
-                      te(De, { fileName: "combine", fileLength: J.length });
+                Ae.writeFile({ filePath: "".concat(re.global.env.USER_DATA_PATH, "/combine"), data: z.buffer, encoding: "binary", success: function(ie) {
+                  re.global.uploadFile({ url: We, filePath: "".concat(re.global.env.USER_DATA_PATH, "/combine"), name: "file", header: { "Content-Type": "multipart/form-data", Authorization: "Bearer " + L.accessToken }, success: function(Je) {
+                    if (Je.statusCode === 200) {
+                      n.kg.debug("upload success", Je);
+                      var De = JSON.parse(Je.data);
+                      te(De, { fileName: "combine", fileLength: z.length });
                     } else
-                      n.kg.debug("upload fail"), L.onFileUploadError instanceof Function && L.onFileUploadError(ze), this._msgHash[L.id].reject({ type: a.E.WEBIM_UPLOADFILE_ERROR, message: "Failed to upload the merge message.Please try again", data: ze });
-                  }, fail: function(ze) {
-                    n.kg.debug("upload fail"), L.onFileUploadError instanceof Function && L.onFileUploadError(ie), this._msgHash[L.id].reject({ type: a.E.WEBIM_UPLOADFILE_ERROR, message: "Failed to upload the merge message.Please try again", data: ze });
+                      n.kg.debug("upload fail"), L.onFileUploadError instanceof Function && L.onFileUploadError(Je), this._msgHash[L.id].reject({ type: i.E.WEBIM_UPLOADFILE_ERROR, message: "Failed to upload the merge message.Please try again", data: Je });
+                  }, fail: function(Je) {
+                    n.kg.debug("upload fail"), L.onFileUploadError instanceof Function && L.onFileUploadError(ie), this._msgHash[L.id].reject({ type: i.E.WEBIM_UPLOADFILE_ERROR, message: "Failed to upload the merge message.Please try again", data: Je });
                   } });
                 }, fail: function(ie) {
-                  n.kg.debug("write file fail", ie), this._msgHash[L.id].reject({ type: a.E.WEBIM_UPLOADFILE_ERROR, message: "Failed to upload the merge message.Please try again", data: ie });
+                  n.kg.debug("write file fail", ie), this._msgHash[L.id].reject({ type: i.E.WEBIM_UPLOADFILE_ERROR, message: "Failed to upload the merge message.Please try again", data: ie });
                 } });
               } else {
-                var Te = new File([J], "combine", { type: "application/octet-stream" }), je = { url: URL.createObjectURL(Te), filename: L.id, data: Te };
+                var Te = new File([z], "combine", { type: "application/octet-stream" }), je = { url: URL.createObjectURL(Te), filename: L.id, data: Te };
                 L.file = je, L.onFileUploadComplete = function(ie) {
                   te(ie);
                 }, L.onFileUploadError = function(ie) {
-                  k instanceof Function && k(ie), A._msgHash[L.id].reject({ type: a.E.WEBIM_UPLOADFILE_ERROR, message: "Failed to upload the merge message.Please try again", data: ie });
+                  k instanceof Function && k(ie), A._msgHash[L.id].reject({ type: i.E.WEBIM_UPLOADFILE_ERROR, message: "Failed to upload the merge message.Please try again", data: ie });
                 }, b.P6.uploadFile.call(A, L, P.fI.UPLOAD_MSG_ATTACH);
               }
             });
@@ -4091,26 +4091,26 @@ var EasemobChat = { exports: {} };
           for (var A = Uint8Array.from("cm", function(oe) {
             return oe.charCodeAt(0);
           }), L = 0; L < _.length; L++) {
-            for (var w = _[L], k = F(F({}, w), { isBuildCombinedMsg: !0 }), y = this.mSync.encodeChatMsg.call(this, k), R = y.length, H = new Uint8Array(4), M = 0; M < 4; M++)
-              H[M] = R >> 8 * (3 - M) & 255;
+            for (var w = _[L], k = F(F({}, w), { isBuildCombinedMsg: !0 }), y = this.mSync.encodeChatMsg.call(this, k), I = y.length, H = new Uint8Array(4), M = 0; M < 4; M++)
+              H[M] = I >> 8 * (3 - M) & 255;
             n.kg.debug("message length:", H);
             var D = new Uint8Array(A.length + H.length + y.length);
             D.set(A), D.set(H, A.length), D.set(y, A.length + H.length), A = D;
           }
-          var z = new Uint8Array(A.length + 1), X = 0;
+          var J = new Uint8Array(A.length + 1), X = 0;
           for (L = 2; L < A.length; L++)
             L % 2 == 1 && (X ^= A[L]);
-          return z.set(A), n.kg.debug("checkResult:", X), z[A.length] = X, z;
+          return J.set(A), n.kg.debug("checkResult:", X), J[A.length] = X, J;
         }
         function Ne(_, A, L) {
           var w = [], k = this.root.lookup("easemob.pb.MUCBody"), y = k.decode(w);
           y.mucId = { appKey: this.appKey, name: _, domain: "conference.easemob.com" }, y.operation = L === "join" ? 2 : 3, y.from = { name: this.context.userId }, y.isChatroom = !0, y = k.encode(y).finish();
-          var R = this.root.lookup("easemob.pb.Meta").decode(w);
-          R.id = A, R.from = { appKey: this.appKey, name: this.context.userId, domain: "easemob.com", client_resource: this.context.jid.clientResource }, R.to = { domain: "easemob.com" }, R.ns = 2, R.payload = y;
+          var I = this.root.lookup("easemob.pb.Meta").decode(w);
+          I.id = A, I.from = { appKey: this.appKey, name: this.context.userId, domain: "easemob.com", client_resource: this.context.jid.clientResource }, I.to = { domain: "easemob.com" }, I.ns = 2, I.payload = y;
           var H = this.root.lookup("easemob.pb.CommSyncUL"), M = H.decode(w);
-          M.meta = R, M = H.encode(M).finish();
-          var D = this.root.lookup("easemob.pb.MSync"), z = D.decode(w);
-          return z.version = this.version, z.encryptType = this.encryptType, z.command = 0, z.payload = M, D.encode(z).finish();
+          M.meta = I, M = H.encode(M).finish();
+          var D = this.root.lookup("easemob.pb.MSync"), J = D.decode(w);
+          return J.version = this.version, J.encryptType = this.encryptType, J.command = 0, J.payload = M, D.encode(J).finish();
         }
         function j(_, A) {
           var L = b.P6.getUniqueId(), w = Ne.call(this, _.roomId, L, A);
@@ -4121,20 +4121,20 @@ var EasemobChat = { exports: {} };
           return new Promise(function(L, w) {
             var k, y;
             if (A.logOut)
-              return w({ type: a.E.WEBIM_CONNECTION_CLOSED, message: "not login" });
+              return w({ type: i.E.WEBIM_CONNECTION_CLOSED, message: "not login" });
             if (!_.id || typeof _.id != "string" || _.id === "")
-              return w({ type: a.E.MESSAGE_PARAMETER_ERROR, message: 'Missing required parameter: "id"' });
+              return w({ type: i.E.MESSAGE_PARAMETER_ERROR, message: 'Missing required parameter: "id"' });
             if (!_.to || typeof _.to != "string" || _.to === "")
-              return w({ type: a.E.MESSAGE_PARAMETER_ERROR, message: 'Missing required parameter: "to"' });
-            var R = _.type === "file" || _.type === "img" || _.type === "audio" || _.type === "video", H = _.type === "delivery" || _.type === "read" || _.type === "channel";
+              return w({ type: i.E.MESSAGE_PARAMETER_ERROR, message: 'Missing required parameter: "to"' });
+            var I = _.type === "file" || _.type === "img" || _.type === "audio" || _.type === "video", H = _.type === "delivery" || _.type === "read" || _.type === "channel";
             if (_.id) {
-              if (!R && !H || R && A.useOwnUploadFun) {
+              if (!I && !H || I && A.useOwnUploadFun) {
                 var M = _.type === "recall" ? P.fI.SEND_RECALL_MSG : P.fI.SEND_MSG;
                 _ != null && _.editMessageId && (M = P.fI.MODIFY_MESSAGE), E.TJ.size <= E.F3 && E.TJ.set(_.id, { rpt: A.dataReport.geOperateFun({ operationName: M }) });
               }
               A._msgHash[_.id] = F(F({}, _), { resolve: L, reject: w });
             }
-            if (R || _.type === "combine")
+            if (I || _.type === "combine")
               return we.call(A, _);
             if (_.type === "txt" && (!((k = _.msgConfig) === null || k === void 0) && k.languages) && Array.isArray((y = _.msgConfig) === null || y === void 0 ? void 0 : y.languages) && _.msgConfig.languages.length > 0) {
               var D = A.translateMessage || A.translation.translateMessage;
@@ -4145,14 +4145,14 @@ var EasemobChat = { exports: {} };
                 q = q.map(function(te) {
                   return { code: te.to, text: te.text };
                 }), _.translations = q, A._msgHash[_.id].translations = q;
-                var J = ve.call(A, _);
-                T.call(A, J, _.id);
+                var z = ve.call(A, _);
+                T.call(A, z, _.id);
               }).catch(function(X) {
                 w(X);
               });
             } else {
-              var z = ve.call(A, _);
-              T.call(A, z, _.id);
+              var J = ve.call(A, _);
+              T.call(A, J, _.id);
             }
           });
         }
@@ -4160,22 +4160,22 @@ var EasemobChat = { exports: {} };
           var L, w, k = this;
           if (_.isHandleChatroom) {
             if (!this.isOpened()) {
-              var y = { data: "", type: a.E.WEBIM_CONNCTION_DISCONNECTED, message: "websocket has been disconnected" };
+              var y = { data: "", type: i.E.WEBIM_CONNCTION_DISCONNECTED, message: "websocket has been disconnected" };
               return Promise.reject(y);
             }
-            return new Promise(function(R, H) {
+            return new Promise(function(I, H) {
               var M;
-              k._msgHash[_.id] = F(F({}, _), { resolve: R, reject: H }), M = k.name === "miniCore" ? _.joinMsg : V.call(k, _.joinMsg, A), k.sock.send(M);
+              k._msgHash[_.id] = F(F({}, _), { resolve: I, reject: H }), M = k.name === "miniCore" ? _.joinMsg : V.call(k, _.joinMsg, A), k.sock.send(M);
             });
           }
           if (!this.isOpened())
-            return (L = this.unMSyncSendMsgMap) === null || L === void 0 || L.set(A, _), !this.logOut && this.autoReconnectNumTotal < this.autoReconnectNumMax && (this.autoReconnectNumTotal <= this.socketHost.length && this.isHttpDNS || !this.isHttpDNS) && (n.kg.debug("need to reconnect", this.autoReconnectNumTotal, this.autoReconnectNumMax), this.offLineSendConnecting = !0, this.reconnecting || this.reconnect()), void (this.onError && this.onError({ type: a.E.WEBIM_CONNCTION_DISCONNECTED, message: "websocket has been disconnected" }));
+            return (L = this.unMSyncSendMsgMap) === null || L === void 0 || L.set(A, _), !this.logOut && this.autoReconnectNumTotal < this.autoReconnectNumMax && (this.autoReconnectNumTotal <= this.socketHost.length && this.isHttpDNS || !this.isHttpDNS) && (n.kg.debug("need to reconnect", this.autoReconnectNumTotal, this.autoReconnectNumMax), this.offLineSendConnecting = !0, this.reconnecting || this.reconnect()), void (this.onError && this.onError({ type: i.E.WEBIM_CONNCTION_DISCONNECTED, message: "websocket has been disconnected" }));
           w = this.name === "miniCore" ? _ : V.call(this, _, A), this.sock.send(w);
         }
         var W = function(_, A) {
-          return _.send = B, _.sendMsg = B, n.kg.debug("init Msync by ".concat(_.name)), { generateProvision: Z.bind(_), base64transform: V.bind(_), distributeMeta: ne.bind(_), decodeMeta: ae.bind(_), decodeUnreadDL: se.bind(_), _rebuild: ue.bind(_), _lastsession: Ce.bind(_), receiveProvision: Re.bind(_), isInQueue: Ve.bind(_), decodeNotice: Be.bind(_), decodeMSync: Qe.bind(_), distributeMSync: Pe.bind(_), encodeChatMsg: ve.bind(_), upLoadFile: we.bind(_), send: B.bind(_), stopHeartBeat: Ze.bind(_), handleChatRoom: j.bind(_) };
+          return _.send = B, _.sendMsg = B, n.kg.debug("init Msync by ".concat(_.name)), { generateProvision: K.bind(_), base64transform: V.bind(_), distributeMeta: ne.bind(_), decodeMeta: ae.bind(_), decodeUnreadDL: se.bind(_), _rebuild: ue.bind(_), _lastsession: Ce.bind(_), receiveProvision: Ie.bind(_), isInQueue: Ve.bind(_), decodeNotice: Be.bind(_), decodeMSync: Qe.bind(_), distributeMSync: Pe.bind(_), encodeChatMsg: ve.bind(_), upLoadFile: we.bind(_), send: B.bind(_), stopHeartBeat: Ke.bind(_), handleChatRoom: j.bind(_) };
         };
-      }, 7252: function(p, S) {
+      }, 7252: function(p, R) {
         var e = function() {
           function r(t) {
             this.type = t.type, this.message = t.message, this.data = t.data;
@@ -4184,10 +4184,10 @@ var EasemobChat = { exports: {} };
             return new r(t);
           }, r;
         }();
-        S.Z = e;
-      }, 8161: function(p, S, e) {
+        R.Z = e;
+      }, 8161: function(p, R, e) {
         e(3710), e(1539), e(9714), e(9653), e(9554), e(4747), e(8309), e(2772), e(2222);
-        var r = e(3720), t = e.n(r), i = e(4363), s = e(4370), a = e(1070), o = e(7360), n = e(2449), l = { 0: "TEXT", 1: "IMAGE", 2: "VIDEO", 3: "LOCATION", 4: "VOICE", 5: "FILE", 6: "COMMAND", 7: "CUSTOM", 8: "COMBINE" };
+        var r = e(3720), t = e.n(r), a = e(4363), s = e(4370), i = e(1070), o = e(7360), n = e(2449), l = { 0: "TEXT", 1: "IMAGE", 2: "VIDEO", 3: "LOCATION", 4: "VOICE", 5: "FILE", 6: "COMMAND", 7: "CUSTOM", 8: "COMBINE" };
         function u(h) {
           for (var d = {}, f = 0; f < h.length; f++)
             if (h[f].type === 8)
@@ -4206,75 +4206,75 @@ var EasemobChat = { exports: {} };
           return d;
         }
         function m(h) {
-          var d, f, b, c = h.status, I = h.thirdMessage, v = h.msgBody, N = h.msgId, x = h.type, O = h.from, C = h.to, E = h.time, P = h.onlineState, G = h.chatType, K = h.ignoreCallback, F = h.priority, Y = h.format, Z = {}, V = {}, ne = c.errorCode > 0, ae = c.errorCode, se = c.reason, ue = {}, me = [], ge = [], Ce = {}, Ie = "", Re = 0, Oe = null, fe = null;
-          if (I.ext && (ue = u(I.ext)), I.meta && typeof I.meta == "string") {
-            var ce = JSON.parse(I.meta);
+          var d, f, b, c = h.status, S = h.thirdMessage, v = h.msgBody, N = h.msgId, x = h.type, O = h.from, C = h.to, E = h.time, P = h.onlineState, G = h.chatType, Z = h.ignoreCallback, F = h.priority, Y = h.format, K = {}, V = {}, ne = c.errorCode > 0, ae = c.errorCode, se = c.reason, ue = {}, me = [], ge = [], Ce = {}, Re = "", Ie = 0, Oe = null, fe = null;
+          if (S.ext && (ue = u(S.ext)), S.meta && typeof S.meta == "string") {
+            var ce = JSON.parse(S.meta);
             if (ce.reaction && (me = ce.reaction).forEach(function(W) {
               W.isAddedBySelf = W.state, delete W.state;
             }), ce.translations && (ge = ce.translations), ce.edit_msg) {
-              var Ue = ce.edit_msg, Ze = Ue.count, $e = Ue.operator;
-              Ce = { operationTime: Ue.edit_time, operatorId: $e, operationCount: Ze }, Ie = Ue.sender, Re = Ue.send_time;
+              var Ue = ce.edit_msg, Ke = Ue.count, $e = Ue.operator;
+              Ce = { operationTime: Ue.edit_time, operatorId: $e, operationCount: Ke }, Re = Ue.sender, Ie = Ue.send_time;
             }
-            ce.thread && JSON.stringify(ce.thread) !== "{}" && (Oe = { messageId: ce.thread.msg_parent_id, parentId: ce.thread.muc_parent_id, chatThreadName: ce.thread.thread_name }), ce.thread_overview && JSON.stringify(ce.thread_overview) !== "{}" && (fe = { id: ce.thread_overview.id, parentId: ce.thread_overview.muc_parent_id, name: ce.thread_overview.name, lastMessage: ce.thread_overview.last_message ? (0, i.w)(ce.thread_overview.last_message) : null, createTimestamp: ce.thread_overview.create_timestamp, updateTimestamp: ce.thread_overview.update_timestamp, messageCount: ce.thread_overview.message_count || 0 });
+            ce.thread && JSON.stringify(ce.thread) !== "{}" && (Oe = { messageId: ce.thread.msg_parent_id, parentId: ce.thread.muc_parent_id, chatThreadName: ce.thread.thread_name }), ce.thread_overview && JSON.stringify(ce.thread_overview) !== "{}" && (fe = { id: ce.thread_overview.id, parentId: ce.thread_overview.muc_parent_id, name: ce.thread_overview.name, lastMessage: ce.thread_overview.last_message ? (0, a.w)(ce.thread_overview.last_message) : null, createTimestamp: ce.thread_overview.create_timestamp, updateTimestamp: ce.thread_overview.update_timestamp, messageCount: ce.thread_overview.message_count || 0 });
           }
           switch (v.type) {
             case 0:
               if (Object.prototype.hasOwnProperty.call(v, "subType") && v.subType === 0) {
                 b = (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && (b = "".concat(b, "&share-secret=").concat(v.secretKey));
                 var Ve = { id: N, type: "combine", chatType: G, to: C, from: O, ext: ue, time: Number(E), onlineState: P, title: v.title || "", summary: v.summary || "", url: b || "", secret: v.secretKey || "", file_length: v.fileLength || 0, filename: v.displayName || "", compatibleText: v.text, combineLevel: v.combineLevel || 0 };
-                Z.msgConfig && (Ve.msgConfig = Z.msgConfig), me.length > 0 && (Ve.reactions = me), Oe && (Ve.chatThread = Oe), fe && (Ve.chatThreadOverview = fe), G === "chatRoom" && (Ve.priority = F), V = Ve, !K && this.eventHandler && this.eventHandler.dispatch("onCombineMessage", Ve);
+                K.msgConfig && (Ve.msgConfig = K.msgConfig), me.length > 0 && (Ve.reactions = me), Oe && (Ve.chatThread = Oe), fe && (Ve.chatThreadOverview = fe), G === "chatRoom" && (Ve.priority = F), V = Ve, !Z && this.eventHandler && this.eventHandler.dispatch("onCombineMessage", Ve);
                 break;
               }
-              !(Z = { id: N, type: x, contentsType: l[v.type], from: O, to: C, data: v.text, ext: ue, sourceMsg: v.text, time: E, msgConfig: I.msgConfig, onlineState: P }).msgConfig && delete I.msgConfig, Z.error = ne, Z.errorText = se, Z.errorCode = ae, !K && this.onTextMessage && this.onTextMessage(Z);
+              !(K = { id: N, type: x, contentsType: l[v.type], from: O, to: C, data: v.text, ext: ue, sourceMsg: v.text, time: E, msgConfig: S.msgConfig, onlineState: P }).msgConfig && delete S.msgConfig, K.error = ne, K.errorText = se, K.errorCode = ae, !Z && this.onTextMessage && this.onTextMessage(K);
               var Be = { id: N, type: "txt", chatType: G, msg: v.text, to: C, from: O, ext: ue, time: Number(E), onlineState: P };
-              Z.msgConfig && (Be.msgConfig = Z.msgConfig), me.length > 0 && (Be.reactions = me), Oe && (Be.chatThread = Oe), fe && (Be.chatThreadOverview = fe), ge.length > 0 && (Be.translations = ge), Ce.operationCount > 0 && (Be.modifiedInfo = Ce, I.type === a.g.EDIT && (Be.from = Ie, Be.time = Re)), G === "chatRoom" && (Be.priority = F), V = Be, !K && this.eventHandler && this.eventHandler.dispatch("onTextMessage", Be);
+              K.msgConfig && (Be.msgConfig = K.msgConfig), me.length > 0 && (Be.reactions = me), Oe && (Be.chatThread = Oe), fe && (Be.chatThreadOverview = fe), ge.length > 0 && (Be.translations = ge), Ce.operationCount > 0 && (Be.modifiedInfo = Ce, S.type === i.g.EDIT && (Be.from = Re, Be.time = Ie)), G === "chatRoom" && (Be.priority = F), V = Be, !Z && this.eventHandler && this.eventHandler.dispatch("onTextMessage", Be);
               break;
             case 1:
-              var Ke = ((d = v == null ? void 0 : v.size) === null || d === void 0 ? void 0 : d.width) || 0, Qe = ((f = v == null ? void 0 : v.size) === null || f === void 0 ? void 0 : f.height) || 0;
-              b = this.useOwnUploadFun ? v.remotePath : (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && !this.useOwnUploadFun && (b = "".concat(b, "&share-secret=").concat(v.secretKey)), !(Z = { id: N, type: x, contentsType: l[v.type], from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, thumb: this.useOwnUploadFun ? "" : "".concat(b, "&thumbnail=true"), thumb_secret: v.secretKey, file_length: v.fileLength || "", width: Ke, height: Qe, filetype: v.filetype || "", accessToken: this.token, ext: ue, time: E, msgConfig: I.msgConfig, onlineState: P }).delay && delete Z.delay, !Z.msgConfig && delete I.msgConfig, Z.error = ne, Z.errorText = se, Z.errorCode = ae, !K && this.onPictureMessage && this.onPictureMessage(Z);
-              var Pe = { id: N, type: "img", chatType: G, from: O, to: C, url: b || "", width: Ke, height: Qe, secret: v.secretKey || "", thumb: this.useOwnUploadFun ? "" : "".concat(b, "&thumbnail=true"), thumb_secret: v.secretKey, file_length: v.fileLength || 0, ext: ue, time: Number(E), onlineState: P };
-              Z.msgConfig && (Pe.msgConfig = Z.msgConfig), me.length > 0 && (Pe.reactions = me), Oe && (Pe.chatThread = Oe), fe && (Pe.chatThreadOverview = fe), G === "chatRoom" && (Pe.priority = F), V = Pe, !K && this.eventHandler && this.eventHandler.dispatch("onImageMessage", Pe);
+              var Ze = ((d = v == null ? void 0 : v.size) === null || d === void 0 ? void 0 : d.width) || 0, Qe = ((f = v == null ? void 0 : v.size) === null || f === void 0 ? void 0 : f.height) || 0;
+              b = this.useOwnUploadFun ? v.remotePath : (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && !this.useOwnUploadFun && (b = "".concat(b, "&share-secret=").concat(v.secretKey)), !(K = { id: N, type: x, contentsType: l[v.type], from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, thumb: this.useOwnUploadFun ? "" : "".concat(b, "&thumbnail=true"), thumb_secret: v.secretKey, file_length: v.fileLength || "", width: Ze, height: Qe, filetype: v.filetype || "", accessToken: this.token, ext: ue, time: E, msgConfig: S.msgConfig, onlineState: P }).delay && delete K.delay, !K.msgConfig && delete S.msgConfig, K.error = ne, K.errorText = se, K.errorCode = ae, !Z && this.onPictureMessage && this.onPictureMessage(K);
+              var Pe = { id: N, type: "img", chatType: G, from: O, to: C, url: b || "", width: Ze, height: Qe, secret: v.secretKey || "", thumb: this.useOwnUploadFun ? "" : "".concat(b, "&thumbnail=true"), thumb_secret: v.secretKey, file_length: v.fileLength || 0, ext: ue, time: Number(E), onlineState: P };
+              K.msgConfig && (Pe.msgConfig = K.msgConfig), me.length > 0 && (Pe.reactions = me), Oe && (Pe.chatThread = Oe), fe && (Pe.chatThreadOverview = fe), G === "chatRoom" && (Pe.priority = F), V = Pe, !Z && this.eventHandler && this.eventHandler.dispatch("onImageMessage", Pe);
               break;
             case 2:
-              b = this.useOwnUploadFun ? v.remotePath : (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && !this.useOwnUploadFun && (b = "".concat(b, "&share-secret=").concat(v.secretKey)), !(Z = { id: N, type: x, contentsType: l[v.type], from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, length: v.duration || "", file_length: v.fileLength || "", filetype: v.filetype || "", accessToken: this.token || "", ext: ue, time: E, msgConfig: I.msgConfig, onlineState: P }).delay && delete Z.delay, !Z.msgConfig && delete I.msgConfig, Z.error = ne, Z.errorText = se, Z.errorCode = ae, !K && this.onVideoMessage && this.onVideoMessage(Z);
+              b = this.useOwnUploadFun ? v.remotePath : (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && !this.useOwnUploadFun && (b = "".concat(b, "&share-secret=").concat(v.secretKey)), !(K = { id: N, type: x, contentsType: l[v.type], from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, length: v.duration || "", file_length: v.fileLength || "", filetype: v.filetype || "", accessToken: this.token || "", ext: ue, time: E, msgConfig: S.msgConfig, onlineState: P }).delay && delete K.delay, !K.msgConfig && delete S.msgConfig, K.error = ne, K.errorText = se, K.errorCode = ae, !Z && this.onVideoMessage && this.onVideoMessage(K);
               var Le = { id: N, type: "video", chatType: G, from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, length: v.duration || 0, file: {}, file_length: v.fileLength || 0, filetype: v.filetype || "", accessToken: this.token || "", ext: ue, time: Number(E), onlineState: P };
-              Z.msgConfig && (Le.msgConfig = Z.msgConfig), me.length > 0 && (Le.reactions = me), Oe && (Le.chatThread = Oe), fe && (Le.chatThreadOverview = fe), G === "chatRoom" && (Le.priority = F), V = Le, !K && this.eventHandler && this.eventHandler.dispatch("onVideoMessage", Le);
+              K.msgConfig && (Le.msgConfig = K.msgConfig), me.length > 0 && (Le.reactions = me), Oe && (Le.chatThread = Oe), fe && (Le.chatThreadOverview = fe), G === "chatRoom" && (Le.priority = F), V = Le, !Z && this.eventHandler && this.eventHandler.dispatch("onVideoMessage", Le);
               break;
             case 3:
-              !(Z = { id: N, type: x, contentsType: l[v.type], from: O, to: C, addr: v.address, buildingName: v.buildingName, lat: v.latitude, lng: v.longitude, ext: ue, time: E, msgConfig: I.msgConfig, onlineState: P }).delay && delete Z.delay, !Z.msgConfig && delete I.msgConfig, Z.error = ne, Z.errorText = se, Z.errorCode = ae, !K && this.onLocationMessage && this.onLocationMessage(Z);
+              !(K = { id: N, type: x, contentsType: l[v.type], from: O, to: C, addr: v.address, buildingName: v.buildingName, lat: v.latitude, lng: v.longitude, ext: ue, time: E, msgConfig: S.msgConfig, onlineState: P }).delay && delete K.delay, !K.msgConfig && delete S.msgConfig, K.error = ne, K.errorText = se, K.errorCode = ae, !Z && this.onLocationMessage && this.onLocationMessage(K);
               var xe = { id: N, type: "loc", chatType: G, from: O, to: C, buildingName: v.buildingName, addr: v.address, lat: v.latitude, lng: v.longitude, ext: ue, time: Number(E), onlineState: P };
-              Z.msgConfig && (xe.msgConfig = Z.msgConfig), me.length > 0 && (xe.reactions = me), Oe && (xe.chatThread = Oe), fe && (xe.chatThreadOverview = fe), G === "chatRoom" && (xe.priority = F), V = xe, !K && this.eventHandler && this.eventHandler.dispatch("onLocationMessage", xe);
+              K.msgConfig && (xe.msgConfig = K.msgConfig), me.length > 0 && (xe.reactions = me), Oe && (xe.chatThread = Oe), fe && (xe.chatThreadOverview = fe), G === "chatRoom" && (xe.priority = F), V = xe, !Z && this.eventHandler && this.eventHandler.dispatch("onLocationMessage", xe);
               break;
             case 4:
-              b = this.useOwnUploadFun ? v.remotePath : (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && !this.useOwnUploadFun && (b = "".concat(b, "&share-secret=").concat(v.secretKey)), !(Z = { id: N, type: x, contentsType: l[v.type], from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, file_length: v.fileLength || "", accessToken: this.token || "", ext: ue, length: v.duration, time: E, msgConfig: I.msgConfig, onlineState: P }).delay && delete Z.delay, !Z.msgConfig && delete I.msgConfig, Z.error = ne, Z.errorText = se, Z.errorCode = ae, !K && this.onAudioMessage && this.onAudioMessage(Z);
+              b = this.useOwnUploadFun ? v.remotePath : (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && !this.useOwnUploadFun && (b = "".concat(b, "&share-secret=").concat(v.secretKey)), !(K = { id: N, type: x, contentsType: l[v.type], from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, file_length: v.fileLength || "", accessToken: this.token || "", ext: ue, length: v.duration, time: E, msgConfig: S.msgConfig, onlineState: P }).delay && delete K.delay, !K.msgConfig && delete S.msgConfig, K.error = ne, K.errorText = se, K.errorCode = ae, !Z && this.onAudioMessage && this.onAudioMessage(K);
               var ve = { id: N, type: "audio", chatType: G, from: O, to: C, url: b, secret: v.secretKey, file: {}, filename: v.displayName, length: v.duration || 0, file_length: v.fileLength || 0, filetype: v.filetype || "", accessToken: this.token || "", ext: ue, time: Number(E), onlineState: P };
-              Z.msgConfig && (ve.msgConfig = Z.msgConfig), me.length > 0 && (ve.reactions = me), Oe && (ve.chatThread = Oe), fe && (ve.chatThreadOverview = fe), G === "chatRoom" && (ve.priority = F), V = ve, !K && this.eventHandler && this.eventHandler.dispatch("onAudioMessage", ve);
+              K.msgConfig && (ve.msgConfig = K.msgConfig), me.length > 0 && (ve.reactions = me), Oe && (ve.chatThread = Oe), fe && (ve.chatThreadOverview = fe), G === "chatRoom" && (ve.priority = F), V = ve, !Z && this.eventHandler && this.eventHandler.dispatch("onAudioMessage", ve);
               break;
             case 5:
-              b = this.useOwnUploadFun ? v.remotePath : (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && !this.useOwnUploadFun && (b = "".concat(b, "&share-secret=").concat(v.secretKey)), !(Z = { id: N, type: x, contentsType: l[v.type], from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, file_length: v.fileLength, accessToken: this.token || "", ext: ue, time: E, msgConfig: I.msgConfig, onlineState: P }).delay && delete Z.delay, !Z.msgConfig && delete I.msgConfig, Z.error = ne, Z.errorText = se, Z.errorCode = ae, !K && this.onFileMessage && this.onFileMessage(Z);
+              b = this.useOwnUploadFun ? v.remotePath : (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && !this.useOwnUploadFun && (b = "".concat(b, "&share-secret=").concat(v.secretKey)), !(K = { id: N, type: x, contentsType: l[v.type], from: O, to: C, url: b, secret: v.secretKey, filename: v.displayName, file_length: v.fileLength, accessToken: this.token || "", ext: ue, time: E, msgConfig: S.msgConfig, onlineState: P }).delay && delete K.delay, !K.msgConfig && delete S.msgConfig, K.error = ne, K.errorText = se, K.errorCode = ae, !Z && this.onFileMessage && this.onFileMessage(K);
               var we = { id: N, type: "file", chatType: G, from: O, to: C, url: b, secret: v.secretKey, file: {}, filename: v.displayName, length: v.duration || 0, file_length: v.fileLength || 0, filetype: v.filetype || "", accessToken: this.token || "", ext: ue, time: Number(E), onlineState: P };
-              Z.msgConfig && (we.msgConfig = Z.msgConfig), me.length > 0 && (we.reactions = me), Oe && (we.chatThread = Oe), fe && (we.chatThreadOverview = fe), G === "chatRoom" && (we.priority = F), V = we, !K && this.eventHandler && this.eventHandler.dispatch("onFileMessage", we);
+              K.msgConfig && (we.msgConfig = K.msgConfig), me.length > 0 && (we.reactions = me), Oe && (we.chatThread = Oe), fe && (we.chatThreadOverview = fe), G === "chatRoom" && (we.priority = F), V = we, !Z && this.eventHandler && this.eventHandler.dispatch("onFileMessage", we);
               break;
             case 6:
-              !(Z = { id: N, type: x, contentsType: l[v.type], from: O, to: C, action: v.action, ext: ue, time: E, msgConfig: I.msgConfig, onlineState: P }).msgConfig && delete I.msgConfig, Z.error = ne, Z.errorText = se, Z.errorCode = ae, !K && this.onCmdMessage && this.onCmdMessage(Z);
+              !(K = { id: N, type: x, contentsType: l[v.type], from: O, to: C, action: v.action, ext: ue, time: E, msgConfig: S.msgConfig, onlineState: P }).msgConfig && delete S.msgConfig, K.error = ne, K.errorText = se, K.errorCode = ae, !Z && this.onCmdMessage && this.onCmdMessage(K);
               var ke = { id: N, type: "cmd", chatType: G, from: O, to: C, action: v.action, ext: ue, time: Number(E), onlineState: P };
-              Z.msgConfig && (ke.msgConfig = Z.msgConfig), me.length > 0 && (ke.reactions = me), Oe && (ke.chatThread = Oe), fe && (ke.chatThreadOverview = fe), G === "chatRoom" && (ke.priority = F), V = ke, !K && this.eventHandler && this.eventHandler.dispatch("onCmdMessage", ke);
+              K.msgConfig && (ke.msgConfig = K.msgConfig), me.length > 0 && (ke.reactions = me), Oe && (ke.chatThread = Oe), fe && (ke.chatThreadOverview = fe), G === "chatRoom" && (ke.priority = F), V = ke, !Z && this.eventHandler && this.eventHandler.dispatch("onCmdMessage", ke);
               break;
             case 7:
               var Ne = {}, j = {};
-              I.contents[0].customExts && (Ne = u(I.contents[0].customExts)), I.contents[0].params && (j = u(I.contents[0].params)), Z = { id: N, type: x, contentsType: l[v.type], from: O, to: C, customEvent: v.customEvent, params: j, customExts: Ne, ext: ue, time: E, onlineState: P }, !K && this.onCustomMessage && this.onCustomMessage(Z);
+              S.contents[0].customExts && (Ne = u(S.contents[0].customExts)), S.contents[0].params && (j = u(S.contents[0].params)), K = { id: N, type: x, contentsType: l[v.type], from: O, to: C, customEvent: v.customEvent, params: j, customExts: Ne, ext: ue, time: E, onlineState: P }, !Z && this.onCustomMessage && this.onCustomMessage(K);
               var B = { id: N, type: "custom", chatType: G, from: O, to: C, customEvent: v.customEvent, params: j, customExts: Ne, ext: ue, time: Number(E), onlineState: P };
-              Z.msgConfig && (B.msgConfig = Z.msgConfig), me.length > 0 && (B.reactions = me), Oe && (B.chatThread = Oe), fe && (B.chatThreadOverview = fe), G === "chatRoom" && (B.priority = F), V = B, !K && this.eventHandler && this.eventHandler.dispatch("onCustomMessage", B);
+              K.msgConfig && (B.msgConfig = K.msgConfig), me.length > 0 && (B.reactions = me), Oe && (B.chatThread = Oe), fe && (B.chatThreadOverview = fe), G === "chatRoom" && (B.priority = F), V = B, !Z && this.eventHandler && this.eventHandler.dispatch("onCustomMessage", B);
               break;
             case 8:
               b = (v.remotePath && this.apiUrl + v.remotePath.substr(v.remotePath.indexOf("/", 9))) + "?em-redirect=true", v.secretKey && (b = "".concat(b, "&share-secret=").concat(v.secretKey));
               var T = { id: N, type: "combine", chatType: G, to: C, from: O, ext: ue, time: Number(E), onlineState: P, title: v.title || "", summary: v.summary || "", url: b || "", secret: v.secretKey || "", file_length: v.fileLength || 0, filename: v.displayName || "", compatibleText: v.text, combineLevel: v.combineLevel || 0 };
-              Z.msgConfig && (T.msgConfig = Z.msgConfig), me.length > 0 && (T.reactions = me), Oe && (T.chatThread = Oe), fe && (T.chatThreadOverview = fe), G === "chatRoom" && (T.priority = F), V = T, !K && this.eventHandler && this.eventHandler.dispatch("onCombineMessage", T);
+              K.msgConfig && (T.msgConfig = K.msgConfig), me.length > 0 && (T.reactions = me), Oe && (T.chatThread = Oe), fe && (T.chatThreadOverview = fe), G === "chatRoom" && (T.priority = F), V = T, !Z && this.eventHandler && this.eventHandler.dispatch("onCombineMessage", T);
               break;
             default:
               o.kg.error("Unknow message type, message:", v);
           }
-          return Y ? V : Z;
+          return Y ? V : K;
         }
         function g(h, d, f) {
           if (this.delivery && h !== d) {
@@ -4282,8 +4282,8 @@ var EasemobChat = { exports: {} };
             c.set({ ackId: f, to: h }), o.kg.debug("send delivery ack"), this.send(c.body);
           }
         }
-        S.Z = function(h, d, f, b) {
-          var c, I, v, N, x, O, C = new (t())(h.timestamp.low, h.timestamp.high, h.timestamp.unsigned).toString(), E = this.root.lookup("easemob.pb.MessageBody").decode(h.payload), P = 1;
+        R.Z = function(h, d, f, b) {
+          var c, S, v, N, x, O, C = new (t())(h.timestamp.low, h.timestamp.high, h.timestamp.unsigned).toString(), E = this.root.lookup("easemob.pb.MessageBody").decode(h.payload), P = 1;
           if (h.meta && h.meta.length)
             switch (s.P6.parseNotify(h.meta).is_online) {
               case 0:
@@ -4297,60 +4297,60 @@ var EasemobChat = { exports: {} };
             }
           else
             P = 3;
-          var G = new (t())(h.id.low, h.id.high, h.id.unsigned).toString(), K = E.ackMessageId ? new (t())(E.ackMessageId.low, E.ackMessageId.high, E.ackMessageId.unsigned).toString() : "", F = "", Y = E.from && E.from.name, Z = E.to && E.to.name;
+          var G = new (t())(h.id.low, h.id.high, h.id.unsigned).toString(), Z = E.ackMessageId ? new (t())(E.ackMessageId.low, E.ackMessageId.high, E.ackMessageId.unsigned).toString() : "", F = "", Y = E.from && E.from.name, K = E.to && E.to.name;
           switch (o.kg.debug("thirdMessage:", E), E.type) {
-            case a.g.SINGLECHAT:
-              F = "chat", this.grantType === "agoraToken" && (F = "singleChat"), this.delivery && !f && Y !== this.context.userId && g.call(this, Y, Z, G);
+            case i.g.SINGLECHAT:
+              F = "chat", this.grantType === "agoraToken" && (F = "singleChat"), this.delivery && !f && Y !== this.context.userId && g.call(this, Y, K, G);
               break;
-            case a.g.GROUPCHAT:
+            case i.g.GROUPCHAT:
               F = "groupchat", this.grantType === "agoraToken" && (F = "groupChat");
               break;
-            case a.g.CHATROOM:
+            case i.g.CHATROOM:
               F = "chatroom", this.grantType === "agoraToken" && (F = "chatRoom"), P = 1;
               break;
-            case a.g.READ_ACK:
+            case i.g.READ_ACK:
               F = "read_ack";
               var V = void 0;
-              return E.ext[0] && JSON.parse(E.ext[0].stringValue) ? (V = { id: G, type: "read", from: Y, to: Z, mid: K, groupReadCount: E.ext[0] && JSON.parse(E.ext[0].stringValue), ackContent: E.ackContent, onlineState: P }, this.onReadMessage && this.onReadMessage(V), void ((c = this.eventHandler) === null || c === void 0 || c.dispatch("onReadMessage", V))) : (V = { id: G, type: "read", from: Y, to: Z, mid: K, onlineState: P }, this.onReadMessage && this.onReadMessage(V), void ((I = this.eventHandler) === null || I === void 0 || I.dispatch("onReadMessage", V)));
-            case a.g.DELIVER_ACK:
-              F = "deliver_ack", this.onDeliveredMessage && this.onDeliveredMessage({ id: G, type: "delivery", from: Y, to: Z, mid: K, onlineState: P });
-              var ne = { id: G, type: "delivery", from: Y, to: Z, mid: K, onlineState: P };
+              return E.ext[0] && JSON.parse(E.ext[0].stringValue) ? (V = { id: G, type: "read", from: Y, to: K, mid: Z, groupReadCount: E.ext[0] && JSON.parse(E.ext[0].stringValue), ackContent: E.ackContent, onlineState: P }, this.onReadMessage && this.onReadMessage(V), void ((c = this.eventHandler) === null || c === void 0 || c.dispatch("onReadMessage", V))) : (V = { id: G, type: "read", from: Y, to: K, mid: Z, onlineState: P }, this.onReadMessage && this.onReadMessage(V), void ((S = this.eventHandler) === null || S === void 0 || S.dispatch("onReadMessage", V)));
+            case i.g.DELIVER_ACK:
+              F = "deliver_ack", this.onDeliveredMessage && this.onDeliveredMessage({ id: G, type: "delivery", from: Y, to: K, mid: Z, onlineState: P });
+              var ne = { id: G, type: "delivery", from: Y, to: K, mid: Z, onlineState: P };
               return void ((v = this.eventHandler) === null || v === void 0 || v.dispatch("onDeliveredMessage", ne));
-            case a.g.RECALL:
+            case i.g.RECALL:
               F = "recall";
-              var ae = { id: G, from: Y || "admin", to: Z, mid: K, onlineState: P };
+              var ae = { id: G, from: Y || "admin", to: K, mid: Z, onlineState: P };
               return this.onRecallMessage && this.onRecallMessage(ae), void ((N = this.eventHandler) === null || N === void 0 || N.dispatch("onRecallMessage", ae));
-            case a.g.CHANNEL_ACK:
-              this.onChannelMessage && this.onChannelMessage({ id: G, type: "channel", chatType: "singleChat", from: Y, to: Z, time: Number(C), onlineState: P });
-              var se = { id: G, type: "channel", chatType: "singleChat", from: Y, to: Z, time: Number(C), onlineState: P };
+            case i.g.CHANNEL_ACK:
+              this.onChannelMessage && this.onChannelMessage({ id: G, type: "channel", chatType: "singleChat", from: Y, to: K, time: Number(C), onlineState: P });
+              var se = { id: G, type: "channel", chatType: "singleChat", from: Y, to: K, time: Number(C), onlineState: P };
               return void ((x = this.eventHandler) === null || x === void 0 || x.dispatch("onChannelMessage", se));
-            case a.g.EDIT:
-              var ue = m.call(this, { status: { errorCode: 0, reason: "" }, thirdMessage: E, msgBody: E.contents[0], msgId: G, type: F, from: Y, to: Z, time: C, onlineState: P, ignoreCallback: !0, format: !0 }), me = !!h.to && h.to.domain.indexOf("conference") !== -1;
+            case i.g.EDIT:
+              var ue = m.call(this, { status: { errorCode: 0, reason: "" }, thirdMessage: E, msgBody: E.contents[0], msgId: G, type: F, from: Y, to: K, time: C, onlineState: P, ignoreCallback: !0, format: !0 }), me = !!h.to && h.to.domain.indexOf("conference") !== -1;
               ue.chatType = me ? "groupChat" : "singleChat";
               var ge = { id: E.editMessageId && new (t())(E.editMessageId.low, E.editMessageId.high, E.editMessageId.unsigned).toString(), type: ue.type, chatType: ue.chatType, msg: ue.msg, to: ue.to, from: ue.from, time: ue.time, modifiedInfo: ue.modifiedInfo };
               return ue.translations && (ge.translations = ue.translations), void (ue.type === "txt" && ((O = this.eventHandler) === null || O === void 0 || O.dispatch("onModifiedMessage", ge)));
             default:
               return void o.kg.error("unexpected message type: ".concat(E.type));
           }
-          var Ce, Ie = "normal";
+          var Ce, Re = "normal";
           if (F.toLowerCase() === "chat" || F === "singleChat")
             Ce = "singleChat";
           else if (F.toLowerCase() === "groupchat" || F === "groupChat")
             Ce = "groupChat";
           else if (Ce = "chatRoom", P = 1, h.ext) {
-            var Re = u([h.ext]);
-            Ie = Re.chatroom_msg_tag === 0 ? "high" : Re.chatroom_msg_tag === 2 ? "low" : "normal";
+            var Ie = u([h.ext]);
+            Re = Ie.chatroom_msg_tag === 0 ? "high" : Ie.chatroom_msg_tag === 2 ? "low" : "normal";
           }
           for (var Oe = 0; Oe < E.contents.length; Oe++)
-            return m.call(this, { status: d, thirdMessage: E, msgBody: E.contents[Oe], msgId: G, type: F, from: Y, to: Z, time: C, onlineState: P, chatType: Ce, ignoreCallback: f, priority: Ie, format: b });
+            return m.call(this, { status: d, thirdMessage: E, msgBody: E.contents[Oe], msgId: G, type: F, from: Y, to: K, time: C, onlineState: P, chatType: Ce, ignoreCallback: f, priority: Re, format: b });
         };
-      }, 4968: function(p, S, e) {
+      }, 4968: function(p, R, e) {
         e(8309);
-        var r, t = e(7360), i = e(2071), s = e(1595);
+        var r, t = e(7360), a = e(2071), s = e(1595);
         (function(o) {
           o[o.Add = 2] = "Add", o[o.Remove = 3] = "Remove", o[o.Accept = 4] = "Accept", o[o.Decline = 5] = "Decline", o[o.Ban = 6] = "Ban", o[o.Allow = 7] = "Allow";
         })(r || (r = {}));
-        var a = { operatRoster: function(o, n, l, u) {
+        var i = { operatRoster: function(o, n, l, u) {
           var m = [], g = this.root.lookup("easemob.pb.RosterBody"), h = g.decode(m);
           switch (n) {
             case "add":
@@ -4385,9 +4385,9 @@ var EasemobChat = { exports: {} };
           var b = this.root.lookup("easemob.pb.Meta").decode(m);
           b.id = o.id || this.getUniqueId();
           var c = this.dataReport.geOperateFun({ operationName: s.fI[n] });
-          i.Nl.size <= i.F3 && i.Nl.set(b.id, { rpt: c, requestName: s.fI[n], resolve: l, reject: u }), b.from = this.context.jid, b.to = { domain: "@easemob.com" }, b.ns = 3, b.payload = h;
-          var I = this.root.lookup("easemob.pb.CommSyncUL"), v = I.decode(m);
-          v.meta = b, v = I.encode(v).finish();
+          a.Nl.size <= a.F3 && a.Nl.set(b.id, { rpt: c, requestName: s.fI[n], resolve: l, reject: u }), b.from = this.context.jid, b.to = { domain: "@easemob.com" }, b.ns = 3, b.payload = h;
+          var S = this.root.lookup("easemob.pb.CommSyncUL"), v = S.decode(m);
+          v.meta = b, v = S.encode(v).finish();
           var N = this.root.lookup("easemob.pb.MSync"), x = N.decode(m);
           if (x.version = this.version, x.encryptType = [0], x.command = 0, x.guid = this.jid, x.payload = v, x = N.encode(x).finish(), this.name === "miniCore")
             this.sock.send(x);
@@ -4424,26 +4424,26 @@ var EasemobChat = { exports: {} };
           }
           this.onPresence && f.type && this.onPresence(f);
         } };
-        S.Z = a;
-      }, 7360: function(p, S, e) {
+        R.Z = i;
+      }, 7360: function(p, R, e) {
         function r() {
           console.log && (console.log.apply ? console.log.apply(console, Array.prototype.slice.call(arguments)) : Function.prototype.apply.apply(console.log, [console, arguments])), console.trace && console.trace();
         }
-        e.d(S, { kg: function() {
+        e.d(R, { kg: function() {
           return h;
         } }), e(7042), e(2222), e(8309), e(9600), e(6992), e(1539), e(8783), e(3948), e(285), e(1637), e(4812), e(3710), e(9554), e(2772), e(4916), e(2526), e(1817), e(2165);
         var t = typeof window < "u" && window.navigator !== void 0 && /Trident\/|MSIE /.test(window.navigator.userAgent);
-        function i(d) {
-          return i = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(f) {
+        function a(d) {
+          return a = typeof Symbol == "function" && typeof Symbol.iterator == "symbol" ? function(f) {
             return typeof f;
           } : function(f) {
             return f && typeof Symbol == "function" && f.constructor === Symbol && f !== Symbol.prototype ? "symbol" : typeof f;
-          }, i(d);
+          }, a(d);
         }
-        var s, a = function(d, f, b) {
+        var s, i = function(d, f, b) {
           if (b || arguments.length === 2)
-            for (var c, I = 0, v = f.length; I < v; I++)
-              !c && I in f || (c || (c = Array.prototype.slice.call(f, 0, I)), c[I] = f[I]);
+            for (var c, S = 0, v = f.length; S < v; S++)
+              !c && S in f || (c || (c = Array.prototype.slice.call(f, 0, S)), c[S] = f[S]);
           return d.concat(c || Array.prototype.slice.call(f));
         }, o = function() {
         }, n = {};
@@ -4453,8 +4453,8 @@ var EasemobChat = { exports: {} };
         var l = function() {
           function d(f, b, c) {
             this.name = f || "defaultLogger", this.currentLevel = 0, this.useCookiePersist = !1, this.storageLogLevelKey = "loglevel", this.levels = s, this.logMethods = ["trace", "debug", "info", "warn", "error"], this.methodFactory = c || this.defaultMethodFactory;
-            var I = this._getPersistedLevel();
-            I == null && (I = b === null ? "WARN" : b), this.logs = [], this.config = { useCache: !1, maxCache: 3145728, color: "", background: "" }, this.logBytes = 0, this.setLevel(I, !1, "");
+            var S = this._getPersistedLevel();
+            S == null && (S = b === null ? "WARN" : b), this.logs = [], this.config = { useCache: !1, maxCache: 3145728, color: "", background: "" }, this.logBytes = 0, this.setLevel(S, !1, "");
           }
           return d.prototype.setConfig = function(f) {
             this.config = f;
@@ -4476,19 +4476,19 @@ var EasemobChat = { exports: {} };
           }, d.prototype.download = function() {
             if (typeof window < "u" && typeof document < "u") {
               var f = this.getLogs().join(`
-`), b = new Blob([f], { type: "text/plain;charset=UTF-8" }), c = window.URL.createObjectURL(b), I = document.createElement("a");
-              I.style.display = "none", I.href = c, I.setAttribute("download", "sdklog"), document.body.appendChild(I), I.click();
+`), b = new Blob([f], { type: "text/plain;charset=UTF-8" }), c = window.URL.createObjectURL(b), S = document.createElement("a");
+              S.style.display = "none", S.href = c, S.setAttribute("download", "sdklog"), document.body.appendChild(S), S.click();
             }
           }, d.prototype._bindMethod = function(f, b, c) {
-            var I = this, v = f[b], N = this.getTime();
+            var S = this, v = f[b], N = this.getTime();
             if (c)
               return this._cacheLog;
             if (typeof v.bind == "function")
               return function() {
                 for (var x = [], O = 0; O < arguments.length; O++)
                   x[O] = arguments[O];
-                var C = I.getTime();
-                v.call.apply(v, a([f, "".concat(C, " IM SDK [").concat(b === "log" ? "debug" : b, "]: ")], x, !1)), I.onLog && I.onLog({ time: C, level: b === "log" ? "debug" : b, logs: x });
+                var C = S.getTime();
+                v.call.apply(v, i([f, "".concat(C, " IM SDK [").concat(b === "log" ? "debug" : b, "]: ")], x, !1)), S.onLog && S.onLog({ time: C, level: b === "log" ? "debug" : b, logs: x });
               };
             try {
               return Function.prototype.bind.call(v, f, "".concat(N, " IM SDK [").concat(b === "log" ? "debug" : b, "]: "));
@@ -4503,17 +4503,17 @@ var EasemobChat = { exports: {} };
           }, d.prototype._cacheLog = function() {
             for (var f = [], b = 0; b < arguments.length; b++)
               f[b] = arguments[b];
-            var c = (/* @__PURE__ */ new Date()).toLocaleString() + ": ", I = "";
+            var c = (/* @__PURE__ */ new Date()).toLocaleString() + ": ", S = "";
             f.forEach(function(v) {
-              i(v) === "object" ? I += JSON.stringify(v) + " " : I += v + " ";
-            }), this._cacheLogCall(c + I);
+              a(v) === "object" ? S += JSON.stringify(v) + " " : S += v + " ";
+            }), this._cacheLogCall(c + S);
           }, d.prototype._cacheLogCall = function(f) {
-            var b = u(f), c = this.logBytes + b, I = this.config.maxCache;
-            if (!(b >= I)) {
-              if (c < I)
+            var b = u(f), c = this.logBytes + b, S = this.config.maxCache;
+            if (!(b >= S)) {
+              if (c < S)
                 this.logBytes += b;
               else
-                for (var v = c - I, N = 0; N < v; ) {
+                for (var v = c - S, N = 0; N < v; ) {
                   var x = this.logs.shift();
                   x !== void 0 && (N += u(x));
                 }
@@ -4533,8 +4533,8 @@ var EasemobChat = { exports: {} };
             typeof window < "u" && (window.localStorage && (window.localStorage[this.storageLogLevelKey] = b), this.useCookiePersist && (window.document.cookie = encodeURIComponent(this.storageLogLevelKey) + "=" + b + ";"));
           }, d.prototype.replaceLoggingMethods = function(f, b) {
             for (var c = 0; c < this.logMethods.length; c++) {
-              var I = this.logMethods[c];
-              this[I] = c < f ? o : this.methodFactory(I, f, b);
+              var S = this.logMethods[c];
+              this[S] = c < f ? o : this.methodFactory(S, f, b);
             }
             this.log = this.debug;
           }, d.prototype.defaultMethodFactory = function(f, b, c) {
@@ -4565,21 +4565,21 @@ var EasemobChat = { exports: {} };
           return n;
         };
         var h = m;
-      }, 2449: function(p, S, e) {
-        e.d(S, { Message: function() {
+      }, 2449: function(p, R, e) {
+        e.d(R, { Message: function() {
           return f;
         } });
         var r = e(4370), t = function() {
           function b(c) {
-            var I = c.id;
-            this.id = I, this.type = c.type;
+            var S = c.id;
+            this.id = S, this.type = c.type;
           }
           return b.prototype.set = function(c) {
             this.body = { id: this.id, ackId: c.id, type: "read", to: c.to, from: c.from || "", chatType: c.chatType };
           }, b.create = function(c) {
             return { id: r.P6.getUniqueId(), chatType: c.chatType, ackId: c.id, type: "read", to: c.to, from: c.from || "", ackContent: c.ackContent, isChatThread: c.isChatThread, priority: c.priority, deliverOnlineOnly: c.deliverOnlineOnly };
           }, b;
-        }(), i = function() {
+        }(), a = function() {
           function b(c) {
             this.id = c.id, this.type = c.type;
           }
@@ -4590,8 +4590,8 @@ var EasemobChat = { exports: {} };
           }, b;
         }(), s = (e(3843), e(3710), function() {
           function b(c) {
-            var I = c.type, v = c.id;
-            this.id = v, this.type = I;
+            var S = c.type, v = c.id;
+            this.id = v, this.type = S;
           }
           return b.prototype.set = function(c) {
             this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "channel", to: c.to, from: c.from || "", time: Date.now() };
@@ -4602,10 +4602,10 @@ var EasemobChat = { exports: {} };
           }, b.create = function(c) {
             return { id: r.P6.getUniqueId(), type: "channel", chatType: c.chatType || "singleChat", to: c.to, from: c.from || "", time: Date.now(), isChatThread: c.isChatThread, priority: c.priority, deliverOnlineOnly: c.deliverOnlineOnly };
           }, b;
-        }()), a = (e(9753), function() {
+        }()), i = (e(9753), function() {
           function b(c) {
-            var I = c.type, v = c.id || r.P6.getUniqueId();
-            this.id = v, this.type = I, this.value = "";
+            var S = c.type, v = c.id || r.P6.getUniqueId();
+            this.id = v, this.type = S, this.value = "";
           }
           return b.prototype.set = function(c) {
             this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "txt", to: c.to, msg: c.msg, from: c.from, roomType: c.roomType, success: c.success, fail: c.fail, ext: c.ext, time: Date.now(), isChatThread: c.isChatThread }, this.value = c.msg;
@@ -4614,13 +4614,13 @@ var EasemobChat = { exports: {} };
           }, b.prototype.setGroup = function(c) {
             return !!this.body && (this.body.group = c, !0);
           }, b.create = function(c) {
-            var I, v;
-            return !((I = c.msgConfig) === null || I === void 0) && I.languages && Array.isArray((v = c.msgConfig) === null || v === void 0 ? void 0 : v.languages), { type: "txt", id: r.P6.getUniqueId(), msg: c.msg, to: c.to, from: c.from || "", chatType: c.chatType, ext: c.ext, time: Date.now(), msgConfig: c.msgConfig, isChatThread: c.isChatThread, priority: c.priority, deliverOnlineOnly: c.deliverOnlineOnly, receiverList: c.receiverList };
+            var S, v;
+            return !((S = c.msgConfig) === null || S === void 0) && S.languages && Array.isArray((v = c.msgConfig) === null || v === void 0 ? void 0 : v.languages), { type: "txt", id: r.P6.getUniqueId(), msg: c.msg, to: c.to, from: c.from || "", chatType: c.chatType, ext: c.ext, time: Date.now(), msgConfig: c.msgConfig, isChatThread: c.isChatThread, priority: c.priority, deliverOnlineOnly: c.deliverOnlineOnly, receiverList: c.receiverList };
           }, b;
         }()), o = function() {
           function b(c) {
-            var I = c.type, v = c.id;
-            this.id = v || r.P6.getUniqueId(), this.type = I;
+            var S = c.type, v = c.id;
+            this.id = v || r.P6.getUniqueId(), this.type = S;
           }
           return b.prototype.set = function(c) {
             this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "cmd", to: c.to, action: c.action, from: c.from, roomType: c.roomType, success: c.success, fail: c.fail, ext: c.ext, time: Date.now() };
@@ -4633,8 +4633,8 @@ var EasemobChat = { exports: {} };
           }, b;
         }(), n = function() {
           function b(c) {
-            var I = c.type, v = c.id || r.P6.getUniqueId();
-            this.id = v, this.type = I;
+            var S = c.type, v = c.id || r.P6.getUniqueId();
+            this.id = v, this.type = S;
           }
           return b.prototype.set = function(c) {
             this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "custom", to: c.to, customEvent: c.customEvent, customExts: c.customExts, from: c.from, roomType: c.roomType, success: c.success, fail: c.fail, ext: c.ext, time: Date.now() };
@@ -4647,8 +4647,8 @@ var EasemobChat = { exports: {} };
           }, b;
         }(), l = function() {
           function b(c) {
-            var I = c.type, v = c.id;
-            this.id = v || r.P6.getUniqueId(), this.type = I;
+            var S = c.type, v = c.id;
+            this.id = v || r.P6.getUniqueId(), this.type = S;
           }
           return b.prototype.set = function(c) {
             this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "loc", to: c.to, addr: c.addr, buildingName: c.buildingName, lat: c.lat, lng: c.lng, from: c.from, roomType: c.roomType, success: c.success, fail: c.fail, ext: c.ext, time: Date.now() };
@@ -4661,8 +4661,8 @@ var EasemobChat = { exports: {} };
           }, b;
         }(), u = function() {
           function b(c) {
-            var I = c.type, v = c.id || r.P6.getUniqueId();
-            this.id = v, this.type = I;
+            var S = c.type, v = c.id || r.P6.getUniqueId();
+            this.id = v, this.type = S;
           }
           return b.prototype.set = function(c) {
             c.file = c.file || c.fileInputId && r.P6.getFileUrl(c.fileInputId), this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "img", file: c.file, width: c.width, height: c.height, to: c.to, from: c.from || "", roomType: c.roomType, success: c.success, fail: c.fail, ext: c.ext, time: Date.now(), onFileUploadError: c.onFileUploadError, onFileUploadComplete: c.onFileUploadComplete, onFileUploadProgress: c.onFileUploadProgress, body: c.body, isChatThread: c.isChatThread };
@@ -4675,8 +4675,8 @@ var EasemobChat = { exports: {} };
           }, b;
         }(), m = function() {
           function b(c) {
-            var I = c.type, v = c.id || r.P6.getUniqueId();
-            this.id = v, this.type = I;
+            var S = c.type, v = c.id || r.P6.getUniqueId();
+            this.id = v, this.type = S;
           }
           return b.prototype.set = function(c) {
             c.file = c.file || c.fileInputId && r.P6.getFileUrl(c.fileInputId), this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "audio", file: c.file, filename: c.filename, length: c.length, file_length: c.file_length, fileInputId: c.fileInputId, to: c.to, from: c.from, roomType: c.roomType, success: c.success, fail: c.fail, ext: c.ext, time: Date.now(), onFileUploadError: c.onFileUploadError, onFileUploadComplete: c.onFileUploadComplete, onFileUploadProgress: c.onFileUploadProgress, body: c.body, isChatThread: c.isChatThread };
@@ -4689,8 +4689,8 @@ var EasemobChat = { exports: {} };
           }, b;
         }(), g = function() {
           function b(c) {
-            var I = c.type, v = c.id;
-            this.id = v, this.type = I;
+            var S = c.type, v = c.id;
+            this.id = v, this.type = S;
           }
           return b.prototype.set = function(c) {
             c.file = c.file || c.fileInputId && r.P6.getFileUrl(c.fileInputId), this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "video", file: c.file, filename: c.filename, length: c.length, file_length: c.file_length, fileInputId: c.fileInputId, to: c.to, from: c.from, roomType: c.roomType, success: c.success, fail: c.fail, ext: c.ext, time: Date.now(), apiUrl: c.apiUrl, onFileUploadError: c.onFileUploadError, onFileUploadComplete: c.onFileUploadComplete, onFileUploadProgress: c.onFileUploadProgress, body: c.body, isChatThread: c.isChatThread };
@@ -4703,8 +4703,8 @@ var EasemobChat = { exports: {} };
           }, b;
         }(), h = function() {
           function b(c) {
-            var I = c.type, v = c.id;
-            this.id = v, this.type = I;
+            var S = c.type, v = c.id;
+            this.id = v, this.type = S;
           }
           return b.prototype.set = function(c) {
             c.file = c.file || c.fileInputId && r.P6.getFileUrl(c.fileInputId), this.body = { id: this.id, chatType: c.chatType || "singleChat", type: "file", file: c.file, filename: c.filename, fileInputId: c.fileInputId, to: c.to, from: c.from, roomType: c.roomType, success: c.success, fail: c.fail, ext: c.ext, time: Date.now(), onFileUploadError: c.onFileUploadError, onFileUploadComplete: c.onFileUploadComplete, onFileUploadProgress: c.onFileUploadProgress, body: c.body, isChatThread: c.isChatThread };
@@ -4717,26 +4717,26 @@ var EasemobChat = { exports: {} };
           }, b;
         }(), d = function() {
           function b(c) {
-            var I = c.type, v = c.id || r.P6.getUniqueId();
-            this.id = v, this.type = I, this.value = "";
+            var S = c.type, v = c.id || r.P6.getUniqueId();
+            this.id = v, this.type = S, this.value = "";
           }
           return b.create = function(c) {
             return { type: "combine", id: r.P6.getUniqueId(), to: c.to, from: c.from || "", chatType: c.chatType, ext: c.ext, time: Date.now(), msgConfig: c.msgConfig, isChatThread: c.isChatThread, priority: c.priority, deliverOnlineOnly: c.deliverOnlineOnly, receiverList: c.receiverList, compatibleText: c.compatibleText, title: c.title, summary: c.summary, messageList: c.messageList, onFileUploadError: c.onFileUploadError, onFileUploadComplete: c.onFileUploadComplete };
           }, b;
         }(), f = function() {
-          function b(c, I) {
-            return this.type = c, this.id = I || r.P6.getUniqueId(), b.createOldMsg({ type: c, id: this.id });
+          function b(c, S) {
+            return this.type = c, this.id = S || r.P6.getUniqueId(), b.createOldMsg({ type: c, id: this.id });
           }
           return b.createOldMsg = function(c) {
             switch (c.type) {
               case "read":
                 return new t({ type: "read", id: c.id });
               case "delivery":
-                return new i({ type: "delivery", id: c.id });
+                return new a({ type: "delivery", id: c.id });
               case "channel":
                 return new s({ type: "channel", id: c.id });
               case "txt":
-                return new a({ type: "txt", id: c.id });
+                return new i({ type: "txt", id: c.id });
               case "cmd":
                 return new o({ type: "cmd", id: c.id });
               case "custom":
@@ -4753,7 +4753,7 @@ var EasemobChat = { exports: {} };
                 return new h({ type: "file", id: c.id });
             }
           }, b.create = function(c) {
-            return (I = c).type !== "txt" || "version" in I ? function(v) {
+            return (S = c).type !== "txt" || "version" in S ? function(v) {
               return v.type === "img" && !("version" in v);
             }(c) ? u.create(c) : function(v) {
               return v.type === "cmd" && !("version" in v);
@@ -4771,31 +4771,31 @@ var EasemobChat = { exports: {} };
               return v.type === "channel" && !("version" in v);
             }(c) ? s.create(c) : function(v) {
               return v.type === "delivery" && !("version" in v);
-            }(c) ? i.create(c) : function(v) {
+            }(c) ? a.create(c) : function(v) {
               return v.type === "read" && !("version" in v);
             }(c) ? t.create(c) : function(v) {
               return v.type === "combine" && !("version" in v);
-            }(c) ? d.create(c) : {} : a.create(c);
-            var I;
+            }(c) ? d.create(c) : {} : i.create(c);
+            var S;
           }, b.prototype.set = function(c) {
           }, b;
         }();
-      }, 5531: function(p, S, e) {
+      }, 5531: function(p, R, e) {
         var r;
-        e.d(S, { E: function() {
+        e.d(R, { E: function() {
           return r;
         } }), function(t) {
           t[t.REQUEST_SUCCESS = 0] = "REQUEST_SUCCESS", t[t.REQUEST_TIMEOUT = -1] = "REQUEST_TIMEOUT", t[t.REQUEST_UNKNOWN = -2] = "REQUEST_UNKNOWN", t[t.REQUEST_PARAMETER_ERROR = -3] = "REQUEST_PARAMETER_ERROR", t[t.REQUEST_ABORT = -4] = "REQUEST_ABORT", t[t.WEBIM_CONNCTION_USER_NOT_ASSIGN_ERROR = 0] = "WEBIM_CONNCTION_USER_NOT_ASSIGN_ERROR", t[t.WEBIM_CONNCTION_OPEN_ERROR = 1] = "WEBIM_CONNCTION_OPEN_ERROR", t[t.WEBIM_CONNCTION_AUTH_ERROR = 2] = "WEBIM_CONNCTION_AUTH_ERROR", t[t.WEBIM_CONNCTION_OPEN_USERGRID_ERROR = 3] = "WEBIM_CONNCTION_OPEN_USERGRID_ERROR", t[t.WEBIM_CONNCTION_ATTACH_ERROR = 4] = "WEBIM_CONNCTION_ATTACH_ERROR", t[t.WEBIM_CONNCTION_ATTACH_USERGRID_ERROR = 5] = "WEBIM_CONNCTION_ATTACH_USERGRID_ERROR", t[t.WEBIM_CONNCTION_REOPEN_ERROR = 6] = "WEBIM_CONNCTION_REOPEN_ERROR", t[t.WEBIM_CONNCTION_SERVER_CLOSE_ERROR = 7] = "WEBIM_CONNCTION_SERVER_CLOSE_ERROR", t[t.WEBIM_CONNCTION_SERVER_ERROR = 8] = "WEBIM_CONNCTION_SERVER_ERROR", t[t.WEBIM_CONNCTION_IQ_ERROR = 9] = "WEBIM_CONNCTION_IQ_ERROR", t[t.WEBIM_CONNCTION_PING_ERROR = 10] = "WEBIM_CONNCTION_PING_ERROR", t[t.WEBIM_CONNCTION_NOTIFYVERSION_ERROR = 11] = "WEBIM_CONNCTION_NOTIFYVERSION_ERROR", t[t.WEBIM_CONNCTION_GETROSTER_ERROR = 12] = "WEBIM_CONNCTION_GETROSTER_ERROR", t[t.WEBIM_CONNCTION_CROSSDOMAIN_ERROR = 13] = "WEBIM_CONNCTION_CROSSDOMAIN_ERROR", t[t.WEBIM_CONNCTION_LISTENING_OUTOF_MAXRETRIES = 14] = "WEBIM_CONNCTION_LISTENING_OUTOF_MAXRETRIES", t[t.WEBIM_CONNCTION_RECEIVEMSG_CONTENTERROR = 15] = "WEBIM_CONNCTION_RECEIVEMSG_CONTENTERROR", t[t.WEBIM_CONNCTION_DISCONNECTED = 16] = "WEBIM_CONNCTION_DISCONNECTED", t[t.WEBIM_CONNCTION_AJAX_ERROR = 17] = "WEBIM_CONNCTION_AJAX_ERROR", t[t.WEBIM_CONNCTION_JOINROOM_ERROR = 18] = "WEBIM_CONNCTION_JOINROOM_ERROR", t[t.WEBIM_CONNCTION_GETROOM_ERROR = 19] = "WEBIM_CONNCTION_GETROOM_ERROR", t[t.WEBIM_CONNCTION_GETROOMINFO_ERROR = 20] = "WEBIM_CONNCTION_GETROOMINFO_ERROR", t[t.WEBIM_CONNCTION_GETROOMMEMBER_ERROR = 21] = "WEBIM_CONNCTION_GETROOMMEMBER_ERROR", t[t.WEBIM_CONNCTION_GETROOMOCCUPANTS_ERROR = 22] = "WEBIM_CONNCTION_GETROOMOCCUPANTS_ERROR", t[t.WEBIM_CONNCTION_LOAD_CHATROOM_ERROR = 23] = "WEBIM_CONNCTION_LOAD_CHATROOM_ERROR", t[t.WEBIM_CONNCTION_NOT_SUPPORT_CHATROOM_ERROR = 24] = "WEBIM_CONNCTION_NOT_SUPPORT_CHATROOM_ERROR", t[t.WEBIM_CONNCTION_JOINCHATROOM_ERROR = 25] = "WEBIM_CONNCTION_JOINCHATROOM_ERROR", t[t.WEBIM_CONNCTION_QUITCHATROOM_ERROR = 26] = "WEBIM_CONNCTION_QUITCHATROOM_ERROR", t[t.WEBIM_CONNCTION_APPKEY_NOT_ASSIGN_ERROR = 27] = "WEBIM_CONNCTION_APPKEY_NOT_ASSIGN_ERROR", t[t.WEBIM_CONNCTION_TOKEN_NOT_ASSIGN_ERROR = 28] = "WEBIM_CONNCTION_TOKEN_NOT_ASSIGN_ERROR", t[t.WEBIM_CONNCTION_SESSIONID_NOT_ASSIGN_ERROR = 29] = "WEBIM_CONNCTION_SESSIONID_NOT_ASSIGN_ERROR", t[t.WEBIM_CONNCTION_RID_NOT_ASSIGN_ERROR = 30] = "WEBIM_CONNCTION_RID_NOT_ASSIGN_ERROR", t[t.WEBIM_CONNCTION_CALLBACK_INNER_ERROR = 31] = "WEBIM_CONNCTION_CALLBACK_INNER_ERROR", t[t.WEBIM_CONNCTION_CLIENT_OFFLINE = 32] = "WEBIM_CONNCTION_CLIENT_OFFLINE", t[t.WEBIM_CONNCTION_CLIENT_LOGOUT = 33] = "WEBIM_CONNCTION_CLIENT_LOGOUT", t[t.WEBIM_CONNCTION_CLIENT_TOO_MUCH_ERROR = 34] = "WEBIM_CONNCTION_CLIENT_TOO_MUCH_ERROR", t[t.WEBIM_CONNECTION_ACCEPT_INVITATION_FROM_GROUP = 35] = "WEBIM_CONNECTION_ACCEPT_INVITATION_FROM_GROUP", t[t.WEBIM_CONNECTION_DECLINE_INVITATION_FROM_GROUP = 36] = "WEBIM_CONNECTION_DECLINE_INVITATION_FROM_GROUP", t[t.WEBIM_CONNECTION_ACCEPT_JOIN_GROUP = 37] = "WEBIM_CONNECTION_ACCEPT_JOIN_GROUP", t[t.WEBIM_CONNECTION_DECLINE_JOIN_GROUP = 38] = "WEBIM_CONNECTION_DECLINE_JOIN_GROUP", t[t.WEBIM_CONNECTION_CLOSED = 39] = "WEBIM_CONNECTION_CLOSED", t[t.WEBIM_CONNECTION_ERROR = 40] = "WEBIM_CONNECTION_ERROR", t[t.MAX_LIMIT = 50] = "MAX_LIMIT", t[t.MESSAGE_NOT_FOUND = 51] = "MESSAGE_NOT_FOUND", t[t.NO_PERMISSION = 52] = "NO_PERMISSION", t[t.OPERATION_UNSUPPORTED = 53] = "OPERATION_UNSUPPORTED", t[t.OPERATION_NOT_ALLOWED = 54] = "OPERATION_NOT_ALLOWED", t[t.WEBIM_UPLOADFILE_BROWSER_ERROR = 100] = "WEBIM_UPLOADFILE_BROWSER_ERROR", t[t.WEBIM_UPLOADFILE_ERROR = 101] = "WEBIM_UPLOADFILE_ERROR", t[t.WEBIM_UPLOADFILE_NO_LOGIN = 102] = "WEBIM_UPLOADFILE_NO_LOGIN", t[t.WEBIM_UPLOADFILE_NO_FILE = 103] = "WEBIM_UPLOADFILE_NO_FILE", t[t.WEBIM_DOWNLOADFILE_ERROR = 200] = "WEBIM_DOWNLOADFILE_ERROR", t[t.WEBIM_DOWNLOADFILE_NO_LOGIN = 201] = "WEBIM_DOWNLOADFILE_NO_LOGIN", t[t.WEBIM_DOWNLOADFILE_BROWSER_ERROR = 202] = "WEBIM_DOWNLOADFILE_BROWSER_ERROR", t[t.PARSE_FILE_ERROR = 203] = "PARSE_FILE_ERROR", t[t.USER_NOT_FOUND = 204] = "USER_NOT_FOUND", t[t.MESSAGE_PARAMETER_ERROR = 205] = "MESSAGE_PARAMETER_ERROR", t[t.WEBIM_CONNCTION_USER_LOGIN_ANOTHER_DEVICE = 206] = "WEBIM_CONNCTION_USER_LOGIN_ANOTHER_DEVICE", t[t.WEBIM_CONNCTION_USER_REMOVED = 207] = "WEBIM_CONNCTION_USER_REMOVED", t[t.WEBIM_CONNCTION_USER_KICKED_BY_CHANGE_PASSWORD = 216] = "WEBIM_CONNCTION_USER_KICKED_BY_CHANGE_PASSWORD", t[t.WEBIM_CONNCTION_USER_KICKED_BY_OTHER_DEVICE = 217] = "WEBIM_CONNCTION_USER_KICKED_BY_OTHER_DEVICE", t[t.USER_MUTED_BY_ADMIN = 219] = "USER_MUTED_BY_ADMIN", t[t.USER_NOT_FRIEND = 221] = "USER_NOT_FRIEND", t[t.WEBIM_MESSAGE_REC_TEXT = 300] = "WEBIM_MESSAGE_REC_TEXT", t[t.WEBIM_MESSAGE_REC_TEXT_ERROR = 301] = "WEBIM_MESSAGE_REC_TEXT_ERROR", t[t.WEBIM_MESSAGE_REC_EMOTION = 302] = "WEBIM_MESSAGE_REC_EMOTION", t[t.WEBIM_MESSAGE_REC_PHOTO = 303] = "WEBIM_MESSAGE_REC_PHOTO", t[t.WEBIM_MESSAGE_REC_AUDIO = 304] = "WEBIM_MESSAGE_REC_AUDIO", t[t.WEBIM_MESSAGE_REC_AUDIO_FILE = 305] = "WEBIM_MESSAGE_REC_AUDIO_FILE", t[t.WEBIM_MESSAGE_REC_VEDIO = 306] = "WEBIM_MESSAGE_REC_VEDIO", t[t.WEBIM_MESSAGE_REC_VEDIO_FILE = 307] = "WEBIM_MESSAGE_REC_VEDIO_FILE", t[t.WEBIM_MESSAGE_REC_FILE = 308] = "WEBIM_MESSAGE_REC_FILE", t[t.WEBIM_MESSAGE_SED_TEXT = 309] = "WEBIM_MESSAGE_SED_TEXT", t[t.WEBIM_MESSAGE_SED_EMOTION = 310] = "WEBIM_MESSAGE_SED_EMOTION", t[t.WEBIM_MESSAGE_SED_PHOTO = 311] = "WEBIM_MESSAGE_SED_PHOTO", t[t.WEBIM_MESSAGE_SED_AUDIO = 312] = "WEBIM_MESSAGE_SED_AUDIO", t[t.WEBIM_MESSAGE_SED_AUDIO_FILE = 313] = "WEBIM_MESSAGE_SED_AUDIO_FILE", t[t.WEBIM_MESSAGE_SED_VEDIO = 314] = "WEBIM_MESSAGE_SED_VEDIO", t[t.WEBIM_MESSAGE_SED_VEDIO_FILE = 315] = "WEBIM_MESSAGE_SED_VEDIO_FILE", t[t.WEBIM_MESSAGE_SED_FILE = 316] = "WEBIM_MESSAGE_SED_FILE", t[t.WEBIM_MESSAGE_SED_ERROR = 317] = "WEBIM_MESSAGE_SED_ERROR", t[t.STATUS_INIT = 400] = "STATUS_INIT", t[t.STATUS_DOLOGIN_USERGRID = 401] = "STATUS_DOLOGIN_USERGRID", t[t.STATUS_DOLOGIN_IM = 402] = "STATUS_DOLOGIN_IM", t[t.STATUS_OPENED = 403] = "STATUS_OPENED", t[t.STATUS_CLOSING = 404] = "STATUS_CLOSING", t[t.STATUS_CLOSED = 405] = "STATUS_CLOSED", t[t.STATUS_ERROR = 406] = "STATUS_ERROR", t[t.SERVER_BUSY = 500] = "SERVER_BUSY", t[t.MESSAGE_INCLUDE_ILLEGAL_CONTENT = 501] = "MESSAGE_INCLUDE_ILLEGAL_CONTENT", t[t.MESSAGE_EXTERNAL_LOGIC_BLOCKED = 502] = "MESSAGE_EXTERNAL_LOGIC_BLOCKED", t[t.SERVER_UNKNOWN_ERROR = 503] = "SERVER_UNKNOWN_ERROR", t[t.MESSAGE_RECALL_TIME_LIMIT = 504] = "MESSAGE_RECALL_TIME_LIMIT", t[t.SERVICE_NOT_ENABLED = 505] = "SERVICE_NOT_ENABLED", t[t.SERVICE_NOT_ALLOW_MESSAGING = 506] = "SERVICE_NOT_ALLOW_MESSAGING", t[t.SERVICE_NOT_ALLOW_MESSAGING_MUTE = 507] = "SERVICE_NOT_ALLOW_MESSAGING_MUTE", t[t.MESSAGE_MODERATION_BLOCKED = 508] = "MESSAGE_MODERATION_BLOCKED", t[t.MESSAGE_CURRENT_LIMITING = 509] = "MESSAGE_CURRENT_LIMITING", t[t.MESSAGE_WEBSOCKET_DISCONNECTED = 510] = "MESSAGE_WEBSOCKET_DISCONNECTED", t[t.MESSAGE_SIZE_LIMIT = 511] = "MESSAGE_SIZE_LIMIT", t[t.GROUP_NOT_EXIST = 605] = "GROUP_NOT_EXIST", t[t.GROUP_NOT_JOINED = 602] = "GROUP_NOT_JOINED", t[t.GROUP_MEMBERS_FULL = 606] = "GROUP_MEMBERS_FULL", t[t.PERMISSION_DENIED = 603] = "PERMISSION_DENIED", t[t.WEBIM_LOAD_MSG_ERROR = 604] = "WEBIM_LOAD_MSG_ERROR", t[t.GROUP_ALREADY_JOINED = 601] = "GROUP_ALREADY_JOINED", t[t.GROUP_MEMBERS_LIMIT = 607] = "GROUP_MEMBERS_LIMIT", t[t.GROUP_IS_DISABLED = 608] = "GROUP_IS_DISABLED", t[t.GROUP_MEMBER_ATTRIBUTES_SET_FAILED = 609] = "GROUP_MEMBER_ATTRIBUTES_SET_FAILED", t[t.REST_PARAMS_STATUS = 700] = "REST_PARAMS_STATUS", t[t.CHATROOM_NOT_JOINED = 702] = "CHATROOM_NOT_JOINED", t[t.CHATROOM_MEMBERS_FULL = 704] = "CHATROOM_MEMBERS_FULL", t[t.CHATROOM_NOT_EXIST = 705] = "CHATROOM_NOT_EXIST", t[t.SDK_RUNTIME_ERROR = 999] = "SDK_RUNTIME_ERROR", t[t.PRESENCE_PARAM_EXCEED = 1100] = "PRESENCE_PARAM_EXCEED", t[t.REACTION_ALREADY_ADDED = 1101] = "REACTION_ALREADY_ADDED", t[t.REACTION_CREATING = 1102] = "REACTION_CREATING", t[t.REACTION_OPERATION_IS_ILLEGAL = 1103] = "REACTION_OPERATION_IS_ILLEGAL", t[t.TRANSLATION_NOT_VALID = 1200] = "TRANSLATION_NOT_VALID", t[t.TRANSLATION_TEXT_TOO_LONG = 1201] = "TRANSLATION_TEXT_TOO_LONG", t[t.TRANSLATION_FAILED = 1204] = "TRANSLATION_FAILED", t[t.THREAD_NOT_EXIST = 1300] = "THREAD_NOT_EXIST", t[t.THREAD_ALREADY_EXIST = 1301] = "THREAD_ALREADY_EXIST", t[t.MODIFY_MESSAGE_NOT_EXIST = 1302] = "MODIFY_MESSAGE_NOT_EXIST", t[t.MODIFY_MESSAGE_FORMAT_ERROR = 1303] = "MODIFY_MESSAGE_FORMAT_ERROR", t[t.MODIFY_MESSAGE_FAILED = 1304] = "MODIFY_MESSAGE_FAILED", t[t.CONVERSATION_NOT_EXIST = 1400] = "CONVERSATION_NOT_EXIST";
         }(r || (r = {}));
-      }, 4370: function(p, S, e) {
-        e.d(S, { iw: function() {
+      }, 4370: function(p, R, e) {
+        e.d(R, { iw: function() {
           return d;
         }, hj: function() {
           return l;
         }, LR: function() {
           return v;
         }, cT: function() {
-          return I;
+          return S;
         }, P6: function() {
           return x;
         } }), e(9601), e(1539), e(8674), e(3710), e(6699), e(7042), e(2772), e(9653), e(9714), e(6992), e(8783), e(3948), e(285), e(1637), e(8309), e(4986), e(2023);
@@ -4806,7 +4806,7 @@ var EasemobChat = { exports: {} };
                 Object.prototype.hasOwnProperty.call(C, G) && (O[G] = C[G]);
             return O;
           }, t.apply(this, arguments);
-        }, i = e(1595), s = e(2071), a = e(7360), o = function() {
+        }, a = e(1595), s = e(2071), i = e(7360), o = function() {
           return o = Object.assign || function(O) {
             for (var C, E = 1, P = arguments.length; E < P; E++)
               for (var G in C = arguments[E])
@@ -4817,18 +4817,18 @@ var EasemobChat = { exports: {} };
         };
         function l(O, C) {
           var E, P = this;
-          return b().platform === d.WEB ? new Promise(function(G, K) {
-            var F = O.dataType || "text", Y = O.success || n, Z = O.error || n, V = new XMLHttpRequest();
+          return b().platform === d.WEB ? new Promise(function(G, Z) {
+            var F = O.dataType || "text", Y = O.success || n, K = O.error || n, V = new XMLHttpRequest();
             V.ontimeout = function() {
-              K({ type: r.E.REQUEST_TIMEOUT, message: "Request Timeout", errorType: "timeout_error", xhr: V });
+              Z({ type: r.E.REQUEST_TIMEOUT, message: "Request Timeout", errorType: "timeout_error", xhr: V });
             }, V.onerror = function() {
-              K({ type: r.E.REQUEST_UNKNOWN, message: "Request Unknow Error", errorType: "onerror", xhr: V });
+              Z({ type: r.E.REQUEST_UNKNOWN, message: "Request Unknow Error", errorType: "onerror", xhr: V });
             }, V.onabort = function() {
-              K({ type: r.E.REQUEST_ABORT, message: "Request Abort", errorType: "onabort", xhr: V });
+              Z({ type: r.E.REQUEST_ABORT, message: "Request Abort", errorType: "onabort", xhr: V });
             }, V.onreadystatechange = function() {
               if (V.readyState === 4) {
-                var Ce = (/* @__PURE__ */ new Date()).getTime() - E, Ie = V.status || 0, Re = { elapse: Ce, httpCode: Ie };
-                if (Ie === 200) {
+                var Ce = (/* @__PURE__ */ new Date()).getTime() - E, Re = V.status || 0, Ie = { elapse: Ce, httpCode: Re };
+                if (Re === 200) {
                   x.ajaxUnconventionalErrorTimes = 0;
                   try {
                     switch (F) {
@@ -4836,105 +4836,105 @@ var EasemobChat = { exports: {} };
                         return Y(V.responseText), void G(V.responseText);
                       case "json":
                         var Oe = JSON.parse(V.responseText);
-                        return Oe.extraInfo = Re, Y(Oe), void G(Oe);
+                        return Oe.extraInfo = Ie, Y(Oe), void G(Oe);
                       case "xml":
-                        return V.responseXML && V.responseXML.documentElement ? (Y(V.responseXML.documentElement), void G(V.responseXML.documentElement)) : (Z({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "XHR.responseXML is null or XHR.responseXML.documentElement is null" }), void K({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "XHR.responseXML is null or XHR.responseXML.documentElement is null" }));
+                        return V.responseXML && V.responseXML.documentElement ? (Y(V.responseXML.documentElement), void G(V.responseXML.documentElement)) : (K({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "XHR.responseXML is null or XHR.responseXML.documentElement is null" }), void Z({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "XHR.responseXML is null or XHR.responseXML.documentElement is null" }));
                       default:
-                        Z({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "Invalid dataType" }), K({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "Invalid dataType" });
+                        K({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "Invalid dataType" }), Z({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "Invalid dataType" });
                     }
                     return G(V.response || V.responseText), void Y(V.response || V.responseText, V);
                   } catch (fe) {
-                    K(fe);
+                    Z(fe);
                   }
                   return;
                 }
-                [400, 401, 403, 404, 429, 500, 503].includes(Ie) || (a.kg.debug("rest api request fail status:", Ie), x.ajaxUnconventionalErrorTimes++), function(fe, ce, Ue, Ze) {
-                  var $e, Ve, Be, Ke, Qe, Pe, Le, xe, ve, we, ke, Ne, j, B, T, W, _, A, L, w, k = fe.response;
+                [400, 401, 403, 404, 429, 500, 503].includes(Re) || (i.kg.debug("rest api request fail status:", Re), x.ajaxUnconventionalErrorTimes++), function(fe, ce, Ue, Ke) {
+                  var $e, Ve, Be, Ze, Qe, Pe, Le, xe, ve, we, ke, Ne, j, B, T, W, _, A, L, w, k = fe.response;
                   k && typeof k == "string" && (k = JSON.parse(k));
-                  var y = fe.status, R = { elapse: Ze, httpCode: y, errDesc: k == null ? void 0 : k.error_description };
+                  var y = fe.status, I = { elapse: Ke, httpCode: y, errDesc: k == null ? void 0 : k.error_description };
                   if (y === 400) {
                     if (k.error_code === 40002)
-                      return void ce({ type: r.E.THREAD_ALREADY_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                      return void ce({ type: r.E.THREAD_ALREADY_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: I });
                     if (k.error_code === 40009)
-                      return void ce({ type: r.E.OPERATION_UNSUPPORTED, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                      return void ce({ type: r.E.OPERATION_UNSUPPORTED, message: k == null ? void 0 : k.error_description, extraInfo: I });
                     if (k.error_code === 60005)
-                      return void ce({ type: r.E.GROUP_MEMBER_ATTRIBUTES_SET_FAILED, message: (k == null ? void 0 : k.desc) || (k == null ? void 0 : k.error_description), extraInfo: R });
+                      return void ce({ type: r.E.GROUP_MEMBER_ATTRIBUTES_SET_FAILED, message: (k == null ? void 0 : k.desc) || (k == null ? void 0 : k.error_description), extraInfo: I });
                     if (k.error_code === 60010)
-                      return void (k != null && k.error_description.includes("exceeds chatgroup user metadata single value limit") ? ce({ type: r.E.MAX_LIMIT, message: (k == null ? void 0 : k.desc) || k.error_description, extraInfo: R }) : ce({ type: r.E.NO_PERMISSION, message: (k == null ? void 0 : k.desc) || k.error_description, extraInfo: R }));
+                      return void (k != null && k.error_description.includes("exceeds chatgroup user metadata single value limit") ? ce({ type: r.E.MAX_LIMIT, message: (k == null ? void 0 : k.desc) || k.error_description, extraInfo: I }) : ce({ type: r.E.NO_PERMISSION, message: (k == null ? void 0 : k.desc) || k.error_description, extraInfo: I }));
                     if (k.error_code === 60011)
-                      return void ce({ type: r.E.CHATROOM_NOT_JOINED, message: k == null ? void 0 : k.desc, extraInfo: R });
+                      return void ce({ type: r.E.CHATROOM_NOT_JOINED, message: k == null ? void 0 : k.desc, extraInfo: I });
                     if (k.error_code === 60006 || k.error_code === 60007 || k.error_code === 60009 || k.error_code === 60012)
-                      return void ce({ type: r.E.MAX_LIMIT, message: (k == null ? void 0 : k.desc) || (k == null ? void 0 : k.error_description), extraInfo: R });
+                      return void ce({ type: r.E.MAX_LIMIT, message: (k == null ? void 0 : k.desc) || (k == null ? void 0 : k.error_description), extraInfo: I });
                     if (!(($e = k.error_description) === null || $e === void 0) && $e.includes("are not members of this group"))
-                      return !((Ve = fe.responseURL) === null || Ve === void 0) && Ve.includes("chatgroups") ? ce({ type: r.E.GROUP_NOT_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : ce({ type: r.E.CHATROOM_NOT_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }), void Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, message: k == null ? void 0 : k.error_description, data: fe.responseText, extraInfo: R });
+                      return !((Ve = fe.responseURL) === null || Ve === void 0) && Ve.includes("chatgroups") ? ce({ type: r.E.GROUP_NOT_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : ce({ type: r.E.CHATROOM_NOT_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }), void Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, message: k == null ? void 0 : k.error_description, data: fe.responseText, extraInfo: I });
                     if ((k == null ? void 0 : k.result) === "the app not open presence")
-                      return void ce({ type: r.E.SERVICE_NOT_ENABLED, message: k == null ? void 0 : k.result, extraInfo: R });
+                      return void ce({ type: r.E.SERVICE_NOT_ENABLED, message: k == null ? void 0 : k.result, extraInfo: I });
                     switch (k == null ? void 0 : k.error_description) {
                       case "the user is already operation this message":
-                        ce({ type: r.E.REACTION_ALREADY_ADDED, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.REACTION_ALREADY_ADDED, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "The quantity has exceeded the limit!":
-                        ce({ type: r.E.MAX_LIMIT, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.MAX_LIMIT, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "The user not in this group!":
-                        ce({ type: r.E.GROUP_NOT_JOINED, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.GROUP_NOT_JOINED, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "the user operation is illegal!":
-                        ce({ type: r.E.REACTION_OPERATION_IS_ILLEGAL, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.REACTION_OPERATION_IS_ILLEGAL, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "this appKey is not open reaction service!":
                       case "this appKey not open message roaming":
-                        ce({ type: r.E.SERVICE_NOT_ENABLED, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.SERVICE_NOT_ENABLED, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "this message is creating reaction, please try again.":
-                        ce({ type: r.E.REACTION_CREATING, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.REACTION_CREATING, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "groupId can not be null!":
-                        ce({ type: r.E.GROUP_NOT_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.GROUP_NOT_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "The input text is too long.":
-                        ce({ type: r.E.TRANSLATION_TEXT_TOO_LONG, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.TRANSLATION_TEXT_TOO_LONG, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "The target language is not valid.":
-                        ce({ type: r.E.TRANSLATION_NOT_VALID, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.TRANSLATION_NOT_VALID, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "report failed, get message by id failed":
-                        ce({ type: r.E.MESSAGE_NOT_FOUND, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.MESSAGE_NOT_FOUND, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "ext is too big ":
-                        ce({ type: r.E.PRESENCE_PARAM_EXCEED, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.PRESENCE_PARAM_EXCEED, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       case "Request body not readable.Please check content type is correct!":
-                        ce({ type: r.E.REQUEST_PARAMETER_ERROR, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                        ce({ type: r.E.REQUEST_PARAMETER_ERROR, message: k == null ? void 0 : k.error_description, extraInfo: I });
                         break;
                       default:
-                        ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, message: k == null ? void 0 : k.error_description, data: fe.responseText, extraInfo: R }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, message: k == null ? void 0 : k.error_description, data: fe.responseText, extraInfo: R });
+                        ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, message: k == null ? void 0 : k.error_description, data: fe.responseText, extraInfo: I }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, message: k == null ? void 0 : k.error_description, data: fe.responseText, extraInfo: I });
                     }
                   } else if (y === 401)
-                    k.error_code === 40001 || k.error_code === 60001 || k.error_description === "Unable to authenticate (OAuth)" ? ce({ type: r.E.NO_PERMISSION, message: k == null ? void 0 : k.error_description, extraInfo: R }) : (Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: R }), ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: R }));
+                    k.error_code === 40001 || k.error_code === 60001 || k.error_description === "Unable to authenticate (OAuth)" ? ce({ type: r.E.NO_PERMISSION, message: k == null ? void 0 : k.error_description, extraInfo: I }) : (Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: I }), ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: I }));
                   else if (y === 403)
-                    k.error_code === 4e4 || k.error_code === 60004 || k.error_code === 15002 ? ce({ type: r.E.SERVICE_NOT_ENABLED, message: k == null ? void 0 : k.error_description, extraInfo: R }) : k.error_code === 40003 || k.error_code === 40004 ? ce({ type: r.E.THREAD_ALREADY_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: R }) : k.error_code === 40005 || k.error_code === 40007 || k.error_code === 91002 ? ce({ type: r.E.MAX_LIMIT, message: k == null ? void 0 : k.error_description, extraInfo: R }) : k.error_code === 60002 && ce({ type: r.E.PERMISSION_DENIED, message: k == null ? void 0 : k.error_description, extraInfo: R }), k.error_description === "group member list is full!" ? !((Be = fe.responseURL) === null || Be === void 0) && Be.includes("chatgroups") ? ce({ type: r.E.GROUP_MEMBERS_FULL, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : ce({ type: r.E.CHATROOM_MEMBERS_FULL, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : !((Ke = k.error_description) === null || Ke === void 0) && Ke.includes(k.error_description.includes("already in group")) ? !((Qe = fe.responseURL) === null || Qe === void 0) && Qe.includes("chatgroups") && ce({ type: r.E.GROUP_ALREADY_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : !((Pe = k.error_description) === null || Pe === void 0) && Pe.includes("are not members of this group") ? !((Le = fe.responseURL) === null || Le === void 0) && Le.includes("chatgroups") ? ce({ type: r.E.GROUP_NOT_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : ce({ type: r.E.CHATROOM_NOT_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : !((xe = k.error_description) === null || xe === void 0) && xe.includes("service not open!") || !((ve = k.error_description) === null || ve === void 0) && ve.includes("message report not open") || !((we = k.error_description) === null || we === void 0) && we.includes("messageroaming function not open") ? ce({ type: r.E.SERVICE_NOT_ENABLED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : !((ke = k.error_description) === null || ke === void 0) && ke.includes("members size is greater than max user size !") ? ce({ type: r.E.GROUP_MEMBERS_LIMIT, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : !((Ne = k.error_description) === null || Ne === void 0) && Ne.includes("can not operate this group, reason: group is disabled") ? ce({ type: r.E.GROUP_IS_DISABLED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : ce({ type: r.E.PERMISSION_DENIED, data: fe.response || fe.responseText, message: "permission denied", extraInfo: t(t({}, R), { errDesc: "permission denied" }) }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: R });
+                    k.error_code === 4e4 || k.error_code === 60004 || k.error_code === 15002 ? ce({ type: r.E.SERVICE_NOT_ENABLED, message: k == null ? void 0 : k.error_description, extraInfo: I }) : k.error_code === 40003 || k.error_code === 40004 ? ce({ type: r.E.THREAD_ALREADY_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: I }) : k.error_code === 40005 || k.error_code === 40007 || k.error_code === 91002 ? ce({ type: r.E.MAX_LIMIT, message: k == null ? void 0 : k.error_description, extraInfo: I }) : k.error_code === 60002 && ce({ type: r.E.PERMISSION_DENIED, message: k == null ? void 0 : k.error_description, extraInfo: I }), k.error_description === "group member list is full!" ? !((Be = fe.responseURL) === null || Be === void 0) && Be.includes("chatgroups") ? ce({ type: r.E.GROUP_MEMBERS_FULL, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : ce({ type: r.E.CHATROOM_MEMBERS_FULL, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : !((Ze = k.error_description) === null || Ze === void 0) && Ze.includes(k.error_description.includes("already in group")) ? !((Qe = fe.responseURL) === null || Qe === void 0) && Qe.includes("chatgroups") && ce({ type: r.E.GROUP_ALREADY_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : !((Pe = k.error_description) === null || Pe === void 0) && Pe.includes("are not members of this group") ? !((Le = fe.responseURL) === null || Le === void 0) && Le.includes("chatgroups") ? ce({ type: r.E.GROUP_NOT_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : ce({ type: r.E.CHATROOM_NOT_JOINED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : !((xe = k.error_description) === null || xe === void 0) && xe.includes("service not open!") || !((ve = k.error_description) === null || ve === void 0) && ve.includes("message report not open") || !((we = k.error_description) === null || we === void 0) && we.includes("messageroaming function not open") ? ce({ type: r.E.SERVICE_NOT_ENABLED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : !((ke = k.error_description) === null || ke === void 0) && ke.includes("members size is greater than max user size !") ? ce({ type: r.E.GROUP_MEMBERS_LIMIT, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : !((Ne = k.error_description) === null || Ne === void 0) && Ne.includes("can not operate this group, reason: group is disabled") ? ce({ type: r.E.GROUP_IS_DISABLED, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : ce({ type: r.E.PERMISSION_DENIED, data: fe.response || fe.responseText, message: "permission denied", extraInfo: t(t({}, I), { errDesc: "permission denied" }) }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: I });
                   else if (y === 404)
-                    k.error_code === 40011 ? ce({ type: r.E.THREAD_NOT_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: R }) : k.error_code === 40012 ? ce({ type: r.E.NO_PERMISSION, message: k == null ? void 0 : k.error_description, extraInfo: R }) : k.error_code === 60003 || k.error_code === 20004 ? ce({ type: r.E.GROUP_NOT_JOINED, message: k == null ? void 0 : k.error_description, extraInfo: R }) : k.error_code === 91001 && ce({ type: r.E.CONVERSATION_NOT_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: R }), !((j = k.error_description) === null || j === void 0) && j.includes("do not find this group") || !((B = k.error_description) === null || B === void 0) && B.includes("does not exist") ? !((T = fe.responseURL) === null || T === void 0) && T.includes("chatgroups") ? ce({ type: r.E.GROUP_NOT_EXIST, data: fe.response || fe.responseText, message: "The chat room dose not exist.", extraInfo: t(t({}, R), { errDesc: "The chat room dose not exist." }) }) : ce({ type: r.E.CHATROOM_NOT_EXIST, data: fe.response || fe.responseText, message: "The chat room dose not exist.", extraInfo: t(t({}, R), { errDesc: "The chat room dose not exist." }) }) : !((W = k.error_description) === null || W === void 0) && W.includes("username") && (!((_ = k.error_description) === null || _ === void 0) && _.includes("doesn't exist!'")) || !((A = k.error_description) === null || A === void 0) && A.includes("user not found") ? ce({ type: r.E.USER_NOT_FOUND, data: fe.response || fe.responseText, message: k.error_description, extraInfo: R }) : ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.response || fe.responseText, message: fe.responseText, extraInfo: R }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.response || fe.responseText, message: fe.responseText, extraInfo: R });
+                    k.error_code === 40011 ? ce({ type: r.E.THREAD_NOT_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: I }) : k.error_code === 40012 ? ce({ type: r.E.NO_PERMISSION, message: k == null ? void 0 : k.error_description, extraInfo: I }) : k.error_code === 60003 || k.error_code === 20004 ? ce({ type: r.E.GROUP_NOT_JOINED, message: k == null ? void 0 : k.error_description, extraInfo: I }) : k.error_code === 91001 && ce({ type: r.E.CONVERSATION_NOT_EXIST, message: k == null ? void 0 : k.error_description, extraInfo: I }), !((j = k.error_description) === null || j === void 0) && j.includes("do not find this group") || !((B = k.error_description) === null || B === void 0) && B.includes("does not exist") ? !((T = fe.responseURL) === null || T === void 0) && T.includes("chatgroups") ? ce({ type: r.E.GROUP_NOT_EXIST, data: fe.response || fe.responseText, message: "The chat room dose not exist.", extraInfo: t(t({}, I), { errDesc: "The chat room dose not exist." }) }) : ce({ type: r.E.CHATROOM_NOT_EXIST, data: fe.response || fe.responseText, message: "The chat room dose not exist.", extraInfo: t(t({}, I), { errDesc: "The chat room dose not exist." }) }) : !((W = k.error_description) === null || W === void 0) && W.includes("username") && (!((_ = k.error_description) === null || _ === void 0) && _.includes("doesn't exist!'")) || !((A = k.error_description) === null || A === void 0) && A.includes("user not found") ? ce({ type: r.E.USER_NOT_FOUND, data: fe.response || fe.responseText, message: k.error_description, extraInfo: I }) : ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.response || fe.responseText, message: fe.responseText, extraInfo: I }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.response || fe.responseText, message: fe.responseText, extraInfo: I });
                   else if (y === 406)
-                    k.error_code === 90004 && ce({ type: r.E.OPERATION_NOT_ALLOWED, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                    k.error_code === 90004 && ce({ type: r.E.OPERATION_NOT_ALLOWED, message: k == null ? void 0 : k.error_description, extraInfo: I });
                   else if (y === 429 || y === 503) {
                     if (!((L = k.error_description) === null || L === void 0) && L.includes("The request has reached the maximum limit"))
-                      return void ce({ type: r.E.MAX_LIMIT, message: fe.responseText, extraInfo: R });
-                    ce({ type: r.E.SERVER_BUSY, data: fe.response || fe.responseText, message: "Server is busy.", extraInfo: t(t({}, R), { errDesc: "Server is busy." }) }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: "Server is busy.", extraInfo: t(t({}, R), { errDesc: "Server is busy." }) });
+                      return void ce({ type: r.E.MAX_LIMIT, message: fe.responseText, extraInfo: I });
+                    ce({ type: r.E.SERVER_BUSY, data: fe.response || fe.responseText, message: "Server is busy.", extraInfo: t(t({}, I), { errDesc: "Server is busy." }) }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: "Server is busy.", extraInfo: t(t({}, I), { errDesc: "Server is busy." }) });
                   } else if (y === 500) {
                     if (k.error_code === 40006 || k.error_code === 40008 || k.error_code === 40010)
-                      return void ce({ type: r.E.SERVER_UNKNOWN_ERROR, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                      return void ce({ type: r.E.SERVER_UNKNOWN_ERROR, message: k == null ? void 0 : k.error_description, extraInfo: I });
                     if (k.error_code === 90005 || k.error_code === 99999)
-                      return void ce({ type: r.E.REQUEST_UNKNOWN, message: k == null ? void 0 : k.error_description, extraInfo: R });
+                      return void ce({ type: r.E.REQUEST_UNKNOWN, message: k == null ? void 0 : k.error_description, extraInfo: I });
                     if (!((w = k.error_description) === null || w === void 0) && w.includes("translte failed!"))
-                      return void ce({ type: r.E.TRANSLATION_FAILED, message: fe.responseText, extraInfo: R });
-                    ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: "", extraInfo: R }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: "", extraInfo: R });
+                      return void ce({ type: r.E.TRANSLATION_FAILED, message: fe.responseText, extraInfo: I });
+                    ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: "", extraInfo: I }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: "", extraInfo: I });
                   } else
-                    ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: t(t({}, R), { errDesc: "ajax error" }) }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: t(t({}, R), { errDesc: "ajax error" }) });
-                }(V, K, Z, Ce);
+                    ce({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: t(t({}, I), { errDesc: "ajax error" }) }), Ue({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: fe.responseText, message: fe.responseText, extraInfo: t(t({}, I), { errDesc: "ajax error" }) });
+                }(V, Z, K, Ce);
               }
-              V.readyState === 0 && (Z({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "Request not initialized" }), K({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "Request not initialized" }));
+              V.readyState === 0 && (K({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "Request not initialized" }), Z({ type: r.E.WEBIM_CONNCTION_AJAX_ERROR, data: V.responseText, message: "Request not initialized" }));
             }, O.responseType && V.responseType && (V.responseType = O.responseType), O.mimeType && V.overrideMimeType(O.mimeType);
             var ne = O.type || "POST", ae = O.data || null, se = "";
             if (ne.toLowerCase() === "get" && ae) {
@@ -4948,9 +4948,9 @@ var EasemobChat = { exports: {} };
               me.hasOwnProperty(ge) && V.setRequestHeader(ge, me[ge]);
             V.send(ae);
           }).then(function(G) {
-            return P.dataReport && C && C !== i.fI.SDK_INTERNAL && P.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: o({ isSuccess: 1, requestUrl: O.url, requestName: C, requestMethod: O.type }, N(G.extraInfo)) }), C !== i.fI.SDK_INTERNAL && delete G.extraInfo, u(G) === "Object" ? o(o({}, G), { type: r.E.REQUEST_SUCCESS }) : { data: G, type: r.E.REQUEST_SUCCESS };
+            return P.dataReport && C && C !== a.fI.SDK_INTERNAL && P.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: o({ isSuccess: 1, requestUrl: O.url, requestName: C, requestMethod: O.type }, N(G.extraInfo)) }), C !== a.fI.SDK_INTERNAL && delete G.extraInfo, u(G) === "Object" ? o(o({}, G), { type: r.E.REQUEST_SUCCESS }) : { data: G, type: r.E.REQUEST_SUCCESS };
           }).catch(function(G) {
-            throw P.dataReport && C && C !== i.fI.SDK_INTERNAL && P.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: o({ isSuccess: 0, requestUrl: O.url, requestName: C, requestMethod: O.type }, N(G.extraInfo)) }), C !== i.fI.SDK_INTERNAL && delete G.extraInfo, G;
+            throw P.dataReport && C && C !== a.fI.SDK_INTERNAL && P.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: o({ isSuccess: 0, requestUrl: O.url, requestName: C, requestMethod: O.type }, N(G.extraInfo)) }), C !== a.fI.SDK_INTERNAL && delete G.extraInfo, G;
           }) : m.call(this, O, C);
         }
         function u(O) {
@@ -4959,18 +4959,18 @@ var EasemobChat = { exports: {} };
         function m(O, C) {
           var E = this;
           return new Promise(function(P, G) {
-            var K = O.success || n, F = O.error || n, Y = O.type || "POST", Z = O.data || null, V = "", ne = (/* @__PURE__ */ new Date()).getTime(), ae = x.getEnvInfo();
-            if (Y.toLowerCase() === "get" && Z) {
-              for (var se in Z)
-                Z.hasOwnProperty(se) && (V += se + "=" + Z[se] + "&");
-              V = V && V.slice(0, -1), O.url += (O.url.indexOf("?") > 0 ? "&" : "?") + (V && V + "&") + "_v=" + (/* @__PURE__ */ new Date()).getTime(), Z = null, V = "";
+            var Z = O.success || n, F = O.error || n, Y = O.type || "POST", K = O.data || null, V = "", ne = (/* @__PURE__ */ new Date()).getTime(), ae = x.getEnvInfo();
+            if (Y.toLowerCase() === "get" && K) {
+              for (var se in K)
+                K.hasOwnProperty(se) && (V += se + "=" + K[se] + "&");
+              V = V && V.slice(0, -1), O.url += (O.url.indexOf("?") > 0 ? "&" : "?") + (V && V + "&") + "_v=" + (/* @__PURE__ */ new Date()).getTime(), K = null, V = "";
             }
             var ue = { url: O.url, data: O.data, method: Y, headers: {}, success: function(me) {
-              var ge, Ce, Ie, Re, Oe, fe = { elapse: (/* @__PURE__ */ new Date()).getTime() - ne, httpCode: Number(((ge = me.statusCode) === null || ge === void 0 ? void 0 : ge.toString()) || ((Ce = me.status) === null || Ce === void 0 ? void 0 : Ce.toString())), errDesc: ((Ie = me == null ? void 0 : me.data) === null || Ie === void 0 ? void 0 : Ie.error_description) || "" };
-              if (((Re = me.statusCode) === null || Re === void 0 ? void 0 : Re.toString()) === "200" || ((Oe = me.status) === null || Oe === void 0 ? void 0 : Oe.toString()) === "200") {
+              var ge, Ce, Re, Ie, Oe, fe = { elapse: (/* @__PURE__ */ new Date()).getTime() - ne, httpCode: Number(((ge = me.statusCode) === null || ge === void 0 ? void 0 : ge.toString()) || ((Ce = me.status) === null || Ce === void 0 ? void 0 : Ce.toString())), errDesc: ((Re = me == null ? void 0 : me.data) === null || Re === void 0 ? void 0 : Re.error_description) || "" };
+              if (((Ie = me.statusCode) === null || Ie === void 0 ? void 0 : Ie.toString()) === "200" || ((Oe = me.status) === null || Oe === void 0 ? void 0 : Oe.toString()) === "200") {
                 me.data.extraInfo = fe;
                 var ce = me.data;
-                K(ce), P(ce);
+                Z(ce), P(ce);
               } else
                 me.extraInfo = fe, F(ce = me), G(ce);
             }, complete: function() {
@@ -4982,16 +4982,16 @@ var EasemobChat = { exports: {} };
               return dd.httpRequest(ue);
             ae.global.request(ue);
           }).then(function(P) {
-            return E.dataReport && C && C !== i.fI.SDK_INTERNAL && E.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: o({ isSuccess: 1, requestUrl: O.url, requestName: C, requestMethod: O.type }, N(P.extraInfo)) }), C !== i.fI.SDK_INTERNAL && delete P.extraInfo, u(P) === "Object" ? o(o({}, P), { type: r.E.REQUEST_SUCCESS }) : { data: P, type: r.E.REQUEST_SUCCESS };
+            return E.dataReport && C && C !== a.fI.SDK_INTERNAL && E.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: o({ isSuccess: 1, requestUrl: O.url, requestName: C, requestMethod: O.type }, N(P.extraInfo)) }), C !== a.fI.SDK_INTERNAL && delete P.extraInfo, u(P) === "Object" ? o(o({}, P), { type: r.E.REQUEST_SUCCESS }) : { data: P, type: r.E.REQUEST_SUCCESS };
           }).catch(function(P) {
-            throw E.dataReport && C && C !== i.fI.SDK_INTERNAL && E.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: o({ isSuccess: 0, requestUrl: O.url, requestName: C, requestMethod: O.type }, N(P.extraInfo)) }), C !== i.fI.SDK_INTERNAL && delete P.extraInfo, P;
+            throw E.dataReport && C && C !== a.fI.SDK_INTERNAL && E.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: o({ isSuccess: 0, requestUrl: O.url, requestName: C, requestMethod: O.type }, N(P.extraInfo)) }), C !== a.fI.SDK_INTERNAL && delete P.extraInfo, P;
           });
         }
         var g, h, d, f = (g = function(O, C) {
           var E = b();
           if (E.platform !== d.WEB) {
-            var P = E.global, G = function(K) {
-              K.isConnected ? O() : C();
+            var P = E.global, G = function(Z) {
+              Z.isConnected ? O() : C();
             };
             P.offNetworkStatusChange && P.offNetworkStatusChange(G), P.onNetworkStatusChange && P.onNetworkStatusChange(G);
           } else
@@ -5012,11 +5012,11 @@ var EasemobChat = { exports: {} };
               return !1;
           return !0;
         }
-        function I(O, C) {
-          var E, P, G = this, K = (/* @__PURE__ */ new Date()).getTime(), F = O.accessToken;
+        function S(O, C) {
+          var E, P, G = this, Z = (/* @__PURE__ */ new Date()).getTime(), F = O.accessToken;
           if (F) {
-            var Y = O.appKey, Z = [], V = "", ne = "";
-            if (Y && (V = (Z = Y.split("#"))[0], ne = Z[1]), V || ne) {
+            var Y = O.appKey, K = [], V = "", ne = "";
+            if (Y && (V = (K = Y.split("#"))[0], ne = K[1]), V || ne) {
               var ae = O.apiUrl, se = O.uploadUrl || ae + "/" + V + "/" + ne + "/chatfiles";
               if (((P = (E = O == null ? void 0 : O.file) === null || E === void 0 ? void 0 : E.data) === null || P === void 0 ? void 0 : P.size) <= 0)
                 O.onFileUploadError && O.onFileUploadError({ type: r.E.WEBIM_UPLOADFILE_ERROR, message: "fileSize must be greater than 0" });
@@ -5026,16 +5026,16 @@ var EasemobChat = { exports: {} };
                   ge({ type: r.E.WEBIM_UPLOADFILE_ERROR, data: ue });
                 }, !1), ue.addEventListener("load", function(Ce) {
                   try {
-                    var Ie = JSON.parse(ue.responseText);
+                    var Re = JSON.parse(ue.responseText);
                     if (ue.status === 400)
-                      return ge({ type: r.E.WEBIM_UPLOADFILE_ERROR, data: Ie }), !1;
+                      return ge({ type: r.E.WEBIM_UPLOADFILE_ERROR, data: Re }), !1;
                     try {
-                      (function(Re) {
-                        var Oe = (/* @__PURE__ */ new Date()).getTime() - K;
-                        G.dataReport && C && [i.fI.UPLOAD_MSG_ATTACH, i.fI.UPLOAD_CHATROOM_FILE, i.fI.UPLOAD_GROUP_FILE].includes(C) && G.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: { isSuccess: Re != null && Re.error ? 0 : 1, requestMethod: "POST", requestName: C, requestElapse: Oe, requestUrl: se, code: ue.status, codeDesc: (Re == null ? void 0 : Re.error_description) || "" } }), O.onFileUploadComplete && O.onFileUploadComplete(Re);
-                      })(Ie);
-                    } catch (Re) {
-                      ge({ type: r.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, data: Re });
+                      (function(Ie) {
+                        var Oe = (/* @__PURE__ */ new Date()).getTime() - Z;
+                        G.dataReport && C && [a.fI.UPLOAD_MSG_ATTACH, a.fI.UPLOAD_CHATROOM_FILE, a.fI.UPLOAD_GROUP_FILE].includes(C) && G.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: { isSuccess: Ie != null && Ie.error ? 0 : 1, requestMethod: "POST", requestName: C, requestElapse: Oe, requestUrl: se, code: ue.status, codeDesc: (Ie == null ? void 0 : Ie.error_description) || "" } }), O.onFileUploadComplete && O.onFileUploadComplete(Ie);
+                      })(Re);
+                    } catch (Ie) {
+                      ge({ type: r.E.WEBIM_CONNCTION_CALLBACK_INNER_ERROR, data: Ie });
                     }
                   } catch {
                     ge({ type: r.E.WEBIM_UPLOADFILE_ERROR, data: ue.responseText });
@@ -5049,8 +5049,8 @@ var EasemobChat = { exports: {} };
           } else
             O.onFileUploadError && O.onFileUploadError({ type: r.E.WEBIM_UPLOADFILE_NO_LOGIN, message: "AccessToken cannot be empty" });
           function ge(Ce) {
-            var Ie = (/* @__PURE__ */ new Date()).getTime() - K;
-            G.dataReport && C && [i.fI.UPLOAD_MSG_ATTACH, i.fI.UPLOAD_CHATROOM_FILE, i.fI.UPLOAD_GROUP_FILE].includes(C) && G.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "POST", requestName: C, requestElapse: Ie, requestUrl: se, code: (ue == null ? void 0 : ue.status) || 0, codeDesc: "upload file error" } }), O.onFileUploadError && O.onFileUploadError(Ce);
+            var Re = (/* @__PURE__ */ new Date()).getTime() - Z;
+            G.dataReport && C && [a.fI.UPLOAD_MSG_ATTACH, a.fI.UPLOAD_CHATROOM_FILE, a.fI.UPLOAD_GROUP_FILE].includes(C) && G.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "POST", requestName: C, requestElapse: Re, requestUrl: se, code: (ue == null ? void 0 : ue.status) || 0, codeDesc: "upload file error" } }), O.onFileUploadError && O.onFileUploadError(Ce);
           }
         }
         function v(O, C) {
@@ -5058,24 +5058,24 @@ var EasemobChat = { exports: {} };
           var E = (/* @__PURE__ */ new Date()).getTime(), P = new XMLHttpRequest(), G = this;
           P.addEventListener("load", function(ae) {
             var se = (/* @__PURE__ */ new Date()).getTime() - E;
-            G.dataReport && C && C === i.fI.DOWN_GROUP_FILE && G.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: { isSuccess: P.status === 200 ? 1 : 0, requestMethod: "POST", requestName: C, requestElapse: se, requestUrl: O == null ? void 0 : O.url, code: P.status, codeDesc: P.status === 200 ? "" : "download file error" } }), O.onFileDownloadComplete && O.onFileDownloadComplete(P.response);
+            G.dataReport && C && C === a.fI.DOWN_GROUP_FILE && G.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: { isSuccess: P.status === 200 ? 1 : 0, requestMethod: "POST", requestName: C, requestElapse: se, requestUrl: O == null ? void 0 : O.url, code: P.status, codeDesc: P.status === 200 ? "" : "download file error" } }), O.onFileDownloadComplete && O.onFileDownloadComplete(P.response);
           }, !1), P.addEventListener("error", function(ae) {
             var se = (/* @__PURE__ */ new Date()).getTime() - E;
-            G.dataReport && C && C === i.fI.DOWN_GROUP_FILE && G.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "POST", requestName: C, requestElapse: se, requestUrl: O == null ? void 0 : O.url, code: (P == null ? void 0 : P.status) || 0, codeDesc: "download file error" } }), O.onFileDownloadError && O.onFileDownloadError({ type: r.E.WEBIM_DOWNLOADFILE_ERROR, id: O.id, xhr: P });
+            G.dataReport && C && C === a.fI.DOWN_GROUP_FILE && G.dataReport.geOperateFun({ operationName: C })({ isEndApi: !0, data: { isSuccess: 0, requestMethod: "POST", requestName: C, requestElapse: se, requestUrl: O == null ? void 0 : O.url, code: (P == null ? void 0 : P.status) || 0, codeDesc: "download file error" } }), O.onFileDownloadError && O.onFileDownloadError({ type: r.E.WEBIM_DOWNLOADFILE_ERROR, id: O.id, xhr: P });
           }, !1);
-          var K = O.method || "GET", F = O.responseType || "blob", Y = O.mimeType || "text/plain; charset=x-user-defined";
-          P.open(K, O.url), typeof Blob < "u" ? P.responseType = F : P.overrideMimeType(Y);
-          var Z = { "X-Requested-With": "XMLHttpRequest", Accept: "application/octet-stream", "share-secret": O.secret, Authorization: "Bearer " + this.context.accessToken }, V = O.headers || {};
+          var Z = O.method || "GET", F = O.responseType || "blob", Y = O.mimeType || "text/plain; charset=x-user-defined";
+          P.open(Z, O.url), typeof Blob < "u" ? P.responseType = F : P.overrideMimeType(Y);
+          var K = { "X-Requested-With": "XMLHttpRequest", Accept: "application/octet-stream", "share-secret": O.secret, Authorization: "Bearer " + this.context.accessToken }, V = O.headers || {};
           for (var ne in V)
-            Z[ne] = V[ne];
-          for (var ne in Z)
-            Z[ne] && P.setRequestHeader(ne, Z[ne]);
+            K[ne] = V[ne];
+          for (var ne in K)
+            K[ne] && P.setRequestHeader(ne, K[ne]);
           P.send(null);
         }
         function N(O) {
           O === void 0 && (O = {});
-          var C = O.elapse, E = C === void 0 ? 0 : C, P = O.httpCode, G = P === void 0 ? 0 : P, K = O.errDesc;
-          return { requestElapse: E, code: G, codeDesc: K === void 0 ? "" : K };
+          var C = O.elapse, E = C === void 0 ? 0 : C, P = O.httpCode, G = P === void 0 ? 0 : P, Z = O.errDesc;
+          return { requestElapse: E, code: G, codeDesc: Z === void 0 ? "" : Z };
         }
         (function(O) {
           O.WEB = "web", O.WX = "wx", O.ZFB = "zfb", O.DD = "dd", O.TT = "tt", O.BAIDU = "baidu", O.QUICK_APP = "quick_app", O.UNI = "uni", O.NODE = "node";
@@ -5098,20 +5098,20 @@ var EasemobChat = { exports: {} };
             if (typeof O != "string")
               throw Error("in IE fileInputId must be string");
             G = document.getElementById(O).value, C.url = G;
-            var K = G.lastIndexOf("/"), F = G.lastIndexOf("\\"), Y = Math.max(K, F);
+            var Z = G.lastIndexOf("/"), F = G.lastIndexOf("\\"), Y = Math.max(Z, F);
             C.filename = Y < 0 ? G : G.substring(Y + 1);
           }
-          var Z = C.filename.lastIndexOf(".");
-          return Z !== -1 && (C.filetype = C.filename.substring(Z + 1).toLowerCase()), C;
-        }, uploadFile: I, flow: function(O) {
+          var K = C.filename.lastIndexOf(".");
+          return K !== -1 && (C.filetype = C.filename.substring(K + 1).toLowerCase()), C;
+        }, uploadFile: S, flow: function(O) {
           for (var C = O.length, E = C; E--; )
             if (typeof O[E] != "function")
               throw new TypeError("Expected a function");
           return function() {
             for (var P = [], G = 0; G < arguments.length; G++)
               P[G] = arguments[G];
-            for (var K = 0, F = C ? O[K].apply(this, P) : P[0]; ++K < C; )
-              F = O[K].call(this, F);
+            for (var Z = 0, F = C ? O[Z].apply(this, P) : P[0]; ++Z < C; )
+              F = O[Z].call(this, F);
             return F;
           };
         }, listenNetwork: f, getEnvInfo: b, wxRequest: m, parseDownloadResponse: function(O) {
@@ -5127,49 +5127,49 @@ var EasemobChat = { exports: {} };
             C += String.fromCharCode(O[E]);
           return C;
         } };
-      }, 9662: function(p, S, e) {
-        var r = e(614), t = e(6330), i = TypeError;
+      }, 9662: function(p, R, e) {
+        var r = e(614), t = e(6330), a = TypeError;
         p.exports = function(s) {
           if (r(s))
             return s;
-          throw i(t(s) + " is not a function");
+          throw a(t(s) + " is not a function");
         };
-      }, 9483: function(p, S, e) {
-        var r = e(4411), t = e(6330), i = TypeError;
+      }, 9483: function(p, R, e) {
+        var r = e(4411), t = e(6330), a = TypeError;
         p.exports = function(s) {
           if (r(s))
             return s;
-          throw i(t(s) + " is not a constructor");
+          throw a(t(s) + " is not a constructor");
         };
-      }, 6077: function(p, S, e) {
-        var r = e(614), t = String, i = TypeError;
+      }, 6077: function(p, R, e) {
+        var r = e(614), t = String, a = TypeError;
         p.exports = function(s) {
           if (typeof s == "object" || r(s))
             return s;
-          throw i("Can't set " + t(s) + " as a prototype");
+          throw a("Can't set " + t(s) + " as a prototype");
         };
-      }, 1223: function(p, S, e) {
-        var r = e(5112), t = e(30), i = e(3070).f, s = r("unscopables"), a = Array.prototype;
-        a[s] == null && i(a, s, { configurable: !0, value: t(null) }), p.exports = function(o) {
-          a[s][o] = !0;
+      }, 1223: function(p, R, e) {
+        var r = e(5112), t = e(30), a = e(3070).f, s = r("unscopables"), i = Array.prototype;
+        i[s] == null && a(i, s, { configurable: !0, value: t(null) }), p.exports = function(o) {
+          i[s][o] = !0;
         };
-      }, 5787: function(p, S, e) {
+      }, 5787: function(p, R, e) {
         var r = e(7976), t = TypeError;
-        p.exports = function(i, s) {
-          if (r(s, i))
-            return i;
+        p.exports = function(a, s) {
+          if (r(s, a))
+            return a;
           throw t("Incorrect invocation");
         };
-      }, 9670: function(p, S, e) {
-        var r = e(111), t = String, i = TypeError;
+      }, 9670: function(p, R, e) {
+        var r = e(111), t = String, a = TypeError;
         p.exports = function(s) {
           if (r(s))
             return s;
-          throw i(t(s) + " is not an object");
+          throw a(t(s) + " is not an object");
         };
       }, 3013: function(p) {
         p.exports = typeof ArrayBuffer < "u" && typeof DataView < "u";
-      }, 7556: function(p, S, e) {
+      }, 7556: function(p, R, e) {
         var r = e(7293);
         p.exports = r(function() {
           if (typeof ArrayBuffer == "function") {
@@ -5177,95 +5177,95 @@ var EasemobChat = { exports: {} };
             Object.isExtensible(t) && Object.defineProperty(t, "a", { value: 8 });
           }
         });
-      }, 260: function(p, S, e) {
-        var r, t, i, s = e(3013), a = e(9781), o = e(7854), n = e(614), l = e(111), u = e(2597), m = e(648), g = e(6330), h = e(8880), d = e(8052), f = e(7045), b = e(7976), c = e(9518), I = e(7674), v = e(5112), N = e(9711), x = e(9909), O = x.enforce, C = x.get, E = o.Int8Array, P = E && E.prototype, G = o.Uint8ClampedArray, K = G && G.prototype, F = E && c(E), Y = P && c(P), Z = Object.prototype, V = o.TypeError, ne = v("toStringTag"), ae = N("TYPED_ARRAY_TAG"), se = s && !!I && m(o.opera) !== "Opera", ue = !1, me = { Int8Array: 1, Uint8Array: 1, Uint8ClampedArray: 1, Int16Array: 2, Uint16Array: 2, Int32Array: 4, Uint32Array: 4, Float32Array: 4, Float64Array: 8 }, ge = { BigInt64Array: 8, BigUint64Array: 8 }, Ce = function(Re) {
-          var Oe = c(Re);
+      }, 260: function(p, R, e) {
+        var r, t, a, s = e(3013), i = e(9781), o = e(7854), n = e(614), l = e(111), u = e(2597), m = e(648), g = e(6330), h = e(8880), d = e(8052), f = e(7045), b = e(7976), c = e(9518), S = e(7674), v = e(5112), N = e(9711), x = e(9909), O = x.enforce, C = x.get, E = o.Int8Array, P = E && E.prototype, G = o.Uint8ClampedArray, Z = G && G.prototype, F = E && c(E), Y = P && c(P), K = Object.prototype, V = o.TypeError, ne = v("toStringTag"), ae = N("TYPED_ARRAY_TAG"), se = s && !!S && m(o.opera) !== "Opera", ue = !1, me = { Int8Array: 1, Uint8Array: 1, Uint8ClampedArray: 1, Int16Array: 2, Uint16Array: 2, Int32Array: 4, Uint32Array: 4, Float32Array: 4, Float64Array: 8 }, ge = { BigInt64Array: 8, BigUint64Array: 8 }, Ce = function(Ie) {
+          var Oe = c(Ie);
           if (l(Oe)) {
             var fe = C(Oe);
             return fe && u(fe, "TypedArrayConstructor") ? fe.TypedArrayConstructor : Ce(Oe);
           }
-        }, Ie = function(Re) {
-          if (!l(Re))
+        }, Re = function(Ie) {
+          if (!l(Ie))
             return !1;
-          var Oe = m(Re);
+          var Oe = m(Ie);
           return u(me, Oe) || u(ge, Oe);
         };
         for (r in me)
-          (i = (t = o[r]) && t.prototype) ? O(i).TypedArrayConstructor = t : se = !1;
+          (a = (t = o[r]) && t.prototype) ? O(a).TypedArrayConstructor = t : se = !1;
         for (r in ge)
-          (i = (t = o[r]) && t.prototype) && (O(i).TypedArrayConstructor = t);
+          (a = (t = o[r]) && t.prototype) && (O(a).TypedArrayConstructor = t);
         if ((!se || !n(F) || F === Function.prototype) && (F = function() {
           throw V("Incorrect invocation");
         }, se))
           for (r in me)
-            o[r] && I(o[r], F);
-        if ((!se || !Y || Y === Z) && (Y = F.prototype, se))
+            o[r] && S(o[r], F);
+        if ((!se || !Y || Y === K) && (Y = F.prototype, se))
           for (r in me)
-            o[r] && I(o[r].prototype, Y);
-        if (se && c(K) !== Y && I(K, Y), a && !u(Y, ne))
+            o[r] && S(o[r].prototype, Y);
+        if (se && c(Z) !== Y && S(Z, Y), i && !u(Y, ne))
           for (r in ue = !0, f(Y, ne, { configurable: !0, get: function() {
             return l(this) ? this[ae] : void 0;
           } }), me)
             o[r] && h(o[r], ae, r);
-        p.exports = { NATIVE_ARRAY_BUFFER_VIEWS: se, TYPED_ARRAY_TAG: ue && ae, aTypedArray: function(Re) {
-          if (Ie(Re))
-            return Re;
+        p.exports = { NATIVE_ARRAY_BUFFER_VIEWS: se, TYPED_ARRAY_TAG: ue && ae, aTypedArray: function(Ie) {
+          if (Re(Ie))
+            return Ie;
           throw V("Target is not a typed array");
-        }, aTypedArrayConstructor: function(Re) {
-          if (n(Re) && (!I || b(F, Re)))
-            return Re;
-          throw V(g(Re) + " is not a typed array constructor");
-        }, exportTypedArrayMethod: function(Re, Oe, fe, ce) {
-          if (a) {
+        }, aTypedArrayConstructor: function(Ie) {
+          if (n(Ie) && (!S || b(F, Ie)))
+            return Ie;
+          throw V(g(Ie) + " is not a typed array constructor");
+        }, exportTypedArrayMethod: function(Ie, Oe, fe, ce) {
+          if (i) {
             if (fe)
               for (var Ue in me) {
-                var Ze = o[Ue];
-                if (Ze && u(Ze.prototype, Re))
+                var Ke = o[Ue];
+                if (Ke && u(Ke.prototype, Ie))
                   try {
-                    delete Ze.prototype[Re];
+                    delete Ke.prototype[Ie];
                   } catch {
                     try {
-                      Ze.prototype[Re] = Oe;
+                      Ke.prototype[Ie] = Oe;
                     } catch {
                     }
                   }
               }
-            Y[Re] && !fe || d(Y, Re, fe ? Oe : se && P[Re] || Oe, ce);
+            Y[Ie] && !fe || d(Y, Ie, fe ? Oe : se && P[Ie] || Oe, ce);
           }
-        }, exportTypedArrayStaticMethod: function(Re, Oe, fe) {
+        }, exportTypedArrayStaticMethod: function(Ie, Oe, fe) {
           var ce, Ue;
-          if (a) {
-            if (I) {
+          if (i) {
+            if (S) {
               if (fe) {
                 for (ce in me)
-                  if ((Ue = o[ce]) && u(Ue, Re))
+                  if ((Ue = o[ce]) && u(Ue, Ie))
                     try {
-                      delete Ue[Re];
+                      delete Ue[Ie];
                     } catch {
                     }
               }
-              if (F[Re] && !fe)
+              if (F[Ie] && !fe)
                 return;
               try {
-                return d(F, Re, fe ? Oe : se && F[Re] || Oe);
+                return d(F, Ie, fe ? Oe : se && F[Ie] || Oe);
               } catch {
               }
             }
             for (ce in me)
-              !(Ue = o[ce]) || Ue[Re] && !fe || d(Ue, Re, Oe);
+              !(Ue = o[ce]) || Ue[Ie] && !fe || d(Ue, Ie, Oe);
           }
-        }, getTypedArrayConstructor: Ce, isView: function(Re) {
-          if (!l(Re))
+        }, getTypedArrayConstructor: Ce, isView: function(Ie) {
+          if (!l(Ie))
             return !1;
-          var Oe = m(Re);
+          var Oe = m(Ie);
           return Oe === "DataView" || u(me, Oe) || u(ge, Oe);
-        }, isTypedArray: Ie, TypedArray: F, TypedArrayPrototype: Y };
-      }, 3331: function(p, S, e) {
-        var r = e(7854), t = e(1702), i = e(9781), s = e(3013), a = e(6530), o = e(8880), n = e(7045), l = e(9190), u = e(7293), m = e(5787), g = e(9303), h = e(7466), d = e(7067), f = e(1179), b = e(9518), c = e(7674), I = e(8006).f, v = e(1285), N = e(1589), x = e(8003), O = e(9909), C = a.PROPER, E = a.CONFIGURABLE, P = "ArrayBuffer", G = "DataView", K = "Wrong index", F = O.getterFor(P), Y = O.getterFor(G), Z = O.set, V = r.ArrayBuffer, ne = V, ae = ne && ne.prototype, se = r.DataView, ue = se && se.prototype, me = Object.prototype, ge = r.Array, Ce = r.RangeError, Ie = t(v), Re = t([].reverse), Oe = f.pack, fe = f.unpack, ce = function(j) {
+        }, isTypedArray: Re, TypedArray: F, TypedArrayPrototype: Y };
+      }, 3331: function(p, R, e) {
+        var r = e(7854), t = e(1702), a = e(9781), s = e(3013), i = e(6530), o = e(8880), n = e(7045), l = e(9190), u = e(7293), m = e(5787), g = e(9303), h = e(7466), d = e(7067), f = e(1179), b = e(9518), c = e(7674), S = e(8006).f, v = e(1285), N = e(1589), x = e(8003), O = e(9909), C = i.PROPER, E = i.CONFIGURABLE, P = "ArrayBuffer", G = "DataView", Z = "Wrong index", F = O.getterFor(P), Y = O.getterFor(G), K = O.set, V = r.ArrayBuffer, ne = V, ae = ne && ne.prototype, se = r.DataView, ue = se && se.prototype, me = Object.prototype, ge = r.Array, Ce = r.RangeError, Re = t(v), Ie = t([].reverse), Oe = f.pack, fe = f.unpack, ce = function(j) {
           return [255 & j];
         }, Ue = function(j) {
           return [255 & j, j >> 8 & 255];
-        }, Ze = function(j) {
+        }, Ke = function(j) {
           return [255 & j, j >> 8 & 255, j >> 16 & 255, j >> 24 & 255];
         }, $e = function(j) {
           return j[3] << 24 | j[2] << 16 | j[1] << 8 | j[0];
@@ -5273,22 +5273,22 @@ var EasemobChat = { exports: {} };
           return Oe(j, 23, 4);
         }, Be = function(j) {
           return Oe(j, 52, 8);
-        }, Ke = function(j, B, T) {
+        }, Ze = function(j, B, T) {
           n(j.prototype, B, { configurable: !0, get: function() {
             return T(this)[B];
           } });
         }, Qe = function(j, B, T, W) {
           var _ = d(T), A = Y(j);
           if (_ + B > A.byteLength)
-            throw Ce(K);
+            throw Ce(Z);
           var L = A.bytes, w = _ + A.byteOffset, k = N(L, w, w + B);
-          return W ? k : Re(k);
+          return W ? k : Ie(k);
         }, Pe = function(j, B, T, W, _, A) {
           var L = d(T), w = Y(j);
           if (L + B > w.byteLength)
-            throw Ce(K);
-          for (var k = w.bytes, y = L + w.byteOffset, R = W(+_), H = 0; H < B; H++)
-            k[y + H] = R[A ? H : B - H - 1];
+            throw Ce(Z);
+          for (var k = w.bytes, y = L + w.byteOffset, I = W(+_), H = 0; H < B; H++)
+            k[y + H] = I[A ? H : B - H - 1];
         };
         if (s) {
           var Le = C && V.name !== P;
@@ -5304,7 +5304,7 @@ var EasemobChat = { exports: {} };
             (ne = function(j) {
               return m(this, ae), new V(d(j));
             }).prototype = ae;
-            for (var xe, ve = I(V), we = 0; ve.length > we; )
+            for (var xe, ve = S(V), we = 0; ve.length > we; )
               (xe = ve[we++]) in ne || o(ne, xe, V[xe]);
             ae.constructor = ne;
           }
@@ -5319,7 +5319,7 @@ var EasemobChat = { exports: {} };
           ae = (ne = function(j) {
             m(this, ae);
             var B = d(j);
-            Z(this, { type: P, bytes: Ie(ge(B), 0), byteLength: B }), i || (this.byteLength = B, this.detached = !1);
+            K(this, { type: P, bytes: Re(ge(B), 0), byteLength: B }), a || (this.byteLength = B, this.detached = !1);
           }).prototype, ue = (se = function(j, B, T) {
             m(this, ue), m(j, ae);
             var W = F(j), _ = W.byteLength, A = g(B);
@@ -5327,8 +5327,8 @@ var EasemobChat = { exports: {} };
               throw Ce("Wrong offset");
             if (A + (T = T === void 0 ? _ - A : h(T)) > _)
               throw Ce("Wrong length");
-            Z(this, { type: G, buffer: j, byteLength: T, byteOffset: A, bytes: W.bytes }), i || (this.buffer = j, this.byteLength = T, this.byteOffset = A);
-          }).prototype, i && (Ke(ne, "byteLength", F), Ke(se, "buffer", Y), Ke(se, "byteLength", Y), Ke(se, "byteOffset", Y)), l(ue, { getInt8: function(j) {
+            K(this, { type: G, buffer: j, byteLength: T, byteOffset: A, bytes: W.bytes }), a || (this.buffer = j, this.byteLength = T, this.byteOffset = A);
+          }).prototype, a && (Ze(ne, "byteLength", F), Ze(se, "buffer", Y), Ze(se, "byteLength", Y), Ze(se, "byteOffset", Y)), l(ue, { getInt8: function(j) {
             return Qe(this, 1, j)[0] << 24 >> 24;
           }, getUint8: function(j) {
             return Qe(this, 1, j)[0];
@@ -5355,80 +5355,80 @@ var EasemobChat = { exports: {} };
           }, setUint16: function(j, B) {
             Pe(this, 2, j, Ue, B, arguments.length > 2 ? arguments[2] : void 0);
           }, setInt32: function(j, B) {
-            Pe(this, 4, j, Ze, B, arguments.length > 2 ? arguments[2] : void 0);
+            Pe(this, 4, j, Ke, B, arguments.length > 2 ? arguments[2] : void 0);
           }, setUint32: function(j, B) {
-            Pe(this, 4, j, Ze, B, arguments.length > 2 ? arguments[2] : void 0);
+            Pe(this, 4, j, Ke, B, arguments.length > 2 ? arguments[2] : void 0);
           }, setFloat32: function(j, B) {
             Pe(this, 4, j, Ve, B, arguments.length > 2 ? arguments[2] : void 0);
           }, setFloat64: function(j, B) {
             Pe(this, 8, j, Be, B, arguments.length > 2 ? arguments[2] : void 0);
           } });
         x(ne, P), x(se, G), p.exports = { ArrayBuffer: ne, DataView: se };
-      }, 1048: function(p, S, e) {
-        var r = e(7908), t = e(1400), i = e(6244), s = e(5117), a = Math.min;
+      }, 1048: function(p, R, e) {
+        var r = e(7908), t = e(1400), a = e(6244), s = e(5117), i = Math.min;
         p.exports = [].copyWithin || function(o, n) {
-          var l = r(this), u = i(l), m = t(o, u), g = t(n, u), h = arguments.length > 2 ? arguments[2] : void 0, d = a((h === void 0 ? u : t(h, u)) - g, u - m), f = 1;
+          var l = r(this), u = a(l), m = t(o, u), g = t(n, u), h = arguments.length > 2 ? arguments[2] : void 0, d = i((h === void 0 ? u : t(h, u)) - g, u - m), f = 1;
           for (g < m && m < g + d && (f = -1, g += d - 1, m += d - 1); d-- > 0; )
             g in l ? l[m] = l[g] : s(l, m), m += f, g += f;
           return l;
         };
-      }, 1285: function(p, S, e) {
-        var r = e(7908), t = e(1400), i = e(6244);
+      }, 1285: function(p, R, e) {
+        var r = e(7908), t = e(1400), a = e(6244);
         p.exports = function(s) {
-          for (var a = r(this), o = i(a), n = arguments.length, l = t(n > 1 ? arguments[1] : void 0, o), u = n > 2 ? arguments[2] : void 0, m = u === void 0 ? o : t(u, o); m > l; )
-            a[l++] = s;
-          return a;
+          for (var i = r(this), o = a(i), n = arguments.length, l = t(n > 1 ? arguments[1] : void 0, o), u = n > 2 ? arguments[2] : void 0, m = u === void 0 ? o : t(u, o); m > l; )
+            i[l++] = s;
+          return i;
         };
-      }, 8533: function(p, S, e) {
+      }, 8533: function(p, R, e) {
         var r = e(2092).forEach, t = e(9341)("forEach");
-        p.exports = t ? [].forEach : function(i) {
-          return r(this, i, arguments.length > 1 ? arguments[1] : void 0);
+        p.exports = t ? [].forEach : function(a) {
+          return r(this, a, arguments.length > 1 ? arguments[1] : void 0);
         };
-      }, 7745: function(p, S, e) {
+      }, 7745: function(p, R, e) {
         var r = e(6244);
-        p.exports = function(t, i) {
-          for (var s = 0, a = r(i), o = new t(a); a > s; )
-            o[s] = i[s++];
+        p.exports = function(t, a) {
+          for (var s = 0, i = r(a), o = new t(i); i > s; )
+            o[s] = a[s++];
           return o;
         };
-      }, 8457: function(p, S, e) {
-        var r = e(9974), t = e(6916), i = e(7908), s = e(3411), a = e(7659), o = e(4411), n = e(6244), l = e(6135), u = e(4121), m = e(1246), g = Array;
+      }, 8457: function(p, R, e) {
+        var r = e(9974), t = e(6916), a = e(7908), s = e(3411), i = e(7659), o = e(4411), n = e(6244), l = e(6135), u = e(4121), m = e(1246), g = Array;
         p.exports = function(h) {
-          var d = i(h), f = o(this), b = arguments.length, c = b > 1 ? arguments[1] : void 0, I = c !== void 0;
-          I && (c = r(c, b > 2 ? arguments[2] : void 0));
+          var d = a(h), f = o(this), b = arguments.length, c = b > 1 ? arguments[1] : void 0, S = c !== void 0;
+          S && (c = r(c, b > 2 ? arguments[2] : void 0));
           var v, N, x, O, C, E, P = m(d), G = 0;
-          if (!P || this === g && a(P))
+          if (!P || this === g && i(P))
             for (v = n(d), N = f ? new this(v) : g(v); v > G; G++)
-              E = I ? c(d[G], G) : d[G], l(N, G, E);
+              E = S ? c(d[G], G) : d[G], l(N, G, E);
           else
             for (C = (O = u(d, P)).next, N = f ? new this() : []; !(x = t(C, O)).done; G++)
-              E = I ? s(O, c, [x.value, G], !0) : x.value, l(N, G, E);
+              E = S ? s(O, c, [x.value, G], !0) : x.value, l(N, G, E);
           return N.length = G, N;
         };
-      }, 1318: function(p, S, e) {
-        var r = e(5656), t = e(1400), i = e(6244), s = function(a) {
+      }, 1318: function(p, R, e) {
+        var r = e(5656), t = e(1400), a = e(6244), s = function(i) {
           return function(o, n, l) {
-            var u, m = r(o), g = i(m), h = t(l, g);
-            if (a && n != n) {
+            var u, m = r(o), g = a(m), h = t(l, g);
+            if (i && n != n) {
               for (; g > h; )
                 if ((u = m[h++]) != u)
                   return !0;
             } else
               for (; g > h; h++)
-                if ((a || h in m) && m[h] === n)
-                  return a || h || 0;
-            return !a && -1;
+                if ((i || h in m) && m[h] === n)
+                  return i || h || 0;
+            return !i && -1;
           };
         };
         p.exports = { includes: s(!0), indexOf: s(!1) };
-      }, 2092: function(p, S, e) {
-        var r = e(9974), t = e(1702), i = e(8361), s = e(7908), a = e(6244), o = e(5417), n = t([].push), l = function(u) {
+      }, 2092: function(p, R, e) {
+        var r = e(9974), t = e(1702), a = e(8361), s = e(7908), i = e(6244), o = e(5417), n = t([].push), l = function(u) {
           var m = u == 1, g = u == 2, h = u == 3, d = u == 4, f = u == 6, b = u == 7, c = u == 5 || f;
-          return function(I, v, N, x) {
-            for (var O, C, E = s(I), P = i(E), G = r(v, N), K = a(P), F = 0, Y = x || o, Z = m ? Y(I, K) : g || b ? Y(I, 0) : void 0; K > F; F++)
+          return function(S, v, N, x) {
+            for (var O, C, E = s(S), P = a(E), G = r(v, N), Z = i(P), F = 0, Y = x || o, K = m ? Y(S, Z) : g || b ? Y(S, 0) : void 0; Z > F; F++)
               if ((c || F in P) && (C = G(O = P[F], F, E), u))
                 if (m)
-                  Z[F] = C;
+                  K[F] = C;
                 else if (C)
                   switch (u) {
                     case 3:
@@ -5438,55 +5438,55 @@ var EasemobChat = { exports: {} };
                     case 6:
                       return F;
                     case 2:
-                      n(Z, O);
+                      n(K, O);
                   }
                 else
                   switch (u) {
                     case 4:
                       return !1;
                     case 7:
-                      n(Z, O);
+                      n(K, O);
                   }
-            return f ? -1 : h || d ? d : Z;
+            return f ? -1 : h || d ? d : K;
           };
         };
         p.exports = { forEach: l(0), map: l(1), filter: l(2), some: l(3), every: l(4), find: l(5), findIndex: l(6), filterReject: l(7) };
-      }, 6583: function(p, S, e) {
-        var r = e(2104), t = e(5656), i = e(9303), s = e(6244), a = e(9341), o = Math.min, n = [].lastIndexOf, l = !!n && 1 / [1].lastIndexOf(1, -0) < 0, u = a("lastIndexOf"), m = l || !u;
+      }, 6583: function(p, R, e) {
+        var r = e(2104), t = e(5656), a = e(9303), s = e(6244), i = e(9341), o = Math.min, n = [].lastIndexOf, l = !!n && 1 / [1].lastIndexOf(1, -0) < 0, u = i("lastIndexOf"), m = l || !u;
         p.exports = m ? function(g) {
           if (l)
             return r(n, this, arguments) || 0;
           var h = t(this), d = s(h), f = d - 1;
-          for (arguments.length > 1 && (f = o(f, i(arguments[1]))), f < 0 && (f = d + f); f >= 0; f--)
+          for (arguments.length > 1 && (f = o(f, a(arguments[1]))), f < 0 && (f = d + f); f >= 0; f--)
             if (f in h && h[f] === g)
               return f || 0;
           return -1;
         } : n;
-      }, 1194: function(p, S, e) {
-        var r = e(7293), t = e(5112), i = e(7392), s = t("species");
-        p.exports = function(a) {
-          return i >= 51 || !r(function() {
+      }, 1194: function(p, R, e) {
+        var r = e(7293), t = e(5112), a = e(7392), s = t("species");
+        p.exports = function(i) {
+          return a >= 51 || !r(function() {
             var o = [];
             return (o.constructor = {})[s] = function() {
               return { foo: 1 };
-            }, o[a](Boolean).foo !== 1;
+            }, o[i](Boolean).foo !== 1;
           });
         };
-      }, 9341: function(p, S, e) {
+      }, 9341: function(p, R, e) {
         var r = e(7293);
-        p.exports = function(t, i) {
+        p.exports = function(t, a) {
           var s = [][t];
           return !!s && r(function() {
-            s.call(null, i || function() {
+            s.call(null, a || function() {
               return 1;
             }, 1);
           });
         };
-      }, 3671: function(p, S, e) {
-        var r = e(9662), t = e(7908), i = e(8361), s = e(6244), a = TypeError, o = function(n) {
+      }, 3671: function(p, R, e) {
+        var r = e(9662), t = e(7908), a = e(8361), s = e(6244), i = TypeError, o = function(n) {
           return function(l, u, m, g) {
             r(u);
-            var h = t(l), d = i(h), f = s(h), b = n ? f - 1 : 0, c = n ? -1 : 1;
+            var h = t(l), d = a(h), f = s(h), b = n ? f - 1 : 0, c = n ? -1 : 1;
             if (m < 2)
               for (; ; ) {
                 if (b in d) {
@@ -5494,7 +5494,7 @@ var EasemobChat = { exports: {} };
                   break;
                 }
                 if (b += c, n ? b < 0 : f <= b)
-                  throw a("Reduce of empty array with no initial value");
+                  throw i("Reduce of empty array with no initial value");
               }
             for (; n ? b >= 0 : f > b; b += c)
               b in d && (g = u(g, d[b], b, h));
@@ -5502,8 +5502,8 @@ var EasemobChat = { exports: {} };
           };
         };
         p.exports = { left: o(!1), right: o(!0) };
-      }, 3658: function(p, S, e) {
-        var r = e(9781), t = e(3157), i = TypeError, s = Object.getOwnPropertyDescriptor, a = r && !function() {
+      }, 3658: function(p, R, e) {
+        var r = e(9781), t = e(3157), a = TypeError, s = Object.getOwnPropertyDescriptor, i = r && !function() {
           if (this !== void 0)
             return !0;
           try {
@@ -5512,27 +5512,27 @@ var EasemobChat = { exports: {} };
             return o instanceof TypeError;
           }
         }();
-        p.exports = a ? function(o, n) {
+        p.exports = i ? function(o, n) {
           if (t(o) && !s(o, "length").writable)
-            throw i("Cannot set read only .length");
+            throw a("Cannot set read only .length");
           return o.length = n;
         } : function(o, n) {
           return o.length = n;
         };
-      }, 1589: function(p, S, e) {
-        var r = e(1400), t = e(6244), i = e(6135), s = Array, a = Math.max;
+      }, 1589: function(p, R, e) {
+        var r = e(1400), t = e(6244), a = e(6135), s = Array, i = Math.max;
         p.exports = function(o, n, l) {
-          for (var u = t(o), m = r(n, u), g = r(l === void 0 ? u : l, u), h = s(a(g - m, 0)), d = 0; m < g; m++, d++)
-            i(h, d, o[m]);
+          for (var u = t(o), m = r(n, u), g = r(l === void 0 ? u : l, u), h = s(i(g - m, 0)), d = 0; m < g; m++, d++)
+            a(h, d, o[m]);
           return h.length = d, h;
         };
-      }, 206: function(p, S, e) {
+      }, 206: function(p, R, e) {
         var r = e(1702);
         p.exports = r([].slice);
-      }, 4362: function(p, S, e) {
-        var r = e(1589), t = Math.floor, i = function(o, n) {
+      }, 4362: function(p, R, e) {
+        var r = e(1589), t = Math.floor, a = function(o, n) {
           var l = o.length, u = t(l / 2);
-          return l < 8 ? s(o, n) : a(o, i(r(o, 0, u), n), i(r(o, u), n), n);
+          return l < 8 ? s(o, n) : i(o, a(r(o, 0, u), n), a(r(o, u), n), n);
         }, s = function(o, n) {
           for (var l, u, m = o.length, g = 1; g < m; ) {
             for (u = g, l = o[g]; u && n(o[u - 1], l) > 0; )
@@ -5540,37 +5540,37 @@ var EasemobChat = { exports: {} };
             u !== g++ && (o[u] = l);
           }
           return o;
-        }, a = function(o, n, l, u) {
+        }, i = function(o, n, l, u) {
           for (var m = n.length, g = l.length, h = 0, d = 0; h < m || d < g; )
             o[h + d] = h < m && d < g ? u(n[h], l[d]) <= 0 ? n[h++] : l[d++] : h < m ? n[h++] : l[d++];
           return o;
         };
-        p.exports = i;
-      }, 7475: function(p, S, e) {
-        var r = e(3157), t = e(4411), i = e(111), s = e(5112)("species"), a = Array;
+        p.exports = a;
+      }, 7475: function(p, R, e) {
+        var r = e(3157), t = e(4411), a = e(111), s = e(5112)("species"), i = Array;
         p.exports = function(o) {
           var n;
-          return r(o) && (n = o.constructor, (t(n) && (n === a || r(n.prototype)) || i(n) && (n = n[s]) === null) && (n = void 0)), n === void 0 ? a : n;
+          return r(o) && (n = o.constructor, (t(n) && (n === i || r(n.prototype)) || a(n) && (n = n[s]) === null) && (n = void 0)), n === void 0 ? i : n;
         };
-      }, 5417: function(p, S, e) {
+      }, 5417: function(p, R, e) {
         var r = e(7475);
-        p.exports = function(t, i) {
-          return new (r(t))(i === 0 ? 0 : i);
+        p.exports = function(t, a) {
+          return new (r(t))(a === 0 ? 0 : a);
         };
-      }, 3411: function(p, S, e) {
+      }, 3411: function(p, R, e) {
         var r = e(9670), t = e(9212);
-        p.exports = function(i, s, a, o) {
+        p.exports = function(a, s, i, o) {
           try {
-            return o ? s(r(a)[0], a[1]) : s(a);
+            return o ? s(r(i)[0], i[1]) : s(i);
           } catch (n) {
-            t(i, "throw", n);
+            t(a, "throw", n);
           }
         };
-      }, 7072: function(p, S, e) {
+      }, 7072: function(p, R, e) {
         var r = e(5112)("iterator"), t = !1;
         try {
-          var i = 0, s = { next: function() {
-            return { done: !!i++ };
+          var a = 0, s = { next: function() {
+            return { done: !!a++ };
           }, return: function() {
             t = !0;
           } };
@@ -5581,7 +5581,7 @@ var EasemobChat = { exports: {} };
           });
         } catch {
         }
-        p.exports = function(a, o) {
+        p.exports = function(i, o) {
           if (!o && !t)
             return !1;
           var n = !1;
@@ -5591,88 +5591,88 @@ var EasemobChat = { exports: {} };
               return { next: function() {
                 return { done: n = !0 };
               } };
-            }, a(l);
+            }, i(l);
           } catch {
           }
           return n;
         };
-      }, 4326: function(p, S, e) {
-        var r = e(1702), t = r({}.toString), i = r("".slice);
+      }, 4326: function(p, R, e) {
+        var r = e(1702), t = r({}.toString), a = r("".slice);
         p.exports = function(s) {
-          return i(t(s), 8, -1);
+          return a(t(s), 8, -1);
         };
-      }, 648: function(p, S, e) {
-        var r = e(1694), t = e(614), i = e(4326), s = e(5112)("toStringTag"), a = Object, o = i(function() {
+      }, 648: function(p, R, e) {
+        var r = e(1694), t = e(614), a = e(4326), s = e(5112)("toStringTag"), i = Object, o = a(function() {
           return arguments;
         }()) == "Arguments";
-        p.exports = r ? i : function(n) {
+        p.exports = r ? a : function(n) {
           var l, u, m;
           return n === void 0 ? "Undefined" : n === null ? "Null" : typeof (u = function(g, h) {
             try {
               return g[h];
             } catch {
             }
-          }(l = a(n), s)) == "string" ? u : o ? i(l) : (m = i(l)) == "Object" && t(l.callee) ? "Arguments" : m;
+          }(l = i(n), s)) == "string" ? u : o ? a(l) : (m = a(l)) == "Object" && t(l.callee) ? "Arguments" : m;
         };
-      }, 5631: function(p, S, e) {
-        var r = e(30), t = e(7045), i = e(9190), s = e(9974), a = e(5787), o = e(8554), n = e(408), l = e(1656), u = e(6178), m = e(6340), g = e(9781), h = e(2423).fastKey, d = e(9909), f = d.set, b = d.getterFor;
-        p.exports = { getConstructor: function(c, I, v, N) {
-          var x = c(function(G, K) {
-            a(G, O), f(G, { type: I, index: r(null), first: void 0, last: void 0, size: 0 }), g || (G.size = 0), o(K) || n(K, G[N], { that: G, AS_ENTRIES: v });
-          }), O = x.prototype, C = b(I), E = function(G, K, F) {
-            var Y, Z, V = C(G), ne = P(G, K);
-            return ne ? ne.value = F : (V.last = ne = { index: Z = h(K, !0), key: K, value: F, previous: Y = V.last, next: void 0, removed: !1 }, V.first || (V.first = ne), Y && (Y.next = ne), g ? V.size++ : G.size++, Z !== "F" && (V.index[Z] = ne)), G;
-          }, P = function(G, K) {
-            var F, Y = C(G), Z = h(K);
-            if (Z !== "F")
-              return Y.index[Z];
+      }, 5631: function(p, R, e) {
+        var r = e(30), t = e(7045), a = e(9190), s = e(9974), i = e(5787), o = e(8554), n = e(408), l = e(1656), u = e(6178), m = e(6340), g = e(9781), h = e(2423).fastKey, d = e(9909), f = d.set, b = d.getterFor;
+        p.exports = { getConstructor: function(c, S, v, N) {
+          var x = c(function(G, Z) {
+            i(G, O), f(G, { type: S, index: r(null), first: void 0, last: void 0, size: 0 }), g || (G.size = 0), o(Z) || n(Z, G[N], { that: G, AS_ENTRIES: v });
+          }), O = x.prototype, C = b(S), E = function(G, Z, F) {
+            var Y, K, V = C(G), ne = P(G, Z);
+            return ne ? ne.value = F : (V.last = ne = { index: K = h(Z, !0), key: Z, value: F, previous: Y = V.last, next: void 0, removed: !1 }, V.first || (V.first = ne), Y && (Y.next = ne), g ? V.size++ : G.size++, K !== "F" && (V.index[K] = ne)), G;
+          }, P = function(G, Z) {
+            var F, Y = C(G), K = h(Z);
+            if (K !== "F")
+              return Y.index[K];
             for (F = Y.first; F; F = F.next)
-              if (F.key == K)
+              if (F.key == Z)
                 return F;
           };
-          return i(O, { clear: function() {
-            for (var G = C(this), K = G.index, F = G.first; F; )
-              F.removed = !0, F.previous && (F.previous = F.previous.next = void 0), delete K[F.index], F = F.next;
+          return a(O, { clear: function() {
+            for (var G = C(this), Z = G.index, F = G.first; F; )
+              F.removed = !0, F.previous && (F.previous = F.previous.next = void 0), delete Z[F.index], F = F.next;
             G.first = G.last = void 0, g ? G.size = 0 : this.size = 0;
           }, delete: function(G) {
-            var K = this, F = C(K), Y = P(K, G);
+            var Z = this, F = C(Z), Y = P(Z, G);
             if (Y) {
-              var Z = Y.next, V = Y.previous;
-              delete F.index[Y.index], Y.removed = !0, V && (V.next = Z), Z && (Z.previous = V), F.first == Y && (F.first = Z), F.last == Y && (F.last = V), g ? F.size-- : K.size--;
+              var K = Y.next, V = Y.previous;
+              delete F.index[Y.index], Y.removed = !0, V && (V.next = K), K && (K.previous = V), F.first == Y && (F.first = K), F.last == Y && (F.last = V), g ? F.size-- : Z.size--;
             }
             return !!Y;
           }, forEach: function(G) {
-            for (var K, F = C(this), Y = s(G, arguments.length > 1 ? arguments[1] : void 0); K = K ? K.next : F.first; )
-              for (Y(K.value, K.key, this); K && K.removed; )
-                K = K.previous;
+            for (var Z, F = C(this), Y = s(G, arguments.length > 1 ? arguments[1] : void 0); Z = Z ? Z.next : F.first; )
+              for (Y(Z.value, Z.key, this); Z && Z.removed; )
+                Z = Z.previous;
           }, has: function(G) {
             return !!P(this, G);
-          } }), i(O, v ? { get: function(G) {
-            var K = P(this, G);
-            return K && K.value;
-          }, set: function(G, K) {
-            return E(this, G === 0 ? 0 : G, K);
+          } }), a(O, v ? { get: function(G) {
+            var Z = P(this, G);
+            return Z && Z.value;
+          }, set: function(G, Z) {
+            return E(this, G === 0 ? 0 : G, Z);
           } } : { add: function(G) {
             return E(this, G = G === 0 ? 0 : G, G);
           } }), g && t(O, "size", { configurable: !0, get: function() {
             return C(this).size;
           } }), x;
-        }, setStrong: function(c, I, v) {
-          var N = I + " Iterator", x = b(I), O = b(N);
-          l(c, I, function(C, E) {
+        }, setStrong: function(c, S, v) {
+          var N = S + " Iterator", x = b(S), O = b(N);
+          l(c, S, function(C, E) {
             f(this, { type: N, target: C, state: x(C), kind: E, last: void 0 });
           }, function() {
             for (var C = O(this), E = C.kind, P = C.last; P && P.removed; )
               P = P.previous;
             return C.target && (C.last = P = P ? P.next : C.state.first) ? u(E == "keys" ? P.key : E == "values" ? P.value : [P.key, P.value], !1) : (C.target = void 0, u(void 0, !0));
-          }, v ? "entries" : "values", !v, !0), m(I);
+          }, v ? "entries" : "values", !v, !0), m(S);
         } };
-      }, 7710: function(p, S, e) {
-        var r = e(2109), t = e(7854), i = e(1702), s = e(4705), a = e(8052), o = e(2423), n = e(408), l = e(5787), u = e(614), m = e(8554), g = e(111), h = e(7293), d = e(7072), f = e(8003), b = e(9587);
-        p.exports = function(c, I, v) {
-          var N = c.indexOf("Map") !== -1, x = c.indexOf("Weak") !== -1, O = N ? "set" : "add", C = t[c], E = C && C.prototype, P = C, G = {}, K = function(ae) {
-            var se = i(E[ae]);
-            a(E, ae, ae == "add" ? function(ue) {
+      }, 7710: function(p, R, e) {
+        var r = e(2109), t = e(7854), a = e(1702), s = e(4705), i = e(8052), o = e(2423), n = e(408), l = e(5787), u = e(614), m = e(8554), g = e(111), h = e(7293), d = e(7072), f = e(8003), b = e(9587);
+        p.exports = function(c, S, v) {
+          var N = c.indexOf("Map") !== -1, x = c.indexOf("Weak") !== -1, O = N ? "set" : "add", C = t[c], E = C && C.prototype, P = C, G = {}, Z = function(ae) {
+            var se = a(E[ae]);
+            i(E, ae, ae == "add" ? function(ue) {
               return se(this, ue === 0 ? 0 : ue), this;
             } : ae == "delete" ? function(ue) {
               return !(x && !g(ue)) && se(this, ue === 0 ? 0 : ue);
@@ -5687,9 +5687,9 @@ var EasemobChat = { exports: {} };
           if (s(c, !u(C) || !(x || E.forEach && !h(function() {
             new C().entries().next();
           }))))
-            P = v.getConstructor(I, c, N, O), o.enable();
+            P = v.getConstructor(S, c, N, O), o.enable();
           else if (s(c, !0)) {
-            var F = new P(), Y = F[O](x ? {} : -0, 1) != F, Z = h(function() {
+            var F = new P(), Y = F[O](x ? {} : -0, 1) != F, K = h(function() {
               F.has(1);
             }), V = d(function(ae) {
               new C(ae);
@@ -5698,37 +5698,37 @@ var EasemobChat = { exports: {} };
                 ae[O](se, se);
               return !ae.has(-0);
             });
-            V || ((P = I(function(ae, se) {
+            V || ((P = S(function(ae, se) {
               l(ae, E);
               var ue = b(new C(), ae, P);
               return m(se) || n(se, ue[O], { that: ue, AS_ENTRIES: N }), ue;
-            })).prototype = E, E.constructor = P), (Z || ne) && (K("delete"), K("has"), N && K("get")), (ne || Y) && K(O), x && E.clear && delete E.clear;
+            })).prototype = E, E.constructor = P), (K || ne) && (Z("delete"), Z("has"), N && Z("get")), (ne || Y) && Z(O), x && E.clear && delete E.clear;
           }
           return G[c] = P, r({ global: !0, constructor: !0, forced: P != C }, G), f(P, c), x || v.setStrong(P, c, N), P;
         };
-      }, 9920: function(p, S, e) {
-        var r = e(2597), t = e(3887), i = e(1236), s = e(3070);
-        p.exports = function(a, o, n) {
-          for (var l = t(o), u = s.f, m = i.f, g = 0; g < l.length; g++) {
+      }, 9920: function(p, R, e) {
+        var r = e(2597), t = e(3887), a = e(1236), s = e(3070);
+        p.exports = function(i, o, n) {
+          for (var l = t(o), u = s.f, m = a.f, g = 0; g < l.length; g++) {
             var h = l[g];
-            r(a, h) || n && r(n, h) || u(a, h, m(o, h));
+            r(i, h) || n && r(n, h) || u(i, h, m(o, h));
           }
         };
-      }, 4964: function(p, S, e) {
+      }, 4964: function(p, R, e) {
         var r = e(5112)("match");
         p.exports = function(t) {
-          var i = /./;
+          var a = /./;
           try {
-            "/./"[t](i);
+            "/./"[t](a);
           } catch {
             try {
-              return i[r] = !1, "/./"[t](i);
+              return a[r] = !1, "/./"[t](a);
             } catch {
             }
           }
           return !1;
         };
-      }, 8544: function(p, S, e) {
+      }, 8544: function(p, R, e) {
         var r = e(7293);
         p.exports = !r(function() {
           function t() {
@@ -5736,71 +5736,71 @@ var EasemobChat = { exports: {} };
           return t.prototype.constructor = null, Object.getPrototypeOf(new t()) !== t.prototype;
         });
       }, 6178: function(p) {
-        p.exports = function(S, e) {
-          return { value: S, done: e };
+        p.exports = function(R, e) {
+          return { value: R, done: e };
         };
-      }, 8880: function(p, S, e) {
-        var r = e(9781), t = e(3070), i = e(9114);
-        p.exports = r ? function(s, a, o) {
-          return t.f(s, a, i(1, o));
-        } : function(s, a, o) {
-          return s[a] = o, s;
+      }, 8880: function(p, R, e) {
+        var r = e(9781), t = e(3070), a = e(9114);
+        p.exports = r ? function(s, i, o) {
+          return t.f(s, i, a(1, o));
+        } : function(s, i, o) {
+          return s[i] = o, s;
         };
       }, 9114: function(p) {
-        p.exports = function(S, e) {
-          return { enumerable: !(1 & S), configurable: !(2 & S), writable: !(4 & S), value: e };
+        p.exports = function(R, e) {
+          return { enumerable: !(1 & R), configurable: !(2 & R), writable: !(4 & R), value: e };
         };
-      }, 6135: function(p, S, e) {
-        var r = e(4948), t = e(3070), i = e(9114);
-        p.exports = function(s, a, o) {
-          var n = r(a);
-          n in s ? t.f(s, n, i(0, o)) : s[n] = o;
+      }, 6135: function(p, R, e) {
+        var r = e(4948), t = e(3070), a = e(9114);
+        p.exports = function(s, i, o) {
+          var n = r(i);
+          n in s ? t.f(s, n, a(0, o)) : s[n] = o;
         };
-      }, 7045: function(p, S, e) {
+      }, 7045: function(p, R, e) {
         var r = e(6339), t = e(3070);
-        p.exports = function(i, s, a) {
-          return a.get && r(a.get, s, { getter: !0 }), a.set && r(a.set, s, { setter: !0 }), t.f(i, s, a);
+        p.exports = function(a, s, i) {
+          return i.get && r(i.get, s, { getter: !0 }), i.set && r(i.set, s, { setter: !0 }), t.f(a, s, i);
         };
-      }, 8052: function(p, S, e) {
-        var r = e(614), t = e(3070), i = e(6339), s = e(3072);
-        p.exports = function(a, o, n, l) {
+      }, 8052: function(p, R, e) {
+        var r = e(614), t = e(3070), a = e(6339), s = e(3072);
+        p.exports = function(i, o, n, l) {
           l || (l = {});
           var u = l.enumerable, m = l.name !== void 0 ? l.name : o;
-          if (r(n) && i(n, m, l), l.global)
-            u ? a[o] = n : s(o, n);
+          if (r(n) && a(n, m, l), l.global)
+            u ? i[o] = n : s(o, n);
           else {
             try {
-              l.unsafe ? a[o] && (u = !0) : delete a[o];
+              l.unsafe ? i[o] && (u = !0) : delete i[o];
             } catch {
             }
-            u ? a[o] = n : t.f(a, o, { value: n, enumerable: !1, configurable: !l.nonConfigurable, writable: !l.nonWritable });
+            u ? i[o] = n : t.f(i, o, { value: n, enumerable: !1, configurable: !l.nonConfigurable, writable: !l.nonWritable });
           }
-          return a;
+          return i;
         };
-      }, 9190: function(p, S, e) {
+      }, 9190: function(p, R, e) {
         var r = e(8052);
-        p.exports = function(t, i, s) {
-          for (var a in i)
-            r(t, a, i[a], s);
+        p.exports = function(t, a, s) {
+          for (var i in a)
+            r(t, i, a[i], s);
           return t;
         };
-      }, 3072: function(p, S, e) {
+      }, 3072: function(p, R, e) {
         var r = e(7854), t = Object.defineProperty;
-        p.exports = function(i, s) {
+        p.exports = function(a, s) {
           try {
-            t(r, i, { value: s, configurable: !0, writable: !0 });
+            t(r, a, { value: s, configurable: !0, writable: !0 });
           } catch {
-            r[i] = s;
+            r[a] = s;
           }
           return s;
         };
-      }, 5117: function(p, S, e) {
+      }, 5117: function(p, R, e) {
         var r = e(6330), t = TypeError;
-        p.exports = function(i, s) {
-          if (!delete i[s])
-            throw t("Cannot delete property " + r(s) + " of " + r(i));
+        p.exports = function(a, s) {
+          if (!delete a[s])
+            throw t("Cannot delete property " + r(s) + " of " + r(a));
         };
-      }, 9781: function(p, S, e) {
+      }, 9781: function(p, R, e) {
         var r = e(7293);
         p.exports = !r(function() {
           return Object.defineProperty({}, 1, { get: function() {
@@ -5808,108 +5808,108 @@ var EasemobChat = { exports: {} };
           } })[1] != 7;
         });
       }, 4154: function(p) {
-        var S = typeof document == "object" && document.all, e = S === void 0 && S !== void 0;
-        p.exports = { all: S, IS_HTMLDDA: e };
-      }, 317: function(p, S, e) {
-        var r = e(7854), t = e(111), i = r.document, s = t(i) && t(i.createElement);
-        p.exports = function(a) {
-          return s ? i.createElement(a) : {};
+        var R = typeof document == "object" && document.all, e = R === void 0 && R !== void 0;
+        p.exports = { all: R, IS_HTMLDDA: e };
+      }, 317: function(p, R, e) {
+        var r = e(7854), t = e(111), a = r.document, s = t(a) && t(a.createElement);
+        p.exports = function(i) {
+          return s ? a.createElement(i) : {};
         };
       }, 7207: function(p) {
-        var S = TypeError;
+        var R = TypeError;
         p.exports = function(e) {
           if (e > 9007199254740991)
-            throw S("Maximum allowed index exceeded");
+            throw R("Maximum allowed index exceeded");
           return e;
         };
       }, 8324: function(p) {
         p.exports = { CSSRuleList: 0, CSSStyleDeclaration: 0, CSSValueList: 0, ClientRectList: 0, DOMRectList: 0, DOMStringList: 0, DOMTokenList: 1, DataTransferItemList: 0, FileList: 0, HTMLAllCollection: 0, HTMLCollection: 0, HTMLFormElement: 0, HTMLSelectElement: 0, MediaList: 0, MimeTypeArray: 0, NamedNodeMap: 0, NodeList: 1, PaintRequestList: 0, Plugin: 0, PluginArray: 0, SVGLengthList: 0, SVGNumberList: 0, SVGPathSegList: 0, SVGPointList: 0, SVGStringList: 0, SVGTransformList: 0, SourceBufferList: 0, StyleSheetList: 0, TextTrackCueList: 0, TextTrackList: 0, TouchList: 0 };
-      }, 8509: function(p, S, e) {
+      }, 8509: function(p, R, e) {
         var r = e(317)("span").classList, t = r && r.constructor && r.constructor.prototype;
         p.exports = t === Object.prototype ? void 0 : t;
-      }, 8886: function(p, S, e) {
+      }, 8886: function(p, R, e) {
         var r = e(8113).match(/firefox\/(\d+)/i);
         p.exports = !!r && +r[1];
-      }, 7871: function(p, S, e) {
+      }, 7871: function(p, R, e) {
         var r = e(3823), t = e(5268);
         p.exports = !r && !t && typeof window == "object" && typeof document == "object";
       }, 9363: function(p) {
         p.exports = typeof Bun == "function" && Bun && typeof Bun.version == "string";
       }, 3823: function(p) {
         p.exports = typeof Deno == "object" && Deno && typeof Deno.version == "object";
-      }, 256: function(p, S, e) {
+      }, 256: function(p, R, e) {
         var r = e(8113);
         p.exports = /MSIE|Trident/.test(r);
-      }, 1528: function(p, S, e) {
+      }, 1528: function(p, R, e) {
         var r = e(8113);
         p.exports = /ipad|iphone|ipod/i.test(r) && typeof Pebble < "u";
-      }, 6833: function(p, S, e) {
+      }, 6833: function(p, R, e) {
         var r = e(8113);
         p.exports = /(?:ipad|iphone|ipod).*applewebkit/i.test(r);
-      }, 5268: function(p, S, e) {
+      }, 5268: function(p, R, e) {
         var r = e(4326);
         p.exports = typeof process < "u" && r(process) == "process";
-      }, 1036: function(p, S, e) {
+      }, 1036: function(p, R, e) {
         var r = e(8113);
         p.exports = /web0s(?!.*chrome)/i.test(r);
       }, 8113: function(p) {
         p.exports = typeof navigator < "u" && String(navigator.userAgent) || "";
-      }, 7392: function(p, S, e) {
-        var r, t, i = e(7854), s = e(8113), a = i.process, o = i.Deno, n = a && a.versions || o && o.version, l = n && n.v8;
+      }, 7392: function(p, R, e) {
+        var r, t, a = e(7854), s = e(8113), i = a.process, o = a.Deno, n = i && i.versions || o && o.version, l = n && n.v8;
         l && (t = (r = l.split("."))[0] > 0 && r[0] < 4 ? 1 : +(r[0] + r[1])), !t && s && (!(r = s.match(/Edge\/(\d+)/)) || r[1] >= 74) && (r = s.match(/Chrome\/(\d+)/)) && (t = +r[1]), p.exports = t;
-      }, 8008: function(p, S, e) {
+      }, 8008: function(p, R, e) {
         var r = e(8113).match(/AppleWebKit\/(\d+)\./);
         p.exports = !!r && +r[1];
       }, 748: function(p) {
         p.exports = ["constructor", "hasOwnProperty", "isPrototypeOf", "propertyIsEnumerable", "toLocaleString", "toString", "valueOf"];
-      }, 2109: function(p, S, e) {
-        var r = e(7854), t = e(1236).f, i = e(8880), s = e(8052), a = e(3072), o = e(9920), n = e(4705);
+      }, 2109: function(p, R, e) {
+        var r = e(7854), t = e(1236).f, a = e(8880), s = e(8052), i = e(3072), o = e(9920), n = e(4705);
         p.exports = function(l, u) {
-          var m, g, h, d, f, b = l.target, c = l.global, I = l.stat;
-          if (m = c ? r : I ? r[b] || a(b, {}) : (r[b] || {}).prototype)
+          var m, g, h, d, f, b = l.target, c = l.global, S = l.stat;
+          if (m = c ? r : S ? r[b] || i(b, {}) : (r[b] || {}).prototype)
             for (g in u) {
-              if (d = u[g], h = l.dontCallGetSet ? (f = t(m, g)) && f.value : m[g], !n(c ? g : b + (I ? "." : "#") + g, l.forced) && h !== void 0) {
+              if (d = u[g], h = l.dontCallGetSet ? (f = t(m, g)) && f.value : m[g], !n(c ? g : b + (S ? "." : "#") + g, l.forced) && h !== void 0) {
                 if (typeof d == typeof h)
                   continue;
                 o(d, h);
               }
-              (l.sham || h && h.sham) && i(d, "sham", !0), s(m, g, d, l);
+              (l.sham || h && h.sham) && a(d, "sham", !0), s(m, g, d, l);
             }
         };
       }, 7293: function(p) {
-        p.exports = function(S) {
+        p.exports = function(R) {
           try {
-            return !!S();
+            return !!R();
           } catch {
             return !0;
           }
         };
-      }, 6677: function(p, S, e) {
+      }, 6677: function(p, R, e) {
         var r = e(7293);
         p.exports = !r(function() {
           return Object.isExtensible(Object.preventExtensions({}));
         });
-      }, 2104: function(p, S, e) {
-        var r = e(4374), t = Function.prototype, i = t.apply, s = t.call;
-        p.exports = typeof Reflect == "object" && Reflect.apply || (r ? s.bind(i) : function() {
-          return s.apply(i, arguments);
+      }, 2104: function(p, R, e) {
+        var r = e(4374), t = Function.prototype, a = t.apply, s = t.call;
+        p.exports = typeof Reflect == "object" && Reflect.apply || (r ? s.bind(a) : function() {
+          return s.apply(a, arguments);
         });
-      }, 9974: function(p, S, e) {
-        var r = e(1470), t = e(9662), i = e(4374), s = r(r.bind);
-        p.exports = function(a, o) {
-          return t(a), o === void 0 ? a : i ? s(a, o) : function() {
-            return a.apply(o, arguments);
+      }, 9974: function(p, R, e) {
+        var r = e(1470), t = e(9662), a = e(4374), s = r(r.bind);
+        p.exports = function(i, o) {
+          return t(i), o === void 0 ? i : a ? s(i, o) : function() {
+            return i.apply(o, arguments);
           };
         };
-      }, 4374: function(p, S, e) {
+      }, 4374: function(p, R, e) {
         var r = e(7293);
         p.exports = !r(function() {
           var t = (function() {
           }).bind();
           return typeof t != "function" || t.hasOwnProperty("prototype");
         });
-      }, 7065: function(p, S, e) {
-        var r = e(1702), t = e(9662), i = e(111), s = e(2597), a = e(206), o = e(4374), n = Function, l = r([].concat), u = r([].join), m = {}, g = function(h, d, f) {
+      }, 7065: function(p, R, e) {
+        var r = e(1702), t = e(9662), a = e(111), s = e(2597), i = e(206), o = e(4374), n = Function, l = r([].concat), u = r([].join), m = {}, g = function(h, d, f) {
           if (!s(m, d)) {
             for (var b = [], c = 0; c < d; c++)
               b[c] = "a[" + c + "]";
@@ -5918,72 +5918,72 @@ var EasemobChat = { exports: {} };
           return m[d](h, f);
         };
         p.exports = o ? n.bind : function(h) {
-          var d = t(this), f = d.prototype, b = a(arguments, 1), c = function() {
-            var I = l(b, a(arguments));
-            return this instanceof c ? g(d, I.length, I) : d.apply(h, I);
+          var d = t(this), f = d.prototype, b = i(arguments, 1), c = function() {
+            var S = l(b, i(arguments));
+            return this instanceof c ? g(d, S.length, S) : d.apply(h, S);
           };
-          return i(f) && (c.prototype = f), c;
+          return a(f) && (c.prototype = f), c;
         };
-      }, 6916: function(p, S, e) {
+      }, 6916: function(p, R, e) {
         var r = e(4374), t = Function.prototype.call;
         p.exports = r ? t.bind(t) : function() {
           return t.apply(t, arguments);
         };
-      }, 6530: function(p, S, e) {
-        var r = e(9781), t = e(2597), i = Function.prototype, s = r && Object.getOwnPropertyDescriptor, a = t(i, "name"), o = a && (function() {
-        }).name === "something", n = a && (!r || r && s(i, "name").configurable);
-        p.exports = { EXISTS: a, PROPER: o, CONFIGURABLE: n };
-      }, 5668: function(p, S, e) {
+      }, 6530: function(p, R, e) {
+        var r = e(9781), t = e(2597), a = Function.prototype, s = r && Object.getOwnPropertyDescriptor, i = t(a, "name"), o = i && (function() {
+        }).name === "something", n = i && (!r || r && s(a, "name").configurable);
+        p.exports = { EXISTS: i, PROPER: o, CONFIGURABLE: n };
+      }, 5668: function(p, R, e) {
         var r = e(1702), t = e(9662);
-        p.exports = function(i, s, a) {
+        p.exports = function(a, s, i) {
           try {
-            return r(t(Object.getOwnPropertyDescriptor(i, s)[a]));
+            return r(t(Object.getOwnPropertyDescriptor(a, s)[i]));
           } catch {
           }
         };
-      }, 1470: function(p, S, e) {
+      }, 1470: function(p, R, e) {
         var r = e(4326), t = e(1702);
-        p.exports = function(i) {
-          if (r(i) === "Function")
-            return t(i);
+        p.exports = function(a) {
+          if (r(a) === "Function")
+            return t(a);
         };
-      }, 1702: function(p, S, e) {
-        var r = e(4374), t = Function.prototype, i = t.call, s = r && t.bind.bind(i, i);
-        p.exports = r ? s : function(a) {
+      }, 1702: function(p, R, e) {
+        var r = e(4374), t = Function.prototype, a = t.call, s = r && t.bind.bind(a, a);
+        p.exports = r ? s : function(i) {
           return function() {
-            return i.apply(a, arguments);
+            return a.apply(i, arguments);
           };
         };
-      }, 5005: function(p, S, e) {
-        var r = e(7854), t = e(614), i = function(s) {
+      }, 5005: function(p, R, e) {
+        var r = e(7854), t = e(614), a = function(s) {
           return t(s) ? s : void 0;
         };
-        p.exports = function(s, a) {
-          return arguments.length < 2 ? i(r[s]) : r[s] && r[s][a];
+        p.exports = function(s, i) {
+          return arguments.length < 2 ? a(r[s]) : r[s] && r[s][i];
         };
-      }, 1246: function(p, S, e) {
-        var r = e(648), t = e(8173), i = e(8554), s = e(7497), a = e(5112)("iterator");
+      }, 1246: function(p, R, e) {
+        var r = e(648), t = e(8173), a = e(8554), s = e(7497), i = e(5112)("iterator");
         p.exports = function(o) {
-          if (!i(o))
-            return t(o, a) || t(o, "@@iterator") || s[r(o)];
+          if (!a(o))
+            return t(o, i) || t(o, "@@iterator") || s[r(o)];
         };
-      }, 4121: function(p, S, e) {
-        var r = e(6916), t = e(9662), i = e(9670), s = e(6330), a = e(1246), o = TypeError;
+      }, 4121: function(p, R, e) {
+        var r = e(6916), t = e(9662), a = e(9670), s = e(6330), i = e(1246), o = TypeError;
         p.exports = function(n, l) {
-          var u = arguments.length < 2 ? a(n) : l;
+          var u = arguments.length < 2 ? i(n) : l;
           if (t(u))
-            return i(r(u, n));
+            return a(r(u, n));
           throw o(s(n) + " is not iterable");
         };
-      }, 8044: function(p, S, e) {
-        var r = e(1702), t = e(3157), i = e(614), s = e(4326), a = e(1340), o = r([].push);
+      }, 8044: function(p, R, e) {
+        var r = e(1702), t = e(3157), a = e(614), s = e(4326), i = e(1340), o = r([].push);
         p.exports = function(n) {
-          if (i(n))
+          if (a(n))
             return n;
           if (t(n)) {
             for (var l = n.length, u = [], m = 0; m < l; m++) {
               var g = n[m];
-              typeof g == "string" ? o(u, g) : typeof g != "number" && s(g) != "Number" && s(g) != "String" || o(u, a(g));
+              typeof g == "string" ? o(u, g) : typeof g != "number" && s(g) != "Number" && s(g) != "String" || o(u, i(g));
             }
             var h = u.length, d = !0;
             return function(f, b) {
@@ -5997,58 +5997,58 @@ var EasemobChat = { exports: {} };
             };
           }
         };
-      }, 8173: function(p, S, e) {
+      }, 8173: function(p, R, e) {
         var r = e(9662), t = e(8554);
-        p.exports = function(i, s) {
-          var a = i[s];
-          return t(a) ? void 0 : r(a);
+        p.exports = function(a, s) {
+          var i = a[s];
+          return t(i) ? void 0 : r(i);
         };
-      }, 7854: function(p, S, e) {
+      }, 7854: function(p, R, e) {
         var r = function(t) {
           return t && t.Math == Math && t;
         };
         p.exports = r(typeof globalThis == "object" && globalThis) || r(typeof window == "object" && window) || r(typeof self == "object" && self) || r(typeof e.g == "object" && e.g) || function() {
           return this;
         }() || Function("return this")();
-      }, 2597: function(p, S, e) {
-        var r = e(1702), t = e(7908), i = r({}.hasOwnProperty);
-        p.exports = Object.hasOwn || function(s, a) {
-          return i(t(s), a);
+      }, 2597: function(p, R, e) {
+        var r = e(1702), t = e(7908), a = r({}.hasOwnProperty);
+        p.exports = Object.hasOwn || function(s, i) {
+          return a(t(s), i);
         };
       }, 3501: function(p) {
         p.exports = {};
       }, 842: function(p) {
-        p.exports = function(S, e) {
+        p.exports = function(R, e) {
           try {
-            arguments.length == 1 ? console.error(S) : console.error(S, e);
+            arguments.length == 1 ? console.error(R) : console.error(R, e);
           } catch {
           }
         };
-      }, 490: function(p, S, e) {
+      }, 490: function(p, R, e) {
         var r = e(5005);
         p.exports = r("document", "documentElement");
-      }, 4664: function(p, S, e) {
-        var r = e(9781), t = e(7293), i = e(317);
+      }, 4664: function(p, R, e) {
+        var r = e(9781), t = e(7293), a = e(317);
         p.exports = !r && !t(function() {
-          return Object.defineProperty(i("div"), "a", { get: function() {
+          return Object.defineProperty(a("div"), "a", { get: function() {
             return 7;
           } }).a != 7;
         });
       }, 1179: function(p) {
-        var S = Array, e = Math.abs, r = Math.pow, t = Math.floor, i = Math.log, s = Math.LN2;
-        p.exports = { pack: function(a, o, n) {
-          var l, u, m, g = S(n), h = 8 * n - o - 1, d = (1 << h) - 1, f = d >> 1, b = o === 23 ? r(2, -24) - r(2, -77) : 0, c = a < 0 || a === 0 && 1 / a < 0 ? 1 : 0, I = 0;
-          for ((a = e(a)) != a || a === 1 / 0 ? (u = a != a ? 1 : 0, l = d) : (l = t(i(a) / s), a * (m = r(2, -l)) < 1 && (l--, m *= 2), (a += l + f >= 1 ? b / m : b * r(2, 1 - f)) * m >= 2 && (l++, m /= 2), l + f >= d ? (u = 0, l = d) : l + f >= 1 ? (u = (a * m - 1) * r(2, o), l += f) : (u = a * r(2, f - 1) * r(2, o), l = 0)); o >= 8; )
-            g[I++] = 255 & u, u /= 256, o -= 8;
+        var R = Array, e = Math.abs, r = Math.pow, t = Math.floor, a = Math.log, s = Math.LN2;
+        p.exports = { pack: function(i, o, n) {
+          var l, u, m, g = R(n), h = 8 * n - o - 1, d = (1 << h) - 1, f = d >> 1, b = o === 23 ? r(2, -24) - r(2, -77) : 0, c = i < 0 || i === 0 && 1 / i < 0 ? 1 : 0, S = 0;
+          for ((i = e(i)) != i || i === 1 / 0 ? (u = i != i ? 1 : 0, l = d) : (l = t(a(i) / s), i * (m = r(2, -l)) < 1 && (l--, m *= 2), (i += l + f >= 1 ? b / m : b * r(2, 1 - f)) * m >= 2 && (l++, m /= 2), l + f >= d ? (u = 0, l = d) : l + f >= 1 ? (u = (i * m - 1) * r(2, o), l += f) : (u = i * r(2, f - 1) * r(2, o), l = 0)); o >= 8; )
+            g[S++] = 255 & u, u /= 256, o -= 8;
           for (l = l << o | u, h += o; h > 0; )
-            g[I++] = 255 & l, l /= 256, h -= 8;
-          return g[--I] |= 128 * c, g;
-        }, unpack: function(a, o) {
-          var n, l = a.length, u = 8 * l - o - 1, m = (1 << u) - 1, g = m >> 1, h = u - 7, d = l - 1, f = a[d--], b = 127 & f;
+            g[S++] = 255 & l, l /= 256, h -= 8;
+          return g[--S] |= 128 * c, g;
+        }, unpack: function(i, o) {
+          var n, l = i.length, u = 8 * l - o - 1, m = (1 << u) - 1, g = m >> 1, h = u - 7, d = l - 1, f = i[d--], b = 127 & f;
           for (f >>= 7; h > 0; )
-            b = 256 * b + a[d--], h -= 8;
+            b = 256 * b + i[d--], h -= 8;
           for (n = b & (1 << -h) - 1, b >>= -h, h += o; h > 0; )
-            n = 256 * n + a[d--], h -= 8;
+            n = 256 * n + i[d--], h -= 8;
           if (b === 0)
             b = 1 - g;
           else {
@@ -6058,125 +6058,125 @@ var EasemobChat = { exports: {} };
           }
           return (f ? -1 : 1) * n * r(2, b - o);
         } };
-      }, 8361: function(p, S, e) {
-        var r = e(1702), t = e(7293), i = e(4326), s = Object, a = r("".split);
+      }, 8361: function(p, R, e) {
+        var r = e(1702), t = e(7293), a = e(4326), s = Object, i = r("".split);
         p.exports = t(function() {
           return !s("z").propertyIsEnumerable(0);
         }) ? function(o) {
-          return i(o) == "String" ? a(o, "") : s(o);
+          return a(o) == "String" ? i(o, "") : s(o);
         } : s;
-      }, 9587: function(p, S, e) {
-        var r = e(614), t = e(111), i = e(7674);
-        p.exports = function(s, a, o) {
+      }, 9587: function(p, R, e) {
+        var r = e(614), t = e(111), a = e(7674);
+        p.exports = function(s, i, o) {
           var n, l;
-          return i && r(n = a.constructor) && n !== o && t(l = n.prototype) && l !== o.prototype && i(s, l), s;
+          return a && r(n = i.constructor) && n !== o && t(l = n.prototype) && l !== o.prototype && a(s, l), s;
         };
-      }, 2788: function(p, S, e) {
-        var r = e(1702), t = e(614), i = e(5465), s = r(Function.toString);
-        t(i.inspectSource) || (i.inspectSource = function(a) {
-          return s(a);
-        }), p.exports = i.inspectSource;
-      }, 2423: function(p, S, e) {
-        var r = e(2109), t = e(1702), i = e(3501), s = e(111), a = e(2597), o = e(3070).f, n = e(8006), l = e(1156), u = e(2050), m = e(9711), g = e(6677), h = !1, d = m("meta"), f = 0, b = function(I) {
-          o(I, d, { value: { objectID: "O" + f++, weakData: {} } });
+      }, 2788: function(p, R, e) {
+        var r = e(1702), t = e(614), a = e(5465), s = r(Function.toString);
+        t(a.inspectSource) || (a.inspectSource = function(i) {
+          return s(i);
+        }), p.exports = a.inspectSource;
+      }, 2423: function(p, R, e) {
+        var r = e(2109), t = e(1702), a = e(3501), s = e(111), i = e(2597), o = e(3070).f, n = e(8006), l = e(1156), u = e(2050), m = e(9711), g = e(6677), h = !1, d = m("meta"), f = 0, b = function(S) {
+          o(S, d, { value: { objectID: "O" + f++, weakData: {} } });
         }, c = p.exports = { enable: function() {
           c.enable = function() {
           }, h = !0;
-          var I = n.f, v = t([].splice), N = {};
-          N[d] = 1, I(N).length && (n.f = function(x) {
-            for (var O = I(x), C = 0, E = O.length; C < E; C++)
+          var S = n.f, v = t([].splice), N = {};
+          N[d] = 1, S(N).length && (n.f = function(x) {
+            for (var O = S(x), C = 0, E = O.length; C < E; C++)
               if (O[C] === d) {
                 v(O, C, 1);
                 break;
               }
             return O;
           }, r({ target: "Object", stat: !0, forced: !0 }, { getOwnPropertyNames: l.f }));
-        }, fastKey: function(I, v) {
-          if (!s(I))
-            return typeof I == "symbol" ? I : (typeof I == "string" ? "S" : "P") + I;
-          if (!a(I, d)) {
-            if (!u(I))
+        }, fastKey: function(S, v) {
+          if (!s(S))
+            return typeof S == "symbol" ? S : (typeof S == "string" ? "S" : "P") + S;
+          if (!i(S, d)) {
+            if (!u(S))
               return "F";
             if (!v)
               return "E";
-            b(I);
+            b(S);
           }
-          return I[d].objectID;
-        }, getWeakData: function(I, v) {
-          if (!a(I, d)) {
-            if (!u(I))
+          return S[d].objectID;
+        }, getWeakData: function(S, v) {
+          if (!i(S, d)) {
+            if (!u(S))
               return !0;
             if (!v)
               return !1;
-            b(I);
+            b(S);
           }
-          return I[d].weakData;
-        }, onFreeze: function(I) {
-          return g && h && u(I) && !a(I, d) && b(I), I;
+          return S[d].weakData;
+        }, onFreeze: function(S) {
+          return g && h && u(S) && !i(S, d) && b(S), S;
         } };
-        i[d] = !0;
-      }, 9909: function(p, S, e) {
-        var r, t, i, s = e(4811), a = e(7854), o = e(111), n = e(8880), l = e(2597), u = e(5465), m = e(6200), g = e(3501), h = "Object already initialized", d = a.TypeError, f = a.WeakMap;
+        a[d] = !0;
+      }, 9909: function(p, R, e) {
+        var r, t, a, s = e(4811), i = e(7854), o = e(111), n = e(8880), l = e(2597), u = e(5465), m = e(6200), g = e(3501), h = "Object already initialized", d = i.TypeError, f = i.WeakMap;
         if (s || u.state) {
           var b = u.state || (u.state = new f());
-          b.get = b.get, b.has = b.has, b.set = b.set, r = function(I, v) {
-            if (b.has(I))
+          b.get = b.get, b.has = b.has, b.set = b.set, r = function(S, v) {
+            if (b.has(S))
               throw d(h);
-            return v.facade = I, b.set(I, v), v;
-          }, t = function(I) {
-            return b.get(I) || {};
-          }, i = function(I) {
-            return b.has(I);
+            return v.facade = S, b.set(S, v), v;
+          }, t = function(S) {
+            return b.get(S) || {};
+          }, a = function(S) {
+            return b.has(S);
           };
         } else {
           var c = m("state");
-          g[c] = !0, r = function(I, v) {
-            if (l(I, c))
+          g[c] = !0, r = function(S, v) {
+            if (l(S, c))
               throw d(h);
-            return v.facade = I, n(I, c, v), v;
-          }, t = function(I) {
-            return l(I, c) ? I[c] : {};
-          }, i = function(I) {
-            return l(I, c);
+            return v.facade = S, n(S, c, v), v;
+          }, t = function(S) {
+            return l(S, c) ? S[c] : {};
+          }, a = function(S) {
+            return l(S, c);
           };
         }
-        p.exports = { set: r, get: t, has: i, enforce: function(I) {
-          return i(I) ? t(I) : r(I, {});
-        }, getterFor: function(I) {
+        p.exports = { set: r, get: t, has: a, enforce: function(S) {
+          return a(S) ? t(S) : r(S, {});
+        }, getterFor: function(S) {
           return function(v) {
             var N;
-            if (!o(v) || (N = t(v)).type !== I)
-              throw d("Incompatible receiver, " + I + " required");
+            if (!o(v) || (N = t(v)).type !== S)
+              throw d("Incompatible receiver, " + S + " required");
             return N;
           };
         } };
-      }, 7659: function(p, S, e) {
-        var r = e(5112), t = e(7497), i = r("iterator"), s = Array.prototype;
-        p.exports = function(a) {
-          return a !== void 0 && (t.Array === a || s[i] === a);
+      }, 7659: function(p, R, e) {
+        var r = e(5112), t = e(7497), a = r("iterator"), s = Array.prototype;
+        p.exports = function(i) {
+          return i !== void 0 && (t.Array === i || s[a] === i);
         };
-      }, 3157: function(p, S, e) {
+      }, 3157: function(p, R, e) {
         var r = e(4326);
         p.exports = Array.isArray || function(t) {
           return r(t) == "Array";
         };
-      }, 4067: function(p, S, e) {
+      }, 4067: function(p, R, e) {
         var r = e(648);
         p.exports = function(t) {
-          var i = r(t);
-          return i == "BigInt64Array" || i == "BigUint64Array";
+          var a = r(t);
+          return a == "BigInt64Array" || a == "BigUint64Array";
         };
-      }, 614: function(p, S, e) {
+      }, 614: function(p, R, e) {
         var r = e(4154), t = r.all;
-        p.exports = r.IS_HTMLDDA ? function(i) {
-          return typeof i == "function" || i === t;
-        } : function(i) {
-          return typeof i == "function";
+        p.exports = r.IS_HTMLDDA ? function(a) {
+          return typeof a == "function" || a === t;
+        } : function(a) {
+          return typeof a == "function";
         };
-      }, 4411: function(p, S, e) {
-        var r = e(1702), t = e(7293), i = e(614), s = e(648), a = e(5005), o = e(2788), n = function() {
-        }, l = [], u = a("Reflect", "construct"), m = /^\s*(?:class|function)\b/, g = r(m.exec), h = !m.exec(n), d = function(b) {
-          if (!i(b))
+      }, 4411: function(p, R, e) {
+        var r = e(1702), t = e(7293), a = e(614), s = e(648), i = e(5005), o = e(2788), n = function() {
+        }, l = [], u = i("Reflect", "construct"), m = /^\s*(?:class|function)\b/, g = r(m.exec), h = !m.exec(n), d = function(b) {
+          if (!a(b))
             return !1;
           try {
             return u(n, l, b), !0;
@@ -6184,7 +6184,7 @@ var EasemobChat = { exports: {} };
             return !1;
           }
         }, f = function(b) {
-          if (!i(b))
+          if (!a(b))
             return !1;
           switch (s(b)) {
             case "AsyncFunction":
@@ -6204,90 +6204,90 @@ var EasemobChat = { exports: {} };
             b = !0;
           }) || b;
         }) ? f : d;
-      }, 4705: function(p, S, e) {
-        var r = e(7293), t = e(614), i = /#|\.prototype\./, s = function(u, m) {
-          var g = o[a(u)];
+      }, 4705: function(p, R, e) {
+        var r = e(7293), t = e(614), a = /#|\.prototype\./, s = function(u, m) {
+          var g = o[i(u)];
           return g == l || g != n && (t(m) ? r(m) : !!m);
-        }, a = s.normalize = function(u) {
-          return String(u).replace(i, ".").toLowerCase();
+        }, i = s.normalize = function(u) {
+          return String(u).replace(a, ".").toLowerCase();
         }, o = s.data = {}, n = s.NATIVE = "N", l = s.POLYFILL = "P";
         p.exports = s;
-      }, 5988: function(p, S, e) {
+      }, 5988: function(p, R, e) {
         var r = e(111), t = Math.floor;
-        p.exports = Number.isInteger || function(i) {
-          return !r(i) && isFinite(i) && t(i) === i;
+        p.exports = Number.isInteger || function(a) {
+          return !r(a) && isFinite(a) && t(a) === a;
         };
       }, 8554: function(p) {
-        p.exports = function(S) {
-          return S == null;
+        p.exports = function(R) {
+          return R == null;
         };
-      }, 111: function(p, S, e) {
-        var r = e(614), t = e(4154), i = t.all;
+      }, 111: function(p, R, e) {
+        var r = e(614), t = e(4154), a = t.all;
         p.exports = t.IS_HTMLDDA ? function(s) {
-          return typeof s == "object" ? s !== null : r(s) || s === i;
+          return typeof s == "object" ? s !== null : r(s) || s === a;
         } : function(s) {
           return typeof s == "object" ? s !== null : r(s);
         };
       }, 1913: function(p) {
         p.exports = !1;
-      }, 7850: function(p, S, e) {
-        var r = e(111), t = e(4326), i = e(5112)("match");
+      }, 7850: function(p, R, e) {
+        var r = e(111), t = e(4326), a = e(5112)("match");
         p.exports = function(s) {
-          var a;
-          return r(s) && ((a = s[i]) !== void 0 ? !!a : t(s) == "RegExp");
+          var i;
+          return r(s) && ((i = s[a]) !== void 0 ? !!i : t(s) == "RegExp");
         };
-      }, 2190: function(p, S, e) {
-        var r = e(5005), t = e(614), i = e(7976), s = e(3307), a = Object;
+      }, 2190: function(p, R, e) {
+        var r = e(5005), t = e(614), a = e(7976), s = e(3307), i = Object;
         p.exports = s ? function(o) {
           return typeof o == "symbol";
         } : function(o) {
           var n = r("Symbol");
-          return t(n) && i(n.prototype, a(o));
+          return t(n) && a(n.prototype, i(o));
         };
-      }, 408: function(p, S, e) {
-        var r = e(9974), t = e(6916), i = e(9670), s = e(6330), a = e(7659), o = e(6244), n = e(7976), l = e(4121), u = e(1246), m = e(9212), g = TypeError, h = function(f, b) {
+      }, 408: function(p, R, e) {
+        var r = e(9974), t = e(6916), a = e(9670), s = e(6330), i = e(7659), o = e(6244), n = e(7976), l = e(4121), u = e(1246), m = e(9212), g = TypeError, h = function(f, b) {
           this.stopped = f, this.result = b;
         }, d = h.prototype;
         p.exports = function(f, b, c) {
-          var I, v, N, x, O, C, E, P = c && c.that, G = !(!c || !c.AS_ENTRIES), K = !(!c || !c.IS_RECORD), F = !(!c || !c.IS_ITERATOR), Y = !(!c || !c.INTERRUPTED), Z = r(b, P), V = function(ae) {
-            return I && m(I, "normal", ae), new h(!0, ae);
+          var S, v, N, x, O, C, E, P = c && c.that, G = !(!c || !c.AS_ENTRIES), Z = !(!c || !c.IS_RECORD), F = !(!c || !c.IS_ITERATOR), Y = !(!c || !c.INTERRUPTED), K = r(b, P), V = function(ae) {
+            return S && m(S, "normal", ae), new h(!0, ae);
           }, ne = function(ae) {
-            return G ? (i(ae), Y ? Z(ae[0], ae[1], V) : Z(ae[0], ae[1])) : Y ? Z(ae, V) : Z(ae);
+            return G ? (a(ae), Y ? K(ae[0], ae[1], V) : K(ae[0], ae[1])) : Y ? K(ae, V) : K(ae);
           };
-          if (K)
-            I = f.iterator;
+          if (Z)
+            S = f.iterator;
           else if (F)
-            I = f;
+            S = f;
           else {
             if (!(v = u(f)))
               throw g(s(f) + " is not iterable");
-            if (a(v)) {
+            if (i(v)) {
               for (N = 0, x = o(f); x > N; N++)
                 if ((O = ne(f[N])) && n(d, O))
                   return O;
               return new h(!1);
             }
-            I = l(f, v);
+            S = l(f, v);
           }
-          for (C = K ? f.next : I.next; !(E = t(C, I)).done; ) {
+          for (C = Z ? f.next : S.next; !(E = t(C, S)).done; ) {
             try {
               O = ne(E.value);
             } catch (ae) {
-              m(I, "throw", ae);
+              m(S, "throw", ae);
             }
             if (typeof O == "object" && O && n(d, O))
               return O;
           }
           return new h(!1);
         };
-      }, 9212: function(p, S, e) {
-        var r = e(6916), t = e(9670), i = e(8173);
-        p.exports = function(s, a, o) {
+      }, 9212: function(p, R, e) {
+        var r = e(6916), t = e(9670), a = e(8173);
+        p.exports = function(s, i, o) {
           var n, l;
           t(s);
           try {
-            if (!(n = i(s, "return"))) {
-              if (a === "throw")
+            if (!(n = a(s, "return"))) {
+              if (i === "throw")
                 throw o;
               return o;
             }
@@ -6295,29 +6295,29 @@ var EasemobChat = { exports: {} };
           } catch (u) {
             l = !0, n = u;
           }
-          if (a === "throw")
+          if (i === "throw")
             throw o;
           if (l)
             throw n;
           return t(n), o;
         };
-      }, 3061: function(p, S, e) {
-        var r = e(3383).IteratorPrototype, t = e(30), i = e(9114), s = e(8003), a = e(7497), o = function() {
+      }, 3061: function(p, R, e) {
+        var r = e(3383).IteratorPrototype, t = e(30), a = e(9114), s = e(8003), i = e(7497), o = function() {
           return this;
         };
         p.exports = function(n, l, u, m) {
           var g = l + " Iterator";
-          return n.prototype = t(r, { next: i(+!m, u) }), s(n, g, !1, !0), a[g] = o, n;
+          return n.prototype = t(r, { next: a(+!m, u) }), s(n, g, !1, !0), i[g] = o, n;
         };
-      }, 1656: function(p, S, e) {
-        var r = e(2109), t = e(6916), i = e(1913), s = e(6530), a = e(614), o = e(3061), n = e(9518), l = e(7674), u = e(8003), m = e(8880), g = e(8052), h = e(5112), d = e(7497), f = e(3383), b = s.PROPER, c = s.CONFIGURABLE, I = f.IteratorPrototype, v = f.BUGGY_SAFARI_ITERATORS, N = h("iterator"), x = "keys", O = "values", C = "entries", E = function() {
+      }, 1656: function(p, R, e) {
+        var r = e(2109), t = e(6916), a = e(1913), s = e(6530), i = e(614), o = e(3061), n = e(9518), l = e(7674), u = e(8003), m = e(8880), g = e(8052), h = e(5112), d = e(7497), f = e(3383), b = s.PROPER, c = s.CONFIGURABLE, S = f.IteratorPrototype, v = f.BUGGY_SAFARI_ITERATORS, N = h("iterator"), x = "keys", O = "values", C = "entries", E = function() {
           return this;
         };
-        p.exports = function(P, G, K, F, Y, Z, V) {
-          o(K, G, F);
+        p.exports = function(P, G, Z, F, Y, K, V) {
+          o(Z, G, F);
           var ne, ae, se, ue = function(fe) {
-            if (fe === Y && Re)
-              return Re;
+            if (fe === Y && Ie)
+              return Ie;
             if (!v && fe in Ce)
               return Ce[fe];
             switch (fe) {
@@ -6325,66 +6325,66 @@ var EasemobChat = { exports: {} };
               case O:
               case C:
                 return function() {
-                  return new K(this, fe);
+                  return new Z(this, fe);
                 };
             }
             return function() {
-              return new K(this);
+              return new Z(this);
             };
-          }, me = G + " Iterator", ge = !1, Ce = P.prototype, Ie = Ce[N] || Ce["@@iterator"] || Y && Ce[Y], Re = !v && Ie || ue(Y), Oe = G == "Array" && Ce.entries || Ie;
-          if (Oe && (ne = n(Oe.call(new P()))) !== Object.prototype && ne.next && (i || n(ne) === I || (l ? l(ne, I) : a(ne[N]) || g(ne, N, E)), u(ne, me, !0, !0), i && (d[me] = E)), b && Y == O && Ie && Ie.name !== O && (!i && c ? m(Ce, "name", O) : (ge = !0, Re = function() {
-            return t(Ie, this);
+          }, me = G + " Iterator", ge = !1, Ce = P.prototype, Re = Ce[N] || Ce["@@iterator"] || Y && Ce[Y], Ie = !v && Re || ue(Y), Oe = G == "Array" && Ce.entries || Re;
+          if (Oe && (ne = n(Oe.call(new P()))) !== Object.prototype && ne.next && (a || n(ne) === S || (l ? l(ne, S) : i(ne[N]) || g(ne, N, E)), u(ne, me, !0, !0), a && (d[me] = E)), b && Y == O && Re && Re.name !== O && (!a && c ? m(Ce, "name", O) : (ge = !0, Ie = function() {
+            return t(Re, this);
           })), Y)
-            if (ae = { values: ue(O), keys: Z ? Re : ue(x), entries: ue(C) }, V)
+            if (ae = { values: ue(O), keys: K ? Ie : ue(x), entries: ue(C) }, V)
               for (se in ae)
                 (v || ge || !(se in Ce)) && g(Ce, se, ae[se]);
             else
               r({ target: G, proto: !0, forced: v || ge }, ae);
-          return i && !V || Ce[N] === Re || g(Ce, N, Re, { name: Y }), d[G] = Re, ae;
+          return a && !V || Ce[N] === Ie || g(Ce, N, Ie, { name: Y }), d[G] = Ie, ae;
         };
-      }, 3383: function(p, S, e) {
-        var r, t, i, s = e(7293), a = e(614), o = e(111), n = e(30), l = e(9518), u = e(8052), m = e(5112), g = e(1913), h = m("iterator"), d = !1;
-        [].keys && ("next" in (i = [].keys()) ? (t = l(l(i))) !== Object.prototype && (r = t) : d = !0), !o(r) || s(function() {
+      }, 3383: function(p, R, e) {
+        var r, t, a, s = e(7293), i = e(614), o = e(111), n = e(30), l = e(9518), u = e(8052), m = e(5112), g = e(1913), h = m("iterator"), d = !1;
+        [].keys && ("next" in (a = [].keys()) ? (t = l(l(a))) !== Object.prototype && (r = t) : d = !0), !o(r) || s(function() {
           var f = {};
           return r[h].call(f) !== f;
-        }) ? r = {} : g && (r = n(r)), a(r[h]) || u(r, h, function() {
+        }) ? r = {} : g && (r = n(r)), i(r[h]) || u(r, h, function() {
           return this;
         }), p.exports = { IteratorPrototype: r, BUGGY_SAFARI_ITERATORS: d };
       }, 7497: function(p) {
         p.exports = {};
-      }, 6244: function(p, S, e) {
+      }, 6244: function(p, R, e) {
         var r = e(7466);
         p.exports = function(t) {
           return r(t.length);
         };
-      }, 6339: function(p, S, e) {
-        var r = e(1702), t = e(7293), i = e(614), s = e(2597), a = e(9781), o = e(6530).CONFIGURABLE, n = e(2788), l = e(9909), u = l.enforce, m = l.get, g = String, h = Object.defineProperty, d = r("".slice), f = r("".replace), b = r([].join), c = a && !t(function() {
+      }, 6339: function(p, R, e) {
+        var r = e(1702), t = e(7293), a = e(614), s = e(2597), i = e(9781), o = e(6530).CONFIGURABLE, n = e(2788), l = e(9909), u = l.enforce, m = l.get, g = String, h = Object.defineProperty, d = r("".slice), f = r("".replace), b = r([].join), c = i && !t(function() {
           return h(function() {
           }, "length", { value: 8 }).length !== 8;
-        }), I = String(String).split("String"), v = p.exports = function(N, x, O) {
-          d(g(x), 0, 7) === "Symbol(" && (x = "[" + f(g(x), /^Symbol\(([^)]*)\)/, "$1") + "]"), O && O.getter && (x = "get " + x), O && O.setter && (x = "set " + x), (!s(N, "name") || o && N.name !== x) && (a ? h(N, "name", { value: x, configurable: !0 }) : N.name = x), c && O && s(O, "arity") && N.length !== O.arity && h(N, "length", { value: O.arity });
+        }), S = String(String).split("String"), v = p.exports = function(N, x, O) {
+          d(g(x), 0, 7) === "Symbol(" && (x = "[" + f(g(x), /^Symbol\(([^)]*)\)/, "$1") + "]"), O && O.getter && (x = "get " + x), O && O.setter && (x = "set " + x), (!s(N, "name") || o && N.name !== x) && (i ? h(N, "name", { value: x, configurable: !0 }) : N.name = x), c && O && s(O, "arity") && N.length !== O.arity && h(N, "length", { value: O.arity });
           try {
-            O && s(O, "constructor") && O.constructor ? a && h(N, "prototype", { writable: !1 }) : N.prototype && (N.prototype = void 0);
+            O && s(O, "constructor") && O.constructor ? i && h(N, "prototype", { writable: !1 }) : N.prototype && (N.prototype = void 0);
           } catch {
           }
           var C = u(N);
-          return s(C, "source") || (C.source = b(I, typeof x == "string" ? x : "")), N;
+          return s(C, "source") || (C.source = b(S, typeof x == "string" ? x : "")), N;
         };
         Function.prototype.toString = v(function() {
-          return i(this) && m(this).source || n(this);
+          return a(this) && m(this).source || n(this);
         }, "toString");
       }, 4758: function(p) {
-        var S = Math.ceil, e = Math.floor;
+        var R = Math.ceil, e = Math.floor;
         p.exports = Math.trunc || function(r) {
           var t = +r;
-          return (t > 0 ? e : S)(t);
+          return (t > 0 ? e : R)(t);
         };
-      }, 5948: function(p, S, e) {
-        var r, t, i, s, a, o = e(7854), n = e(9974), l = e(1236).f, u = e(261).set, m = e(8572), g = e(6833), h = e(1528), d = e(1036), f = e(5268), b = o.MutationObserver || o.WebKitMutationObserver, c = o.document, I = o.process, v = o.Promise, N = l(o, "queueMicrotask"), x = N && N.value;
+      }, 5948: function(p, R, e) {
+        var r, t, a, s, i, o = e(7854), n = e(9974), l = e(1236).f, u = e(261).set, m = e(8572), g = e(6833), h = e(1528), d = e(1036), f = e(5268), b = o.MutationObserver || o.WebKitMutationObserver, c = o.document, S = o.process, v = o.Promise, N = l(o, "queueMicrotask"), x = N && N.value;
         if (!x) {
           var O = new m(), C = function() {
             var E, P;
-            for (f && (E = I.domain) && E.exit(); P = O.get(); )
+            for (f && (E = S.domain) && E.exit(); P = O.get(); )
               try {
                 P();
               } catch (G) {
@@ -6392,57 +6392,57 @@ var EasemobChat = { exports: {} };
               }
             E && E.enter();
           };
-          g || f || d || !b || !c ? !h && v && v.resolve ? ((s = v.resolve(void 0)).constructor = v, a = n(s.then, s), r = function() {
-            a(C);
+          g || f || d || !b || !c ? !h && v && v.resolve ? ((s = v.resolve(void 0)).constructor = v, i = n(s.then, s), r = function() {
+            i(C);
           }) : f ? r = function() {
-            I.nextTick(C);
+            S.nextTick(C);
           } : (u = n(u, o), r = function() {
             u(C);
-          }) : (t = !0, i = c.createTextNode(""), new b(C).observe(i, { characterData: !0 }), r = function() {
-            i.data = t = !t;
+          }) : (t = !0, a = c.createTextNode(""), new b(C).observe(a, { characterData: !0 }), r = function() {
+            a.data = t = !t;
           }), x = function(E) {
             O.head || r(), O.add(E);
           };
         }
         p.exports = x;
-      }, 8523: function(p, S, e) {
-        var r = e(9662), t = TypeError, i = function(s) {
-          var a, o;
+      }, 8523: function(p, R, e) {
+        var r = e(9662), t = TypeError, a = function(s) {
+          var i, o;
           this.promise = new s(function(n, l) {
-            if (a !== void 0 || o !== void 0)
+            if (i !== void 0 || o !== void 0)
               throw t("Bad Promise constructor");
-            a = n, o = l;
-          }), this.resolve = r(a), this.reject = r(o);
+            i = n, o = l;
+          }), this.resolve = r(i), this.reject = r(o);
         };
         p.exports.f = function(s) {
-          return new i(s);
+          return new a(s);
         };
-      }, 3929: function(p, S, e) {
+      }, 3929: function(p, R, e) {
         var r = e(7850), t = TypeError;
-        p.exports = function(i) {
-          if (r(i))
+        p.exports = function(a) {
+          if (r(a))
             throw t("The method doesn't accept regular expressions");
-          return i;
+          return a;
         };
-      }, 1574: function(p, S, e) {
-        var r = e(9781), t = e(1702), i = e(6916), s = e(7293), a = e(1956), o = e(5181), n = e(5296), l = e(7908), u = e(8361), m = Object.assign, g = Object.defineProperty, h = t([].concat);
+      }, 1574: function(p, R, e) {
+        var r = e(9781), t = e(1702), a = e(6916), s = e(7293), i = e(1956), o = e(5181), n = e(5296), l = e(7908), u = e(8361), m = Object.assign, g = Object.defineProperty, h = t([].concat);
         p.exports = !m || s(function() {
           if (r && m({ b: 1 }, m(g({}, "a", { enumerable: !0, get: function() {
             g(this, "b", { value: 3, enumerable: !1 });
           } }), { b: 2 })).b !== 1)
             return !0;
           var d = {}, f = {}, b = Symbol(), c = "abcdefghijklmnopqrst";
-          return d[b] = 7, c.split("").forEach(function(I) {
-            f[I] = I;
-          }), m({}, d)[b] != 7 || a(m({}, f)).join("") != c;
+          return d[b] = 7, c.split("").forEach(function(S) {
+            f[S] = S;
+          }), m({}, d)[b] != 7 || i(m({}, f)).join("") != c;
         }) ? function(d, f) {
-          for (var b = l(d), c = arguments.length, I = 1, v = o.f, N = n.f; c > I; )
-            for (var x, O = u(arguments[I++]), C = v ? h(a(O), v(O)) : a(O), E = C.length, P = 0; E > P; )
-              x = C[P++], r && !i(N, O, x) || (b[x] = O[x]);
+          for (var b = l(d), c = arguments.length, S = 1, v = o.f, N = n.f; c > S; )
+            for (var x, O = u(arguments[S++]), C = v ? h(i(O), v(O)) : i(O), E = C.length, P = 0; E > P; )
+              x = C[P++], r && !a(N, O, x) || (b[x] = O[x]);
           return b;
         } : m;
-      }, 30: function(p, S, e) {
-        var r, t = e(9670), i = e(6048), s = e(748), a = e(3501), o = e(490), n = e(317), l = e(6200)("IE_PROTO"), u = function() {
+      }, 30: function(p, R, e) {
+        var r, t = e(9670), a = e(6048), s = e(748), i = e(3501), o = e(490), n = e(317), l = e(6200)("IE_PROTO"), u = function() {
         }, m = function(d) {
           return "<script>" + d + "<\/script>";
         }, g = function(d) {
@@ -6460,28 +6460,28 @@ var EasemobChat = { exports: {} };
             delete h.prototype[s[b]];
           return h();
         };
-        a[l] = !0, p.exports = Object.create || function(d, f) {
+        i[l] = !0, p.exports = Object.create || function(d, f) {
           var b;
-          return d !== null ? (u.prototype = t(d), b = new u(), u.prototype = null, b[l] = d) : b = h(), f === void 0 ? b : i.f(b, f);
+          return d !== null ? (u.prototype = t(d), b = new u(), u.prototype = null, b[l] = d) : b = h(), f === void 0 ? b : a.f(b, f);
         };
-      }, 6048: function(p, S, e) {
-        var r = e(9781), t = e(3353), i = e(3070), s = e(9670), a = e(5656), o = e(1956);
-        S.f = r && !t ? Object.defineProperties : function(n, l) {
+      }, 6048: function(p, R, e) {
+        var r = e(9781), t = e(3353), a = e(3070), s = e(9670), i = e(5656), o = e(1956);
+        R.f = r && !t ? Object.defineProperties : function(n, l) {
           s(n);
-          for (var u, m = a(l), g = o(l), h = g.length, d = 0; h > d; )
-            i.f(n, u = g[d++], m[u]);
+          for (var u, m = i(l), g = o(l), h = g.length, d = 0; h > d; )
+            a.f(n, u = g[d++], m[u]);
           return n;
         };
-      }, 3070: function(p, S, e) {
-        var r = e(9781), t = e(4664), i = e(3353), s = e(9670), a = e(4948), o = TypeError, n = Object.defineProperty, l = Object.getOwnPropertyDescriptor;
-        S.f = r ? i ? function(u, m, g) {
-          if (s(u), m = a(m), s(g), typeof u == "function" && m === "prototype" && "value" in g && "writable" in g && !g.writable) {
+      }, 3070: function(p, R, e) {
+        var r = e(9781), t = e(4664), a = e(3353), s = e(9670), i = e(4948), o = TypeError, n = Object.defineProperty, l = Object.getOwnPropertyDescriptor;
+        R.f = r ? a ? function(u, m, g) {
+          if (s(u), m = i(m), s(g), typeof u == "function" && m === "prototype" && "value" in g && "writable" in g && !g.writable) {
             var h = l(u, m);
             h && h.writable && (u[m] = g.value, g = { configurable: "configurable" in g ? g.configurable : h.configurable, enumerable: "enumerable" in g ? g.enumerable : h.enumerable, writable: !1 });
           }
           return n(u, m, g);
         } : n : function(u, m, g) {
-          if (s(u), m = a(m), s(g), t)
+          if (s(u), m = i(m), s(g), t)
             try {
               return n(u, m, g);
             } catch {
@@ -6490,129 +6490,129 @@ var EasemobChat = { exports: {} };
             throw o("Accessors not supported");
           return "value" in g && (u[m] = g.value), u;
         };
-      }, 1236: function(p, S, e) {
-        var r = e(9781), t = e(6916), i = e(5296), s = e(9114), a = e(5656), o = e(4948), n = e(2597), l = e(4664), u = Object.getOwnPropertyDescriptor;
-        S.f = r ? u : function(m, g) {
-          if (m = a(m), g = o(g), l)
+      }, 1236: function(p, R, e) {
+        var r = e(9781), t = e(6916), a = e(5296), s = e(9114), i = e(5656), o = e(4948), n = e(2597), l = e(4664), u = Object.getOwnPropertyDescriptor;
+        R.f = r ? u : function(m, g) {
+          if (m = i(m), g = o(g), l)
             try {
               return u(m, g);
             } catch {
             }
           if (n(m, g))
-            return s(!t(i.f, m, g), m[g]);
+            return s(!t(a.f, m, g), m[g]);
         };
-      }, 1156: function(p, S, e) {
-        var r = e(4326), t = e(5656), i = e(8006).f, s = e(1589), a = typeof window == "object" && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
+      }, 1156: function(p, R, e) {
+        var r = e(4326), t = e(5656), a = e(8006).f, s = e(1589), i = typeof window == "object" && window && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
         p.exports.f = function(o) {
-          return a && r(o) == "Window" ? function(n) {
+          return i && r(o) == "Window" ? function(n) {
             try {
-              return i(n);
+              return a(n);
             } catch {
-              return s(a);
+              return s(i);
             }
-          }(o) : i(t(o));
+          }(o) : a(t(o));
         };
-      }, 8006: function(p, S, e) {
+      }, 8006: function(p, R, e) {
         var r = e(6324), t = e(748).concat("length", "prototype");
-        S.f = Object.getOwnPropertyNames || function(i) {
-          return r(i, t);
+        R.f = Object.getOwnPropertyNames || function(a) {
+          return r(a, t);
         };
-      }, 5181: function(p, S) {
-        S.f = Object.getOwnPropertySymbols;
-      }, 9518: function(p, S, e) {
-        var r = e(2597), t = e(614), i = e(7908), s = e(6200), a = e(8544), o = s("IE_PROTO"), n = Object, l = n.prototype;
-        p.exports = a ? n.getPrototypeOf : function(u) {
-          var m = i(u);
+      }, 5181: function(p, R) {
+        R.f = Object.getOwnPropertySymbols;
+      }, 9518: function(p, R, e) {
+        var r = e(2597), t = e(614), a = e(7908), s = e(6200), i = e(8544), o = s("IE_PROTO"), n = Object, l = n.prototype;
+        p.exports = i ? n.getPrototypeOf : function(u) {
+          var m = a(u);
           if (r(m, o))
             return m[o];
           var g = m.constructor;
           return t(g) && m instanceof g ? g.prototype : m instanceof n ? l : null;
         };
-      }, 2050: function(p, S, e) {
-        var r = e(7293), t = e(111), i = e(4326), s = e(7556), a = Object.isExtensible, o = r(function() {
+      }, 2050: function(p, R, e) {
+        var r = e(7293), t = e(111), a = e(4326), s = e(7556), i = Object.isExtensible, o = r(function() {
         });
         p.exports = o || s ? function(n) {
-          return !!t(n) && (!s || i(n) != "ArrayBuffer") && (!a || a(n));
-        } : a;
-      }, 7976: function(p, S, e) {
+          return !!t(n) && (!s || a(n) != "ArrayBuffer") && (!i || i(n));
+        } : i;
+      }, 7976: function(p, R, e) {
         var r = e(1702);
         p.exports = r({}.isPrototypeOf);
-      }, 6324: function(p, S, e) {
-        var r = e(1702), t = e(2597), i = e(5656), s = e(1318).indexOf, a = e(3501), o = r([].push);
+      }, 6324: function(p, R, e) {
+        var r = e(1702), t = e(2597), a = e(5656), s = e(1318).indexOf, i = e(3501), o = r([].push);
         p.exports = function(n, l) {
-          var u, m = i(n), g = 0, h = [];
+          var u, m = a(n), g = 0, h = [];
           for (u in m)
-            !t(a, u) && t(m, u) && o(h, u);
+            !t(i, u) && t(m, u) && o(h, u);
           for (; l.length > g; )
             t(m, u = l[g++]) && (~s(h, u) || o(h, u));
           return h;
         };
-      }, 1956: function(p, S, e) {
+      }, 1956: function(p, R, e) {
         var r = e(6324), t = e(748);
-        p.exports = Object.keys || function(i) {
-          return r(i, t);
+        p.exports = Object.keys || function(a) {
+          return r(a, t);
         };
-      }, 5296: function(p, S) {
+      }, 5296: function(p, R) {
         var e = {}.propertyIsEnumerable, r = Object.getOwnPropertyDescriptor, t = r && !e.call({ 1: 2 }, 1);
-        S.f = t ? function(i) {
-          var s = r(this, i);
+        R.f = t ? function(a) {
+          var s = r(this, a);
           return !!s && s.enumerable;
         } : e;
-      }, 7674: function(p, S, e) {
-        var r = e(5668), t = e(9670), i = e(6077);
+      }, 7674: function(p, R, e) {
+        var r = e(5668), t = e(9670), a = e(6077);
         p.exports = Object.setPrototypeOf || ("__proto__" in {} ? function() {
-          var s, a = !1, o = {};
+          var s, i = !1, o = {};
           try {
-            (s = r(Object.prototype, "__proto__", "set"))(o, []), a = o instanceof Array;
+            (s = r(Object.prototype, "__proto__", "set"))(o, []), i = o instanceof Array;
           } catch {
           }
           return function(n, l) {
-            return t(n), i(l), a ? s(n, l) : n.__proto__ = l, n;
+            return t(n), a(l), i ? s(n, l) : n.__proto__ = l, n;
           };
         }() : void 0);
-      }, 4699: function(p, S, e) {
-        var r = e(9781), t = e(1702), i = e(1956), s = e(5656), a = t(e(5296).f), o = t([].push), n = function(l) {
+      }, 4699: function(p, R, e) {
+        var r = e(9781), t = e(1702), a = e(1956), s = e(5656), i = t(e(5296).f), o = t([].push), n = function(l) {
           return function(u) {
-            for (var m, g = s(u), h = i(g), d = h.length, f = 0, b = []; d > f; )
-              m = h[f++], r && !a(g, m) || o(b, l ? [m, g[m]] : g[m]);
+            for (var m, g = s(u), h = a(g), d = h.length, f = 0, b = []; d > f; )
+              m = h[f++], r && !i(g, m) || o(b, l ? [m, g[m]] : g[m]);
             return b;
           };
         };
         p.exports = { entries: n(!0), values: n(!1) };
-      }, 288: function(p, S, e) {
+      }, 288: function(p, R, e) {
         var r = e(1694), t = e(648);
         p.exports = r ? {}.toString : function() {
           return "[object " + t(this) + "]";
         };
-      }, 2140: function(p, S, e) {
-        var r = e(6916), t = e(614), i = e(111), s = TypeError;
-        p.exports = function(a, o) {
+      }, 2140: function(p, R, e) {
+        var r = e(6916), t = e(614), a = e(111), s = TypeError;
+        p.exports = function(i, o) {
           var n, l;
-          if (o === "string" && t(n = a.toString) && !i(l = r(n, a)) || t(n = a.valueOf) && !i(l = r(n, a)) || o !== "string" && t(n = a.toString) && !i(l = r(n, a)))
+          if (o === "string" && t(n = i.toString) && !a(l = r(n, i)) || t(n = i.valueOf) && !a(l = r(n, i)) || o !== "string" && t(n = i.toString) && !a(l = r(n, i)))
             return l;
           throw s("Can't convert object to primitive value");
         };
-      }, 3887: function(p, S, e) {
-        var r = e(5005), t = e(1702), i = e(8006), s = e(5181), a = e(9670), o = t([].concat);
+      }, 3887: function(p, R, e) {
+        var r = e(5005), t = e(1702), a = e(8006), s = e(5181), i = e(9670), o = t([].concat);
         p.exports = r("Reflect", "ownKeys") || function(n) {
-          var l = i.f(a(n)), u = s.f;
+          var l = a.f(i(n)), u = s.f;
           return u ? o(l, u(n)) : l;
         };
-      }, 857: function(p, S, e) {
+      }, 857: function(p, R, e) {
         var r = e(7854);
         p.exports = r;
       }, 2534: function(p) {
-        p.exports = function(S) {
+        p.exports = function(R) {
           try {
-            return { error: !1, value: S() };
+            return { error: !1, value: R() };
           } catch (e) {
             return { error: !0, value: e };
           }
         };
-      }, 3702: function(p, S, e) {
-        var r = e(7854), t = e(2492), i = e(614), s = e(4705), a = e(2788), o = e(5112), n = e(7871), l = e(3823), u = e(1913), m = e(7392), g = t && t.prototype, h = o("species"), d = !1, f = i(r.PromiseRejectionEvent), b = s("Promise", function() {
-          var c = a(t), I = c !== String(t);
-          if (!I && m === 66 || u && (!g.catch || !g.finally))
+      }, 3702: function(p, R, e) {
+        var r = e(7854), t = e(2492), a = e(614), s = e(4705), i = e(2788), o = e(5112), n = e(7871), l = e(3823), u = e(1913), m = e(7392), g = t && t.prototype, h = o("species"), d = !1, f = a(r.PromiseRejectionEvent), b = s("Promise", function() {
+          var c = i(t), S = c !== String(t);
+          if (!S && m === 66 || u && (!g.catch || !g.finally))
             return !0;
           if (!m || m < 51 || !/native code/.test(c)) {
             var v = new t(function(x) {
@@ -6626,152 +6626,152 @@ var EasemobChat = { exports: {} };
             }) instanceof N))
               return !0;
           }
-          return !I && (n || l) && !f;
+          return !S && (n || l) && !f;
         });
         p.exports = { CONSTRUCTOR: b, REJECTION_EVENT: f, SUBCLASSING: d };
-      }, 2492: function(p, S, e) {
+      }, 2492: function(p, R, e) {
         var r = e(7854);
         p.exports = r.Promise;
-      }, 9478: function(p, S, e) {
-        var r = e(9670), t = e(111), i = e(8523);
-        p.exports = function(s, a) {
-          if (r(s), t(a) && a.constructor === s)
-            return a;
-          var o = i.f(s);
-          return (0, o.resolve)(a), o.promise;
+      }, 9478: function(p, R, e) {
+        var r = e(9670), t = e(111), a = e(8523);
+        p.exports = function(s, i) {
+          if (r(s), t(i) && i.constructor === s)
+            return i;
+          var o = a.f(s);
+          return (0, o.resolve)(i), o.promise;
         };
-      }, 612: function(p, S, e) {
-        var r = e(2492), t = e(7072), i = e(3702).CONSTRUCTOR;
-        p.exports = i || !t(function(s) {
+      }, 612: function(p, R, e) {
+        var r = e(2492), t = e(7072), a = e(3702).CONSTRUCTOR;
+        p.exports = a || !t(function(s) {
           r.all(s).then(void 0, function() {
           });
         });
       }, 8572: function(p) {
-        var S = function() {
+        var R = function() {
           this.head = null, this.tail = null;
         };
-        S.prototype = { add: function(e) {
+        R.prototype = { add: function(e) {
           var r = { item: e, next: null }, t = this.tail;
           t ? t.next = r : this.head = r, this.tail = r;
         }, get: function() {
           var e = this.head;
           if (e)
             return (this.head = e.next) === null && (this.tail = null), e.item;
-        } }, p.exports = S;
-      }, 2261: function(p, S, e) {
-        var r, t, i = e(6916), s = e(1702), a = e(1340), o = e(7066), n = e(2999), l = e(2309), u = e(30), m = e(9909).get, g = e(9441), h = e(7168), d = l("native-string-replace", String.prototype.replace), f = RegExp.prototype.exec, b = f, c = s("".charAt), I = s("".indexOf), v = s("".replace), N = s("".slice), x = (t = /b*/g, i(f, r = /a/, "a"), i(f, t, "a"), r.lastIndex !== 0 || t.lastIndex !== 0), O = n.BROKEN_CARET, C = /()??/.exec("")[1] !== void 0;
+        } }, p.exports = R;
+      }, 2261: function(p, R, e) {
+        var r, t, a = e(6916), s = e(1702), i = e(1340), o = e(7066), n = e(2999), l = e(2309), u = e(30), m = e(9909).get, g = e(9441), h = e(7168), d = l("native-string-replace", String.prototype.replace), f = RegExp.prototype.exec, b = f, c = s("".charAt), S = s("".indexOf), v = s("".replace), N = s("".slice), x = (t = /b*/g, a(f, r = /a/, "a"), a(f, t, "a"), r.lastIndex !== 0 || t.lastIndex !== 0), O = n.BROKEN_CARET, C = /()??/.exec("")[1] !== void 0;
         (x || C || O || g || h) && (b = function(E) {
-          var P, G, K, F, Y, Z, V, ne = this, ae = m(ne), se = a(E), ue = ae.raw;
+          var P, G, Z, F, Y, K, V, ne = this, ae = m(ne), se = i(E), ue = ae.raw;
           if (ue)
-            return ue.lastIndex = ne.lastIndex, P = i(b, ue, se), ne.lastIndex = ue.lastIndex, P;
-          var me = ae.groups, ge = O && ne.sticky, Ce = i(o, ne), Ie = ne.source, Re = 0, Oe = se;
-          if (ge && (Ce = v(Ce, "y", ""), I(Ce, "g") === -1 && (Ce += "g"), Oe = N(se, ne.lastIndex), ne.lastIndex > 0 && (!ne.multiline || ne.multiline && c(se, ne.lastIndex - 1) !== `
-`) && (Ie = "(?: " + Ie + ")", Oe = " " + Oe, Re++), G = new RegExp("^(?:" + Ie + ")", Ce)), C && (G = new RegExp("^" + Ie + "$(?!\\s)", Ce)), x && (K = ne.lastIndex), F = i(f, ge ? G : ne, Oe), ge ? F ? (F.input = N(F.input, Re), F[0] = N(F[0], Re), F.index = ne.lastIndex, ne.lastIndex += F[0].length) : ne.lastIndex = 0 : x && F && (ne.lastIndex = ne.global ? F.index + F[0].length : K), C && F && F.length > 1 && i(d, F[0], G, function() {
+            return ue.lastIndex = ne.lastIndex, P = a(b, ue, se), ne.lastIndex = ue.lastIndex, P;
+          var me = ae.groups, ge = O && ne.sticky, Ce = a(o, ne), Re = ne.source, Ie = 0, Oe = se;
+          if (ge && (Ce = v(Ce, "y", ""), S(Ce, "g") === -1 && (Ce += "g"), Oe = N(se, ne.lastIndex), ne.lastIndex > 0 && (!ne.multiline || ne.multiline && c(se, ne.lastIndex - 1) !== `
+`) && (Re = "(?: " + Re + ")", Oe = " " + Oe, Ie++), G = new RegExp("^(?:" + Re + ")", Ce)), C && (G = new RegExp("^" + Re + "$(?!\\s)", Ce)), x && (Z = ne.lastIndex), F = a(f, ge ? G : ne, Oe), ge ? F ? (F.input = N(F.input, Ie), F[0] = N(F[0], Ie), F.index = ne.lastIndex, ne.lastIndex += F[0].length) : ne.lastIndex = 0 : x && F && (ne.lastIndex = ne.global ? F.index + F[0].length : Z), C && F && F.length > 1 && a(d, F[0], G, function() {
             for (Y = 1; Y < arguments.length - 2; Y++)
               arguments[Y] === void 0 && (F[Y] = void 0);
           }), F && me)
-            for (F.groups = Z = u(null), Y = 0; Y < me.length; Y++)
-              Z[(V = me[Y])[0]] = F[V[1]];
+            for (F.groups = K = u(null), Y = 0; Y < me.length; Y++)
+              K[(V = me[Y])[0]] = F[V[1]];
           return F;
         }), p.exports = b;
-      }, 7066: function(p, S, e) {
+      }, 7066: function(p, R, e) {
         var r = e(9670);
         p.exports = function() {
-          var t = r(this), i = "";
-          return t.hasIndices && (i += "d"), t.global && (i += "g"), t.ignoreCase && (i += "i"), t.multiline && (i += "m"), t.dotAll && (i += "s"), t.unicode && (i += "u"), t.unicodeSets && (i += "v"), t.sticky && (i += "y"), i;
+          var t = r(this), a = "";
+          return t.hasIndices && (a += "d"), t.global && (a += "g"), t.ignoreCase && (a += "i"), t.multiline && (a += "m"), t.dotAll && (a += "s"), t.unicode && (a += "u"), t.unicodeSets && (a += "v"), t.sticky && (a += "y"), a;
         };
-      }, 4706: function(p, S, e) {
-        var r = e(6916), t = e(2597), i = e(7976), s = e(7066), a = RegExp.prototype;
+      }, 4706: function(p, R, e) {
+        var r = e(6916), t = e(2597), a = e(7976), s = e(7066), i = RegExp.prototype;
         p.exports = function(o) {
           var n = o.flags;
-          return n !== void 0 || "flags" in a || t(o, "flags") || !i(a, o) ? n : r(s, o);
+          return n !== void 0 || "flags" in i || t(o, "flags") || !a(i, o) ? n : r(s, o);
         };
-      }, 2999: function(p, S, e) {
-        var r = e(7293), t = e(7854).RegExp, i = r(function() {
+      }, 2999: function(p, R, e) {
+        var r = e(7293), t = e(7854).RegExp, a = r(function() {
           var o = t("a", "y");
           return o.lastIndex = 2, o.exec("abcd") != null;
-        }), s = i || r(function() {
+        }), s = a || r(function() {
           return !t("a", "y").sticky;
-        }), a = i || r(function() {
+        }), i = a || r(function() {
           var o = t("^r", "gy");
           return o.lastIndex = 2, o.exec("str") != null;
         });
-        p.exports = { BROKEN_CARET: a, MISSED_STICKY: s, UNSUPPORTED_Y: i };
-      }, 9441: function(p, S, e) {
+        p.exports = { BROKEN_CARET: i, MISSED_STICKY: s, UNSUPPORTED_Y: a };
+      }, 9441: function(p, R, e) {
         var r = e(7293), t = e(7854).RegExp;
         p.exports = r(function() {
-          var i = t(".", "s");
-          return !(i.dotAll && i.exec(`
-`) && i.flags === "s");
+          var a = t(".", "s");
+          return !(a.dotAll && a.exec(`
+`) && a.flags === "s");
         });
-      }, 7168: function(p, S, e) {
+      }, 7168: function(p, R, e) {
         var r = e(7293), t = e(7854).RegExp;
         p.exports = r(function() {
-          var i = t("(?<a>b)", "g");
-          return i.exec("b").groups.a !== "b" || "b".replace(i, "$<a>c") !== "bc";
+          var a = t("(?<a>b)", "g");
+          return a.exec("b").groups.a !== "b" || "b".replace(a, "$<a>c") !== "bc";
         });
-      }, 4488: function(p, S, e) {
+      }, 4488: function(p, R, e) {
         var r = e(8554), t = TypeError;
-        p.exports = function(i) {
-          if (r(i))
-            throw t("Can't call method on " + i);
-          return i;
+        p.exports = function(a) {
+          if (r(a))
+            throw t("Can't call method on " + a);
+          return a;
         };
-      }, 7152: function(p, S, e) {
-        var r, t = e(7854), i = e(2104), s = e(614), a = e(9363), o = e(8113), n = e(206), l = e(8053), u = t.Function, m = /MSIE .\./.test(o) || a && ((r = t.Bun.version.split(".")).length < 3 || r[0] == 0 && (r[1] < 3 || r[1] == 3 && r[2] == 0));
+      }, 7152: function(p, R, e) {
+        var r, t = e(7854), a = e(2104), s = e(614), i = e(9363), o = e(8113), n = e(206), l = e(8053), u = t.Function, m = /MSIE .\./.test(o) || i && ((r = t.Bun.version.split(".")).length < 3 || r[0] == 0 && (r[1] < 3 || r[1] == 3 && r[2] == 0));
         p.exports = function(g, h) {
           var d = h ? 2 : 1;
           return m ? function(f, b) {
-            var c = l(arguments.length, 1) > d, I = s(f) ? f : u(f), v = c ? n(arguments, d) : [], N = c ? function() {
-              i(I, this, v);
-            } : I;
+            var c = l(arguments.length, 1) > d, S = s(f) ? f : u(f), v = c ? n(arguments, d) : [], N = c ? function() {
+              a(S, this, v);
+            } : S;
             return h ? g(N, b) : g(N);
           } : g;
         };
-      }, 6340: function(p, S, e) {
-        var r = e(5005), t = e(7045), i = e(5112), s = e(9781), a = i("species");
+      }, 6340: function(p, R, e) {
+        var r = e(5005), t = e(7045), a = e(5112), s = e(9781), i = a("species");
         p.exports = function(o) {
           var n = r(o);
-          s && n && !n[a] && t(n, a, { configurable: !0, get: function() {
+          s && n && !n[i] && t(n, i, { configurable: !0, get: function() {
             return this;
           } });
         };
-      }, 8003: function(p, S, e) {
-        var r = e(3070).f, t = e(2597), i = e(5112)("toStringTag");
-        p.exports = function(s, a, o) {
-          s && !o && (s = s.prototype), s && !t(s, i) && r(s, i, { configurable: !0, value: a });
+      }, 8003: function(p, R, e) {
+        var r = e(3070).f, t = e(2597), a = e(5112)("toStringTag");
+        p.exports = function(s, i, o) {
+          s && !o && (s = s.prototype), s && !t(s, a) && r(s, a, { configurable: !0, value: i });
         };
-      }, 6200: function(p, S, e) {
-        var r = e(2309), t = e(9711), i = r("keys");
+      }, 6200: function(p, R, e) {
+        var r = e(2309), t = e(9711), a = r("keys");
         p.exports = function(s) {
-          return i[s] || (i[s] = t(s));
+          return a[s] || (a[s] = t(s));
         };
-      }, 5465: function(p, S, e) {
-        var r = e(7854), t = e(3072), i = "__core-js_shared__", s = r[i] || t(i, {});
+      }, 5465: function(p, R, e) {
+        var r = e(7854), t = e(3072), a = "__core-js_shared__", s = r[a] || t(a, {});
         p.exports = s;
-      }, 2309: function(p, S, e) {
+      }, 2309: function(p, R, e) {
         var r = e(1913), t = e(5465);
-        (p.exports = function(i, s) {
-          return t[i] || (t[i] = s !== void 0 ? s : {});
+        (p.exports = function(a, s) {
+          return t[a] || (t[a] = s !== void 0 ? s : {});
         })("versions", []).push({ version: "3.29.1", mode: r ? "pure" : "global", copyright: "© 2014-2023 Denis Pushkarev (zloirock.ru)", license: "https://github.com/zloirock/core-js/blob/v3.29.1/LICENSE", source: "https://github.com/zloirock/core-js" });
-      }, 6707: function(p, S, e) {
-        var r = e(9670), t = e(9483), i = e(8554), s = e(5112)("species");
-        p.exports = function(a, o) {
-          var n, l = r(a).constructor;
-          return l === void 0 || i(n = r(l)[s]) ? o : t(n);
+      }, 6707: function(p, R, e) {
+        var r = e(9670), t = e(9483), a = e(8554), s = e(5112)("species");
+        p.exports = function(i, o) {
+          var n, l = r(i).constructor;
+          return l === void 0 || a(n = r(l)[s]) ? o : t(n);
         };
-      }, 8710: function(p, S, e) {
-        var r = e(1702), t = e(9303), i = e(1340), s = e(4488), a = r("".charAt), o = r("".charCodeAt), n = r("".slice), l = function(u) {
+      }, 8710: function(p, R, e) {
+        var r = e(1702), t = e(9303), a = e(1340), s = e(4488), i = r("".charAt), o = r("".charCodeAt), n = r("".slice), l = function(u) {
           return function(m, g) {
-            var h, d, f = i(s(m)), b = t(g), c = f.length;
-            return b < 0 || b >= c ? u ? "" : void 0 : (h = o(f, b)) < 55296 || h > 56319 || b + 1 === c || (d = o(f, b + 1)) < 56320 || d > 57343 ? u ? a(f, b) : h : u ? n(f, b, b + 2) : d - 56320 + (h - 55296 << 10) + 65536;
+            var h, d, f = a(s(m)), b = t(g), c = f.length;
+            return b < 0 || b >= c ? u ? "" : void 0 : (h = o(f, b)) < 55296 || h > 56319 || b + 1 === c || (d = o(f, b + 1)) < 56320 || d > 57343 ? u ? i(f, b) : h : u ? n(f, b, b + 2) : d - 56320 + (h - 55296 << 10) + 65536;
           };
         };
         p.exports = { codeAt: l(!1), charAt: l(!0) };
-      }, 3197: function(p, S, e) {
-        var r = e(1702), t = 2147483647, i = /[^\0-\u007E]/, s = /[.\u3002\uFF0E\uFF61]/g, a = "Overflow: input needs wider integers to process", o = RangeError, n = r(s.exec), l = Math.floor, u = String.fromCharCode, m = r("".charCodeAt), g = r([].join), h = r([].push), d = r("".replace), f = r("".split), b = r("".toLowerCase), c = function(N) {
+      }, 3197: function(p, R, e) {
+        var r = e(1702), t = 2147483647, a = /[^\0-\u007E]/, s = /[.\u3002\uFF0E\uFF61]/g, i = "Overflow: input needs wider integers to process", o = RangeError, n = r(s.exec), l = Math.floor, u = String.fromCharCode, m = r("".charCodeAt), g = r([].join), h = r([].push), d = r("".replace), f = r("".split), b = r("".toLowerCase), c = function(N) {
           return N + 22 + 75 * (N < 26);
-        }, I = function(N, x, O) {
+        }, S = function(N, x, O) {
           var C = 0;
           for (N = O ? l(N / 700) : N >> 1, N += l(N / x); N > 455; )
             N = l(N / 35), C += 36;
@@ -6779,39 +6779,39 @@ var EasemobChat = { exports: {} };
         }, v = function(N) {
           var x = [];
           N = function(ge) {
-            for (var Ce = [], Ie = 0, Re = ge.length; Ie < Re; ) {
-              var Oe = m(ge, Ie++);
-              if (Oe >= 55296 && Oe <= 56319 && Ie < Re) {
-                var fe = m(ge, Ie++);
-                (64512 & fe) == 56320 ? h(Ce, ((1023 & Oe) << 10) + (1023 & fe) + 65536) : (h(Ce, Oe), Ie--);
+            for (var Ce = [], Re = 0, Ie = ge.length; Re < Ie; ) {
+              var Oe = m(ge, Re++);
+              if (Oe >= 55296 && Oe <= 56319 && Re < Ie) {
+                var fe = m(ge, Re++);
+                (64512 & fe) == 56320 ? h(Ce, ((1023 & Oe) << 10) + (1023 & fe) + 65536) : (h(Ce, Oe), Re--);
               } else
                 h(Ce, Oe);
             }
             return Ce;
           }(N);
-          var O, C, E = N.length, P = 128, G = 0, K = 72;
+          var O, C, E = N.length, P = 128, G = 0, Z = 72;
           for (O = 0; O < N.length; O++)
             (C = N[O]) < 128 && h(x, u(C));
           var F = x.length, Y = F;
           for (F && h(x, "-"); Y < E; ) {
-            var Z = t;
+            var K = t;
             for (O = 0; O < N.length; O++)
-              (C = N[O]) >= P && C < Z && (Z = C);
+              (C = N[O]) >= P && C < K && (K = C);
             var V = Y + 1;
-            if (Z - P > l((t - G) / V))
-              throw o(a);
-            for (G += (Z - P) * V, P = Z, O = 0; O < N.length; O++) {
+            if (K - P > l((t - G) / V))
+              throw o(i);
+            for (G += (K - P) * V, P = K, O = 0; O < N.length; O++) {
               if ((C = N[O]) < P && ++G > t)
-                throw o(a);
+                throw o(i);
               if (C == P) {
                 for (var ne = G, ae = 36; ; ) {
-                  var se = ae <= K ? 1 : ae >= K + 26 ? 26 : ae - K;
+                  var se = ae <= Z ? 1 : ae >= Z + 26 ? 26 : ae - Z;
                   if (ne < se)
                     break;
                   var ue = ne - se, me = 36 - se;
                   h(x, u(c(se + ue % me))), ne = l(ue / me), ae += 36;
                 }
-                h(x, u(c(ne))), K = I(G, V, Y == F), G = 0, Y++;
+                h(x, u(c(ne))), Z = S(G, V, Y == F), G = 0, Y++;
               }
             }
             G++, P++;
@@ -6821,54 +6821,54 @@ var EasemobChat = { exports: {} };
         p.exports = function(N) {
           var x, O, C = [], E = f(d(b(N), s, "."), ".");
           for (x = 0; x < E.length; x++)
-            O = E[x], h(C, n(i, O) ? "xn--" + v(O) : O);
+            O = E[x], h(C, n(a, O) ? "xn--" + v(O) : O);
           return g(C, ".");
         };
-      }, 3111: function(p, S, e) {
-        var r = e(1702), t = e(4488), i = e(1340), s = e(1361), a = r("".replace), o = RegExp("^[" + s + "]+"), n = RegExp("(^|[^" + s + "])[" + s + "]+$"), l = function(u) {
+      }, 3111: function(p, R, e) {
+        var r = e(1702), t = e(4488), a = e(1340), s = e(1361), i = r("".replace), o = RegExp("^[" + s + "]+"), n = RegExp("(^|[^" + s + "])[" + s + "]+$"), l = function(u) {
           return function(m) {
-            var g = i(t(m));
-            return 1 & u && (g = a(g, o, "")), 2 & u && (g = a(g, n, "$1")), g;
+            var g = a(t(m));
+            return 1 & u && (g = i(g, o, "")), 2 & u && (g = i(g, n, "$1")), g;
           };
         };
         p.exports = { start: l(1), end: l(2), trim: l(3) };
-      }, 6293: function(p, S, e) {
+      }, 6293: function(p, R, e) {
         var r = e(7392), t = e(7293);
         p.exports = !!Object.getOwnPropertySymbols && !t(function() {
-          var i = Symbol();
-          return !String(i) || !(Object(i) instanceof Symbol) || !Symbol.sham && r && r < 41;
+          var a = Symbol();
+          return !String(a) || !(Object(a) instanceof Symbol) || !Symbol.sham && r && r < 41;
         });
-      }, 6532: function(p, S, e) {
-        var r = e(6916), t = e(5005), i = e(5112), s = e(8052);
+      }, 6532: function(p, R, e) {
+        var r = e(6916), t = e(5005), a = e(5112), s = e(8052);
         p.exports = function() {
-          var a = t("Symbol"), o = a && a.prototype, n = o && o.valueOf, l = i("toPrimitive");
+          var i = t("Symbol"), o = i && i.prototype, n = o && o.valueOf, l = a("toPrimitive");
           o && !o[l] && s(o, l, function(u) {
             return r(n, this);
           }, { arity: 1 });
         };
-      }, 2015: function(p, S, e) {
+      }, 2015: function(p, R, e) {
         var r = e(6293);
         p.exports = r && !!Symbol.for && !!Symbol.keyFor;
-      }, 261: function(p, S, e) {
-        var r, t, i, s, a = e(7854), o = e(2104), n = e(9974), l = e(614), u = e(2597), m = e(7293), g = e(490), h = e(206), d = e(317), f = e(8053), b = e(6833), c = e(5268), I = a.setImmediate, v = a.clearImmediate, N = a.process, x = a.Dispatch, O = a.Function, C = a.MessageChannel, E = a.String, P = 0, G = {};
+      }, 261: function(p, R, e) {
+        var r, t, a, s, i = e(7854), o = e(2104), n = e(9974), l = e(614), u = e(2597), m = e(7293), g = e(490), h = e(206), d = e(317), f = e(8053), b = e(6833), c = e(5268), S = i.setImmediate, v = i.clearImmediate, N = i.process, x = i.Dispatch, O = i.Function, C = i.MessageChannel, E = i.String, P = 0, G = {};
         m(function() {
-          r = a.location;
+          r = i.location;
         });
-        var K = function(V) {
+        var Z = function(V) {
           if (u(G, V)) {
             var ne = G[V];
             delete G[V], ne();
           }
         }, F = function(V) {
           return function() {
-            K(V);
+            Z(V);
           };
         }, Y = function(V) {
-          K(V.data);
-        }, Z = function(V) {
-          a.postMessage(E(V), r.protocol + "//" + r.host);
+          Z(V.data);
+        }, K = function(V) {
+          i.postMessage(E(V), r.protocol + "//" + r.host);
         };
-        I && v || (I = function(V) {
+        S && v || (S = function(V) {
           f(arguments.length, 1);
           var ne = l(V) ? V : O(V), ae = h(arguments, 1);
           return G[++P] = function() {
@@ -6880,117 +6880,117 @@ var EasemobChat = { exports: {} };
           N.nextTick(F(V));
         } : x && x.now ? t = function(V) {
           x.now(F(V));
-        } : C && !b ? (s = (i = new C()).port2, i.port1.onmessage = Y, t = n(s.postMessage, s)) : a.addEventListener && l(a.postMessage) && !a.importScripts && r && r.protocol !== "file:" && !m(Z) ? (t = Z, a.addEventListener("message", Y, !1)) : t = "onreadystatechange" in d("script") ? function(V) {
+        } : C && !b ? (s = (a = new C()).port2, a.port1.onmessage = Y, t = n(s.postMessage, s)) : i.addEventListener && l(i.postMessage) && !i.importScripts && r && r.protocol !== "file:" && !m(K) ? (t = K, i.addEventListener("message", Y, !1)) : t = "onreadystatechange" in d("script") ? function(V) {
           g.appendChild(d("script")).onreadystatechange = function() {
-            g.removeChild(this), K(V);
+            g.removeChild(this), Z(V);
           };
         } : function(V) {
           setTimeout(F(V), 0);
-        }), p.exports = { set: I, clear: v };
-      }, 863: function(p, S, e) {
+        }), p.exports = { set: S, clear: v };
+      }, 863: function(p, R, e) {
         var r = e(1702);
         p.exports = r(1 .valueOf);
-      }, 1400: function(p, S, e) {
-        var r = e(9303), t = Math.max, i = Math.min;
-        p.exports = function(s, a) {
+      }, 1400: function(p, R, e) {
+        var r = e(9303), t = Math.max, a = Math.min;
+        p.exports = function(s, i) {
           var o = r(s);
-          return o < 0 ? t(o + a, 0) : i(o, a);
+          return o < 0 ? t(o + i, 0) : a(o, i);
         };
-      }, 4599: function(p, S, e) {
+      }, 4599: function(p, R, e) {
         var r = e(7593), t = TypeError;
-        p.exports = function(i) {
-          var s = r(i, "number");
+        p.exports = function(a) {
+          var s = r(a, "number");
           if (typeof s == "number")
             throw t("Can't convert number to bigint");
           return BigInt(s);
         };
-      }, 7067: function(p, S, e) {
-        var r = e(9303), t = e(7466), i = RangeError;
+      }, 7067: function(p, R, e) {
+        var r = e(9303), t = e(7466), a = RangeError;
         p.exports = function(s) {
           if (s === void 0)
             return 0;
-          var a = r(s), o = t(a);
-          if (a !== o)
-            throw i("Wrong length or index");
+          var i = r(s), o = t(i);
+          if (i !== o)
+            throw a("Wrong length or index");
           return o;
         };
-      }, 5656: function(p, S, e) {
+      }, 5656: function(p, R, e) {
         var r = e(8361), t = e(4488);
-        p.exports = function(i) {
-          return r(t(i));
+        p.exports = function(a) {
+          return r(t(a));
         };
-      }, 9303: function(p, S, e) {
+      }, 9303: function(p, R, e) {
         var r = e(4758);
         p.exports = function(t) {
-          var i = +t;
-          return i != i || i === 0 ? 0 : r(i);
+          var a = +t;
+          return a != a || a === 0 ? 0 : r(a);
         };
-      }, 7466: function(p, S, e) {
+      }, 7466: function(p, R, e) {
         var r = e(9303), t = Math.min;
-        p.exports = function(i) {
-          return i > 0 ? t(r(i), 9007199254740991) : 0;
+        p.exports = function(a) {
+          return a > 0 ? t(r(a), 9007199254740991) : 0;
         };
-      }, 7908: function(p, S, e) {
+      }, 7908: function(p, R, e) {
         var r = e(4488), t = Object;
-        p.exports = function(i) {
-          return t(r(i));
+        p.exports = function(a) {
+          return t(r(a));
         };
-      }, 4590: function(p, S, e) {
+      }, 4590: function(p, R, e) {
         var r = e(3002), t = RangeError;
-        p.exports = function(i, s) {
-          var a = r(i);
-          if (a % s)
+        p.exports = function(a, s) {
+          var i = r(a);
+          if (i % s)
             throw t("Wrong offset");
-          return a;
+          return i;
         };
-      }, 3002: function(p, S, e) {
+      }, 3002: function(p, R, e) {
         var r = e(9303), t = RangeError;
-        p.exports = function(i) {
-          var s = r(i);
+        p.exports = function(a) {
+          var s = r(a);
           if (s < 0)
             throw t("The argument can't be less than 0");
           return s;
         };
-      }, 7593: function(p, S, e) {
-        var r = e(6916), t = e(111), i = e(2190), s = e(8173), a = e(2140), o = e(5112), n = TypeError, l = o("toPrimitive");
+      }, 7593: function(p, R, e) {
+        var r = e(6916), t = e(111), a = e(2190), s = e(8173), i = e(2140), o = e(5112), n = TypeError, l = o("toPrimitive");
         p.exports = function(u, m) {
-          if (!t(u) || i(u))
+          if (!t(u) || a(u))
             return u;
           var g, h = s(u, l);
           if (h) {
-            if (m === void 0 && (m = "default"), g = r(h, u, m), !t(g) || i(g))
+            if (m === void 0 && (m = "default"), g = r(h, u, m), !t(g) || a(g))
               return g;
             throw n("Can't convert object to primitive value");
           }
-          return m === void 0 && (m = "number"), a(u, m);
+          return m === void 0 && (m = "number"), i(u, m);
         };
-      }, 4948: function(p, S, e) {
+      }, 4948: function(p, R, e) {
         var r = e(7593), t = e(2190);
-        p.exports = function(i) {
-          var s = r(i, "string");
+        p.exports = function(a) {
+          var s = r(a, "string");
           return t(s) ? s : s + "";
         };
-      }, 1694: function(p, S, e) {
+      }, 1694: function(p, R, e) {
         var r = {};
         r[e(5112)("toStringTag")] = "z", p.exports = String(r) === "[object z]";
-      }, 1340: function(p, S, e) {
+      }, 1340: function(p, R, e) {
         var r = e(648), t = String;
-        p.exports = function(i) {
-          if (r(i) === "Symbol")
+        p.exports = function(a) {
+          if (r(a) === "Symbol")
             throw TypeError("Cannot convert a Symbol value to a string");
-          return t(i);
+          return t(a);
         };
       }, 6330: function(p) {
-        var S = String;
+        var R = String;
         p.exports = function(e) {
           try {
-            return S(e);
+            return R(e);
           } catch {
             return "Object";
           }
         };
-      }, 9843: function(p, S, e) {
-        var r = e(2109), t = e(7854), i = e(6916), s = e(9781), a = e(3832), o = e(260), n = e(3331), l = e(5787), u = e(9114), m = e(8880), g = e(5988), h = e(7466), d = e(7067), f = e(4590), b = e(4948), c = e(2597), I = e(648), v = e(111), N = e(2190), x = e(30), O = e(7976), C = e(7674), E = e(8006).f, P = e(7321), G = e(2092).forEach, K = e(6340), F = e(7045), Y = e(3070), Z = e(1236), V = e(9909), ne = e(9587), ae = V.get, se = V.set, ue = V.enforce, me = Y.f, ge = Z.f, Ce = Math.round, Ie = t.RangeError, Re = n.ArrayBuffer, Oe = Re.prototype, fe = n.DataView, ce = o.NATIVE_ARRAY_BUFFER_VIEWS, Ue = o.TYPED_ARRAY_TAG, Ze = o.TypedArray, $e = o.TypedArrayPrototype, Ve = o.aTypedArrayConstructor, Be = o.isTypedArray, Ke = "BYTES_PER_ELEMENT", Qe = "Wrong length", Pe = function(Ne, j) {
+      }, 9843: function(p, R, e) {
+        var r = e(2109), t = e(7854), a = e(6916), s = e(9781), i = e(3832), o = e(260), n = e(3331), l = e(5787), u = e(9114), m = e(8880), g = e(5988), h = e(7466), d = e(7067), f = e(4590), b = e(4948), c = e(2597), S = e(648), v = e(111), N = e(2190), x = e(30), O = e(7976), C = e(7674), E = e(8006).f, P = e(7321), G = e(2092).forEach, Z = e(6340), F = e(7045), Y = e(3070), K = e(1236), V = e(9909), ne = e(9587), ae = V.get, se = V.set, ue = V.enforce, me = Y.f, ge = K.f, Ce = Math.round, Re = t.RangeError, Ie = n.ArrayBuffer, Oe = Ie.prototype, fe = n.DataView, ce = o.NATIVE_ARRAY_BUFFER_VIEWS, Ue = o.TYPED_ARRAY_TAG, Ke = o.TypedArray, $e = o.TypedArrayPrototype, Ve = o.aTypedArrayConstructor, Be = o.isTypedArray, Ze = "BYTES_PER_ELEMENT", Qe = "Wrong length", Pe = function(Ne, j) {
           Ve(Ne);
           for (var B = 0, T = j.length, W = new Ne(T); T > B; )
             W[B] = j[B++];
@@ -7001,7 +7001,7 @@ var EasemobChat = { exports: {} };
           } });
         }, xe = function(Ne) {
           var j;
-          return O(Oe, Ne) || (j = I(Ne)) == "ArrayBuffer" || j == "SharedArrayBuffer";
+          return O(Oe, Ne) || (j = S(Ne)) == "ArrayBuffer" || j == "SharedArrayBuffer";
         }, ve = function(Ne, j) {
           return Be(Ne) && !N(j) && j in Ne && g(+j) && j >= 0;
         }, we = function(Ne, j) {
@@ -7009,319 +7009,319 @@ var EasemobChat = { exports: {} };
         }, ke = function(Ne, j, B) {
           return j = b(j), !(ve(Ne, j) && v(B) && c(B, "value")) || c(B, "get") || c(B, "set") || B.configurable || c(B, "writable") && !B.writable || c(B, "enumerable") && !B.enumerable ? me(Ne, j, B) : (Ne[j] = B.value, Ne);
         };
-        s ? (ce || (Z.f = we, Y.f = ke, Le($e, "buffer"), Le($e, "byteOffset"), Le($e, "byteLength"), Le($e, "length")), r({ target: "Object", stat: !0, forced: !ce }, { getOwnPropertyDescriptor: we, defineProperty: ke }), p.exports = function(Ne, j, B) {
-          var T = Ne.match(/\d+/)[0] / 8, W = Ne + (B ? "Clamped" : "") + "Array", _ = "get" + Ne, A = "set" + Ne, L = t[W], w = L, k = w && w.prototype, y = {}, R = function(M, D) {
+        s ? (ce || (K.f = we, Y.f = ke, Le($e, "buffer"), Le($e, "byteOffset"), Le($e, "byteLength"), Le($e, "length")), r({ target: "Object", stat: !0, forced: !ce }, { getOwnPropertyDescriptor: we, defineProperty: ke }), p.exports = function(Ne, j, B) {
+          var T = Ne.match(/\d+/)[0] / 8, W = Ne + (B ? "Clamped" : "") + "Array", _ = "get" + Ne, A = "set" + Ne, L = t[W], w = L, k = w && w.prototype, y = {}, I = function(M, D) {
             me(M, D, { get: function() {
-              return function(z, X) {
-                var oe = ae(z);
+              return function(J, X) {
+                var oe = ae(J);
                 return oe.view[_](X * T + oe.byteOffset, !0);
               }(this, D);
-            }, set: function(z) {
+            }, set: function(J) {
               return function(X, oe, q) {
-                var J = ae(X);
-                B && (q = (q = Ce(q)) < 0 ? 0 : q > 255 ? 255 : 255 & q), J.view[A](oe * T + J.byteOffset, q, !0);
-              }(this, D, z);
+                var z = ae(X);
+                B && (q = (q = Ce(q)) < 0 ? 0 : q > 255 ? 255 : 255 & q), z.view[A](oe * T + z.byteOffset, q, !0);
+              }(this, D, J);
             }, enumerable: !0 });
           };
-          ce ? a && (w = j(function(M, D, z, X) {
-            return l(M, k), ne(v(D) ? xe(D) ? X !== void 0 ? new L(D, f(z, T), X) : z !== void 0 ? new L(D, f(z, T)) : new L(D) : Be(D) ? Pe(w, D) : i(P, w, D) : new L(d(D)), M, w);
-          }), C && C(w, Ze), G(E(L), function(M) {
+          ce ? i && (w = j(function(M, D, J, X) {
+            return l(M, k), ne(v(D) ? xe(D) ? X !== void 0 ? new L(D, f(J, T), X) : J !== void 0 ? new L(D, f(J, T)) : new L(D) : Be(D) ? Pe(w, D) : a(P, w, D) : new L(d(D)), M, w);
+          }), C && C(w, Ke), G(E(L), function(M) {
             M in w || m(w, M, L[M]);
-          }), w.prototype = k) : (w = j(function(M, D, z, X) {
+          }), w.prototype = k) : (w = j(function(M, D, J, X) {
             l(M, k);
-            var oe, q, J, te = 0, re = 0;
+            var oe, q, z, te = 0, re = 0;
             if (v(D)) {
               if (!xe(D))
-                return Be(D) ? Pe(w, D) : i(P, w, D);
-              oe = D, re = f(z, T);
+                return Be(D) ? Pe(w, D) : a(P, w, D);
+              oe = D, re = f(J, T);
               var Ae = D.byteLength;
               if (X === void 0) {
                 if (Ae % T || (q = Ae - re) < 0)
-                  throw Ie(Qe);
+                  throw Re(Qe);
               } else if ((q = h(X) * T) + re > Ae)
-                throw Ie(Qe);
-              J = q / T;
+                throw Re(Qe);
+              z = q / T;
             } else
-              J = d(D), oe = new Re(q = J * T);
-            for (se(M, { buffer: oe, byteOffset: re, byteLength: q, length: J, view: new fe(oe) }); te < J; )
-              R(M, te++);
-          }), C && C(w, Ze), k = w.prototype = x($e)), k.constructor !== w && m(k, "constructor", w), ue(k).TypedArrayConstructor = w, Ue && m(k, Ue, W);
+              z = d(D), oe = new Ie(q = z * T);
+            for (se(M, { buffer: oe, byteOffset: re, byteLength: q, length: z, view: new fe(oe) }); te < z; )
+              I(M, te++);
+          }), C && C(w, Ke), k = w.prototype = x($e)), k.constructor !== w && m(k, "constructor", w), ue(k).TypedArrayConstructor = w, Ue && m(k, Ue, W);
           var H = w != L;
-          y[W] = w, r({ global: !0, constructor: !0, forced: H, sham: !ce }, y), Ke in w || m(w, Ke, T), Ke in k || m(k, Ke, T), K(W);
+          y[W] = w, r({ global: !0, constructor: !0, forced: H, sham: !ce }, y), Ze in w || m(w, Ze, T), Ze in k || m(k, Ze, T), Z(W);
         }) : p.exports = function() {
         };
-      }, 3832: function(p, S, e) {
-        var r = e(7854), t = e(7293), i = e(7072), s = e(260).NATIVE_ARRAY_BUFFER_VIEWS, a = r.ArrayBuffer, o = r.Int8Array;
+      }, 3832: function(p, R, e) {
+        var r = e(7854), t = e(7293), a = e(7072), s = e(260).NATIVE_ARRAY_BUFFER_VIEWS, i = r.ArrayBuffer, o = r.Int8Array;
         p.exports = !s || !t(function() {
           o(1);
         }) || !t(function() {
           new o(-1);
-        }) || !i(function(n) {
+        }) || !a(function(n) {
           new o(), new o(null), new o(1.5), new o(n);
         }, !0) || t(function() {
-          return new o(new a(2), 1, void 0).length !== 1;
+          return new o(new i(2), 1, void 0).length !== 1;
         });
-      }, 3074: function(p, S, e) {
+      }, 3074: function(p, R, e) {
         var r = e(7745), t = e(6304);
-        p.exports = function(i, s) {
-          return r(t(i), s);
+        p.exports = function(a, s) {
+          return r(t(a), s);
         };
-      }, 7321: function(p, S, e) {
-        var r = e(9974), t = e(6916), i = e(9483), s = e(7908), a = e(6244), o = e(4121), n = e(1246), l = e(7659), u = e(4067), m = e(260).aTypedArrayConstructor, g = e(4599);
+      }, 7321: function(p, R, e) {
+        var r = e(9974), t = e(6916), a = e(9483), s = e(7908), i = e(6244), o = e(4121), n = e(1246), l = e(7659), u = e(4067), m = e(260).aTypedArrayConstructor, g = e(4599);
         p.exports = function(h) {
-          var d, f, b, c, I, v, N, x, O = i(this), C = s(h), E = arguments.length, P = E > 1 ? arguments[1] : void 0, G = P !== void 0, K = n(C);
-          if (K && !l(K))
-            for (x = (N = o(C, K)).next, C = []; !(v = t(x, N)).done; )
+          var d, f, b, c, S, v, N, x, O = a(this), C = s(h), E = arguments.length, P = E > 1 ? arguments[1] : void 0, G = P !== void 0, Z = n(C);
+          if (Z && !l(Z))
+            for (x = (N = o(C, Z)).next, C = []; !(v = t(x, N)).done; )
               C.push(v.value);
-          for (G && E > 2 && (P = r(P, arguments[2])), f = a(C), b = new (m(O))(f), c = u(b), d = 0; f > d; d++)
-            I = G ? P(C[d], d) : C[d], b[d] = c ? g(I) : +I;
+          for (G && E > 2 && (P = r(P, arguments[2])), f = i(C), b = new (m(O))(f), c = u(b), d = 0; f > d; d++)
+            S = G ? P(C[d], d) : C[d], b[d] = c ? g(S) : +S;
           return b;
         };
-      }, 6304: function(p, S, e) {
-        var r = e(260), t = e(6707), i = r.aTypedArrayConstructor, s = r.getTypedArrayConstructor;
-        p.exports = function(a) {
-          return i(t(a, s(a)));
+      }, 6304: function(p, R, e) {
+        var r = e(260), t = e(6707), a = r.aTypedArrayConstructor, s = r.getTypedArrayConstructor;
+        p.exports = function(i) {
+          return a(t(i, s(i)));
         };
-      }, 9711: function(p, S, e) {
-        var r = e(1702), t = 0, i = Math.random(), s = r(1 .toString);
-        p.exports = function(a) {
-          return "Symbol(" + (a === void 0 ? "" : a) + ")_" + s(++t + i, 36);
+      }, 9711: function(p, R, e) {
+        var r = e(1702), t = 0, a = Math.random(), s = r(1 .toString);
+        p.exports = function(i) {
+          return "Symbol(" + (i === void 0 ? "" : i) + ")_" + s(++t + a, 36);
         };
-      }, 5143: function(p, S, e) {
-        var r = e(7293), t = e(5112), i = e(9781), s = e(1913), a = t("iterator");
+      }, 5143: function(p, R, e) {
+        var r = e(7293), t = e(5112), a = e(9781), s = e(1913), i = t("iterator");
         p.exports = !r(function() {
           var o = new URL("b?a=1&b=2&c=3", "http://a"), n = o.searchParams, l = "";
           return o.pathname = "c%20d", n.forEach(function(u, m) {
             n.delete("b"), l += m + u;
-          }), s && !o.toJSON || !n.size && (s || !i) || !n.sort || o.href !== "http://a/c%20d?a=1&c=3" || n.get("c") !== "3" || String(new URLSearchParams("?a=1")) !== "a=1" || !n[a] || new URL("https://a@b").username !== "a" || new URLSearchParams(new URLSearchParams("a=b")).get("a") !== "b" || new URL("http://тест").host !== "xn--e1aybc" || new URL("http://a#б").hash !== "#%D0%B1" || l !== "a1c3" || new URL("http://x", void 0).host !== "x";
+          }), s && !o.toJSON || !n.size && (s || !a) || !n.sort || o.href !== "http://a/c%20d?a=1&c=3" || n.get("c") !== "3" || String(new URLSearchParams("?a=1")) !== "a=1" || !n[i] || new URL("https://a@b").username !== "a" || new URLSearchParams(new URLSearchParams("a=b")).get("a") !== "b" || new URL("http://тест").host !== "xn--e1aybc" || new URL("http://a#б").hash !== "#%D0%B1" || l !== "a1c3" || new URL("http://x", void 0).host !== "x";
         });
-      }, 3307: function(p, S, e) {
+      }, 3307: function(p, R, e) {
         var r = e(6293);
         p.exports = r && !Symbol.sham && typeof Symbol.iterator == "symbol";
-      }, 3353: function(p, S, e) {
+      }, 3353: function(p, R, e) {
         var r = e(9781), t = e(7293);
         p.exports = r && t(function() {
           return Object.defineProperty(function() {
           }, "prototype", { value: 42, writable: !1 }).prototype != 42;
         });
       }, 8053: function(p) {
-        var S = TypeError;
+        var R = TypeError;
         p.exports = function(e, r) {
           if (e < r)
-            throw S("Not enough arguments");
+            throw R("Not enough arguments");
           return e;
         };
-      }, 4811: function(p, S, e) {
-        var r = e(7854), t = e(614), i = r.WeakMap;
-        p.exports = t(i) && /native code/.test(String(i));
-      }, 6800: function(p, S, e) {
-        var r = e(857), t = e(2597), i = e(6061), s = e(3070).f;
-        p.exports = function(a) {
+      }, 4811: function(p, R, e) {
+        var r = e(7854), t = e(614), a = r.WeakMap;
+        p.exports = t(a) && /native code/.test(String(a));
+      }, 6800: function(p, R, e) {
+        var r = e(857), t = e(2597), a = e(6061), s = e(3070).f;
+        p.exports = function(i) {
           var o = r.Symbol || (r.Symbol = {});
-          t(o, a) || s(o, a, { value: i.f(a) });
+          t(o, i) || s(o, i, { value: a.f(i) });
         };
-      }, 6061: function(p, S, e) {
+      }, 6061: function(p, R, e) {
         var r = e(5112);
-        S.f = r;
-      }, 5112: function(p, S, e) {
-        var r = e(7854), t = e(2309), i = e(2597), s = e(9711), a = e(6293), o = e(3307), n = r.Symbol, l = t("wks"), u = o ? n.for || n : n && n.withoutSetter || s;
+        R.f = r;
+      }, 5112: function(p, R, e) {
+        var r = e(7854), t = e(2309), a = e(2597), s = e(9711), i = e(6293), o = e(3307), n = r.Symbol, l = t("wks"), u = o ? n.for || n : n && n.withoutSetter || s;
         p.exports = function(m) {
-          return i(l, m) || (l[m] = a && i(n, m) ? n[m] : u("Symbol." + m)), l[m];
+          return a(l, m) || (l[m] = i && a(n, m) ? n[m] : u("Symbol." + m)), l[m];
         };
       }, 1361: function(p) {
         p.exports = `	
 \v\f\r                　\u2028\u2029\uFEFF`;
-      }, 8264: function(p, S, e) {
-        var r = e(2109), t = e(7854), i = e(3331), s = e(6340), a = i.ArrayBuffer;
-        r({ global: !0, constructor: !0, forced: t.ArrayBuffer !== a }, { ArrayBuffer: a }), s("ArrayBuffer");
-      }, 9575: function(p, S, e) {
-        var r = e(2109), t = e(1470), i = e(7293), s = e(3331), a = e(9670), o = e(1400), n = e(7466), l = e(6707), u = s.ArrayBuffer, m = s.DataView, g = m.prototype, h = t(u.prototype.slice), d = t(g.getUint8), f = t(g.setUint8);
-        r({ target: "ArrayBuffer", proto: !0, unsafe: !0, forced: i(function() {
+      }, 8264: function(p, R, e) {
+        var r = e(2109), t = e(7854), a = e(3331), s = e(6340), i = a.ArrayBuffer;
+        r({ global: !0, constructor: !0, forced: t.ArrayBuffer !== i }, { ArrayBuffer: i }), s("ArrayBuffer");
+      }, 9575: function(p, R, e) {
+        var r = e(2109), t = e(1470), a = e(7293), s = e(3331), i = e(9670), o = e(1400), n = e(7466), l = e(6707), u = s.ArrayBuffer, m = s.DataView, g = m.prototype, h = t(u.prototype.slice), d = t(g.getUint8), f = t(g.setUint8);
+        r({ target: "ArrayBuffer", proto: !0, unsafe: !0, forced: a(function() {
           return !new u(2).slice(1, void 0).byteLength;
         }) }, { slice: function(b, c) {
           if (h && c === void 0)
-            return h(a(this), b);
-          for (var I = a(this).byteLength, v = o(b, I), N = o(c === void 0 ? I : c, I), x = new (l(this, u))(n(N - v)), O = new m(this), C = new m(x), E = 0; v < N; )
+            return h(i(this), b);
+          for (var S = i(this).byteLength, v = o(b, S), N = o(c === void 0 ? S : c, S), x = new (l(this, u))(n(N - v)), O = new m(this), C = new m(x), E = 0; v < N; )
             f(C, E++, d(O, v++));
           return x;
         } });
-      }, 2222: function(p, S, e) {
-        var r = e(2109), t = e(7293), i = e(3157), s = e(111), a = e(7908), o = e(6244), n = e(7207), l = e(6135), u = e(5417), m = e(1194), g = e(5112), h = e(7392), d = g("isConcatSpreadable"), f = h >= 51 || !t(function() {
+      }, 2222: function(p, R, e) {
+        var r = e(2109), t = e(7293), a = e(3157), s = e(111), i = e(7908), o = e(6244), n = e(7207), l = e(6135), u = e(5417), m = e(1194), g = e(5112), h = e(7392), d = g("isConcatSpreadable"), f = h >= 51 || !t(function() {
           var c = [];
           return c[d] = !1, c.concat()[0] !== c;
         }), b = function(c) {
           if (!s(c))
             return !1;
-          var I = c[d];
-          return I !== void 0 ? !!I : i(c);
+          var S = c[d];
+          return S !== void 0 ? !!S : a(c);
         };
         r({ target: "Array", proto: !0, arity: 1, forced: !f || !m("concat") }, { concat: function(c) {
-          var I, v, N, x, O, C = a(this), E = u(C, 0), P = 0;
-          for (I = -1, N = arguments.length; I < N; I++)
-            if (b(O = I === -1 ? C : arguments[I]))
+          var S, v, N, x, O, C = i(this), E = u(C, 0), P = 0;
+          for (S = -1, N = arguments.length; S < N; S++)
+            if (b(O = S === -1 ? C : arguments[S]))
               for (x = o(O), n(P + x), v = 0; v < x; v++, P++)
                 v in O && l(E, P, O[v]);
             else
               n(P + 1), l(E, P++, O);
           return E.length = P, E;
         } });
-      }, 7327: function(p, S, e) {
+      }, 7327: function(p, R, e) {
         var r = e(2109), t = e(2092).filter;
-        r({ target: "Array", proto: !0, forced: !e(1194)("filter") }, { filter: function(i) {
-          return t(this, i, arguments.length > 1 ? arguments[1] : void 0);
+        r({ target: "Array", proto: !0, forced: !e(1194)("filter") }, { filter: function(a) {
+          return t(this, a, arguments.length > 1 ? arguments[1] : void 0);
         } });
-      }, 9554: function(p, S, e) {
+      }, 9554: function(p, R, e) {
         var r = e(2109), t = e(8533);
         r({ target: "Array", proto: !0, forced: [].forEach != t }, { forEach: t });
-      }, 1038: function(p, S, e) {
+      }, 1038: function(p, R, e) {
         var r = e(2109), t = e(8457);
-        r({ target: "Array", stat: !0, forced: !e(7072)(function(i) {
-          Array.from(i);
+        r({ target: "Array", stat: !0, forced: !e(7072)(function(a) {
+          Array.from(a);
         }) }, { from: t });
-      }, 6699: function(p, S, e) {
-        var r = e(2109), t = e(1318).includes, i = e(7293), s = e(1223);
-        r({ target: "Array", proto: !0, forced: i(function() {
+      }, 6699: function(p, R, e) {
+        var r = e(2109), t = e(1318).includes, a = e(7293), s = e(1223);
+        r({ target: "Array", proto: !0, forced: a(function() {
           return !Array(1).includes();
-        }) }, { includes: function(a) {
-          return t(this, a, arguments.length > 1 ? arguments[1] : void 0);
+        }) }, { includes: function(i) {
+          return t(this, i, arguments.length > 1 ? arguments[1] : void 0);
         } }), s("includes");
-      }, 2772: function(p, S, e) {
-        var r = e(2109), t = e(1470), i = e(1318).indexOf, s = e(9341), a = t([].indexOf), o = !!a && 1 / a([1], 1, -0) < 0;
+      }, 2772: function(p, R, e) {
+        var r = e(2109), t = e(1470), a = e(1318).indexOf, s = e(9341), i = t([].indexOf), o = !!i && 1 / i([1], 1, -0) < 0;
         r({ target: "Array", proto: !0, forced: o || !s("indexOf") }, { indexOf: function(n) {
           var l = arguments.length > 1 ? arguments[1] : void 0;
-          return o ? a(this, n, l) || 0 : i(this, n, l);
+          return o ? i(this, n, l) || 0 : a(this, n, l);
         } });
-      }, 9753: function(p, S, e) {
+      }, 9753: function(p, R, e) {
         e(2109)({ target: "Array", stat: !0 }, { isArray: e(3157) });
-      }, 6992: function(p, S, e) {
-        var r = e(5656), t = e(1223), i = e(7497), s = e(9909), a = e(3070).f, o = e(1656), n = e(6178), l = e(1913), u = e(9781), m = "Array Iterator", g = s.set, h = s.getterFor(m);
+      }, 6992: function(p, R, e) {
+        var r = e(5656), t = e(1223), a = e(7497), s = e(9909), i = e(3070).f, o = e(1656), n = e(6178), l = e(1913), u = e(9781), m = "Array Iterator", g = s.set, h = s.getterFor(m);
         p.exports = o(Array, "Array", function(f, b) {
           g(this, { type: m, target: r(f), index: 0, kind: b });
         }, function() {
-          var f = h(this), b = f.target, c = f.kind, I = f.index++;
-          return !b || I >= b.length ? (f.target = void 0, n(void 0, !0)) : n(c == "keys" ? I : c == "values" ? b[I] : [I, b[I]], !1);
+          var f = h(this), b = f.target, c = f.kind, S = f.index++;
+          return !b || S >= b.length ? (f.target = void 0, n(void 0, !0)) : n(c == "keys" ? S : c == "values" ? b[S] : [S, b[S]], !1);
         }, "values");
-        var d = i.Arguments = i.Array;
+        var d = a.Arguments = a.Array;
         if (t("keys"), t("values"), t("entries"), !l && u && d.name !== "values")
           try {
-            a(d, "name", { value: "values" });
+            i(d, "name", { value: "values" });
           } catch {
           }
-      }, 9600: function(p, S, e) {
-        var r = e(2109), t = e(1702), i = e(8361), s = e(5656), a = e(9341), o = t([].join);
-        r({ target: "Array", proto: !0, forced: i != Object || !a("join", ",") }, { join: function(n) {
+      }, 9600: function(p, R, e) {
+        var r = e(2109), t = e(1702), a = e(8361), s = e(5656), i = e(9341), o = t([].join);
+        r({ target: "Array", proto: !0, forced: a != Object || !i("join", ",") }, { join: function(n) {
           return o(s(this), n === void 0 ? "," : n);
         } });
-      }, 4986: function(p, S, e) {
+      }, 4986: function(p, R, e) {
         var r = e(2109), t = e(6583);
         r({ target: "Array", proto: !0, forced: t !== [].lastIndexOf }, { lastIndexOf: t });
-      }, 1249: function(p, S, e) {
+      }, 1249: function(p, R, e) {
         var r = e(2109), t = e(2092).map;
-        r({ target: "Array", proto: !0, forced: !e(1194)("map") }, { map: function(i) {
-          return t(this, i, arguments.length > 1 ? arguments[1] : void 0);
+        r({ target: "Array", proto: !0, forced: !e(1194)("map") }, { map: function(a) {
+          return t(this, a, arguments.length > 1 ? arguments[1] : void 0);
         } });
-      }, 5827: function(p, S, e) {
-        var r = e(2109), t = e(3671).left, i = e(9341), s = e(7392);
-        r({ target: "Array", proto: !0, forced: !e(5268) && s > 79 && s < 83 || !i("reduce") }, { reduce: function(a) {
+      }, 5827: function(p, R, e) {
+        var r = e(2109), t = e(3671).left, a = e(9341), s = e(7392);
+        r({ target: "Array", proto: !0, forced: !e(5268) && s > 79 && s < 83 || !a("reduce") }, { reduce: function(i) {
           var o = arguments.length;
-          return t(this, a, o, o > 1 ? arguments[1] : void 0);
+          return t(this, i, o, o > 1 ? arguments[1] : void 0);
         } });
-      }, 5069: function(p, S, e) {
-        var r = e(2109), t = e(1702), i = e(3157), s = t([].reverse), a = [1, 2];
-        r({ target: "Array", proto: !0, forced: String(a) === String(a.reverse()) }, { reverse: function() {
-          return i(this) && (this.length = this.length), s(this);
+      }, 5069: function(p, R, e) {
+        var r = e(2109), t = e(1702), a = e(3157), s = t([].reverse), i = [1, 2];
+        r({ target: "Array", proto: !0, forced: String(i) === String(i.reverse()) }, { reverse: function() {
+          return a(this) && (this.length = this.length), s(this);
         } });
-      }, 7042: function(p, S, e) {
-        var r = e(2109), t = e(3157), i = e(4411), s = e(111), a = e(1400), o = e(6244), n = e(5656), l = e(6135), u = e(5112), m = e(1194), g = e(206), h = m("slice"), d = u("species"), f = Array, b = Math.max;
-        r({ target: "Array", proto: !0, forced: !h }, { slice: function(c, I) {
-          var v, N, x, O = n(this), C = o(O), E = a(c, C), P = a(I === void 0 ? C : I, C);
-          if (t(O) && (v = O.constructor, (i(v) && (v === f || t(v.prototype)) || s(v) && (v = v[d]) === null) && (v = void 0), v === f || v === void 0))
+      }, 7042: function(p, R, e) {
+        var r = e(2109), t = e(3157), a = e(4411), s = e(111), i = e(1400), o = e(6244), n = e(5656), l = e(6135), u = e(5112), m = e(1194), g = e(206), h = m("slice"), d = u("species"), f = Array, b = Math.max;
+        r({ target: "Array", proto: !0, forced: !h }, { slice: function(c, S) {
+          var v, N, x, O = n(this), C = o(O), E = i(c, C), P = i(S === void 0 ? C : S, C);
+          if (t(O) && (v = O.constructor, (a(v) && (v === f || t(v.prototype)) || s(v) && (v = v[d]) === null) && (v = void 0), v === f || v === void 0))
             return g(O, E, P);
           for (N = new (v === void 0 ? f : v)(b(P - E, 0)), x = 0; E < P; E++, x++)
             E in O && l(N, x, O[E]);
           return N.length = x, N;
         } });
-      }, 5212: function(p, S, e) {
+      }, 5212: function(p, R, e) {
         var r = e(2109), t = e(2092).some;
-        r({ target: "Array", proto: !0, forced: !e(9341)("some") }, { some: function(i) {
-          return t(this, i, arguments.length > 1 ? arguments[1] : void 0);
+        r({ target: "Array", proto: !0, forced: !e(9341)("some") }, { some: function(a) {
+          return t(this, a, arguments.length > 1 ? arguments[1] : void 0);
         } });
-      }, 561: function(p, S, e) {
-        var r = e(2109), t = e(7908), i = e(1400), s = e(9303), a = e(6244), o = e(3658), n = e(7207), l = e(5417), u = e(6135), m = e(5117), g = e(1194)("splice"), h = Math.max, d = Math.min;
+      }, 561: function(p, R, e) {
+        var r = e(2109), t = e(7908), a = e(1400), s = e(9303), i = e(6244), o = e(3658), n = e(7207), l = e(5417), u = e(6135), m = e(5117), g = e(1194)("splice"), h = Math.max, d = Math.min;
         r({ target: "Array", proto: !0, forced: !g }, { splice: function(f, b) {
-          var c, I, v, N, x, O, C = t(this), E = a(C), P = i(f, E), G = arguments.length;
-          for (G === 0 ? c = I = 0 : G === 1 ? (c = 0, I = E - P) : (c = G - 2, I = d(h(s(b), 0), E - P)), n(E + c - I), v = l(C, I), N = 0; N < I; N++)
+          var c, S, v, N, x, O, C = t(this), E = i(C), P = a(f, E), G = arguments.length;
+          for (G === 0 ? c = S = 0 : G === 1 ? (c = 0, S = E - P) : (c = G - 2, S = d(h(s(b), 0), E - P)), n(E + c - S), v = l(C, S), N = 0; N < S; N++)
             (x = P + N) in C && u(v, N, C[x]);
-          if (v.length = I, c < I) {
-            for (N = P; N < E - I; N++)
-              O = N + c, (x = N + I) in C ? C[O] = C[x] : m(C, O);
-            for (N = E; N > E - I + c; N--)
+          if (v.length = S, c < S) {
+            for (N = P; N < E - S; N++)
+              O = N + c, (x = N + S) in C ? C[O] = C[x] : m(C, O);
+            for (N = E; N > E - S + c; N--)
               m(C, N - 1);
-          } else if (c > I)
-            for (N = E - I; N > P; N--)
-              O = N + c - 1, (x = N + I - 1) in C ? C[O] = C[x] : m(C, O);
+          } else if (c > S)
+            for (N = E - S; N > P; N--)
+              O = N + c - 1, (x = N + S - 1) in C ? C[O] = C[x] : m(C, O);
           for (N = 0; N < c; N++)
             C[N + P] = arguments[N + 2];
-          return o(C, E - I + c), v;
+          return o(C, E - S + c), v;
         } });
-      }, 3843: function(p, S, e) {
-        var r = e(2109), t = e(1702), i = Date, s = t(i.prototype.getTime);
+      }, 3843: function(p, R, e) {
+        var r = e(2109), t = e(1702), a = Date, s = t(a.prototype.getTime);
         r({ target: "Date", stat: !0 }, { now: function() {
-          return s(new i());
+          return s(new a());
         } });
-      }, 3710: function(p, S, e) {
-        var r = e(1702), t = e(8052), i = Date.prototype, s = "Invalid Date", a = r(i.toString), o = r(i.getTime);
-        String(/* @__PURE__ */ new Date(NaN)) != s && t(i, "toString", function() {
+      }, 3710: function(p, R, e) {
+        var r = e(1702), t = e(8052), a = Date.prototype, s = "Invalid Date", i = r(a.toString), o = r(a.getTime);
+        String(/* @__PURE__ */ new Date(NaN)) != s && t(a, "toString", function() {
           var n = o(this);
-          return n == n ? a(this) : s;
+          return n == n ? i(this) : s;
         });
-      }, 4812: function(p, S, e) {
+      }, 4812: function(p, R, e) {
         var r = e(2109), t = e(7065);
         r({ target: "Function", proto: !0, forced: Function.bind !== t }, { bind: t });
-      }, 8309: function(p, S, e) {
-        var r = e(9781), t = e(6530).EXISTS, i = e(1702), s = e(7045), a = Function.prototype, o = i(a.toString), n = /function\b(?:\s|\/\*[\S\s]*?\*\/|\/\/[^\n\r]*[\n\r]+)*([^\s(/]*)/, l = i(n.exec);
-        r && !t && s(a, "name", { configurable: !0, get: function() {
+      }, 8309: function(p, R, e) {
+        var r = e(9781), t = e(6530).EXISTS, a = e(1702), s = e(7045), i = Function.prototype, o = a(i.toString), n = /function\b(?:\s|\/\*[\S\s]*?\*\/|\/\/[^\n\r]*[\n\r]+)*([^\s(/]*)/, l = a(n.exec);
+        r && !t && s(i, "name", { configurable: !0, get: function() {
           try {
             return l(n, o(this))[1];
           } catch {
             return "";
           }
         } });
-      }, 8862: function(p, S, e) {
-        var r = e(2109), t = e(5005), i = e(2104), s = e(6916), a = e(1702), o = e(7293), n = e(614), l = e(2190), u = e(206), m = e(8044), g = e(6293), h = String, d = t("JSON", "stringify"), f = a(/./.exec), b = a("".charAt), c = a("".charCodeAt), I = a("".replace), v = a(1 .toString), N = /[\uD800-\uDFFF]/g, x = /^[\uD800-\uDBFF]$/, O = /^[\uDC00-\uDFFF]$/, C = !g || o(function() {
-          var K = t("Symbol")();
-          return d([K]) != "[null]" || d({ a: K }) != "{}" || d(Object(K)) != "{}";
+      }, 8862: function(p, R, e) {
+        var r = e(2109), t = e(5005), a = e(2104), s = e(6916), i = e(1702), o = e(7293), n = e(614), l = e(2190), u = e(206), m = e(8044), g = e(6293), h = String, d = t("JSON", "stringify"), f = i(/./.exec), b = i("".charAt), c = i("".charCodeAt), S = i("".replace), v = i(1 .toString), N = /[\uD800-\uDFFF]/g, x = /^[\uD800-\uDBFF]$/, O = /^[\uDC00-\uDFFF]$/, C = !g || o(function() {
+          var Z = t("Symbol")();
+          return d([Z]) != "[null]" || d({ a: Z }) != "{}" || d(Object(Z)) != "{}";
         }), E = o(function() {
           return d("\uDF06\uD834") !== '"\\udf06\\ud834"' || d("\uDEAD") !== '"\\udead"';
-        }), P = function(K, F) {
-          var Y = u(arguments), Z = m(F);
-          if (n(Z) || K !== void 0 && !l(K))
+        }), P = function(Z, F) {
+          var Y = u(arguments), K = m(F);
+          if (n(K) || Z !== void 0 && !l(Z))
             return Y[1] = function(V, ne) {
-              if (n(Z) && (ne = s(Z, this, h(V), ne)), !l(ne))
+              if (n(K) && (ne = s(K, this, h(V), ne)), !l(ne))
                 return ne;
-            }, i(d, null, Y);
-        }, G = function(K, F, Y) {
-          var Z = b(Y, F - 1), V = b(Y, F + 1);
-          return f(x, K) && !f(O, V) || f(O, K) && !f(x, Z) ? "\\u" + v(c(K, 0), 16) : K;
+            }, a(d, null, Y);
+        }, G = function(Z, F, Y) {
+          var K = b(Y, F - 1), V = b(Y, F + 1);
+          return f(x, Z) && !f(O, V) || f(O, Z) && !f(x, K) ? "\\u" + v(c(Z, 0), 16) : Z;
         };
-        d && r({ target: "JSON", stat: !0, arity: 3, forced: C || E }, { stringify: function(K, F, Y) {
-          var Z = u(arguments), V = i(C ? P : d, null, Z);
-          return E && typeof V == "string" ? I(V, N, G) : V;
+        d && r({ target: "JSON", stat: !0, arity: 3, forced: C || E }, { stringify: function(Z, F, Y) {
+          var K = u(arguments), V = a(C ? P : d, null, K);
+          return E && typeof V == "string" ? S(V, N, G) : V;
         } });
-      }, 9098: function(p, S, e) {
+      }, 9098: function(p, R, e) {
         e(7710)("Map", function(r) {
           return function() {
             return r(this, arguments.length ? arguments[0] : void 0);
           };
         }, e(5631));
-      }, 1532: function(p, S, e) {
+      }, 1532: function(p, R, e) {
         e(9098);
-      }, 9653: function(p, S, e) {
-        var r = e(2109), t = e(1913), i = e(9781), s = e(7854), a = e(857), o = e(1702), n = e(4705), l = e(2597), u = e(9587), m = e(7976), g = e(2190), h = e(7593), d = e(7293), f = e(8006).f, b = e(1236).f, c = e(3070).f, I = e(863), v = e(3111).trim, N = s.Number, x = a.Number, O = N.prototype, C = s.TypeError, E = o("".slice), P = o("".charCodeAt), G = function(ne) {
+      }, 9653: function(p, R, e) {
+        var r = e(2109), t = e(1913), a = e(9781), s = e(7854), i = e(857), o = e(1702), n = e(4705), l = e(2597), u = e(9587), m = e(7976), g = e(2190), h = e(7593), d = e(7293), f = e(8006).f, b = e(1236).f, c = e(3070).f, S = e(863), v = e(3111).trim, N = s.Number, x = i.Number, O = N.prototype, C = s.TypeError, E = o("".slice), P = o("".charCodeAt), G = function(ne) {
           var ae = h(ne, "number");
-          return typeof ae == "bigint" ? ae : K(ae);
-        }, K = function(ne) {
-          var ae, se, ue, me, ge, Ce, Ie, Re, Oe = h(ne, "number");
+          return typeof ae == "bigint" ? ae : Z(ae);
+        }, Z = function(ne) {
+          var ae, se, ue, me, ge, Ce, Re, Ie, Oe = h(ne, "number");
           if (g(Oe))
             throw C("Cannot convert a Symbol value to a number");
           if (typeof Oe == "string" && Oe.length > 2) {
@@ -7341,8 +7341,8 @@ var EasemobChat = { exports: {} };
                 default:
                   return +Oe;
               }
-              for (Ce = (ge = E(Oe, 2)).length, Ie = 0; Ie < Ce; Ie++)
-                if ((Re = P(ge, Ie)) < 48 || Re > me)
+              for (Ce = (ge = E(Oe, 2)).length, Re = 0; Re < Ce; Re++)
+                if ((Ie = P(ge, Re)) < 48 || Ie > me)
                   return NaN;
               return parseInt(ge, ue);
             }
@@ -7350,76 +7350,76 @@ var EasemobChat = { exports: {} };
           return +Oe;
         }, F = n("Number", !N(" 0o1") || !N("0b1") || N("+0x1")), Y = function(ne) {
           return m(O, ne) && d(function() {
-            I(ne);
+            S(ne);
           });
-        }, Z = function(ne) {
+        }, K = function(ne) {
           var ae = arguments.length < 1 ? 0 : N(G(ne));
-          return Y(this) ? u(Object(ae), this, Z) : ae;
+          return Y(this) ? u(Object(ae), this, K) : ae;
         };
-        Z.prototype = O, F && !t && (O.constructor = Z), r({ global: !0, constructor: !0, wrap: !0, forced: F }, { Number: Z });
+        K.prototype = O, F && !t && (O.constructor = K), r({ global: !0, constructor: !0, wrap: !0, forced: F }, { Number: K });
         var V = function(ne, ae) {
-          for (var se, ue = i ? f(ae) : "MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,EPSILON,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,isFinite,isInteger,isNaN,isSafeInteger,parseFloat,parseInt,fromString,range".split(","), me = 0; ue.length > me; me++)
+          for (var se, ue = a ? f(ae) : "MAX_VALUE,MIN_VALUE,NaN,NEGATIVE_INFINITY,POSITIVE_INFINITY,EPSILON,MAX_SAFE_INTEGER,MIN_SAFE_INTEGER,isFinite,isInteger,isNaN,isSafeInteger,parseFloat,parseInt,fromString,range".split(","), me = 0; ue.length > me; me++)
             l(ae, se = ue[me]) && !l(ne, se) && c(ne, se, b(ae, se));
         };
-        t && x && V(a.Number, x), (F || t) && V(a.Number, N);
-      }, 3161: function(p, S, e) {
+        t && x && V(i.Number, x), (F || t) && V(i.Number, N);
+      }, 3161: function(p, R, e) {
         e(2109)({ target: "Number", stat: !0 }, { isInteger: e(5988) });
-      }, 9601: function(p, S, e) {
+      }, 9601: function(p, R, e) {
         var r = e(2109), t = e(1574);
         r({ target: "Object", stat: !0, arity: 2, forced: Object.assign !== t }, { assign: t });
-      }, 9070: function(p, S, e) {
-        var r = e(2109), t = e(9781), i = e(3070).f;
-        r({ target: "Object", stat: !0, forced: Object.defineProperty !== i, sham: !t }, { defineProperty: i });
-      }, 9720: function(p, S, e) {
+      }, 9070: function(p, R, e) {
+        var r = e(2109), t = e(9781), a = e(3070).f;
+        r({ target: "Object", stat: !0, forced: Object.defineProperty !== a, sham: !t }, { defineProperty: a });
+      }, 9720: function(p, R, e) {
         var r = e(2109), t = e(4699).entries;
-        r({ target: "Object", stat: !0 }, { entries: function(i) {
-          return t(i);
+        r({ target: "Object", stat: !0 }, { entries: function(a) {
+          return t(a);
         } });
-      }, 9660: function(p, S, e) {
-        var r = e(2109), t = e(6293), i = e(7293), s = e(5181), a = e(7908);
-        r({ target: "Object", stat: !0, forced: !t || i(function() {
+      }, 9660: function(p, R, e) {
+        var r = e(2109), t = e(6293), a = e(7293), s = e(5181), i = e(7908);
+        r({ target: "Object", stat: !0, forced: !t || a(function() {
           s.f(1);
         }) }, { getOwnPropertySymbols: function(o) {
           var n = s.f;
-          return n ? n(a(o)) : [];
+          return n ? n(i(o)) : [];
         } });
-      }, 7941: function(p, S, e) {
-        var r = e(2109), t = e(7908), i = e(1956);
+      }, 7941: function(p, R, e) {
+        var r = e(2109), t = e(7908), a = e(1956);
         r({ target: "Object", stat: !0, forced: e(7293)(function() {
-          i(1);
+          a(1);
         }) }, { keys: function(s) {
-          return i(t(s));
+          return a(t(s));
         } });
-      }, 1539: function(p, S, e) {
-        var r = e(1694), t = e(8052), i = e(288);
-        r || t(Object.prototype, "toString", i, { unsafe: !0 });
-      }, 821: function(p, S, e) {
-        var r = e(2109), t = e(6916), i = e(9662), s = e(8523), a = e(2534), o = e(408);
+      }, 1539: function(p, R, e) {
+        var r = e(1694), t = e(8052), a = e(288);
+        r || t(Object.prototype, "toString", a, { unsafe: !0 });
+      }, 821: function(p, R, e) {
+        var r = e(2109), t = e(6916), a = e(9662), s = e(8523), i = e(2534), o = e(408);
         r({ target: "Promise", stat: !0, forced: e(612) }, { all: function(n) {
-          var l = this, u = s.f(l), m = u.resolve, g = u.reject, h = a(function() {
-            var d = i(l.resolve), f = [], b = 0, c = 1;
-            o(n, function(I) {
+          var l = this, u = s.f(l), m = u.resolve, g = u.reject, h = i(function() {
+            var d = a(l.resolve), f = [], b = 0, c = 1;
+            o(n, function(S) {
               var v = b++, N = !1;
-              c++, t(d, l, I).then(function(x) {
+              c++, t(d, l, S).then(function(x) {
                 N || (N = !0, f[v] = x, --c || m(f));
               }, g);
             }), --c || m(f);
           });
           return h.error && g(h.value), u.promise;
         } });
-      }, 4164: function(p, S, e) {
-        var r = e(2109), t = e(1913), i = e(3702).CONSTRUCTOR, s = e(2492), a = e(5005), o = e(614), n = e(8052), l = s && s.prototype;
-        if (r({ target: "Promise", proto: !0, forced: i, real: !0 }, { catch: function(m) {
+      }, 4164: function(p, R, e) {
+        var r = e(2109), t = e(1913), a = e(3702).CONSTRUCTOR, s = e(2492), i = e(5005), o = e(614), n = e(8052), l = s && s.prototype;
+        if (r({ target: "Promise", proto: !0, forced: a, real: !0 }, { catch: function(m) {
           return this.then(void 0, m);
         } }), !t && o(s)) {
-          var u = a("Promise").prototype.catch;
+          var u = i("Promise").prototype.catch;
           l.catch !== u && n(l, "catch", u, { unsafe: !0 });
         }
-      }, 3401: function(p, S, e) {
-        var r, t, i, s = e(2109), a = e(1913), o = e(5268), n = e(7854), l = e(6916), u = e(8052), m = e(7674), g = e(8003), h = e(6340), d = e(9662), f = e(614), b = e(111), c = e(5787), I = e(6707), v = e(261).set, N = e(5948), x = e(842), O = e(2534), C = e(8572), E = e(9909), P = e(2492), G = e(3702), K = e(8523), F = "Promise", Y = G.CONSTRUCTOR, Z = G.REJECTION_EVENT, V = G.SUBCLASSING, ne = E.getterFor(F), ae = E.set, se = P && P.prototype, ue = P, me = se, ge = n.TypeError, Ce = n.document, Ie = n.process, Re = K.f, Oe = Re, fe = !!(Ce && Ce.createEvent && n.dispatchEvent), ce = "unhandledrejection", Ue = function(ve) {
+      }, 3401: function(p, R, e) {
+        var r, t, a, s = e(2109), i = e(1913), o = e(5268), n = e(7854), l = e(6916), u = e(8052), m = e(7674), g = e(8003), h = e(6340), d = e(9662), f = e(614), b = e(111), c = e(5787), S = e(6707), v = e(261).set, N = e(5948), x = e(842), O = e(2534), C = e(8572), E = e(9909), P = e(2492), G = e(3702), Z = e(8523), F = "Promise", Y = G.CONSTRUCTOR, K = G.REJECTION_EVENT, V = G.SUBCLASSING, ne = E.getterFor(F), ae = E.set, se = P && P.prototype, ue = P, me = se, ge = n.TypeError, Ce = n.document, Re = n.process, Ie = Z.f, Oe = Ie, fe = !!(Ce && Ce.createEvent && n.dispatchEvent), ce = "unhandledrejection", Ue = function(ve) {
           var we;
           return !(!b(ve) || !f(we = ve.then)) && we;
-        }, Ze = function(ve, we) {
+        }, Ke = function(ve, we) {
           var ke, Ne, j, B = we.value, T = we.state == 1, W = T ? ve.ok : ve.fail, _ = ve.resolve, A = ve.reject, L = ve.domain;
           try {
             W ? (T || (we.rejection === 2 && Qe(we), we.rejection = 1), W === !0 ? ke = B : (L && L.enter(), ke = W(B), L && (L.exit(), j = !0)), ke === ve.promise ? A(ge("Promise-chain cycle")) : (Ne = Ue(ke)) ? l(Ne, ke, _, A) : _(ke)) : A(B);
@@ -7429,26 +7429,26 @@ var EasemobChat = { exports: {} };
         }, $e = function(ve, we) {
           ve.notified || (ve.notified = !0, N(function() {
             for (var ke, Ne = ve.reactions; ke = Ne.get(); )
-              Ze(ke, ve);
+              Ke(ke, ve);
             ve.notified = !1, we && !ve.rejection && Be(ve);
           }));
         }, Ve = function(ve, we, ke) {
           var Ne, j;
-          fe ? ((Ne = Ce.createEvent("Event")).promise = we, Ne.reason = ke, Ne.initEvent(ve, !1, !0), n.dispatchEvent(Ne)) : Ne = { promise: we, reason: ke }, !Z && (j = n["on" + ve]) ? j(Ne) : ve === ce && x("Unhandled promise rejection", ke);
+          fe ? ((Ne = Ce.createEvent("Event")).promise = we, Ne.reason = ke, Ne.initEvent(ve, !1, !0), n.dispatchEvent(Ne)) : Ne = { promise: we, reason: ke }, !K && (j = n["on" + ve]) ? j(Ne) : ve === ce && x("Unhandled promise rejection", ke);
         }, Be = function(ve) {
           l(v, n, function() {
             var we, ke = ve.facade, Ne = ve.value;
-            if (Ke(ve) && (we = O(function() {
-              o ? Ie.emit("unhandledRejection", Ne, ke) : Ve(ce, ke, Ne);
-            }), ve.rejection = o || Ke(ve) ? 2 : 1, we.error))
+            if (Ze(ve) && (we = O(function() {
+              o ? Re.emit("unhandledRejection", Ne, ke) : Ve(ce, ke, Ne);
+            }), ve.rejection = o || Ze(ve) ? 2 : 1, we.error))
               throw we.value;
           });
-        }, Ke = function(ve) {
+        }, Ze = function(ve) {
           return ve.rejection !== 1 && !ve.parent;
         }, Qe = function(ve) {
           l(v, n, function() {
             var we = ve.facade;
-            o ? Ie.emit("rejectionHandled", we) : Ve("rejectionhandled", we, ve.value);
+            o ? Re.emit("rejectionHandled", we) : Ve("rejectionhandled", we, ve.value);
           });
         }, Pe = function(ve, we, ke) {
           return function(Ne) {
@@ -7487,20 +7487,20 @@ var EasemobChat = { exports: {} };
         }).prototype, (r = function(ve) {
           ae(this, { type: F, done: !1, notified: !1, parent: !1, reactions: new C(), rejection: !1, state: 0, value: void 0 });
         }).prototype = u(me, "then", function(ve, we) {
-          var ke = ne(this), Ne = Re(I(this, ue));
-          return ke.parent = !0, Ne.ok = !f(ve) || ve, Ne.fail = f(we) && we, Ne.domain = o ? Ie.domain : void 0, ke.state == 0 ? ke.reactions.add(Ne) : N(function() {
-            Ze(Ne, ke);
+          var ke = ne(this), Ne = Ie(S(this, ue));
+          return ke.parent = !0, Ne.ok = !f(ve) || ve, Ne.fail = f(we) && we, Ne.domain = o ? Re.domain : void 0, ke.state == 0 ? ke.reactions.add(Ne) : N(function() {
+            Ke(Ne, ke);
           }), Ne.promise;
         }), t = function() {
           var ve = new r(), we = ne(ve);
           this.promise = ve, this.resolve = Pe(xe, we), this.reject = Pe(Le, we);
-        }, K.f = Re = function(ve) {
+        }, Z.f = Ie = function(ve) {
           return ve === ue || ve === void 0 ? new t(ve) : Oe(ve);
-        }, !a && f(P) && se !== Object.prototype)) {
-          i = se.then, V || u(se, "then", function(ve, we) {
+        }, !i && f(P) && se !== Object.prototype)) {
+          a = se.then, V || u(se, "then", function(ve, we) {
             var ke = this;
             return new ue(function(Ne, j) {
-              l(i, ke, Ne, j);
+              l(a, ke, Ne, j);
             }).then(ve, we);
           }, { unsafe: !0 });
           try {
@@ -7510,216 +7510,216 @@ var EasemobChat = { exports: {} };
           m && m(se, me);
         }
         s({ global: !0, constructor: !0, wrap: !0, forced: Y }, { Promise: ue }), g(ue, F, !1, !0), h(F);
-      }, 8674: function(p, S, e) {
+      }, 8674: function(p, R, e) {
         e(3401), e(821), e(4164), e(6027), e(683), e(6294);
-      }, 6027: function(p, S, e) {
-        var r = e(2109), t = e(6916), i = e(9662), s = e(8523), a = e(2534), o = e(408);
+      }, 6027: function(p, R, e) {
+        var r = e(2109), t = e(6916), a = e(9662), s = e(8523), i = e(2534), o = e(408);
         r({ target: "Promise", stat: !0, forced: e(612) }, { race: function(n) {
-          var l = this, u = s.f(l), m = u.reject, g = a(function() {
-            var h = i(l.resolve);
+          var l = this, u = s.f(l), m = u.reject, g = i(function() {
+            var h = a(l.resolve);
             o(n, function(d) {
               t(h, l, d).then(u.resolve, m);
             });
           });
           return g.error && m(g.value), u.promise;
         } });
-      }, 683: function(p, S, e) {
-        var r = e(2109), t = e(6916), i = e(8523);
+      }, 683: function(p, R, e) {
+        var r = e(2109), t = e(6916), a = e(8523);
         r({ target: "Promise", stat: !0, forced: e(3702).CONSTRUCTOR }, { reject: function(s) {
-          var a = i.f(this);
-          return t(a.reject, void 0, s), a.promise;
+          var i = a.f(this);
+          return t(i.reject, void 0, s), i.promise;
         } });
-      }, 6294: function(p, S, e) {
-        var r = e(2109), t = e(5005), i = e(1913), s = e(2492), a = e(3702).CONSTRUCTOR, o = e(9478), n = t("Promise"), l = i && !a;
-        r({ target: "Promise", stat: !0, forced: i || a }, { resolve: function(u) {
+      }, 6294: function(p, R, e) {
+        var r = e(2109), t = e(5005), a = e(1913), s = e(2492), i = e(3702).CONSTRUCTOR, o = e(9478), n = t("Promise"), l = a && !i;
+        r({ target: "Promise", stat: !0, forced: a || i }, { resolve: function(u) {
           return o(l && this === n ? s : this, u);
         } });
-      }, 4916: function(p, S, e) {
+      }, 4916: function(p, R, e) {
         var r = e(2109), t = e(2261);
         r({ target: "RegExp", proto: !0, forced: /./.exec !== t }, { exec: t });
-      }, 9714: function(p, S, e) {
-        var r = e(6530).PROPER, t = e(8052), i = e(9670), s = e(1340), a = e(7293), o = e(4706), n = "toString", l = RegExp.prototype.toString, u = a(function() {
+      }, 9714: function(p, R, e) {
+        var r = e(6530).PROPER, t = e(8052), a = e(9670), s = e(1340), i = e(7293), o = e(4706), n = "toString", l = RegExp.prototype.toString, u = i(function() {
           return l.call({ source: "a", flags: "b" }) != "/a/b";
         }), m = r && l.name != n;
         (u || m) && t(RegExp.prototype, n, function() {
-          var g = i(this);
+          var g = a(this);
           return "/" + s(g.source) + "/" + s(o(g));
         }, { unsafe: !0 });
-      }, 2023: function(p, S, e) {
-        var r = e(2109), t = e(1702), i = e(3929), s = e(4488), a = e(1340), o = e(4964), n = t("".indexOf);
+      }, 2023: function(p, R, e) {
+        var r = e(2109), t = e(1702), a = e(3929), s = e(4488), i = e(1340), o = e(4964), n = t("".indexOf);
         r({ target: "String", proto: !0, forced: !o("includes") }, { includes: function(l) {
-          return !!~n(a(s(this)), a(i(l)), arguments.length > 1 ? arguments[1] : void 0);
+          return !!~n(i(s(this)), i(a(l)), arguments.length > 1 ? arguments[1] : void 0);
         } });
-      }, 8783: function(p, S, e) {
-        var r = e(8710).charAt, t = e(1340), i = e(9909), s = e(1656), a = e(6178), o = "String Iterator", n = i.set, l = i.getterFor(o);
+      }, 8783: function(p, R, e) {
+        var r = e(8710).charAt, t = e(1340), a = e(9909), s = e(1656), i = e(6178), o = "String Iterator", n = a.set, l = a.getterFor(o);
         s(String, "String", function(u) {
           n(this, { type: o, string: t(u), index: 0 });
         }, function() {
           var u, m = l(this), g = m.string, h = m.index;
-          return h >= g.length ? a(void 0, !0) : (u = r(g, h), m.index += u.length, a(u, !1));
+          return h >= g.length ? i(void 0, !0) : (u = r(g, h), m.index += u.length, i(u, !1));
         });
-      }, 4032: function(p, S, e) {
-        var r = e(2109), t = e(7854), i = e(6916), s = e(1702), a = e(1913), o = e(9781), n = e(6293), l = e(7293), u = e(2597), m = e(7976), g = e(9670), h = e(5656), d = e(4948), f = e(1340), b = e(9114), c = e(30), I = e(1956), v = e(8006), N = e(1156), x = e(5181), O = e(1236), C = e(3070), E = e(6048), P = e(5296), G = e(8052), K = e(7045), F = e(2309), Y = e(6200), Z = e(3501), V = e(9711), ne = e(5112), ae = e(6061), se = e(6800), ue = e(6532), me = e(8003), ge = e(9909), Ce = e(2092).forEach, Ie = Y("hidden"), Re = "Symbol", Oe = ge.set, fe = ge.getterFor(Re), ce = Object.prototype, Ue = t.Symbol, Ze = Ue && Ue.prototype, $e = t.TypeError, Ve = t.QObject, Be = O.f, Ke = C.f, Qe = N.f, Pe = P.f, Le = s([].push), xe = F("symbols"), ve = F("op-symbols"), we = F("wks"), ke = !Ve || !Ve.prototype || !Ve.prototype.findChild, Ne = o && l(function() {
-          return c(Ke({}, "a", { get: function() {
-            return Ke(this, "a", { value: 7 }).a;
+      }, 4032: function(p, R, e) {
+        var r = e(2109), t = e(7854), a = e(6916), s = e(1702), i = e(1913), o = e(9781), n = e(6293), l = e(7293), u = e(2597), m = e(7976), g = e(9670), h = e(5656), d = e(4948), f = e(1340), b = e(9114), c = e(30), S = e(1956), v = e(8006), N = e(1156), x = e(5181), O = e(1236), C = e(3070), E = e(6048), P = e(5296), G = e(8052), Z = e(7045), F = e(2309), Y = e(6200), K = e(3501), V = e(9711), ne = e(5112), ae = e(6061), se = e(6800), ue = e(6532), me = e(8003), ge = e(9909), Ce = e(2092).forEach, Re = Y("hidden"), Ie = "Symbol", Oe = ge.set, fe = ge.getterFor(Ie), ce = Object.prototype, Ue = t.Symbol, Ke = Ue && Ue.prototype, $e = t.TypeError, Ve = t.QObject, Be = O.f, Ze = C.f, Qe = N.f, Pe = P.f, Le = s([].push), xe = F("symbols"), ve = F("op-symbols"), we = F("wks"), ke = !Ve || !Ve.prototype || !Ve.prototype.findChild, Ne = o && l(function() {
+          return c(Ze({}, "a", { get: function() {
+            return Ze(this, "a", { value: 7 }).a;
           } })).a != 7;
         }) ? function(w, k, y) {
-          var R = Be(ce, k);
-          R && delete ce[k], Ke(w, k, y), R && w !== ce && Ke(ce, k, R);
-        } : Ke, j = function(w, k) {
-          var y = xe[w] = c(Ze);
-          return Oe(y, { type: Re, tag: w, description: k }), o || (y.description = k), y;
+          var I = Be(ce, k);
+          I && delete ce[k], Ze(w, k, y), I && w !== ce && Ze(ce, k, I);
+        } : Ze, j = function(w, k) {
+          var y = xe[w] = c(Ke);
+          return Oe(y, { type: Ie, tag: w, description: k }), o || (y.description = k), y;
         }, B = function(w, k, y) {
           w === ce && B(ve, k, y), g(w);
-          var R = d(k);
-          return g(y), u(xe, R) ? (y.enumerable ? (u(w, Ie) && w[Ie][R] && (w[Ie][R] = !1), y = c(y, { enumerable: b(0, !1) })) : (u(w, Ie) || Ke(w, Ie, b(1, {})), w[Ie][R] = !0), Ne(w, R, y)) : Ke(w, R, y);
+          var I = d(k);
+          return g(y), u(xe, I) ? (y.enumerable ? (u(w, Re) && w[Re][I] && (w[Re][I] = !1), y = c(y, { enumerable: b(0, !1) })) : (u(w, Re) || Ze(w, Re, b(1, {})), w[Re][I] = !0), Ne(w, I, y)) : Ze(w, I, y);
         }, T = function(w, k) {
           g(w);
-          var y = h(k), R = I(y).concat(L(y));
-          return Ce(R, function(H) {
-            o && !i(W, y, H) || B(w, H, y[H]);
+          var y = h(k), I = S(y).concat(L(y));
+          return Ce(I, function(H) {
+            o && !a(W, y, H) || B(w, H, y[H]);
           }), w;
         }, W = function(w) {
-          var k = d(w), y = i(Pe, this, k);
-          return !(this === ce && u(xe, k) && !u(ve, k)) && (!(y || !u(this, k) || !u(xe, k) || u(this, Ie) && this[Ie][k]) || y);
+          var k = d(w), y = a(Pe, this, k);
+          return !(this === ce && u(xe, k) && !u(ve, k)) && (!(y || !u(this, k) || !u(xe, k) || u(this, Re) && this[Re][k]) || y);
         }, _ = function(w, k) {
-          var y = h(w), R = d(k);
-          if (y !== ce || !u(xe, R) || u(ve, R)) {
-            var H = Be(y, R);
-            return !H || !u(xe, R) || u(y, Ie) && y[Ie][R] || (H.enumerable = !0), H;
+          var y = h(w), I = d(k);
+          if (y !== ce || !u(xe, I) || u(ve, I)) {
+            var H = Be(y, I);
+            return !H || !u(xe, I) || u(y, Re) && y[Re][I] || (H.enumerable = !0), H;
           }
         }, A = function(w) {
           var k = Qe(h(w)), y = [];
-          return Ce(k, function(R) {
-            u(xe, R) || u(Z, R) || Le(y, R);
+          return Ce(k, function(I) {
+            u(xe, I) || u(K, I) || Le(y, I);
           }), y;
         }, L = function(w) {
-          var k = w === ce, y = Qe(k ? ve : h(w)), R = [];
+          var k = w === ce, y = Qe(k ? ve : h(w)), I = [];
           return Ce(y, function(H) {
-            !u(xe, H) || k && !u(ce, H) || Le(R, xe[H]);
-          }), R;
+            !u(xe, H) || k && !u(ce, H) || Le(I, xe[H]);
+          }), I;
         };
         n || (Ue = function() {
-          if (m(Ze, this))
+          if (m(Ke, this))
             throw $e("Symbol is not a constructor");
-          var w = arguments.length && arguments[0] !== void 0 ? f(arguments[0]) : void 0, k = V(w), y = function(R) {
-            this === ce && i(y, ve, R), u(this, Ie) && u(this[Ie], k) && (this[Ie][k] = !1), Ne(this, k, b(1, R));
+          var w = arguments.length && arguments[0] !== void 0 ? f(arguments[0]) : void 0, k = V(w), y = function(I) {
+            this === ce && a(y, ve, I), u(this, Re) && u(this[Re], k) && (this[Re][k] = !1), Ne(this, k, b(1, I));
           };
           return o && ke && Ne(ce, k, { configurable: !0, set: y }), j(k, w);
-        }, G(Ze = Ue.prototype, "toString", function() {
+        }, G(Ke = Ue.prototype, "toString", function() {
           return fe(this).tag;
         }), G(Ue, "withoutSetter", function(w) {
           return j(V(w), w);
         }), P.f = W, C.f = B, E.f = T, O.f = _, v.f = N.f = A, x.f = L, ae.f = function(w) {
           return j(ne(w), w);
-        }, o && (K(Ze, "description", { configurable: !0, get: function() {
+        }, o && (Z(Ke, "description", { configurable: !0, get: function() {
           return fe(this).description;
-        } }), a || G(ce, "propertyIsEnumerable", W, { unsafe: !0 }))), r({ global: !0, constructor: !0, wrap: !0, forced: !n, sham: !n }, { Symbol: Ue }), Ce(I(we), function(w) {
+        } }), i || G(ce, "propertyIsEnumerable", W, { unsafe: !0 }))), r({ global: !0, constructor: !0, wrap: !0, forced: !n, sham: !n }, { Symbol: Ue }), Ce(S(we), function(w) {
           se(w);
-        }), r({ target: Re, stat: !0, forced: !n }, { useSetter: function() {
+        }), r({ target: Ie, stat: !0, forced: !n }, { useSetter: function() {
           ke = !0;
         }, useSimple: function() {
           ke = !1;
         } }), r({ target: "Object", stat: !0, forced: !n, sham: !o }, { create: function(w, k) {
           return k === void 0 ? c(w) : T(c(w), k);
-        }, defineProperty: B, defineProperties: T, getOwnPropertyDescriptor: _ }), r({ target: "Object", stat: !0, forced: !n }, { getOwnPropertyNames: A }), ue(), me(Ue, Re), Z[Ie] = !0;
-      }, 1817: function(p, S, e) {
-        var r = e(2109), t = e(9781), i = e(7854), s = e(1702), a = e(2597), o = e(614), n = e(7976), l = e(1340), u = e(7045), m = e(9920), g = i.Symbol, h = g && g.prototype;
+        }, defineProperty: B, defineProperties: T, getOwnPropertyDescriptor: _ }), r({ target: "Object", stat: !0, forced: !n }, { getOwnPropertyNames: A }), ue(), me(Ue, Ie), K[Re] = !0;
+      }, 1817: function(p, R, e) {
+        var r = e(2109), t = e(9781), a = e(7854), s = e(1702), i = e(2597), o = e(614), n = e(7976), l = e(1340), u = e(7045), m = e(9920), g = a.Symbol, h = g && g.prototype;
         if (t && o(g) && (!("description" in h) || g().description !== void 0)) {
           var d = {}, f = function() {
             var O = arguments.length < 1 || arguments[0] === void 0 ? void 0 : l(arguments[0]), C = n(h, this) ? new g(O) : O === void 0 ? g() : g(O);
             return O === "" && (d[C] = !0), C;
           };
           m(f, g), f.prototype = h, h.constructor = f;
-          var b = String(g("test")) == "Symbol(test)", c = s(h.valueOf), I = s(h.toString), v = /^Symbol\((.*)\)[^)]+$/, N = s("".replace), x = s("".slice);
+          var b = String(g("test")) == "Symbol(test)", c = s(h.valueOf), S = s(h.toString), v = /^Symbol\((.*)\)[^)]+$/, N = s("".replace), x = s("".slice);
           u(h, "description", { configurable: !0, get: function() {
             var O = c(this);
-            if (a(d, O))
+            if (i(d, O))
               return "";
-            var C = I(O), E = b ? x(C, 7, -1) : N(C, v, "$1");
+            var C = S(O), E = b ? x(C, 7, -1) : N(C, v, "$1");
             return E === "" ? void 0 : E;
           } }), r({ global: !0, constructor: !0, forced: !0 }, { Symbol: f });
         }
-      }, 763: function(p, S, e) {
-        var r = e(2109), t = e(5005), i = e(2597), s = e(1340), a = e(2309), o = e(2015), n = a("string-to-symbol-registry"), l = a("symbol-to-string-registry");
+      }, 763: function(p, R, e) {
+        var r = e(2109), t = e(5005), a = e(2597), s = e(1340), i = e(2309), o = e(2015), n = i("string-to-symbol-registry"), l = i("symbol-to-string-registry");
         r({ target: "Symbol", stat: !0, forced: !o }, { for: function(u) {
           var m = s(u);
-          if (i(n, m))
+          if (a(n, m))
             return n[m];
           var g = t("Symbol")(m);
           return n[m] = g, l[g] = m, g;
         } });
-      }, 2165: function(p, S, e) {
+      }, 2165: function(p, R, e) {
         e(6800)("iterator");
-      }, 2526: function(p, S, e) {
+      }, 2526: function(p, R, e) {
         e(4032), e(763), e(6620), e(8862), e(9660);
-      }, 6620: function(p, S, e) {
-        var r = e(2109), t = e(2597), i = e(2190), s = e(6330), a = e(2309), o = e(2015), n = a("symbol-to-string-registry");
+      }, 6620: function(p, R, e) {
+        var r = e(2109), t = e(2597), a = e(2190), s = e(6330), i = e(2309), o = e(2015), n = i("symbol-to-string-registry");
         r({ target: "Symbol", stat: !0, forced: !o }, { keyFor: function(l) {
-          if (!i(l))
+          if (!a(l))
             throw TypeError(s(l) + " is not a symbol");
           if (t(n, l))
             return n[l];
         } });
-      }, 2990: function(p, S, e) {
-        var r = e(1702), t = e(260), i = r(e(1048)), s = t.aTypedArray;
-        (0, t.exportTypedArrayMethod)("copyWithin", function(a, o) {
-          return i(s(this), a, o, arguments.length > 2 ? arguments[2] : void 0);
+      }, 2990: function(p, R, e) {
+        var r = e(1702), t = e(260), a = r(e(1048)), s = t.aTypedArray;
+        (0, t.exportTypedArrayMethod)("copyWithin", function(i, o) {
+          return a(s(this), i, o, arguments.length > 2 ? arguments[2] : void 0);
         });
-      }, 8927: function(p, S, e) {
-        var r = e(260), t = e(2092).every, i = r.aTypedArray;
+      }, 8927: function(p, R, e) {
+        var r = e(260), t = e(2092).every, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("every", function(s) {
-          return t(i(this), s, arguments.length > 1 ? arguments[1] : void 0);
+          return t(a(this), s, arguments.length > 1 ? arguments[1] : void 0);
         });
-      }, 3105: function(p, S, e) {
-        var r = e(260), t = e(1285), i = e(4599), s = e(648), a = e(6916), o = e(1702), n = e(7293), l = r.aTypedArray, u = r.exportTypedArrayMethod, m = o("".slice);
+      }, 3105: function(p, R, e) {
+        var r = e(260), t = e(1285), a = e(4599), s = e(648), i = e(6916), o = e(1702), n = e(7293), l = r.aTypedArray, u = r.exportTypedArrayMethod, m = o("".slice);
         u("fill", function(g) {
           var h = arguments.length;
           l(this);
-          var d = m(s(this), 0, 3) === "Big" ? i(g) : +g;
-          return a(t, this, d, h > 1 ? arguments[1] : void 0, h > 2 ? arguments[2] : void 0);
+          var d = m(s(this), 0, 3) === "Big" ? a(g) : +g;
+          return i(t, this, d, h > 1 ? arguments[1] : void 0, h > 2 ? arguments[2] : void 0);
         }, n(function() {
           var g = 0;
           return new Int8Array(2).fill({ valueOf: function() {
             return g++;
           } }), g !== 1;
         }));
-      }, 5035: function(p, S, e) {
-        var r = e(260), t = e(2092).filter, i = e(3074), s = r.aTypedArray;
-        (0, r.exportTypedArrayMethod)("filter", function(a) {
-          var o = t(s(this), a, arguments.length > 1 ? arguments[1] : void 0);
-          return i(this, o);
+      }, 5035: function(p, R, e) {
+        var r = e(260), t = e(2092).filter, a = e(3074), s = r.aTypedArray;
+        (0, r.exportTypedArrayMethod)("filter", function(i) {
+          var o = t(s(this), i, arguments.length > 1 ? arguments[1] : void 0);
+          return a(this, o);
         });
-      }, 7174: function(p, S, e) {
-        var r = e(260), t = e(2092).findIndex, i = r.aTypedArray;
+      }, 7174: function(p, R, e) {
+        var r = e(260), t = e(2092).findIndex, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("findIndex", function(s) {
-          return t(i(this), s, arguments.length > 1 ? arguments[1] : void 0);
+          return t(a(this), s, arguments.length > 1 ? arguments[1] : void 0);
         });
-      }, 4345: function(p, S, e) {
-        var r = e(260), t = e(2092).find, i = r.aTypedArray;
+      }, 4345: function(p, R, e) {
+        var r = e(260), t = e(2092).find, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("find", function(s) {
-          return t(i(this), s, arguments.length > 1 ? arguments[1] : void 0);
+          return t(a(this), s, arguments.length > 1 ? arguments[1] : void 0);
         });
-      }, 2846: function(p, S, e) {
-        var r = e(260), t = e(2092).forEach, i = r.aTypedArray;
+      }, 2846: function(p, R, e) {
+        var r = e(260), t = e(2092).forEach, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("forEach", function(s) {
-          t(i(this), s, arguments.length > 1 ? arguments[1] : void 0);
+          t(a(this), s, arguments.length > 1 ? arguments[1] : void 0);
         });
-      }, 8145: function(p, S, e) {
+      }, 8145: function(p, R, e) {
         var r = e(3832);
         (0, e(260).exportTypedArrayStaticMethod)("from", e(7321), r);
-      }, 4731: function(p, S, e) {
-        var r = e(260), t = e(1318).includes, i = r.aTypedArray;
+      }, 4731: function(p, R, e) {
+        var r = e(260), t = e(1318).includes, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("includes", function(s) {
-          return t(i(this), s, arguments.length > 1 ? arguments[1] : void 0);
+          return t(a(this), s, arguments.length > 1 ? arguments[1] : void 0);
         });
-      }, 7209: function(p, S, e) {
-        var r = e(260), t = e(1318).indexOf, i = r.aTypedArray;
+      }, 7209: function(p, R, e) {
+        var r = e(260), t = e(1318).indexOf, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("indexOf", function(s) {
-          return t(i(this), s, arguments.length > 1 ? arguments[1] : void 0);
+          return t(a(this), s, arguments.length > 1 ? arguments[1] : void 0);
         });
-      }, 6319: function(p, S, e) {
-        var r = e(7854), t = e(7293), i = e(1702), s = e(260), a = e(6992), o = e(5112)("iterator"), n = r.Uint8Array, l = i(a.values), u = i(a.keys), m = i(a.entries), g = s.aTypedArray, h = s.exportTypedArrayMethod, d = n && n.prototype, f = !t(function() {
+      }, 6319: function(p, R, e) {
+        var r = e(7854), t = e(7293), a = e(1702), s = e(260), i = e(6992), o = e(5112)("iterator"), n = r.Uint8Array, l = a(i.values), u = a(i.keys), m = a(i.entries), g = s.aTypedArray, h = s.exportTypedArrayMethod, d = n && n.prototype, f = !t(function() {
           d[o].call([1]);
         }), b = !!d && d.values && d[o] === d.values && d.values.name === "values", c = function() {
           return l(g(this));
@@ -7729,82 +7729,82 @@ var EasemobChat = { exports: {} };
         }, f), h("keys", function() {
           return u(g(this));
         }, f), h("values", c, f || !b, { name: "values" }), h(o, c, f || !b, { name: "values" });
-      }, 8867: function(p, S, e) {
-        var r = e(260), t = e(1702), i = r.aTypedArray, s = r.exportTypedArrayMethod, a = t([].join);
+      }, 8867: function(p, R, e) {
+        var r = e(260), t = e(1702), a = r.aTypedArray, s = r.exportTypedArrayMethod, i = t([].join);
         s("join", function(o) {
-          return a(i(this), o);
+          return i(a(this), o);
         });
-      }, 7789: function(p, S, e) {
-        var r = e(260), t = e(2104), i = e(6583), s = r.aTypedArray;
-        (0, r.exportTypedArrayMethod)("lastIndexOf", function(a) {
+      }, 7789: function(p, R, e) {
+        var r = e(260), t = e(2104), a = e(6583), s = r.aTypedArray;
+        (0, r.exportTypedArrayMethod)("lastIndexOf", function(i) {
           var o = arguments.length;
-          return t(i, s(this), o > 1 ? [a, arguments[1]] : [a]);
+          return t(a, s(this), o > 1 ? [i, arguments[1]] : [i]);
         });
-      }, 3739: function(p, S, e) {
-        var r = e(260), t = e(2092).map, i = e(6304), s = r.aTypedArray;
-        (0, r.exportTypedArrayMethod)("map", function(a) {
-          return t(s(this), a, arguments.length > 1 ? arguments[1] : void 0, function(o, n) {
-            return new (i(o))(n);
+      }, 3739: function(p, R, e) {
+        var r = e(260), t = e(2092).map, a = e(6304), s = r.aTypedArray;
+        (0, r.exportTypedArrayMethod)("map", function(i) {
+          return t(s(this), i, arguments.length > 1 ? arguments[1] : void 0, function(o, n) {
+            return new (a(o))(n);
           });
         });
-      }, 4483: function(p, S, e) {
-        var r = e(260), t = e(3671).right, i = r.aTypedArray;
+      }, 4483: function(p, R, e) {
+        var r = e(260), t = e(3671).right, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("reduceRight", function(s) {
-          var a = arguments.length;
-          return t(i(this), s, a, a > 1 ? arguments[1] : void 0);
+          var i = arguments.length;
+          return t(a(this), s, i, i > 1 ? arguments[1] : void 0);
         });
-      }, 9368: function(p, S, e) {
-        var r = e(260), t = e(3671).left, i = r.aTypedArray;
+      }, 9368: function(p, R, e) {
+        var r = e(260), t = e(3671).left, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("reduce", function(s) {
-          var a = arguments.length;
-          return t(i(this), s, a, a > 1 ? arguments[1] : void 0);
+          var i = arguments.length;
+          return t(a(this), s, i, i > 1 ? arguments[1] : void 0);
         });
-      }, 2056: function(p, S, e) {
-        var r = e(260), t = r.aTypedArray, i = r.exportTypedArrayMethod, s = Math.floor;
-        i("reverse", function() {
-          for (var a, o = this, n = t(o).length, l = s(n / 2), u = 0; u < l; )
-            a = o[u], o[u++] = o[--n], o[n] = a;
+      }, 2056: function(p, R, e) {
+        var r = e(260), t = r.aTypedArray, a = r.exportTypedArrayMethod, s = Math.floor;
+        a("reverse", function() {
+          for (var i, o = this, n = t(o).length, l = s(n / 2), u = 0; u < l; )
+            i = o[u], o[u++] = o[--n], o[n] = i;
           return o;
         });
-      }, 3462: function(p, S, e) {
-        var r = e(7854), t = e(6916), i = e(260), s = e(6244), a = e(4590), o = e(7908), n = e(7293), l = r.RangeError, u = r.Int8Array, m = u && u.prototype, g = m && m.set, h = i.aTypedArray, d = i.exportTypedArrayMethod, f = !n(function() {
+      }, 3462: function(p, R, e) {
+        var r = e(7854), t = e(6916), a = e(260), s = e(6244), i = e(4590), o = e(7908), n = e(7293), l = r.RangeError, u = r.Int8Array, m = u && u.prototype, g = m && m.set, h = a.aTypedArray, d = a.exportTypedArrayMethod, f = !n(function() {
           var c = new Uint8ClampedArray(2);
           return t(g, c, { length: 1, 0: 3 }, 1), c[1] !== 3;
-        }), b = f && i.NATIVE_ARRAY_BUFFER_VIEWS && n(function() {
+        }), b = f && a.NATIVE_ARRAY_BUFFER_VIEWS && n(function() {
           var c = new u(2);
           return c.set(1), c.set("2", 1), c[0] !== 0 || c[1] !== 2;
         });
         d("set", function(c) {
           h(this);
-          var I = a(arguments.length > 1 ? arguments[1] : void 0, 1), v = o(c);
+          var S = i(arguments.length > 1 ? arguments[1] : void 0, 1), v = o(c);
           if (f)
-            return t(g, this, v, I);
+            return t(g, this, v, S);
           var N = this.length, x = s(v), O = 0;
-          if (x + I > N)
+          if (x + S > N)
             throw l("Wrong length");
           for (; O < x; )
-            this[I + O] = v[O++];
+            this[S + O] = v[O++];
         }, !f || b);
-      }, 678: function(p, S, e) {
-        var r = e(260), t = e(6304), i = e(7293), s = e(206), a = r.aTypedArray;
+      }, 678: function(p, R, e) {
+        var r = e(260), t = e(6304), a = e(7293), s = e(206), i = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("slice", function(o, n) {
-          for (var l = s(a(this), o, n), u = t(this), m = 0, g = l.length, h = new u(g); g > m; )
+          for (var l = s(i(this), o, n), u = t(this), m = 0, g = l.length, h = new u(g); g > m; )
             h[m] = l[m++];
           return h;
-        }, i(function() {
+        }, a(function() {
           new Int8Array(1).slice();
         }));
-      }, 7462: function(p, S, e) {
-        var r = e(260), t = e(2092).some, i = r.aTypedArray;
+      }, 7462: function(p, R, e) {
+        var r = e(260), t = e(2092).some, a = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("some", function(s) {
-          return t(i(this), s, arguments.length > 1 ? arguments[1] : void 0);
+          return t(a(this), s, arguments.length > 1 ? arguments[1] : void 0);
         });
-      }, 3824: function(p, S, e) {
-        var r = e(7854), t = e(1470), i = e(7293), s = e(9662), a = e(4362), o = e(260), n = e(8886), l = e(256), u = e(7392), m = e(8008), g = o.aTypedArray, h = o.exportTypedArrayMethod, d = r.Uint16Array, f = d && t(d.prototype.sort), b = !(!f || i(function() {
+      }, 3824: function(p, R, e) {
+        var r = e(7854), t = e(1470), a = e(7293), s = e(9662), i = e(4362), o = e(260), n = e(8886), l = e(256), u = e(7392), m = e(8008), g = o.aTypedArray, h = o.exportTypedArrayMethod, d = r.Uint16Array, f = d && t(d.prototype.sort), b = !(!f || a(function() {
           f(new d(2), null);
-        }) && i(function() {
+        }) && a(function() {
           f(new d(2), {});
-        })), c = !!f && !i(function() {
+        })), c = !!f && !a(function() {
           if (u)
             return u < 74;
           if (n)
@@ -7813,41 +7813,41 @@ var EasemobChat = { exports: {} };
             return !0;
           if (m)
             return m < 602;
-          var I, v, N = new d(516), x = Array(516);
-          for (I = 0; I < 516; I++)
-            v = I % 4, N[I] = 515 - I, x[I] = I - 2 * v + 3;
+          var S, v, N = new d(516), x = Array(516);
+          for (S = 0; S < 516; S++)
+            v = S % 4, N[S] = 515 - S, x[S] = S - 2 * v + 3;
           for (f(N, function(O, C) {
             return (O / 4 | 0) - (C / 4 | 0);
-          }), I = 0; I < 516; I++)
-            if (N[I] !== x[I])
+          }), S = 0; S < 516; S++)
+            if (N[S] !== x[S])
               return !0;
         });
-        h("sort", function(I) {
-          return I !== void 0 && s(I), c ? f(this, I) : a(g(this), function(v) {
+        h("sort", function(S) {
+          return S !== void 0 && s(S), c ? f(this, S) : i(g(this), function(v) {
             return function(N, x) {
               return v !== void 0 ? +v(N, x) || 0 : x != x ? -1 : N != N ? 1 : N === 0 && x === 0 ? 1 / N > 0 && 1 / x < 0 ? 1 : -1 : N > x;
             };
-          }(I));
+          }(S));
         }, !c || b);
-      }, 5021: function(p, S, e) {
-        var r = e(260), t = e(7466), i = e(1400), s = e(6304), a = r.aTypedArray;
+      }, 5021: function(p, R, e) {
+        var r = e(260), t = e(7466), a = e(1400), s = e(6304), i = r.aTypedArray;
         (0, r.exportTypedArrayMethod)("subarray", function(o, n) {
-          var l = a(this), u = l.length, m = i(o, u);
-          return new (s(l))(l.buffer, l.byteOffset + m * l.BYTES_PER_ELEMENT, t((n === void 0 ? u : i(n, u)) - m));
+          var l = i(this), u = l.length, m = a(o, u);
+          return new (s(l))(l.buffer, l.byteOffset + m * l.BYTES_PER_ELEMENT, t((n === void 0 ? u : a(n, u)) - m));
         });
-      }, 2974: function(p, S, e) {
-        var r = e(7854), t = e(2104), i = e(260), s = e(7293), a = e(206), o = r.Int8Array, n = i.aTypedArray, l = i.exportTypedArrayMethod, u = [].toLocaleString, m = !!o && s(function() {
+      }, 2974: function(p, R, e) {
+        var r = e(7854), t = e(2104), a = e(260), s = e(7293), i = e(206), o = r.Int8Array, n = a.aTypedArray, l = a.exportTypedArrayMethod, u = [].toLocaleString, m = !!o && s(function() {
           u.call(new o(1));
         });
         l("toLocaleString", function() {
-          return t(u, m ? a(n(this)) : n(this), a(arguments));
+          return t(u, m ? i(n(this)) : n(this), i(arguments));
         }, s(function() {
           return [1, 2].toLocaleString() != new o([1, 2]).toLocaleString();
         }) || !s(function() {
           o.prototype.toLocaleString.call([1, 2]);
         }));
-      }, 5016: function(p, S, e) {
-        var r = e(260).exportTypedArrayMethod, t = e(7293), i = e(7854), s = e(1702), a = i.Uint8Array, o = a && a.prototype || {}, n = [].toString, l = s([].join);
+      }, 5016: function(p, R, e) {
+        var r = e(260).exportTypedArrayMethod, t = e(7293), a = e(7854), s = e(1702), i = a.Uint8Array, o = i && i.prototype || {}, n = [].toString, l = s([].join);
         t(function() {
           n.call({});
         }) && (n = function() {
@@ -7855,38 +7855,38 @@ var EasemobChat = { exports: {} };
         });
         var u = o.toString != n;
         r("toString", n, u);
-      }, 2472: function(p, S, e) {
+      }, 2472: function(p, R, e) {
         e(9843)("Uint8", function(r) {
-          return function(t, i, s) {
-            return r(this, t, i, s);
+          return function(t, a, s) {
+            return r(this, t, a, s);
           };
         });
-      }, 4747: function(p, S, e) {
-        var r = e(7854), t = e(8324), i = e(8509), s = e(8533), a = e(8880), o = function(l) {
+      }, 4747: function(p, R, e) {
+        var r = e(7854), t = e(8324), a = e(8509), s = e(8533), i = e(8880), o = function(l) {
           if (l && l.forEach !== s)
             try {
-              a(l, "forEach", s);
+              i(l, "forEach", s);
             } catch {
               l.forEach = s;
             }
         };
         for (var n in t)
           t[n] && o(r[n] && r[n].prototype);
-        o(i);
-      }, 3948: function(p, S, e) {
-        var r = e(7854), t = e(8324), i = e(8509), s = e(6992), a = e(8880), o = e(5112), n = o("iterator"), l = o("toStringTag"), u = s.values, m = function(h, d) {
+        o(a);
+      }, 3948: function(p, R, e) {
+        var r = e(7854), t = e(8324), a = e(8509), s = e(6992), i = e(8880), o = e(5112), n = o("iterator"), l = o("toStringTag"), u = s.values, m = function(h, d) {
           if (h) {
             if (h[n] !== u)
               try {
-                a(h, n, u);
+                i(h, n, u);
               } catch {
                 h[n] = u;
               }
-            if (h[l] || a(h, l, d), t[d]) {
+            if (h[l] || i(h, l, d), t[d]) {
               for (var f in s)
                 if (h[f] !== s[f])
                   try {
-                    a(h, f, s[f]);
+                    i(h, f, s[f]);
                   } catch {
                     h[f] = s[f];
                   }
@@ -7895,23 +7895,23 @@ var EasemobChat = { exports: {} };
         };
         for (var g in t)
           m(r[g] && r[g].prototype, g);
-        m(i, "DOMTokenList");
-      }, 6815: function(p, S, e) {
-        var r = e(2109), t = e(7854), i = e(7152)(t.setInterval, !0);
-        r({ global: !0, bind: !0, forced: t.setInterval !== i }, { setInterval: i });
-      }, 8417: function(p, S, e) {
-        var r = e(2109), t = e(7854), i = e(7152)(t.setTimeout, !0);
-        r({ global: !0, bind: !0, forced: t.setTimeout !== i }, { setTimeout: i });
-      }, 2564: function(p, S, e) {
+        m(a, "DOMTokenList");
+      }, 6815: function(p, R, e) {
+        var r = e(2109), t = e(7854), a = e(7152)(t.setInterval, !0);
+        r({ global: !0, bind: !0, forced: t.setInterval !== a }, { setInterval: a });
+      }, 8417: function(p, R, e) {
+        var r = e(2109), t = e(7854), a = e(7152)(t.setTimeout, !0);
+        r({ global: !0, bind: !0, forced: t.setTimeout !== a }, { setTimeout: a });
+      }, 2564: function(p, R, e) {
         e(6815), e(8417);
-      }, 5556: function(p, S, e) {
+      }, 5556: function(p, R, e) {
         e(6992);
-        var r = e(2109), t = e(7854), i = e(6916), s = e(1702), a = e(9781), o = e(5143), n = e(8052), l = e(7045), u = e(9190), m = e(8003), g = e(3061), h = e(9909), d = e(5787), f = e(614), b = e(2597), c = e(9974), I = e(648), v = e(9670), N = e(111), x = e(1340), O = e(30), C = e(9114), E = e(4121), P = e(1246), G = e(8053), K = e(5112), F = e(4362), Y = K("iterator"), Z = "URLSearchParams", V = "URLSearchParamsIterator", ne = h.set, ae = h.getterFor(Z), se = h.getterFor(V), ue = Object.getOwnPropertyDescriptor, me = function(D) {
-          if (!a)
+        var r = e(2109), t = e(7854), a = e(6916), s = e(1702), i = e(9781), o = e(5143), n = e(8052), l = e(7045), u = e(9190), m = e(8003), g = e(3061), h = e(9909), d = e(5787), f = e(614), b = e(2597), c = e(9974), S = e(648), v = e(9670), N = e(111), x = e(1340), O = e(30), C = e(9114), E = e(4121), P = e(1246), G = e(8053), Z = e(5112), F = e(4362), Y = Z("iterator"), K = "URLSearchParams", V = "URLSearchParamsIterator", ne = h.set, ae = h.getterFor(K), se = h.getterFor(V), ue = Object.getOwnPropertyDescriptor, me = function(D) {
+          if (!i)
             return t[D];
-          var z = ue(t, D);
-          return z && z.value;
-        }, ge = me("fetch"), Ce = me("Request"), Ie = me("Headers"), Re = Ce && Ce.prototype, Oe = Ie && Ie.prototype, fe = t.RegExp, ce = t.TypeError, Ue = t.decodeURIComponent, Ze = t.encodeURIComponent, $e = s("".charAt), Ve = s([].join), Be = s([].push), Ke = s("".replace), Qe = s([].shift), Pe = s([].splice), Le = s("".split), xe = s("".slice), ve = /\+/g, we = Array(4), ke = function(D) {
+          var J = ue(t, D);
+          return J && J.value;
+        }, ge = me("fetch"), Ce = me("Request"), Re = me("Headers"), Ie = Ce && Ce.prototype, Oe = Re && Re.prototype, fe = t.RegExp, ce = t.TypeError, Ue = t.decodeURIComponent, Ke = t.encodeURIComponent, $e = s("".charAt), Ve = s([].join), Be = s([].push), Ze = s("".replace), Qe = s([].shift), Pe = s([].splice), Le = s("".split), xe = s("".slice), ve = /\+/g, we = Array(4), ke = function(D) {
           return we[D - 1] || (we[D - 1] = fe("((?:%[\\da-f]{2}){" + D + "})", "gi"));
         }, Ne = function(D) {
           try {
@@ -7920,33 +7920,33 @@ var EasemobChat = { exports: {} };
             return D;
           }
         }, j = function(D) {
-          var z = Ke(D, ve, " "), X = 4;
+          var J = Ze(D, ve, " "), X = 4;
           try {
-            return Ue(z);
+            return Ue(J);
           } catch {
             for (; X; )
-              z = Ke(z, ke(X--), Ne);
-            return z;
+              J = Ze(J, ke(X--), Ne);
+            return J;
           }
         }, B = /[!'()~]|%20/g, T = { "!": "%21", "'": "%27", "(": "%28", ")": "%29", "~": "%7E", "%20": "+" }, W = function(D) {
           return T[D];
         }, _ = function(D) {
-          return Ke(Ze(D), B, W);
-        }, A = g(function(D, z) {
-          ne(this, { type: V, iterator: E(ae(D).entries), kind: z });
+          return Ze(Ke(D), B, W);
+        }, A = g(function(D, J) {
+          ne(this, { type: V, iterator: E(ae(D).entries), kind: J });
         }, "Iterator", function() {
-          var D = se(this), z = D.kind, X = D.iterator.next(), oe = X.value;
-          return X.done || (X.value = z === "keys" ? oe.key : z === "values" ? oe.value : [oe.key, oe.value]), X;
+          var D = se(this), J = D.kind, X = D.iterator.next(), oe = X.value;
+          return X.done || (X.value = J === "keys" ? oe.key : J === "values" ? oe.value : [oe.key, oe.value]), X;
         }, !0), L = function(D) {
           this.entries = [], this.url = null, D !== void 0 && (N(D) ? this.parseObject(D) : this.parseQuery(typeof D == "string" ? $e(D, 0) === "?" ? xe(D, 1) : D : x(D)));
         };
-        L.prototype = { type: Z, bindURL: function(D) {
+        L.prototype = { type: K, bindURL: function(D) {
           this.url = D, this.update();
         }, parseObject: function(D) {
-          var z, X, oe, q, J, te, re, Ae = P(D);
+          var J, X, oe, q, z, te, re, Ae = P(D);
           if (Ae)
-            for (X = (z = E(D, Ae)).next; !(oe = i(X, z)).done; ) {
-              if (J = (q = E(v(oe.value))).next, (te = i(J, q)).done || (re = i(J, q)).done || !i(J, q).done)
+            for (X = (J = E(D, Ae)).next; !(oe = a(X, J)).done; ) {
+              if (z = (q = E(v(oe.value))).next, (te = a(z, q)).done || (re = a(z, q)).done || !a(z, q).done)
                 throw ce("Expected sequence with length 2");
               Be(this.entries, { key: x(te.value), value: x(re.value) });
             }
@@ -7955,11 +7955,11 @@ var EasemobChat = { exports: {} };
               b(D, We) && Be(this.entries, { key: We, value: x(D[We]) });
         }, parseQuery: function(D) {
           if (D)
-            for (var z, X, oe = Le(D, "&"), q = 0; q < oe.length; )
-              (z = oe[q++]).length && (X = Le(z, "="), Be(this.entries, { key: j(Qe(X)), value: j(Ve(X, "=")) }));
+            for (var J, X, oe = Le(D, "&"), q = 0; q < oe.length; )
+              (J = oe[q++]).length && (X = Le(J, "="), Be(this.entries, { key: j(Qe(X)), value: j(Ve(X, "=")) }));
         }, serialize: function() {
-          for (var D, z = this.entries, X = [], oe = 0; oe < z.length; )
-            D = z[oe++], Be(X, _(D.key) + "=" + _(D.value));
+          for (var D, J = this.entries, X = [], oe = 0; oe < J.length; )
+            D = J[oe++], Be(X, _(D.key) + "=" + _(D.value));
           return Ve(X, "&");
         }, update: function() {
           this.entries.length = 0, this.parseQuery(this.url.query);
@@ -7968,48 +7968,48 @@ var EasemobChat = { exports: {} };
         } };
         var w = function() {
           d(this, k);
-          var D = arguments.length > 0 ? arguments[0] : void 0, z = ne(this, new L(D));
-          a || (this.length = z.entries.length);
+          var D = arguments.length > 0 ? arguments[0] : void 0, J = ne(this, new L(D));
+          i || (this.length = J.entries.length);
         }, k = w.prototype;
-        if (u(k, { append: function(D, z) {
+        if (u(k, { append: function(D, J) {
           G(arguments.length, 2);
           var X = ae(this);
-          Be(X.entries, { key: x(D), value: x(z) }), a || this.length++, X.updateURL();
+          Be(X.entries, { key: x(D), value: x(J) }), i || this.length++, X.updateURL();
         }, delete: function(D) {
           G(arguments.length, 1);
-          for (var z = ae(this), X = z.entries, oe = x(D), q = 0; q < X.length; )
+          for (var J = ae(this), X = J.entries, oe = x(D), q = 0; q < X.length; )
             X[q].key === oe ? Pe(X, q, 1) : q++;
-          a || (this.length = X.length), z.updateURL();
+          i || (this.length = X.length), J.updateURL();
         }, get: function(D) {
           G(arguments.length, 1);
-          for (var z = ae(this).entries, X = x(D), oe = 0; oe < z.length; oe++)
-            if (z[oe].key === X)
-              return z[oe].value;
+          for (var J = ae(this).entries, X = x(D), oe = 0; oe < J.length; oe++)
+            if (J[oe].key === X)
+              return J[oe].value;
           return null;
         }, getAll: function(D) {
           G(arguments.length, 1);
-          for (var z = ae(this).entries, X = x(D), oe = [], q = 0; q < z.length; q++)
-            z[q].key === X && Be(oe, z[q].value);
+          for (var J = ae(this).entries, X = x(D), oe = [], q = 0; q < J.length; q++)
+            J[q].key === X && Be(oe, J[q].value);
           return oe;
         }, has: function(D) {
           G(arguments.length, 1);
-          for (var z = ae(this).entries, X = x(D), oe = 0; oe < z.length; )
-            if (z[oe++].key === X)
+          for (var J = ae(this).entries, X = x(D), oe = 0; oe < J.length; )
+            if (J[oe++].key === X)
               return !0;
           return !1;
-        }, set: function(D, z) {
+        }, set: function(D, J) {
           G(arguments.length, 1);
-          for (var X, oe = ae(this), q = oe.entries, J = !1, te = x(D), re = x(z), Ae = 0; Ae < q.length; Ae++)
-            (X = q[Ae]).key === te && (J ? Pe(q, Ae--, 1) : (J = !0, X.value = re));
-          J || Be(q, { key: te, value: re }), a || (this.length = q.length), oe.updateURL();
+          for (var X, oe = ae(this), q = oe.entries, z = !1, te = x(D), re = x(J), Ae = 0; Ae < q.length; Ae++)
+            (X = q[Ae]).key === te && (z ? Pe(q, Ae--, 1) : (z = !0, X.value = re));
+          z || Be(q, { key: te, value: re }), i || (this.length = q.length), oe.updateURL();
         }, sort: function() {
           var D = ae(this);
-          F(D.entries, function(z, X) {
-            return z.key > X.key ? 1 : -1;
+          F(D.entries, function(J, X) {
+            return J.key > X.key ? 1 : -1;
           }), D.updateURL();
         }, forEach: function(D) {
-          for (var z, X = ae(this).entries, oe = c(D, arguments.length > 1 ? arguments[1] : void 0), q = 0; q < X.length; )
-            oe((z = X[q++]).value, z.key, this);
+          for (var J, X = ae(this).entries, oe = c(D, arguments.length > 1 ? arguments[1] : void 0), q = 0; q < X.length; )
+            oe((J = X[q++]).value, J.key, this);
         }, keys: function() {
           return new A(this, "keys");
         }, values: function() {
@@ -8018,14 +8018,14 @@ var EasemobChat = { exports: {} };
           return new A(this, "entries");
         } }, { enumerable: !0 }), n(k, Y, k.entries, { name: "entries" }), n(k, "toString", function() {
           return ae(this).serialize();
-        }, { enumerable: !0 }), a && l(k, "size", { get: function() {
+        }, { enumerable: !0 }), i && l(k, "size", { get: function() {
           return ae(this).entries.length;
-        }, configurable: !0, enumerable: !0 }), m(w, Z), r({ global: !0, constructor: !0, forced: !o }, { URLSearchParams: w }), !o && f(Ie)) {
-          var y = s(Oe.has), R = s(Oe.set), H = function(D) {
+        }, configurable: !0, enumerable: !0 }), m(w, K), r({ global: !0, constructor: !0, forced: !o }, { URLSearchParams: w }), !o && f(Re)) {
+          var y = s(Oe.has), I = s(Oe.set), H = function(D) {
             if (N(D)) {
-              var z, X = D.body;
-              if (I(X) === Z)
-                return z = D.headers ? new Ie(D.headers) : new Ie(), y(z, "content-type") || R(z, "content-type", "application/x-www-form-urlencoded;charset=UTF-8"), O(D, { body: C(0, x(X)), headers: C(0, z) });
+              var J, X = D.body;
+              if (S(X) === K)
+                return J = D.headers ? new Re(D.headers) : new Re(), y(J, "content-type") || I(J, "content-type", "application/x-www-form-urlencoded;charset=UTF-8"), O(D, { body: C(0, x(X)), headers: C(0, J) });
             }
             return D;
           };
@@ -8033,21 +8033,21 @@ var EasemobChat = { exports: {} };
             return ge(D, arguments.length > 1 ? H(arguments[1]) : {});
           } }), f(Ce)) {
             var M = function(D) {
-              return d(this, Re), new Ce(D, arguments.length > 1 ? H(arguments[1]) : {});
+              return d(this, Ie), new Ce(D, arguments.length > 1 ? H(arguments[1]) : {});
             };
-            Re.constructor = M, M.prototype = Re, r({ global: !0, constructor: !0, dontCallGetSet: !0, forced: !0 }, { Request: M });
+            Ie.constructor = M, M.prototype = Ie, r({ global: !0, constructor: !0, dontCallGetSet: !0, forced: !0 }, { Request: M });
           }
         }
         p.exports = { URLSearchParams: w, getState: ae };
-      }, 1637: function(p, S, e) {
+      }, 1637: function(p, R, e) {
         e(5556);
-      }, 8789: function(p, S, e) {
+      }, 8789: function(p, R, e) {
         e(8783);
-        var r, t = e(2109), i = e(9781), s = e(5143), a = e(7854), o = e(9974), n = e(1702), l = e(8052), u = e(7045), m = e(5787), g = e(2597), h = e(1574), d = e(8457), f = e(1589), b = e(8710).codeAt, c = e(3197), I = e(1340), v = e(8003), N = e(8053), x = e(5556), O = e(9909), C = O.set, E = O.getterFor("URL"), P = x.URLSearchParams, G = x.getState, K = a.URL, F = a.TypeError, Y = a.parseInt, Z = Math.floor, V = Math.pow, ne = n("".charAt), ae = n(/./.exec), se = n([].join), ue = n(1 .toString), me = n([].pop), ge = n([].push), Ce = n("".replace), Ie = n([].shift), Re = n("".split), Oe = n("".slice), fe = n("".toLowerCase), ce = n([].unshift), Ue = "Invalid scheme", Ze = "Invalid host", $e = "Invalid port", Ve = /[a-z]/i, Be = /[\d+-.a-z]/i, Ke = /\d/, Qe = /^0x/i, Pe = /^[0-7]+$/, Le = /^\d+$/, xe = /^[\da-f]+$/i, ve = /[\0\t\n\r #%/:<>?@[\\\]^|]/, we = /[\0\t\n\r #/:<>?@[\\\]^|]/, ke = /^[\u0000-\u0020]+/, Ne = /(^|[^\u0000-\u0020])[\u0000-\u0020]+$/, j = /[\t\n\r]/g, B = function(ee) {
+        var r, t = e(2109), a = e(9781), s = e(5143), i = e(7854), o = e(9974), n = e(1702), l = e(8052), u = e(7045), m = e(5787), g = e(2597), h = e(1574), d = e(8457), f = e(1589), b = e(8710).codeAt, c = e(3197), S = e(1340), v = e(8003), N = e(8053), x = e(5556), O = e(9909), C = O.set, E = O.getterFor("URL"), P = x.URLSearchParams, G = x.getState, Z = i.URL, F = i.TypeError, Y = i.parseInt, K = Math.floor, V = Math.pow, ne = n("".charAt), ae = n(/./.exec), se = n([].join), ue = n(1 .toString), me = n([].pop), ge = n([].push), Ce = n("".replace), Re = n([].shift), Ie = n("".split), Oe = n("".slice), fe = n("".toLowerCase), ce = n([].unshift), Ue = "Invalid scheme", Ke = "Invalid host", $e = "Invalid port", Ve = /[a-z]/i, Be = /[\d+-.a-z]/i, Ze = /\d/, Qe = /^0x/i, Pe = /^[0-7]+$/, Le = /^\d+$/, xe = /^[\da-f]+$/i, ve = /[\0\t\n\r #%/:<>?@[\\\]^|]/, we = /[\0\t\n\r #/:<>?@[\\\]^|]/, ke = /^[\u0000-\u0020]+/, Ne = /(^|[^\u0000-\u0020])[\u0000-\u0020]+$/, j = /[\t\n\r]/g, B = function(ee) {
           var le, de, He, pe;
           if (typeof ee == "number") {
             for (le = [], de = 0; de < 4; de++)
-              ce(le, ee % 256), ee = Z(ee / 256);
+              ce(le, ee % 256), ee = K(ee / 256);
             return se(le, ".");
           }
           if (typeof ee == "object") {
@@ -8069,10 +8069,10 @@ var EasemobChat = { exports: {} };
         }, y = function(ee) {
           var le;
           return ee.length > 1 && k(Oe(ee, 0, 2)) && (ee.length == 2 || (le = ne(ee, 2)) === "/" || le === "\\" || le === "?" || le === "#");
-        }, R = function(ee) {
+        }, I = function(ee) {
           return ee === "." || fe(ee) === "%2e";
-        }, H = {}, M = {}, D = {}, z = {}, X = {}, oe = {}, q = {}, J = {}, te = {}, re = {}, Ae = {}, We = {}, Te = {}, je = {}, ie = {}, ze = {}, De = {}, Je = {}, at = {}, st = {}, U = {}, Ee = function(ee, le, de) {
-          var He, pe, Xe, Ye = I(ee);
+        }, H = {}, M = {}, D = {}, J = {}, X = {}, oe = {}, q = {}, z = {}, te = {}, re = {}, Ae = {}, We = {}, Te = {}, je = {}, ie = {}, Je = {}, De = {}, ze = {}, at = {}, st = {}, U = {}, Ee = function(ee, le, de) {
+          var He, pe, Xe, Ye = S(ee);
           if (le) {
             if (pe = this.parse(Ye))
               throw F(pe);
@@ -8085,7 +8085,7 @@ var EasemobChat = { exports: {} };
         };
         Ee.prototype = { type: "URL", parse: function(ee, le, de) {
           var He, pe, Xe, Ye, et, he = this, Me = le || H, rt = 0, Ge = "", qe = !1, Fe = !1, ot = !1;
-          for (ee = I(ee), le || (he.scheme = "", he.username = "", he.password = "", he.host = null, he.port = null, he.path = [], he.query = null, he.fragment = null, he.cannotBeABaseURL = !1, ee = Ce(ee, ke, ""), ee = Ce(ee, Ne, "$1")), ee = Ce(ee, j, ""), He = d(ee); rt <= He.length; ) {
+          for (ee = S(ee), le || (he.scheme = "", he.username = "", he.password = "", he.host = null, he.port = null, he.path = [], he.query = null, he.fragment = null, he.cannotBeABaseURL = !1, ee = Ce(ee, ke, ""), ee = Ce(ee, Ne, "$1")), ee = Ce(ee, j, ""), He = d(ee); rt <= He.length; ) {
             switch (pe = He[rt], Me) {
               case H:
                 if (!pe || !ae(Ve, pe)) {
@@ -8110,7 +8110,7 @@ var EasemobChat = { exports: {} };
                     return;
                   if (he.scheme = Ge, le)
                     return void (he.isSpecial() && w[he.scheme] == he.port && (he.port = null));
-                  Ge = "", he.scheme == "file" ? Me = je : he.isSpecial() && de && de.scheme == he.scheme ? Me = z : he.isSpecial() ? Me = J : He[rt + 1] == "/" ? (Me = X, rt++) : (he.cannotBeABaseURL = !0, ge(he.path, ""), Me = at);
+                  Ge = "", he.scheme == "file" ? Me = je : he.isSpecial() && de && de.scheme == he.scheme ? Me = J : he.isSpecial() ? Me = z : He[rt + 1] == "/" ? (Me = X, rt++) : (he.cannotBeABaseURL = !0, ge(he.path, ""), Me = at);
                 }
                 break;
               case D:
@@ -8122,7 +8122,7 @@ var EasemobChat = { exports: {} };
                 }
                 Me = de.scheme == "file" ? je : oe;
                 continue;
-              case z:
+              case J:
                 if (pe != "/" || He[rt + 1] != "/") {
                   Me = oe;
                   continue;
@@ -8134,7 +8134,7 @@ var EasemobChat = { exports: {} };
                   Me = re;
                   break;
                 }
-                Me = Je;
+                Me = ze;
                 continue;
               case oe:
                 if (he.scheme = de.scheme, pe == r)
@@ -8145,7 +8145,7 @@ var EasemobChat = { exports: {} };
                   he.username = de.username, he.password = de.password, he.host = de.host, he.port = de.port, he.path = f(de.path), he.query = "", Me = st;
                 else {
                   if (pe != "#") {
-                    he.username = de.username, he.password = de.password, he.host = de.host, he.port = de.port, he.path = f(de.path), he.path.length--, Me = Je;
+                    he.username = de.username, he.password = de.password, he.host = de.host, he.port = de.port, he.path = f(de.path), he.path.length--, Me = ze;
                     continue;
                   }
                   he.username = de.username, he.password = de.password, he.host = de.host, he.port = de.port, he.path = f(de.path), he.query = de.query, he.fragment = "", Me = U;
@@ -8154,14 +8154,14 @@ var EasemobChat = { exports: {} };
               case q:
                 if (!he.isSpecial() || pe != "/" && pe != "\\") {
                   if (pe != "/") {
-                    he.username = de.username, he.password = de.password, he.host = de.host, he.port = de.port, Me = Je;
+                    he.username = de.username, he.password = de.password, he.host = de.host, he.port = de.port, Me = ze;
                     continue;
                   }
                   Me = re;
                 } else
                   Me = te;
                 break;
-              case J:
+              case z:
                 if (Me = te, pe != "/" || ne(Ge, rt + 1) != "/")
                   continue;
                 rt++;
@@ -8194,13 +8194,13 @@ var EasemobChat = { exports: {} };
               case Ae:
               case We:
                 if (le && he.scheme == "file") {
-                  Me = ze;
+                  Me = Je;
                   continue;
                 }
                 if (pe != ":" || Fe) {
                   if (pe == r || pe == "/" || pe == "?" || pe == "#" || pe == "\\" && he.isSpecial()) {
                     if (he.isSpecial() && Ge == "")
-                      return Ze;
+                      return Ke;
                     if (le && Ge == "" && (he.includesCredentials() || he.port !== null))
                       return;
                     if (Ye = he.parseHost(Ge))
@@ -8212,7 +8212,7 @@ var EasemobChat = { exports: {} };
                   pe == "[" ? Fe = !0 : pe == "]" && (Fe = !1), Ge += pe;
                 } else {
                   if (Ge == "")
-                    return Ze;
+                    return Ke;
                   if (Ye = he.parseHost(Ge))
                     return Ye;
                   if (Ge = "", Me = Te, le == We)
@@ -8220,7 +8220,7 @@ var EasemobChat = { exports: {} };
                 }
                 break;
               case Te:
-                if (!ae(Ke, pe)) {
+                if (!ae(Ze, pe)) {
                   if (pe == r || pe == "/" || pe == "?" || pe == "#" || pe == "\\" && he.isSpecial() || le) {
                     if (Ge != "") {
                       var ut = Y(Ge, 10);
@@ -8242,7 +8242,7 @@ var EasemobChat = { exports: {} };
                   Me = ie;
                 else {
                   if (!de || de.scheme != "file") {
-                    Me = Je;
+                    Me = ze;
                     continue;
                   }
                   if (pe == r)
@@ -8251,7 +8251,7 @@ var EasemobChat = { exports: {} };
                     he.host = de.host, he.path = f(de.path), he.query = "", Me = st;
                   else {
                     if (pe != "#") {
-                      y(se(f(He, rt), "")) || (he.host = de.host, he.path = f(de.path), he.shortenPath()), Me = Je;
+                      y(se(f(He, rt), "")) || (he.host = de.host, he.path = f(de.path), he.shortenPath()), Me = ze;
                       continue;
                     }
                     he.host = de.host, he.path = f(de.path), he.query = de.query, he.fragment = "", Me = U;
@@ -8260,15 +8260,15 @@ var EasemobChat = { exports: {} };
                 break;
               case ie:
                 if (pe == "/" || pe == "\\") {
-                  Me = ze;
+                  Me = Je;
                   break;
                 }
-                de && de.scheme == "file" && !y(se(f(He, rt), "")) && (k(de.path[0], !0) ? ge(he.path, de.path[0]) : he.host = de.host), Me = Je;
+                de && de.scheme == "file" && !y(se(f(He, rt), "")) && (k(de.path[0], !0) ? ge(he.path, de.path[0]) : he.host = de.host), Me = ze;
                 continue;
-              case ze:
+              case Je:
                 if (pe == r || pe == "/" || pe == "\\" || pe == "?" || pe == "#") {
                   if (!le && k(Ge))
-                    Me = Je;
+                    Me = ze;
                   else if (Ge == "") {
                     if (he.host = "", le)
                       return;
@@ -8286,22 +8286,22 @@ var EasemobChat = { exports: {} };
                 break;
               case De:
                 if (he.isSpecial()) {
-                  if (Me = Je, pe != "/" && pe != "\\")
+                  if (Me = ze, pe != "/" && pe != "\\")
                     continue;
                 } else if (le || pe != "?")
                   if (le || pe != "#") {
-                    if (pe != r && (Me = Je, pe != "/"))
+                    if (pe != r && (Me = ze, pe != "/"))
                       continue;
                   } else
                     he.fragment = "", Me = U;
                 else
                   he.query = "", Me = st;
                 break;
-              case Je:
+              case ze:
                 if (pe == r || pe == "/" || pe == "\\" && he.isSpecial() || !le && (pe == "?" || pe == "#")) {
-                  if ((et = fe(et = Ge)) === ".." || et === "%2e." || et === ".%2e" || et === "%2e%2e" ? (he.shortenPath(), pe == "/" || pe == "\\" && he.isSpecial() || ge(he.path, "")) : R(Ge) ? pe == "/" || pe == "\\" && he.isSpecial() || ge(he.path, "") : (he.scheme == "file" && !he.path.length && k(Ge) && (he.host && (he.host = ""), Ge = ne(Ge, 0) + ":"), ge(he.path, Ge)), Ge = "", he.scheme == "file" && (pe == r || pe == "?" || pe == "#"))
+                  if ((et = fe(et = Ge)) === ".." || et === "%2e." || et === ".%2e" || et === "%2e%2e" ? (he.shortenPath(), pe == "/" || pe == "\\" && he.isSpecial() || ge(he.path, "")) : I(Ge) ? pe == "/" || pe == "\\" && he.isSpecial() || ge(he.path, "") : (he.scheme == "file" && !he.path.length && k(Ge) && (he.host && (he.host = ""), Ge = ne(Ge, 0) + ":"), ge(he.path, Ge)), Ge = "", he.scheme == "file" && (pe == r || pe == "?" || pe == "#"))
                     for (; he.path.length > 1 && he.path[0] === ""; )
-                      Ie(he.path);
+                      Re(he.path);
                   pe == "?" ? (he.query = "", Me = st) : pe == "#" && (he.fragment = "", Me = U);
                 } else
                   Ge += L(pe, _);
@@ -8344,9 +8344,9 @@ var EasemobChat = { exports: {} };
                           return;
                         nt++;
                       }
-                      if (!ae(Ke, ct()))
+                      if (!ae(Ze, ct()))
                         return;
-                      for (; ae(Ke, ct()); ) {
+                      for (; ae(Ze, ct()); ) {
                         if (Me = Y(ct(), 10), he === null)
                           he = Me;
                         else {
@@ -8383,11 +8383,11 @@ var EasemobChat = { exports: {} };
                 return;
               return qe;
             }(Oe(ee, 1, -1)), !le))
-              return Ze;
+              return Ke;
             this.host = le;
           } else if (this.isSpecial()) {
             if (ee = c(ee), ae(ve, ee) || (le = function(pe) {
-              var Xe, Ye, et, he, Me, rt, Ge, qe = Re(pe, ".");
+              var Xe, Ye, et, he, Me, rt, Ge, qe = Ie(pe, ".");
               if (qe.length && qe[qe.length - 1] == "" && qe.length--, (Xe = qe.length) > 4)
                 return pe;
               for (Ye = [], et = 0; et < Xe; et++) {
@@ -8412,11 +8412,11 @@ var EasemobChat = { exports: {} };
                 Ge += Ye[et] * V(256, 3 - et);
               return Ge;
             }(ee), le === null))
-              return Ze;
+              return Ke;
             this.host = le;
           } else {
             if (ae(we, ee))
-              return Ze;
+              return Ke;
             for (le = "", de = d(ee), He = 0; He < de.length; He++)
               le += L(de[He], T);
             this.host = le;
@@ -8450,11 +8450,11 @@ var EasemobChat = { exports: {} };
         }, getProtocol: function() {
           return this.scheme + ":";
         }, setProtocol: function(ee) {
-          this.parse(I(ee) + ":", H);
+          this.parse(S(ee) + ":", H);
         }, getUsername: function() {
           return this.username;
         }, setUsername: function(ee) {
-          var le = d(I(ee));
+          var le = d(S(ee));
           if (!this.cannotHaveUsernamePasswordPort()) {
             this.username = "";
             for (var de = 0; de < le.length; de++)
@@ -8463,7 +8463,7 @@ var EasemobChat = { exports: {} };
         }, getPassword: function() {
           return this.password;
         }, setPassword: function(ee) {
-          var le = d(I(ee));
+          var le = d(S(ee));
           if (!this.cannotHaveUsernamePasswordPort()) {
             this.password = "";
             for (var de = 0; de < le.length; de++)
@@ -8481,9 +8481,9 @@ var EasemobChat = { exports: {} };
           this.cannotBeABaseURL || this.parse(ee, We);
         }, getPort: function() {
           var ee = this.port;
-          return ee === null ? "" : I(ee);
+          return ee === null ? "" : S(ee);
         }, setPort: function(ee) {
-          this.cannotHaveUsernamePasswordPort() || ((ee = I(ee)) == "" ? this.port = null : this.parse(ee, Te));
+          this.cannotHaveUsernamePasswordPort() || ((ee = S(ee)) == "" ? this.port = null : this.parse(ee, Te));
         }, getPathname: function() {
           var ee = this.path;
           return this.cannotBeABaseURL ? ee[0] : ee.length ? "/" + se(ee, "/") : "";
@@ -8493,20 +8493,20 @@ var EasemobChat = { exports: {} };
           var ee = this.query;
           return ee ? "?" + ee : "";
         }, setSearch: function(ee) {
-          (ee = I(ee)) == "" ? this.query = null : (ne(ee, 0) == "?" && (ee = Oe(ee, 1)), this.query = "", this.parse(ee, st)), this.searchParams.update();
+          (ee = S(ee)) == "" ? this.query = null : (ne(ee, 0) == "?" && (ee = Oe(ee, 1)), this.query = "", this.parse(ee, st)), this.searchParams.update();
         }, getSearchParams: function() {
           return this.searchParams.facade;
         }, getHash: function() {
           var ee = this.fragment;
           return ee ? "#" + ee : "";
         }, setHash: function(ee) {
-          (ee = I(ee)) != "" ? (ne(ee, 0) == "#" && (ee = Oe(ee, 1)), this.fragment = "", this.parse(ee, U)) : this.fragment = null;
+          (ee = S(ee)) != "" ? (ne(ee, 0) == "#" && (ee = Oe(ee, 1)), this.fragment = "", this.parse(ee, U)) : this.fragment = null;
         }, update: function() {
           this.query = this.searchParams.serialize() || null;
         } };
         var Q = function(ee) {
           var le = m(this, ye), de = N(arguments.length, 1) > 1 ? arguments[1] : void 0, He = C(le, new Ee(ee, !1, de));
-          i || (le.href = He.serialize(), le.origin = He.getOrigin(), le.protocol = He.getProtocol(), le.username = He.getUsername(), le.password = He.getPassword(), le.host = He.getHost(), le.hostname = He.getHostname(), le.port = He.getPort(), le.pathname = He.getPathname(), le.search = He.getSearch(), le.searchParams = He.getSearchParams(), le.hash = He.getHash());
+          a || (le.href = He.serialize(), le.origin = He.getOrigin(), le.protocol = He.getProtocol(), le.username = He.getUsername(), le.password = He.getPassword(), le.host = He.getHost(), le.hostname = He.getHostname(), le.port = He.getPort(), le.pathname = He.getPathname(), le.search = He.getSearch(), le.searchParams = He.getSearchParams(), le.hash = He.getHash());
         }, ye = Q.prototype, _e = function(ee, le) {
           return { get: function() {
             return E(this)[ee]();
@@ -8514,33 +8514,33 @@ var EasemobChat = { exports: {} };
             return E(this)[le](de);
           }, configurable: !0, enumerable: !0 };
         };
-        if (i && (u(ye, "href", _e("serialize", "setHref")), u(ye, "origin", _e("getOrigin")), u(ye, "protocol", _e("getProtocol", "setProtocol")), u(ye, "username", _e("getUsername", "setUsername")), u(ye, "password", _e("getPassword", "setPassword")), u(ye, "host", _e("getHost", "setHost")), u(ye, "hostname", _e("getHostname", "setHostname")), u(ye, "port", _e("getPort", "setPort")), u(ye, "pathname", _e("getPathname", "setPathname")), u(ye, "search", _e("getSearch", "setSearch")), u(ye, "searchParams", _e("getSearchParams")), u(ye, "hash", _e("getHash", "setHash"))), l(ye, "toJSON", function() {
+        if (a && (u(ye, "href", _e("serialize", "setHref")), u(ye, "origin", _e("getOrigin")), u(ye, "protocol", _e("getProtocol", "setProtocol")), u(ye, "username", _e("getUsername", "setUsername")), u(ye, "password", _e("getPassword", "setPassword")), u(ye, "host", _e("getHost", "setHost")), u(ye, "hostname", _e("getHostname", "setHostname")), u(ye, "port", _e("getPort", "setPort")), u(ye, "pathname", _e("getPathname", "setPathname")), u(ye, "search", _e("getSearch", "setSearch")), u(ye, "searchParams", _e("getSearchParams")), u(ye, "hash", _e("getHash", "setHash"))), l(ye, "toJSON", function() {
           return E(this).serialize();
         }, { enumerable: !0 }), l(ye, "toString", function() {
           return E(this).serialize();
-        }, { enumerable: !0 }), K) {
-          var be = K.createObjectURL, Se = K.revokeObjectURL;
-          be && l(Q, "createObjectURL", o(be, K)), Se && l(Q, "revokeObjectURL", o(Se, K));
+        }, { enumerable: !0 }), Z) {
+          var be = Z.createObjectURL, Se = Z.revokeObjectURL;
+          be && l(Q, "createObjectURL", o(be, Z)), Se && l(Q, "revokeObjectURL", o(Se, Z));
         }
-        v(Q, "URL"), t({ global: !0, constructor: !0, forced: !s, sham: !i }, { URL: Q });
-      }, 285: function(p, S, e) {
+        v(Q, "URL"), t({ global: !0, constructor: !0, forced: !s, sham: !a }, { URL: Q });
+      }, 285: function(p, R, e) {
         e(8789);
       }, 5717: function(p) {
-        typeof Object.create == "function" ? p.exports = function(S, e) {
-          e && (S.super_ = e, S.prototype = Object.create(e.prototype, { constructor: { value: S, enumerable: !1, writable: !0, configurable: !0 } }));
-        } : p.exports = function(S, e) {
+        typeof Object.create == "function" ? p.exports = function(R, e) {
+          e && (R.super_ = e, R.prototype = Object.create(e.prototype, { constructor: { value: R, enumerable: !1, writable: !0, configurable: !0 } }));
+        } : p.exports = function(R, e) {
           if (e) {
-            S.super_ = e;
+            R.super_ = e;
             var r = function() {
             };
-            r.prototype = e.prototype, S.prototype = new r(), S.prototype.constructor = S;
+            r.prototype = e.prototype, R.prototype = new r(), R.prototype.constructor = R;
           }
         };
       }, 3720: function(p) {
         p.exports = e;
-        var S = null;
+        var R = null;
         try {
-          S = new WebAssembly.Instance(new WebAssembly.Module(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 13, 2, 96, 0, 1, 127, 96, 4, 127, 127, 127, 127, 1, 127, 3, 7, 6, 0, 1, 1, 1, 1, 1, 6, 6, 1, 127, 1, 65, 0, 11, 7, 50, 6, 3, 109, 117, 108, 0, 1, 5, 100, 105, 118, 95, 115, 0, 2, 5, 100, 105, 118, 95, 117, 0, 3, 5, 114, 101, 109, 95, 115, 0, 4, 5, 114, 101, 109, 95, 117, 0, 5, 8, 103, 101, 116, 95, 104, 105, 103, 104, 0, 0, 10, 191, 1, 6, 4, 0, 35, 0, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 126, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 127, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 128, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 129, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 130, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11])), {}).exports;
+          R = new WebAssembly.Instance(new WebAssembly.Module(new Uint8Array([0, 97, 115, 109, 1, 0, 0, 0, 1, 13, 2, 96, 0, 1, 127, 96, 4, 127, 127, 127, 127, 1, 127, 3, 7, 6, 0, 1, 1, 1, 1, 1, 6, 6, 1, 127, 1, 65, 0, 11, 7, 50, 6, 3, 109, 117, 108, 0, 1, 5, 100, 105, 118, 95, 115, 0, 2, 5, 100, 105, 118, 95, 117, 0, 3, 5, 114, 101, 109, 95, 115, 0, 4, 5, 114, 101, 109, 95, 117, 0, 5, 8, 103, 101, 116, 95, 104, 105, 103, 104, 0, 0, 10, 191, 1, 6, 4, 0, 35, 0, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 126, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 127, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 128, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 129, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11, 36, 1, 1, 126, 32, 0, 173, 32, 1, 173, 66, 32, 134, 132, 32, 2, 173, 32, 3, 173, 66, 32, 134, 132, 130, 34, 4, 66, 32, 135, 167, 36, 0, 32, 4, 167, 11])), {}).exports;
         } catch {
         }
         function e(E, P, G) {
@@ -8550,12 +8550,12 @@ var EasemobChat = { exports: {} };
           return (E && E.__isLong__) === !0;
         }
         e.prototype.__isLong__, Object.defineProperty(e.prototype, "__isLong__", { value: !0 }), e.isLong = r;
-        var t = {}, i = {};
+        var t = {}, a = {};
         function s(E, P) {
-          var G, K, F;
-          return P ? (F = 0 <= (E >>>= 0) && E < 256) && (K = i[E]) ? K : (G = o(E, (0 | E) < 0 ? -1 : 0, !0), F && (i[E] = G), G) : (F = -128 <= (E |= 0) && E < 128) && (K = t[E]) ? K : (G = o(E, E < 0 ? -1 : 0, !1), F && (t[E] = G), G);
+          var G, Z, F;
+          return P ? (F = 0 <= (E >>>= 0) && E < 256) && (Z = a[E]) ? Z : (G = o(E, (0 | E) < 0 ? -1 : 0, !0), F && (a[E] = G), G) : (F = -128 <= (E |= 0) && E < 128) && (Z = t[E]) ? Z : (G = o(E, E < 0 ? -1 : 0, !1), F && (t[E] = G), G);
         }
-        function a(E, P) {
+        function i(E, P) {
           if (isNaN(E))
             return P ? b : f;
           if (P) {
@@ -8569,12 +8569,12 @@ var EasemobChat = { exports: {} };
             if (E + 1 >= h)
               return N;
           }
-          return E < 0 ? a(-E, P).neg() : o(E % m | 0, E / m | 0, P);
+          return E < 0 ? i(-E, P).neg() : o(E % m | 0, E / m | 0, P);
         }
         function o(E, P, G) {
           return new e(E, P, G);
         }
-        e.fromInt = s, e.fromNumber = a, e.fromBits = o;
+        e.fromInt = s, e.fromNumber = i, e.fromBits = o;
         var n = Math.pow;
         function l(E, P, G) {
           if (E.length === 0)
@@ -8583,23 +8583,23 @@ var EasemobChat = { exports: {} };
             return f;
           if (typeof P == "number" ? (G = P, P = !1) : P = !!P, (G = G || 10) < 2 || 36 < G)
             throw RangeError("radix");
-          var K;
-          if ((K = E.indexOf("-")) > 0)
+          var Z;
+          if ((Z = E.indexOf("-")) > 0)
             throw Error("interior hyphen");
-          if (K === 0)
+          if (Z === 0)
             return l(E.substring(1), P, G).neg();
-          for (var F = a(n(G, 8)), Y = f, Z = 0; Z < E.length; Z += 8) {
-            var V = Math.min(8, E.length - Z), ne = parseInt(E.substring(Z, Z + V), G);
+          for (var F = i(n(G, 8)), Y = f, K = 0; K < E.length; K += 8) {
+            var V = Math.min(8, E.length - K), ne = parseInt(E.substring(K, K + V), G);
             if (V < 8) {
-              var ae = a(n(G, V));
-              Y = Y.mul(ae).add(a(ne));
+              var ae = i(n(G, V));
+              Y = Y.mul(ae).add(i(ne));
             } else
-              Y = (Y = Y.mul(F)).add(a(ne));
+              Y = (Y = Y.mul(F)).add(i(ne));
           }
           return Y.unsigned = P, Y;
         }
         function u(E, P) {
-          return typeof E == "number" ? a(E, P) : typeof E == "string" ? l(E, P) : o(E.low, E.high, typeof P == "boolean" ? P : E.unsigned);
+          return typeof E == "number" ? i(E, P) : typeof E == "string" ? l(E, P) : o(E.low, E.high, typeof P == "boolean" ? P : E.unsigned);
         }
         e.fromString = l, e.fromValue = u;
         var m = 4294967296, g = m * m, h = g / 2, d = s(1 << 24), f = s(0);
@@ -8608,8 +8608,8 @@ var EasemobChat = { exports: {} };
         e.UZERO = b;
         var c = s(1);
         e.ONE = c;
-        var I = s(1, !0);
-        e.UONE = I;
+        var S = s(1, !0);
+        e.UONE = S;
         var v = s(-1);
         e.NEG_ONE = v;
         var N = o(-1, 2147483647, !1);
@@ -8630,18 +8630,18 @@ var EasemobChat = { exports: {} };
             return "0";
           if (this.isNegative()) {
             if (this.eq(O)) {
-              var P = a(E), G = this.div(P), K = G.mul(P).sub(this);
-              return G.toString(E) + K.toInt().toString(E);
+              var P = i(E), G = this.div(P), Z = G.mul(P).sub(this);
+              return G.toString(E) + Z.toInt().toString(E);
             }
             return "-" + this.neg().toString(E);
           }
-          for (var F = a(n(E, 6), this.unsigned), Y = this, Z = ""; ; ) {
+          for (var F = i(n(E, 6), this.unsigned), Y = this, K = ""; ; ) {
             var V = Y.div(F), ne = (Y.sub(V.mul(F)).toInt() >>> 0).toString(E);
             if ((Y = V).isZero())
-              return ne + Z;
+              return ne + K;
             for (; ne.length < 6; )
               ne = "0" + ne;
-            Z = "" + ne + Z;
+            K = "" + ne + K;
           }
         }, C.getHighBits = function() {
           return this.high;
@@ -8688,15 +8688,15 @@ var EasemobChat = { exports: {} };
           return !this.unsigned && this.eq(O) ? O : this.not().add(c);
         }, C.neg = C.negate, C.add = function(E) {
           r(E) || (E = u(E));
-          var P = this.high >>> 16, G = 65535 & this.high, K = this.low >>> 16, F = 65535 & this.low, Y = E.high >>> 16, Z = 65535 & E.high, V = E.low >>> 16, ne = 0, ae = 0, se = 0, ue = 0;
-          return se += (ue += F + (65535 & E.low)) >>> 16, ae += (se += K + V) >>> 16, ne += (ae += G + Z) >>> 16, ne += P + Y, o((se &= 65535) << 16 | (ue &= 65535), (ne &= 65535) << 16 | (ae &= 65535), this.unsigned);
+          var P = this.high >>> 16, G = 65535 & this.high, Z = this.low >>> 16, F = 65535 & this.low, Y = E.high >>> 16, K = 65535 & E.high, V = E.low >>> 16, ne = 0, ae = 0, se = 0, ue = 0;
+          return se += (ue += F + (65535 & E.low)) >>> 16, ae += (se += Z + V) >>> 16, ne += (ae += G + K) >>> 16, ne += P + Y, o((se &= 65535) << 16 | (ue &= 65535), (ne &= 65535) << 16 | (ae &= 65535), this.unsigned);
         }, C.subtract = function(E) {
           return r(E) || (E = u(E)), this.add(E.neg());
         }, C.sub = C.subtract, C.multiply = function(E) {
           if (this.isZero())
             return f;
-          if (r(E) || (E = u(E)), S)
-            return o(S.mul(this.low, this.high, E.low, E.high), S.get_high(), this.unsigned);
+          if (r(E) || (E = u(E)), R)
+            return o(R.mul(this.low, this.high, E.low, E.high), R.get_high(), this.unsigned);
           if (E.isZero())
             return f;
           if (this.eq(O))
@@ -8708,43 +8708,43 @@ var EasemobChat = { exports: {} };
           if (E.isNegative())
             return this.mul(E.neg()).neg();
           if (this.lt(d) && E.lt(d))
-            return a(this.toNumber() * E.toNumber(), this.unsigned);
-          var P = this.high >>> 16, G = 65535 & this.high, K = this.low >>> 16, F = 65535 & this.low, Y = E.high >>> 16, Z = 65535 & E.high, V = E.low >>> 16, ne = 65535 & E.low, ae = 0, se = 0, ue = 0, me = 0;
-          return ue += (me += F * ne) >>> 16, se += (ue += K * ne) >>> 16, ue &= 65535, se += (ue += F * V) >>> 16, ae += (se += G * ne) >>> 16, se &= 65535, ae += (se += K * V) >>> 16, se &= 65535, ae += (se += F * Z) >>> 16, ae += P * ne + G * V + K * Z + F * Y, o((ue &= 65535) << 16 | (me &= 65535), (ae &= 65535) << 16 | (se &= 65535), this.unsigned);
+            return i(this.toNumber() * E.toNumber(), this.unsigned);
+          var P = this.high >>> 16, G = 65535 & this.high, Z = this.low >>> 16, F = 65535 & this.low, Y = E.high >>> 16, K = 65535 & E.high, V = E.low >>> 16, ne = 65535 & E.low, ae = 0, se = 0, ue = 0, me = 0;
+          return ue += (me += F * ne) >>> 16, se += (ue += Z * ne) >>> 16, ue &= 65535, se += (ue += F * V) >>> 16, ae += (se += G * ne) >>> 16, se &= 65535, ae += (se += Z * V) >>> 16, se &= 65535, ae += (se += F * K) >>> 16, ae += P * ne + G * V + Z * K + F * Y, o((ue &= 65535) << 16 | (me &= 65535), (ae &= 65535) << 16 | (se &= 65535), this.unsigned);
         }, C.mul = C.multiply, C.divide = function(E) {
           if (r(E) || (E = u(E)), E.isZero())
             throw Error("division by zero");
-          var P, G, K;
-          if (S)
-            return this.unsigned || this.high !== -2147483648 || E.low !== -1 || E.high !== -1 ? o((this.unsigned ? S.div_u : S.div_s)(this.low, this.high, E.low, E.high), S.get_high(), this.unsigned) : this;
+          var P, G, Z;
+          if (R)
+            return this.unsigned || this.high !== -2147483648 || E.low !== -1 || E.high !== -1 ? o((this.unsigned ? R.div_u : R.div_s)(this.low, this.high, E.low, E.high), R.get_high(), this.unsigned) : this;
           if (this.isZero())
             return this.unsigned ? b : f;
           if (this.unsigned) {
             if (E.unsigned || (E = E.toUnsigned()), E.gt(this))
               return b;
             if (E.gt(this.shru(1)))
-              return I;
-            K = b;
+              return S;
+            Z = b;
           } else {
             if (this.eq(O))
-              return E.eq(c) || E.eq(v) ? O : E.eq(O) ? c : (P = this.shr(1).div(E).shl(1)).eq(f) ? E.isNegative() ? c : v : (G = this.sub(E.mul(P)), K = P.add(G.div(E)));
+              return E.eq(c) || E.eq(v) ? O : E.eq(O) ? c : (P = this.shr(1).div(E).shl(1)).eq(f) ? E.isNegative() ? c : v : (G = this.sub(E.mul(P)), Z = P.add(G.div(E)));
             if (E.eq(O))
               return this.unsigned ? b : f;
             if (this.isNegative())
               return E.isNegative() ? this.neg().div(E.neg()) : this.neg().div(E).neg();
             if (E.isNegative())
               return this.div(E.neg()).neg();
-            K = f;
+            Z = f;
           }
           for (G = this; G.gte(E); ) {
             P = Math.max(1, Math.floor(G.toNumber() / E.toNumber()));
-            for (var F = Math.ceil(Math.log(P) / Math.LN2), Y = F <= 48 ? 1 : n(2, F - 48), Z = a(P), V = Z.mul(E); V.isNegative() || V.gt(G); )
-              V = (Z = a(P -= Y, this.unsigned)).mul(E);
-            Z.isZero() && (Z = c), K = K.add(Z), G = G.sub(V);
+            for (var F = Math.ceil(Math.log(P) / Math.LN2), Y = F <= 48 ? 1 : n(2, F - 48), K = i(P), V = K.mul(E); V.isNegative() || V.gt(G); )
+              V = (K = i(P -= Y, this.unsigned)).mul(E);
+            K.isZero() && (K = c), Z = Z.add(K), G = G.sub(V);
           }
-          return K;
+          return Z;
         }, C.div = C.divide, C.modulo = function(E) {
-          return r(E) || (E = u(E)), S ? o((this.unsigned ? S.rem_u : S.rem_s)(this.low, this.high, E.low, E.high), S.get_high(), this.unsigned) : this.sub(this.div(E).mul(E));
+          return r(E) || (E = u(E)), R ? o((this.unsigned ? R.rem_u : R.rem_s)(this.low, this.high, E.low, E.high), R.get_high(), this.unsigned) : this.sub(this.div(E).mul(E));
         }, C.mod = C.modulo, C.rem = C.modulo, C.not = function() {
           return o(~this.low, ~this.high, this.unsigned);
         }, C.and = function(E) {
@@ -8781,19 +8781,19 @@ var EasemobChat = { exports: {} };
         }, e.fromBytesBE = function(E, P) {
           return new e(E[4] << 24 | E[5] << 16 | E[6] << 8 | E[7], E[0] << 24 | E[1] << 16 | E[2] << 8 | E[3], P);
         };
-      }, 3281: function(p, S, e) {
+      }, 3281: function(p, R, e) {
         p.exports = e(9050);
       }, 2967: function(p) {
         p.exports = r;
-        var S, e = /\/|\./;
-        function r(t, i) {
-          e.test(t) || (t = "google/protobuf/" + t + ".proto", i = { nested: { google: { nested: { protobuf: { nested: i } } } } }), r[t] = i;
+        var R, e = /\/|\./;
+        function r(t, a) {
+          e.test(t) || (t = "google/protobuf/" + t + ".proto", a = { nested: { google: { nested: { protobuf: { nested: a } } } } }), r[t] = a;
         }
-        r("any", { Any: { fields: { type_url: { type: "string", id: 1 }, value: { type: "bytes", id: 2 } } } }), r("duration", { Duration: S = { fields: { seconds: { type: "int64", id: 1 }, nanos: { type: "int32", id: 2 } } } }), r("timestamp", { Timestamp: S }), r("empty", { Empty: { fields: {} } }), r("struct", { Struct: { fields: { fields: { keyType: "string", type: "Value", id: 1 } } }, Value: { oneofs: { kind: { oneof: ["nullValue", "numberValue", "stringValue", "boolValue", "structValue", "listValue"] } }, fields: { nullValue: { type: "NullValue", id: 1 }, numberValue: { type: "double", id: 2 }, stringValue: { type: "string", id: 3 }, boolValue: { type: "bool", id: 4 }, structValue: { type: "Struct", id: 5 }, listValue: { type: "ListValue", id: 6 } } }, NullValue: { values: { NULL_VALUE: 0 } }, ListValue: { fields: { values: { rule: "repeated", type: "Value", id: 1 } } } }), r("wrappers", { DoubleValue: { fields: { value: { type: "double", id: 1 } } }, FloatValue: { fields: { value: { type: "float", id: 1 } } }, Int64Value: { fields: { value: { type: "int64", id: 1 } } }, UInt64Value: { fields: { value: { type: "uint64", id: 1 } } }, Int32Value: { fields: { value: { type: "int32", id: 1 } } }, UInt32Value: { fields: { value: { type: "uint32", id: 1 } } }, BoolValue: { fields: { value: { type: "bool", id: 1 } } }, StringValue: { fields: { value: { type: "string", id: 1 } } }, BytesValue: { fields: { value: { type: "bytes", id: 1 } } } }), r("field_mask", { FieldMask: { fields: { paths: { rule: "repeated", type: "string", id: 1 } } } }), r.get = function(t) {
+        r("any", { Any: { fields: { type_url: { type: "string", id: 1 }, value: { type: "bytes", id: 2 } } } }), r("duration", { Duration: R = { fields: { seconds: { type: "int64", id: 1 }, nanos: { type: "int32", id: 2 } } } }), r("timestamp", { Timestamp: R }), r("empty", { Empty: { fields: {} } }), r("struct", { Struct: { fields: { fields: { keyType: "string", type: "Value", id: 1 } } }, Value: { oneofs: { kind: { oneof: ["nullValue", "numberValue", "stringValue", "boolValue", "structValue", "listValue"] } }, fields: { nullValue: { type: "NullValue", id: 1 }, numberValue: { type: "double", id: 2 }, stringValue: { type: "string", id: 3 }, boolValue: { type: "bool", id: 4 }, structValue: { type: "Struct", id: 5 }, listValue: { type: "ListValue", id: 6 } } }, NullValue: { values: { NULL_VALUE: 0 } }, ListValue: { fields: { values: { rule: "repeated", type: "Value", id: 1 } } } }), r("wrappers", { DoubleValue: { fields: { value: { type: "double", id: 1 } } }, FloatValue: { fields: { value: { type: "float", id: 1 } } }, Int64Value: { fields: { value: { type: "int64", id: 1 } } }, UInt64Value: { fields: { value: { type: "uint64", id: 1 } } }, Int32Value: { fields: { value: { type: "int32", id: 1 } } }, UInt32Value: { fields: { value: { type: "uint32", id: 1 } } }, BoolValue: { fields: { value: { type: "bool", id: 1 } } }, StringValue: { fields: { value: { type: "string", id: 1 } } }, BytesValue: { fields: { value: { type: "bytes", id: 1 } } } }), r("field_mask", { FieldMask: { fields: { paths: { rule: "repeated", type: "string", id: 1 } } } }), r.get = function(t) {
           return r[t] || null;
         };
-      }, 3996: function(p, S, e) {
-        var r = S, t = e(7025), i = e(9935);
+      }, 3996: function(p, R, e) {
+        var r = R, t = e(7025), a = e(9935);
         function s(o, n, l, u) {
           if (n.resolvedType)
             if (n.resolvedType instanceof t) {
@@ -8839,7 +8839,7 @@ var EasemobChat = { exports: {} };
           }
           return o;
         }
-        function a(o, n, l, u) {
+        function i(o, n, l, u) {
           if (n.resolvedType)
             n.resolvedType instanceof t ? o("d%s=o.enums===String?types[%i].values[m%s]:m%s", u, l, u, u) : o("d%s=types[%i].toObject(m%s,o)", u, l, u);
           else {
@@ -8867,34 +8867,34 @@ var EasemobChat = { exports: {} };
           return o;
         }
         r.fromObject = function(o) {
-          var n = o.fieldsArray, l = i.codegen(["d"], o.name + "$fromObject")("if(d instanceof this.ctor)")("return d");
+          var n = o.fieldsArray, l = a.codegen(["d"], o.name + "$fromObject")("if(d instanceof this.ctor)")("return d");
           if (!n.length)
             return l("return new this.ctor");
           l("var m=new this.ctor");
           for (var u = 0; u < n.length; ++u) {
-            var m = n[u].resolve(), g = i.safeProp(m.name);
+            var m = n[u].resolve(), g = a.safeProp(m.name);
             m.map ? (l("if(d%s){", g)('if(typeof d%s!=="object")', g)("throw TypeError(%j)", m.fullName + ": object expected")("m%s={}", g)("for(var ks=Object.keys(d%s),i=0;i<ks.length;++i){", g), s(l, m, u, g + "[ks[i]]")("}")("}")) : m.repeated ? (l("if(d%s){", g)("if(!Array.isArray(d%s))", g)("throw TypeError(%j)", m.fullName + ": array expected")("m%s=[]", g)("for(var i=0;i<d%s.length;++i){", g), s(l, m, u, g + "[i]")("}")("}")) : (m.resolvedType instanceof t || l("if(d%s!=null){", g), s(l, m, u, g), m.resolvedType instanceof t || l("}"));
           }
           return l("return m");
         }, r.toObject = function(o) {
-          var n = o.fieldsArray.slice().sort(i.compareFieldsById);
+          var n = o.fieldsArray.slice().sort(a.compareFieldsById);
           if (!n.length)
-            return i.codegen()("return {}");
-          for (var l = i.codegen(["m", "o"], o.name + "$toObject")("if(!o)")("o={}")("var d={}"), u = [], m = [], g = [], h = 0; h < n.length; ++h)
+            return a.codegen()("return {}");
+          for (var l = a.codegen(["m", "o"], o.name + "$toObject")("if(!o)")("o={}")("var d={}"), u = [], m = [], g = [], h = 0; h < n.length; ++h)
             n[h].partOf || (n[h].resolve().repeated ? u : n[h].map ? m : g).push(n[h]);
           if (u.length) {
             for (l("if(o.arrays||o.defaults){"), h = 0; h < u.length; ++h)
-              l("d%s=[]", i.safeProp(u[h].name));
+              l("d%s=[]", a.safeProp(u[h].name));
             l("}");
           }
           if (m.length) {
             for (l("if(o.objects||o.defaults){"), h = 0; h < m.length; ++h)
-              l("d%s={}", i.safeProp(m[h].name));
+              l("d%s={}", a.safeProp(m[h].name));
             l("}");
           }
           if (g.length) {
             for (l("if(o.defaults){"), h = 0; h < g.length; ++h) {
-              var d = g[h], f = i.safeProp(d.name);
+              var d = g[h], f = a.safeProp(d.name);
               if (d.resolvedType instanceof t)
                 l("d%s=o.enums===String?%j:%j", f, d.resolvedType.valuesById[d.typeDefault], d.typeDefault);
               else if (d.long)
@@ -8910,106 +8910,106 @@ var EasemobChat = { exports: {} };
           var c = !1;
           for (h = 0; h < n.length; ++h) {
             d = n[h];
-            var I = o._fieldsArray.indexOf(d);
-            f = i.safeProp(d.name), d.map ? (c || (c = !0, l("var ks2")), l("if(m%s&&(ks2=Object.keys(m%s)).length){", f, f)("d%s={}", f)("for(var j=0;j<ks2.length;++j){"), a(l, d, I, f + "[ks2[j]]")("}")) : d.repeated ? (l("if(m%s&&m%s.length){", f, f)("d%s=[]", f)("for(var j=0;j<m%s.length;++j){", f), a(l, d, I, f + "[j]")("}")) : (l("if(m%s!=null&&m.hasOwnProperty(%j)){", f, d.name), a(l, d, I, f), d.partOf && l("if(o.oneofs)")("d%s=%j", i.safeProp(d.partOf.name), d.name)), l("}");
+            var S = o._fieldsArray.indexOf(d);
+            f = a.safeProp(d.name), d.map ? (c || (c = !0, l("var ks2")), l("if(m%s&&(ks2=Object.keys(m%s)).length){", f, f)("d%s={}", f)("for(var j=0;j<ks2.length;++j){"), i(l, d, S, f + "[ks2[j]]")("}")) : d.repeated ? (l("if(m%s&&m%s.length){", f, f)("d%s=[]", f)("for(var j=0;j<m%s.length;++j){", f), i(l, d, S, f + "[j]")("}")) : (l("if(m%s!=null&&m.hasOwnProperty(%j)){", f, d.name), i(l, d, S, f), d.partOf && l("if(o.oneofs)")("d%s=%j", a.safeProp(d.partOf.name), d.name)), l("}");
           }
           return l("return d");
         };
-      }, 5305: function(p, S, e) {
-        p.exports = function(a) {
-          var o = i.codegen(["r", "l"], a.name + "$decode")("if(!(r instanceof Reader))")("r=Reader.create(r)")("var c=l===undefined?r.len:r.pos+l,m=new this.ctor" + (a.fieldsArray.filter(function(h) {
+      }, 5305: function(p, R, e) {
+        p.exports = function(i) {
+          var o = a.codegen(["r", "l"], i.name + "$decode")("if(!(r instanceof Reader))")("r=Reader.create(r)")("var c=l===undefined?r.len:r.pos+l,m=new this.ctor" + (i.fieldsArray.filter(function(h) {
             return h.map;
           }).length ? ",k,value" : ""))("while(r.pos<c){")("var t=r.uint32()");
-          a.group && o("if((t&7)===4)")("break"), o("switch(t>>>3){");
-          for (var n = 0; n < a.fieldsArray.length; ++n) {
-            var l = a._fieldsArray[n].resolve(), u = l.resolvedType instanceof r ? "int32" : l.type, m = "m" + i.safeProp(l.name);
+          i.group && o("if((t&7)===4)")("break"), o("switch(t>>>3){");
+          for (var n = 0; n < i.fieldsArray.length; ++n) {
+            var l = i._fieldsArray[n].resolve(), u = l.resolvedType instanceof r ? "int32" : l.type, m = "m" + a.safeProp(l.name);
             o("case %i:", l.id), l.map ? (o("if(%s===util.emptyObject)", m)("%s={}", m)("var c2 = r.uint32()+r.pos"), t.defaults[l.keyType] !== void 0 ? o("k=%j", t.defaults[l.keyType]) : o("k=null"), t.defaults[u] !== void 0 ? o("value=%j", t.defaults[u]) : o("value=null"), o("while(r.pos<c2){")("var tag2=r.uint32()")("switch(tag2>>>3){")("case 1: k=r.%s(); break", l.keyType)("case 2:"), t.basic[u] === void 0 ? o("value=types[%i].decode(r,r.uint32())", n) : o("value=r.%s()", u), o("break")("default:")("r.skipType(tag2&7)")("break")("}")("}"), t.long[l.keyType] !== void 0 ? o('%s[typeof k==="object"?util.longToHash(k):k]=value', m) : o("%s[k]=value", m)) : l.repeated ? (o("if(!(%s&&%s.length))", m, m)("%s=[]", m), t.packed[u] !== void 0 && o("if((t&7)===2){")("var c2=r.uint32()+r.pos")("while(r.pos<c2)")("%s.push(r.%s())", m, u)("}else"), t.basic[u] === void 0 ? o(l.resolvedType.group ? "%s.push(types[%i].decode(r))" : "%s.push(types[%i].decode(r,r.uint32()))", m, n) : o("%s.push(r.%s())", m, u)) : t.basic[u] === void 0 ? o(l.resolvedType.group ? "%s=types[%i].decode(r)" : "%s=types[%i].decode(r,r.uint32())", m, n) : o("%s=r.%s()", m, u), o("break");
           }
-          for (o("default:")("r.skipType(t&7)")("break")("}")("}"), n = 0; n < a._fieldsArray.length; ++n) {
-            var g = a._fieldsArray[n];
+          for (o("default:")("r.skipType(t&7)")("break")("}")("}"), n = 0; n < i._fieldsArray.length; ++n) {
+            var g = i._fieldsArray[n];
             g.required && o("if(!m.hasOwnProperty(%j))", g.name)("throw util.ProtocolError(%j,{instance:m})", s(g));
           }
           return o("return m");
         };
-        var r = e(7025), t = e(7063), i = e(9935);
-        function s(a) {
-          return "missing required '" + a.name + "'";
+        var r = e(7025), t = e(7063), a = e(9935);
+        function s(i) {
+          return "missing required '" + i.name + "'";
         }
-      }, 4928: function(p, S, e) {
-        p.exports = function(a) {
-          for (var o, n = i.codegen(["m", "w"], a.name + "$encode")("if(!w)")("w=Writer.create()"), l = a.fieldsArray.slice().sort(i.compareFieldsById), u = 0; u < l.length; ++u) {
-            var m = l[u].resolve(), g = a._fieldsArray.indexOf(m), h = m.resolvedType instanceof r ? "int32" : m.type, d = t.basic[h];
-            o = "m" + i.safeProp(m.name), m.map ? (n("if(%s!=null&&Object.hasOwnProperty.call(m,%j)){", o, m.name)("for(var ks=Object.keys(%s),i=0;i<ks.length;++i){", o)("w.uint32(%i).fork().uint32(%i).%s(ks[i])", (m.id << 3 | 2) >>> 0, 8 | t.mapKey[m.keyType], m.keyType), d === void 0 ? n("types[%i].encode(%s[ks[i]],w.uint32(18).fork()).ldelim().ldelim()", g, o) : n(".uint32(%i).%s(%s[ks[i]]).ldelim()", 16 | d, h, o), n("}")("}")) : m.repeated ? (n("if(%s!=null&&%s.length){", o, o), m.packed && t.packed[h] !== void 0 ? n("w.uint32(%i).fork()", (m.id << 3 | 2) >>> 0)("for(var i=0;i<%s.length;++i)", o)("w.%s(%s[i])", h, o)("w.ldelim()") : (n("for(var i=0;i<%s.length;++i)", o), d === void 0 ? s(n, m, g, o + "[i]") : n("w.uint32(%i).%s(%s[i])", (m.id << 3 | d) >>> 0, h, o)), n("}")) : (m.optional && n("if(%s!=null&&Object.hasOwnProperty.call(m,%j))", o, m.name), d === void 0 ? s(n, m, g, o) : n("w.uint32(%i).%s(%s)", (m.id << 3 | d) >>> 0, h, o));
+      }, 4928: function(p, R, e) {
+        p.exports = function(i) {
+          for (var o, n = a.codegen(["m", "w"], i.name + "$encode")("if(!w)")("w=Writer.create()"), l = i.fieldsArray.slice().sort(a.compareFieldsById), u = 0; u < l.length; ++u) {
+            var m = l[u].resolve(), g = i._fieldsArray.indexOf(m), h = m.resolvedType instanceof r ? "int32" : m.type, d = t.basic[h];
+            o = "m" + a.safeProp(m.name), m.map ? (n("if(%s!=null&&Object.hasOwnProperty.call(m,%j)){", o, m.name)("for(var ks=Object.keys(%s),i=0;i<ks.length;++i){", o)("w.uint32(%i).fork().uint32(%i).%s(ks[i])", (m.id << 3 | 2) >>> 0, 8 | t.mapKey[m.keyType], m.keyType), d === void 0 ? n("types[%i].encode(%s[ks[i]],w.uint32(18).fork()).ldelim().ldelim()", g, o) : n(".uint32(%i).%s(%s[ks[i]]).ldelim()", 16 | d, h, o), n("}")("}")) : m.repeated ? (n("if(%s!=null&&%s.length){", o, o), m.packed && t.packed[h] !== void 0 ? n("w.uint32(%i).fork()", (m.id << 3 | 2) >>> 0)("for(var i=0;i<%s.length;++i)", o)("w.%s(%s[i])", h, o)("w.ldelim()") : (n("for(var i=0;i<%s.length;++i)", o), d === void 0 ? s(n, m, g, o + "[i]") : n("w.uint32(%i).%s(%s[i])", (m.id << 3 | d) >>> 0, h, o)), n("}")) : (m.optional && n("if(%s!=null&&Object.hasOwnProperty.call(m,%j))", o, m.name), d === void 0 ? s(n, m, g, o) : n("w.uint32(%i).%s(%s)", (m.id << 3 | d) >>> 0, h, o));
           }
           return n("return w");
         };
-        var r = e(7025), t = e(7063), i = e(9935);
-        function s(a, o, n, l) {
-          return o.resolvedType.group ? a("types[%i].encode(%s,w.uint32(%i)).uint32(%i)", n, l, (o.id << 3 | 3) >>> 0, (o.id << 3 | 4) >>> 0) : a("types[%i].encode(%s,w.uint32(%i).fork()).ldelim()", n, l, (o.id << 3 | 2) >>> 0);
+        var r = e(7025), t = e(7063), a = e(9935);
+        function s(i, o, n, l) {
+          return o.resolvedType.group ? i("types[%i].encode(%s,w.uint32(%i)).uint32(%i)", n, l, (o.id << 3 | 3) >>> 0, (o.id << 3 | 4) >>> 0) : i("types[%i].encode(%s,w.uint32(%i).fork()).ldelim()", n, l, (o.id << 3 | 2) >>> 0);
         }
-      }, 7025: function(p, S, e) {
+      }, 7025: function(p, R, e) {
         p.exports = s;
         var r = e(3243);
         ((s.prototype = Object.create(r.prototype)).constructor = s).className = "Enum";
-        var t = e(9313), i = e(9935);
-        function s(a, o, n, l, u) {
-          if (r.call(this, a, n), o && typeof o != "object")
+        var t = e(9313), a = e(9935);
+        function s(i, o, n, l, u) {
+          if (r.call(this, i, n), o && typeof o != "object")
             throw TypeError("values must be an object");
           if (this.valuesById = {}, this.values = Object.create(this.valuesById), this.comment = l, this.comments = u || {}, this.reserved = void 0, o)
             for (var m = Object.keys(o), g = 0; g < m.length; ++g)
               typeof o[m[g]] == "number" && (this.valuesById[this.values[m[g]] = o[m[g]]] = m[g]);
         }
-        s.fromJSON = function(a, o) {
-          var n = new s(a, o.values, o.options, o.comment, o.comments);
+        s.fromJSON = function(i, o) {
+          var n = new s(i, o.values, o.options, o.comment, o.comments);
           return n.reserved = o.reserved, n;
-        }, s.prototype.toJSON = function(a) {
-          var o = !!a && !!a.keepComments;
-          return i.toObject(["options", this.options, "values", this.values, "reserved", this.reserved && this.reserved.length ? this.reserved : void 0, "comment", o ? this.comment : void 0, "comments", o ? this.comments : void 0]);
-        }, s.prototype.add = function(a, o, n) {
-          if (!i.isString(a))
+        }, s.prototype.toJSON = function(i) {
+          var o = !!i && !!i.keepComments;
+          return a.toObject(["options", this.options, "values", this.values, "reserved", this.reserved && this.reserved.length ? this.reserved : void 0, "comment", o ? this.comment : void 0, "comments", o ? this.comments : void 0]);
+        }, s.prototype.add = function(i, o, n) {
+          if (!a.isString(i))
             throw TypeError("name must be a string");
-          if (!i.isInteger(o))
+          if (!a.isInteger(o))
             throw TypeError("id must be an integer");
-          if (this.values[a] !== void 0)
-            throw Error("duplicate name '" + a + "' in " + this);
+          if (this.values[i] !== void 0)
+            throw Error("duplicate name '" + i + "' in " + this);
           if (this.isReservedId(o))
             throw Error("id " + o + " is reserved in " + this);
-          if (this.isReservedName(a))
-            throw Error("name '" + a + "' is reserved in " + this);
+          if (this.isReservedName(i))
+            throw Error("name '" + i + "' is reserved in " + this);
           if (this.valuesById[o] !== void 0) {
             if (!this.options || !this.options.allow_alias)
               throw Error("duplicate id " + o + " in " + this);
-            this.values[a] = o;
+            this.values[i] = o;
           } else
-            this.valuesById[this.values[a] = o] = a;
-          return this.comments[a] = n || null, this;
-        }, s.prototype.remove = function(a) {
-          if (!i.isString(a))
+            this.valuesById[this.values[i] = o] = i;
+          return this.comments[i] = n || null, this;
+        }, s.prototype.remove = function(i) {
+          if (!a.isString(i))
             throw TypeError("name must be a string");
-          var o = this.values[a];
+          var o = this.values[i];
           if (o == null)
-            throw Error("name '" + a + "' does not exist in " + this);
-          return delete this.valuesById[o], delete this.values[a], delete this.comments[a], this;
-        }, s.prototype.isReservedId = function(a) {
-          return t.isReservedId(this.reserved, a);
-        }, s.prototype.isReservedName = function(a) {
-          return t.isReservedName(this.reserved, a);
+            throw Error("name '" + i + "' does not exist in " + this);
+          return delete this.valuesById[o], delete this.values[i], delete this.comments[i], this;
+        }, s.prototype.isReservedId = function(i) {
+          return t.isReservedId(this.reserved, i);
+        }, s.prototype.isReservedName = function(i) {
+          return t.isReservedName(this.reserved, i);
         };
-      }, 3548: function(p, S, e) {
+      }, 3548: function(p, R, e) {
         p.exports = n;
         var r = e(3243);
         ((n.prototype = Object.create(r.prototype)).constructor = n).className = "Field";
-        var t, i = e(7025), s = e(7063), a = e(9935), o = /^required|optional|repeated$/;
+        var t, a = e(7025), s = e(7063), i = e(9935), o = /^required|optional|repeated$/;
         function n(l, u, m, g, h, d, f) {
-          if (a.isObject(g) ? (f = h, d = g, g = h = void 0) : a.isObject(h) && (f = d, d = h, h = void 0), r.call(this, l, d), !a.isInteger(u) || u < 0)
+          if (i.isObject(g) ? (f = h, d = g, g = h = void 0) : i.isObject(h) && (f = d, d = h, h = void 0), r.call(this, l, d), !i.isInteger(u) || u < 0)
             throw TypeError("id must be a non-negative integer");
-          if (!a.isString(m))
+          if (!i.isString(m))
             throw TypeError("type must be a string");
           if (g !== void 0 && !o.test(g = g.toString().toLowerCase()))
             throw TypeError("rule must be a string rule");
-          if (h !== void 0 && !a.isString(h))
+          if (h !== void 0 && !i.isString(h))
             throw TypeError("extend must be a string");
-          g === "proto3_optional" && (g = "optional"), this.rule = g && g !== "optional" ? g : void 0, this.type = m, this.id = u, this.extend = h || void 0, this.required = g === "required", this.optional = !this.required, this.repeated = g === "repeated", this.map = !1, this.message = null, this.partOf = null, this.typeDefault = null, this.defaultValue = null, this.long = !!a.Long && s.long[m] !== void 0, this.bytes = m === "bytes", this.resolvedType = null, this.extensionField = null, this.declaringField = null, this._packed = null, this.comment = f;
+          g === "proto3_optional" && (g = "optional"), this.rule = g && g !== "optional" ? g : void 0, this.type = m, this.id = u, this.extend = h || void 0, this.required = g === "required", this.optional = !this.required, this.repeated = g === "repeated", this.map = !1, this.message = null, this.partOf = null, this.typeDefault = null, this.defaultValue = null, this.long = !!i.Long && s.long[m] !== void 0, this.bytes = m === "bytes", this.resolvedType = null, this.extensionField = null, this.declaringField = null, this._packed = null, this.comment = f;
         }
         n.fromJSON = function(l, u) {
           return new n(l, u.id, u.type, u.rule, u.extend, u.options, u.comment);
@@ -9019,120 +9019,120 @@ var EasemobChat = { exports: {} };
           return l === "packed" && (this._packed = null), r.prototype.setOption.call(this, l, u, m);
         }, n.prototype.toJSON = function(l) {
           var u = !!l && !!l.keepComments;
-          return a.toObject(["rule", this.rule !== "optional" && this.rule || void 0, "type", this.type, "id", this.id, "extend", this.extend, "options", this.options, "comment", u ? this.comment : void 0]);
+          return i.toObject(["rule", this.rule !== "optional" && this.rule || void 0, "type", this.type, "id", this.id, "extend", this.extend, "options", this.options, "comment", u ? this.comment : void 0]);
         }, n.prototype.resolve = function() {
           if (this.resolved)
             return this;
-          if ((this.typeDefault = s.defaults[this.type]) === void 0 && (this.resolvedType = (this.declaringField ? this.declaringField.parent : this.parent).lookupTypeOrEnum(this.type), this.resolvedType instanceof t ? this.typeDefault = null : this.typeDefault = this.resolvedType.values[Object.keys(this.resolvedType.values)[0]]), this.options && this.options.default != null && (this.typeDefault = this.options.default, this.resolvedType instanceof i && typeof this.typeDefault == "string" && (this.typeDefault = this.resolvedType.values[this.typeDefault])), this.options && (this.options.packed !== !0 && (this.options.packed === void 0 || !this.resolvedType || this.resolvedType instanceof i) || delete this.options.packed, Object.keys(this.options).length || (this.options = void 0)), this.long)
-            this.typeDefault = a.Long.fromNumber(this.typeDefault, this.type.charAt(0) === "u"), Object.freeze && Object.freeze(this.typeDefault);
+          if ((this.typeDefault = s.defaults[this.type]) === void 0 && (this.resolvedType = (this.declaringField ? this.declaringField.parent : this.parent).lookupTypeOrEnum(this.type), this.resolvedType instanceof t ? this.typeDefault = null : this.typeDefault = this.resolvedType.values[Object.keys(this.resolvedType.values)[0]]), this.options && this.options.default != null && (this.typeDefault = this.options.default, this.resolvedType instanceof a && typeof this.typeDefault == "string" && (this.typeDefault = this.resolvedType.values[this.typeDefault])), this.options && (this.options.packed !== !0 && (this.options.packed === void 0 || !this.resolvedType || this.resolvedType instanceof a) || delete this.options.packed, Object.keys(this.options).length || (this.options = void 0)), this.long)
+            this.typeDefault = i.Long.fromNumber(this.typeDefault, this.type.charAt(0) === "u"), Object.freeze && Object.freeze(this.typeDefault);
           else if (this.bytes && typeof this.typeDefault == "string") {
             var l;
-            a.base64.test(this.typeDefault) ? a.base64.decode(this.typeDefault, l = a.newBuffer(a.base64.length(this.typeDefault)), 0) : a.utf8.write(this.typeDefault, l = a.newBuffer(a.utf8.length(this.typeDefault)), 0), this.typeDefault = l;
+            i.base64.test(this.typeDefault) ? i.base64.decode(this.typeDefault, l = i.newBuffer(i.base64.length(this.typeDefault)), 0) : i.utf8.write(this.typeDefault, l = i.newBuffer(i.utf8.length(this.typeDefault)), 0), this.typeDefault = l;
           }
-          return this.map ? this.defaultValue = a.emptyObject : this.repeated ? this.defaultValue = a.emptyArray : this.defaultValue = this.typeDefault, this.parent instanceof t && (this.parent.ctor.prototype[this.name] = this.defaultValue), r.prototype.resolve.call(this);
+          return this.map ? this.defaultValue = i.emptyObject : this.repeated ? this.defaultValue = i.emptyArray : this.defaultValue = this.typeDefault, this.parent instanceof t && (this.parent.ctor.prototype[this.name] = this.defaultValue), r.prototype.resolve.call(this);
         }, n.d = function(l, u, m, g) {
-          return typeof u == "function" ? u = a.decorateType(u).name : u && typeof u == "object" && (u = a.decorateEnum(u).name), function(h, d) {
-            a.decorateType(h.constructor).add(new n(d, l, u, m, { default: g }));
+          return typeof u == "function" ? u = i.decorateType(u).name : u && typeof u == "object" && (u = i.decorateEnum(u).name), function(h, d) {
+            i.decorateType(h.constructor).add(new n(d, l, u, m, { default: g }));
           };
         }, n._configure = function(l) {
           t = l;
         };
-      }, 8836: function(p, S, e) {
+      }, 8836: function(p, R, e) {
         var r = p.exports = e(9482);
-        r.build = "light", r.load = function(t, i, s) {
-          return typeof i == "function" ? (s = i, i = new r.Root()) : i || (i = new r.Root()), i.load(t, s);
-        }, r.loadSync = function(t, i) {
-          return i || (i = new r.Root()), i.loadSync(t);
+        r.build = "light", r.load = function(t, a, s) {
+          return typeof a == "function" ? (s = a, a = new r.Root()) : a || (a = new r.Root()), a.load(t, s);
+        }, r.loadSync = function(t, a) {
+          return a || (a = new r.Root()), a.loadSync(t);
         }, r.encoder = e(4928), r.decoder = e(5305), r.verifier = e(4497), r.converter = e(3996), r.ReflectionObject = e(3243), r.Namespace = e(9313), r.Root = e(9424), r.Enum = e(7025), r.Type = e(7645), r.Field = e(3548), r.OneOf = e(7598), r.MapField = e(6039), r.Service = e(7513), r.Method = e(4429), r.Message = e(8368), r.wrappers = e(1667), r.types = e(7063), r.util = e(9935), r.ReflectionObject._configure(r.Root), r.Namespace._configure(r.Type, r.Service, r.Enum), r.Root._configure(r.Type), r.Field._configure(r.Type);
-      }, 9482: function(p, S, e) {
-        var r = S;
+      }, 9482: function(p, R, e) {
+        var r = R;
         function t() {
           r.util._configure(), r.Writer._configure(r.BufferWriter), r.Reader._configure(r.BufferReader);
         }
         r.build = "minimal", r.Writer = e(1173), r.BufferWriter = e(3155), r.Reader = e(1408), r.BufferReader = e(593), r.util = e(9693), r.rpc = e(5994), r.roots = e(5054), r.configure = t, t();
-      }, 9050: function(p, S, e) {
+      }, 9050: function(p, R, e) {
         var r = p.exports = e(8836);
         r.build = "full", r.tokenize = e(626), r.parse = e(2228), r.common = e(2967), r.Root._configure(r.Type, r.parse, r.common);
-      }, 6039: function(p, S, e) {
+      }, 6039: function(p, R, e) {
         p.exports = s;
         var r = e(3548);
         ((s.prototype = Object.create(r.prototype)).constructor = s).className = "MapField";
-        var t = e(7063), i = e(9935);
-        function s(a, o, n, l, u, m) {
-          if (r.call(this, a, o, l, void 0, void 0, u, m), !i.isString(n))
+        var t = e(7063), a = e(9935);
+        function s(i, o, n, l, u, m) {
+          if (r.call(this, i, o, l, void 0, void 0, u, m), !a.isString(n))
             throw TypeError("keyType must be a string");
           this.keyType = n, this.resolvedKeyType = null, this.map = !0;
         }
-        s.fromJSON = function(a, o) {
-          return new s(a, o.id, o.keyType, o.type, o.options, o.comment);
-        }, s.prototype.toJSON = function(a) {
-          var o = !!a && !!a.keepComments;
-          return i.toObject(["keyType", this.keyType, "type", this.type, "id", this.id, "extend", this.extend, "options", this.options, "comment", o ? this.comment : void 0]);
+        s.fromJSON = function(i, o) {
+          return new s(i, o.id, o.keyType, o.type, o.options, o.comment);
+        }, s.prototype.toJSON = function(i) {
+          var o = !!i && !!i.keepComments;
+          return a.toObject(["keyType", this.keyType, "type", this.type, "id", this.id, "extend", this.extend, "options", this.options, "comment", o ? this.comment : void 0]);
         }, s.prototype.resolve = function() {
           if (this.resolved)
             return this;
           if (t.mapKey[this.keyType] === void 0)
             throw Error("invalid key type: " + this.keyType);
           return r.prototype.resolve.call(this);
-        }, s.d = function(a, o, n) {
-          return typeof n == "function" ? n = i.decorateType(n).name : n && typeof n == "object" && (n = i.decorateEnum(n).name), function(l, u) {
-            i.decorateType(l.constructor).add(new s(u, a, o, n));
+        }, s.d = function(i, o, n) {
+          return typeof n == "function" ? n = a.decorateType(n).name : n && typeof n == "object" && (n = a.decorateEnum(n).name), function(l, u) {
+            a.decorateType(l.constructor).add(new s(u, i, o, n));
           };
         };
-      }, 8368: function(p, S, e) {
+      }, 8368: function(p, R, e) {
         p.exports = t;
         var r = e(9693);
-        function t(i) {
-          if (i)
-            for (var s = Object.keys(i), a = 0; a < s.length; ++a)
-              this[s[a]] = i[s[a]];
+        function t(a) {
+          if (a)
+            for (var s = Object.keys(a), i = 0; i < s.length; ++i)
+              this[s[i]] = a[s[i]];
         }
-        t.create = function(i) {
-          return this.$type.create(i);
-        }, t.encode = function(i, s) {
-          return this.$type.encode(i, s);
-        }, t.encodeDelimited = function(i, s) {
-          return this.$type.encodeDelimited(i, s);
-        }, t.decode = function(i) {
-          return this.$type.decode(i);
-        }, t.decodeDelimited = function(i) {
-          return this.$type.decodeDelimited(i);
-        }, t.verify = function(i) {
-          return this.$type.verify(i);
-        }, t.fromObject = function(i) {
-          return this.$type.fromObject(i);
-        }, t.toObject = function(i, s) {
-          return this.$type.toObject(i, s);
+        t.create = function(a) {
+          return this.$type.create(a);
+        }, t.encode = function(a, s) {
+          return this.$type.encode(a, s);
+        }, t.encodeDelimited = function(a, s) {
+          return this.$type.encodeDelimited(a, s);
+        }, t.decode = function(a) {
+          return this.$type.decode(a);
+        }, t.decodeDelimited = function(a) {
+          return this.$type.decodeDelimited(a);
+        }, t.verify = function(a) {
+          return this.$type.verify(a);
+        }, t.fromObject = function(a) {
+          return this.$type.fromObject(a);
+        }, t.toObject = function(a, s) {
+          return this.$type.toObject(a, s);
         }, t.prototype.toJSON = function() {
           return this.$type.toObject(this, r.toJSONOptions);
         };
-      }, 4429: function(p, S, e) {
-        p.exports = i;
+      }, 4429: function(p, R, e) {
+        p.exports = a;
         var r = e(3243);
-        ((i.prototype = Object.create(r.prototype)).constructor = i).className = "Method";
+        ((a.prototype = Object.create(r.prototype)).constructor = a).className = "Method";
         var t = e(9935);
-        function i(s, a, o, n, l, u, m, g, h) {
-          if (t.isObject(l) ? (m = l, l = u = void 0) : t.isObject(u) && (m = u, u = void 0), a !== void 0 && !t.isString(a))
+        function a(s, i, o, n, l, u, m, g, h) {
+          if (t.isObject(l) ? (m = l, l = u = void 0) : t.isObject(u) && (m = u, u = void 0), i !== void 0 && !t.isString(i))
             throw TypeError("type must be a string");
           if (!t.isString(o))
             throw TypeError("requestType must be a string");
           if (!t.isString(n))
             throw TypeError("responseType must be a string");
-          r.call(this, s, m), this.type = a || "rpc", this.requestType = o, this.requestStream = !!l || void 0, this.responseType = n, this.responseStream = !!u || void 0, this.resolvedRequestType = null, this.resolvedResponseType = null, this.comment = g, this.parsedOptions = h;
+          r.call(this, s, m), this.type = i || "rpc", this.requestType = o, this.requestStream = !!l || void 0, this.responseType = n, this.responseStream = !!u || void 0, this.resolvedRequestType = null, this.resolvedResponseType = null, this.comment = g, this.parsedOptions = h;
         }
-        i.fromJSON = function(s, a) {
-          return new i(s, a.type, a.requestType, a.responseType, a.requestStream, a.responseStream, a.options, a.comment, a.parsedOptions);
-        }, i.prototype.toJSON = function(s) {
-          var a = !!s && !!s.keepComments;
-          return t.toObject(["type", this.type !== "rpc" && this.type || void 0, "requestType", this.requestType, "requestStream", this.requestStream, "responseType", this.responseType, "responseStream", this.responseStream, "options", this.options, "comment", a ? this.comment : void 0, "parsedOptions", this.parsedOptions]);
-        }, i.prototype.resolve = function() {
+        a.fromJSON = function(s, i) {
+          return new a(s, i.type, i.requestType, i.responseType, i.requestStream, i.responseStream, i.options, i.comment, i.parsedOptions);
+        }, a.prototype.toJSON = function(s) {
+          var i = !!s && !!s.keepComments;
+          return t.toObject(["type", this.type !== "rpc" && this.type || void 0, "requestType", this.requestType, "requestStream", this.requestStream, "responseType", this.responseType, "responseStream", this.responseStream, "options", this.options, "comment", i ? this.comment : void 0, "parsedOptions", this.parsedOptions]);
+        }, a.prototype.resolve = function() {
           return this.resolved ? this : (this.resolvedRequestType = this.parent.lookupType(this.requestType), this.resolvedResponseType = this.parent.lookupType(this.responseType), r.prototype.resolve.call(this));
         };
-      }, 9313: function(p, S, e) {
+      }, 9313: function(p, R, e) {
         p.exports = u;
         var r = e(3243);
         ((u.prototype = Object.create(r.prototype)).constructor = u).className = "Namespace";
-        var t, i, s, a = e(3548), o = e(7598), n = e(9935);
+        var t, a, s, i = e(3548), o = e(7598), n = e(9935);
         function l(g, h) {
           if (g && g.length) {
             for (var d = {}, f = 0; f < g.length; ++f)
@@ -9169,7 +9169,7 @@ var EasemobChat = { exports: {} };
         }, u.prototype.addJSON = function(g) {
           if (g)
             for (var h, d = Object.keys(g), f = 0; f < d.length; ++f)
-              h = g[d[f]], this.add((h.fields !== void 0 ? t.fromJSON : h.values !== void 0 ? s.fromJSON : h.methods !== void 0 ? i.fromJSON : h.id !== void 0 ? a.fromJSON : u.fromJSON)(d[f], h));
+              h = g[d[f]], this.add((h.fields !== void 0 ? t.fromJSON : h.values !== void 0 ? s.fromJSON : h.methods !== void 0 ? a.fromJSON : h.id !== void 0 ? i.fromJSON : u.fromJSON)(d[f], h));
           return this;
         }, u.prototype.get = function(g) {
           return this.nested && this.nested[g] || null;
@@ -9178,12 +9178,12 @@ var EasemobChat = { exports: {} };
             return this.nested[g].values;
           throw Error("no such enum: " + g);
         }, u.prototype.add = function(g) {
-          if (!(g instanceof a && g.extend !== void 0 || g instanceof t || g instanceof s || g instanceof i || g instanceof u || g instanceof o))
+          if (!(g instanceof i && g.extend !== void 0 || g instanceof t || g instanceof s || g instanceof a || g instanceof u || g instanceof o))
             throw TypeError("object must be a valid nested object");
           if (this.nested) {
             var h = this.get(g.name);
             if (h) {
-              if (!(h instanceof u && g instanceof u) || h instanceof t || h instanceof i)
+              if (!(h instanceof u && g instanceof u) || h instanceof t || h instanceof a)
                 throw Error("duplicate name '" + g.name + "' in " + this);
               for (var d = h.nestedArray, f = 0; f < d.length; ++f)
                 g.add(d[f]);
@@ -9255,48 +9255,48 @@ var EasemobChat = { exports: {} };
             throw Error("no such Type or Enum '" + g + "' in " + this);
           return h;
         }, u.prototype.lookupService = function(g) {
-          var h = this.lookup(g, [i]);
+          var h = this.lookup(g, [a]);
           if (!h)
             throw Error("no such Service '" + g + "' in " + this);
           return h;
         }, u._configure = function(g, h, d) {
-          t = g, i = h, s = d;
+          t = g, a = h, s = d;
         };
-      }, 3243: function(p, S, e) {
-        p.exports = i, i.className = "ReflectionObject";
+      }, 3243: function(p, R, e) {
+        p.exports = a, a.className = "ReflectionObject";
         var r, t = e(9935);
-        function i(s, a) {
+        function a(s, i) {
           if (!t.isString(s))
             throw TypeError("name must be a string");
-          if (a && !t.isObject(a))
+          if (i && !t.isObject(i))
             throw TypeError("options must be an object");
-          this.options = a, this.parsedOptions = null, this.name = s, this.parent = null, this.resolved = !1, this.comment = null, this.filename = null;
+          this.options = i, this.parsedOptions = null, this.name = s, this.parent = null, this.resolved = !1, this.comment = null, this.filename = null;
         }
-        Object.defineProperties(i.prototype, { root: { get: function() {
+        Object.defineProperties(a.prototype, { root: { get: function() {
           for (var s = this; s.parent !== null; )
             s = s.parent;
           return s;
         } }, fullName: { get: function() {
-          for (var s = [this.name], a = this.parent; a; )
-            s.unshift(a.name), a = a.parent;
+          for (var s = [this.name], i = this.parent; i; )
+            s.unshift(i.name), i = i.parent;
           return s.join(".");
-        } } }), i.prototype.toJSON = function() {
+        } } }), a.prototype.toJSON = function() {
           throw Error();
-        }, i.prototype.onAdd = function(s) {
+        }, a.prototype.onAdd = function(s) {
           this.parent && this.parent !== s && this.parent.remove(this), this.parent = s, this.resolved = !1;
-          var a = s.root;
-          a instanceof r && a._handleAdd(this);
-        }, i.prototype.onRemove = function(s) {
-          var a = s.root;
-          a instanceof r && a._handleRemove(this), this.parent = null, this.resolved = !1;
-        }, i.prototype.resolve = function() {
+          var i = s.root;
+          i instanceof r && i._handleAdd(this);
+        }, a.prototype.onRemove = function(s) {
+          var i = s.root;
+          i instanceof r && i._handleRemove(this), this.parent = null, this.resolved = !1;
+        }, a.prototype.resolve = function() {
           return this.resolved || this.root instanceof r && (this.resolved = !0), this;
-        }, i.prototype.getOption = function(s) {
+        }, a.prototype.getOption = function(s) {
           if (this.options)
             return this.options[s];
-        }, i.prototype.setOption = function(s, a, o) {
-          return o && this.options && this.options[s] !== void 0 || ((this.options || (this.options = {}))[s] = a), this;
-        }, i.prototype.setParsedOption = function(s, a, o) {
+        }, a.prototype.setOption = function(s, i, o) {
+          return o && this.options && this.options[s] !== void 0 || ((this.options || (this.options = {}))[s] = i), this;
+        }, a.prototype.setParsedOption = function(s, i, o) {
           this.parsedOptions || (this.parsedOptions = []);
           var n = this.parsedOptions;
           if (o) {
@@ -9305,36 +9305,36 @@ var EasemobChat = { exports: {} };
             });
             if (l) {
               var u = l[s];
-              t.setProperty(u, o, a);
+              t.setProperty(u, o, i);
             } else
-              (l = {})[s] = t.setProperty({}, o, a), n.push(l);
+              (l = {})[s] = t.setProperty({}, o, i), n.push(l);
           } else {
             var m = {};
-            m[s] = a, n.push(m);
+            m[s] = i, n.push(m);
           }
           return this;
-        }, i.prototype.setOptions = function(s, a) {
+        }, a.prototype.setOptions = function(s, i) {
           if (s)
             for (var o = Object.keys(s), n = 0; n < o.length; ++n)
-              this.setOption(o[n], s[o[n]], a);
+              this.setOption(o[n], s[o[n]], i);
           return this;
-        }, i.prototype.toString = function() {
-          var s = this.constructor.className, a = this.fullName;
-          return a.length ? s + " " + a : s;
-        }, i._configure = function(s) {
+        }, a.prototype.toString = function() {
+          var s = this.constructor.className, i = this.fullName;
+          return i.length ? s + " " + i : s;
+        }, a._configure = function(s) {
           r = s;
         };
-      }, 7598: function(p, S, e) {
+      }, 7598: function(p, R, e) {
         p.exports = s;
         var r = e(3243);
         ((s.prototype = Object.create(r.prototype)).constructor = s).className = "OneOf";
-        var t = e(3548), i = e(9935);
+        var t = e(3548), a = e(9935);
         function s(o, n, l, u) {
           if (Array.isArray(n) || (l = n, n = void 0), r.call(this, o, l), n !== void 0 && !Array.isArray(n))
             throw TypeError("fieldNames must be an Array");
           this.oneof = n || [], this.fieldsArray = [], this.comment = u;
         }
-        function a(o) {
+        function i(o) {
           if (o.parent)
             for (var n = 0; n < o.fieldsArray.length; ++n)
               o.fieldsArray[n].parent || o.parent.add(o.fieldsArray[n]);
@@ -9343,11 +9343,11 @@ var EasemobChat = { exports: {} };
           return new s(o, n.oneof, n.options, n.comment);
         }, s.prototype.toJSON = function(o) {
           var n = !!o && !!o.keepComments;
-          return i.toObject(["options", this.options, "oneof", this.oneof, "comment", n ? this.comment : void 0]);
+          return a.toObject(["options", this.options, "oneof", this.oneof, "comment", n ? this.comment : void 0]);
         }, s.prototype.add = function(o) {
           if (!(o instanceof t))
             throw TypeError("field must be a Field");
-          return o.parent && o.parent !== this.parent && o.parent.remove(o), this.oneof.push(o.name), this.fieldsArray.push(o), o.partOf = this, a(this), this;
+          return o.parent && o.parent !== this.parent && o.parent.remove(o), this.oneof.push(o.name), this.fieldsArray.push(o), o.partOf = this, i(this), this;
         }, s.prototype.remove = function(o) {
           if (!(o instanceof t))
             throw TypeError("field must be a Field");
@@ -9361,7 +9361,7 @@ var EasemobChat = { exports: {} };
             var l = o.get(this.oneof[n]);
             l && !l.partOf && (l.partOf = this, this.fieldsArray.push(l));
           }
-          a(this);
+          i(this);
         }, s.prototype.onRemove = function(o) {
           for (var n, l = 0; l < this.fieldsArray.length; ++l)
             (n = this.fieldsArray[l]).parent && n.parent.remove(n);
@@ -9370,15 +9370,15 @@ var EasemobChat = { exports: {} };
           for (var o = new Array(arguments.length), n = 0; n < arguments.length; )
             o[n] = arguments[n++];
           return function(l, u) {
-            i.decorateType(l.constructor).add(new s(u, o)), Object.defineProperty(l, u, { get: i.oneOfGetter(o), set: i.oneOfSetter(o) });
+            a.decorateType(l.constructor).add(new s(u, o)), Object.defineProperty(l, u, { get: a.oneOfGetter(o), set: a.oneOfSetter(o) });
           };
         };
-      }, 2228: function(p, S, e) {
+      }, 2228: function(p, R, e) {
         p.exports = C, C.filename = null, C.defaults = { keepCase: !1 };
-        var r = e(626), t = e(9424), i = e(7645), s = e(3548), a = e(6039), o = e(7598), n = e(7025), l = e(7513), u = e(4429), m = e(7063), g = e(9935), h = /^[1-9][0-9]*$/, d = /^-?[1-9][0-9]*$/, f = /^0[x][0-9a-fA-F]+$/, b = /^-?0[x][0-9a-fA-F]+$/, c = /^0[0-7]+$/, I = /^-?0[0-7]+$/, v = /^(?![eE])[0-9]*(?:\.[0-9]*)?(?:[eE][+-]?[0-9]+)?$/, N = /^[a-zA-Z_][a-zA-Z_0-9]*$/, x = /^(?:\.?[a-zA-Z_][a-zA-Z_0-9]*)(?:\.[a-zA-Z_][a-zA-Z_0-9]*)*$/, O = /^(?:\.[a-zA-Z_][a-zA-Z_0-9]*)+$/;
+        var r = e(626), t = e(9424), a = e(7645), s = e(3548), i = e(6039), o = e(7598), n = e(7025), l = e(7513), u = e(4429), m = e(7063), g = e(9935), h = /^[1-9][0-9]*$/, d = /^-?[1-9][0-9]*$/, f = /^0[x][0-9a-fA-F]+$/, b = /^-?0[x][0-9a-fA-F]+$/, c = /^0[0-7]+$/, S = /^-?0[0-7]+$/, v = /^(?![eE])[0-9]*(?:\.[0-9]*)?(?:[eE][+-]?[0-9]+)?$/, N = /^[a-zA-Z_][a-zA-Z_0-9]*$/, x = /^(?:\.?[a-zA-Z_][a-zA-Z_0-9]*)(?:\.[a-zA-Z_][a-zA-Z_0-9]*)*$/, O = /^(?:\.[a-zA-Z_][a-zA-Z_0-9]*)+$/;
         function C(E, P, G) {
           P instanceof t || (G = P, P = new t()), G || (G = C.defaults);
-          var K, F, Y, Z, V, ne = G.preferTrailingComment || !1, ae = r(E, G.alternateCommentMode || !1), se = ae.next, ue = ae.push, me = ae.peek, ge = ae.skip, Ce = ae.cmnt, Ie = !0, Re = !1, Oe = P, fe = G.keepCase ? function(j) {
+          var Z, F, Y, K, V, ne = G.preferTrailingComment || !1, ae = r(E, G.alternateCommentMode || !1), se = ae.next, ue = ae.push, me = ae.peek, ge = ae.skip, Ce = ae.cmnt, Re = !0, Ie = !1, Oe = P, fe = G.keepCase ? function(j) {
             return j;
           } : g.camelCase;
           function ce(j, B, T) {
@@ -9394,7 +9394,7 @@ var EasemobChat = { exports: {} };
             } while (j === '"' || j === "'");
             return B.join("");
           }
-          function Ze(j) {
+          function Ke(j) {
             var B = se();
             switch (B) {
               case "'":
@@ -9461,18 +9461,18 @@ var EasemobChat = { exports: {} };
               return parseInt(j, 10);
             if (b.test(j))
               return parseInt(j, 16);
-            if (I.test(j))
+            if (S.test(j))
               return parseInt(j, 8);
             throw ce(j, "id");
           }
           function Be() {
-            if (K !== void 0)
+            if (Z !== void 0)
               throw ce("package");
-            if (K = se(), !x.test(K))
-              throw ce(K, "name");
-            Oe = Oe.define(K), ge(";");
+            if (Z = se(), !x.test(Z))
+              throw ce(Z, "name");
+            Oe = Oe.define(Z), ge(";");
           }
-          function Ke() {
+          function Ze() {
             var j, B = me();
             switch (B) {
               case "weak":
@@ -9486,8 +9486,8 @@ var EasemobChat = { exports: {} };
             B = Ue(), ge(";"), j.push(B);
           }
           function Qe() {
-            if (ge("="), Z = Ue(), !(Re = Z === "proto3") && Z !== "proto2")
-              throw ce(Z, "syntax");
+            if (ge("="), K = Ue(), !(Ie = K === "proto3") && K !== "proto2")
+              throw ce(K, "syntax");
             ge(";");
           }
           function Pe(j, B) {
@@ -9498,7 +9498,7 @@ var EasemobChat = { exports: {} };
                 return function(T, W) {
                   if (!N.test(W = se()))
                     throw ce(W, "type name");
-                  var _ = new i(W);
+                  var _ = new a(W);
                   Le(_, function(A) {
                     if (!Pe(_, A))
                       switch (A) {
@@ -9517,14 +9517,14 @@ var EasemobChat = { exports: {} };
                             if (!N.test(y))
                               throw ce(y, "name");
                             ge("=");
-                            var R = new a(fe(y), Ve(se()), w, k);
-                            Le(R, function(H) {
+                            var I = new i(fe(y), Ve(se()), w, k);
+                            Le(I, function(H) {
                               if (H !== "option")
                                 throw ce(H);
-                              ve(R, H), ge(";");
+                              ve(I, H), ge(";");
                             }, function() {
-                              Ne(R);
-                            }), L.add(R);
+                              Ne(I);
+                            }), L.add(I);
                           })(_);
                           break;
                         case "required":
@@ -9532,7 +9532,7 @@ var EasemobChat = { exports: {} };
                           xe(_, A);
                           break;
                         case "optional":
-                          xe(_, Re ? "proto3_optional" : "optional");
+                          xe(_, Ie ? "proto3_optional" : "optional");
                           break;
                         case "oneof":
                           (function(L, w) {
@@ -9551,7 +9551,7 @@ var EasemobChat = { exports: {} };
                           $e(_.reserved || (_.reserved = []), !0);
                           break;
                         default:
-                          if (!Re || !x.test(A))
+                          if (!Ie || !x.test(A))
                             throw ce(A);
                           ue(A), xe(_, "optional");
                       }
@@ -9576,10 +9576,10 @@ var EasemobChat = { exports: {} };
                             throw ce(w, "name");
                           ge("=");
                           var k = Ve(se(), !0), y = {};
-                          Le(y, function(R) {
-                            if (R !== "option")
-                              throw ce(R);
-                            ve(y, R), ge(";");
+                          Le(y, function(I) {
+                            if (I !== "option")
+                              throw ce(I);
+                            ve(y, I), ge(";");
                           }, function() {
                             Ne(y);
                           }), L.add(w, k, y.comment);
@@ -9600,11 +9600,11 @@ var EasemobChat = { exports: {} };
                         var k = Ce(), y = w;
                         if (!N.test(w = se()))
                           throw ce(w, "name");
-                        var R, H, M, D, z = w;
-                        if (ge("("), ge("stream", !0) && (H = !0), !x.test(w = se()) || (R = w, ge(")"), ge("returns"), ge("("), ge("stream", !0) && (D = !0), !x.test(w = se())))
+                        var I, H, M, D, J = w;
+                        if (ge("("), ge("stream", !0) && (H = !0), !x.test(w = se()) || (I = w, ge(")"), ge("returns"), ge("("), ge("stream", !0) && (D = !0), !x.test(w = se())))
                           throw ce(w);
                         M = w, ge(")");
-                        var X = new u(z, y, R, M, H, D);
+                        var X = new u(J, y, I, M, H, D);
                         X.comment = k, Le(X, function(oe) {
                           if (oe !== "option")
                             throw ce(oe);
@@ -9626,10 +9626,10 @@ var EasemobChat = { exports: {} };
                         xe(T, A, _);
                         break;
                       case "optional":
-                        xe(T, Re ? "proto3_optional" : "optional", _);
+                        xe(T, Ie ? "proto3_optional" : "optional", _);
                         break;
                       default:
-                        if (!Re || !x.test(A))
+                        if (!Ie || !x.test(A))
                           throw ce(A);
                         ue(A), xe(T, "optional", _);
                     }
@@ -9668,31 +9668,31 @@ var EasemobChat = { exports: {} };
                 A.setOption("proto3_optional", !0), L.add(A), j.add(L);
               } else
                 j.add(A);
-              Re || !A.repeated || m.packed[W] === void 0 && m.basic[W] !== void 0 || A.setOption("packed", !1, !0);
+              Ie || !A.repeated || m.packed[W] === void 0 && m.basic[W] !== void 0 || A.setOption("packed", !1, !0);
             } else
               (function(w, k) {
                 var y = se();
                 if (!N.test(y))
                   throw ce(y, "name");
-                var R = g.lcFirst(y);
-                y === R && (y = g.ucFirst(y)), ge("=");
-                var H = Ve(se()), M = new i(y);
+                var I = g.lcFirst(y);
+                y === I && (y = g.ucFirst(y)), ge("=");
+                var H = Ve(se()), M = new a(y);
                 M.group = !0;
-                var D = new s(R, H, y, k);
-                D.filename = C.filename, Le(M, function(z) {
-                  switch (z) {
+                var D = new s(I, H, y, k);
+                D.filename = C.filename, Le(M, function(J) {
+                  switch (J) {
                     case "option":
-                      ve(M, z), ge(";");
+                      ve(M, J), ge(";");
                       break;
                     case "required":
                     case "repeated":
-                      xe(M, z);
+                      xe(M, J);
                       break;
                     case "optional":
-                      xe(M, Re ? "proto3_optional" : "optional");
+                      xe(M, Ie ? "proto3_optional" : "optional");
                       break;
                     default:
-                      throw ce(z);
+                      throw ce(J);
                   }
                 }), w.add(M).add(D);
               })(j, B);
@@ -9712,13 +9712,13 @@ var EasemobChat = { exports: {} };
                 if (!N.test(V = se()))
                   throw ce(V, "name");
                 var W, _ = V;
-                me() === "{" ? W = we(j, B + "." + V) : (ge(":"), me() === "{" ? W = we(j, B + "." + V) : (W = Ze(!0), ke(j, B + "." + V, W)));
+                me() === "{" ? W = we(j, B + "." + V) : (ge(":"), me() === "{" ? W = we(j, B + "." + V) : (W = Ke(!0), ke(j, B + "." + V, W)));
                 var A = T[_];
                 A && (W = [].concat(A).concat(W)), T[_] = W, ge(",", !0);
               }
               return T;
             }
-            var L = Ze(!0);
+            var L = Ke(!0);
             return ke(j, B, L), L;
           }
           function ke(j, B, T) {
@@ -9736,17 +9736,17 @@ var EasemobChat = { exports: {} };
           for (; (V = se()) !== null; )
             switch (V) {
               case "package":
-                if (!Ie)
+                if (!Re)
                   throw ce(V);
                 Be();
                 break;
               case "import":
-                if (!Ie)
+                if (!Re)
                   throw ce(V);
-                Ke();
+                Ze();
                 break;
               case "syntax":
-                if (!Ie)
+                if (!Re)
                   throw ce(V);
                 Qe();
                 break;
@@ -9755,17 +9755,17 @@ var EasemobChat = { exports: {} };
                 break;
               default:
                 if (Pe(Oe, V)) {
-                  Ie = !1;
+                  Re = !1;
                   continue;
                 }
                 throw ce(V);
             }
-          return C.filename = null, { package: K, imports: F, weakImports: Y, syntax: Z, root: P };
+          return C.filename = null, { package: Z, imports: F, weakImports: Y, syntax: K, root: P };
         }
-      }, 1408: function(p, S, e) {
+      }, 1408: function(p, R, e) {
         p.exports = o;
-        var r, t = e(9693), i = t.LongBits, s = t.utf8;
-        function a(d, f) {
+        var r, t = e(9693), a = t.LongBits, s = t.utf8;
+        function i(d, f) {
           return RangeError("index out of range: " + d.pos + " + " + (f || 1) + " > " + d.len);
         }
         function o(d) {
@@ -9787,11 +9787,11 @@ var EasemobChat = { exports: {} };
           } : l;
         };
         function m() {
-          var d = new i(0, 0), f = 0;
+          var d = new a(0, 0), f = 0;
           if (!(this.len - this.pos > 4)) {
             for (; f < 3; ++f) {
               if (this.pos >= this.len)
-                throw a(this);
+                throw i(this);
               if (d.lo = (d.lo | (127 & this.buf[this.pos]) << 7 * f) >>> 0, this.buf[this.pos++] < 128)
                 return d;
             }
@@ -9809,7 +9809,7 @@ var EasemobChat = { exports: {} };
           } else
             for (; f < 5; ++f) {
               if (this.pos >= this.len)
-                throw a(this);
+                throw i(this);
               if (d.hi = (d.hi | (127 & this.buf[this.pos]) << 7 * f + 3) >>> 0, this.buf[this.pos++] < 128)
                 return d;
             }
@@ -9820,14 +9820,14 @@ var EasemobChat = { exports: {} };
         }
         function h() {
           if (this.pos + 8 > this.len)
-            throw a(this, 8);
-          return new i(g(this.buf, this.pos += 4), g(this.buf, this.pos += 4));
+            throw i(this, 8);
+          return new a(g(this.buf, this.pos += 4), g(this.buf, this.pos += 4));
         }
         o.create = u(), o.prototype._slice = t.Array.prototype.subarray || t.Array.prototype.slice, o.prototype.uint32 = (n = 4294967295, function() {
           if (n = (127 & this.buf[this.pos]) >>> 0, this.buf[this.pos++] < 128 || (n = (n | (127 & this.buf[this.pos]) << 7) >>> 0, this.buf[this.pos++] < 128) || (n = (n | (127 & this.buf[this.pos]) << 14) >>> 0, this.buf[this.pos++] < 128) || (n = (n | (127 & this.buf[this.pos]) << 21) >>> 0, this.buf[this.pos++] < 128) || (n = (n | (15 & this.buf[this.pos]) << 28) >>> 0, this.buf[this.pos++] < 128))
             return n;
           if ((this.pos += 5) > this.len)
-            throw this.pos = this.len, a(this, 10);
+            throw this.pos = this.len, i(this, 10);
           return n;
         }), o.prototype.int32 = function() {
           return 0 | this.uint32();
@@ -9838,26 +9838,26 @@ var EasemobChat = { exports: {} };
           return this.uint32() !== 0;
         }, o.prototype.fixed32 = function() {
           if (this.pos + 4 > this.len)
-            throw a(this, 4);
+            throw i(this, 4);
           return g(this.buf, this.pos += 4);
         }, o.prototype.sfixed32 = function() {
           if (this.pos + 4 > this.len)
-            throw a(this, 4);
+            throw i(this, 4);
           return 0 | g(this.buf, this.pos += 4);
         }, o.prototype.float = function() {
           if (this.pos + 4 > this.len)
-            throw a(this, 4);
+            throw i(this, 4);
           var d = t.float.readFloatLE(this.buf, this.pos);
           return this.pos += 4, d;
         }, o.prototype.double = function() {
           if (this.pos + 8 > this.len)
-            throw a(this, 4);
+            throw i(this, 4);
           var d = t.float.readDoubleLE(this.buf, this.pos);
           return this.pos += 8, d;
         }, o.prototype.bytes = function() {
           var d = this.uint32(), f = this.pos, b = this.pos + d;
           if (b > this.len)
-            throw a(this, d);
+            throw i(this, d);
           return this.pos += d, Array.isArray(this.buf) ? this.buf.slice(f, b) : f === b ? new this.buf.constructor(0) : this._slice.call(this.buf, f, b);
         }, o.prototype.string = function() {
           var d = this.bytes();
@@ -9865,12 +9865,12 @@ var EasemobChat = { exports: {} };
         }, o.prototype.skip = function(d) {
           if (typeof d == "number") {
             if (this.pos + d > this.len)
-              throw a(this, d);
+              throw i(this, d);
             this.pos += d;
           } else
             do
               if (this.pos >= this.len)
-                throw a(this);
+                throw i(this);
             while (128 & this.buf[this.pos++]);
           return this;
         }, o.prototype.skipType = function(d) {
@@ -9910,25 +9910,25 @@ var EasemobChat = { exports: {} };
             return h.call(this)[f](!1);
           } });
         };
-      }, 593: function(p, S, e) {
-        p.exports = i;
+      }, 593: function(p, R, e) {
+        p.exports = a;
         var r = e(1408);
-        (i.prototype = Object.create(r.prototype)).constructor = i;
+        (a.prototype = Object.create(r.prototype)).constructor = a;
         var t = e(9693);
-        function i(s) {
+        function a(s) {
           r.call(this, s);
         }
-        i._configure = function() {
-          t.Buffer && (i.prototype._slice = t.Buffer.prototype.slice);
-        }, i.prototype.string = function() {
+        a._configure = function() {
+          t.Buffer && (a.prototype._slice = t.Buffer.prototype.slice);
+        }, a.prototype.string = function() {
           var s = this.uint32();
           return this.buf.utf8Slice ? this.buf.utf8Slice(this.pos, this.pos = Math.min(this.pos + s, this.len)) : this.buf.toString("utf-8", this.pos, this.pos = Math.min(this.pos + s, this.len));
-        }, i._configure();
-      }, 9424: function(p, S, e) {
+        }, a._configure();
+      }, 9424: function(p, R, e) {
         p.exports = u;
         var r = e(9313);
         ((u.prototype = Object.create(r.prototype)).constructor = u).className = "Root";
-        var t, i, s, a = e(3548), o = e(7025), n = e(7598), l = e(9935);
+        var t, a, s, i = e(3548), o = e(7025), n = e(7598), l = e(9935);
         function u(d) {
           r.call(this, "", d), this.deferred = [], this.files = [];
         }
@@ -9938,71 +9938,71 @@ var EasemobChat = { exports: {} };
           return f || (f = new u()), d.options && f.setOptions(d.options), f.addJSON(d.nested);
         }, u.prototype.resolvePath = l.path.resolve, u.prototype.fetch = l.fetch, u.prototype.load = function d(f, b, c) {
           typeof b == "function" && (c = b, b = void 0);
-          var I = this;
+          var S = this;
           if (!c)
-            return l.asPromise(d, I, f, b);
+            return l.asPromise(d, S, f, b);
           var v = c === m;
-          function N(K, F) {
+          function N(Z, F) {
             if (c) {
               var Y = c;
               if (c = null, v)
-                throw K;
-              Y(K, F);
+                throw Z;
+              Y(Z, F);
             }
           }
-          function x(K) {
-            var F = K.lastIndexOf("google/protobuf/");
+          function x(Z) {
+            var F = Z.lastIndexOf("google/protobuf/");
             if (F > -1) {
-              var Y = K.substring(F);
+              var Y = Z.substring(F);
               if (Y in s)
                 return Y;
             }
             return null;
           }
-          function O(K, F) {
+          function O(Z, F) {
             try {
               if (l.isString(F) && F.charAt(0) === "{" && (F = JSON.parse(F)), l.isString(F)) {
-                i.filename = K;
-                var Y, Z = i(F, I, b), V = 0;
-                if (Z.imports)
-                  for (; V < Z.imports.length; ++V)
-                    (Y = x(Z.imports[V]) || I.resolvePath(K, Z.imports[V])) && C(Y);
-                if (Z.weakImports)
-                  for (V = 0; V < Z.weakImports.length; ++V)
-                    (Y = x(Z.weakImports[V]) || I.resolvePath(K, Z.weakImports[V])) && C(Y, !0);
+                a.filename = Z;
+                var Y, K = a(F, S, b), V = 0;
+                if (K.imports)
+                  for (; V < K.imports.length; ++V)
+                    (Y = x(K.imports[V]) || S.resolvePath(Z, K.imports[V])) && C(Y);
+                if (K.weakImports)
+                  for (V = 0; V < K.weakImports.length; ++V)
+                    (Y = x(K.weakImports[V]) || S.resolvePath(Z, K.weakImports[V])) && C(Y, !0);
               } else
-                I.setOptions(F.options).addJSON(F.nested);
+                S.setOptions(F.options).addJSON(F.nested);
             } catch (ne) {
               N(ne);
             }
-            v || E || N(null, I);
+            v || E || N(null, S);
           }
-          function C(K, F) {
-            if (!(I.files.indexOf(K) > -1))
-              if (I.files.push(K), K in s)
-                v ? O(K, s[K]) : (++E, setTimeout(function() {
-                  --E, O(K, s[K]);
+          function C(Z, F) {
+            if (!(S.files.indexOf(Z) > -1))
+              if (S.files.push(Z), Z in s)
+                v ? O(Z, s[Z]) : (++E, setTimeout(function() {
+                  --E, O(Z, s[Z]);
                 }));
               else if (v) {
                 var Y;
                 try {
-                  Y = l.fs.readFileSync(K).toString("utf8");
-                } catch (Z) {
-                  return void (F || N(Z));
+                  Y = l.fs.readFileSync(Z).toString("utf8");
+                } catch (K) {
+                  return void (F || N(K));
                 }
-                O(K, Y);
+                O(Z, Y);
               } else
-                ++E, I.fetch(K, function(Z, V) {
-                  --E, c && (Z ? F ? E || N(null, I) : N(Z) : O(K, V));
+                ++E, S.fetch(Z, function(K, V) {
+                  --E, c && (K ? F ? E || N(null, S) : N(K) : O(Z, V));
                 });
           }
           var E = 0;
           l.isString(f) && (f = [f]);
           for (var P, G = 0; G < f.length; ++G)
-            (P = I.resolvePath("", f[G])) && C(P);
+            (P = S.resolvePath("", f[G])) && C(P);
           if (v)
-            return I;
-          E || N(null, I);
+            return S;
+          E || N(null, S);
         }, u.prototype.loadSync = function(d, f) {
           if (!l.isNode)
             throw Error("not supported");
@@ -10018,13 +10018,13 @@ var EasemobChat = { exports: {} };
         function h(d, f) {
           var b = f.parent.lookup(f.extend);
           if (b) {
-            var c = new a(f.fullName, f.id, f.type, f.rule, void 0, f.options);
+            var c = new i(f.fullName, f.id, f.type, f.rule, void 0, f.options);
             return c.declaringField = f, f.extensionField = c, b.add(c), !0;
           }
           return !1;
         }
         u.prototype._handleAdd = function(d) {
-          if (d instanceof a)
+          if (d instanceof i)
             d.extend === void 0 || d.extensionField || h(0, d) || this.deferred.push(d);
           else if (d instanceof o)
             g.test(d.name) && (d.parent[d.name] = d.values);
@@ -10037,7 +10037,7 @@ var EasemobChat = { exports: {} };
             g.test(d.name) && (d.parent[d.name] = d);
           }
         }, u.prototype._handleRemove = function(d) {
-          if (d instanceof a) {
+          if (d instanceof i) {
             if (d.extend !== void 0)
               if (d.extensionField)
                 d.extensionField.parent.remove(d.extensionField), d.extensionField = null;
@@ -10053,29 +10053,29 @@ var EasemobChat = { exports: {} };
             g.test(d.name) && delete d.parent[d.name];
           }
         }, u._configure = function(d, f, b) {
-          t = d, i = f, s = b;
+          t = d, a = f, s = b;
         };
       }, 5054: function(p) {
         p.exports = {};
-      }, 5994: function(p, S, e) {
-        S.Service = e(7948);
-      }, 7948: function(p, S, e) {
+      }, 5994: function(p, R, e) {
+        R.Service = e(7948);
+      }, 7948: function(p, R, e) {
         p.exports = t;
         var r = e(9693);
-        function t(i, s, a) {
-          if (typeof i != "function")
+        function t(a, s, i) {
+          if (typeof a != "function")
             throw TypeError("rpcImpl must be a function");
-          r.EventEmitter.call(this), this.rpcImpl = i, this.requestDelimited = !!s, this.responseDelimited = !!a;
+          r.EventEmitter.call(this), this.rpcImpl = a, this.requestDelimited = !!s, this.responseDelimited = !!i;
         }
-        (t.prototype = Object.create(r.EventEmitter.prototype)).constructor = t, t.prototype.rpcCall = function i(s, a, o, n, l) {
+        (t.prototype = Object.create(r.EventEmitter.prototype)).constructor = t, t.prototype.rpcCall = function a(s, i, o, n, l) {
           if (!n)
             throw TypeError("request must be specified");
           var u = this;
           if (!l)
-            return r.asPromise(i, u, s, a, o, n);
+            return r.asPromise(a, u, s, i, o, n);
           if (u.rpcImpl)
             try {
-              return u.rpcImpl(s, a[u.requestDelimited ? "encodeDelimited" : "encode"](n).finish(), function(m, g) {
+              return u.rpcImpl(s, i[u.requestDelimited ? "encodeDelimited" : "encode"](n).finish(), function(m, g) {
                 if (m)
                   return u.emit("error", m, s), l(m);
                 if (g !== null) {
@@ -10098,58 +10098,58 @@ var EasemobChat = { exports: {} };
             setTimeout(function() {
               l(Error("already ended"));
             }, 0);
-        }, t.prototype.end = function(i) {
-          return this.rpcImpl && (i || this.rpcImpl(null, null, null), this.rpcImpl = null, this.emit("end").off()), this;
+        }, t.prototype.end = function(a) {
+          return this.rpcImpl && (a || this.rpcImpl(null, null, null), this.rpcImpl = null, this.emit("end").off()), this;
         };
-      }, 7513: function(p, S, e) {
-        p.exports = a;
+      }, 7513: function(p, R, e) {
+        p.exports = i;
         var r = e(9313);
-        ((a.prototype = Object.create(r.prototype)).constructor = a).className = "Service";
-        var t = e(4429), i = e(9935), s = e(5994);
-        function a(n, l) {
+        ((i.prototype = Object.create(r.prototype)).constructor = i).className = "Service";
+        var t = e(4429), a = e(9935), s = e(5994);
+        function i(n, l) {
           r.call(this, n, l), this.methods = {}, this._methodsArray = null;
         }
         function o(n) {
           return n._methodsArray = null, n;
         }
-        a.fromJSON = function(n, l) {
-          var u = new a(n, l.options);
+        i.fromJSON = function(n, l) {
+          var u = new i(n, l.options);
           if (l.methods)
             for (var m = Object.keys(l.methods), g = 0; g < m.length; ++g)
               u.add(t.fromJSON(m[g], l.methods[m[g]]));
           return l.nested && u.addJSON(l.nested), u.comment = l.comment, u;
-        }, a.prototype.toJSON = function(n) {
+        }, i.prototype.toJSON = function(n) {
           var l = r.prototype.toJSON.call(this, n), u = !!n && !!n.keepComments;
-          return i.toObject(["options", l && l.options || void 0, "methods", r.arrayToJSON(this.methodsArray, n) || {}, "nested", l && l.nested || void 0, "comment", u ? this.comment : void 0]);
-        }, Object.defineProperty(a.prototype, "methodsArray", { get: function() {
-          return this._methodsArray || (this._methodsArray = i.toArray(this.methods));
-        } }), a.prototype.get = function(n) {
+          return a.toObject(["options", l && l.options || void 0, "methods", r.arrayToJSON(this.methodsArray, n) || {}, "nested", l && l.nested || void 0, "comment", u ? this.comment : void 0]);
+        }, Object.defineProperty(i.prototype, "methodsArray", { get: function() {
+          return this._methodsArray || (this._methodsArray = a.toArray(this.methods));
+        } }), i.prototype.get = function(n) {
           return this.methods[n] || r.prototype.get.call(this, n);
-        }, a.prototype.resolveAll = function() {
+        }, i.prototype.resolveAll = function() {
           for (var n = this.methodsArray, l = 0; l < n.length; ++l)
             n[l].resolve();
           return r.prototype.resolve.call(this);
-        }, a.prototype.add = function(n) {
+        }, i.prototype.add = function(n) {
           if (this.get(n.name))
             throw Error("duplicate name '" + n.name + "' in " + this);
           return n instanceof t ? (this.methods[n.name] = n, n.parent = this, o(this)) : r.prototype.add.call(this, n);
-        }, a.prototype.remove = function(n) {
+        }, i.prototype.remove = function(n) {
           if (n instanceof t) {
             if (this.methods[n.name] !== n)
               throw Error(n + " is not a member of " + this);
             return delete this.methods[n.name], n.parent = null, o(this);
           }
           return r.prototype.remove.call(this, n);
-        }, a.prototype.create = function(n, l, u) {
+        }, i.prototype.create = function(n, l, u) {
           for (var m, g = new s.Service(n, l, u), h = 0; h < this.methodsArray.length; ++h) {
-            var d = i.lcFirst((m = this._methodsArray[h]).resolve().name).replace(/[^$\w_]/g, "");
-            g[d] = i.codegen(["r", "c"], i.isReserved(d) ? d + "_" : d)("return this.rpcCall(m,q,s,r,c)")({ m, q: m.resolvedRequestType.ctor, s: m.resolvedResponseType.ctor });
+            var d = a.lcFirst((m = this._methodsArray[h]).resolve().name).replace(/[^$\w_]/g, "");
+            g[d] = a.codegen(["r", "c"], a.isReserved(d) ? d + "_" : d)("return this.rpcCall(m,q,s,r,c)")({ m, q: m.resolvedRequestType.ctor, s: m.resolvedResponseType.ctor });
           }
           return g;
         };
       }, 626: function(p) {
         p.exports = u;
-        var S = /[\s{}=;:[\],'"()<>]/g, e = /(?:"([^"\\]*(?:\\.[^"\\]*)*)")/g, r = /(?:'([^'\\]*(?:\\.[^'\\]*)*)')/g, t = /^ *[*/]+ */, i = /^\s*\*?\/*/, s = /\n/g, a = /\s/, o = /\\(.?)/g, n = { 0: "\0", r: "\r", n: `
+        var R = /[\s{}=;:[\],'"()<>]/g, e = /(?:"([^"\\]*(?:\\.[^"\\]*)*)")/g, r = /(?:'([^'\\]*(?:\\.[^'\\]*)*)')/g, t = /^ *[*/]+ */, a = /^\s*\*?\/*/, s = /\n/g, i = /\s/, o = /\\(.?)/g, n = { 0: "\0", r: "\r", n: `
 `, t: "	" };
         function l(m) {
           return m.replace(o, function(g, h) {
@@ -10164,7 +10164,7 @@ var EasemobChat = { exports: {} };
         }
         function u(m, g) {
           m = m.toString();
-          var h = 0, d = m.length, f = 1, b = null, c = null, I = 0, v = !1, N = !1, x = [], O = null;
+          var h = 0, d = m.length, f = 1, b = null, c = null, S = 0, v = !1, N = !1, x = [], O = null;
           function C(V) {
             return Error("illegal " + V + " (line " + f + ")");
           }
@@ -10172,7 +10172,7 @@ var EasemobChat = { exports: {} };
             return m.charAt(V);
           }
           function P(V, ne, ae) {
-            b = m.charAt(V++), I = f, v = !1, N = ae;
+            b = m.charAt(V++), S = f, v = !1, N = ae;
             var se, ue = V - (g ? 2 : 3);
             do
               if (--ue < 0 || (se = m.charAt(ue)) === `
@@ -10182,15 +10182,15 @@ var EasemobChat = { exports: {} };
               }
             while (se === " " || se === "	");
             for (var me = m.substring(V, ne).split(s), ge = 0; ge < me.length; ++ge)
-              me[ge] = me[ge].replace(g ? i : t, "").trim();
+              me[ge] = me[ge].replace(g ? a : t, "").trim();
             c = me.join(`
 `).trim();
           }
           function G(V) {
-            var ne = K(V), ae = m.substring(V, ne);
+            var ne = Z(V), ae = m.substring(V, ne);
             return /^\s*\/{1,2}/.test(ae);
           }
-          function K(V) {
+          function Z(V) {
             for (var ne = V; ne < d && E(ne) !== `
 `; )
               ne++;
@@ -10201,18 +10201,18 @@ var EasemobChat = { exports: {} };
               return x.shift();
             if (O)
               return function() {
-                var Ie = O === "'" ? r : e;
-                Ie.lastIndex = h - 1;
-                var Re = Ie.exec(m);
-                if (!Re)
+                var Re = O === "'" ? r : e;
+                Re.lastIndex = h - 1;
+                var Ie = Re.exec(m);
+                if (!Ie)
                   throw C("string");
-                return h = Ie.lastIndex, Y(O), O = null, l(Re[1]);
+                return h = Re.lastIndex, Y(O), O = null, l(Ie[1]);
               }();
             var V, ne, ae, se, ue, me = h === 0;
             do {
               if (h === d)
                 return null;
-              for (V = !1; a.test(ae = E(h)); )
+              for (V = !1; i.test(ae = E(h)); )
                 if (ae === `
 ` && (me = !0, ++f), ++h === d)
                   return null;
@@ -10224,12 +10224,12 @@ var EasemobChat = { exports: {} };
                     if (se = h, ue = !1, G(h)) {
                       ue = !0;
                       do {
-                        if ((h = K(h)) === d)
+                        if ((h = Z(h)) === d)
                           break;
                         h++;
                       } while (G(h));
                     } else
-                      h = Math.min(d, K(h) + 1);
+                      h = Math.min(d, Z(h) + 1);
                     ue && P(se, h, me), f++, V = !0;
                   } else {
                     for (ue = E(se = h + 1) === "/"; E(++h) !== `
@@ -10253,8 +10253,8 @@ var EasemobChat = { exports: {} };
               }
             } while (V);
             var ge = h;
-            if (S.lastIndex = 0, !S.test(E(ge++)))
-              for (; ge < d && !S.test(E(ge)); )
+            if (R.lastIndex = 0, !R.test(E(ge++)))
+              for (; ge < d && !R.test(E(ge)); )
                 ++ge;
             var Ce = m.substring(h, h = ge);
             return Ce !== '"' && Ce !== "'" || (O = Ce), Ce;
@@ -10262,7 +10262,7 @@ var EasemobChat = { exports: {} };
           function Y(V) {
             x.push(V);
           }
-          function Z() {
+          function K() {
             if (!x.length) {
               var V = F();
               if (V === null)
@@ -10271,8 +10271,8 @@ var EasemobChat = { exports: {} };
             }
             return x[0];
           }
-          return Object.defineProperty({ next: F, peek: Z, push: Y, skip: function(V, ne) {
-            var ae = Z();
+          return Object.defineProperty({ next: F, peek: K, push: Y, skip: function(V, ne) {
+            var ae = K();
             if (ae === V)
               return F(), !0;
             if (!ne)
@@ -10280,21 +10280,21 @@ var EasemobChat = { exports: {} };
             return !1;
           }, cmnt: function(V) {
             var ne = null;
-            return V === void 0 ? I === f - 1 && (g || b === "*" || v) && (ne = N ? c : null) : (I < V && Z(), I !== V || v || !g && b !== "/" || (ne = N ? null : c)), ne;
+            return V === void 0 ? S === f - 1 && (g || b === "*" || v) && (ne = N ? c : null) : (S < V && K(), S !== V || v || !g && b !== "/" || (ne = N ? null : c)), ne;
           } }, "line", { get: function() {
             return f;
           } });
         }
         u.unescape = l;
-      }, 7645: function(p, S, e) {
+      }, 7645: function(p, R, e) {
         p.exports = c;
         var r = e(9313);
         ((c.prototype = Object.create(r.prototype)).constructor = c).className = "Type";
-        var t = e(7025), i = e(7598), s = e(3548), a = e(6039), o = e(7513), n = e(8368), l = e(1408), u = e(1173), m = e(9935), g = e(4928), h = e(5305), d = e(4497), f = e(3996), b = e(1667);
+        var t = e(7025), a = e(7598), s = e(3548), i = e(6039), o = e(7513), n = e(8368), l = e(1408), u = e(1173), m = e(9935), g = e(4928), h = e(5305), d = e(4497), f = e(3996), b = e(1667);
         function c(v, N) {
           r.call(this, v, N), this.fields = {}, this.oneofs = void 0, this.extensions = void 0, this.reserved = void 0, this.group = void 0, this._fieldsById = null, this._fieldsArray = null, this._oneofsArray = null, this._ctor = null;
         }
-        function I(v) {
+        function S(v) {
           return v._fieldsById = v._fieldsArray = v._oneofsArray = null, delete v.encode, delete v.decode, delete v.verify, v;
         }
         Object.defineProperties(c.prototype, { fieldsById: { get: function() {
@@ -10331,10 +10331,10 @@ var EasemobChat = { exports: {} };
           var x = new c(v, N.options);
           x.extensions = N.extensions, x.reserved = N.reserved;
           for (var O = Object.keys(N.fields), C = 0; C < O.length; ++C)
-            x.add((N.fields[O[C]].keyType !== void 0 ? a.fromJSON : s.fromJSON)(O[C], N.fields[O[C]]));
+            x.add((N.fields[O[C]].keyType !== void 0 ? i.fromJSON : s.fromJSON)(O[C], N.fields[O[C]]));
           if (N.oneofs)
             for (O = Object.keys(N.oneofs), C = 0; C < O.length; ++C)
-              x.add(i.fromJSON(O[C], N.oneofs[O[C]]));
+              x.add(a.fromJSON(O[C], N.oneofs[O[C]]));
           if (N.nested)
             for (O = Object.keys(N.nested), C = 0; C < O.length; ++C) {
               var E = N.nested[O[C]];
@@ -10365,19 +10365,19 @@ var EasemobChat = { exports: {} };
               throw Error("id " + v.id + " is reserved in " + this);
             if (this.isReservedName(v.name))
               throw Error("name '" + v.name + "' is reserved in " + this);
-            return v.parent && v.parent.remove(v), this.fields[v.name] = v, v.message = this, v.onAdd(this), I(this);
+            return v.parent && v.parent.remove(v), this.fields[v.name] = v, v.message = this, v.onAdd(this), S(this);
           }
-          return v instanceof i ? (this.oneofs || (this.oneofs = {}), this.oneofs[v.name] = v, v.onAdd(this), I(this)) : r.prototype.add.call(this, v);
+          return v instanceof a ? (this.oneofs || (this.oneofs = {}), this.oneofs[v.name] = v, v.onAdd(this), S(this)) : r.prototype.add.call(this, v);
         }, c.prototype.remove = function(v) {
           if (v instanceof s && v.extend === void 0) {
             if (!this.fields || this.fields[v.name] !== v)
               throw Error(v + " is not a member of " + this);
-            return delete this.fields[v.name], v.parent = null, v.onRemove(this), I(this);
+            return delete this.fields[v.name], v.parent = null, v.onRemove(this), S(this);
           }
-          if (v instanceof i) {
+          if (v instanceof a) {
             if (!this.oneofs || this.oneofs[v.name] !== v)
               throw Error(v + " is not a member of " + this);
-            return delete this.oneofs[v.name], v.parent = null, v.onRemove(this), I(this);
+            return delete this.oneofs[v.name], v.parent = null, v.onRemove(this), S(this);
           }
           return r.prototype.remove.call(this, v);
         }, c.prototype.isReservedId = function(v) {
@@ -10415,61 +10415,61 @@ var EasemobChat = { exports: {} };
             m.decorateType(N, v);
           };
         };
-      }, 7063: function(p, S, e) {
-        var r = S, t = e(9935), i = ["double", "float", "int32", "uint32", "sint32", "fixed32", "sfixed32", "int64", "uint64", "sint64", "fixed64", "sfixed64", "bool", "string", "bytes"];
-        function s(a, o) {
+      }, 7063: function(p, R, e) {
+        var r = R, t = e(9935), a = ["double", "float", "int32", "uint32", "sint32", "fixed32", "sfixed32", "int64", "uint64", "sint64", "fixed64", "sfixed64", "bool", "string", "bytes"];
+        function s(i, o) {
           var n = 0, l = {};
-          for (o |= 0; n < a.length; )
-            l[i[n + o]] = a[n++];
+          for (o |= 0; n < i.length; )
+            l[a[n + o]] = i[n++];
           return l;
         }
         r.basic = s([1, 5, 0, 0, 0, 5, 5, 0, 0, 0, 1, 1, 0, 2, 2]), r.defaults = s([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, !1, "", t.emptyArray, null]), r.long = s([0, 0, 0, 1, 1], 7), r.mapKey = s([0, 0, 0, 5, 5, 0, 0, 0, 1, 1, 0, 2], 2), r.packed = s([1, 5, 0, 0, 0, 5, 5, 0, 0, 0, 1, 1, 0]);
-      }, 9935: function(p, S, e) {
-        var r, t, i = p.exports = e(9693), s = e(5054);
-        i.codegen = e(5124), i.fetch = e(9054), i.path = e(8626), i.fs = i.inquire("fs"), i.toArray = function(u) {
+      }, 9935: function(p, R, e) {
+        var r, t, a = p.exports = e(9693), s = e(5054);
+        a.codegen = e(5124), a.fetch = e(9054), a.path = e(8626), a.fs = a.inquire("fs"), a.toArray = function(u) {
           if (u) {
             for (var m = Object.keys(u), g = new Array(m.length), h = 0; h < m.length; )
               g[h] = u[m[h++]];
             return g;
           }
           return [];
-        }, i.toObject = function(u) {
+        }, a.toObject = function(u) {
           for (var m = {}, g = 0; g < u.length; ) {
             var h = u[g++], d = u[g++];
             d !== void 0 && (m[h] = d);
           }
           return m;
         };
-        var a = /\\/g, o = /"/g;
-        i.isReserved = function(u) {
+        var i = /\\/g, o = /"/g;
+        a.isReserved = function(u) {
           return /^(?:do|if|in|for|let|new|try|var|case|else|enum|eval|false|null|this|true|void|with|break|catch|class|const|super|throw|while|yield|delete|export|import|public|return|static|switch|typeof|default|extends|finally|package|private|continue|debugger|function|arguments|interface|protected|implements|instanceof)$/.test(u);
-        }, i.safeProp = function(u) {
-          return !/^[$\w_]+$/.test(u) || i.isReserved(u) ? '["' + u.replace(a, "\\\\").replace(o, '\\"') + '"]' : "." + u;
-        }, i.ucFirst = function(u) {
+        }, a.safeProp = function(u) {
+          return !/^[$\w_]+$/.test(u) || a.isReserved(u) ? '["' + u.replace(i, "\\\\").replace(o, '\\"') + '"]' : "." + u;
+        }, a.ucFirst = function(u) {
           return u.charAt(0).toUpperCase() + u.substring(1);
         };
         var n = /_([a-z])/g;
-        i.camelCase = function(u) {
+        a.camelCase = function(u) {
           return u.substring(0, 1) + u.substring(1).replace(n, function(m, g) {
             return g.toUpperCase();
           });
-        }, i.compareFieldsById = function(u, m) {
+        }, a.compareFieldsById = function(u, m) {
           return u.id - m.id;
-        }, i.decorateType = function(u, m) {
+        }, a.decorateType = function(u, m) {
           if (u.$type)
-            return m && u.$type.name !== m && (i.decorateRoot.remove(u.$type), u.$type.name = m, i.decorateRoot.add(u.$type)), u.$type;
+            return m && u.$type.name !== m && (a.decorateRoot.remove(u.$type), u.$type.name = m, a.decorateRoot.add(u.$type)), u.$type;
           r || (r = e(7645));
           var g = new r(m || u.name);
-          return i.decorateRoot.add(g), g.ctor = u, Object.defineProperty(u, "$type", { value: g, enumerable: !1 }), Object.defineProperty(u.prototype, "$type", { value: g, enumerable: !1 }), g;
+          return a.decorateRoot.add(g), g.ctor = u, Object.defineProperty(u, "$type", { value: g, enumerable: !1 }), Object.defineProperty(u.prototype, "$type", { value: g, enumerable: !1 }), g;
         };
         var l = 0;
-        i.decorateEnum = function(u) {
+        a.decorateEnum = function(u) {
           if (u.$type)
             return u.$type;
           t || (t = e(7025));
           var m = new t("Enum" + l++, u);
-          return i.decorateRoot.add(m), Object.defineProperty(u, "$type", { value: m, enumerable: !1 }), m;
-        }, i.setProperty = function(u, m, g) {
+          return a.decorateRoot.add(m), Object.defineProperty(u, "$type", { value: m, enumerable: !1 }), m;
+        }, a.setProperty = function(u, m, g) {
           if (typeof u != "object")
             throw TypeError("dst must be an object");
           if (!m)
@@ -10481,32 +10481,32 @@ var EasemobChat = { exports: {} };
             if (f.length > 0)
               d[c] = h(d[c] || {}, f, b);
             else {
-              var I = d[c];
-              I && (b = [].concat(I).concat(b)), d[c] = b;
+              var S = d[c];
+              S && (b = [].concat(S).concat(b)), d[c] = b;
             }
             return d;
           }(u, m = m.split("."), g);
-        }, Object.defineProperty(i, "decorateRoot", { get: function() {
+        }, Object.defineProperty(a, "decorateRoot", { get: function() {
           return s.decorated || (s.decorated = new (e(9424))());
         } });
-      }, 1945: function(p, S, e) {
+      }, 1945: function(p, R, e) {
         p.exports = t;
         var r = e(9693);
         function t(o, n) {
           this.lo = o >>> 0, this.hi = n >>> 0;
         }
-        var i = t.zero = new t(0, 0);
-        i.toNumber = function() {
+        var a = t.zero = new t(0, 0);
+        a.toNumber = function() {
           return 0;
-        }, i.zzEncode = i.zzDecode = function() {
+        }, a.zzEncode = a.zzDecode = function() {
           return this;
-        }, i.length = function() {
+        }, a.length = function() {
           return 1;
         };
         var s = t.zeroHash = "\0\0\0\0\0\0\0\0";
         t.fromNumber = function(o) {
           if (o === 0)
-            return i;
+            return a;
           var n = o < 0;
           n && (o = -o);
           var l = o >>> 0, u = (o - l) / 4294967296 >>> 0;
@@ -10519,7 +10519,7 @@ var EasemobChat = { exports: {} };
               return t.fromNumber(parseInt(o, 10));
             o = r.Long.fromString(o);
           }
-          return o.low || o.high ? new t(o.low >>> 0, o.high >>> 0) : i;
+          return o.low || o.high ? new t(o.low >>> 0, o.high >>> 0) : a;
         }, t.prototype.toNumber = function(o) {
           if (!o && this.hi >>> 31) {
             var n = 1 + ~this.lo >>> 0, l = ~this.hi >>> 0;
@@ -10529,9 +10529,9 @@ var EasemobChat = { exports: {} };
         }, t.prototype.toLong = function(o) {
           return r.Long ? new r.Long(0 | this.lo, 0 | this.hi, !!o) : { low: 0 | this.lo, high: 0 | this.hi, unsigned: !!o };
         };
-        var a = String.prototype.charCodeAt;
+        var i = String.prototype.charCodeAt;
         t.fromHash = function(o) {
-          return o === s ? i : new t((a.call(o, 0) | a.call(o, 1) << 8 | a.call(o, 2) << 16 | a.call(o, 3) << 24) >>> 0, (a.call(o, 4) | a.call(o, 5) << 8 | a.call(o, 6) << 16 | a.call(o, 7) << 24) >>> 0);
+          return o === s ? a : new t((i.call(o, 0) | i.call(o, 1) << 8 | i.call(o, 2) << 16 | i.call(o, 3) << 24) >>> 0, (i.call(o, 4) | i.call(o, 5) << 8 | i.call(o, 6) << 16 | i.call(o, 7) << 24) >>> 0);
         }, t.prototype.toHash = function() {
           return String.fromCharCode(255 & this.lo, this.lo >>> 8 & 255, this.lo >>> 16 & 255, this.lo >>> 24, 255 & this.hi, this.hi >>> 8 & 255, this.hi >>> 16 & 255, this.hi >>> 24);
         }, t.prototype.zzEncode = function() {
@@ -10544,26 +10544,26 @@ var EasemobChat = { exports: {} };
           var o = this.lo, n = (this.lo >>> 28 | this.hi << 4) >>> 0, l = this.hi >>> 24;
           return l === 0 ? n === 0 ? o < 16384 ? o < 128 ? 1 : 2 : o < 2097152 ? 3 : 4 : n < 16384 ? n < 128 ? 5 : 6 : n < 2097152 ? 7 : 8 : l < 128 ? 9 : 10;
         };
-      }, 9693: function(p, S, e) {
-        var r = S;
-        function t(s, a, o) {
-          for (var n = Object.keys(a), l = 0; l < n.length; ++l)
-            s[n[l]] !== void 0 && o || (s[n[l]] = a[n[l]]);
+      }, 9693: function(p, R, e) {
+        var r = R;
+        function t(s, i, o) {
+          for (var n = Object.keys(i), l = 0; l < n.length; ++l)
+            s[n[l]] !== void 0 && o || (s[n[l]] = i[n[l]]);
           return s;
         }
-        function i(s) {
-          function a(o, n) {
-            if (!(this instanceof a))
-              return new a(o, n);
+        function a(s) {
+          function i(o, n) {
+            if (!(this instanceof i))
+              return new i(o, n);
             Object.defineProperty(this, "message", { get: function() {
               return o;
-            } }), Error.captureStackTrace ? Error.captureStackTrace(this, a) : Object.defineProperty(this, "stack", { value: new Error().stack || "" }), n && t(this, n);
+            } }), Error.captureStackTrace ? Error.captureStackTrace(this, i) : Object.defineProperty(this, "stack", { value: new Error().stack || "" }), n && t(this, n);
           }
-          return (a.prototype = Object.create(Error.prototype)).constructor = a, Object.defineProperty(a.prototype, "name", { get: function() {
+          return (i.prototype = Object.create(Error.prototype)).constructor = i, Object.defineProperty(i.prototype, "name", { get: function() {
             return s;
-          } }), a.prototype.toString = function() {
+          } }), i.prototype.toString = function() {
             return this.name + ": " + this.message;
-          }, a;
+          }, i;
         }
         r.asPromise = e(4537), r.base64 = e(7419), r.EventEmitter = e(9211), r.float = e(945), r.inquire = e(7199), r.utf8 = e(4997), r.pool = e(6662), r.LongBits = e(1945), r.isNode = !!(e.g !== void 0 && e.g && e.g.process && e.g.process.versions && e.g.process.versions.node), r.global = r.isNode && e.g || typeof window < "u" && window || typeof self < "u" && self || this, r.emptyArray = Object.freeze ? Object.freeze([]) : [], r.emptyObject = Object.freeze ? Object.freeze({}) : {}, r.isInteger = Number.isInteger || function(s) {
           return typeof s == "number" && isFinite(s) && Math.floor(s) === s;
@@ -10571,9 +10571,9 @@ var EasemobChat = { exports: {} };
           return typeof s == "string" || s instanceof String;
         }, r.isObject = function(s) {
           return s && typeof s == "object";
-        }, r.isset = r.isSet = function(s, a) {
-          var o = s[a];
-          return !(o == null || !s.hasOwnProperty(a)) && (typeof o != "object" || (Array.isArray(o) ? o.length : Object.keys(o).length) > 0);
+        }, r.isset = r.isSet = function(s, i) {
+          var o = s[i];
+          return !(o == null || !s.hasOwnProperty(i)) && (typeof o != "object" || (Array.isArray(o) ? o.length : Object.keys(o).length) > 0);
         }, r.Buffer = function() {
           try {
             var s = r.inquire("buffer").Buffer;
@@ -10585,42 +10585,42 @@ var EasemobChat = { exports: {} };
           return typeof s == "number" ? r.Buffer ? r._Buffer_allocUnsafe(s) : new r.Array(s) : r.Buffer ? r._Buffer_from(s) : typeof Uint8Array > "u" ? s : new Uint8Array(s);
         }, r.Array = typeof Uint8Array < "u" ? Uint8Array : Array, r.Long = r.global.dcodeIO && r.global.dcodeIO.Long || r.global.Long || r.inquire("long"), r.key2Re = /^true|false|0|1$/, r.key32Re = /^-?(?:0|[1-9][0-9]*)$/, r.key64Re = /^(?:[\\x00-\\xff]{8}|-?(?:0|[1-9][0-9]*))$/, r.longToHash = function(s) {
           return s ? r.LongBits.from(s).toHash() : r.LongBits.zeroHash;
-        }, r.longFromHash = function(s, a) {
+        }, r.longFromHash = function(s, i) {
           var o = r.LongBits.fromHash(s);
-          return r.Long ? r.Long.fromBits(o.lo, o.hi, a) : o.toNumber(!!a);
+          return r.Long ? r.Long.fromBits(o.lo, o.hi, i) : o.toNumber(!!i);
         }, r.merge = t, r.lcFirst = function(s) {
           return s.charAt(0).toLowerCase() + s.substring(1);
-        }, r.newError = i, r.ProtocolError = i("ProtocolError"), r.oneOfGetter = function(s) {
-          for (var a = {}, o = 0; o < s.length; ++o)
-            a[s[o]] = 1;
+        }, r.newError = a, r.ProtocolError = a("ProtocolError"), r.oneOfGetter = function(s) {
+          for (var i = {}, o = 0; o < s.length; ++o)
+            i[s[o]] = 1;
           return function() {
             for (var n = Object.keys(this), l = n.length - 1; l > -1; --l)
-              if (a[n[l]] === 1 && this[n[l]] !== void 0 && this[n[l]] !== null)
+              if (i[n[l]] === 1 && this[n[l]] !== void 0 && this[n[l]] !== null)
                 return n[l];
           };
         }, r.oneOfSetter = function(s) {
-          return function(a) {
+          return function(i) {
             for (var o = 0; o < s.length; ++o)
-              s[o] !== a && delete this[s[o]];
+              s[o] !== i && delete this[s[o]];
           };
         }, r.toJSONOptions = { longs: String, enums: String, bytes: String, json: !0 }, r._configure = function() {
           var s = r.Buffer;
-          s ? (r._Buffer_from = s.from !== Uint8Array.from && s.from || function(a, o) {
-            return new s(a, o);
-          }, r._Buffer_allocUnsafe = s.allocUnsafe || function(a) {
-            return new s(a);
+          s ? (r._Buffer_from = s.from !== Uint8Array.from && s.from || function(i, o) {
+            return new s(i, o);
+          }, r._Buffer_allocUnsafe = s.allocUnsafe || function(i) {
+            return new s(i);
           }) : r._Buffer_from = r._Buffer_allocUnsafe = null;
         };
-      }, 4497: function(p, S, e) {
+      }, 4497: function(p, R, e) {
         p.exports = function(o) {
           var n = t.codegen(["m"], o.name + "$verify")('if(typeof m!=="object"||m===null)')("return%j", "object expected"), l = {};
           o.oneofsArray.length && n("var p={}");
           for (var u = 0; u < o.fieldsArray.length; ++u) {
             var m = o._fieldsArray[u].resolve(), g = "m" + t.safeProp(m.name);
             if (m.optional && n("if(%s!=null&&m.hasOwnProperty(%j)){", g, m.name), m.map)
-              n("if(!util.isObject(%s))", g)("return%j", i(m, "object"))("var k=Object.keys(%s)", g)("for(var i=0;i<k.length;++i){"), a(n, m, "k[i]"), s(n, m, u, g + "[k[i]]")("}");
+              n("if(!util.isObject(%s))", g)("return%j", a(m, "object"))("var k=Object.keys(%s)", g)("for(var i=0;i<k.length;++i){"), i(n, m, "k[i]"), s(n, m, u, g + "[k[i]]")("}");
             else if (m.repeated)
-              n("if(!Array.isArray(%s))", g)("return%j", i(m, "array"))("for(var i=0;i<%s.length;++i){", g), s(n, m, u, g + "[i]")("}");
+              n("if(!Array.isArray(%s))", g)("return%j", a(m, "array"))("for(var i=0;i<%s.length;++i){", g), s(n, m, u, g + "[i]")("}");
             else {
               if (m.partOf) {
                 var h = t.safeProp(m.partOf.name);
@@ -10633,13 +10633,13 @@ var EasemobChat = { exports: {} };
           return n("return null");
         };
         var r = e(7025), t = e(9935);
-        function i(o, n) {
+        function a(o, n) {
           return o.name + ": " + n + (o.repeated && n !== "array" ? "[]" : o.map && n !== "object" ? "{k:" + o.keyType + "}" : "") + " expected";
         }
         function s(o, n, l, u) {
           if (n.resolvedType)
             if (n.resolvedType instanceof r) {
-              o("switch(%s){", u)("default:")("return%j", i(n, "enum value"));
+              o("switch(%s){", u)("default:")("return%j", a(n, "enum value"));
               for (var m = Object.keys(n.resolvedType.values), g = 0; g < m.length; ++g)
                 o("case %i:", n.resolvedType.values[m[g]]);
               o("break")("}");
@@ -10652,80 +10652,80 @@ var EasemobChat = { exports: {} };
               case "sint32":
               case "fixed32":
               case "sfixed32":
-                o("if(!util.isInteger(%s))", u)("return%j", i(n, "integer"));
+                o("if(!util.isInteger(%s))", u)("return%j", a(n, "integer"));
                 break;
               case "int64":
               case "uint64":
               case "sint64":
               case "fixed64":
               case "sfixed64":
-                o("if(!util.isInteger(%s)&&!(%s&&util.isInteger(%s.low)&&util.isInteger(%s.high)))", u, u, u, u)("return%j", i(n, "integer|Long"));
+                o("if(!util.isInteger(%s)&&!(%s&&util.isInteger(%s.low)&&util.isInteger(%s.high)))", u, u, u, u)("return%j", a(n, "integer|Long"));
                 break;
               case "float":
               case "double":
-                o('if(typeof %s!=="number")', u)("return%j", i(n, "number"));
+                o('if(typeof %s!=="number")', u)("return%j", a(n, "number"));
                 break;
               case "bool":
-                o('if(typeof %s!=="boolean")', u)("return%j", i(n, "boolean"));
+                o('if(typeof %s!=="boolean")', u)("return%j", a(n, "boolean"));
                 break;
               case "string":
-                o("if(!util.isString(%s))", u)("return%j", i(n, "string"));
+                o("if(!util.isString(%s))", u)("return%j", a(n, "string"));
                 break;
               case "bytes":
-                o('if(!(%s&&typeof %s.length==="number"||util.isString(%s)))', u, u, u)("return%j", i(n, "buffer"));
+                o('if(!(%s&&typeof %s.length==="number"||util.isString(%s)))', u, u, u)("return%j", a(n, "buffer"));
             }
           return o;
         }
-        function a(o, n, l) {
+        function i(o, n, l) {
           switch (n.keyType) {
             case "int32":
             case "uint32":
             case "sint32":
             case "fixed32":
             case "sfixed32":
-              o("if(!util.key32Re.test(%s))", l)("return%j", i(n, "integer key"));
+              o("if(!util.key32Re.test(%s))", l)("return%j", a(n, "integer key"));
               break;
             case "int64":
             case "uint64":
             case "sint64":
             case "fixed64":
             case "sfixed64":
-              o("if(!util.key64Re.test(%s))", l)("return%j", i(n, "integer|Long key"));
+              o("if(!util.key64Re.test(%s))", l)("return%j", a(n, "integer|Long key"));
               break;
             case "bool":
-              o("if(!util.key2Re.test(%s))", l)("return%j", i(n, "boolean key"));
+              o("if(!util.key2Re.test(%s))", l)("return%j", a(n, "boolean key"));
           }
           return o;
         }
-      }, 1667: function(p, S, e) {
-        var r = S, t = e(8368);
-        r[".google.protobuf.Any"] = { fromObject: function(i) {
-          if (i && i["@type"]) {
-            var s = i["@type"].substring(i["@type"].lastIndexOf("/") + 1), a = this.lookup(s);
-            if (a) {
-              var o = i["@type"].charAt(0) === "." ? i["@type"].substr(1) : i["@type"];
-              return o.indexOf("/") === -1 && (o = "/" + o), this.create({ type_url: o, value: a.encode(a.fromObject(i)).finish() });
+      }, 1667: function(p, R, e) {
+        var r = R, t = e(8368);
+        r[".google.protobuf.Any"] = { fromObject: function(a) {
+          if (a && a["@type"]) {
+            var s = a["@type"].substring(a["@type"].lastIndexOf("/") + 1), i = this.lookup(s);
+            if (i) {
+              var o = a["@type"].charAt(0) === "." ? a["@type"].substr(1) : a["@type"];
+              return o.indexOf("/") === -1 && (o = "/" + o), this.create({ type_url: o, value: i.encode(i.fromObject(a)).finish() });
             }
           }
-          return this.fromObject(i);
-        }, toObject: function(i, s) {
-          var a = "", o = "";
-          if (s && s.json && i.type_url && i.value) {
-            o = i.type_url.substring(i.type_url.lastIndexOf("/") + 1), a = i.type_url.substring(0, i.type_url.lastIndexOf("/") + 1);
+          return this.fromObject(a);
+        }, toObject: function(a, s) {
+          var i = "", o = "";
+          if (s && s.json && a.type_url && a.value) {
+            o = a.type_url.substring(a.type_url.lastIndexOf("/") + 1), i = a.type_url.substring(0, a.type_url.lastIndexOf("/") + 1);
             var n = this.lookup(o);
-            n && (i = n.decode(i.value));
+            n && (a = n.decode(a.value));
           }
-          if (!(i instanceof this.ctor) && i instanceof t) {
-            var l = i.$type.toObject(i, s);
-            return a === "" && (a = "type.googleapis.com/"), o = a + (i.$type.fullName[0] === "." ? i.$type.fullName.substr(1) : i.$type.fullName), l["@type"] = o, l;
+          if (!(a instanceof this.ctor) && a instanceof t) {
+            var l = a.$type.toObject(a, s);
+            return i === "" && (i = "type.googleapis.com/"), o = i + (a.$type.fullName[0] === "." ? a.$type.fullName.substr(1) : a.$type.fullName), l["@type"] = o, l;
           }
-          return this.toObject(i, s);
+          return this.toObject(a, s);
         } };
-      }, 1173: function(p, S, e) {
+      }, 1173: function(p, R, e) {
         p.exports = u;
-        var r, t = e(9693), i = t.LongBits, s = t.base64, a = t.utf8;
-        function o(c, I, v) {
-          this.fn = c, this.len = I, this.next = void 0, this.val = v;
+        var r, t = e(9693), a = t.LongBits, s = t.base64, i = t.utf8;
+        function o(c, S, v) {
+          this.fn = c, this.len = S, this.next = void 0, this.val = v;
         }
         function n() {
         }
@@ -10744,256 +10744,256 @@ var EasemobChat = { exports: {} };
             return new u();
           };
         };
-        function g(c, I, v) {
-          I[v] = 255 & c;
+        function g(c, S, v) {
+          S[v] = 255 & c;
         }
-        function h(c, I) {
-          this.len = c, this.next = void 0, this.val = I;
+        function h(c, S) {
+          this.len = c, this.next = void 0, this.val = S;
         }
-        function d(c, I, v) {
+        function d(c, S, v) {
           for (; c.hi; )
-            I[v++] = 127 & c.lo | 128, c.lo = (c.lo >>> 7 | c.hi << 25) >>> 0, c.hi >>>= 7;
+            S[v++] = 127 & c.lo | 128, c.lo = (c.lo >>> 7 | c.hi << 25) >>> 0, c.hi >>>= 7;
           for (; c.lo > 127; )
-            I[v++] = 127 & c.lo | 128, c.lo = c.lo >>> 7;
-          I[v++] = c.lo;
+            S[v++] = 127 & c.lo | 128, c.lo = c.lo >>> 7;
+          S[v++] = c.lo;
         }
-        function f(c, I, v) {
-          I[v] = 255 & c, I[v + 1] = c >>> 8 & 255, I[v + 2] = c >>> 16 & 255, I[v + 3] = c >>> 24;
+        function f(c, S, v) {
+          S[v] = 255 & c, S[v + 1] = c >>> 8 & 255, S[v + 2] = c >>> 16 & 255, S[v + 3] = c >>> 24;
         }
         u.create = m(), u.alloc = function(c) {
           return new t.Array(c);
-        }, t.Array !== Array && (u.alloc = t.pool(u.alloc, t.Array.prototype.subarray)), u.prototype._push = function(c, I, v) {
-          return this.tail = this.tail.next = new o(c, I, v), this.len += I, this;
-        }, h.prototype = Object.create(o.prototype), h.prototype.fn = function(c, I, v) {
+        }, t.Array !== Array && (u.alloc = t.pool(u.alloc, t.Array.prototype.subarray)), u.prototype._push = function(c, S, v) {
+          return this.tail = this.tail.next = new o(c, S, v), this.len += S, this;
+        }, h.prototype = Object.create(o.prototype), h.prototype.fn = function(c, S, v) {
           for (; c > 127; )
-            I[v++] = 127 & c | 128, c >>>= 7;
-          I[v] = c;
+            S[v++] = 127 & c | 128, c >>>= 7;
+          S[v] = c;
         }, u.prototype.uint32 = function(c) {
           return this.len += (this.tail = this.tail.next = new h((c >>>= 0) < 128 ? 1 : c < 16384 ? 2 : c < 2097152 ? 3 : c < 268435456 ? 4 : 5, c)).len, this;
         }, u.prototype.int32 = function(c) {
-          return c < 0 ? this._push(d, 10, i.fromNumber(c)) : this.uint32(c);
+          return c < 0 ? this._push(d, 10, a.fromNumber(c)) : this.uint32(c);
         }, u.prototype.sint32 = function(c) {
           return this.uint32((c << 1 ^ c >> 31) >>> 0);
         }, u.prototype.uint64 = function(c) {
-          var I = i.from(c);
-          return this._push(d, I.length(), I);
+          var S = a.from(c);
+          return this._push(d, S.length(), S);
         }, u.prototype.int64 = u.prototype.uint64, u.prototype.sint64 = function(c) {
-          var I = i.from(c).zzEncode();
-          return this._push(d, I.length(), I);
+          var S = a.from(c).zzEncode();
+          return this._push(d, S.length(), S);
         }, u.prototype.bool = function(c) {
           return this._push(g, 1, c ? 1 : 0);
         }, u.prototype.fixed32 = function(c) {
           return this._push(f, 4, c >>> 0);
         }, u.prototype.sfixed32 = u.prototype.fixed32, u.prototype.fixed64 = function(c) {
-          var I = i.from(c);
-          return this._push(f, 4, I.lo)._push(f, 4, I.hi);
+          var S = a.from(c);
+          return this._push(f, 4, S.lo)._push(f, 4, S.hi);
         }, u.prototype.sfixed64 = u.prototype.fixed64, u.prototype.float = function(c) {
           return this._push(t.float.writeFloatLE, 4, c);
         }, u.prototype.double = function(c) {
           return this._push(t.float.writeDoubleLE, 8, c);
         };
-        var b = t.Array.prototype.set ? function(c, I, v) {
-          I.set(c, v);
-        } : function(c, I, v) {
+        var b = t.Array.prototype.set ? function(c, S, v) {
+          S.set(c, v);
+        } : function(c, S, v) {
           for (var N = 0; N < c.length; ++N)
-            I[v + N] = c[N];
+            S[v + N] = c[N];
         };
         u.prototype.bytes = function(c) {
-          var I = c.length >>> 0;
-          if (!I)
+          var S = c.length >>> 0;
+          if (!S)
             return this._push(g, 1, 0);
           if (t.isString(c)) {
-            var v = u.alloc(I = s.length(c));
+            var v = u.alloc(S = s.length(c));
             s.decode(c, v, 0), c = v;
           }
-          return this.uint32(I)._push(b, I, c);
+          return this.uint32(S)._push(b, S, c);
         }, u.prototype.string = function(c) {
-          var I = a.length(c);
-          return I ? this.uint32(I)._push(a.write, I, c) : this._push(g, 1, 0);
+          var S = i.length(c);
+          return S ? this.uint32(S)._push(i.write, S, c) : this._push(g, 1, 0);
         }, u.prototype.fork = function() {
           return this.states = new l(this), this.head = this.tail = new o(n, 0, 0), this.len = 0, this;
         }, u.prototype.reset = function() {
           return this.states ? (this.head = this.states.head, this.tail = this.states.tail, this.len = this.states.len, this.states = this.states.next) : (this.head = this.tail = new o(n, 0, 0), this.len = 0), this;
         }, u.prototype.ldelim = function() {
-          var c = this.head, I = this.tail, v = this.len;
-          return this.reset().uint32(v), v && (this.tail.next = c.next, this.tail = I, this.len += v), this;
+          var c = this.head, S = this.tail, v = this.len;
+          return this.reset().uint32(v), v && (this.tail.next = c.next, this.tail = S, this.len += v), this;
         }, u.prototype.finish = function() {
-          for (var c = this.head.next, I = this.constructor.alloc(this.len), v = 0; c; )
-            c.fn(c.val, I, v), v += c.len, c = c.next;
-          return I;
+          for (var c = this.head.next, S = this.constructor.alloc(this.len), v = 0; c; )
+            c.fn(c.val, S, v), v += c.len, c = c.next;
+          return S;
         }, u._configure = function(c) {
           r = c, u.create = m(), r._configure();
         };
-      }, 3155: function(p, S, e) {
-        p.exports = i;
+      }, 3155: function(p, R, e) {
+        p.exports = a;
         var r = e(1173);
-        (i.prototype = Object.create(r.prototype)).constructor = i;
+        (a.prototype = Object.create(r.prototype)).constructor = a;
         var t = e(9693);
-        function i() {
+        function a() {
           r.call(this);
         }
-        function s(a, o, n) {
-          a.length < 40 ? t.utf8.write(a, o, n) : o.utf8Write ? o.utf8Write(a, n) : o.write(a, n);
+        function s(i, o, n) {
+          i.length < 40 ? t.utf8.write(i, o, n) : o.utf8Write ? o.utf8Write(i, n) : o.write(i, n);
         }
-        i._configure = function() {
-          i.alloc = t._Buffer_allocUnsafe, i.writeBytesBuffer = t.Buffer && t.Buffer.prototype instanceof Uint8Array && t.Buffer.prototype.set.name === "set" ? function(a, o, n) {
-            o.set(a, n);
-          } : function(a, o, n) {
-            if (a.copy)
-              a.copy(o, n, 0, a.length);
+        a._configure = function() {
+          a.alloc = t._Buffer_allocUnsafe, a.writeBytesBuffer = t.Buffer && t.Buffer.prototype instanceof Uint8Array && t.Buffer.prototype.set.name === "set" ? function(i, o, n) {
+            o.set(i, n);
+          } : function(i, o, n) {
+            if (i.copy)
+              i.copy(o, n, 0, i.length);
             else
-              for (var l = 0; l < a.length; )
-                o[n++] = a[l++];
+              for (var l = 0; l < i.length; )
+                o[n++] = i[l++];
           };
-        }, i.prototype.bytes = function(a) {
-          t.isString(a) && (a = t._Buffer_from(a, "base64"));
-          var o = a.length >>> 0;
-          return this.uint32(o), o && this._push(i.writeBytesBuffer, o, a), this;
-        }, i.prototype.string = function(a) {
-          var o = t.Buffer.byteLength(a);
-          return this.uint32(o), o && this._push(s, o, a), this;
-        }, i._configure();
-      }, 7129: function(p, S) {
+        }, a.prototype.bytes = function(i) {
+          t.isString(i) && (i = t._Buffer_from(i, "base64"));
+          var o = i.length >>> 0;
+          return this.uint32(o), o && this._push(a.writeBytesBuffer, o, i), this;
+        }, a.prototype.string = function(i) {
+          var o = t.Buffer.byteLength(i);
+          return this.uint32(o), o && this._push(s, o, i), this;
+        }, a._configure();
+      }, 7129: function(p, R) {
         var e = Object.prototype.hasOwnProperty;
-        function r(i) {
+        function r(a) {
           try {
-            return decodeURIComponent(i.replace(/\+/g, " "));
+            return decodeURIComponent(a.replace(/\+/g, " "));
           } catch {
             return null;
           }
         }
-        function t(i) {
+        function t(a) {
           try {
-            return encodeURIComponent(i);
+            return encodeURIComponent(a);
           } catch {
             return null;
           }
         }
-        S.stringify = function(i, s) {
+        R.stringify = function(a, s) {
           s = s || "";
-          var a, o, n = [];
-          for (o in typeof s != "string" && (s = "?"), i)
-            if (e.call(i, o)) {
-              if ((a = i[o]) || a != null && !isNaN(a) || (a = ""), o = t(o), a = t(a), o === null || a === null)
+          var i, o, n = [];
+          for (o in typeof s != "string" && (s = "?"), a)
+            if (e.call(a, o)) {
+              if ((i = a[o]) || i != null && !isNaN(i) || (i = ""), o = t(o), i = t(i), o === null || i === null)
                 continue;
-              n.push(o + "=" + a);
+              n.push(o + "=" + i);
             }
           return n.length ? s + n.join("&") : "";
-        }, S.parse = function(i) {
-          for (var s, a = /([^=?#&]+)=?([^&]*)/g, o = {}; s = a.exec(i); ) {
+        }, R.parse = function(a) {
+          for (var s, i = /([^=?#&]+)=?([^&]*)/g, o = {}; s = i.exec(a); ) {
             var n = r(s[1]), l = r(s[2]);
             n === null || l === null || n in o || (o[n] = l);
           }
           return o;
         };
       }, 7418: function(p) {
-        p.exports = function(S, e) {
-          if (e = e.split(":")[0], !(S = +S))
+        p.exports = function(R, e) {
+          if (e = e.split(":")[0], !(R = +R))
             return !1;
           switch (e) {
             case "http":
             case "ws":
-              return S !== 80;
+              return R !== 80;
             case "https":
             case "wss":
-              return S !== 443;
+              return R !== 443;
             case "ftp":
-              return S !== 21;
+              return R !== 21;
             case "gopher":
-              return S !== 70;
+              return R !== 70;
             case "file":
               return !1;
           }
-          return S !== 0;
+          return R !== 0;
         };
-      }, 8e3: function(p, S, e) {
+      }, 8e3: function(p, R, e) {
         var r = e(7581);
         p.exports = e(3626)(r), "_sockjs_onload" in e.g && setTimeout(e.g._sockjs_onload, 1);
-      }, 2530: function(p, S, e) {
+      }, 2530: function(p, R, e) {
         var r = e(5717), t = e(685);
-        function i() {
+        function a() {
           t.call(this), this.initEvent("close", !1, !1), this.wasClean = !1, this.code = 0, this.reason = "";
         }
-        r(i, t), p.exports = i;
-      }, 3212: function(p, S, e) {
+        r(a, t), p.exports = a;
+      }, 3212: function(p, R, e) {
         var r = e(5717), t = e(3184);
-        function i() {
+        function a() {
           t.call(this);
         }
-        r(i, t), i.prototype.removeAllListeners = function(s) {
+        r(a, t), a.prototype.removeAllListeners = function(s) {
           s ? delete this._listeners[s] : this._listeners = {};
-        }, i.prototype.once = function(s, a) {
+        }, a.prototype.once = function(s, i) {
           var o = this, n = !1;
           this.on(s, function l() {
-            o.removeListener(s, l), n || (n = !0, a.apply(this, arguments));
+            o.removeListener(s, l), n || (n = !0, i.apply(this, arguments));
           });
-        }, i.prototype.emit = function() {
-          var s = arguments[0], a = this._listeners[s];
-          if (a) {
+        }, a.prototype.emit = function() {
+          var s = arguments[0], i = this._listeners[s];
+          if (i) {
             for (var o = arguments.length, n = new Array(o - 1), l = 1; l < o; l++)
               n[l - 1] = arguments[l];
-            for (var u = 0; u < a.length; u++)
-              a[u].apply(this, n);
+            for (var u = 0; u < i.length; u++)
+              i[u].apply(this, n);
           }
-        }, i.prototype.on = i.prototype.addListener = t.prototype.addEventListener, i.prototype.removeListener = t.prototype.removeEventListener, p.exports.v = i;
+        }, a.prototype.on = a.prototype.addListener = t.prototype.addEventListener, a.prototype.removeListener = t.prototype.removeEventListener, p.exports.v = a;
       }, 685: function(p) {
-        function S(e) {
+        function R(e) {
           this.type = e;
         }
-        S.prototype.initEvent = function(e, r, t) {
+        R.prototype.initEvent = function(e, r, t) {
           return this.type = e, this.bubbles = r, this.cancelable = t, this.timeStamp = +/* @__PURE__ */ new Date(), this;
-        }, S.prototype.stopPropagation = function() {
-        }, S.prototype.preventDefault = function() {
-        }, S.CAPTURING_PHASE = 1, S.AT_TARGET = 2, S.BUBBLING_PHASE = 3, p.exports = S;
+        }, R.prototype.stopPropagation = function() {
+        }, R.prototype.preventDefault = function() {
+        }, R.CAPTURING_PHASE = 1, R.AT_TARGET = 2, R.BUBBLING_PHASE = 3, p.exports = R;
       }, 3184: function(p) {
-        function S() {
+        function R() {
           this._listeners = {};
         }
-        S.prototype.addEventListener = function(e, r) {
+        R.prototype.addEventListener = function(e, r) {
           e in this._listeners || (this._listeners[e] = []);
           var t = this._listeners[e];
           t.indexOf(r) === -1 && (t = t.concat([r])), this._listeners[e] = t;
-        }, S.prototype.removeEventListener = function(e, r) {
+        }, R.prototype.removeEventListener = function(e, r) {
           var t = this._listeners[e];
           if (t) {
-            var i = t.indexOf(r);
-            i === -1 || (t.length > 1 ? this._listeners[e] = t.slice(0, i).concat(t.slice(i + 1)) : delete this._listeners[e]);
+            var a = t.indexOf(r);
+            a === -1 || (t.length > 1 ? this._listeners[e] = t.slice(0, a).concat(t.slice(a + 1)) : delete this._listeners[e]);
           }
-        }, S.prototype.dispatchEvent = function() {
+        }, R.prototype.dispatchEvent = function() {
           var e = arguments[0], r = e.type, t = arguments.length === 1 ? [e] : Array.apply(null, arguments);
           if (this["on" + r] && this["on" + r].apply(this, t), r in this._listeners)
-            for (var i = this._listeners[r], s = 0; s < i.length; s++)
-              i[s].apply(this, t);
-        }, p.exports = S;
-      }, 3326: function(p, S, e) {
+            for (var a = this._listeners[r], s = 0; s < a.length; s++)
+              a[s].apply(this, t);
+        }, p.exports = R;
+      }, 3326: function(p, R, e) {
         var r = e(5717), t = e(685);
-        function i(s) {
+        function a(s) {
           t.call(this), this.initEvent("message", !1, !1), this.data = s;
         }
-        r(i, t), p.exports = i;
-      }, 691: function(p, S, e) {
+        r(a, t), p.exports = a;
+      }, 691: function(p, R, e) {
         var r = e(3683);
-        function t(i) {
-          this._transport = i, i.on("message", this._transportMessage.bind(this)), i.on("close", this._transportClose.bind(this));
+        function t(a) {
+          this._transport = a, a.on("message", this._transportMessage.bind(this)), a.on("close", this._transportClose.bind(this));
         }
-        t.prototype._transportClose = function(i, s) {
-          r.postMessage("c", JSON.stringify([i, s]));
-        }, t.prototype._transportMessage = function(i) {
-          r.postMessage("t", i);
-        }, t.prototype._send = function(i) {
-          this._transport.send(i);
+        t.prototype._transportClose = function(a, s) {
+          r.postMessage("c", JSON.stringify([a, s]));
+        }, t.prototype._transportMessage = function(a) {
+          r.postMessage("t", a);
+        }, t.prototype._send = function(a) {
+          this._transport.send(a);
         }, t.prototype._close = function() {
           this._transport.close(), this._transport.removeAllListeners();
         }, p.exports = t;
-      }, 551: function(p, S, e) {
-        var r = e(273), t = e(7705), i = e(691), s = e(6311), a = e(3683), o = e(7486);
+      }, 551: function(p, R, e) {
+        var r = e(273), t = e(7705), a = e(691), s = e(6311), i = e(3683), o = e(7486);
         p.exports = function(n, l) {
           var u, m = {};
           l.forEach(function(g) {
             g.facadeTransport && (m[g.facadeTransport.transportName] = g.facadeTransport);
           }), m[s.transportName] = s, n.bootstrap_iframe = function() {
             var g;
-            a.currentWindowId = o.hash.slice(1), t.attachEvent("message", function(h) {
+            i.currentWindowId = o.hash.slice(1), t.attachEvent("message", function(h) {
               if (h.source === parent && (u === void 0 && (u = h.origin), h.origin === u)) {
                 var d;
                 try {
@@ -11001,7 +11001,7 @@ var EasemobChat = { exports: {} };
                 } catch {
                   return void h.data;
                 }
-                if (d.windowId === a.currentWindowId)
+                if (d.windowId === i.currentWindowId)
                   switch (d.type) {
                     case "s":
                       var f;
@@ -11011,12 +11011,12 @@ var EasemobChat = { exports: {} };
                         d.data;
                         break;
                       }
-                      var b = f[0], c = f[1], I = f[2], v = f[3];
+                      var b = f[0], c = f[1], S = f[2], v = f[3];
                       if (b !== n.version)
                         throw new Error('Incompatible SockJS! Main site uses: "' + b + '", the iframe: "' + n.version + '".');
-                      if (!r.isOriginEqual(I, o.href) || !r.isOriginEqual(v, o.href))
-                        throw new Error("Can't connect to different domain from within an iframe. (" + o.href + ", " + I + ", " + v + ")");
-                      g = new i(new m[c](I, v));
+                      if (!r.isOriginEqual(S, o.href) || !r.isOriginEqual(v, o.href))
+                        throw new Error("Can't connect to different domain from within an iframe. (" + o.href + ", " + S + ", " + v + ")");
+                      g = new a(new m[c](S, v));
                       break;
                     case "m":
                       g._send(d.data);
@@ -11025,15 +11025,15 @@ var EasemobChat = { exports: {} };
                       g && g._close(), g = null;
                   }
               }
-            }), a.postMessage("s");
+            }), i.postMessage("s");
           };
         };
-      }, 2550: function(p, S, e) {
-        var r = e(3212).v, t = e(5717), i = e(2217);
-        function s(a, o) {
+      }, 2550: function(p, R, e) {
+        var r = e(3212).v, t = e(5717), a = e(2217);
+        function s(i, o) {
           r.call(this);
           var n = this, l = +/* @__PURE__ */ new Date();
-          this.xo = new o("GET", a), this.xo.once("finish", function(u, m) {
+          this.xo = new o("GET", i), this.xo.once("finish", function(u, m) {
             var g, h;
             if (u === 200) {
               if (h = +/* @__PURE__ */ new Date() - l, m)
@@ -11041,7 +11041,7 @@ var EasemobChat = { exports: {} };
                   g = JSON.parse(m);
                 } catch {
                 }
-              i.isObject(g) || (g = {});
+              a.isObject(g) || (g = {});
             }
             n.emit("finish", g, h), n.removeAllListeners();
           });
@@ -11049,24 +11049,24 @@ var EasemobChat = { exports: {} };
         t(s, r), s.prototype.close = function() {
           this.removeAllListeners(), this.xo.close();
         }, p.exports = s;
-      }, 6311: function(p, S, e) {
-        var r = e(5717), t = e(3212).v, i = e(3515), s = e(2550);
-        function a(o) {
+      }, 6311: function(p, R, e) {
+        var r = e(5717), t = e(3212).v, a = e(3515), s = e(2550);
+        function i(o) {
           var n = this;
-          t.call(this), this.ir = new s(o, i), this.ir.once("finish", function(l, u) {
+          t.call(this), this.ir = new s(o, a), this.ir.once("finish", function(l, u) {
             n.ir = null, n.emit("message", JSON.stringify([l, u]));
           });
         }
-        r(a, t), a.transportName = "iframe-info-receiver", a.prototype.close = function() {
+        r(i, t), i.transportName = "iframe-info-receiver", i.prototype.close = function() {
           this.ir && (this.ir.close(), this.ir = null), this.removeAllListeners();
-        }, p.exports = a;
-      }, 3616: function(p, S, e) {
-        var r = e(3212).v, t = e(5717), i = e(7705), s = e(5088), a = e(6311);
+        }, p.exports = i;
+      }, 3616: function(p, R, e) {
+        var r = e(3212).v, t = e(5717), a = e(7705), s = e(5088), i = e(6311);
         function o(n, l) {
           var u = this;
           r.call(this);
           var m = function() {
-            var g = u.ifr = new s(a.transportName, l, n);
+            var g = u.ifr = new s(i.transportName, l, n);
             g.once("message", function(h) {
               if (h) {
                 var d;
@@ -11083,15 +11083,15 @@ var EasemobChat = { exports: {} };
               u.emit("finish"), u.close();
             });
           };
-          e.g.document.body ? m() : i.attachEvent("load", m);
+          e.g.document.body ? m() : a.attachEvent("load", m);
         }
         t(o, r), o.enabled = function() {
           return s.enabled();
         }, o.prototype.close = function() {
           this.ifr && this.ifr.close(), this.removeAllListeners(), this.ifr = null;
         }, p.exports = o;
-      }, 5172: function(p, S, e) {
-        var r = e(3212).v, t = e(5717), i = e(273), s = e(6073), a = e(9033), o = e(3515), n = e(7103), l = e(3616), u = e(2550);
+      }, 5172: function(p, R, e) {
+        var r = e(3212).v, t = e(5717), a = e(273), s = e(6073), i = e(9033), o = e(3515), n = e(7103), l = e(3616), u = e(2550);
         function m(g, h) {
           var d = this;
           r.call(this), setTimeout(function() {
@@ -11099,9 +11099,9 @@ var EasemobChat = { exports: {} };
           }, 0);
         }
         t(m, r), m._getReceiver = function(g, h, d) {
-          return d.sameOrigin ? new u(h, o) : a.enabled ? new u(h, a) : s.enabled && d.sameScheme ? new u(h, s) : l.enabled() ? new l(g, h) : new u(h, n);
+          return d.sameOrigin ? new u(h, o) : i.enabled ? new u(h, i) : s.enabled && d.sameScheme ? new u(h, s) : l.enabled() ? new l(g, h) : new u(h, n);
         }, m.prototype.doXhr = function(g, h) {
-          var d = this, f = i.addPath(g, "/info");
+          var d = this, f = a.addPath(g, "/info");
           this.xo = m._getReceiver(g, f, h), this.timeoutRef = setTimeout(function() {
             d._cleanup(!1), d.emit("finish");
           }, m.timeout), this.xo.once("finish", function(b, c) {
@@ -11112,11 +11112,11 @@ var EasemobChat = { exports: {} };
         }, m.prototype.close = function() {
           this.removeAllListeners(), this._cleanup(!1);
         }, m.timeout = 8e3, p.exports = m;
-      }, 7486: function(p, S, e) {
+      }, 7486: function(p, R, e) {
         p.exports = e.g.location || { origin: "http://localhost:80", protocol: "http:", host: "localhost", port: 80, href: "http://localhost/", hash: "" };
-      }, 3626: function(p, S, e) {
+      }, 3626: function(p, R, e) {
         e(1247);
-        var r, t = e(4564), i = e(5717), s = e(8915), a = e(8028), o = e(273), n = e(7705), l = e(5581), u = e(2217), m = e(8510), g = e(4886), h = e(685), d = e(3184), f = e(7486), b = e(2530), c = e(3326), I = e(5172);
+        var r, t = e(4564), a = e(5717), s = e(8915), i = e(8028), o = e(273), n = e(7705), l = e(5581), u = e(2217), m = e(8510), g = e(4886), h = e(685), d = e(3184), f = e(7486), b = e(2530), c = e(3326), S = e(5172);
         function v(x, O, C) {
           if (!(this instanceof v))
             return new v(x, O, C);
@@ -11145,20 +11145,20 @@ var EasemobChat = { exports: {} };
           if (f.protocol === "https:" && !G && !o.isLoopbackAddr(P.hostname))
             throw new Error("SecurityError: An insecure SockJS connection may not be initiated from a page loaded over HTTPS");
           O ? Array.isArray(O) || (O = [O]) : O = [];
-          var K = O.sort();
-          K.forEach(function(Y, Z) {
+          var Z = O.sort();
+          Z.forEach(function(Y, K) {
             if (!Y)
               throw new SyntaxError("The protocols entry '" + Y + "' is invalid.");
-            if (Z < K.length - 1 && Y === K[Z + 1])
+            if (K < Z.length - 1 && Y === Z[K + 1])
               throw new SyntaxError("The protocols entry '" + Y + "' is duplicated.");
           });
           var F = o.getOrigin(f.href);
-          this._origin = F ? F.toLowerCase() : null, P.set("pathname", P.pathname.replace(/\/+$/, "")), this.url = P.href, this.url, this._urlInfo = { nullOrigin: !m.hasDomain(), sameOrigin: o.isOriginEqual(this.url, f.href), sameScheme: o.isSchemeEqual(this.url, f.href) }, this._ir = new I(this.url, this._urlInfo), this._ir.once("finish", this._receiveInfo.bind(this));
+          this._origin = F ? F.toLowerCase() : null, P.set("pathname", P.pathname.replace(/\/+$/, "")), this.url = P.href, this.url, this._urlInfo = { nullOrigin: !m.hasDomain(), sameOrigin: o.isOriginEqual(this.url, f.href), sameScheme: o.isSchemeEqual(this.url, f.href) }, this._ir = new S(this.url, this._urlInfo), this._ir.once("finish", this._receiveInfo.bind(this));
         }
         function N(x) {
           return x === 1e3 || x >= 3e3 && x <= 4999;
         }
-        i(v, d), v.prototype.close = function(x, O) {
+        a(v, d), v.prototype.close = function(x, O) {
           if (x && !N(x))
             throw new Error("InvalidAccessError: Invalid code");
           if (O && O.length > 123)
@@ -11167,7 +11167,7 @@ var EasemobChat = { exports: {} };
         }, v.prototype.send = function(x) {
           if (typeof x != "string" && (x = "" + x), this.readyState === v.CONNECTING)
             throw new Error("InvalidStateError: The connection has not been established yet");
-          this.readyState === v.OPEN && this._transport.send(a.quote(x));
+          this.readyState === v.OPEN && this._transport.send(i.quote(x));
         }, v.version = e(2828), v.CONNECTING = 0, v.OPEN = 1, v.CLOSING = 2, v.CLOSED = 3, v.prototype._receiveInfo = function(x, O) {
           if (this._ir = null, x) {
             this._rto = this.countRTO(O), this._transUrl = x.base_url ? x.base_url : this.url, x = u.extend(x, this._urlInfo);
@@ -11233,7 +11233,7 @@ var EasemobChat = { exports: {} };
           return r = l(x), e(551)(v, x), v;
         };
       }, 1247: function() {
-        var p, S = Array.prototype, e = Object.prototype, r = Function.prototype, t = String.prototype, i = S.slice, s = e.toString, a = function(O) {
+        var p, R = Array.prototype, e = Object.prototype, r = Function.prototype, t = String.prototype, a = R.slice, s = e.toString, i = function(O) {
           return e.toString.call(O) === "[object Function]";
         }, o = function(O) {
           return s.call(O) === "[object String]";
@@ -11265,35 +11265,35 @@ var EasemobChat = { exports: {} };
         }
         l(r, { bind: function(O) {
           var C = this;
-          if (!a(C))
+          if (!i(C))
             throw new TypeError("Function.prototype.bind called on incompatible " + C);
-          for (var E = i.call(arguments, 1), P = function() {
+          for (var E = a.call(arguments, 1), P = function() {
             if (this instanceof Y) {
-              var Z = C.apply(this, E.concat(i.call(arguments)));
-              return Object(Z) === Z ? Z : this;
+              var K = C.apply(this, E.concat(a.call(arguments)));
+              return Object(K) === K ? K : this;
             }
-            return C.apply(O, E.concat(i.call(arguments)));
-          }, G = Math.max(0, C.length - E.length), K = [], F = 0; F < G; F++)
-            K.push("$" + F);
-          var Y = Function("binder", "return function (" + K.join(",") + "){ return binder.apply(this, arguments); }")(P);
+            return C.apply(O, E.concat(a.call(arguments)));
+          }, G = Math.max(0, C.length - E.length), Z = [], F = 0; F < G; F++)
+            Z.push("$" + F);
+          var Y = Function("binder", "return function (" + Z.join(",") + "){ return binder.apply(this, arguments); }")(P);
           return C.prototype && (g.prototype = C.prototype, Y.prototype = new g(), g.prototype = null), Y;
         } }), l(Array, { isArray: function(O) {
           return s.call(O) === "[object Array]";
         } });
         var h, d, f, b = Object("a"), c = b[0] !== "a" || !(0 in b);
-        l(S, { forEach: function(O) {
-          var C = u(this), E = c && o(this) ? this.split("") : C, P = arguments[1], G = -1, K = E.length >>> 0;
-          if (!a(O))
+        l(R, { forEach: function(O) {
+          var C = u(this), E = c && o(this) ? this.split("") : C, P = arguments[1], G = -1, Z = E.length >>> 0;
+          if (!i(O))
             throw new TypeError();
-          for (; ++G < K; )
+          for (; ++G < Z; )
             G in E && O.call(P, E[G], G, C);
-        } }, (h = S.forEach, d = !0, f = !0, h && (h.call("foo", function(O, C, E) {
+        } }, (h = R.forEach, d = !0, f = !0, h && (h.call("foo", function(O, C, E) {
           typeof E != "object" && (d = !1);
         }), h.call([1], function() {
           f = typeof this == "string";
         }, "x")), !(h && d && f)));
-        var I = Array.prototype.indexOf && [0, 1].indexOf(1, 2) !== -1;
-        l(S, { indexOf: function(O) {
+        var S = Array.prototype.indexOf && [0, 1].indexOf(1, 2) !== -1;
+        l(R, { indexOf: function(O) {
           var C = c && o(this) ? this.split("") : u(this), E = C.length >>> 0;
           if (!E)
             return -1;
@@ -11302,7 +11302,7 @@ var EasemobChat = { exports: {} };
             if (P in C && C[P] === O)
               return P;
           return -1;
-        } }, I);
+        } }, S);
         var v, N = t.split;
         "ab".split(/(?:ab)*/).length !== 2 || ".".split(/(.?)(.?)/).length !== 4 || "tesst".split(/(s)*/)[1] === "t" || "test".split(/(?:)/, -1).length !== 4 || "".split(/.?/).length || ".".split(/()()/).length > 1 ? (v = /()??/.exec("")[1] === void 0, t.split = function(O, C) {
           var E = this;
@@ -11310,11 +11310,11 @@ var EasemobChat = { exports: {} };
             return [];
           if (s.call(O) !== "[object RegExp]")
             return N.call(this, O, C);
-          var P, G, K, F, Y = [], Z = (O.ignoreCase ? "i" : "") + (O.multiline ? "m" : "") + (O.extended ? "x" : "") + (O.sticky ? "y" : ""), V = 0;
-          for (O = new RegExp(O.source, Z + "g"), E += "", v || (P = new RegExp("^" + O.source + "$(?!\\s)", Z)), C = C === void 0 ? 4294967295 : C >>> 0; (G = O.exec(E)) && !((K = G.index + G[0].length) > V && (Y.push(E.slice(V, G.index)), !v && G.length > 1 && G[0].replace(P, function() {
+          var P, G, Z, F, Y = [], K = (O.ignoreCase ? "i" : "") + (O.multiline ? "m" : "") + (O.extended ? "x" : "") + (O.sticky ? "y" : ""), V = 0;
+          for (O = new RegExp(O.source, K + "g"), E += "", v || (P = new RegExp("^" + O.source + "$(?!\\s)", K)), C = C === void 0 ? 4294967295 : C >>> 0; (G = O.exec(E)) && !((Z = G.index + G[0].length) > V && (Y.push(E.slice(V, G.index)), !v && G.length > 1 && G[0].replace(P, function() {
             for (var ne = 1; ne < arguments.length - 2; ne++)
               arguments[ne] === void 0 && (G[ne] = void 0);
-          }), G.length > 1 && G.index < E.length && S.push.apply(Y, G.slice(1)), F = G[0].length, V = K, Y.length >= C)); )
+          }), G.length > 1 && G.index < E.length && R.push.apply(Y, G.slice(1)), F = G[0].length, V = Z, Y.length >= C)); )
             O.lastIndex === G.index && O.lastIndex++;
           return V === E.length ? !F && O.test("") || Y.push("") : Y.push(E.slice(V)), Y.length > C ? Y.slice(0, C) : Y;
         }) : "0".split(void 0, 0).length && (t.split = function(O, C) {
@@ -11324,10 +11324,10 @@ var EasemobChat = { exports: {} };
         l(t, { substr: function(O, C) {
           return x.call(this, O < 0 && (O = this.length + O) < 0 ? 0 : O, C);
         } }, "".substr && "0b".substr(-1) !== "b");
-      }, 7581: function(p, S, e) {
+      }, 7581: function(p, R, e) {
         p.exports = [e(2412), e(9842), e(4620), e(3004), e(882)(e(3004)), e(5616), e(882)(e(5616)), e(2387), e(9998), e(882)(e(2387)), e(5375)];
-      }, 2940: function(p, S, e) {
-        var r = e(3212).v, t = e(5717), i = e(7705), s = e(273), a = e.g.XMLHttpRequest;
+      }, 2940: function(p, R, e) {
+        var r = e(3212).v, t = e(5717), a = e(7705), s = e(273), i = e.g.XMLHttpRequest;
         function o(u, m, g, h) {
           var d = this;
           r.call(this), setTimeout(function() {
@@ -11337,12 +11337,12 @@ var EasemobChat = { exports: {} };
         t(o, r), o.prototype._start = function(u, m, g, h) {
           var d = this;
           try {
-            this.xhr = new a();
+            this.xhr = new i();
           } catch {
           }
           if (!this.xhr)
             return this.emit("finish", 0, "no xhr support"), void this._cleanup();
-          m = s.addQuery(m, "t=" + +/* @__PURE__ */ new Date()), this.unloadRef = i.unloadAdd(function() {
+          m = s.addQuery(m, "t=" + +/* @__PURE__ */ new Date()), this.unloadRef = a.unloadAdd(function() {
             d._cleanup(!0);
           });
           try {
@@ -11357,17 +11357,17 @@ var EasemobChat = { exports: {} };
               this.xhr.setRequestHeader(f, h.headers[f]);
           this.xhr.onreadystatechange = function() {
             if (d.xhr) {
-              var b, c, I = d.xhr;
-              switch (I.readyState, I.readyState) {
+              var b, c, S = d.xhr;
+              switch (S.readyState, S.readyState) {
                 case 3:
                   try {
-                    c = I.status, b = I.responseText;
+                    c = S.status, b = S.responseText;
                   } catch {
                   }
                   c === 1223 && (c = 204), c === 200 && b && b.length > 0 && d.emit("chunk", c, b);
                   break;
                 case 4:
-                  (c = I.status) === 1223 && (c = 204), c !== 12005 && c !== 12029 || (c = 0), I.responseText, d.emit("finish", c, I.responseText), d._cleanup(!1);
+                  (c = S.status) === 1223 && (c = 204), c !== 12005 && c !== 12029 || (c = 0), S.responseText, d.emit("finish", c, S.responseText), d._cleanup(!1);
               }
             }
           };
@@ -11378,7 +11378,7 @@ var EasemobChat = { exports: {} };
           }
         }, o.prototype._cleanup = function(u) {
           if (this.xhr) {
-            if (this.removeAllListeners(), i.unloadDel(this.unloadRef), this.xhr.onreadystatechange = function() {
+            if (this.removeAllListeners(), a.unloadDel(this.unloadRef), this.xhr.onreadystatechange = function() {
             }, this.xhr.ontimeout && (this.xhr.ontimeout = null), u)
               try {
                 this.xhr.abort();
@@ -11388,50 +11388,50 @@ var EasemobChat = { exports: {} };
           }
         }, o.prototype.close = function() {
           this._cleanup(!0);
-        }, o.enabled = !!a;
+        }, o.enabled = !!i;
         var n = ["Active"].concat("Object").join("X");
-        !o.enabled && n in e.g && (a = function() {
+        !o.enabled && n in e.g && (i = function() {
           try {
             return new e.g[n]("Microsoft.XMLHTTP");
           } catch {
             return null;
           }
-        }, o.enabled = !!new a());
+        }, o.enabled = !!new i());
         var l = !1;
         try {
-          l = "withCredentials" in new a();
+          l = "withCredentials" in new i();
         } catch {
         }
         o.supportsCORS = l, p.exports = o;
-      }, 3759: function(p, S, e) {
+      }, 3759: function(p, R, e) {
         p.exports = e.g.EventSource;
-      }, 9334: function(p, S, e) {
+      }, 9334: function(p, R, e) {
         var r = e.g.WebSocket || e.g.MozWebSocket;
         p.exports = r ? function(t) {
           return new r(t);
         } : void 0;
-      }, 3004: function(p, S, e) {
-        var r = e(5717), t = e(9395), i = e(6709), s = e(9033), a = e(3759);
+      }, 3004: function(p, R, e) {
+        var r = e(5717), t = e(9395), a = e(6709), s = e(9033), i = e(3759);
         function o(n) {
           if (!o.enabled())
             throw new Error("Transport created when disabled");
-          t.call(this, n, "/eventsource", i, s);
+          t.call(this, n, "/eventsource", a, s);
         }
         r(o, t), o.enabled = function() {
-          return !!a;
+          return !!i;
         }, o.transportName = "eventsource", o.roundTrips = 2, p.exports = o;
-      }, 5616: function(p, S, e) {
-        var r = e(5717), t = e(3608), i = e(3515), s = e(9395);
-        function a(o) {
+      }, 5616: function(p, R, e) {
+        var r = e(5717), t = e(3608), a = e(3515), s = e(9395);
+        function i(o) {
           if (!t.enabled)
             throw new Error("Transport created when disabled");
-          s.call(this, o, "/htmlfile", t, i);
+          s.call(this, o, "/htmlfile", t, a);
         }
-        r(a, s), a.enabled = function(o) {
+        r(i, s), i.enabled = function(o) {
           return t.enabled && o.sameOrigin;
-        }, a.transportName = "htmlfile", a.roundTrips = 2, p.exports = a;
-      }, 5088: function(p, S, e) {
-        var r = e(5717), t = e(3212).v, i = e(2828), s = e(273), a = e(3683), o = e(7705), n = e(8915);
+        }, i.transportName = "htmlfile", i.roundTrips = 2, p.exports = i;
+      }, 5088: function(p, R, e) {
+        var r = e(5717), t = e(3212).v, a = e(2828), s = e(273), i = e(3683), o = e(7705), n = e(8915);
         function l(u, m, g) {
           if (!l.enabled())
             throw new Error("Transport created when disabled");
@@ -11439,7 +11439,7 @@ var EasemobChat = { exports: {} };
           var h = this;
           this.origin = s.getOrigin(g), this.baseUrl = g, this.transUrl = m, this.transport = u, this.windowId = n.string(8);
           var d = s.addPath(g, "/iframe.html") + "#" + this.windowId;
-          this.iframeObj = a.createIframe(d, function(f) {
+          this.iframeObj = i.createIframe(d, function(f) {
             h.emit("close", 1006, "Unable to load an iframe (" + f + ")"), h.close();
           }), this.onmessageCallback = this._message.bind(this), o.attachEvent("message", this.onmessageCallback);
         }
@@ -11465,7 +11465,7 @@ var EasemobChat = { exports: {} };
             return m.windowId, void this.windowId;
           switch (m.type) {
             case "s":
-              this.iframeObj.loaded(), this.postMessage("s", JSON.stringify([i, this.transport, this.transUrl, this.baseUrl]));
+              this.iframeObj.loaded(), this.postMessage("s", JSON.stringify([a, this.transport, this.transUrl, this.baseUrl]));
               break;
             case "t":
               this.emit("message", m.data);
@@ -11484,22 +11484,22 @@ var EasemobChat = { exports: {} };
         }, l.prototype.send = function(u) {
           this.postMessage("m", u);
         }, l.enabled = function() {
-          return a.iframeEnabled;
+          return i.iframeEnabled;
         }, l.transportName = "iframe", l.roundTrips = 2, p.exports = l;
-      }, 5375: function(p, S, e) {
-        var r = e(5717), t = e(8347), i = e(514), s = e(771);
-        function a(o) {
-          if (!a.enabled())
+      }, 5375: function(p, R, e) {
+        var r = e(5717), t = e(8347), a = e(514), s = e(771);
+        function i(o) {
+          if (!i.enabled())
             throw new Error("Transport created when disabled");
-          t.call(this, o, "/jsonp", s, i);
+          t.call(this, o, "/jsonp", s, a);
         }
-        r(a, t), a.enabled = function() {
+        r(i, t), i.enabled = function() {
           return !!e.g.document;
-        }, a.transportName = "jsonp-polling", a.roundTrips = 1, a.needBody = !0, p.exports = a;
-      }, 9395: function(p, S, e) {
-        var r = e(5717), t = e(273), i = e(8347);
-        function s(a, o, n, l) {
-          i.call(this, a, o, function(u) {
+        }, i.transportName = "jsonp-polling", i.roundTrips = 1, i.needBody = !0, p.exports = i;
+      }, 9395: function(p, R, e) {
+        var r = e(5717), t = e(273), a = e(8347);
+        function s(i, o, n, l) {
+          a.call(this, i, o, function(u) {
             return function(m, g, h) {
               var d = {};
               typeof g == "string" && (d.headers = { "Content-type": "text/plain" });
@@ -11516,81 +11516,81 @@ var EasemobChat = { exports: {} };
             };
           }(l), n, l);
         }
-        r(s, i), p.exports = s;
-      }, 1851: function(p, S, e) {
+        r(s, a), p.exports = s;
+      }, 1851: function(p, R, e) {
         var r = e(5717), t = e(3212).v;
-        function i(s, a) {
-          t.call(this), this.sendBuffer = [], this.sender = a, this.url = s;
+        function a(s, i) {
+          t.call(this), this.sendBuffer = [], this.sender = i, this.url = s;
         }
-        r(i, t), i.prototype.send = function(s) {
+        r(a, t), a.prototype.send = function(s) {
           this.sendBuffer.push(s), this.sendStop || this.sendSchedule();
-        }, i.prototype.sendScheduleWait = function() {
-          var s, a = this;
+        }, a.prototype.sendScheduleWait = function() {
+          var s, i = this;
           this.sendStop = function() {
-            a.sendStop = null, clearTimeout(s);
+            i.sendStop = null, clearTimeout(s);
           }, s = setTimeout(function() {
-            a.sendStop = null, a.sendSchedule();
+            i.sendStop = null, i.sendSchedule();
           }, 25);
-        }, i.prototype.sendSchedule = function() {
+        }, a.prototype.sendSchedule = function() {
           this.sendBuffer.length;
           var s = this;
           if (this.sendBuffer.length > 0) {
-            var a = "[" + this.sendBuffer.join(",") + "]";
-            this.sendStop = this.sender(this.url, a, function(o) {
+            var i = "[" + this.sendBuffer.join(",") + "]";
+            this.sendStop = this.sender(this.url, i, function(o) {
               s.sendStop = null, o ? (s.emit("close", o.code || 1006, "Sending error: " + o), s.close()) : s.sendScheduleWait();
             }), this.sendBuffer = [];
           }
-        }, i.prototype._cleanup = function() {
+        }, a.prototype._cleanup = function() {
           this.removeAllListeners();
-        }, i.prototype.close = function() {
+        }, a.prototype.close = function() {
           this._cleanup(), this.sendStop && (this.sendStop(), this.sendStop = null);
-        }, p.exports = i;
-      }, 882: function(p, S, e) {
-        var r = e(5717), t = e(5088), i = e(2217);
+        }, p.exports = a;
+      }, 882: function(p, R, e) {
+        var r = e(5717), t = e(5088), a = e(2217);
         p.exports = function(s) {
-          function a(o, n) {
+          function i(o, n) {
             t.call(this, s.transportName, o, n);
           }
-          return r(a, t), a.enabled = function(o, n) {
+          return r(i, t), i.enabled = function(o, n) {
             if (!e.g.document)
               return !1;
-            var l = i.extend({}, n);
+            var l = a.extend({}, n);
             return l.sameOrigin = !0, s.enabled(l) && t.enabled();
-          }, a.transportName = "iframe-" + s.transportName, a.needBody = !0, a.roundTrips = t.roundTrips + s.roundTrips - 1, a.facadeTransport = s, a;
+          }, i.transportName = "iframe-" + s.transportName, i.needBody = !0, i.roundTrips = t.roundTrips + s.roundTrips - 1, i.facadeTransport = s, i;
         };
-      }, 1265: function(p, S, e) {
+      }, 1265: function(p, R, e) {
         var r = e(5717), t = e(3212).v;
-        function i(s, a, o) {
-          t.call(this), this.Receiver = s, this.receiveUrl = a, this.AjaxObject = o, this._scheduleReceiver();
+        function a(s, i, o) {
+          t.call(this), this.Receiver = s, this.receiveUrl = i, this.AjaxObject = o, this._scheduleReceiver();
         }
-        r(i, t), i.prototype._scheduleReceiver = function() {
-          var s = this, a = this.poll = new this.Receiver(this.receiveUrl, this.AjaxObject);
-          a.on("message", function(o) {
+        r(a, t), a.prototype._scheduleReceiver = function() {
+          var s = this, i = this.poll = new this.Receiver(this.receiveUrl, this.AjaxObject);
+          i.on("message", function(o) {
             s.emit("message", o);
-          }), a.once("close", function(o, n) {
-            s.pollIsClosing, s.poll = a = null, s.pollIsClosing || (n === "network" ? s._scheduleReceiver() : (s.emit("close", o || 1006, n), s.removeAllListeners()));
+          }), i.once("close", function(o, n) {
+            s.pollIsClosing, s.poll = i = null, s.pollIsClosing || (n === "network" ? s._scheduleReceiver() : (s.emit("close", o || 1006, n), s.removeAllListeners()));
           });
-        }, i.prototype.abort = function() {
+        }, a.prototype.abort = function() {
           this.removeAllListeners(), this.pollIsClosing = !0, this.poll && this.poll.abort();
-        }, p.exports = i;
-      }, 8347: function(p, S, e) {
-        var r = e(5717), t = e(273), i = e(1851), s = e(1265);
-        function a(o, n, l, u, m) {
+        }, p.exports = a;
+      }, 8347: function(p, R, e) {
+        var r = e(5717), t = e(273), a = e(1851), s = e(1265);
+        function i(o, n, l, u, m) {
           var g = t.addPath(o, n), h = this;
-          i.call(this, o, l), this.poll = new s(u, g, m), this.poll.on("message", function(d) {
+          a.call(this, o, l), this.poll = new s(u, g, m), this.poll.on("message", function(d) {
             h.emit("message", d);
           }), this.poll.once("close", function(d, f) {
             h.poll = null, h.emit("close", d, f), h.close();
           });
         }
-        r(a, i), a.prototype.close = function() {
-          i.prototype.close.call(this), this.removeAllListeners(), this.poll && (this.poll.abort(), this.poll = null);
-        }, p.exports = a;
-      }, 6709: function(p, S, e) {
-        var r = e(5717), t = e(3212).v, i = e(3759);
-        function s(a) {
+        r(i, a), i.prototype.close = function() {
+          a.prototype.close.call(this), this.removeAllListeners(), this.poll && (this.poll.abort(), this.poll = null);
+        }, p.exports = i;
+      }, 6709: function(p, R, e) {
+        var r = e(5717), t = e(3212).v, a = e(3759);
+        function s(i) {
           t.call(this);
-          var o = this, n = this.es = new i(a);
+          var o = this, n = this.es = new a(i);
           n.onmessage = function(l) {
             l.data, o.emit("message", decodeURI(l.data));
           }, n.onerror = function(l) {
@@ -11602,20 +11602,20 @@ var EasemobChat = { exports: {} };
         r(s, t), s.prototype.abort = function() {
           this._cleanup(), this._close("user");
         }, s.prototype._cleanup = function() {
-          var a = this.es;
-          a && (a.onmessage = a.onerror = null, a.close(), this.es = null);
-        }, s.prototype._close = function(a) {
+          var i = this.es;
+          i && (i.onmessage = i.onerror = null, i.close(), this.es = null);
+        }, s.prototype._close = function(i) {
           var o = this;
           setTimeout(function() {
-            o.emit("close", null, a), o.removeAllListeners();
+            o.emit("close", null, i), o.removeAllListeners();
           }, 200);
         }, p.exports = s;
-      }, 3608: function(p, S, e) {
-        var r = e(5717), t = e(3683), i = e(273), s = e(3212).v, a = e(8915);
+      }, 3608: function(p, R, e) {
+        var r = e(5717), t = e(3683), a = e(273), s = e(3212).v, i = e(8915);
         function o(l) {
           s.call(this);
           var u = this;
-          t.polluteGlobalNamespace(), this.id = "a" + a.string(6), l = i.addQuery(l, "c=" + decodeURIComponent(t.WPrefix + "." + this.id)), o.htmlfileEnabled;
+          t.polluteGlobalNamespace(), this.id = "a" + i.string(6), l = a.addQuery(l, "c=" + decodeURIComponent(t.WPrefix + "." + this.id)), o.htmlfileEnabled;
           var m = o.htmlfileEnabled ? t.createHtmlfile : t.createIframe;
           e.g[t.WPrefix][this.id] = { start: function() {
             u.iframeObj.loaded();
@@ -11641,8 +11641,8 @@ var EasemobChat = { exports: {} };
           } catch {
           }
         o.enabled = o.htmlfileEnabled || t.iframeEnabled, p.exports = o;
-      }, 514: function(p, S, e) {
-        var r = e(3683), t = e(8915), i = e(8510), s = e(273), a = e(5717), o = e(3212).v;
+      }, 514: function(p, R, e) {
+        var r = e(3683), t = e(8915), a = e(8510), s = e(273), i = e(5717), o = e(3212).v;
         function n(l) {
           var u = this;
           o.call(this), r.polluteGlobalNamespace(), this.id = "a" + t.string(6);
@@ -11651,7 +11651,7 @@ var EasemobChat = { exports: {} };
             u._abort(new Error("JSONP script loaded abnormally (timeout)"));
           }, n.timeout);
         }
-        a(n, o), n.prototype.abort = function() {
+        i(n, o), n.prototype.abort = function() {
           if (e.g[r.WPrefix][this.id]) {
             var l = new Error("JSONP user aborted read");
             l.code = 1e3, this._abort(l);
@@ -11687,7 +11687,7 @@ var EasemobChat = { exports: {} };
               g && m._abort(new Error("JSONP script loaded abnormally (onreadystatechange)"));
             }
           }, g.async === void 0 && e.g.document.attachEvent)
-            if (i.isOpera())
+            if (a.isOpera())
               (u = this.script2 = e.g.document.createElement("script")).text = "try{var a = document.getElementById('" + g.id + "'); if(a)a.onerror();}catch(x){};", g.async = u.async = !1;
             else {
               try {
@@ -11700,38 +11700,38 @@ var EasemobChat = { exports: {} };
           var h = e.g.document.getElementsByTagName("head")[0];
           h.insertBefore(g, h.firstChild), u && h.insertBefore(u, h.firstChild);
         }, p.exports = n;
-      }, 1044: function(p, S, e) {
+      }, 1044: function(p, R, e) {
         var r = e(5717), t = e(3212).v;
-        function i(s, a) {
+        function a(s, i) {
           t.call(this);
           var o = this;
-          this.bufferPosition = 0, this.xo = new a("POST", s, null), this.xo.on("chunk", this._chunkHandler.bind(this)), this.xo.once("finish", function(n, l) {
+          this.bufferPosition = 0, this.xo = new i("POST", s, null), this.xo.on("chunk", this._chunkHandler.bind(this)), this.xo.once("finish", function(n, l) {
             o._chunkHandler(n, l), o.xo = null;
             var u = n === 200 ? "network" : "permanent";
             o.emit("close", null, u), o._cleanup();
           });
         }
-        r(i, t), i.prototype._chunkHandler = function(s, a) {
-          if (s === 200 && a)
+        r(a, t), a.prototype._chunkHandler = function(s, i) {
+          if (s === 200 && i)
             for (var o = -1; ; this.bufferPosition += o + 1) {
-              var n = a.slice(this.bufferPosition);
+              var n = i.slice(this.bufferPosition);
               if ((o = n.indexOf(`
 `)) === -1)
                 break;
               var l = n.slice(0, o);
               l && this.emit("message", l);
             }
-        }, i.prototype._cleanup = function() {
+        }, a.prototype._cleanup = function() {
           this.removeAllListeners();
-        }, i.prototype.abort = function() {
+        }, a.prototype.abort = function() {
           this.xo && (this.xo.close(), this.emit("close", null, "user"), this.xo = null), this._cleanup();
-        }, p.exports = i;
-      }, 771: function(p, S, e) {
-        var r, t, i = e(8915), s = e(273);
-        p.exports = function(a, o, n) {
+        }, p.exports = a;
+      }, 771: function(p, R, e) {
+        var r, t, a = e(8915), s = e(273);
+        p.exports = function(i, o, n) {
           r || ((r = e.g.document.createElement("form")).style.display = "none", r.style.position = "absolute", r.method = "POST", r.enctype = "application/x-www-form-urlencoded", r.acceptCharset = "UTF-8", (t = e.g.document.createElement("textarea")).name = "d", r.appendChild(t), e.g.document.body.appendChild(r));
-          var l = "a" + i.string(8);
-          r.target = l, r.action = s.addQuery(s.addPath(a, "/jsonp_send"), "i=" + l);
+          var l = "a" + a.string(8);
+          r.target = l, r.action = s.addQuery(s.addPath(i, "/jsonp_send"), "i=" + l);
           var u = function(g) {
             try {
               return e.g.document.createElement('<iframe name="' + g + '">');
@@ -11761,8 +11761,8 @@ var EasemobChat = { exports: {} };
             m(new Error("Aborted"));
           };
         };
-      }, 6073: function(p, S, e) {
-        var r = e(3212).v, t = e(5717), i = e(7705), s = e(8510), a = e(273);
+      }, 6073: function(p, R, e) {
+        var r = e(3212).v, t = e(5717), a = e(7705), s = e(8510), i = e(273);
         function o(n, l, u) {
           var m = this;
           r.call(this), setTimeout(function() {
@@ -11771,7 +11771,7 @@ var EasemobChat = { exports: {} };
         }
         t(o, r), o.prototype._start = function(n, l, u) {
           var m = this, g = new e.g.XDomainRequest();
-          l = a.addQuery(l, "t=" + +/* @__PURE__ */ new Date()), g.onerror = function() {
+          l = i.addQuery(l, "t=" + +/* @__PURE__ */ new Date()), g.onerror = function() {
             m._error();
           }, g.ontimeout = function() {
             m._error();
@@ -11779,7 +11779,7 @@ var EasemobChat = { exports: {} };
             g.responseText, m.emit("chunk", 200, g.responseText);
           }, g.onload = function() {
             m.emit("finish", 200, g.responseText), m._cleanup(!1);
-          }, this.xdr = g, this.unloadRef = i.unloadAdd(function() {
+          }, this.xdr = g, this.unloadRef = a.unloadAdd(function() {
             m._cleanup(!0);
           });
           try {
@@ -11791,7 +11791,7 @@ var EasemobChat = { exports: {} };
           this.emit("finish", 0, ""), this._cleanup(!1);
         }, o.prototype._cleanup = function(n) {
           if (this.xdr) {
-            if (this.removeAllListeners(), i.unloadDel(this.unloadRef), this.xdr.ontimeout = this.xdr.onerror = this.xdr.onprogress = this.xdr.onload = null, n)
+            if (this.removeAllListeners(), a.unloadDel(this.unloadRef), this.xdr.ontimeout = this.xdr.onerror = this.xdr.onprogress = this.xdr.onload = null, n)
               try {
                 this.xdr.abort();
               } catch {
@@ -11801,37 +11801,37 @@ var EasemobChat = { exports: {} };
         }, o.prototype.close = function() {
           this._cleanup(!0);
         }, o.enabled = !(!e.g.XDomainRequest || !s.hasDomain()), p.exports = o;
-      }, 9033: function(p, S, e) {
+      }, 9033: function(p, R, e) {
         var r = e(5717), t = e(2940);
-        function i(s, a, o, n) {
-          t.call(this, s, a, o, n);
+        function a(s, i, o, n) {
+          t.call(this, s, i, o, n);
         }
-        r(i, t), i.enabled = t.enabled && t.supportsCORS, p.exports = i;
-      }, 7103: function(p, S, e) {
+        r(a, t), a.enabled = t.enabled && t.supportsCORS, p.exports = a;
+      }, 7103: function(p, R, e) {
         var r = e(3212).v;
         function t() {
-          var i = this;
+          var a = this;
           r.call(this), this.to = setTimeout(function() {
-            i.emit("finish", 200, "{}");
+            a.emit("finish", 200, "{}");
           }, t.timeout);
         }
         e(5717)(t, r), t.prototype.close = function() {
           clearTimeout(this.to);
         }, t.timeout = 2e3, p.exports = t;
-      }, 3515: function(p, S, e) {
+      }, 3515: function(p, R, e) {
         var r = e(5717), t = e(2940);
-        function i(s, a, o) {
-          t.call(this, s, a, o, { noCredentials: !0 });
+        function a(s, i, o) {
+          t.call(this, s, i, o, { noCredentials: !0 });
         }
-        r(i, t), i.enabled = t.enabled, p.exports = i;
-      }, 2412: function(p, S, e) {
-        var r = e(7705), t = e(273), i = e(5717), s = e(3212).v, a = e(9334);
+        r(a, t), a.enabled = t.enabled, p.exports = a;
+      }, 2412: function(p, R, e) {
+        var r = e(7705), t = e(273), a = e(5717), s = e(3212).v, i = e(9334);
         function o(n, l, u) {
           if (!o.enabled())
             throw new Error("Transport created when disabled");
           s.call(this);
           var m = this, g = t.addPath(n, "/websocket");
-          g = g.slice(0, 5) === "https" ? "wss" + g.slice(5) : "ws" + g.slice(4), this.url = g, this.ws = new a(this.url, [], u), this.ws.onmessage = function(h) {
+          g = g.slice(0, 5) === "https" ? "wss" + g.slice(5) : "ws" + g.slice(4), this.url = g, this.ws = new i(this.url, [], u), this.ws.onmessage = function(h) {
             h.data, m.emit("message", h.data);
           }, this.unloadRef = r.unloadAdd(function() {
             m.ws.close();
@@ -11841,7 +11841,7 @@ var EasemobChat = { exports: {} };
             m.emit("close", 1006, "WebSocket connection broken"), m._cleanup();
           };
         }
-        i(o, s), o.prototype.send = function(n) {
+        a(o, s), o.prototype.send = function(n) {
           var l = "[" + n + "]";
           this.ws.send(l);
         }, o.prototype.close = function() {
@@ -11851,56 +11851,56 @@ var EasemobChat = { exports: {} };
           var n = this.ws;
           n && (n.onmessage = n.onclose = n.onerror = null), r.unloadDel(this.unloadRef), this.unloadRef = this.ws = null, this.removeAllListeners();
         }, o.enabled = function() {
-          return !!a;
+          return !!i;
         }, o.transportName = "websocket", o.roundTrips = 2, p.exports = o;
-      }, 9998: function(p, S, e) {
-        var r = e(5717), t = e(9395), i = e(4620), s = e(1044), a = e(6073);
+      }, 9998: function(p, R, e) {
+        var r = e(5717), t = e(9395), a = e(4620), s = e(1044), i = e(6073);
         function o(n) {
-          if (!a.enabled)
+          if (!i.enabled)
             throw new Error("Transport created when disabled");
-          t.call(this, n, "/xhr", s, a);
+          t.call(this, n, "/xhr", s, i);
         }
-        r(o, t), o.enabled = i.enabled, o.transportName = "xdr-polling", o.roundTrips = 2, p.exports = o;
-      }, 4620: function(p, S, e) {
-        var r = e(5717), t = e(9395), i = e(1044), s = e(6073);
-        function a(o) {
+        r(o, t), o.enabled = a.enabled, o.transportName = "xdr-polling", o.roundTrips = 2, p.exports = o;
+      }, 4620: function(p, R, e) {
+        var r = e(5717), t = e(9395), a = e(1044), s = e(6073);
+        function i(o) {
           if (!s.enabled)
             throw new Error("Transport created when disabled");
-          t.call(this, o, "/xhr_streaming", i, s);
+          t.call(this, o, "/xhr_streaming", a, s);
         }
-        r(a, t), a.enabled = function(o) {
+        r(i, t), i.enabled = function(o) {
           return !o.cookie_needed && !o.nullOrigin && s.enabled && o.sameScheme;
-        }, a.transportName = "xdr-streaming", a.roundTrips = 2, p.exports = a;
-      }, 2387: function(p, S, e) {
-        var r = e(5717), t = e(9395), i = e(1044), s = e(9033), a = e(3515);
+        }, i.transportName = "xdr-streaming", i.roundTrips = 2, p.exports = i;
+      }, 2387: function(p, R, e) {
+        var r = e(5717), t = e(9395), a = e(1044), s = e(9033), i = e(3515);
         function o(n) {
-          if (!a.enabled && !s.enabled)
+          if (!i.enabled && !s.enabled)
             throw new Error("Transport created when disabled");
-          t.call(this, n, "/xhr", i, s);
+          t.call(this, n, "/xhr", a, s);
         }
         r(o, t), o.enabled = function(n) {
-          return !n.nullOrigin && (!(!a.enabled || !n.sameOrigin) || s.enabled);
+          return !n.nullOrigin && (!(!i.enabled || !n.sameOrigin) || s.enabled);
         }, o.transportName = "xhr-polling", o.roundTrips = 2, p.exports = o;
-      }, 9842: function(p, S, e) {
-        var r = e(5717), t = e(9395), i = e(1044), s = e(9033), a = e(3515), o = e(8510);
+      }, 9842: function(p, R, e) {
+        var r = e(5717), t = e(9395), a = e(1044), s = e(9033), i = e(3515), o = e(8510);
         function n(l) {
-          if (!a.enabled && !s.enabled)
+          if (!i.enabled && !s.enabled)
             throw new Error("Transport created when disabled");
-          t.call(this, l, "/xhr_streaming", i, s);
+          t.call(this, l, "/xhr_streaming", a, s);
         }
         r(n, t), n.enabled = function(l) {
           return !l.nullOrigin && !o.isOpera() && s.enabled;
         }, n.transportName = "xhr-streaming", n.roundTrips = 2, n.needBody = !!e.g.document, p.exports = n;
-      }, 2017: function(p, S, e) {
+      }, 2017: function(p, R, e) {
         e.g.crypto && e.g.crypto.getRandomValues ? p.exports.randomBytes = function(r) {
           var t = new Uint8Array(r);
           return e.g.crypto.getRandomValues(t), t;
         } : p.exports.randomBytes = function(r) {
-          for (var t = new Array(r), i = 0; i < r; i++)
-            t[i] = Math.floor(256 * Math.random());
+          for (var t = new Array(r), a = 0; a < r; a++)
+            t[a] = Math.floor(256 * Math.random());
           return t;
         };
-      }, 8510: function(p, S, e) {
+      }, 8510: function(p, R, e) {
         p.exports = { isOpera: function() {
           return e.g.navigator && /opera/i.test(e.g.navigator.userAgent);
         }, isKonqueror: function() {
@@ -11915,48 +11915,48 @@ var EasemobChat = { exports: {} };
           }
         } };
       }, 8028: function(p) {
-        var S, e = /[\x00-\x1f\ud800-\udfff\ufffe\uffff\u0300-\u0333\u033d-\u0346\u034a-\u034c\u0350-\u0352\u0357-\u0358\u035c-\u0362\u0374\u037e\u0387\u0591-\u05af\u05c4\u0610-\u0617\u0653-\u0654\u0657-\u065b\u065d-\u065e\u06df-\u06e2\u06eb-\u06ec\u0730\u0732-\u0733\u0735-\u0736\u073a\u073d\u073f-\u0741\u0743\u0745\u0747\u07eb-\u07f1\u0951\u0958-\u095f\u09dc-\u09dd\u09df\u0a33\u0a36\u0a59-\u0a5b\u0a5e\u0b5c-\u0b5d\u0e38-\u0e39\u0f43\u0f4d\u0f52\u0f57\u0f5c\u0f69\u0f72-\u0f76\u0f78\u0f80-\u0f83\u0f93\u0f9d\u0fa2\u0fa7\u0fac\u0fb9\u1939-\u193a\u1a17\u1b6b\u1cda-\u1cdb\u1dc0-\u1dcf\u1dfc\u1dfe\u1f71\u1f73\u1f75\u1f77\u1f79\u1f7b\u1f7d\u1fbb\u1fbe\u1fc9\u1fcb\u1fd3\u1fdb\u1fe3\u1feb\u1fee-\u1fef\u1ff9\u1ffb\u1ffd\u2000-\u2001\u20d0-\u20d1\u20d4-\u20d7\u20e7-\u20e9\u2126\u212a-\u212b\u2329-\u232a\u2adc\u302b-\u302c\uaab2-\uaab3\uf900-\ufa0d\ufa10\ufa12\ufa15-\ufa1e\ufa20\ufa22\ufa25-\ufa26\ufa2a-\ufa2d\ufa30-\ufa6d\ufa70-\ufad9\ufb1d\ufb1f\ufb2a-\ufb36\ufb38-\ufb3c\ufb3e\ufb40-\ufb41\ufb43-\ufb44\ufb46-\ufb4e\ufff0-\uffff]/g;
+        var R, e = /[\x00-\x1f\ud800-\udfff\ufffe\uffff\u0300-\u0333\u033d-\u0346\u034a-\u034c\u0350-\u0352\u0357-\u0358\u035c-\u0362\u0374\u037e\u0387\u0591-\u05af\u05c4\u0610-\u0617\u0653-\u0654\u0657-\u065b\u065d-\u065e\u06df-\u06e2\u06eb-\u06ec\u0730\u0732-\u0733\u0735-\u0736\u073a\u073d\u073f-\u0741\u0743\u0745\u0747\u07eb-\u07f1\u0951\u0958-\u095f\u09dc-\u09dd\u09df\u0a33\u0a36\u0a59-\u0a5b\u0a5e\u0b5c-\u0b5d\u0e38-\u0e39\u0f43\u0f4d\u0f52\u0f57\u0f5c\u0f69\u0f72-\u0f76\u0f78\u0f80-\u0f83\u0f93\u0f9d\u0fa2\u0fa7\u0fac\u0fb9\u1939-\u193a\u1a17\u1b6b\u1cda-\u1cdb\u1dc0-\u1dcf\u1dfc\u1dfe\u1f71\u1f73\u1f75\u1f77\u1f79\u1f7b\u1f7d\u1fbb\u1fbe\u1fc9\u1fcb\u1fd3\u1fdb\u1fe3\u1feb\u1fee-\u1fef\u1ff9\u1ffb\u1ffd\u2000-\u2001\u20d0-\u20d1\u20d4-\u20d7\u20e7-\u20e9\u2126\u212a-\u212b\u2329-\u232a\u2adc\u302b-\u302c\uaab2-\uaab3\uf900-\ufa0d\ufa10\ufa12\ufa15-\ufa1e\ufa20\ufa22\ufa25-\ufa26\ufa2a-\ufa2d\ufa30-\ufa6d\ufa70-\ufad9\ufb1d\ufb1f\ufb2a-\ufb36\ufb38-\ufb3c\ufb3e\ufb40-\ufb41\ufb43-\ufb44\ufb46-\ufb4e\ufff0-\uffff]/g;
         p.exports = { quote: function(r) {
           var t = JSON.stringify(r);
-          return e.lastIndex = 0, e.test(t) ? (S || (S = function(i) {
-            var s, a = {}, o = [];
+          return e.lastIndex = 0, e.test(t) ? (R || (R = function(a) {
+            var s, i = {}, o = [];
             for (s = 0; s < 65536; s++)
               o.push(String.fromCharCode(s));
-            return i.lastIndex = 0, o.join("").replace(i, function(n) {
-              return a[n] = "\\u" + ("0000" + n.charCodeAt(0).toString(16)).slice(-4), "";
-            }), i.lastIndex = 0, a;
-          }(e)), t.replace(e, function(i) {
-            return S[i];
+            return a.lastIndex = 0, o.join("").replace(a, function(n) {
+              return i[n] = "\\u" + ("0000" + n.charCodeAt(0).toString(16)).slice(-4), "";
+            }), a.lastIndex = 0, i;
+          }(e)), t.replace(e, function(a) {
+            return R[a];
           })) : t;
         } };
-      }, 7705: function(p, S, e) {
-        var r = e(8915), t = {}, i = !1, s = e.g.chrome && e.g.chrome.app && e.g.chrome.app.runtime;
-        p.exports = { attachEvent: function(a, o) {
-          e.g.addEventListener !== void 0 ? e.g.addEventListener(a, o, !1) : e.g.document && e.g.attachEvent && (e.g.document.attachEvent("on" + a, o), e.g.attachEvent("on" + a, o));
-        }, detachEvent: function(a, o) {
-          e.g.addEventListener !== void 0 ? e.g.removeEventListener(a, o, !1) : e.g.document && e.g.detachEvent && (e.g.document.detachEvent("on" + a, o), e.g.detachEvent("on" + a, o));
-        }, unloadAdd: function(a) {
+      }, 7705: function(p, R, e) {
+        var r = e(8915), t = {}, a = !1, s = e.g.chrome && e.g.chrome.app && e.g.chrome.app.runtime;
+        p.exports = { attachEvent: function(i, o) {
+          e.g.addEventListener !== void 0 ? e.g.addEventListener(i, o, !1) : e.g.document && e.g.attachEvent && (e.g.document.attachEvent("on" + i, o), e.g.attachEvent("on" + i, o));
+        }, detachEvent: function(i, o) {
+          e.g.addEventListener !== void 0 ? e.g.removeEventListener(i, o, !1) : e.g.document && e.g.detachEvent && (e.g.document.detachEvent("on" + i, o), e.g.detachEvent("on" + i, o));
+        }, unloadAdd: function(i) {
           if (s)
             return null;
           var o = r.string(8);
-          return t[o] = a, i && setTimeout(this.triggerUnloadCallbacks, 0), o;
-        }, unloadDel: function(a) {
-          a in t && delete t[a];
+          return t[o] = i, a && setTimeout(this.triggerUnloadCallbacks, 0), o;
+        }, unloadDel: function(i) {
+          i in t && delete t[i];
         }, triggerUnloadCallbacks: function() {
-          for (var a in t)
-            t[a](), delete t[a];
+          for (var i in t)
+            t[i](), delete t[i];
         } }, s || p.exports.attachEvent("unload", function() {
-          i || (i = !0, p.exports.triggerUnloadCallbacks());
+          a || (a = !0, p.exports.triggerUnloadCallbacks());
         });
-      }, 3683: function(p, S, e) {
+      }, 3683: function(p, R, e) {
         var r = e(7705), t = e(8510);
         p.exports = { WPrefix: "_jp", currentWindowId: null, polluteGlobalNamespace: function() {
           p.exports.WPrefix in e.g || (e.g[p.exports.WPrefix] = {});
-        }, postMessage: function(i, s) {
-          e.g.parent !== e.g && e.g.parent.postMessage(JSON.stringify({ windowId: p.exports.currentWindowId, type: i, data: s || "" }), "*");
-        }, createIframe: function(i, s) {
-          var a, o, n = e.g.document.createElement("iframe"), l = function() {
-            clearTimeout(a);
+        }, postMessage: function(a, s) {
+          e.g.parent !== e.g && e.g.parent.postMessage(JSON.stringify({ windowId: p.exports.currentWindowId, type: a, data: s || "" }), "*");
+        }, createIframe: function(a, s) {
+          var i, o, n = e.g.document.createElement("iframe"), l = function() {
+            clearTimeout(i);
             try {
               n.onload = null;
             } catch {
@@ -11969,13 +11969,13 @@ var EasemobChat = { exports: {} };
           }, m = function(g) {
             n && (u(), s(g));
           };
-          return n.src = i, n.style.display = "none", n.style.position = "absolute", n.onerror = function() {
+          return n.src = a, n.style.display = "none", n.style.position = "absolute", n.onerror = function() {
             m("onerror");
           }, n.onload = function() {
-            clearTimeout(a), a = setTimeout(function() {
+            clearTimeout(i), i = setTimeout(function() {
               m("onload timeout");
             }, 2e3);
-          }, e.g.document.body.appendChild(n), a = setTimeout(function() {
+          }, e.g.document.body.appendChild(n), i = setTimeout(function() {
             m("timeout");
           }, 15e3), o = r.unloadAdd(u), { post: function(g, h) {
             setTimeout(function() {
@@ -11985,9 +11985,9 @@ var EasemobChat = { exports: {} };
               }
             }, 0);
           }, cleanup: u, loaded: l };
-        }, createHtmlfile: function(i, s) {
-          var a, o, n, l = ["Active"].concat("Object").join("X"), u = new e.g[l]("htmlfile"), m = function() {
-            clearTimeout(a), n.onerror = null;
+        }, createHtmlfile: function(a, s) {
+          var i, o, n, l = ["Active"].concat("Object").join("X"), u = new e.g[l]("htmlfile"), m = function() {
+            clearTimeout(i), n.onerror = null;
           }, g = function() {
             u && (m(), r.unloadDel(o), n.parentNode.removeChild(n), n = u = null, CollectGarbage());
           }, h = function(f) {
@@ -11995,9 +11995,9 @@ var EasemobChat = { exports: {} };
           };
           u.open(), u.write('<html><script>document.domain="' + e.g.document.domain + '";<\/script></html>'), u.close(), u.parentWindow[p.exports.WPrefix] = e.g[p.exports.WPrefix];
           var d = u.createElement("div");
-          return u.body.appendChild(d), n = u.createElement("iframe"), d.appendChild(n), n.src = i, n.onerror = function() {
+          return u.body.appendChild(d), n = u.createElement("iframe"), d.appendChild(n), n.src = a, n.onerror = function() {
             h("onerror");
-          }, a = setTimeout(function() {
+          }, i = setTimeout(function() {
             h("timeout");
           }, 15e3), o = r.unloadAdd(g), { post: function(f, b) {
             try {
@@ -12008,153 +12008,153 @@ var EasemobChat = { exports: {} };
             }
           }, cleanup: g, loaded: m };
         } }, p.exports.iframeEnabled = !1, e.g.document && (p.exports.iframeEnabled = (typeof e.g.postMessage == "function" || typeof e.g.postMessage == "object") && !t.isKonqueror());
-      }, 4886: function(p, S, e) {
+      }, 4886: function(p, R, e) {
         var r = {};
         ["log", "debug", "warn"].forEach(function(t) {
-          var i;
+          var a;
           try {
-            i = e.g.console && e.g.console[t] && e.g.console[t].apply;
+            a = e.g.console && e.g.console[t] && e.g.console[t].apply;
           } catch {
           }
-          r[t] = i ? function() {
+          r[t] = a ? function() {
             return e.g.console[t].apply(e.g.console, arguments);
           } : t === "log" ? function() {
           } : r.log;
         }), p.exports = r;
       }, 2217: function(p) {
-        p.exports = { isObject: function(S) {
-          var e = typeof S;
-          return e === "function" || e === "object" && !!S;
-        }, extend: function(S) {
-          if (!this.isObject(S))
-            return S;
-          for (var e, r, t = 1, i = arguments.length; t < i; t++)
+        p.exports = { isObject: function(R) {
+          var e = typeof R;
+          return e === "function" || e === "object" && !!R;
+        }, extend: function(R) {
+          if (!this.isObject(R))
+            return R;
+          for (var e, r, t = 1, a = arguments.length; t < a; t++)
             for (r in e = arguments[t])
-              Object.prototype.hasOwnProperty.call(e, r) && (S[r] = e[r]);
-          return S;
+              Object.prototype.hasOwnProperty.call(e, r) && (R[r] = e[r]);
+          return R;
         } };
-      }, 8915: function(p, S, e) {
+      }, 8915: function(p, R, e) {
         var r = e(2017), t = "abcdefghijklmnopqrstuvwxyz012345";
-        p.exports = { string: function(i) {
-          for (var s = t.length, a = r.randomBytes(i), o = [], n = 0; n < i; n++)
-            o.push(t.substr(a[n] % s, 1));
+        p.exports = { string: function(a) {
+          for (var s = t.length, i = r.randomBytes(a), o = [], n = 0; n < a; n++)
+            o.push(t.substr(i[n] % s, 1));
           return o.join("");
-        }, number: function(i) {
-          return Math.floor(Math.random() * i);
-        }, numberString: function(i) {
-          var s = ("" + (i - 1)).length;
-          return (new Array(s + 1).join("0") + this.number(i)).slice(-s);
+        }, number: function(a) {
+          return Math.floor(Math.random() * a);
+        }, numberString: function(a) {
+          var s = ("" + (a - 1)).length;
+          return (new Array(s + 1).join("0") + this.number(a)).slice(-s);
         } };
       }, 5581: function(p) {
-        p.exports = function(S) {
+        p.exports = function(R) {
           return { filterToEnabled: function(e, r) {
             var t = { main: [], facade: [] };
-            return e ? typeof e == "string" && (e = [e]) : e = [], S.forEach(function(i) {
-              i && (i.transportName === "websocket" && r.websocket === !1 || (e.length && e.indexOf(i.transportName) === -1 ? i.transportName : i.enabled(r) ? (i.transportName, t.main.push(i), i.facadeTransport && t.facade.push(i.facadeTransport)) : i.transportName));
+            return e ? typeof e == "string" && (e = [e]) : e = [], R.forEach(function(a) {
+              a && (a.transportName === "websocket" && r.websocket === !1 || (e.length && e.indexOf(a.transportName) === -1 ? a.transportName : a.enabled(r) ? (a.transportName, t.main.push(a), a.facadeTransport && t.facade.push(a.facadeTransport)) : a.transportName));
             }), t;
           } };
         };
-      }, 273: function(p, S, e) {
+      }, 273: function(p, R, e) {
         var r = e(4564);
         p.exports = { getOrigin: function(t) {
           if (!t)
             return null;
-          var i = new r(t);
-          if (i.protocol === "file:")
+          var a = new r(t);
+          if (a.protocol === "file:")
             return null;
-          var s = i.port;
-          return s || (s = i.protocol === "https:" ? "443" : "80"), i.protocol + "//" + i.hostname + ":" + s;
-        }, isOriginEqual: function(t, i) {
-          return this.getOrigin(t) === this.getOrigin(i);
-        }, isSchemeEqual: function(t, i) {
-          return t.split(":")[0] === i.split(":")[0];
-        }, addPath: function(t, i) {
+          var s = a.port;
+          return s || (s = a.protocol === "https:" ? "443" : "80"), a.protocol + "//" + a.hostname + ":" + s;
+        }, isOriginEqual: function(t, a) {
+          return this.getOrigin(t) === this.getOrigin(a);
+        }, isSchemeEqual: function(t, a) {
+          return t.split(":")[0] === a.split(":")[0];
+        }, addPath: function(t, a) {
           var s = t.split("?");
-          return s[0] + i + (s[1] ? "?" + s[1] : "");
-        }, addQuery: function(t, i) {
-          return t + (t.indexOf("?") === -1 ? "?" + i : "&" + i);
+          return s[0] + a + (s[1] ? "?" + s[1] : "");
+        }, addQuery: function(t, a) {
+          return t + (t.indexOf("?") === -1 ? "?" + a : "&" + a);
         }, isLoopbackAddr: function(t) {
           return /^127\.([0-9]{1,3})\.([0-9]{1,3})\.([0-9]{1,3})$/i.test(t) || /^\[::1\]$/.test(t);
         } };
       }, 2828: function(p) {
         p.exports = "1.6.1";
-      }, 4564: function(p, S, e) {
-        var r = e(7418), t = e(7129), i = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/, s = /[\n\r\t]/g, a = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//, o = /:\d+$/, n = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i, l = /^[a-zA-Z]:/;
+      }, 4564: function(p, R, e) {
+        var r = e(7418), t = e(7129), a = /^[\x00-\x20\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]+/, s = /[\n\r\t]/g, i = /^[A-Za-z][A-Za-z0-9+-.]*:\/\//, o = /:\d+$/, n = /^([a-z][a-z0-9.+-]*:)?(\/\/)?([\\/]+)?([\S\s]*)/i, l = /^[a-zA-Z]:/;
         function u(c) {
-          return (c || "").toString().replace(i, "");
+          return (c || "").toString().replace(a, "");
         }
-        var m = [["#", "hash"], ["?", "query"], function(c, I) {
-          return d(I.protocol) ? c.replace(/\\/g, "/") : c;
+        var m = [["#", "hash"], ["?", "query"], function(c, S) {
+          return d(S.protocol) ? c.replace(/\\/g, "/") : c;
         }, ["/", "pathname"], ["@", "auth", 1], [NaN, "host", void 0, 1, 1], [/:(\d*)$/, "port", void 0, 1], [NaN, "hostname", void 0, 1, 1]], g = { hash: 1, query: 1 };
         function h(c) {
-          var I, v = (typeof window < "u" ? window : e.g !== void 0 ? e.g : typeof self < "u" ? self : {}).location || {}, N = {}, x = typeof (c = c || v);
+          var S, v = (typeof window < "u" ? window : e.g !== void 0 ? e.g : typeof self < "u" ? self : {}).location || {}, N = {}, x = typeof (c = c || v);
           if (c.protocol === "blob:")
             N = new b(unescape(c.pathname), {});
           else if (x === "string")
-            for (I in N = new b(c, {}), g)
-              delete N[I];
+            for (S in N = new b(c, {}), g)
+              delete N[S];
           else if (x === "object") {
-            for (I in c)
-              I in g || (N[I] = c[I]);
-            N.slashes === void 0 && (N.slashes = a.test(c.href));
+            for (S in c)
+              S in g || (N[S] = c[S]);
+            N.slashes === void 0 && (N.slashes = i.test(c.href));
           }
           return N;
         }
         function d(c) {
           return c === "file:" || c === "ftp:" || c === "http:" || c === "https:" || c === "ws:" || c === "wss:";
         }
-        function f(c, I) {
-          c = (c = u(c)).replace(s, ""), I = I || {};
+        function f(c, S) {
+          c = (c = u(c)).replace(s, ""), S = S || {};
           var v, N = n.exec(c), x = N[1] ? N[1].toLowerCase() : "", O = !!N[2], C = !!N[3], E = 0;
-          return O ? C ? (v = N[2] + N[3] + N[4], E = N[2].length + N[3].length) : (v = N[2] + N[4], E = N[2].length) : C ? (v = N[3] + N[4], E = N[3].length) : v = N[4], x === "file:" ? E >= 2 && (v = v.slice(2)) : d(x) ? v = N[4] : x ? O && (v = v.slice(2)) : E >= 2 && d(I.protocol) && (v = N[4]), { protocol: x, slashes: O || d(x), slashesCount: E, rest: v };
+          return O ? C ? (v = N[2] + N[3] + N[4], E = N[2].length + N[3].length) : (v = N[2] + N[4], E = N[2].length) : C ? (v = N[3] + N[4], E = N[3].length) : v = N[4], x === "file:" ? E >= 2 && (v = v.slice(2)) : d(x) ? v = N[4] : x ? O && (v = v.slice(2)) : E >= 2 && d(S.protocol) && (v = N[4]), { protocol: x, slashes: O || d(x), slashesCount: E, rest: v };
         }
-        function b(c, I, v) {
+        function b(c, S, v) {
           if (c = (c = u(c)).replace(s, ""), !(this instanceof b))
-            return new b(c, I, v);
-          var N, x, O, C, E, P, G = m.slice(), K = typeof I, F = this, Y = 0;
-          for (K !== "object" && K !== "string" && (v = I, I = null), v && typeof v != "function" && (v = t.parse), N = !(x = f(c || "", I = h(I))).protocol && !x.slashes, F.slashes = x.slashes || N && I.slashes, F.protocol = x.protocol || I.protocol || "", c = x.rest, (x.protocol === "file:" && (x.slashesCount !== 2 || l.test(c)) || !x.slashes && (x.protocol || x.slashesCount < 2 || !d(F.protocol))) && (G[3] = [/(.*)/, "pathname"]); Y < G.length; Y++)
-            typeof (C = G[Y]) != "function" ? (O = C[0], P = C[1], O != O ? F[P] = c : typeof O == "string" ? ~(E = O === "@" ? c.lastIndexOf(O) : c.indexOf(O)) && (typeof C[2] == "number" ? (F[P] = c.slice(0, E), c = c.slice(E + C[2])) : (F[P] = c.slice(E), c = c.slice(0, E))) : (E = O.exec(c)) && (F[P] = E[1], c = c.slice(0, E.index)), F[P] = F[P] || N && C[3] && I[P] || "", C[4] && (F[P] = F[P].toLowerCase())) : c = C(c, F);
-          v && (F.query = v(F.query)), N && I.slashes && F.pathname.charAt(0) !== "/" && (F.pathname !== "" || I.pathname !== "") && (F.pathname = function(Z, V) {
-            if (Z === "")
+            return new b(c, S, v);
+          var N, x, O, C, E, P, G = m.slice(), Z = typeof S, F = this, Y = 0;
+          for (Z !== "object" && Z !== "string" && (v = S, S = null), v && typeof v != "function" && (v = t.parse), N = !(x = f(c || "", S = h(S))).protocol && !x.slashes, F.slashes = x.slashes || N && S.slashes, F.protocol = x.protocol || S.protocol || "", c = x.rest, (x.protocol === "file:" && (x.slashesCount !== 2 || l.test(c)) || !x.slashes && (x.protocol || x.slashesCount < 2 || !d(F.protocol))) && (G[3] = [/(.*)/, "pathname"]); Y < G.length; Y++)
+            typeof (C = G[Y]) != "function" ? (O = C[0], P = C[1], O != O ? F[P] = c : typeof O == "string" ? ~(E = O === "@" ? c.lastIndexOf(O) : c.indexOf(O)) && (typeof C[2] == "number" ? (F[P] = c.slice(0, E), c = c.slice(E + C[2])) : (F[P] = c.slice(E), c = c.slice(0, E))) : (E = O.exec(c)) && (F[P] = E[1], c = c.slice(0, E.index)), F[P] = F[P] || N && C[3] && S[P] || "", C[4] && (F[P] = F[P].toLowerCase())) : c = C(c, F);
+          v && (F.query = v(F.query)), N && S.slashes && F.pathname.charAt(0) !== "/" && (F.pathname !== "" || S.pathname !== "") && (F.pathname = function(K, V) {
+            if (K === "")
               return V;
-            for (var ne = (V || "/").split("/").slice(0, -1).concat(Z.split("/")), ae = ne.length, se = ne[ae - 1], ue = !1, me = 0; ae--; )
+            for (var ne = (V || "/").split("/").slice(0, -1).concat(K.split("/")), ae = ne.length, se = ne[ae - 1], ue = !1, me = 0; ae--; )
               ne[ae] === "." ? ne.splice(ae, 1) : ne[ae] === ".." ? (ne.splice(ae, 1), me++) : me && (ae === 0 && (ue = !0), ne.splice(ae, 1), me--);
             return ue && ne.unshift(""), se !== "." && se !== ".." || ne.push(""), ne.join("/");
-          }(F.pathname, I.pathname)), F.pathname.charAt(0) !== "/" && d(F.protocol) && (F.pathname = "/" + F.pathname), r(F.port, F.protocol) || (F.host = F.hostname, F.port = ""), F.username = F.password = "", F.auth && (~(E = F.auth.indexOf(":")) ? (F.username = F.auth.slice(0, E), F.username = encodeURIComponent(decodeURIComponent(F.username)), F.password = F.auth.slice(E + 1), F.password = encodeURIComponent(decodeURIComponent(F.password))) : F.username = encodeURIComponent(decodeURIComponent(F.auth)), F.auth = F.password ? F.username + ":" + F.password : F.username), F.origin = F.protocol !== "file:" && d(F.protocol) && F.host ? F.protocol + "//" + F.host : "null", F.href = F.toString();
+          }(F.pathname, S.pathname)), F.pathname.charAt(0) !== "/" && d(F.protocol) && (F.pathname = "/" + F.pathname), r(F.port, F.protocol) || (F.host = F.hostname, F.port = ""), F.username = F.password = "", F.auth && (~(E = F.auth.indexOf(":")) ? (F.username = F.auth.slice(0, E), F.username = encodeURIComponent(decodeURIComponent(F.username)), F.password = F.auth.slice(E + 1), F.password = encodeURIComponent(decodeURIComponent(F.password))) : F.username = encodeURIComponent(decodeURIComponent(F.auth)), F.auth = F.password ? F.username + ":" + F.password : F.username), F.origin = F.protocol !== "file:" && d(F.protocol) && F.host ? F.protocol + "//" + F.host : "null", F.href = F.toString();
         }
-        b.prototype = { set: function(c, I, v) {
+        b.prototype = { set: function(c, S, v) {
           var N = this;
           switch (c) {
             case "query":
-              typeof I == "string" && I.length && (I = (v || t.parse)(I)), N[c] = I;
+              typeof S == "string" && S.length && (S = (v || t.parse)(S)), N[c] = S;
               break;
             case "port":
-              N[c] = I, r(I, N.protocol) ? I && (N.host = N.hostname + ":" + I) : (N.host = N.hostname, N[c] = "");
+              N[c] = S, r(S, N.protocol) ? S && (N.host = N.hostname + ":" + S) : (N.host = N.hostname, N[c] = "");
               break;
             case "hostname":
-              N[c] = I, N.port && (I += ":" + N.port), N.host = I;
+              N[c] = S, N.port && (S += ":" + N.port), N.host = S;
               break;
             case "host":
-              N[c] = I, o.test(I) ? (I = I.split(":"), N.port = I.pop(), N.hostname = I.join(":")) : (N.hostname = I, N.port = "");
+              N[c] = S, o.test(S) ? (S = S.split(":"), N.port = S.pop(), N.hostname = S.join(":")) : (N.hostname = S, N.port = "");
               break;
             case "protocol":
-              N.protocol = I.toLowerCase(), N.slashes = !v;
+              N.protocol = S.toLowerCase(), N.slashes = !v;
               break;
             case "pathname":
             case "hash":
-              if (I) {
+              if (S) {
                 var x = c === "pathname" ? "/" : "#";
-                N[c] = I.charAt(0) !== x ? x + I : I;
+                N[c] = S.charAt(0) !== x ? x + S : S;
               } else
-                N[c] = I;
+                N[c] = S;
               break;
             case "username":
             case "password":
-              N[c] = encodeURIComponent(I);
+              N[c] = encodeURIComponent(S);
               break;
             case "auth":
-              var O = I.indexOf(":");
-              ~O ? (N.username = I.slice(0, O), N.username = encodeURIComponent(decodeURIComponent(N.username)), N.password = I.slice(O + 1), N.password = encodeURIComponent(decodeURIComponent(N.password))) : N.username = encodeURIComponent(decodeURIComponent(I));
+              var O = S.indexOf(":");
+              ~O ? (N.username = S.slice(0, O), N.username = encodeURIComponent(decodeURIComponent(N.username)), N.password = S.slice(O + 1), N.password = encodeURIComponent(decodeURIComponent(N.password))) : N.username = encodeURIComponent(decodeURIComponent(S));
           }
           for (var C = 0; C < m.length; C++) {
             var E = m[C];
@@ -12163,29 +12163,29 @@ var EasemobChat = { exports: {} };
           return N.auth = N.password ? N.username + ":" + N.password : N.username, N.origin = N.protocol !== "file:" && d(N.protocol) && N.host ? N.protocol + "//" + N.host : "null", N.href = N.toString(), N;
         }, toString: function(c) {
           c && typeof c == "function" || (c = t.stringify);
-          var I, v = this, N = v.host, x = v.protocol;
+          var S, v = this, N = v.host, x = v.protocol;
           x && x.charAt(x.length - 1) !== ":" && (x += ":");
           var O = x + (v.protocol && v.slashes || d(v.protocol) ? "//" : "");
-          return v.username ? (O += v.username, v.password && (O += ":" + v.password), O += "@") : v.password ? (O += ":" + v.password, O += "@") : v.protocol !== "file:" && d(v.protocol) && !N && v.pathname !== "/" && (O += "@"), (N[N.length - 1] === ":" || o.test(v.hostname) && !v.port) && (N += ":"), O += N + v.pathname, (I = typeof v.query == "object" ? c(v.query) : v.query) && (O += I.charAt(0) !== "?" ? "?" + I : I), v.hash && (O += v.hash), O;
+          return v.username ? (O += v.username, v.password && (O += ":" + v.password), O += "@") : v.password ? (O += ":" + v.password, O += "@") : v.protocol !== "file:" && d(v.protocol) && !N && v.pathname !== "/" && (O += "@"), (N[N.length - 1] === ":" || o.test(v.hostname) && !v.port) && (N += ":"), O += N + v.pathname, (S = typeof v.query == "object" ? c(v.query) : v.query) && (O += S.charAt(0) !== "?" ? "?" + S : S), v.hash && (O += v.hash), O;
         } }, b.extractProtocol = f, b.location = h, b.trimLeft = u, b.qs = t, p.exports = b;
       } }, __webpack_module_cache__ = {};
       function __webpack_require__(p) {
-        var S = __webpack_module_cache__[p];
-        if (S !== void 0)
-          return S.exports;
+        var R = __webpack_module_cache__[p];
+        if (R !== void 0)
+          return R.exports;
         var e = __webpack_module_cache__[p] = { exports: {} };
         return __webpack_modules__[p].call(e.exports, e, e.exports, __webpack_require__), e.exports;
       }
       __webpack_require__.amdO = {}, __webpack_require__.n = function(p) {
-        var S = p && p.__esModule ? function() {
+        var R = p && p.__esModule ? function() {
           return p.default;
         } : function() {
           return p;
         };
-        return __webpack_require__.d(S, { a: S }), S;
-      }, __webpack_require__.d = function(p, S) {
-        for (var e in S)
-          __webpack_require__.o(S, e) && !__webpack_require__.o(p, e) && Object.defineProperty(p, e, { enumerable: !0, get: S[e] });
+        return __webpack_require__.d(R, { a: R }), R;
+      }, __webpack_require__.d = function(p, R) {
+        for (var e in R)
+          __webpack_require__.o(R, e) && !__webpack_require__.o(p, e) && Object.defineProperty(p, e, { enumerable: !0, get: R[e] });
       }, __webpack_require__.g = function() {
         if (typeof globalThis == "object")
           return globalThis;
@@ -12195,8 +12195,8 @@ var EasemobChat = { exports: {} };
           if (typeof window == "object")
             return window;
         }
-      }(), __webpack_require__.o = function(p, S) {
-        return Object.prototype.hasOwnProperty.call(p, S);
+      }(), __webpack_require__.o = function(p, R) {
+        return Object.prototype.hasOwnProperty.call(p, R);
       }, __webpack_require__.r = function(p) {
         typeof Symbol < "u" && Symbol.toStringTag && Object.defineProperty(p, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(p, "__esModule", { value: !0 });
       };
@@ -12205,7 +12205,7 @@ var EasemobChat = { exports: {} };
         __webpack_require__.r(__webpack_exports__), __webpack_require__.d(__webpack_exports__, { default: function() {
           return Ne;
         } });
-        var p = __webpack_require__(8e3), S = __webpack_require__.n(p), e = __webpack_require__(3281), r = __webpack_require__.n(e), t = __webpack_require__(3720), i = __webpack_require__.n(t), s = (__webpack_require__(9601), __webpack_require__(8309), __webpack_require__(6992), __webpack_require__(1532), __webpack_require__(1539), __webpack_require__(8783), __webpack_require__(3948), __webpack_require__(4812), __webpack_require__(9070), __webpack_require__(8674), __webpack_require__(9575), __webpack_require__(2472), __webpack_require__(2990), __webpack_require__(8927), __webpack_require__(3105), __webpack_require__(5035), __webpack_require__(4345), __webpack_require__(7174), __webpack_require__(2846), __webpack_require__(4731), __webpack_require__(7209), __webpack_require__(6319), __webpack_require__(8867), __webpack_require__(7789), __webpack_require__(3739), __webpack_require__(9368), __webpack_require__(4483), __webpack_require__(2056), __webpack_require__(3462), __webpack_require__(678), __webpack_require__(7462), __webpack_require__(3824), __webpack_require__(5021), __webpack_require__(2974), __webpack_require__(5016), __webpack_require__(5827), __webpack_require__(3843), __webpack_require__(3710), __webpack_require__(2564), __webpack_require__(9653), __webpack_require__(7941), __webpack_require__(9554), __webpack_require__(4747), __webpack_require__(1038), __webpack_require__(7327), __webpack_require__(561), __webpack_require__(7252)), a = __webpack_require__(4370), o = __webpack_require__(5531), n = __webpack_require__(1070), l = __webpack_require__(7360), u = function() {
+        var p = __webpack_require__(8e3), R = __webpack_require__.n(p), e = __webpack_require__(3281), r = __webpack_require__.n(e), t = __webpack_require__(3720), a = __webpack_require__.n(t), s = (__webpack_require__(9601), __webpack_require__(8309), __webpack_require__(6992), __webpack_require__(1532), __webpack_require__(1539), __webpack_require__(8783), __webpack_require__(3948), __webpack_require__(4812), __webpack_require__(9070), __webpack_require__(8674), __webpack_require__(9575), __webpack_require__(2472), __webpack_require__(2990), __webpack_require__(8927), __webpack_require__(3105), __webpack_require__(5035), __webpack_require__(4345), __webpack_require__(7174), __webpack_require__(2846), __webpack_require__(4731), __webpack_require__(7209), __webpack_require__(6319), __webpack_require__(8867), __webpack_require__(7789), __webpack_require__(3739), __webpack_require__(9368), __webpack_require__(4483), __webpack_require__(2056), __webpack_require__(3462), __webpack_require__(678), __webpack_require__(7462), __webpack_require__(3824), __webpack_require__(5021), __webpack_require__(2974), __webpack_require__(5016), __webpack_require__(5827), __webpack_require__(3843), __webpack_require__(3710), __webpack_require__(2564), __webpack_require__(9653), __webpack_require__(7941), __webpack_require__(9554), __webpack_require__(4747), __webpack_require__(1038), __webpack_require__(7327), __webpack_require__(561), __webpack_require__(7252)), i = __webpack_require__(4370), o = __webpack_require__(5531), n = __webpack_require__(1070), l = __webpack_require__(7360), u = function() {
           function j(B, T, W) {
             this.handlerData = {}, this.handlerData = {}, B.addEventHandler = this.addEventHandler.bind(this), B.removeEventHandler = this.removeEventHandler.bind(this);
           }
@@ -12225,13 +12225,13 @@ var EasemobChat = { exports: {} };
           this.onOpened = j.onOpened || m, this.onPresence = j.onPresence || m, this.onTextMessage = j.onTextMessage || m, this.onPictureMessage = j.onPictureMessage || m, this.onAudioMessage = j.onAudioMessage || m, this.onVideoMessage = j.onVideoMessage || m, this.onFileMessage = j.onFileMessage || m, this.onLocationMessage = j.onLocationMessage || m, this.onCmdMessage = j.onCmdMessage || m, this.onCustomMessage = j.onCustomMessage || m, this.onReceivedMessage = j.onReceivedMessage || m, this.onDeliveredMessage = j.onDeliveredMessage || m, this.onReadMessage = j.onReadMessage || m, this.onRecallMessage = j.onRecallMessage || m, this.onChannelMessage = j.onChannelMessage || m, this.onError = j.onError || m, this.onOffline = j.onOffline || m, this.onOnline = j.onOnline || m, this.onStatisticMessage = j.onStatisticMessage || m, this.onContactInvited = j.onContactInvited || m, this.onContactAgreed = j.onContactAgreed || m, this.onContactRefuse = j.onContactRefuse || m, this.onContactDeleted = j.onContactDeleted || m, this.onContactAdded = j.onContactAdded || m, this.onTokenWillExpire = j.onTokenWillExpire || m, this.onTokenExpired = j.onTokenExpired || m, this.onClosed = j.onClosed || m, this.onPresenceStatusChange = j.onPresenceStatusChange || m;
         }
         __webpack_require__(2526), __webpack_require__(1817), __webpack_require__(2165), __webpack_require__(2222), __webpack_require__(2772);
-        var h = { biz: "", debug: !1, token: "" }, d = "https://data-reporting.agora.io/report", f = "https://data-reporting.sh.agoralab.co/report", b = (__webpack_require__(6699), __webpack_require__(2023), __webpack_require__(2071)), c = __webpack_require__(1595), I = function(j) {
+        var h = { biz: "", debug: !1, token: "" }, d = "https://data-reporting.agora.io/report", f = "https://data-reporting.sh.agoralab.co/report", b = (__webpack_require__(6699), __webpack_require__(2023), __webpack_require__(2071)), c = __webpack_require__(1595), S = function(j) {
           var B = Number(c.C8[j]);
           return B === c.C8.USER_LOGIN ? "MANUALLOGIN" : B === c.C8.MSYNC_SENDMESSAGE ? "SENDMESSAGE" : B > c.C8.UNKNOWOPERATION && B < c.C8.REST_OPERATE ? "REST" : B > c.C8.REST_OPERATE && B < c.C8.MSYNC_OPERATE ? "MESSAGE" : B > c.C8.MSYNC_OPERATE && B < c.C8.ROSTER_OPERATE ? "ROSTER" : B > c.C8.ROSTER_OPERATE && B < c.C8.USER_OPERATE ? "USER" : B > c.C8.USER_OPERATE && B < c.C8.GROUP_OPERATE ? "GROUP" : B > c.C8.GROUP_OPERATE && B < c.C8.CHATROOM_OPERATE ? "CHATROOM" : "OPERATION";
         }, v = function() {
           return (/* @__PURE__ */ new Date()).getTime();
         }, N = function(j) {
-          return [a.iw.BAIDU, a.iw.WX, a.iw.DD, a.iw.ZFB, a.iw.TT, a.iw.QUICK_APP, a.iw.UNI].includes(j.platform);
+          return [i.iw.BAIDU, i.iw.WX, i.iw.DD, i.iw.ZFB, i.iw.TT, i.iw.QUICK_APP, i.iw.UNI].includes(j.platform);
         }, x = function() {
           return j = 1, B = 99999, j = Math.ceil(j), B = Math.floor(B), Math.floor(Math.random() * (B - j)) + j;
           var j, B;
@@ -12279,25 +12279,25 @@ var EasemobChat = { exports: {} };
                 });
                 (function(A, L) {
                   try {
-                    var w = L.biz, k = L.appId, y = L.data, R = L.debug, H = L.onSuccess;
+                    var w = L.biz, k = L.appId, y = L.data, I = L.debug, H = L.onSuccess;
                     if (!w)
                       throw new Error("biz is not defined");
-                    O.global || (O = a.P6.getEnvInfo());
+                    O.global || (O = i.P6.getEnvInfo());
                     var M = O;
                     if (N(M)) {
-                      var D = { url: R ? f : d, data: y, method: "POST", success: function() {
+                      var D = { url: I ? f : d, data: y, method: "POST", success: function() {
                         H == null || H();
                       }, fail: function() {
                       }, complete: function() {
-                      } }, z = { token: A, appid: k ?? "", sendts: "".concat(Math.floor((/* @__PURE__ */ new Date()).getTime() / 1e3)), biz: w, debug: "".concat(R) };
-                      if (M.platform === "zfb" || M.platform === "dd" ? D.headers = z : D.header = z, M.platform === "dd")
+                      } }, J = { token: A, appid: k ?? "", sendts: "".concat(Math.floor((/* @__PURE__ */ new Date()).getTime() / 1e3)), biz: w, debug: "".concat(I) };
+                      if (M.platform === "zfb" || M.platform === "dd" ? D.headers = J : D.header = J, M.platform === "dd")
                         return M.global.httpRequest(D);
                       M.global.request(D);
                     } else {
                       var X = new XMLHttpRequest();
                       X.onreadystatechange = function() {
                         X.readyState === 2 && (H == null || H());
-                      }, X.open("POST", R ? f : d), X.setRequestHeader("Content-Type", "application/json"), X.setRequestHeader("token", A), X.setRequestHeader("appid", k ?? ""), X.setRequestHeader("sendts", "".concat(Math.floor((/* @__PURE__ */ new Date()).getTime() / 1e3))), X.setRequestHeader("biz", w), X.setRequestHeader("debug", "".concat(R)), X.send(JSON.stringify(y));
+                      }, X.open("POST", I ? f : d), X.setRequestHeader("Content-Type", "application/json"), X.setRequestHeader("token", A), X.setRequestHeader("appid", k ?? ""), X.setRequestHeader("sendts", "".concat(Math.floor((/* @__PURE__ */ new Date()).getTime() / 1e3))), X.setRequestHeader("biz", w), X.setRequestHeader("debug", "".concat(I)), X.send(JSON.stringify(y));
                     }
                   } catch (oe) {
                     console.error(oe);
@@ -12314,7 +12314,7 @@ var EasemobChat = { exports: {} };
                 Object.prototype.hasOwnProperty.call(B, _) && (j[_] = B[_]);
             return j;
           }, G.apply(this, arguments);
-        }, K = new (function() {
+        }, Z = new (function() {
           function j(B) {
             this.inited = !1, this.appId = "", this.biz = "", this.eventQueue = {}, this.config = h, B && this.init(B);
           }
@@ -12361,12 +12361,12 @@ var EasemobChat = { exports: {} };
                 Object.prototype.hasOwnProperty.call(B, _) && (j[_] = B[_]);
             return j;
           }, F.apply(this, arguments);
-        }, Y = { requestName: "", subrequestid: "1", requestMethod: "GET", requestUrl: "", requestElapse: 0, code: 0, codeDesc: "", isLastApi: 0, isSuccess: 1 }, Z = function() {
+        }, Y = { requestName: "", subrequestid: "1", requestMethod: "GET", requestUrl: "", requestElapse: 0, code: 0, codeDesc: "", isLastApi: 0, isSuccess: 1 }, K = function() {
           function j(B) {
-            this.platform = a.P6.getEnvInfo(), this.isReportDt = B.isReport || !1, this.isCollectDt = !0, N(this.platform) && !this.isReportDt && (this.isCollectDt = !1), this.eventQueue = [], this.accessChannel = b.yK, this.options = function(T, W) {
-              W.platform || (W = a.P6.getEnvInfo());
+            this.platform = i.P6.getEnvInfo(), this.isReportDt = B.isReport || !1, this.isCollectDt = !0, N(this.platform) && !this.isReportDt && (this.isCollectDt = !1), this.eventQueue = [], this.accessChannel = b.yK, this.options = function(T, W) {
+              W.platform || (W = i.P6.getEnvInfo());
               var _ = T.org, A = T.appkey, L = T.deviceId, w = T.sdkVersion, k = (navigator == null ? void 0 : navigator.userAgent) || "".concat(W.platform, "_mini_program");
-              return { org: _, appkey: A, deviceId: L, sdkServiceId: "sid_".concat(a.P6.getUniqueId(), "_").concat(x()), did: k, sdkVersion: w, os: b.Wc, sdkProduct: c.aC.web };
+              return { org: _, appkey: A, deviceId: L, sdkServiceId: "sid_".concat(i.P6.getUniqueId(), "_").concat(x()), did: k, sdkVersion: w, os: b.Wc, sdkProduct: c.aC.web };
             }(B, this.platform), this.sid = this.options.sdkServiceId, this.init(B);
           }
           return j.getInstance = function() {
@@ -12380,10 +12380,10 @@ var EasemobChat = { exports: {} };
           }, j.prototype.rptEventQueue = function() {
             var B = this;
             this.eventQueue.length && this.eventQueue.forEach(function(T, W) {
-              K.send(T.eventId, T.dt), W >= B.eventQueue.length - 1 && (B.eventQueue = []);
+              Z.send(T.eventId, T.dt), W >= B.eventQueue.length - 1 && (B.eventQueue = []);
             });
           }, j.prototype.init = function(B) {
-            j.instance || (j.instance = this, K.init({ biz: b.el, token: b.$x, appId: B.appkey, debug: !1 }), this.reportInit());
+            j.instance || (j.instance = this, Z.init({ biz: b.el, token: b.$x, appId: B.appkey, debug: !1 }), this.reportInit());
           }, j.prototype.reportInit = function() {
             if (this.isCollectDt) {
               var B = this.options, T = B.did, W = B.os, _ = B.sdkVersion, A = B.deviceId;
@@ -12396,21 +12396,21 @@ var EasemobChat = { exports: {} };
               };
             var W = 1, _ = 0, A = "", L = v(), w = B.uid, k = B.operationName;
             w && (this.uid = w);
-            var y = { uid: this.uid, operationId: "opr_".concat(a.P6.getUniqueId(), "_").concat(x()), requestid: "req_".concat(a.P6.getUniqueId(), "_").concat(x()), operationName: k };
-            return function(R) {
-              var H, M, D, z;
-              if (R.data.isSuccess ? (_ = 0, A = "") : (R.data.code === 0 && (R.data.code = b.Tp), _ = (H = R.data.code) !== null && H !== void 0 ? H : _, A = (M = R.data.codeDesc) !== null && M !== void 0 ? M : A), !((D = R.data) === null || D === void 0) && D.accessChannel && (T.accessChannel = (z = R.data) === null || z === void 0 ? void 0 : z.accessChannel), R.isRetry ? (W++, R.data.subrequestid = "".concat(W)) : (y.requestid = "req_".concat(a.P6.getUniqueId(), "_").concat(x()), W = 1), R.data.isLastApi) {
+            var y = { uid: this.uid, operationId: "opr_".concat(i.P6.getUniqueId(), "_").concat(x()), requestid: "req_".concat(i.P6.getUniqueId(), "_").concat(x()), operationName: k };
+            return function(I) {
+              var H, M, D, J;
+              if (I.data.isSuccess ? (_ = 0, A = "") : (I.data.code === 0 && (I.data.code = b.Tp), _ = (H = I.data.code) !== null && H !== void 0 ? H : _, A = (M = I.data.codeDesc) !== null && M !== void 0 ? M : A), !((D = I.data) === null || D === void 0) && D.accessChannel && (T.accessChannel = (J = I.data) === null || J === void 0 ? void 0 : J.accessChannel), I.isRetry ? (W++, I.data.subrequestid = "".concat(W)) : (y.requestid = "req_".concat(i.P6.getUniqueId(), "_").concat(x()), W = 1), I.data.isLastApi) {
                 var X = v();
-                R.data.requestElapse = X - L, R.data.requestMethod = "", R.data.subrequestid = "0", R.data.code = _ === 200 ? 0 : _, R.data.codeDesc = A;
+                I.data.requestElapse = X - L, I.data.requestMethod = "", I.data.subrequestid = "0", I.data.code = _ === 200 ? 0 : _, I.data.codeDesc = A;
               } else
-                R.data.requestName || (R.data.requestName = k);
-              R.data.requestElapse || (R.data.requestElapse = v() - L), T.reportData.call(T, b.iB.API, F(F(F(F({}, Y), y), R.data), { accessChannel: T.accessChannel, operationType: I(k) })), R.isEndApi && T.reportData.call(T, b.iB.API, F(F(F({}, y), Y), { isSuccess: R.data.isSuccess, isLastApi: 1, subrequestid: "0", requestMethod: "", code: _ === 200 ? 0 : _, codeDesc: A, requestElapse: R.data.requestElapse, accessChannel: T.accessChannel, operationType: I(k) }));
+                I.data.requestName || (I.data.requestName = k);
+              I.data.requestElapse || (I.data.requestElapse = v() - L), T.reportData.call(T, b.iB.API, F(F(F(F({}, Y), y), I.data), { accessChannel: T.accessChannel, operationType: S(k) })), I.isEndApi && T.reportData.call(T, b.iB.API, F(F(F({}, y), Y), { isSuccess: I.data.isSuccess, isLastApi: 1, subrequestid: "0", requestMethod: "", code: _ === 200 ? 0 : _, codeDesc: A, requestElapse: I.data.requestElapse, accessChannel: T.accessChannel, operationType: S(k) }));
             };
           }, j.prototype.reportData = function(B, T) {
             return W = this, _ = void 0, L = function() {
-              var w, k, y, R, H, M, D, z;
+              var w, k, y, I, H, M, D, J;
               return function(X, oe) {
-                var q, J, te, re, Ae = { label: 0, sent: function() {
+                var q, z, te, re, Ae = { label: 0, sent: function() {
                   if (1 & te[0])
                     throw te[1];
                   return te[1];
@@ -12425,9 +12425,9 @@ var EasemobChat = { exports: {} };
                         throw new TypeError("Generator is already executing.");
                       for (; Ae; )
                         try {
-                          if (q = 1, J && (te = 2 & ie[0] ? J.return : ie[0] ? J.throw || ((te = J.return) && te.call(J), 0) : J.next) && !(te = te.call(J, ie[1])).done)
+                          if (q = 1, z && (te = 2 & ie[0] ? z.return : ie[0] ? z.throw || ((te = z.return) && te.call(z), 0) : z.next) && !(te = te.call(z, ie[1])).done)
                             return te;
-                          switch (J = 0, te && (ie = [2 & ie[0], te.value]), ie[0]) {
+                          switch (z = 0, te && (ie = [2 & ie[0], te.value]), ie[0]) {
                             case 0:
                             case 1:
                               te = ie;
@@ -12435,7 +12435,7 @@ var EasemobChat = { exports: {} };
                             case 4:
                               return Ae.label++, { value: ie[1], done: !1 };
                             case 5:
-                              Ae.label++, J = ie[1], ie = [0];
+                              Ae.label++, z = ie[1], ie = [0];
                               continue;
                             case 7:
                               ie = Ae.ops.pop(), Ae.trys.pop();
@@ -12461,8 +12461,8 @@ var EasemobChat = { exports: {} };
                               continue;
                           }
                           ie = oe.call(X, Ae);
-                        } catch (ze) {
-                          ie = [6, ze], J = 0;
+                        } catch (Je) {
+                          ie = [6, Je], z = 0;
                         } finally {
                           q = te = 0;
                         }
@@ -12476,23 +12476,23 @@ var EasemobChat = { exports: {} };
                 switch (X.label) {
                   case 0:
                     return X.trys.push([0, 3, , 4]), w = v(), k = 0, B !== b.iB.API ? [3, 2] : [4, (oe = this.platform, new Promise(function(q) {
-                      var J;
-                      oe.platform || (oe = a.P6.getEnvInfo());
+                      var z;
+                      oe.platform || (oe = i.P6.getEnvInfo());
                       var te = "";
-                      if (oe.platform === a.iw.WEB) {
+                      if (oe.platform === i.iw.WEB) {
                         var re = navigator.connection;
                         re != null && re.type ? (re == null || re.type, te = c.td.WIFI) : re != null && re.effectiveType && (te = c.td[re.effectiveType.toLocaleUpperCase()]), q(te);
                       } else
-                        oe.platform === a.iw.NODE ? (te = c.td.UNKNOWN, q(te)) : (J = oe.global) === null || J === void 0 || J.getNetworkType({ success: function(Ae) {
+                        oe.platform === i.iw.NODE ? (te = c.td.UNKNOWN, q(te)) : (z = oe.global) === null || z === void 0 || z.getNetworkType({ success: function(Ae) {
                           te = c.td[Ae.networkType.toLocaleUpperCase()], q(te);
                         } });
                     }))];
                   case 1:
                     k = X.sent(), X.label = 2;
                   case 2:
-                    return y = this.options, R = y.appkey, H = y.sdkServiceId, M = y.sdkProduct, D = F({ lts: w, net: k, appkey: R, sdkServiceId: H, sdkProduct: M }, T), this.isReportDt ? K.send(B, D) : this.isCollectDt && this.eventQueue.push({ eventId: B, dt: D }), [3, 4];
+                    return y = this.options, I = y.appkey, H = y.sdkServiceId, M = y.sdkProduct, D = F({ lts: w, net: k, appkey: I, sdkServiceId: H, sdkProduct: M }, T), this.isReportDt ? Z.send(B, D) : this.isCollectDt && this.eventQueue.push({ eventId: B, dt: D }), [3, 4];
                   case 3:
-                    return z = X.sent(), console.warn(z), [3, 4];
+                    return J = X.sent(), console.warn(J), [3, 4];
                   case 4:
                     return [2];
                 }
@@ -12506,7 +12506,7 @@ var EasemobChat = { exports: {} };
                   k(D);
                 }
               }
-              function R(M) {
+              function I(M) {
                 try {
                   H(L.throw(M));
                 } catch (D) {
@@ -12515,31 +12515,31 @@ var EasemobChat = { exports: {} };
               }
               function H(M) {
                 var D;
-                M.done ? w(M.value) : (D = M.value, D instanceof A ? D : new A(function(z) {
-                  z(D);
-                })).then(y, R);
+                M.done ? w(M.value) : (D = M.value, D instanceof A ? D : new A(function(J) {
+                  J(D);
+                })).then(y, I);
               }
               H((L = L.apply(W, _ || [])).next());
             });
             var W, _, A, L;
           }, j;
-        }(), V = __webpack_require__(7479), ne = __webpack_require__(2856), ae = __webpack_require__(9667), se = __webpack_require__(3770), ue = __webpack_require__(1735), me = __webpack_require__(7384), ge = __webpack_require__(70), Ce = __webpack_require__(8161), Ie = function() {
-          return Ie = Object.assign || function(j) {
+        }(), V = __webpack_require__(7479), ne = __webpack_require__(2856), ae = __webpack_require__(9667), se = __webpack_require__(3770), ue = __webpack_require__(1735), me = __webpack_require__(7384), ge = __webpack_require__(70), Ce = __webpack_require__(8161), Re = function() {
+          return Re = Object.assign || function(j) {
             for (var B, T = 1, W = arguments.length; T < W; T++)
               for (var _ in B = arguments[T])
                 Object.prototype.hasOwnProperty.call(B, _) && (j[_] = B[_]);
             return j;
-          }, Ie.apply(this, arguments);
-        }, Re = a.P6.getEnvInfo(), Oe = Re.platform === "web", fe = function() {
+          }, Re.apply(this, arguments);
+        }, Ie = i.P6.getEnvInfo(), Oe = Ie.platform === "web", fe = function() {
         }, ce = function() {
           function j(B) {
             var T;
             if (this.name = "connection", this.max_cache_length = 100, this.isDebug = B.isDebug || !1, this.isReport = !1, this.isHttpDNS = B.isHttpDNS === void 0 ? Oe : B.isHttpDNS, this.heartBeatWait = B.heartBeatWait || 3e4, this.autoReconnectNumMax = B.autoReconnectNumMax || 5, this.refreshDNSIntervals = this.autoReconnectNumMax < 5 ? this.autoReconnectNumMax : 5, this.delivery = B.delivery || !1, this.dnsArr = ["https://rs.easemob.com", "https://rs.chat.agora.io", "http://59.110.89.59", "http://39.97.193.190", "http://39.97.193.187"], this.dnsIndex = 0, this.dnsTotal = this.dnsArr.length, this.restHosts = [], this.restTotal = 0, this.restIndex = 0, this.hostIndex = 0, this.socketHost = [], this.hostTotal = 0, this.times = 1, this.autoReconnectNumTotal = 0, this.domain = "easemob.com", this.appKey = B.appKey, this.appName = "", this.orgName = "", this.token = "", this.grantType = "", this.apiUrl = B.apiUrl || "", this.url = B.url || "", this.https = B.https || typeof window < "u" && ((T = window.location) === null || T === void 0 ? void 0 : T.protocol) === "https:", this.version = "4.2.0", this.deviceId = B.deviceId || "webim", this.osType = 16, this.useOwnUploadFun = B.useOwnUploadFun || !1, this.compressType = [0], this.encryptType = [0], this.clientResource = "", this.expiresIn = 0, this.expirationTime = 0, this.logOut = !0, this.context = { jid: { appKey: "", clientResource: "", domain: "easemob.com", name: "" }, userId: "", appKey: "", status: 0, restTokenData: "", appName: "", orgName: "", root: {}, accessToken: "" }, this._msgHash = {}, this._msgPromiseHash = {}, this._queues = [], this._load_msg_cache = [], this.unMSyncSendMsgMap = /* @__PURE__ */ new Map(), this.mr_cache = {}, this.closeInfo = null, this.reconnecting = !1, typeof this.appKey != "string" || this.appKey.split("#").length !== 2)
               throw Error("Illegal appKey: ".concat(this.appKey));
             var W = this.appKey.split("#");
-            this.orgName = W[0], this.appName = W[1], this.listen = g.bind(this), this.mSync = this.usePlugin(n.Z), this.eventHandler = this.usePlugin(u), Object.assign(j.prototype, V), Object.assign(j.prototype, ne), Object.assign(j.prototype, ae), Object.assign(j.prototype, se), Object.assign(j.prototype, ue), Object.assign(j.prototype, me), Object.assign(j.prototype, ge), this.dataReport = new Z({ appkey: this.appKey, org: this.orgName, sdkVersion: this.version, deviceId: this.deviceId, isReport: this.isReport });
+            this.orgName = W[0], this.appName = W[1], this.listen = g.bind(this), this.mSync = this.usePlugin(n.Z), this.eventHandler = this.usePlugin(u), Object.assign(j.prototype, V), Object.assign(j.prototype, ne), Object.assign(j.prototype, ae), Object.assign(j.prototype, se), Object.assign(j.prototype, ue), Object.assign(j.prototype, me), Object.assign(j.prototype, ge), this.dataReport = new K({ appkey: this.appKey, org: this.orgName, sdkVersion: this.version, deviceId: this.deviceId, isReport: this.isReport });
             var _ = 0, A = this;
-            Object.defineProperty(a.P6, "ajaxUnconventionalErrorTimes", { set: function(L) {
+            Object.defineProperty(i.P6, "ajaxUnconventionalErrorTimes", { set: function(L) {
               L !== 0 && (l.kg.debug("rest api request fail times: ".concat(L)), (_ = L) % 5 == 0 && this.isHttpDNS && (l.kg.debug("refresh dns config when rest request fail."), Pe.call(A, "refresh", {}, {})));
             }, get: function() {
               return _;
@@ -12558,18 +12558,18 @@ var EasemobChat = { exports: {} };
               var A = T.dataReport.geOperateFun({ uid: B.username, operationName: c.fI.REGISTER });
               if (T.isHttpDNS) {
                 T.dnsIndex = 0;
-                var L = Ie(Ie({}, B), { user: B.username, pwd: B.password, promise: { resolve: W, reject: _ } });
+                var L = Re(Re({}, B), { user: B.username, pwd: B.password, promise: { resolve: W, reject: _ } });
                 Pe.call(T, "signup", L, { rpt: A });
               } else
-                L = Ie(Ie({}, B), { promise: { resolve: W, reject: _ } }), Ue.call(T, L, { rpt: A });
+                L = Re(Re({}, B), { promise: { resolve: W, reject: _ } }), Ue.call(T, L, { rpt: A });
             });
           }, j.prototype.open = function(B) {
             var T = this;
             return l.kg.debug("open"), new Promise(function(W, _) {
-              if (Ke.call(T, B)) {
+              if (Ze.call(T, B)) {
                 B.accessToken && (T.token = B.accessToken);
-                var A = Ie(Ie({}, B), { promise: { resolve: W, reject: _ } }), L = T.dataReport.geOperateFun({ uid: B.user, operationName: c.fI.LOGIN });
-                T.isHttpDNS ? Pe.call(T, "login", A, { rpt: L }) : Ze.call(T, A, { rpt: L });
+                var A = Re(Re({}, B), { promise: { resolve: W, reject: _ } }), L = T.dataReport.geOperateFun({ uid: B.user, operationName: c.fI.LOGIN });
+                T.isHttpDNS ? Pe.call(T, "login", A, { rpt: L }) : Ke.call(T, A, { rpt: L });
               }
             });
           }, j.prototype.isOpened = function() {
@@ -12580,16 +12580,16 @@ var EasemobChat = { exports: {} };
           }, j.prototype.downloadAndParseCombineMessage = function(B) {
             var T = this, W = B.url, _ = B.secret;
             return new Promise(function(A, L) {
-              var w, k, y = a.P6.getEnvInfo(), R = y.platform !== "web" && y.platform !== "node" && y.platform !== "quick_app" && ((k = (w = y.global) === null || w === void 0 ? void 0 : w.canIUse) === null || k === void 0 ? void 0 : k.call(w, "getFileSystemManager")), H = function(D) {
-                var z = function(te) {
+              var w, k, y = i.P6.getEnvInfo(), I = y.platform !== "web" && y.platform !== "node" && y.platform !== "quick_app" && ((k = (w = y.global) === null || w === void 0 ? void 0 : w.canIUse) === null || k === void 0 ? void 0 : k.call(w, "getFileSystemManager")), H = function(D) {
+                var J = function(te) {
                   L({ type: o.E.PARSE_FILE_ERROR, message: "Read file failed", data: te });
                 }, X = function(te) {
-                  var re = R ? new Uint8Array(te.data) : new Uint8Array(te.target.result), Ae = 0, We = 0, Te = 2, je = re.subarray(Ae, Ae + Te), ie = a.P6.Uint8ArrayToString(je);
+                  var re = I ? new Uint8Array(te.data) : new Uint8Array(te.target.result), Ae = 0, We = 0, Te = 2, je = re.subarray(Ae, Ae + Te), ie = i.P6.Uint8ArrayToString(je);
                   l.kg.debug("file header:", ie), We += Te;
-                  for (var ze = 0, De = 2; De < re.length - 1; De++)
-                    De % 2 == 1 && (ze ^= re[De]);
-                  var Je = re.subarray(re.length - 1, re.length);
-                  if (l.kg.debug("checkResult:", ze, Je[0] === ze), Je[0] !== ze)
+                  for (var Je = 0, De = 2; De < re.length - 1; De++)
+                    De % 2 == 1 && (Je ^= re[De]);
+                  var ze = re.subarray(re.length - 1, re.length);
+                  if (l.kg.debug("checkResult:", Je, ze[0] === Je), ze[0] !== Je)
                     return L({ type: o.E.PARSE_FILE_ERROR, message: "File verification failed" });
                   if (ie !== "cm")
                     return L({ type: o.E.PARSE_FILE_ERROR, message: "File verification failed" });
@@ -12611,17 +12611,17 @@ var EasemobChat = { exports: {} };
                     L({ type: o.E.PARSE_FILE_ERROR, message: "Parse file failed", data: U });
                   }
                 };
-                if (R) {
+                if (I) {
                   var oe = y.global.getFileSystemManager(), q = D.tempFilePath;
-                  oe.readFile({ filePath: q, success: X, fail: z });
+                  oe.readFile({ filePath: q, success: X, fail: J });
                 } else if (D instanceof Blob) {
-                  var J = new FileReader();
-                  J.readAsArrayBuffer(D), J.onerror = z, J.onload = X;
+                  var z = new FileReader();
+                  z.readAsArrayBuffer(D), z.onerror = J, z.onload = X;
                 }
               }, M = function(D) {
                 L({ type: o.E.WEBIM_DOWNLOADFILE_ERROR, message: "Download failed, please try again", data: D });
               };
-              R ? y.global.downloadFile({ url: W, success: H, fail: M }) : a.P6.download.call(T, { url: W, headers: { Accept: "application/json" }, onFileDownloadComplete: H, onFileDownloadError: M, secret: _, accessToken: T.context.accessToken });
+              I ? y.global.downloadFile({ url: W, success: H, fail: M }) : i.P6.download.call(T, { url: W, headers: { Accept: "application/json" }, onFileDownloadComplete: H, onFileDownloadError: M, secret: _, accessToken: T.context.accessToken });
             });
           }, j.prototype.stopHeartBeat = function() {
             clearInterval(this.heartBeatID);
@@ -12682,58 +12682,58 @@ var EasemobChat = { exports: {} };
             var y = s.Z.create({ type: o.E.WEBIM_CONNCTION_APPKEY_NOT_ASSIGN_ERROR, message: "signup error" });
             k(y);
           }
-          var R = { headers: { "Content-type": "application/json" }, url: L, dataType: "json", data: JSON.stringify({ username: j.username, password: j.password, nickname: j.nickname || "" }), success: function(H) {
+          var I = { headers: { "Content-type": "application/json" }, url: L, dataType: "json", data: JSON.stringify({ username: j.username, password: j.password, nickname: j.nickname || "" }), success: function(H) {
             j.success && j.success(H);
-            var M = Ie(Ie({}, H), { type: o.E.REQUEST_SUCCESS });
+            var M = Re(Re({}, H), { type: o.E.REQUEST_SUCCESS });
             A.resolve && A.resolve(M);
-            var D = H.extraInfo, z = D.httpCode, X = D.elapse;
-            W({ isEndApi: !0, isRetry: _, data: Ie(Ie({}, { requestElapse: X, isSuccess: 1, code: z }), w) });
+            var D = H.extraInfo, J = D.httpCode, X = D.elapse;
+            W({ isEndApi: !0, isRetry: _, data: Re(Re({}, { requestElapse: X, isSuccess: 1, code: J }), w) });
           }, error: function(H) {
-            var M = H.extraInfo, D = M.elapse, z = M.httpCode, X = M.errDesc;
-            return W({ isRetry: _, data: Ie(Ie({}, { requestElapse: D, isSuccess: 0, code: z, codeDesc: X }), w) }), T.isHttpDNS && T.restIndex + 1 < T.restTotal ? (T.restIndex++, Le.call(T), Ue.call(T, j, { rpt: W, isRetry: _ }), Promise.reject(H)) : (W({ data: { isLastApi: 1, isSuccess: 0 } }), T.clear(), A.reject && A.reject(H), k(H));
+            var M = H.extraInfo, D = M.elapse, J = M.httpCode, X = M.errDesc;
+            return W({ isRetry: _, data: Re(Re({}, { requestElapse: D, isSuccess: 0, code: J, codeDesc: X }), w) }), T.isHttpDNS && T.restIndex + 1 < T.restTotal ? (T.restIndex++, Le.call(T), Ue.call(T, j, { rpt: W, isRetry: _ }), Promise.reject(H)) : (W({ data: { isLastApi: 1, isSuccess: 0 } }), T.clear(), A.reject && A.reject(H), k(H));
           } };
-          return a.P6.ajax(R).catch(function(H) {
+          return i.P6.ajax(I).catch(function(H) {
             A.reject && A.reject(H);
           });
         }
-        function Ze(j, B) {
+        function Ke(j, B) {
           var T = this;
-          if (Ke.call(this, j) && !this.isOpened()) {
+          if (Ze.call(this, j) && !this.isOpened()) {
             var W = B.rpt, _ = B.isRetry;
             Qe.call(this, j), this.user = j.user;
             var A = j.promise, L = this.context.appName, w = this.context.orgName, k = this.apiUrl + "/" + w + "/" + L + "/token";
             if (j.agoraToken)
               this.grantType = "agoraToken", this.getChatToken(j.agoraToken).then(function(M) {
                 l.kg.info("getChatToken result:", M), T.expirationTime = M.expire_timestamp, T.token = M.access_token, T.context.accessToken = M.access_token, T.context.restTokenData = M.access_token;
-                var D = M.extraInfo, z = D.httpCode, X = D.elapse;
+                var D = M.extraInfo, J = D.httpCode, X = D.elapse;
                 A.resolve({ accessToken: M.access_token, expireTimestamp: M.expire_timestamp });
-                var oe = { requestName: c.c.LOGIN_BY_AGORA_TOKEN, requestUrl: k, requestElapse: X, isSuccess: 1, code: z };
-                W({ data: oe }), Be.call(T, Ie(Ie({}, j), { access_token: M.access_token }), W);
+                var oe = { requestName: c.c.LOGIN_BY_AGORA_TOKEN, requestUrl: k, requestElapse: X, isSuccess: 1, code: J };
+                W({ data: oe }), Be.call(T, Re(Re({}, j), { access_token: M.access_token }), W);
               }).catch(function(M) {
-                var D, z = s.Z.create({ type: o.E.WEBIM_CONNCTION_GETROSTER_ERROR, message: "get chat token fail", data: M });
-                A.reject(z), T.onError && T.onError(z), (D = T.eventHandler) === null || D === void 0 || D.dispatch("onError", z);
-                var X = M.extraInfo, oe = X.elapse, q = X.httpCode, J = X.errDesc, te = { requestName: c.c.LOGIN_BY_AGORA_TOKEN, requestUrl: k, requestElapse: oe, isSuccess: 0, code: q, codeDesc: J };
+                var D, J = s.Z.create({ type: o.E.WEBIM_CONNCTION_GETROSTER_ERROR, message: "get chat token fail", data: M });
+                A.reject(J), T.onError && T.onError(J), (D = T.eventHandler) === null || D === void 0 || D.dispatch("onError", J);
+                var X = M.extraInfo, oe = X.elapse, q = X.httpCode, z = X.errDesc, te = { requestName: c.c.LOGIN_BY_AGORA_TOKEN, requestUrl: k, requestElapse: oe, isSuccess: 0, code: q, codeDesc: z };
                 W({ data: te }), W({ data: { isLastApi: 1, isSuccess: 0 } });
               });
             else if (j.accessToken)
               this.grantType = "accessToken", this.token = j.accessToken, this.context.accessToken = j.accessToken, this.context.restTokenData = j.accessToken, A.resolve({ accessToken: j.accessToken }), Be.call(this, j, W);
             else {
               this.grantType = "password";
-              var y = { grant_type: "password", username: j.user, password: j.pwd, timestamp: +/* @__PURE__ */ new Date() }, R = JSON.stringify(y), H = { headers: { "Content-type": "application/json" }, url: k, dataType: "json", data: R, success: function(M) {
+              var y = { grant_type: "password", username: j.user, password: j.pwd, timestamp: +/* @__PURE__ */ new Date() }, I = JSON.stringify(y), H = { headers: { "Content-type": "application/json" }, url: k, dataType: "json", data: I, success: function(M) {
                 typeof j.success == "function" && j.success(M), T.token = M.access_token, T.context.restTokenData = M.access_token, T.context.accessToken = M.access_token, T.expiresIn = M.expires_in, T.clearTokenTimeout(), T.tokenExpireTimeCountDown(1e3 * T.expiresIn), A.resolve({ accessToken: M.access_token, duration: M.expires_in });
-                var D = M.extraInfo, z = D.httpCode, X = D.elapse, oe = { requestName: c.c.LOGIN_BY_PWD, requestElapse: X, requestUrl: k, isSuccess: 1, code: z };
+                var D = M.extraInfo, J = D.httpCode, X = D.elapse, oe = { requestName: c.c.LOGIN_BY_PWD, requestElapse: X, requestUrl: k, isSuccess: 1, code: J };
                 W({ isRetry: _, data: oe }), Be.call(T, M, W);
               }, error: function(M) {
-                var D, z = M.extraInfo, X = z.elapse, oe = z.httpCode, q = z.errDesc, J = { requestName: c.c.LOGIN_BY_PWD, requestElapse: X, requestUrl: k, isSuccess: 0, code: oe, codeDesc: q };
-                if (W({ isRetry: _, data: J }), T.isHttpDNS && T.restIndex + 1 < T.restTotal)
-                  return T.restIndex++, Le.call(T), void Ze.call(T, j, { rpt: W, isRetry: !0 });
+                var D, J = M.extraInfo, X = J.elapse, oe = J.httpCode, q = J.errDesc, z = { requestName: c.c.LOGIN_BY_PWD, requestElapse: X, requestUrl: k, isSuccess: 0, code: oe, codeDesc: q };
+                if (W({ isRetry: _, data: z }), T.isHttpDNS && T.restIndex + 1 < T.restTotal)
+                  return T.restIndex++, Le.call(T), void Ke.call(T, j, { rpt: W, isRetry: !0 });
                 W({ data: { isLastApi: 1, isSuccess: 0 } }), T.clear(), M.error && M.error_description ? (D = s.Z.create({ type: o.E.WEBIM_CONNCTION_OPEN_USERGRID_ERROR, message: M.error_description, data: M }), T.onError && T.onError(D)) : (D = s.Z.create({ type: o.E.WEBIM_CONNCTION_OPEN_ERROR, message: M.error_description, data: M }), T.onError && T.onError(D)), typeof j.error == "function" && j.error(D), A.reject(D);
               }, version: "4.2.0" };
-              a.P6.ajax(H).catch(function(M) {
+              i.P6.ajax(H).catch(function(M) {
                 console.warn(M);
               });
             }
-            a.P6.listenNetwork($e.bind(this), Ve.bind(this));
+            i.P6.listenNetwork($e.bind(this), Ve.bind(this));
           }
         }
         function $e() {
@@ -12750,48 +12750,48 @@ var EasemobChat = { exports: {} };
           var _ = function() {
             var w;
             l.kg.debug("websockt onOpen"), B && B({ data: { isLastApi: 1, isSuccess: 1, accessChannel: (w = T.socketHost[T.hostIndex]) === null || w === void 0 ? void 0 : w.channel } });
-            var k = a.P6.flow([T.mSync.generateProvision, T.mSync.base64transform])();
+            var k = i.P6.flow([T.mSync.generateProvision, T.mSync.base64transform])();
             try {
               W.send(k);
-            } catch (R) {
-              var y = s.Z.create({ type: o.E.SDK_RUNTIME_ERROR, message: "send message error", data: R });
+            } catch (I) {
+              var y = s.Z.create({ type: o.E.SDK_RUNTIME_ERROR, message: "send message error", data: I });
               T.onError && T.onError(y);
             }
           }, A = function(w) {
             setTimeout(function() {
-              var k, y, R, H, M, D;
-              l.kg.debug("websocket onClose"), Re.platform !== "zfb" && Re.platform !== "dd" || (T.sock.readyState = 3);
-              var z = (w == null ? void 0 : w.code) === 401 || ((k = T.closeInfo) === null || k === void 0 ? void 0 : k.code) === 401;
+              var k, y, I, H, M, D;
+              l.kg.debug("websocket onClose"), Ie.platform !== "zfb" && Ie.platform !== "dd" || (T.sock.readyState = 3);
+              var J = (w == null ? void 0 : w.code) === 401 || ((k = T.closeInfo) === null || k === void 0 ? void 0 : k.code) === 401;
               if (T.logOut)
-                T.clear(), T.resetConnState(), z && (l.kg.debug("websocket provision error"), T.closeInfo = null), T.onClosed && T.onClosed(), (y = T.eventHandler) === null || y === void 0 || y.dispatch("onDisconnected");
-              else if (z) {
+                T.clear(), T.resetConnState(), J && (l.kg.debug("websocket provision error"), T.closeInfo = null), T.onClosed && T.onClosed(), (y = T.eventHandler) === null || y === void 0 || y.dispatch("onDisconnected");
+              else if (J) {
                 l.kg.debug("websocket provision error");
                 var X = { type: o.E.WEBIM_CONNECTION_ERROR, message: "provision error", data: w };
-                T.closeInfo = null, T.onError && T.onError(X), (R = T.eventHandler) === null || R === void 0 || R.dispatch("onError", X), T.onClosed && T.onClosed(), (H = T.eventHandler) === null || H === void 0 || H.dispatch("onDisconnected"), T.resetConnState();
+                T.closeInfo = null, T.onError && T.onError(X), (I = T.eventHandler) === null || I === void 0 || I.dispatch("onError", X), T.onClosed && T.onClosed(), (H = T.eventHandler) === null || H === void 0 || H.dispatch("onDisconnected"), T.resetConnState();
               } else if (T.autoReconnectNumTotal < T.autoReconnectNumMax) {
                 T.reconnect();
                 var oe = { type: o.E.WEBIM_CONNCTION_DISCONNECTED, message: "websocket has been disconnected" };
-                T.onError && T.onError(oe), T.autoReconnectNumTotal % T.refreshDNSIntervals == 0 && Re.platform === "web" && T.isHttpDNS && (l.kg.debug("refresh dns config when websocket close"), Pe.call(T, "refresh", {}, {}));
+                T.onError && T.onError(oe), T.autoReconnectNumTotal % T.refreshDNSIntervals == 0 && Ie.platform === "web" && T.isHttpDNS && (l.kg.debug("refresh dns config when websocket close"), Pe.call(T, "refresh", {}, {}));
               } else
                 (M = T.unMSyncSendMsgMap) === null || M === void 0 || M.clear(), T.rejectMessage(), oe = { type: o.E.WEBIM_CONNCTION_DISCONNECTED, message: "websocket has been disconnected" }, T.onError && T.onError(oe), T.onClosed && T.onClosed(), (D = T.eventHandler) === null || D === void 0 || D.dispatch("onDisconnected"), T.resetConnState(), T.reconnecting = !1, l.kg.debug("reconnect fail");
             }, 0);
           }, L = function(w) {
-            var k = T.mSync, y = k.decodeMSync, R = k.distributeMSync;
-            a.P6.flow([y, R])(w);
+            var k = T.mSync, y = k.decodeMSync, I = k.distributeMSync;
+            i.P6.flow([y, I])(w);
           };
-          Re.platform === "web" ? (W.onopen = _, W.onclose = A, W.onmessage = L) : (W.onOpen(_), W.onMessage(L), W.onClose(A), typeof window < "u" && window.WebSocket || W.onError(function(w) {
-            var k, y, R;
+          Ie.platform === "web" ? (W.onopen = _, W.onclose = A, W.onmessage = L) : (W.onOpen(_), W.onMessage(L), W.onClose(A), typeof window < "u" && window.WebSocket || W.onError(function(w) {
+            var k, y, I;
             if (l.kg.debug("mini program sock on error", w), T.onError && T.onError({ type: o.E.WEBIM_CONNECTION_ERROR, message: "on socket error", data: w }), !T.logOut)
               if (T.autoReconnectNumTotal < T.autoReconnectNumMax)
-                l.kg.debug("sock.onError reconnect", T.autoReconnectNumTotal, T.autoReconnectNumMax), T.reconnect(), T.autoReconnectNumTotal % T.refreshDNSIntervals == 0 && Re.platform === "web" && T.isHttpDNS && (l.kg.debug("refresh dns config when websocket error"), Pe.call(T, "refresh", {}, {}));
+                l.kg.debug("sock.onError reconnect", T.autoReconnectNumTotal, T.autoReconnectNumMax), T.reconnect(), T.autoReconnectNumTotal % T.refreshDNSIntervals == 0 && Ie.platform === "web" && T.isHttpDNS && (l.kg.debug("refresh dns config when websocket error"), Pe.call(T, "refresh", {}, {}));
               else {
                 var H = { type: o.E.WEBIM_CONNCTION_DISCONNECTED, message: "websocket has been disconnected" };
                 (k = T.unMSyncSendMsgMap) === null || k === void 0 || k.clear(), T.rejectMessage(), T.onError && T.onError(H), T.onClosed && T.onClosed(), (y = T.eventHandler) === null || y === void 0 || y.dispatch("onDisconnected"), T.resetConnState(), T.reconnecting = !1, l.kg.debug("reconnect fail");
               }
-            B && B({ data: { isLastApi: 1, isSuccess: 0, accessChannel: (R = T.socketHost[T.hostIndex]) === null || R === void 0 ? void 0 : R.channel } });
+            B && B({ data: { isLastApi: 1, isSuccess: 0, accessChannel: (I = T.socketHost[T.hostIndex]) === null || I === void 0 ? void 0 : I.channel } });
           }));
         }
-        function Ke(j) {
+        function Ze(j) {
           if (j.user === "") {
             var B = s.Z.create({ type: o.E.WEBIM_CONNCTION_USER_NOT_ASSIGN_ERROR, message: "the user cannot be empty" });
             return l.kg.debug("open params error", B), this.onError && this.onError(B), !1;
@@ -12806,32 +12806,32 @@ var EasemobChat = { exports: {} };
         }
         function Pe(j, B, T) {
           var W = this, _ = T.rpt, A = T.isRetry, L = this.dnsArr[this.dnsIndex] + "/easemob/server.json", w = { url: L, dataType: "json", type: "GET", data: { app_key: encodeURIComponent(this.appKey) }, success: function(k) {
-            var y = k.extraInfo, R = y.elapse, H = y.httpCode, M = { requestUrl: L, requestName: c.c.GET_DNS, requestElapse: R, isSuccess: 1, code: H };
+            var y = k.extraInfo, I = y.elapse, H = y.httpCode, M = { requestUrl: L, requestName: c.c.GET_DNS, requestElapse: I, isSuccess: 1, code: H };
             (k == null ? void 0 : k.enableDataReport) === "true" ? (W.dataReport.setIsCollectDt(!0), W.dataReport.setIsReportDt(!0)) : (W.dataReport.setIsReportDt(!1), W.dataReport.setIsCollectDt(!1)), _ && _({ isRetry: A, data: M });
-            var D = k.rest.hosts, z = W.https ? "https" : "http";
-            if (l.kg.info("httpType: " + z), !D)
+            var D = k.rest.hosts, J = W.https ? "https" : "http";
+            if (l.kg.info("httpType: " + J), !D)
               return Promise.reject(!1);
             for (var X = D.filter(function(re) {
-              if (re.protocol === z)
+              if (re.protocol === J)
                 return re;
             }), oe = 0; oe < X.length; oe++)
-              if (X[oe].protocol === z) {
+              if (X[oe].protocol === J) {
                 var q = X[oe];
                 X.splice(oe, 1), X.unshift(q);
               }
             W.restHosts = X, W.restTotal = X.length;
-            var J = k["msync-ws"].hosts;
-            if (!J)
+            var z = k["msync-ws"].hosts;
+            if (!z)
               return Promise.reject(!1);
-            var te = J.filter(function(re) {
-              return re.protocol === z && re;
+            var te = z.filter(function(re) {
+              return re.protocol === J && re;
             });
-            W.socketHost = te, W.hostTotal = te.length, Le.call(W), j !== "refresh" && (j === "login" ? Ze.call(W, B, { rpt: _ }) : Ue.call(W, B, { rpt: _ }));
+            W.socketHost = te, W.hostTotal = te.length, Le.call(W), j !== "refresh" && (j === "login" ? Ke.call(W, B, { rpt: _ }) : Ue.call(W, B, { rpt: _ }));
           }, error: function(k) {
-            var y = k.extraInfo, R = y.elapse, H = y.httpCode, M = y.errDesc, D = { requestUrl: L, requestName: c.c.GET_DNS, isSuccess: 0, code: H, codeDesc: M, requestElapse: R };
+            var y = k.extraInfo, I = y.elapse, H = y.httpCode, M = y.errDesc, D = { requestUrl: L, requestName: c.c.GET_DNS, isSuccess: 0, code: H, codeDesc: M, requestElapse: I };
             _ && _({ isRetry: A, data: D }), l.kg.debug("getHttpDNS fail: " + W.dnsIndex), W.dnsIndex++, W.dnsIndex < W.dnsTotal && Pe.call(W, j, B, { rpt: _, isRetry: !0 });
           } };
-          return a.P6.ajax(w).catch(function(k) {
+          return i.P6.ajax(w).catch(function(k) {
             console.warn(k);
           });
         }
@@ -12843,7 +12843,7 @@ var EasemobChat = { exports: {} };
           return A && typeof window < "u" && ((j = window == null ? void 0 : window.location) === null || j === void 0 ? void 0 : j.protocol) === "http:" ? T = w + "//" + A + ":" + L : (T = w + "//" + _, L && L !== "80" && L !== "443" && (T += ":".concat(L)), typeof window > "u" || window.location || (T = "https://" + _), typeof window < "u" && window.location && ((B = window.location) === null || B === void 0 ? void 0 : B.protocol) === "file:" && (T = "https://" + _)), typeof window > "u" && (T = w + "//" + _), this.apiUrl = T, T;
         }
         var xe = __webpack_require__(2449);
-        r().util.Long = i(), r().configure();
+        r().util.Long = a(), r().configure();
         var ve = r().Root.fromJSON({ nested: { easemob: { nested: { pb: { nested: { MessageBody: { fields: { type: { type: "Type", id: 1 }, from: { type: "JID", id: 2 }, to: { type: "JID", id: 3 }, contents: { rule: "repeated", type: "Content", id: 4 }, ext: { rule: "repeated", type: "KeyValue", id: 5 }, ackMessageId: { type: "uint64", id: 6 }, msgConfig: { type: "MessageConfig", id: 7 }, ackContent: { type: "string", id: 8 }, meta: { type: "string", id: 9 }, editMessageId: { type: "uint64", id: 11 } }, nested: { Content: { fields: { type: { type: "Type", id: 1 }, text: { type: "string", id: 2 }, latitude: { type: "double", id: 3 }, longitude: { type: "double", id: 4 }, address: { type: "string", id: 5 }, displayName: { type: "string", id: 6 }, remotePath: { type: "string", id: 7 }, secretKey: { type: "string", id: 8 }, fileLength: { type: "int32", id: 9 }, action: { type: "string", id: 10 }, params: { rule: "repeated", type: "KeyValue", id: 11 }, duration: { type: "int32", id: 12 }, size: { type: "Size", id: 13 }, thumbnailRemotePath: { type: "string", id: 14 }, thumbnailSecretKey: { type: "string", id: 15 }, thumbnailDisplayName: { type: "string", id: 16 }, thumbnailFileLength: { type: "int32", id: 17 }, thumbnailSize: { type: "Size", id: 18 }, customEvent: { type: "string", id: 19 }, customExts: { rule: "repeated", type: "KeyValue", id: 20 }, buildingName: { type: "string", id: 21 }, subType: { type: "SubType", id: 22 }, title: { type: "string", id: 23 }, summary: { type: "string", id: 24 }, combineLevel: { type: "int32", id: 25 } }, nested: { Type: { values: { TEXT: 0, IMAGE: 1, VIDEO: 2, LOCATION: 3, VOICE: 4, FILE: 5, COMMAND: 6, CUSTOM: 7, COMBINE: 8 } }, Size: { fields: { width: { type: "double", id: 1 }, height: { type: "double", id: 2 } } }, SubType: { values: { COMBINE: 0 } } } }, Type: { values: { NORMAL: 0, CHAT: 1, GROUPCHAT: 2, CHATROOM: 3, READ_ACK: 4, DELIVER_ACK: 5, RECALL: 6, CHANNEL_ACK: 7, EDIT: 8 } }, MessageConfig: { fields: { allowGroupAck: { type: "bool", id: 1 } } } } }, KeyValue: { oneofs: { value: { oneof: ["varintValue", "floatValue", "doubleValue", "stringValue"] } }, fields: { key: { type: "string", id: 1 }, type: { type: "ValueType", id: 2 }, varintValue: { type: "int64", id: 3 }, floatValue: { type: "float", id: 4 }, doubleValue: { type: "double", id: 5 }, stringValue: { type: "string", id: 6 } }, nested: { ValueType: { values: { BOOL: 1, INT: 2, UINT: 3, LLINT: 4, FLOAT: 5, DOUBLE: 6, STRING: 7, JSON_STRING: 8 } } } }, JID: { fields: { appKey: { type: "string", id: 1 }, name: { type: "string", id: 2 }, domain: { type: "string", id: 3 }, clientResource: { type: "string", id: 4 } } }, ConferenceBody: { fields: { sessionId: { type: "string", id: 1 }, operation: { type: "Operation", id: 2 }, conferenceId: { type: "string", id: 3 }, type: { type: "Type", id: 4 }, content: { type: "string", id: 5 }, network: { type: "string", id: 6 }, version: { type: "string", id: 7 }, identity: { type: "Identity", id: 8 }, duration: { type: "string", id: 9 }, peerName: { type: "string", id: 10 }, endReason: { type: "EndReason", id: 11 }, status: { type: "Status", id: 12 }, isDirect: { type: "bool", id: 13 }, controlType: { type: "StreamControlType", id: 14 }, routeFlag: { type: "int32", id: 15 }, routeKey: { type: "string", id: 16 } }, nested: { Status: { fields: { errorCode: { type: "int32", id: 1 } } }, Operation: { values: { JOIN: 0, INITIATE: 1, ACCEPT_INITIATE: 2, ANSWER: 3, TERMINATE: 4, REMOVE: 5, STREAM_CONTROL: 6, MEDIA_REQUEST: 7 } }, Type: { values: { VOICE: 0, VIDEO: 1 } }, Identity: { values: { CALLER: 0, CALLEE: 1 } }, EndReason: { values: { HANGUP: 0, NORESPONSE: 1, REJECT: 2, BUSY: 3, FAIL: 4, UNSUPPORTED: 5, OFFLINE: 6 } }, StreamControlType: { values: { PAUSE_VOICE: 0, RESUME_VOICE: 1, PAUSE_VIDEO: 2, RESUME_VIDEO: 3 } } } }, MSync: { fields: { version: { type: "Version", id: 1, options: { default: "MSYNC_V1" } }, guid: { type: "JID", id: 2 }, auth: { type: "string", id: 3 }, compressAlgorimth: { type: "uint32", id: 4 }, crypto: { type: "uint32", id: 5 }, userAgent: { type: "string", id: 6 }, pov: { type: "uint64", id: 7 }, command: { type: "Command", id: 8 }, deviceId: { type: "uint32", id: 10 }, encryptType: { rule: "repeated", type: "EncryptType", id: 11, options: { packed: !1 } }, encryptKey: { type: "string", id: 12 }, payload: { type: "bytes", id: 9 } }, nested: { Version: { values: { MSYNC_V1: 0, MSYNC_V2: 1 } }, Command: { values: { SYNC: 0, UNREAD: 1, NOTICE: 2, PROVISION: 3 } } } }, EncryptType: { values: { ENCRYPT_NONE: 0, ENCRYPT_AES_128_CBC: 1, ENCRYPT_AES_256_CBC: 2 } }, CommSyncUL: { fields: { meta: { type: "Meta", id: 1 }, key: { type: "uint64", id: 2 }, queue: { type: "JID", id: 3 }, isRoam: { type: "bool", id: 4 }, lastFullRoamKey: { type: "uint64", id: 5 } } }, CommSyncDL: { fields: { status: { type: "Status", id: 1 }, metaId: { type: "uint64", id: 2 }, serverId: { type: "uint64", id: 3 }, metas: { rule: "repeated", type: "Meta", id: 4 }, nextKey: { type: "uint64", id: 5 }, queue: { type: "JID", id: 6 }, isLast: { type: "bool", id: 7 }, timestamp: { type: "uint64", id: 8 }, isRoam: { type: "bool", id: 9 } } }, CommNotice: { fields: { queue: { type: "JID", id: 1 } } }, CommUnreadUL: { fields: {} }, CommUnreadDL: { fields: { status: { type: "Status", id: 1 }, unread: { rule: "repeated", type: "MetaQueue", id: 2 }, timestamp: { type: "uint64", id: 3 } } }, MetaQueue: { fields: { queue: { type: "JID", id: 1 }, n: { type: "uint32", id: 2 } } }, Meta: { fields: { id: { type: "uint64", id: 1 }, from: { type: "JID", id: 2 }, to: { type: "JID", id: 3 }, timestamp: { type: "uint64", id: 4 }, ns: { type: "NameSpace", id: 5 }, payload: { type: "bytes", id: 6 }, routetype: { type: "RouteType", id: 7 }, ext: { type: "KeyValue", id: 8 }, meta: { type: "bytes", id: 9 }, directedUsers: { rule: "repeated", type: "string", id: 10 } }, nested: { NameSpace: { values: { STATISTIC: 0, CHAT: 1, MUC: 2, ROSTER: 3, CONFERENCE: 4, NOTIFY: 5, QUERY: 6 } }, RouteType: { values: { ROUTE_ALL: 0, ROUTE_ONLINE: 1, ROUTE_DIRECT: 2 } } } }, Status: { fields: { errorCode: { type: "ErrorCode", id: 1 }, reason: { type: "string", id: 2 }, redirectInfo: { rule: "repeated", type: "RedirectInfo", id: 3 } }, nested: { ErrorCode: { values: { OK: 0, FAIL: 1, UNAUTHORIZED: 2, MISSING_PARAMETER: 3, WRONG_PARAMETER: 4, REDIRECT: 5, TOKEN_EXPIRED: 6, PERMISSION_DENIED: 7, NO_ROUTE: 8, UNKNOWN_COMMAND: 9, PB_PARSER_ERROR: 10, BIND_ANOTHER_DEVICE: 11, IM_FORBIDDEN: 12, TOO_MANY_DEVICES: 13, PLATFORM_LIMIT: 14, USER_MUTED: 15, ENCRYPT_DISABLE: 16, ENCRYPT_ENABLE: 17, DECRYPT_FAILURE: 18, PERMISSION_DENIED_EXTERNAL: 19 } } } }, RedirectInfo: { fields: { host: { type: "string", id: 1 }, port: { type: "uint32", id: 2 } } }, Provision: { fields: { osType: { type: "OsType", id: 1 }, version: { type: "string", id: 2 }, networkType: { type: "NetworkType", id: 3 }, appSign: { type: "string", id: 4 }, compressType: { rule: "repeated", type: "CompressType", id: 5, options: { packed: !1 } }, encryptType: { rule: "repeated", type: "EncryptType", id: 6, options: { packed: !1 } }, encryptKey: { type: "string", id: 7 }, status: { type: "Status", id: 8 }, deviceUuid: { type: "string", id: 9 }, isManualLogin: { type: "bool", id: 10 }, password: { type: "string", id: 11 }, deviceName: { type: "string", id: 12 }, resource: { type: "string", id: 13 }, auth: { type: "string", id: 14 }, serviceId: { type: "string", id: 16 }, actionVersion: { type: "string", id: 17 } }, nested: { OsType: { values: { OS_IOS: 0, OS_ANDROID: 1, OS_LINUX: 2, OS_OSX: 3, OS_WIN: 4, OS_OTHER: 16 } }, NetworkType: { values: { NETWORK_NONE: 0, NETWORK_WIFI: 1, NETWORK_4G: 2, NETWORK_3G: 3, NETWORK_2G: 4, NETWORK_WIRE: 5 } }, CompressType: { values: { COMPRESS_NONE: 0, COMPRESS_ZLIB: 1 } } } }, MUCBody: { fields: { mucId: { type: "JID", id: 1 }, operation: { type: "Operation", id: 2 }, from: { type: "JID", id: 3 }, to: { rule: "repeated", type: "JID", id: 4 }, setting: { type: "Setting", id: 5 }, reason: { type: "string", id: 6 }, isChatroom: { type: "bool", id: 7 }, status: { type: "Status", id: 8 }, isThread: { type: "bool", id: 9 }, mucParentId: { type: "JID", id: 10 }, mucName: { type: "string", id: 11 }, eventInfo: { type: "EventInfo", id: 12 } }, nested: { Operation: { values: { CREATE: 0, DESTROY: 1, JOIN: 2, LEAVE: 3, APPLY: 4, APPLY_ACCEPT: 5, APPLY_DECLINE: 6, INVITE: 7, INVITE_ACCEPT: 8, INVITE_DECLINE: 9, KICK: 10, GET_BLACKLIST: 11, BAN: 12, ALLOW: 13, UPDATE: 14, BLOCK: 15, UNBLOCK: 16, PRESENCE: 17, ABSENCE: 18, DIRECT_JOINED: 19, ASSIGN_OWNER: 20, ADD_ADMIN: 21, REMOVE_ADMIN: 22, ADD_MUTE: 23, REMOVE_MUTE: 24, UPDATE_ANNOUNCEMENT: 25, DELETE_ANNOUNCEMENT: 26, UPLOAD_FILE: 27, DELETE_FILE: 28, ADD_USER_WHITE_LIST: 29, REMOVE_USER_WHITE_LIST: 30, BAN_GROUP: 31, REMOVE_BAN_GROUP: 32, THREAD_CREATE: 33, THREAD_DESTROY: 34, THREAD_JOIN: 35, THREAD_LEAVE: 36, THREAD_KICK: 37, THREAD_UPDATE: 38, THREAD_PRESENCE: 39, THREAD_ABSENCE: 40, DISABLE_GROUP: 41, ABLE_GROUP: 42, SET_METADATA: 43, DELETE_METADATA: 44, GROUP_MEMBER_METADATA_UPDATE: 45 } }, Setting: { fields: { name: { type: "string", id: 1 }, desc: { type: "string", id: 2 }, type: { type: "Type", id: 3 }, maxUsers: { type: "int32", id: 4 }, owner: { type: "string", id: 5 } }, nested: { Type: { values: { PRIVATE_OWNER_INVITE: 0, PRIVATE_MEMBER_INVITE: 1, PUBLIC_JOIN_APPROVAL: 2, PUBLIC_JOIN_OPEN: 3, PUBLIC_ANONYMOUS: 4 } } } }, Status: { fields: { errorCode: { type: "ErrorCode", id: 1 }, description: { type: "string", id: 2 } }, nested: { ErrorCode: { values: { OK: 0, PERMISSION_DENIED: 1, WRONG_PARAMETER: 2, MUC_NOT_EXIST: 3, USER_NOT_EXIST: 4, UNKNOWN: 5 } } } }, EventInfo: { fields: { eventType: { type: "EventType", id: 1, options: { default: "EVENT_NONE" } }, ext: { type: "string", id: 2 } }, nested: { EventType: { values: { EVENT_NONE: 0, CIRCLE_CHANNEL: 1 } } } } } }, RosterBody: { fields: { operation: { type: "Operation", id: 1 }, status: { type: "Status", id: 2 }, from: { type: "JID", id: 3 }, to: { rule: "repeated", type: "JID", id: 4 }, reason: { type: "string", id: 5 }, rosterVer: { type: "string", id: 6 }, biDirection: { type: "bool", id: 7 } }, nested: { Operation: { values: { GET_ROSTER: 0, GET_BLACKLIST: 1, ADD: 2, REMOVE: 3, ACCEPT: 4, DECLINE: 5, BAN: 6, ALLOW: 7, REMOTE_ACCEPT: 8, REMOTE_DECLINE: 9 } }, Status: { fields: { errorCode: { type: "ErrorCode", id: 1 }, description: { type: "string", id: 2 } }, nested: { ErrorCode: { values: { OK: 0, USER_NOT_EXIST: 1, USER_ALREADY_FRIEND: 2, USER_ALREADY_BLACKLIST: 3 } } } } } }, StatisticsBody: { fields: { operation: { type: "Operation", id: 1 }, os: { type: "OsType", id: 2 }, version: { type: "string", id: 3 }, network: { type: "NetworkType", id: 4 }, imTime: { type: "uint32", id: 5 }, chatTime: { type: "uint32", id: 6 }, location: { type: "string", id: 7 } }, nested: { Operation: { values: { INFORMATION: 0, USER_REMOVED: 1, USER_LOGIN_ANOTHER_DEVICE: 2, USER_KICKED_BY_CHANGE_PASSWORD: 3, USER_KICKED_BY_OTHER_DEVICE: 4 } }, OsType: { values: { OS_IOS: 0, OS_ANDROID: 1, OS_LINUX: 2, OS_OSX: 3, OS_WIN: 4, OS_OTHER: 16 } }, NetworkType: { values: { NETWORK_NONE: 0, NETWORK_WIFI: 1, NETWORK_4G: 2, NETWORK_3G: 3, NETWORK_2G: 4, NETWORK_WIRE: 5 } } } } } } } } } });
         ce.prototype.root = ve;
         var we = l.kg.getLogger("defaultLogger");
@@ -12857,9 +12857,9 @@ var EasemobChat = { exports: {} };
             var A = this.https ? "https:" : "http:";
             this.url = A + this.url;
           }
-          return new (S())(this.url);
-        }, ce.prototype.getUniqueId = a.P6.getUniqueId;
-        var ke = { connection: ce, message: xe.Message, utils: a.P6, logger: we, statusCode: o.E };
+          return new (R())(this.url);
+        }, ce.prototype.getUniqueId = i.P6.getUniqueId;
+        var ke = { connection: ce, message: xe.Message, utils: i.P6, logger: we, statusCode: o.E };
         typeof window < "u" && (window.WebIM = ke);
         var Ne = ke;
       }(), __webpack_exports__;
@@ -12867,81 +12867,126 @@ var EasemobChat = { exports: {} };
   });
 })(EasemobChat);
 var EasemobChatExports = EasemobChat.exports;
-const EaseSDK = /* @__PURE__ */ getDefaultExportFromCjs(EasemobChatExports), messageCollect$1 = reactive([]), currentChatroomId = ref(""), useManageChatroom = () => ({
-  messageCollect: messageCollect$1,
-  currentChatroomId,
-  setCurrentChatroomId: (r) => {
-    currentChatroomId.value = r;
-  },
-  sendDisplayMessage: () => {
-  },
-  pushMessageToList: (r) => {
-    messageCollect$1.push(r);
-  }
-}), manageEasemobApis = () => {
+const EaseSDK = /* @__PURE__ */ getDefaultExportFromCjs(EasemobChatExports), manageEasemobApis = () => {
   const { currentChatroomId: p } = useManageChatroom();
   return {
-    loginIMWithPassword: (t, i) => new Promise((s, a) => {
+    loginIMWithPassword: (i, o) => new Promise((n, l) => {
       EMClient.open({
-        user: t,
-        pwd: i
-      }).then((o) => {
-        s(o);
-      }).catch((o) => {
-        a(o);
+        user: i,
+        pwd: o
+      }).then((u) => {
+        n(u);
+      }).catch((u) => {
+        l(u);
       });
     }),
-    loginIMWithAccessToken: (t, i) => new Promise((s, a) => {
+    loginIMWithAccessToken: (i, o) => new Promise((n, l) => {
       EMClient.open({
-        user: t,
-        accessToken: i
-      }).then((o) => {
-        s(o);
-      }).catch((o) => {
-        a(o);
+        user: i,
+        accessToken: o
+      }).then((u) => {
+        n(u);
+      }).catch((u) => {
+        l(u);
       });
     }),
     joinChatroom: () => {
       if (!p.value)
         throw "please pass roomId!";
-      return new Promise((t, i) => {
+      return new Promise((i, o) => {
         EMClient.joinChatRoom({
           roomId: p.value
-        }).then((s) => {
-          console.log(">>>>>joinChatroom success", s), t(s);
-        }).catch((s) => {
-          i(s);
+        }).then((n) => {
+          console.log(">>>>>joinChatroom success", n), i(n);
+        }).catch((n) => {
+          o(n);
         });
       });
-    }
+    },
+    sendTextMessage: (i) => new Promise((o, n) => {
+      const l = EMCreateMessage(i);
+      EMClient.send(l).then((u) => {
+        l.id = u.serverMsgId, Object.assign(u, l), o(u);
+      }).catch((u) => {
+        n(u);
+      });
+    }),
+    sendImageMessage: (i) => new Promise((o, n) => {
+      const l = EMCreateMessage(i);
+      EMClient.send(l).then((u) => {
+        o(u);
+      }).catch((u) => {
+        n(u);
+      });
+    }),
+    fetchLoginUserNickname: (i) => new Promise((o, n) => {
+      EMClient.fetchUserInfoById(i, "nickname").then((l) => {
+        console.log(">>>>消息测试", l.data), l.data && o(l.data);
+      }).catch((l) => {
+        n(l);
+      });
+    })
   };
-}, mountEaseIMListener = (p) => {
-  const { pushMessageToList: S } = useManageChatroom(), { joinChatroom: e } = manageEasemobApis();
+}, messageCollect$1 = reactive([]), loginUserInfo = {
+  loginUserId: "",
+  nickname: ""
+}, currentChatroomId = ref(""), useManageChatroom = () => ({
+  messageCollect: messageCollect$1,
+  currentChatroomId,
+  loginUserInfo,
+  setCurrentChatroomId: (t) => {
+    currentChatroomId.value = t;
+  },
+  sendDisplayMessage: async (t) => {
+    const { sendTextMessage: a, sendImageMessage: s } = manageEasemobApis();
+    return new Promise((i, o) => {
+      t.type === "txt" && a(t).then((n) => {
+        messageCollect$1.push(n), i(n);
+      }).catch((n) => {
+        o(n);
+      }), t.type === "img" && s(t);
+    });
+  },
+  pushMessageToList: (t) => {
+    messageCollect$1.push(t);
+  },
+  setLoginUserInfo: async (t) => {
+    const { fetchLoginUserNickname: a } = manageEasemobApis();
+    loginUserInfo.loginUserId = t;
+    try {
+      const s = await a(t);
+      loginUserInfo.nickname = s[t].nickname, console.log(">>>>>>获取到用户属性", loginUserInfo.nickname);
+    } catch {
+      console.log(">>>>>>获取失败");
+    }
+  }
+}), mountEaseIMListener = (p) => {
+  const { pushMessageToList: R, setLoginUserInfo: e } = useManageChatroom(), { joinChatroom: r } = manageEasemobApis();
   console.log(">>>mountEaseIMListener"), p.addEventHandler("connection", {
     onConnected: () => {
-      console.log(">>>>>onConnected"), e();
+      console.log(">>>>>onConnected"), r(), e(p.user);
     },
     onDisconnected: () => {
       console.log(">>>>>Disconnected");
     },
-    onError: (r) => {
-      console.log(">>>>>>Error", r);
+    onError: (t) => {
+      console.log(">>>>>>Error", t);
     }
   }), p.addEventHandler("message", {
-    onTextMessage(r) {
-      S(r);
+    onTextMessage(t) {
+      R(t);
     },
-    onImageMessage(r) {
-      S(r);
+    onImageMessage(t) {
+      R(t);
     }
   }), p.addEventHandler("chatroomEvent", {
-    onChatroomEvent(r) {
-      console.log(">>>>chatroomEvent", r);
+    onChatroomEvent(t) {
+      console.log(">>>>chatroomEvent", t);
     }
   });
 };
 let EMClient = {};
-const initEMClient = (p) => (EMClient = new EaseSDK.connection({
+const EMCreateMessage = EaseSDK.message.create, initEMClient = (p) => (EMClient = new EaseSDK.connection({
   appKey: p
 }), mountEaseIMListener(EMClient), EMClient), index = "", scrollBottom = (p) => {
   p == null || p.scrollTo({
@@ -12950,13 +12995,13 @@ const initEMClient = (p) => (EMClient = new EaseSDK.connection({
 }, message = "", {
   messageCollect
 } = useManageChatroom(), MessageList = () => createVNode(Fragment, null, [messageCollect.length > 0 && messageCollect.map((p) => {
-  var S;
+  var R;
   return createVNode("div", {
     class: "message_item_box",
     key: p.id
   }, [createVNode("div", {
     class: "message_item_nickname"
-  }, [((S = p == null ? void 0 : p.ext) == null ? void 0 : S.nickname) || p.from]), p.type === "txt" && createVNode("p", {
+  }, [((R = p == null ? void 0 : p.ext) == null ? void 0 : R.nickname) || p.from]), p.type === "txt" && createVNode("p", {
     class: "message_item_textmsg"
   }, [p.msg]), p.type === "img" && createVNode("img", {
     src: p.thumb
@@ -12975,12 +13020,65 @@ const initEMClient = (p) => (EMClient = new EaseSDK.connection({
       class: "message_container"
     }, [createVNode(MessageList, null, null)])]);
   }
-}), inputbar = "", InputBarContainer = /* @__PURE__ */ defineComponent({
+}), inputbar = "";
+let PLACE_HOLDER_TEXT = /* @__PURE__ */ function(p) {
+  return p.TEXT = "Enter 发送输入的内容...", p;
+}({});
+const ControlStrip = () => createVNode(Fragment, null, [createVNode("div", {
+  class: "control_strip_container"
+}, [createVNode("div", {
+  class: "control_strip_func_emoji"
+}, [createVNode("svg", {
+  class: "icon",
+  viewBox: "0 0 1024 1024",
+  version: "1.1",
+  xmlns: "http://www.w3.org/2000/svg",
+  "p-id": "6997"
+}, [createVNode("path", {
+  d: "M510.944 960c-247.04 0-448-200.96-448-448s200.992-448 448-448c247.008 0 448 200.96 448 448S757.984 960 510.944 960zM510.944 128c-211.744 0-384 172.256-384 384 0 211.744 172.256 384 384 384 211.744 0 384-172.256 384-384C894.944 300.256 722.688 128 510.944 128zM512 773.344c-89.184 0-171.904-40.32-226.912-110.624-10.88-13.92-8.448-34.016 5.472-44.896 13.888-10.912 34.016-8.48 44.928 5.472 42.784 54.688 107.136 86.048 176.512 86.048 70.112 0 134.88-31.904 177.664-87.552 10.784-14.016 30.848-16.672 44.864-5.888 14.016 10.784 16.672 30.88 5.888 44.864C685.408 732.32 602.144 773.344 512 773.344zM368 515.2c-26.528 0-48-21.472-48-48l0-64c0-26.528 21.472-48 48-48s48 21.472 48 48l0 64C416 493.696 394.496 515.2 368 515.2zM656 515.2c-26.496 0-48-21.472-48-48l0-64c0-26.528 21.504-48 48-48s48 21.472 48 48l0 64C704 493.696 682.496 515.2 656 515.2z",
+  fill: "#272636",
+  "p-id": "6998"
+}, null)])])])]), InputBarContainer = /* @__PURE__ */ defineComponent({
   name: "InputBarContainer",
   setup() {
+    const p = ref(""), R = (s) => {
+      p.value = s.target.value;
+    }, {
+      currentChatroomId: e,
+      loginUserInfo: r,
+      sendDisplayMessage: t
+    } = useManageChatroom(), a = async (s) => {
+      if (console.log(">>>>>event", s.code), !p.value.match(/^\s*$/) && s.code === "Enter" && !s.shiftKey) {
+        s.preventDefault(), console.log(">>>>>>调用发送方法");
+        const i = {
+          chatType: "chatRoom",
+          type: "txt",
+          to: e.value,
+          msg: p.value,
+          from: EMClient.user,
+          ext: {
+            nickname: r.nickname
+          }
+        };
+        try {
+          await t(i), p.value = "";
+        } catch (o) {
+          console.log(">>>>>消息发送失败", o);
+        }
+      }
+    };
     return () => createVNode(Fragment, null, [createVNode("div", {
       class: "input_bar_container"
-    }, null)]);
+    }, [createVNode(ControlStrip, null, null), createVNode("div", {
+      class: "message_content_input_box"
+    }, [createVNode("input", {
+      class: "message_content_input",
+      type: "text",
+      value: p.value,
+      onInput: R,
+      placeholder: PLACE_HOLDER_TEXT.TEXT,
+      onKeyup: a
+    }, null)])])]);
   }
 });
 console.log("EMClient", EMClient);
@@ -13006,29 +13104,27 @@ const EasemobChatroom = /* @__PURE__ */ defineComponent({
       required: !0
     }
   },
-  setup(p, {
-    slots: S
-  }) {
+  setup(p) {
     const {
-      setCurrentChatroomId: e
+      setCurrentChatroomId: R
     } = useManageChatroom(), {
-      loginIMWithPassword: r,
-      loginIMWithAccessToken: t
-    } = manageEasemobApis(), i = async () => {
+      loginIMWithPassword: e,
+      loginIMWithAccessToken: r
+    } = manageEasemobApis(), t = async () => {
       if (EMClient)
         try {
-          p.accessToken ? await t(p.username, p.accessToken) : await r(p.username, p.password);
-        } catch (a) {
-          throw `${a.data.message}`;
+          p.accessToken ? await r(p.username, p.accessToken) : await e(p.username, p.password);
+        } catch (s) {
+          throw `${s.data.message}`;
         }
-    }, s = async () => {
+    }, a = async () => {
       console.log(">>>>>断开连接");
     };
     return onMounted(() => {
-      i(), p.chatroomId && e(p.chatroomId);
+      t(), p.chatroomId && R(p.chatroomId);
     }), {
-      loginIM: i,
-      closeIM: s
+      loginIM: t,
+      closeIM: a
     };
   },
   render() {
@@ -13037,9 +13133,9 @@ const EasemobChatroom = /* @__PURE__ */ defineComponent({
     }, [createVNode(MessageContainer, null, null), createVNode(InputBarContainer, null, null)])]);
   }
 }), install = {
-  install: (p, S) => {
-    if (console.log(p), console.log("options", S), S && (S != null && S.appKey))
-      initEMClient(S.appKey);
+  install: (p, R) => {
+    if (console.log(p), console.log("options", R), R && (R != null && R.appKey))
+      initEMClient(R.appKey);
     else
       throw console.error("appKey不能为空");
     p.component(EasemobChatroom.name, EasemobChatroom);

@@ -29,7 +29,7 @@ export default defineComponent({
       required: true
     }
   },
-  setup(props, { slots }) {
+  setup(props) {
     const { setCurrentChatroomId } = useManageChatroom()
     const { loginIMWithPassword, loginIMWithAccessToken } = manageEasemobApis()
     const loginIM = async (): Promise<void> => {

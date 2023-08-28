@@ -1,5 +1,5 @@
 import { EasemobChat } from "easemob-websdk";
-export type DisplayMessageType = EasemobChat.TextMsgBody | EasemobChat.ImgMsgBody;
+import { DisplayMessageType, ILoginUserInfo } from "../types/index";
 export declare const useManageChatroom: () => {
     messageCollect: ({
         id: string;
@@ -182,7 +182,9 @@ export declare const useManageChatroom: () => {
         } | undefined;
     })[];
     currentChatroomId: import("vue").Ref<string>;
+    loginUserInfo: ILoginUserInfo;
     setCurrentChatroomId: (roomId: string) => void;
-    sendDisplayMessage: () => void;
+    sendDisplayMessage: (payload: EasemobChat.CreateMsgType) => Promise<unknown>;
     pushMessageToList: (message: DisplayMessageType) => void;
+    setLoginUserInfo: (loginUserId: string) => Promise<void>;
 };

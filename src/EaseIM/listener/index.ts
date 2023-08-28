@@ -2,13 +2,14 @@ import { EasemobChat } from "easemob-websdk"
 import { useManageChatroom } from "../mangeChatroom"
 import { manageEasemobApis } from "../imApis"
 export const mountEaseIMListener = (EMClient: EasemobChat.Connection) => {
-  const { pushMessageToList } = useManageChatroom()
+  const { pushMessageToList, setLoginUserInfo } = useManageChatroom()
   const { joinChatroom } = manageEasemobApis()
   console.log(">>>mountEaseIMListener")
   EMClient.addEventHandler("connection", {
     onConnected: () => {
       console.log(">>>>>onConnected")
       joinChatroom()
+      setLoginUserInfo(EMClient.user)
     },
     onDisconnected: () => {
       console.log(">>>>>Disconnected")
