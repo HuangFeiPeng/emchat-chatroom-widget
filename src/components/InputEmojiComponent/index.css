@@ -1,0 +1,9 @@
+.emoji_container {
+  position: absolute;
+  left: 0;
+  top: -100px;
+  width: 70%;
+  height: 100px;
+  background: #fff;
+  overflow-y: auto;
+}

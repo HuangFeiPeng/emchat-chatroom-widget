@@ -1,4 +1,5 @@
 .input_bar_container {
+  position: relative;
   min-height: 20%;
   max-height: 25%;
   display: flex;

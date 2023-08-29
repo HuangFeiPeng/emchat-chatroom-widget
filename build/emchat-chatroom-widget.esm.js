@@ -1,4 +1,4 @@
-import { reactive, ref, defineComponent, watch, nextTick, createVNode, Fragment, onMounted } from "vue";
+import { reactive, ref, defineComponent, watch, nextTick, createVNode, Fragment, onMounted, onBeforeUnmount } from "vue";
 var commonjsGlobal = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
 function getDefaultExportFromCjs(p) {
   return p && p.__esModule && Object.prototype.hasOwnProperty.call(p, "default") ? p.default : p;
@@ -12988,7 +12988,7 @@ const EaseSDK = /* @__PURE__ */ getDefaultExportFromCjs(EasemobChatExports), man
 let EMClient = {};
 const EMCreateMessage = EaseSDK.message.create, initEMClient = (p) => (EMClient = new EaseSDK.connection({
   appKey: p
-}), mountEaseIMListener(EMClient), EMClient), index = "", scrollBottom = (p) => {
+}), mountEaseIMListener(EMClient), EMClient), index$1 = "", scrollBottom = (p) => {
   p == null || p.scrollTo({
     top: p == null ? void 0 : p.scrollHeight
   });
@@ -13020,37 +13020,51 @@ const EMCreateMessage = EaseSDK.message.create, initEMClient = (p) => (EMClient 
       class: "message_container"
     }, [createVNode(MessageList, null, null)])]);
   }
+}), emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "🤣", "😂", "🙂", "🙃", "😉", "😊", "😇", "😍", "🤩", "😘", "😗", "😚", "😙", "😋", "😛", "😜", "🤪", "😝", "🤑", "🤗", "🤭", "🤫", "🤔", "🤐", "🤨", "😐", "😑", "😶", "😏", "😒", "🙄", "😬", "🤥", "😌", "😔", "😪", "🤤", "😴", "😷", "🤒", "🤕", "🤢", "🤮", "🤧", "😵", "🤯", "🤠", "😎", "🤓", "🧐", "😕", "😟", "🙁", "😮", "😯", "😲", "😳", "😦", "😧", "😨", "😰", "😥", "😢", "😭", "😱", "😖", "😣", "😞", "😓", "😩", "😫", "😤", "😡", "😠", "🤬", "😈", "👿", "💀", "💩", "🤡", "👹", "👺", "👻", "👽", "👾", "🤖", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "💋", "👋", "🤚", "🖐", "✋", "🖖", "👌", "🤞", "🤟", "🤘", "🤙", "👈", "👉", "👆", "🖕", "👇", "👍", "👎", "✊", "👊", "🤛", "🤜", "👏", "🙌", "👐", "🤲", "🤝", "🙏", "💅", "🤳", "💪", "👂", "👃", "🧠", "👀", "👁", "👅", "👄", "👶", "🧒", "👦", "👧", "🧑", "👱", "👨", "🧔", "👱‍", "👨‍", "👨‍", "👩", "👱‍", "👩‍", "👩‍", "👩‍", "👩‍", "🧓", "👴", "👵", "🙍", "🙅", "🙆", "💁", "🙋", "🙇", "🙇‍", "🙇‍", "🤦", "🤷", "🤷‍", "🤷‍", "👨‍⚕️", "👩‍⚕️", "👨‍🎓", "👩‍🎓", "👨‍🏫", "👩‍🏫", "👨‍⚖️", "👩‍⚖️", "👨‍🌾", "👩‍🌾", "👨‍🍳", "👩‍🍳", "👨‍🔧", "👩‍🔧", "👨‍🏭", "👩‍🏭", "👨‍💼", "👩‍💼", "👨‍🔬", "👩‍🔬", "👨‍💻", "👩‍💻", "👨‍🎤", "👩‍🎤", "👨‍🎨", "👩‍🎨", "👨‍✈️", "👩‍✈️", "👨‍🚀", "👩‍🚀", "👨‍🚒", "👩‍🚒", "👮", "👮‍♂️", "👮‍♀️", "🕵", "🕵️‍♂️", "🕵️‍♀️", "💂", "💂‍", "💂‍", "👷", "👷‍", "👷‍", "🤴", "👸", "👳", "👳‍", "👳‍", "👲", "🧕", "🤵", "👰", "🤰", "🤱", "👼", "🎅", "🤶", "🧙", "🧚", "🧛", "🧜", "🧝", "🧞", "🧟", "💆", "💇", "🚶", "🏃", "💃", "🕺", "🕴", "👯", "🧖", "🧖‍", "🧖‍", "🧘", "👭", "👫", "👬", "💏", "👨‍", "👩‍", "💑", "👨‍", "👩‍", "👪", "👨‍👩‍👦", "👨‍👩‍👧", "👨‍👩‍👧‍👦", "👨‍👩‍👦‍👦", "👨‍👩‍👧‍👧", "👨‍👨‍👦", "👨‍👨‍👧", "👨‍👨‍👧‍👦", "👩‍👩‍👦", "👩‍👩‍👧", "👩‍👩‍👧‍👦", "👩‍👩‍👦‍👦", "👩‍👩‍👧‍👧", "👨‍👦", "👨‍👦‍👦", "👨‍👧", "👨‍👧‍👦", "👨‍👧‍👧", "👩‍👦", "👩‍👦‍👦", "👩‍👧", "👩‍👧‍👦", "👩‍👧‍👧", "🗣", "👤", "👥", "👣", "🌂", "☂", "👓", "🕶", "👔", "👕", "👖", "🧣", "🧤", "🧥", "🧦", "👗", "👘", "👙", "👚", "👛", "👜", "👝", "🎒", "👞", "👟", "👠", "👡", "👢", "👑", "👒", "🎩", "🎓", "🧢", "⛑", "💄", "💍", "💼"], index = "", InputEmojiComponent = /* @__PURE__ */ defineComponent({
+  name: "InputEmojiComp",
+  emits: ["appendEmojitoInput"],
+  setup(p, {
+    expose: R,
+    emit: e
+  }) {
+    const r = ref(!1), t = ref(), a = (i) => {
+      if (console.log("emojiContainerRef", t.value), t.value) {
+        const o = t.value.contains(i.target);
+        console.log(">>>>>bool", o);
+      }
+    }, s = (i) => {
+      e("appendEmojitoInput", i);
+    };
+    return onMounted(() => {
+      document.addEventListener("click", a);
+    }), onBeforeUnmount(() => {
+      console.log(">>>>>>组件卸载"), document.removeEventListener("click", a);
+    }), R({
+      isShowEmojiBox: r
+    }), () => createVNode(Fragment, null, [r.value ? createVNode("div", {
+      ref: t,
+      class: "emoji_container"
+    }, [emojis.map((i) => createVNode("span", {
+      onClick: () => s(i)
+    }, [i]))]) : null]);
+  }
 }), inputbar = "";
 let PLACE_HOLDER_TEXT = /* @__PURE__ */ function(p) {
   return p.TEXT = "Enter 发送输入的内容...", p;
 }({});
-const ControlStrip = () => createVNode(Fragment, null, [createVNode("div", {
-  class: "control_strip_container"
-}, [createVNode("div", {
-  class: "control_strip_func_emoji"
-}, [createVNode("svg", {
-  class: "icon",
-  viewBox: "0 0 1024 1024",
-  version: "1.1",
-  xmlns: "http://www.w3.org/2000/svg",
-  "p-id": "6997"
-}, [createVNode("path", {
-  d: "M510.944 960c-247.04 0-448-200.96-448-448s200.992-448 448-448c247.008 0 448 200.96 448 448S757.984 960 510.944 960zM510.944 128c-211.744 0-384 172.256-384 384 0 211.744 172.256 384 384 384 211.744 0 384-172.256 384-384C894.944 300.256 722.688 128 510.944 128zM512 773.344c-89.184 0-171.904-40.32-226.912-110.624-10.88-13.92-8.448-34.016 5.472-44.896 13.888-10.912 34.016-8.48 44.928 5.472 42.784 54.688 107.136 86.048 176.512 86.048 70.112 0 134.88-31.904 177.664-87.552 10.784-14.016 30.848-16.672 44.864-5.888 14.016 10.784 16.672 30.88 5.888 44.864C685.408 732.32 602.144 773.344 512 773.344zM368 515.2c-26.528 0-48-21.472-48-48l0-64c0-26.528 21.472-48 48-48s48 21.472 48 48l0 64C416 493.696 394.496 515.2 368 515.2zM656 515.2c-26.496 0-48-21.472-48-48l0-64c0-26.528 21.504-48 48-48s48 21.472 48 48l0 64C704 493.696 682.496 515.2 656 515.2z",
-  fill: "#272636",
-  "p-id": "6998"
-}, null)])])])]), InputBarContainer = /* @__PURE__ */ defineComponent({
+const InputBarContainer = /* @__PURE__ */ defineComponent({
   name: "InputBarContainer",
   setup() {
-    const p = ref(""), R = (s) => {
-      p.value = s.target.value;
+    const p = ref(""), R = (n) => {
+      p.value = n.target.value;
     }, {
       currentChatroomId: e,
       loginUserInfo: r,
       sendDisplayMessage: t
-    } = useManageChatroom(), a = async (s) => {
-      if (console.log(">>>>>event", s.code), !p.value.match(/^\s*$/) && s.code === "Enter" && !s.shiftKey) {
-        s.preventDefault(), console.log(">>>>>>调用发送方法");
-        const i = {
+    } = useManageChatroom(), a = async (n) => {
+      if (console.log(">>>>>event", n.code), !p.value.match(/^\s*$/) && n.code === "Enter" && !n.shiftKey) {
+        n.preventDefault(), console.log(">>>>>>调用发送方法");
+        const l = {
           chatType: "chatRoom",
           type: "txt",
           to: e.value,
@@ -13061,15 +13075,37 @@ const ControlStrip = () => createVNode(Fragment, null, [createVNode("div", {
           }
         };
         try {
-          await t(i), p.value = "";
-        } catch (o) {
-          console.log(">>>>>消息发送失败", o);
+          await t(l), p.value = "";
+        } catch (u) {
+          console.log(">>>>>消息发送失败", u);
         }
       }
+    }, s = ref(null), i = () => {
+      s.value.isShowEmojiBox = !0;
+    }, o = (n) => {
+      p.value = p.value + n;
     };
     return () => createVNode(Fragment, null, [createVNode("div", {
       class: "input_bar_container"
-    }, [createVNode(ControlStrip, null, null), createVNode("div", {
+    }, [createVNode("div", {
+      class: "control_strip_container"
+    }, [createVNode("div", {
+      class: "control_strip_func_emoji",
+      onClick: i
+    }, [createVNode("svg", {
+      class: "icon",
+      viewBox: "0 0 1024 1024",
+      version: "1.1",
+      xmlns: "http://www.w3.org/2000/svg",
+      "p-id": "6997"
+    }, [createVNode("path", {
+      d: "M510.944 960c-247.04 0-448-200.96-448-448s200.992-448 448-448c247.008 0 448 200.96 448 448S757.984 960 510.944 960zM510.944 128c-211.744 0-384 172.256-384 384 0 211.744 172.256 384 384 384 211.744 0 384-172.256 384-384C894.944 300.256 722.688 128 510.944 128zM512 773.344c-89.184 0-171.904-40.32-226.912-110.624-10.88-13.92-8.448-34.016 5.472-44.896 13.888-10.912 34.016-8.48 44.928 5.472 42.784 54.688 107.136 86.048 176.512 86.048 70.112 0 134.88-31.904 177.664-87.552 10.784-14.016 30.848-16.672 44.864-5.888 14.016 10.784 16.672 30.88 5.888 44.864C685.408 732.32 602.144 773.344 512 773.344zM368 515.2c-26.528 0-48-21.472-48-48l0-64c0-26.528 21.472-48 48-48s48 21.472 48 48l0 64C416 493.696 394.496 515.2 368 515.2zM656 515.2c-26.496 0-48-21.472-48-48l0-64c0-26.528 21.504-48 48-48s48 21.472 48 48l0 64C704 493.696 682.496 515.2 656 515.2z",
+      fill: "#272636",
+      "p-id": "6998"
+    }, null)])])]), createVNode(InputEmojiComponent, {
+      ref: s,
+      onAppendEmojitoInput: o
+    }, null), createVNode("div", {
       class: "message_content_input_box"
     }, [createVNode("input", {
       class: "message_content_input",
