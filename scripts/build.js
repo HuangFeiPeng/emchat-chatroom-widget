@@ -1,5 +1,5 @@
 import path from "path"
-import fs from "fs"
+import fs from "fs-extra"
 import { defineConfig, build } from "vite"
 import vue from "@vitejs/plugin-vue"
 import vueJSX from "@vitejs/plugin-vue-jsx"
@@ -10,8 +10,8 @@ import { fileURLToPath } from "url"
 const __filenameNew = fileURLToPath(import.meta.url)
 
 const __dirnameNew = path.dirname(__filenameNew)
-
-const version = "../package.json".version
+const name = "emchat-chatroom-widget"
+const version = "1.0.0"
 
 /**
  * 基础配置
@@ -49,27 +49,26 @@ const compontsDir = path.resolve(__dirnameNew, "../src/")
 // 输出目录
 const outputDir = path.resolve(__dirnameNew, "../build")
 // 生成 package.json
-const createPackageJson = name => {
+const createPackageJson = () => {
   const fileStr = `{
       "name": "${name}",
       "version": "${version}",
       "description": "该组件用于快速构建一个环信聊天室窗口。",
-      "main": "index.umd.js",
-      "module":"index.mjs",
+      "main": "emchat-chatroom-widget.umd.js",
+      "module":"emchat-chatroom-widget.esm.js",
       "repository": {
         "type": "git",
-        "url": "git+https://github.com/GGXXMM/vue3-ui.git"
+        "url": "git+https://github.com/HuangFeiPeng/emchat-chatroom-widget"
       },
       "keywords": ["vue3", "环信", "UI"],
-      "author": "guoxinming",
+      "author": "NeoHuang",
       "license": "MIT"
     }
     `
   // 单个组件 or 全量
-  const filePath = path.resolve(
-    outputDir,
-    name ? `${name}/package.json` : `package.json`
-  )
+  const filePath = path.resolve(outputDir, `package.json`)
+
+  fs.outputFile(filePath, fileStr, "utf-8")
 }
 const buildAll = async () => {
   await build(
