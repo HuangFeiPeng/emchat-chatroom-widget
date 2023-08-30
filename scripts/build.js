@@ -11,7 +11,7 @@ const __filenameNew = fileURLToPath(import.meta.url)
 
 const __dirnameNew = path.dirname(__filenameNew)
 const name = "emchat-chatroom-widget"
-const version = "1.0.0"
+const version = "1.0.1"
 
 /**
  * 基础配置
