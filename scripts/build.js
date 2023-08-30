@@ -70,6 +70,15 @@ const createPackageJson = () => {
 
   fs.outputFile(filePath, fileStr, "utf-8")
 }
+// copy README.md
+const copyFiles = () => {
+  const markdown = fs.createReadStream(
+    path.resolve(__dirnameNew, "../README.md")
+  )
+  markdown.pipe(
+    fs.createWriteStream(path.resolve(__dirnameNew, "../build/README.md"))
+  )
+}
 const buildAll = async () => {
   await build(
     defineConfig({
@@ -89,6 +98,7 @@ const buildAll = async () => {
   )
 
   createPackageJson()
+  copyFiles()
 }
 const buildLib = async () => {
   await buildAll()
