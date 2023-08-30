@@ -41,6 +41,13 @@ export const useManageChatroom = () => {
       }
       if (payload.type === "img") {
         sendImageMessage(payload)
+          .then(res => {
+            messageCollect.push(res as unknown as EasemobChat.ImgMsgBody)
+            resolve(res)
+          })
+          .catch(err => {
+            reject(err)
+          })
       }
     })
   }

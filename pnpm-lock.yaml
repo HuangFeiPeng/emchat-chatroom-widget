@@ -5,7 +5,7 @@ specifiers:
   '@typescript-eslint/parser': ^6.4.1
   '@vitejs/plugin-vue': ^4.2.3
   '@vitejs/plugin-vue-jsx': ^3.0.2
-  easemob-websdk: ^4.2.0
+  easemob-websdk: ^4.1.7
   eslint: ^8.47.0
   eslint-config-prettier: ^9.0.0
   eslint-plugin-prettier: ^5.0.0
@@ -20,7 +20,7 @@ specifiers:
 
 dependencies:
   '@vitejs/plugin-vue-jsx': registry.npmmirror.com/@vitejs/plugin-vue-jsx/3.0.2_vite@4.4.9+vue@3.3.4
-  easemob-websdk: registry.npmmirror.com/easemob-websdk/4.2.0
+  easemob-websdk: registry.npmmirror.com/easemob-websdk/4.1.7
   vite-plugin-dts: registry.npmmirror.com/vite-plugin-dts/3.5.2_vxtpzrd3ijvkhh2fvnu2mlkwnm
   vue: registry.npmmirror.com/vue/3.3.4
 
@@ -1644,10 +1644,10 @@ packages:
       esutils: registry.npmmirror.com/esutils/2.0.3
     dev: true
 
-  registry.npmmirror.com/easemob-websdk/4.2.0:
-    resolution: {integrity: sha512-zsiMNYcqsC6FU34NJsvr5Pn7A+piU3YFFbZIgxgN62ERUMDvmZtNy4DrZr6U6Q7P7xlufKVXJaBQ+VuPLzE49Q==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/easemob-websdk/-/easemob-websdk-4.2.0.tgz}
+  registry.npmmirror.com/easemob-websdk/4.1.7:
+    resolution: {integrity: sha512-U71WJ20yxiMMB5pCO1SQkPwpthVBIaXtpIgu42SlAtgaHStorA7xYfnbobe2TL5uoC2ULzNoIz9ooZusePxqhA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/easemob-websdk/-/easemob-websdk-4.1.7.tgz}
     name: easemob-websdk
-    version: 4.2.0
+    version: 4.1.7
     dev: false
 
   registry.npmmirror.com/electron-to-chromium/1.4.499:

@@ -2,9 +2,15 @@ import { defineComponent, nextTick, watch } from "vue"
 import { useManageChatroom } from "../EaseIM/mangeChatroom"
 import { scrollBottom } from "../utils"
 import "./style/message.css"
+import { EasemobChat } from "easemob-websdk"
 const { messageCollect } = useManageChatroom()
 
 const MessageList = () => {
+  const downloadSourceImage = (message: EasemobChat.MessageBody) => {
+    if (message.type === "img") {
+      window.open(message.url)
+    }
+  }
   return (
     <>
       {messageCollect.length > 0 &&
@@ -17,7 +23,15 @@ const MessageList = () => {
               {msgItem.type === "txt" && (
                 <p class={"message_item_textmsg"}>{msgItem.msg}</p>
               )}
-              {msgItem.type === "img" && <img src={msgItem.thumb} />}
+              {msgItem.type === "img" && (
+                <img
+                  style={"cursor: pointer;"}
+                  onClick={() => {
+                    downloadSourceImage(msgItem)
+                  }}
+                  src={msgItem.thumb}
+                />
+              )}
             </div>
           )
         })}
@@ -31,7 +45,6 @@ export default defineComponent({
       console.log(">>>>>>监听到消息列表改变")
       nextTick(() => {
         const messageContainer = document.querySelector(".message_container")
-        console.log("messageContainer", messageContainer)
         setTimeout(() => {
           messageContainer && scrollBottom(messageContainer)
         }, 300)

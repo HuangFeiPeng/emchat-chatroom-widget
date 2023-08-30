@@ -6,6 +6,6 @@ import "../../build/style.css"
 console.log("EMChatroom", EMChatroom)
 createApp(App)
   .use(EMChatroom, {
-    appKey: "easemob-demo#support"
+    appKey: "easemob#easeim"
   })
   .mount("#app")

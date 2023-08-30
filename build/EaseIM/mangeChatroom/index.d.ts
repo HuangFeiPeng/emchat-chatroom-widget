@@ -40,7 +40,7 @@ export declare const useManageChatroom: () => {
             }[] | undefined;
             userList: string[];
             isAddedBySelf?: boolean | undefined;
-        }[] | undefined;
+        } | undefined;
         chatThread?: {
             messageId: string;
             parentId: string;
@@ -76,11 +76,6 @@ export declare const useManageChatroom: () => {
         onlineState?: EasemobChat.ONLINESTATETYPE | undefined;
         priority?: EasemobChat.MessagePriority | undefined;
         deliverOnlineOnly?: boolean | undefined;
-        modifiedInfo?: {
-            operatorId: string;
-            operationCount: number;
-            operationTime: number;
-        } | undefined;
         receiverList?: string[] | undefined;
     } | {
         id: string;
@@ -99,7 +94,7 @@ export declare const useManageChatroom: () => {
             }[] | undefined;
             userList: string[];
             isAddedBySelf?: boolean | undefined;
-        }[] | undefined;
+        } | undefined;
         chatThread?: {
             messageId: string;
             parentId: string;

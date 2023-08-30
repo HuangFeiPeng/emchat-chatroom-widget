@@ -95,6 +95,8 @@ export const manageEasemobApis = () => {
       const msg = EMCreateMessage(params)
       EMClient.send(msg)
         .then(res => {
+          msg.id = res.serverMsgId
+          Object.assign(res, msg)
           resolve(res)
         })
         .catch(err => {

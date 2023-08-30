@@ -22,7 +22,7 @@ onMounted(() => {
       ref="emChatroomRef"
       :username="'hfp'"
       :password="'1'"
-      :chatroomId="'223814006931462'"
+      :chatroomId="'208712152186885'"
     >
     </EasemobChatroom>
   </div>
