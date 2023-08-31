@@ -12885,6 +12885,8 @@ const EMCreateMessage = EaseSDK.message.create, initEMClient = (p) => (EMClient 
           await t(n), console.log(">>>>>>>图片发送成功");
         } catch (u) {
           console.log(">>>>>>发送失败", u);
+        } finally {
+          p.value.value = "";
         }
       }
     };

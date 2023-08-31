@@ -37,6 +37,8 @@ export default defineComponent({
           console.log(">>>>>>>图片发送成功")
         } catch (error) {
           console.log(">>>>>>发送失败", error)
+        } finally {
+          inputFileRef.value.value = ""
         }
       }
     }

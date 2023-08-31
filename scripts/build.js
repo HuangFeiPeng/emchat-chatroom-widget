@@ -21,10 +21,10 @@ const BASE_VITE_CONFIG = defineConfig({
   plugins: [
     vue(),
     vueJSX(),
-    visualizer({
-      emitFile: true,
-      filename: "stats.html"
-    }),
+    // visualizer({
+    //   emitFile: true,
+    //   filename: "stats.html"
+    // }),
     dts({
       outputDir: "./build/types",
       insertTypesEntry: true, // 插入TS 入口
